@@ -1,5 +1,7 @@
 @import 'variables'; 
 
+   // *******************THE NAV BAR*******************
+
 .navbar-wrapper{
 	background: $steel-teal; 
 	width: 100%;
@@ -12,7 +14,7 @@
 
 		ul{
 			margin-top: 0; 
-			display: block; 
+			display: flex; 
 			text-decoration: none; 
 		}
 
@@ -26,12 +28,21 @@
 		}
 
 		.title{
+			float: left; 
+			padding-left: 1em; 
+			font-weight: bolder;
+			font-family: 'Raleway', sans-serif; 
+			text-shadow: 2px 4px 3px rgba(0,0,0,0.3) !important;
 			font-size: 36px; 
 			color: $white !important; 
 		}
 
 		.navbar-default .navbar-nav li a{
 			color: $white;
+		}
+
+		.navbar-nav li a{
+			text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 		}
 
 }
@@ -45,7 +56,7 @@
 
 		.login, .signup{
 			border: 3px solid $white;
-			padding-top: 10px;
+			padding: 10px;
 			border-radius: 5px;
 			font-family: 'Heebo', sans-serif;
 			 
@@ -77,4 +88,11 @@
 		}
 	
 }
+
+
+
+ // **************THE HOME PAGE*********************
+
+
+
 
