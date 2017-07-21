@@ -77,3 +77,55 @@
   color: #4B9191;
   cursor: pointer;
 }
+
+/* line 3, ../../compass/sass/_write.scss */
+.page-header {
+  margin-top: 10em;
+  text-align: center;
+}
+
+/* line 8, ../../compass/sass/_write.scss */
+.img-thumbnail {
+  margin-left: 8em;
+  margin-top: -38em;
+}
+
+/* line 13, ../../compass/sass/_write.scss */
+h1, h2 {
+  font-weight: bold;
+  font-size: 5em;
+  margin-left: 1em;
+}
+
+/* line 20, ../../compass/sass/_write.scss */
+.btn-primary {
+  margin-top: 0em;
+  margin-left: -38em;
+}
+
+/* line 24, ../../compass/sass/_write.scss */
+.btn-success {
+  margin-right: 2em;
+}
+
+/* line 28, ../../compass/sass/_write.scss */
+.btn {
+  position: relative;
+  top: -9em;
+  left: -11em;
+  right: -14em;
+  margin: auto;
+}
+
+/* line 36, ../../compass/sass/_write.scss */
+.writeBookBackground {
+  background-color: #fc6554;
+}
+
+/* line 40, ../../compass/sass/_write.scss */
+.newBook {
+  position: relative;
+  left: 46em;
+  top: -41em;
+  text-align: center;
+}
