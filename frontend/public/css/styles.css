@@ -1,22 +1,29 @@
-/* line 3, ../sass/_navbar.scss */
 .navbar-wrapper {
-  height: 54px;
+  background: #4B9191;
+  color: #fff;
+  height: 55px;
   width: 100%;
   padding: 0;
   line-height: 54px;
   top: 0;
   left: 0;
-  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
-  border: 5px solid #FF0000;
-}
-/* line 13, ../sass/_navbar.scss */
-.navbar-wrapper ul {
-  display: block;
-  text-decoration: none;
-}
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2); }
+  .navbar-wrapper ul {
+    margin-top: 0;
+    display: block;
+    text-decoration: none; }
+  .navbar-wrapper img {
+    height: 20px; }
+  .navbar-wrapper a:link {
+    color: #fff !important;
+    text-decoration: none; }
+  .navbar-wrapper .title {
+    font-size: 36px;
+    color: #fff; }
+  .navbar-wrapper .navbar-default .navbar-nav li a {
+    color: #fff; }
 
-/* line 20, ../sass/_navbar.scss */
 .float-right {
-  float: right;
-  border: 5px solid #4444E4;
-}
+  float: right; }
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,24 +1,47 @@
 @import 'variables'; 
 
 .navbar-wrapper{
-	height: 54px; 
+	background: $steel-teal;
+	color: $white;  
+	height: 55px; 
 	width: 100%;
 	padding: 0;
 	line-height: 54px; 
 	top: 0;
 	left: 0;
 	box-shadow: 0 2px 3px 0 rgba(0,0,0,.2); 
-	border: 5px solid $red; 
+	// border: 5px solid $red; 
 
 		ul{
+			margin-top: 0; 
 			display: block; 
 			text-decoration: none; 
 		}
+
+		img{
+			height: 20px; 
+		}
+
+		a:link{
+			color: $white !important; 
+			text-decoration: none; 
+		}
+
+		.title{
+			font-size: 36px; 
+			color: $white; 
+		}
+
+		.navbar-default .navbar-nav li a{
+			color: $white;
+		}
+
+		
 
 }
 
 .float-right{
 	float: right; 
-	border: 5px solid $blue; 
+	// border: 5px solid $blue; 
 }
 

@@ -10,18 +10,19 @@ class NavBar extends Component{
 
 		return(
 			<div>
-				<nav className="navbar navbar-default navbar-fixed-top navbar-wrapper">
+				<nav className="navbar navbar-fixed-top navbar-wrapper">
 				  <div className="container-fluid navbar-white">
-				    <ul className="nav navbar-nav">
-				    	<li><Link to="/">writeIT</Link></li> 	
-				    </ul>
-				  </div>
-				  <div className="container right">
-					   <ul className="nav navbar-nav float-right">
-						   	<li><Link to="/login">Log in</Link></li>
-					      	<li><Link to="/signup">Sign up</Link></li>
-					   </ul>
-				  </div>
+					    <ul className="nav navbar-nav title">
+					    	<li><Link to="/home">writeIT</Link></li> 	
+					    </ul>
+					  <div className="container right">
+						   <ul className="nav navbar-nav float-right">
+							   	<li><Link to="/login">Log in</Link></li>
+						      	<li><Link to="/signup">Sign up</Link></li>
+						      	<li><img src = "https://cdn1.iconfinder.com/data/icons/pointed-edge-web-navigation/117/search-512.png"/></li>
+						   </ul>
+					  </div>
+					</div>
 				</nav>
 	    	</div>
 

@@ -1,0 +1,36 @@
+/* line 3, ../sass/_navbar.scss */
+.navbar-wrapper {
+  background: #4B9191;
+  color: #ffffff;
+  height: 83px;
+  width: 100%;
+  padding: 0;
+  line-height: 54px;
+  top: 0;
+  left: 0;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+}
+/* line 15, ../sass/_navbar.scss */
+.navbar-wrapper ul {
+  margin-top: 0;
+  display: block;
+  text-decoration: none;
+}
+/* line 21, ../sass/_navbar.scss */
+.navbar-wrapper img {
+  height: 20px;
+}
+/* line 25, ../sass/_navbar.scss */
+.navbar-wrapper a:link {
+  color: white !important;
+  text-decoration: none;
+}
+/* line 30, ../sass/_navbar.scss */
+.navbar-wrapper .title {
+  font-size: 36px;
+}
+
+/* line 38, ../sass/_navbar.scss */
+.float-right {
+  float: right;
+}
