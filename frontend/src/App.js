@@ -15,8 +15,12 @@ class App extends Component {
       <div>
         <Router>
           <div className="App">
+
             <NavBar/>
             <Register />
+
+
+            <h1>Welcome to writeIT</h1>
  
           </div>
         </Router>
