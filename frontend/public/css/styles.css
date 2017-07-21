@@ -1,0 +1,22 @@
+/* line 3, ../sass/_navbar.scss */
+.navbar-wrapper {
+  height: 54px;
+  width: 100%;
+  padding: 0;
+  line-height: 54px;
+  top: 0;
+  left: 0;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+  border: 5px solid #FF0000;
+}
+/* line 13, ../sass/_navbar.scss */
+.navbar-wrapper ul {
+  display: block;
+  text-decoration: none;
+}
+
+/* line 20, ../sass/_navbar.scss */
+.float-right {
+  float: right;
+  border: 5px solid #4444E4;
+}
