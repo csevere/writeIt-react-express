@@ -1,29 +1,70 @@
+/* line 3, ../../compass/sass/_navbar.scss */
 .navbar-wrapper {
   background: #4B9191;
-  color: #fff;
-  height: 55px;
   width: 100%;
-  padding: 0;
+  padding: 10px;
   line-height: 50px;
   top: 0;
   left: 0;
-  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2); }
-  .navbar-wrapper ul {
-    margin-top: 0;
-    display: block;
-    text-decoration: none; }
-  .navbar-wrapper img {
-    height: 20px; }
-  .navbar-wrapper a:link {
-    color: #fff !important;
-    text-decoration: none; }
-  .navbar-wrapper .title {
-    font-size: 36px;
-    color: #fff; }
-  .navbar-wrapper .navbar-default .navbar-nav li a {
-    color: #fff; }
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+}
+/* line 13, ../../compass/sass/_navbar.scss */
+.navbar-wrapper ul {
+  margin-top: 0;
+  display: block;
+  text-decoration: none;
+}
+/* line 19, ../../compass/sass/_navbar.scss */
+.navbar-wrapper img {
+  height: 20px;
+}
+/* line 23, ../../compass/sass/_navbar.scss */
+.navbar-wrapper a:link {
+  color: #fff;
+  text-decoration: none;
+}
+/* line 28, ../../compass/sass/_navbar.scss */
+.navbar-wrapper .title {
+  font-size: 36px;
+  color: #fff !important;
+}
+/* line 33, ../../compass/sass/_navbar.scss */
+.navbar-wrapper .navbar-default .navbar-nav li a {
+  color: #fff;
+}
 
+/* line 41, ../../compass/sass/_navbar.scss */
 .float-right {
-  float: right; }
-
-/*# sourceMappingURL=styles.css.map */
+  float: right;
+  font-size: 1em;
+}
+/* line 46, ../../compass/sass/_navbar.scss */
+.float-right .login, .float-right .signup {
+  border: 3px solid #fff;
+  padding-top: 10px;
+  border-radius: 5px;
+  font-family: 'Heebo', sans-serif;
+}
+/* line 54, ../../compass/sass/_navbar.scss */
+.float-right .login {
+  background-color: #fff;
+  color: #4B9191 !important;
+  margin-right: 1em;
+}
+/* line 62, ../../compass/sass/_navbar.scss */
+.float-right .login:hover {
+  background: #4B9191;
+  color: #fff !important;
+  cursor: pointer;
+}
+/* line 68, ../../compass/sass/_navbar.scss */
+.float-right .signup {
+  color: #fff;
+  margin-right: 1em;
+}
+/* line 73, ../../compass/sass/_navbar.scss */
+.float-right .signup:hover {
+  background-color: #fff;
+  color: #4B9191;
+  cursor: pointer;
+}

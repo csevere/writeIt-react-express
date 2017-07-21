@@ -17,9 +17,9 @@ class NavBar extends Component{
 					    </ul>
 					  <div className="container right">
 						   <ul className="nav navbar-nav float-right">
-							   	<li><Link to="/login">Log in</Link></li>
-						      	<li><Link to="/signup">Sign up</Link></li>
-						      	<li><img src = "https://cdn1.iconfinder.com/data/icons/pointed-edge-web-navigation/117/search-512.png"/></li>
+							   	<li><Link className = "login" to="/login">Log in</Link></li>
+						      	<li><Link className = "signup" to="/signup">Sign up</Link></li>
+						      	<li><img className = "search" src = "https://cdn1.iconfinder.com/data/icons/pointed-edge-web-navigation/117/search-512.png"/></li>
 						   </ul>
 					  </div>
 					</div>
