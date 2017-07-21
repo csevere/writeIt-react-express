@@ -1,11 +1,11 @@
 @import 'variables'; 
 
+   // *******************THE NAV BAR*******************
+
 .navbar-wrapper{
-	background: $steel-teal;
-	color: $white;  
-	height: 55px; 
+	background: $steel-teal; 
 	width: 100%;
-	padding: 0;
+	padding: 10px;
 	line-height: 50px; 
 	top: 0;
 	left: 0;
@@ -14,7 +14,7 @@
 
 		ul{
 			margin-top: 0; 
-			display: block; 
+			display: flex; 
 			text-decoration: none; 
 		}
 
@@ -23,25 +23,76 @@
 		}
 
 		a:link{
-			color: $white !important; 
+			color: $white; 
 			text-decoration: none; 
 		}
 
 		.title{
+			float: left; 
+			padding-left: 1em; 
+			font-weight: bolder;
+			font-family: 'Raleway', sans-serif; 
+			text-shadow: 2px 4px 3px rgba(0,0,0,0.3) !important;
 			font-size: 36px; 
-			color: $white; 
+			color: $white !important; 
 		}
 
 		.navbar-default .navbar-nav li a{
 			color: $white;
 		}
 
-		
+		.navbar-nav li a{
+			text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+		}
 
 }
+
+
 
 .float-right{
-	float: right; 
+	float: right;
+	font-size: 1em; 
 	// border: 5px solid $blue; 
+
+		.login, .signup{
+			border: 3px solid $white;
+			padding: 10px;
+			border-radius: 5px;
+			font-family: 'Heebo', sans-serif;
+			 
+		}
+
+		.login{
+			background-color: $white;
+			color: $steel-teal !important; 
+			margin-right: 1em; 
+
+		}
+
+
+		.login:hover{
+			background: $steel-teal; 
+			color: $white !important;
+			cursor: pointer;
+		} 
+
+		.signup{
+			color:$white;
+			margin-right: 1em; 
+		}
+
+		.signup:hover{
+			background-color: $white;
+			color: $steel-teal;
+			cursor: pointer; 
+		}
+	
 }
+
+
+
+ // **************THE HOME PAGE*********************
+
+
+
 
