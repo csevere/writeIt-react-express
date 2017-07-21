@@ -1,0 +1,65 @@
+/* line 3, ../sass/_navbar.scss */
+.navbar-wrapper {
+  background: #4B9191;
+  color: #fff;
+  height: 70px;
+  width: 100%;
+  padding: 10px;
+  line-height: 50px;
+  top: 0;
+  left: 0;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+}
+/* line 15, ../sass/_navbar.scss */
+.navbar-wrapper ul {
+  margin-top: 0;
+  display: block;
+  text-decoration: none;
+}
+/* line 21, ../sass/_navbar.scss */
+.navbar-wrapper img {
+  height: 20px;
+}
+/* line 25, ../sass/_navbar.scss */
+.navbar-wrapper a:link {
+  color: #fff !important;
+  text-decoration: none;
+}
+/* line 30, ../sass/_navbar.scss */
+.navbar-wrapper .title {
+  font-size: 36px;
+  color: #fff;
+}
+/* line 35, ../sass/_navbar.scss */
+.navbar-wrapper .navbar-default .navbar-nav li a {
+  color: #fff;
+}
+
+/* line 43, ../sass/_navbar.scss */
+.float-right {
+  float: right;
+}
+/* line 47, ../sass/_navbar.scss */
+.float-right .login .signin {
+  border: 3px solid #fff;
+  padding-top: 10px;
+  border-radius: 5px;
+  font-style: 'Heebo', sans-serif;
+}
+/* line 55, ../sass/_navbar.scss */
+.float-right .login {
+  background-color: #fff;
+  color: #4B9191;
+}
+/* line 61, ../sass/_navbar.scss */
+.float-right .login:hover {
+  background: #4B9191;
+  color: #fff;
+  cursor: pointer;
+}
+/* line 67, ../sass/_navbar.scss */
+.float-right .signin:hover {
+  background-color: #fff;
+  color: #4B9191;
+  cursor: pointer;
+}
