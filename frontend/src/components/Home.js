@@ -31,15 +31,16 @@ class Home extends Component{
 								</ul>
 							</Row>
 						</div>
-
-						<span class="scroll-btn">
-							<a href="#">
-								<span className="mouse">
-									<span>
-									</span>
-								</span>
-							</a>
-						</span>
+						<div>
+							<div className="scroll-btn">
+								<a href="#">
+									<div className="mouse">
+										<div>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div> 
 					
 					</Row>
 
