@@ -1,12 +1,12 @@
 /* line 5, ../../compass/sass/_navbar.scss */
 .navbar-wrapper {
-  background: #4B9191;
+  background: #2e6da4;
   width: 100%;
   padding: 10px;
   line-height: 50px;
   top: 0;
   left: 0;
-  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: -2px 4px 3px 2px rgba(0, 0, 0, 0.2);
 }
 /* line 15, ../../compass/sass/_navbar.scss */
 .navbar-wrapper ul {
@@ -23,57 +23,370 @@
   color: #fff;
   text-decoration: none;
 }
-/* line 30, ../../compass/sass/_navbar.scss */
-.navbar-wrapper .title {
-  float: left;
-  padding-left: 1em;
-  font-weight: bolder;
-  font-family: 'Raleway', sans-serif;
-  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3) !important;
-  font-size: 36px;
-  color: #fff !important;
-}
-/* line 40, ../../compass/sass/_navbar.scss */
-.navbar-wrapper .navbar-default .navbar-nav li a {
+/* line 32, ../../compass/sass/_navbar.scss */
+.navbar-wrapper .navbar-nav li a {
   color: #fff;
 }
-/* line 44, ../../compass/sass/_navbar.scss */
-.navbar-wrapper .navbar-nav li a {
+/* line 38, ../../compass/sass/_navbar.scss */
+.navbar-wrapper .title li a {
+  float: left;
+  padding-left: 2em;
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  color: #fff;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
+/* line 48, ../../compass/sass/_navbar.scss */
+.navbar-wrapper .title li a:hover {
+  background-color: transparent;
+  cursor: pointer;
+}
 
-/* line 52, ../../compass/sass/_navbar.scss */
+/* line 57, ../../compass/sass/_navbar.scss */
 .float-right {
   float: right;
   font-size: 1em;
 }
-/* line 57, ../../compass/sass/_navbar.scss */
+/* line 62, ../../compass/sass/_navbar.scss */
 .float-right .login, .float-right .signup {
   border: 3px solid #fff;
   padding: 10px;
   border-radius: 5px;
   font-family: 'Heebo', sans-serif;
 }
-/* line 65, ../../compass/sass/_navbar.scss */
+/* line 70, ../../compass/sass/_navbar.scss */
 .float-right .login {
   background-color: #fff;
-  color: #4B9191 !important;
+  color: #2e6da4 !important;
   margin-right: 1em;
 }
-/* line 73, ../../compass/sass/_navbar.scss */
+/* line 78, ../../compass/sass/_navbar.scss */
 .float-right .login:hover {
-  background: #4B9191;
+  background: #2e6da4;
   color: #fff !important;
   cursor: pointer;
 }
-/* line 79, ../../compass/sass/_navbar.scss */
+/* line 84, ../../compass/sass/_navbar.scss */
 .float-right .signup {
   color: #fff;
   margin-right: 1em;
 }
-/* line 84, ../../compass/sass/_navbar.scss */
+/* line 89, ../../compass/sass/_navbar.scss */
 .float-right .signup:hover {
   background-color: #fff;
-  color: #4B9191;
+  color: #2e6da4;
   cursor: pointer;
+}
+
+/* line 3, ../../compass/sass/_home.scss */
+* {
+  box-sizing: border-box;
+  webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+/* line 10, ../../compass/sass/_home.scss */
+body {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 16, ../../compass/sass/_home.scss */
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  background-color: #777;
+  opacity: 0.6;
+}
+
+/* line 27, ../../compass/sass/_home.scss */
+.home {
+  position: absolute;
+  background-image: url("https://static.pexels.com/photos/480351/pexels-photo-480351.jpeg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: -1;
+  min-width: 102%;
+  min-height: 100%;
+  overflow: scroll;
+}
+
+/* line 48, ../../compass/sass/_home.scss */
+.subtitle {
+  float: left;
+  color: #fff;
+  margin: 8em 0em 0em -2em;
+  z-index: 1;
+  font-weight: bolder;
+  font-family: 'Heebo',sans-serif;
+}
+
+/* line 59, ../../compass/sass/_home.scss */
+.homeNav {
+  margin: 7em 0em 0em 4em;
+  display: flex;
+}
+/* line 64, ../../compass/sass/_home.scss */
+.homeNav h3 {
+  top: 35px;
+  position: relative;
+  color: #fff;
+}
+/* line 71, ../../compass/sass/_home.scss */
+.homeNav ul {
+  list-style: none;
+}
+/* line 74, ../../compass/sass/_home.scss */
+.homeNav ul li a {
+  text-decoration: none;
+  float: left;
+  z-index: 3;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* line 88, ../../compass/sass/_home.scss */
+.hexagon {
+  position: relative;
+  width: 202px;
+  height: 114.47px;
+  background-color: #A83B56;
+  margin: 57.74px 0;
+  z-index: 3;
+  line-height: 60px;
+}
+
+/* line 99, ../../compass/sass/_home.scss */
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 100px solid transparent;
+  border-right: 102px solid transparent;
+}
+
+/* line 108, ../../compass/sass/_home.scss */
+.hexagon:before {
+  left: 0%;
+  bottom: 100%;
+  border-bottom: 57.74px solid #A83B56;
+}
+
+/* line 114, ../../compass/sass/_home.scss */
+.hexagon:after {
+  top: 100%;
+  width: 0;
+  left: 0%;
+  border-top: 57.74px solid #A83B56;
+}
+
+/* line 122, ../../compass/sass/_home.scss */
+.hex2 {
+  position: relative;
+  width: 202px;
+  height: 114.47px;
+  background-color: #525174;
+  margin: 57.74px 0;
+  z-index: 3;
+  line-height: 60px;
+  left: 10em;
+  bottom: 5em;
+}
+
+/* line 134, ../../compass/sass/_home.scss */
+.hex2:before,
+.hex2:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 100px solid transparent;
+  border-right: 102px solid transparent;
+}
+
+/* line 143, ../../compass/sass/_home.scss */
+.hex2:before {
+  left: 0%;
+  bottom: 100%;
+  border-bottom: 57.74px solid #525174;
+}
+
+/* line 149, ../../compass/sass/_home.scss */
+.hex2:after {
+  top: 100%;
+  width: 0;
+  left: 0%;
+  border-top: 57.74px solid #525174;
+}
+
+/* line 159, ../../compass/sass/_home.scss */
+.hex3 {
+  position: relative;
+  width: 202px;
+  height: 114.47px;
+  background-color: #14a3ba;
+  margin: 57.74px 0;
+  z-index: 3;
+  line-height: 60px;
+  left: 20em;
+  bottom: 33em;
+}
+
+/* line 171, ../../compass/sass/_home.scss */
+.hex3:before,
+.hex3:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 100px solid transparent;
+  border-right: 102px solid transparent;
+}
+
+/* line 180, ../../compass/sass/_home.scss */
+.hex3:before {
+  left: 0%;
+  bottom: 100%;
+  border-bottom: 57.74px solid #14a3ba;
+}
+
+/* line 186, ../../compass/sass/_home.scss */
+.hex3:after {
+  top: 100%;
+  width: 0;
+  left: 0%;
+  border-top: 57.74px solid #14a3ba;
+}
+
+/* line 194, ../../compass/sass/_home.scss */
+.hex4 {
+  position: relative;
+  width: 202px;
+  height: 114.47px;
+  background-color: #0a093e;
+  margin: 57.74px 0;
+  z-index: 3;
+  line-height: 60px;
+  left: 30em;
+  bottom: 38em;
+}
+
+/* line 207, ../../compass/sass/_home.scss */
+.hex4:before,
+.hex4:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 100px solid transparent;
+  border-right: 102px solid transparent;
+}
+
+/* line 216, ../../compass/sass/_home.scss */
+.hex4:before {
+  left: 0%;
+  bottom: 100%;
+  border-bottom: 57.74px solid #0a093e;
+}
+
+/* line 222, ../../compass/sass/_home.scss */
+.hex4:after {
+  top: 100%;
+  width: 0;
+  left: 0%;
+  border-top: 57.74px solid #0a093e;
+}
+
+/****** HEX 5 ********/
+/* line 231, ../../compass/sass/_home.scss */
+.hex5 {
+  position: relative;
+  width: 202px;
+  height: 114.47px;
+  background-color: #A83B56;
+  margin: 57.74px 0;
+  z-index: 3;
+  line-height: 60px;
+  left: 40em;
+  bottom: 66em;
+}
+
+/* line 244, ../../compass/sass/_home.scss */
+.hex5:before,
+.hex5:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 100px solid transparent;
+  border-right: 102px solid transparent;
+}
+
+/* line 253, ../../compass/sass/_home.scss */
+.hex5:before {
+  left: 0%;
+  bottom: 100%;
+  border-bottom: 57.74px solid #A83B56;
+}
+
+/* line 259, ../../compass/sass/_home.scss */
+.hex5:after {
+  top: 100%;
+  width: 0;
+  left: 0%;
+  border-top: 57.74px solid #A83B56;
+}
+
+/***********  HEX 6**************/
+/* line 268, ../../compass/sass/_home.scss */
+.hex6 {
+  position: relative;
+  width: 202px;
+  height: 114.47px;
+  background-color: #14a3ba;
+  margin: 57.74px 0;
+  z-index: 3;
+  line-height: 60px;
+  left: 50em;
+  bottom: 71em;
+}
+
+/* line 280, ../../compass/sass/_home.scss */
+.hex6:before,
+.hex6:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 100px solid transparent;
+  border-right: 102px solid transparent;
+}
+
+/* line 289, ../../compass/sass/_home.scss */
+.hex6:before {
+  left: 0%;
+  bottom: 100%;
+  border-bottom: 57.74px solid #14a3ba;
+}
+
+/* line 295, ../../compass/sass/_home.scss */
+.hex6:after {
+  top: 100%;
+  width: 0;
+  left: 0%;
+  border-top: 57.74px solid #14a3ba;
+}
+
+/* line 302, ../../compass/sass/_home.scss */
+.hexagon h3:hover {
+  color: gray;
 }
