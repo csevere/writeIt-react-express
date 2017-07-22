@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "fullpage-react": "^3.0.4",
     "jquery": "^3.2.1",
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.1",
@@ -10,6 +11,8 @@
     "react-magic": "^0.2.3",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.2",
+    "react-scroll": "^1.5.4",
+    "react-scrollable-anchor": "^0.4.2",
     "redux": "^3.7.2",
     "redux-promise": "^0.5.3"
   },

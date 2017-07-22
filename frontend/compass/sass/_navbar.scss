@@ -3,6 +3,7 @@
    // *******************THE NAV BAR*******************
 
 .navbar-wrapper{
+	display: flex; 
 	background: $perfect-blue; 
 	width: 100%;
 	padding: 10px;
@@ -36,13 +37,15 @@
 
 
 		.title li a{
+			display: block; 
 			float: left; 
-			padding-left: 2em; 
+			padding-left: 1em; 
 			font-weight: bolder;
 			font-family: 'Montserrat', sans-serif;
 			font-size: 36px; 
 			color: $white; 
 			text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+			// border: 5px solid $cyan; 
 		}
 
 		.title li a:hover{

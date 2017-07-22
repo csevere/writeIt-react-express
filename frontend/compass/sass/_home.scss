@@ -14,7 +14,7 @@ body {
 
 
 .overlay {
-	height: 100%;
+	height: 46%;
     width: 100%;
     position: absolute;
     top: 0px;
@@ -41,6 +41,7 @@ body {
 	min-width: 102%;
 	min-height: 100%;
 	overflow: scroll; 
+	display: flex; 
 }
 
 
@@ -48,7 +49,7 @@ body {
 .subtitle{
 	float: left; 
 	color: $white;
-	margin: 8em 0em 0em -2em;  
+	margin: 9em 0em 0em 0em; 
 	z-index: 1; 
 	font-weight: bolder;
 	font-family: 'Heebo',sans-serif;
@@ -76,7 +77,12 @@ body {
 		float: left; 
 		z-index: 3; 
 		list-style: none; 
-		text-decoration: none; 
+		cursor: pointer; 
+	}
+
+	ul li a h3:hover{
+		color: $grey; 
+		cursor: pointer; 
 	}
 }
 
@@ -227,7 +233,7 @@ body {
 }
 
 
-/****** HEX 5 ********/
+// /****** HEX 5 ********/
 .hex5 {
 	position: relative;
 	width: 202px; 
@@ -264,7 +270,7 @@ body {
 }
 
 
-/***********  HEX 6**************/
+// /***********  HEX 6**************/
 .hex6 {
 	position: relative;
 	width: 202px; 
@@ -299,16 +305,13 @@ body {
 	border-top: 57.74px solid $fun-cyan;
 }
 
-.hexagon h3:hover{
-	color: gray;
-}
+
+
+
 
 
 
 // /*  SCROLL DOWN BUTTON */
-
-
-/*  SCROLL DOWN BUTTON */
 
 	
 @-webkit-keyframes ani-mouse {
