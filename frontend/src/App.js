@@ -3,6 +3,7 @@ import Register from './containers/Register';
 import Home from './components/Home'; 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
+import Write from './components/Write';
 // import Home from './components/Home';
 
 // import logo from './logo.svg';
@@ -19,6 +20,7 @@ class App extends Component {
             <div className = "container main">
               <Route path="/" component={Home} />
               <Route exact path="/signup" component={Register} />
+              <Route exact path="/write" component={Write} />
             </div> 
           </div>
         </Router>

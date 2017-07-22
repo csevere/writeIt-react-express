@@ -1,0 +1,45 @@
+@import 'variables';
+// ******************Write Section**********************************
+.page-header{
+	margin-top: 10em;
+    text-align: center;
+}
+
+.img-thumbnail{
+	margin-left: 8em;
+    margin-top: -38em;
+}
+
+ h1,h2{
+	font-weight: bold;
+    font-size: 5em;
+    margin-left:1em;
+    
+}
+
+.btn-primary{
+	margin-top: 0em;
+    margin-left: -38em;
+}
+.btn-success{
+	margin-right: 2em;
+}
+
+.btn{
+	position: relative;
+    top: -9em;
+    left: -11em;
+    right: -14em;
+    margin: auto;
+}
+
+.writeBookBackground {
+	background-color:#fc6554;
+}
+
+.newBook{
+	position: relative;
+    left: 46em;
+    top: -41em;
+    text-align: center;
+}
