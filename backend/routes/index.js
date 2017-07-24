@@ -138,6 +138,9 @@ router.post('/login', (req, res)=>{
 })
 
 router.post('/characters',(req,res)=>{
+	console.log("HELLO");
+	console.log(req.body);
+	var username = req.body.username;
 	var name = req.body.name;
 	var race = req.body.race;
 	var age = req.body.age
@@ -175,12 +178,13 @@ router.post('/characters',(req,res)=>{
 	var important_points = req.body.important_points;
 	var liked_disliked = req.body.liked_disliked;
 
+
 	var characterQuery = `SELECT * FROM characters WHERE username = ? and name = ?`;
 	var insertCharacterQuery = `INSERT INTO characters 
 		(name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,family_position,
-		relatives,fam_relationships,friends,enemies,influences,hobbies,sports,food,dress,religion,attitude_religion,attitude_religion,relationship_boys,
+		relatives,fam_relationships,friends,enemies,influences,hobbies,sports,food,dress,religion,attitude_religion,relationship_boys,
 		relationship_girls,leader_follower,positive_traits,negative_traits,humor,temper,seen_by_others,opinion_of_self,other_traits,ambitions,philosophy,
-		important_points,liked_disliked) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`
+		important_points,liked_disliked) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
 	connection.query(characterQuery, [username,name], (error,results)=>{
 		if(error) throw error;
 		if(results.length === 0){
@@ -197,13 +201,14 @@ router.post('/characters',(req,res)=>{
 						msg:'characterInserted',
 						characterData: characterArray
 					})
-			})
+				})
+
 		}else{
 			var updateCharacterQuery = `UPDATE characters SET
 				(name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,family_position,
 				relatives,fam_relationships,friends,enemies,influences,hobbies,sports,food,dress,religion,attitude_religion,attitude_religion,relationship_boys,
 				relationship_girls,leader_follower,positive_traits,negative_traits,humor,temper,seen_by_others,opinion_of_self,other_traits,ambitions,philosophy,
-				important_points,liked_disliked) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`
+				important_points,liked_disliked) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
 			connection.query(insertCharacterQuery, [name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,family_position,
 				relatives,fam_relationships,friends,enemies,influences,hobbies,sports,food,dress,religion,attitude_religion,attitude_religion,relationship_boys,
 				relationship_girls,leader_follower,positive_traits,negative_traits,humor,temper,seen_by_others,opinion_of_self,other_traits,ambitions,philosophy,
@@ -221,7 +226,7 @@ router.post('/characters',(req,res)=>{
 		}
 	})
 
-})
+});
 
 
 

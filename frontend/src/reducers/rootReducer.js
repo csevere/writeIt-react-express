@@ -12,6 +12,7 @@ import { combineReducers } from 'redux';
 // Import the Register reducer which contains {msg, token}
 import RegisterReducer from './RegisterReducer';
 import LoginReducer from './LoginReducer';
+import CharacterReducer from './CharacterReducer';
 
 
 // create a rootReducer using the combineReducer method, so we can export it
@@ -20,7 +21,8 @@ const rootReducer = combineReducers({
 	// Inside her, we pass ech reducer as a key/value
 	// Each key will be available as a piece of state later
 	registerReducer: RegisterReducer,
-	loginReducer: LoginReducer
+	loginReducer: LoginReducer,
+	characterReducer: CharacterReducer
 	
 })
 
