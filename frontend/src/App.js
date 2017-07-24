@@ -7,6 +7,7 @@ import Write from './components/Write';
 import writeMenu from './components/writeMenu'; 
 import NewBook from './components/NewBook';
 import Login from './containers/Login';
+import Character from './components/Character'; 
 
 // import logo from './logo.svg';
 // import './App.css';
@@ -24,11 +25,12 @@ class App extends Component {
               <Route exact path="/signup" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/write" component={Write} />
-
-              <Route path = "/writemenu" component = {writeMenu}/>
-        
-
               <Route exact path="/newbook" component={NewBook} />
+              <Route exact path = "/character" component = {Character}/>
+              <Route path = "/writemenu" component = {writeMenu}/>
+
+
+             
 
             </div> 
           </div>
