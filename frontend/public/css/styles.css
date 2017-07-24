@@ -579,14 +579,17 @@ h1, h2 {
 .dividing-line {
   height: 78px;
   width: 100%;
+  background-color: #fff;
 }
 
 /* line 10, ../../compass/sass/_about.scss */
 #about {
+  background-color: #fff;
   top: 0;
-  margin-top: -53em;
+  padding-bottom: 2em;
+  margin-top: -58.5em;
   z-index: -1;
-  min-width: 102%;
+  min-width: 111%;
   min-height: 100%;
   overflow: scroll;
   display: flex;
@@ -595,4 +598,15 @@ h1, h2 {
 /* line 1, ../../compass/sass/_newbook.scss */
 h1 {
   margin-top: 2em;
+}
+
+/* line 3, ../../compass/sass/_register.scss */
+.register-wrapper {
+  margin-top: 11em;
+  background: #fff;
+  padding: 10px;
+}
+/* line 8, ../../compass/sass/_register.scss */
+.register-wrapper .button {
+  top: 1em;
 }

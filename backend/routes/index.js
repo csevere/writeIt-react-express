@@ -32,6 +32,7 @@ module.exports = router;
 
 router.post('/register', (req, res)=>{
 	console.log(req.body)
+	console.log(req.body.email)
 
 	const name = req.body.name;
 	const email = req.body.email;
@@ -67,9 +68,9 @@ router.post('/register', (req, res)=>{
 		()=>{
 			// Set up a token for this user. We will give this back to React
 			var token = randToken.uid(40);
-			var insertQuery = "INSERT INTO users (name, username, password, occupation, about, token, token_exp, account_created) VALUES (?,?,?,?,?,?,NOW(),NOW())"
+			var insertQuery = "INSERT INTO users (name, email, username, password, occupation, about, token, token_exp, account_created) VALUES (?,?,?,?,?,?,?,DATE_ADD(NOW(), INTERVAL 1 HOUR),NOW())"
 			// Run the query (for now autoset the sales rep to 1337)
-			connection.query(insertQuery,[name,username,password,occupation,about,token],(error, results)=>{
+			connection.query(insertQuery,[name,email,username,password,occupation,about,token],(error, results)=>{
 				// Users insert query
 				if(error){
 					throw error
@@ -98,9 +99,7 @@ router.post('/register', (req, res)=>{
 router.post('/login', (req, res)=>{
 	var email = req.body.email;
 	var password = req.body.password;
-	var checkLoginQuery = `SELECT * FROM users 
-		INNER JOIN customers ON users.uid = customers.customerNumber
-		WHERE email = ?`;
+	var checkLoginQuery = `SELECT * FROM users WHERE email = ?`;
 	connection.query(checkLoginQuery, [email], (error,results)=>{
 		if(error) throw error;
 		if(results.length === 0){
@@ -122,7 +121,7 @@ router.post('/login', (req, res)=>{
 					console.log(results)
 					res.json({
 						msg: 'loginSuccess',
-						name: results[0].customerName,
+						name: results[0].username,
 						token: token
 					})
 				})

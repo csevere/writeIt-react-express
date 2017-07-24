@@ -2,16 +2,18 @@
 
 .dividing-line{
 	height: 78px;
-	width: 100%; 
+	width: 100%;
+	background-color: $white;  
 }
 
 
-
 #about{
+	background-color: $white; 
 	top: 0;
-	margin-top: -53em; 
+	padding-bottom: 2em; 
+	margin-top: -58.5em; 
 	z-index: -1; 
-	min-width: 102%;
+	min-width: 111%;
 	min-height: 100%;
 	overflow: scroll; 
 	display: flex; 
