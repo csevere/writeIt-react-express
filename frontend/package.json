@@ -3,8 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+
     "fullpage-react": "^3.0.4",
+
+
+    "object-assign": "^4.1.1",
+
     "jquery": "^3.2.1",
+
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.1",
     "react-dom": "^15.6.1",
@@ -17,7 +23,7 @@
     "redux-promise": "^0.5.3"
   },
   "devDependencies": {
-    "react-scripts": "1.0.10"
+    "react-scripts": "^1.0.10"
   },
   "scripts": {
     "start": "react-scripts start",
