@@ -25,13 +25,13 @@ class App extends Component {
               <Route exact path="/signup" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/write" component={Write} />
+              <Route path = "/writemenu" component = {writeMenu}/>
               <Route exact path="/newbook" component={NewBook} />
               <Route path = "/writemenu" component = {writeMenu}/>
               <Route exact path = "/character" component = {Character}/>
             
 
 
-             
 
             </div> 
           </div>
