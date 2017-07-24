@@ -51,6 +51,8 @@ class Register extends Component{
 				emailError: emailError,
 				nameError: nameError
 			}) 
+
+		console.log(error);
 		}else{
 			this.props.registerAction({
 				name: name,
