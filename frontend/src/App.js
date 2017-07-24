@@ -4,6 +4,7 @@ import Home from './components/Home';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Write from './components/Write';
+import NewBook from './components/NewBook';
 // import logo from './logo.svg';
 // import './App.css';
 
@@ -19,6 +20,7 @@ class App extends Component {
               <Route path="/" component={Home} /> 
               <Route exact path="/signup" component={Register} />
               <Route exact path="/write" component={Write} />
+              <Route exact path="/newbook" component={NewBook} />
             </div> 
           </div>
         </Router>
