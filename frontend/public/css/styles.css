@@ -595,6 +595,11 @@ h1, h2 {
   display: flex;
 }
 
+/* line 1, ../../compass/sass/_newbook.scss */
+h1 {
+  margin-top: 2em;
+}
+
 /* line 3, ../../compass/sass/_register.scss */
 .register-wrapper {
   margin-top: 11em;
