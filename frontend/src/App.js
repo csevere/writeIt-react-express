@@ -26,8 +26,9 @@ class App extends Component {
               <Route exact path="/login" component={Login} />
               <Route exact path="/write" component={Write} />
               <Route exact path="/newbook" component={NewBook} />
-              <Route exact path = "/character" component = {Character}/>
               <Route path = "/writemenu" component = {writeMenu}/>
+              <Route exact path = "/character" component = {Character}/>
+            
 
 
              

@@ -792,3 +792,36 @@ h1 {
   top: -5px;
   background: #ccf;
 }
+
+/* line 1, ../../compass/sass/_character.scss */
+.character {
+  position: absolute;
+  background-image: url("https://static.pexels.com/photos/268976/pexels-photo-268976.jpeg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  color: #ffcc00;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: -1;
+  min-width: 102%;
+  min-height: 100%;
+  overflow: scroll;
+  display: flex;
+}
+
+/* line 24, ../../compass/sass/_character.scss */
+.ch-forms {
+  margin-top: 8em;
+  margin-left: 34em;
+}
+/* line 29, ../../compass/sass/_character.scss */
+.ch-forms .btn {
+  margin-top: 10em !important;
+  margin-left: 21em !important;
+}
