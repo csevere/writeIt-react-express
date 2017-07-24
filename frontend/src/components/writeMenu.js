@@ -36,11 +36,7 @@ class writeMenu extends Component{
 
 						
 
-					
-						<ScrollableAnchor id = {'about'}>
-							<About />	
-						</ScrollableAnchor> 
-					
+				
 
 					</Row>	
 		        </Grid>   
