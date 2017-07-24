@@ -4,6 +4,7 @@ import { Form, FormGroup, ControlLabel, FormControl, Button, Col ,MenuItem} from
 import  {bindActionCreators} from 'redux';
 // Get the registerAction function which runs on submission
 import RegisterAction from '../actions/RegisterAction';
+// import LoginAction from '..actions/LoginAction';
 // Because this is a container, we need connect from react-redux!
 import {connect} from 'react-redux';
 
