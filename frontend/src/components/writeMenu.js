@@ -18,14 +18,56 @@ class writeMenu extends Component{
 						<div className ="container writeNav">
 							<Row>
 								<ul>
-									<li><Link to ="/plot"><div className="hex hexagon text-center"><h3>PLOT</h3></div></Link></li>
-									<li><Link to ="/character"><div className="hex hex3 text-center"><h3>CHARACTER</h3></div></Link></li>
-									<li><Link to ="/chapters"><div className="hex hex4 text-center"><h3>CHAPTERS</h3></div></Link></li>
-									<li><Link to ="/scenes"><div className="hex hex5 text-center"><h3>SCENES</h3></div></Link></li>
-									<li><Link to ="/pictures"><div className="hex hex6 text-center"><h3>PICTURES</h3></div></Link></li>
-									<li><Link to ="/other"><div className="hex hex2 text-center"><h3>OTHER</h3></div></Link></li>
-									<li><Link to ="/synopsis"><div className="hex hex3 text-center"><h3>SYNOPSIS</h3></div></Link></li>
-									<li><Link to ="/q-letter"><div className="hex hex4 text-center"><h3>QUERY LETTR</h3></div></Link></li>
+									<li><Link to ="/character">
+										<div className="post1 text-center"><h3>CHARACTER</h3></div>
+										</Link>
+									</li>
+
+									<li>
+										<Link to ="/plot">
+											<div className="post2 text-center"><h3>PLOT</h3></div>
+										</Link>
+									</li>
+
+
+									<li>
+										<Link to ="/chapters">
+											<div className="post3 text-center"><h3>CHAPTERS</h3></div>
+										</Link>
+									</li>
+
+
+									<li>
+										<Link to ="/scenes">
+											<div className="post4 text-center"><h3>SCENES</h3></div>
+										</Link>
+									</li>
+
+
+									<li>
+										<Link to ="/pictures">
+											<div className="post5 text-center"><h3>PICTURES</h3></div>
+										</Link>
+									</li>
+
+
+									<li>
+										<Link to ="/other">
+											<div className="post6 text-center"><h3>OTHER</h3></div>
+										</Link>
+									</li>
+
+									<li>
+										<Link to ="/synopsis">
+											<div className="post7 text-center"><h3>SYNOPSIS</h3></div>
+										</Link>
+									</li>
+
+									<li>
+										<Link to ="/q-letter">
+											<div className="post8 text-center"><h3>QUERY LETTR</h3></div>
+										</Link>
+									</li>
 								</ul>
 							</Row>
 						</div>
