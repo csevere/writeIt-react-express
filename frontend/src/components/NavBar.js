@@ -13,7 +13,7 @@ class NavBar extends Component{
 				<nav className="navbar navbar-fixed-top navbar-wrapper">
 				  <div className="container-fluid navbar-white">
 					    <ul className="nav navbar-nav title">
-					    	<li><Link to="/home">writeIT</Link></li> 	
+					    	<li><Link to="/">writeIT</Link></li> 	
 					    </ul>
 					  <div className="container right">
 						   <ul className="nav navbar-nav float-right">
