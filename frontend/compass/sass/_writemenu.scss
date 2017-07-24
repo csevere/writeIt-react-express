@@ -1,0 +1,288 @@
+* {
+  box-sizing: border-box;
+  webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+
+body {
+    height: 100%;
+    width: 100%;
+} 
+
+
+
+.writemenu{
+	position: absolute;	
+	background-image: url('https://static.pexels.com/photos/326311/pexels-photo-326311.jpeg');
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center; 
+	top: 0;
+	left:0;
+	margin: 0; 
+	z-index: -1; 
+	min-width: 102%;
+	min-height: 100%;
+	overflow: scroll; 
+	display: flex; 
+}
+
+
+/// WRITE NAV ///
+
+.writeNav{
+
+	margin: 3em 0em 0em 4em;
+	display: flex; 
+
+	h3{
+		top: 35px;
+		position: relative;
+		color: $white; 
+
+
+	}
+	ul{
+		list-style: none;
+	}
+	ul li a{
+		text-decoration: none;
+		float: left; 
+		z-index: 3; 
+		list-style: none; 
+		cursor: pointer; 
+	}
+
+	ul li a h3:hover{
+		color: $grey; 
+		cursor: pointer; 
+	}
+}
+
+
+// ******************THE HEXAGONS**************
+
+
+
+.hexagon {
+	position: relative;
+	width: 201px;
+    height: 101.47px;
+	background-color: $english-red;
+	margin: 57.74px 0;
+	z-index: 3; 
+	line-height: 60px; 
+	left: 0;
+	bottom: 0; 
+
+}
+
+.hexagon:before,
+.hexagon:after {
+	content: "";
+	position: absolute;
+	width: 0;
+	border-left: 100px solid transparent;
+	border-right: 102px solid transparent;
+}
+
+.hexagon:before {
+	left:0%;
+  	bottom: 100%;
+  	border-bottom: 57.74px solid $english-red;
+}
+
+.hexagon:after {
+	top: 100%;
+	width: 0;
+	left: 0%;
+	border-top: 57.74px solid $english-red;
+}
+
+// /********  HEX 2 ********/
+.hex2 {
+	position: relative;
+	width: 202px; 
+	height: 114.47px;
+	background-color: $independence;
+	margin: 57.74px 0;
+	z-index: 3; 
+	line-height: 60px;
+	left: 10em;
+    bottom: 5em;
+}
+
+.hex2:before,
+.hex2:after {
+	content: "";
+	position: absolute;
+	width: 0;
+	border-left: 100px solid transparent;
+	border-right: 102px solid transparent;
+}
+
+.hex2:before {
+	left:0%;
+  	bottom: 100%;
+  	border-bottom: 57.74px solid $independence;
+}
+
+.hex2:after {
+	top: 100%;
+	width: 0;
+	left: 0%;
+	border-top: 57.74px solid $independence;
+}
+
+
+// /****** HEX 3 ********/
+
+.hex3 {
+	position: relative;
+	width: 202px; 
+	height: 114.47px;
+	background-color: $fun-cyan;
+	margin: 57.74px 0;
+	z-index: 3; 
+	line-height: 60px;
+	left: 20em;
+    bottom: 33em
+}
+
+.hex3:before,
+.hex3:after {
+	content: "";
+	position: absolute;
+	width: 0;
+	border-left: 100px solid transparent;
+	border-right: 102px solid transparent;
+}
+
+.hex3:before {
+	left:0%;
+  	bottom: 100%;
+  	border-bottom: 57.74px solid $fun-cyan;
+}
+
+.hex3:after {
+	top: 100%;
+	width: 0;
+	left: 0%;
+	border-top: 57.74px solid $fun-cyan;
+}
+
+// /****** HEX 4 ********/
+.hex4 {
+	position: relative;
+	width: 202px; 
+	height: 114.47px;
+	background-color: $midnight-blue;
+	margin: 57.74px 0;
+	z-index: 3; 
+	line-height: 60px;
+	left: 30em;
+    bottom: 38em;
+
+}
+
+.hex4:before,
+.hex4:after {
+	content: "";
+	position: absolute;
+	width: 0;
+	border-left: 100px solid transparent;
+	border-right: 102px solid transparent;
+}
+
+.hex4:before {
+	left:0%;
+  	bottom: 100%;
+  	border-bottom: 57.74px solid $midnight-blue;
+}
+
+.hex4:after {
+	top: 100%;
+	width: 0;
+	left: 0%;
+	border-top: 57.74px solid $midnight-blue;
+}
+
+
+
+// /****** HEX 5 ********/
+.hex5 {
+	position: relative;
+	width: 202px; 
+	height: 114.47px;
+	background-color: $english-red;
+	margin: 57.74px 0;
+	z-index: 3; 
+	line-height: 60px;
+	left: 40em;
+    bottom: 66em;
+
+}
+
+.hex5:before,
+.hex5:after {
+	content: "";
+	position: absolute;
+	width: 0;
+	border-left: 100px solid transparent;
+	border-right: 102px solid transparent;
+}
+
+.hex5:before {
+	left:0%;
+  	bottom: 100%;
+  	border-bottom: 57.74px solid $english-red;
+}
+
+.hex5:after {
+	top: 100%;
+	width: 0;
+	left: 0%;
+	border-top: 57.74px solid $english-red;
+}
+
+
+// /***********  HEX 6**************/
+.hex6 {
+	position: relative;
+	width: 202px; 
+	height: 114.47px;
+	background-color: $fun-cyan;
+	margin: 57.74px 0;
+	z-index: 3; 
+	line-height: 60px;
+	left: 50em;
+    bottom: 71em;
+}
+
+.hex6:before,
+.hex6:after {
+	content: "";
+	position: absolute;
+	width: 0;
+	border-left: 100px solid transparent;
+	border-right: 102px solid transparent;
+}
+
+.hex6:before {
+	left:0%;
+  	bottom: 100%;
+  	border-bottom: 57.74px solid $fun-cyan;
+}
+
+.hex6:after {
+	top: 100%;
+	width: 0;
+	left: 0%;
+	border-top: 57.74px solid $fun-cyan;
+}
+

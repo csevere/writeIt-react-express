@@ -605,3 +605,294 @@ h1, h2 {
 .register-wrapper .button {
   top: 1em;
 }
+
+/* line 1, ../../compass/sass/_writemenu.scss */
+* {
+  box-sizing: border-box;
+  webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+/* line 8, ../../compass/sass/_writemenu.scss */
+body {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 15, ../../compass/sass/_writemenu.scss */
+.writemenu {
+  position: absolute;
+  background-image: url("https://static.pexels.com/photos/326311/pexels-photo-326311.jpeg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: -1;
+  min-width: 102%;
+  min-height: 100%;
+  overflow: scroll;
+  display: flex;
+}
+
+/* line 38, ../../compass/sass/_writemenu.scss */
+.writeNav {
+  margin: 3em 0em 0em 4em;
+  display: flex;
+}
+/* line 43, ../../compass/sass/_writemenu.scss */
+.writeNav h3 {
+  top: 35px;
+  position: relative;
+  color: #fff;
+}
+/* line 50, ../../compass/sass/_writemenu.scss */
+.writeNav ul {
+  list-style: none;
+}
+/* line 53, ../../compass/sass/_writemenu.scss */
+.writeNav ul li a {
+  text-decoration: none;
+  float: left;
+  z-index: 3;
+  list-style: none;
+  cursor: pointer;
+}
+/* line 61, ../../compass/sass/_writemenu.scss */
+.writeNav ul li a h3:hover {
+  color: #777;
+  cursor: pointer;
+}
+
+/* line 72, ../../compass/sass/_writemenu.scss */
+.hexagon {
+  position: relative;
+  width: 201px;
+  height: 101.47px;
+  background-color: #A83B56;
+  margin: 57.74px 0;
+  z-index: 3;
+  line-height: 60px;
+  left: 0;
+  bottom: 0;
+}
+
+/* line 85, ../../compass/sass/_writemenu.scss */
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 100px solid transparent;
+  border-right: 102px solid transparent;
+}
+
+/* line 94, ../../compass/sass/_writemenu.scss */
+.hexagon:before {
+  left: 0%;
+  bottom: 100%;
+  border-bottom: 57.74px solid #A83B56;
+}
+
+/* line 100, ../../compass/sass/_writemenu.scss */
+.hexagon:after {
+  top: 100%;
+  width: 0;
+  left: 0%;
+  border-top: 57.74px solid #A83B56;
+}
+
+/* line 108, ../../compass/sass/_writemenu.scss */
+.hex2 {
+  position: relative;
+  width: 202px;
+  height: 114.47px;
+  background-color: #525174;
+  margin: 57.74px 0;
+  z-index: 3;
+  line-height: 60px;
+  left: 10em;
+  bottom: 5em;
+}
+
+/* line 120, ../../compass/sass/_writemenu.scss */
+.hex2:before,
+.hex2:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 100px solid transparent;
+  border-right: 102px solid transparent;
+}
+
+/* line 129, ../../compass/sass/_writemenu.scss */
+.hex2:before {
+  left: 0%;
+  bottom: 100%;
+  border-bottom: 57.74px solid #525174;
+}
+
+/* line 135, ../../compass/sass/_writemenu.scss */
+.hex2:after {
+  top: 100%;
+  width: 0;
+  left: 0%;
+  border-top: 57.74px solid #525174;
+}
+
+/* line 145, ../../compass/sass/_writemenu.scss */
+.hex3 {
+  position: relative;
+  width: 202px;
+  height: 114.47px;
+  background-color: #14a3ba;
+  margin: 57.74px 0;
+  z-index: 3;
+  line-height: 60px;
+  left: 20em;
+  bottom: 33em;
+}
+
+/* line 157, ../../compass/sass/_writemenu.scss */
+.hex3:before,
+.hex3:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 100px solid transparent;
+  border-right: 102px solid transparent;
+}
+
+/* line 166, ../../compass/sass/_writemenu.scss */
+.hex3:before {
+  left: 0%;
+  bottom: 100%;
+  border-bottom: 57.74px solid #14a3ba;
+}
+
+/* line 172, ../../compass/sass/_writemenu.scss */
+.hex3:after {
+  top: 100%;
+  width: 0;
+  left: 0%;
+  border-top: 57.74px solid #14a3ba;
+}
+
+/* line 180, ../../compass/sass/_writemenu.scss */
+.hex4 {
+  position: relative;
+  width: 202px;
+  height: 114.47px;
+  background-color: #0a093e;
+  margin: 57.74px 0;
+  z-index: 3;
+  line-height: 60px;
+  left: 30em;
+  bottom: 38em;
+}
+
+/* line 193, ../../compass/sass/_writemenu.scss */
+.hex4:before,
+.hex4:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 100px solid transparent;
+  border-right: 102px solid transparent;
+}
+
+/* line 202, ../../compass/sass/_writemenu.scss */
+.hex4:before {
+  left: 0%;
+  bottom: 100%;
+  border-bottom: 57.74px solid #0a093e;
+}
+
+/* line 208, ../../compass/sass/_writemenu.scss */
+.hex4:after {
+  top: 100%;
+  width: 0;
+  left: 0%;
+  border-top: 57.74px solid #0a093e;
+}
+
+/* line 218, ../../compass/sass/_writemenu.scss */
+.hex5 {
+  position: relative;
+  width: 202px;
+  height: 114.47px;
+  background-color: #A83B56;
+  margin: 57.74px 0;
+  z-index: 3;
+  line-height: 60px;
+  left: 40em;
+  bottom: 66em;
+}
+
+/* line 231, ../../compass/sass/_writemenu.scss */
+.hex5:before,
+.hex5:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 100px solid transparent;
+  border-right: 102px solid transparent;
+}
+
+/* line 240, ../../compass/sass/_writemenu.scss */
+.hex5:before {
+  left: 0%;
+  bottom: 100%;
+  border-bottom: 57.74px solid #A83B56;
+}
+
+/* line 246, ../../compass/sass/_writemenu.scss */
+.hex5:after {
+  top: 100%;
+  width: 0;
+  left: 0%;
+  border-top: 57.74px solid #A83B56;
+}
+
+/* line 255, ../../compass/sass/_writemenu.scss */
+.hex6 {
+  position: relative;
+  width: 202px;
+  height: 114.47px;
+  background-color: #14a3ba;
+  margin: 57.74px 0;
+  z-index: 3;
+  line-height: 60px;
+  left: 50em;
+  bottom: 71em;
+}
+
+/* line 267, ../../compass/sass/_writemenu.scss */
+.hex6:before,
+.hex6:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 100px solid transparent;
+  border-right: 102px solid transparent;
+}
+
+/* line 276, ../../compass/sass/_writemenu.scss */
+.hex6:before {
+  left: 0%;
+  bottom: 100%;
+  border-bottom: 57.74px solid #14a3ba;
+}
+
+/* line 282, ../../compass/sass/_writemenu.scss */
+.hex6:after {
+  top: 100%;
+  width: 0;
+  left: 0%;
+  border-top: 57.74px solid #14a3ba;
+}
