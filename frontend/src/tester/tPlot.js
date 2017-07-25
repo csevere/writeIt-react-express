@@ -35,7 +35,7 @@ class tPlot extends Component{
     var direct_actions = document.getElementById('direct_actions').value;
     var indirect_actions = document.getElementById('indirect_actions').value;
     var motivation = document.getElementById('motivation').value;
-    var plot_type = document.getElementById('lot_type').value;
+    var plot_type = document.getElementById('plot_type').value;
     var plot_order = document.getElementById('plot_order').value;
     var foreshadow = document.getElementById('foreshadow').value;
     var credibility = document.getElementById('credibility').value;
@@ -46,8 +46,11 @@ class tPlot extends Component{
     var summary = document.getElementById('summary').value;
 
  
-    // var username = this.props.registerResponse.name;
-    // console.log(username);
+
+    console.log(this.props.registerResponse)
+
+    var username = this.props.registerResponse.name;
+    console.log(username);
     // //Name
     // if(name.length < 1){
     //   var nameError = "error"; 
@@ -73,6 +76,7 @@ class tPlot extends Component{
     console.log(error);
     }else{    
       this.props.plotAction({
+        username: username,
         main_plot: main_plot,
         subplot: subplot,
         subplot_reasons: subplot_reasons,
@@ -115,7 +119,7 @@ class tPlot extends Component{
         						<Form onSubmit={this.handlePlot}>
         							<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>Which events in the book are the major ones/the ones advancing the plot?</ControlLabel>
-              							<FormControl id="main_plot" componentClass="textarea" placeholder="main_plot" />
+              							<FormControl id="main_plot" componentClass="textarea" placeholder="main-plot" />
             						</FormGroup>
 
             						<FormGroup controlId="formControlsTextarea">
@@ -126,18 +130,18 @@ class tPlot extends Component{
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>What justifies the subplots if there are any?</ControlLabel>
-              							<FormControl id="subplot-reasons" componentClass="textarea" placeholder="subplot_reasons" />
+              							<FormControl id="subplot_reasons" componentClass="textarea" placeholder="subplot-reasons" />
             						</FormGroup>
 
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>What direct actions from the main characters affect the plot?</ControlLabel>
-              							<FormControl id="direct_actions" componentClass="textarea" placeholder="direct_actions" />
+              							<FormControl id="direct_actions" componentClass="textarea" placeholder="direct-actions" />
             						</FormGroup>
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>What indirect actions from the main character affect the plot?</ControlLabel>
-              							<FormControl id="indirect_actions" componentClass="textarea" placeholder="indirect_actions" />
+              							<FormControl id="indirect_actions" componentClass="textarea" placeholder="indirect-actions" />
             						</FormGroup>
 
             						<Button className = "btn" type="submit">
@@ -155,13 +159,13 @@ class tPlot extends Component{
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>What type of plot?Character,plot, or idea driven?</ControlLabel>
-                              <FormControl id="plot_type" componentClass="textarea" placeholder="plot_type" />
+                              <FormControl id="plot_type" componentClass="textarea" placeholder="plot-type" />
                           </FormGroup>
 
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Do the events unfold chronologically or non-chronologically?</ControlLabel>
-                              <FormControl id="plot_order" componentClass="textarea" placeholder="plot_order" />
+                              <FormControl id="plot_order" componentClass="textarea" placeholder="plot-order" />
                           </FormGroup>
 
 
@@ -182,7 +186,7 @@ class tPlot extends Component{
                       </div> 
 
                       <div className = "slick-form 3">
-                        <Form onSubmit={this.handleCharacters}>
+                        <Form onSubmit={this.handlePlot}>
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Are all flashbacks strong or do some lessen the dramatic movement of the story?</ControlLabel>
                               <FormControl id="flashbacks" componentClass="textarea" placeholder="flashbacks" />
