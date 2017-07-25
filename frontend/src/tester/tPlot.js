@@ -10,71 +10,68 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 
-
-
-
 class tPlot extends Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      registerMessage: "",
-      nameError: null,
-      emailError: null,
-      formError: false
-    }
-    this.handleCharacters = this.handleCharacters.bind(this);
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     registerMessage: "",
+  //     nameError: null,
+  //     emailError: null,
+  //     formError: false
+  //   }
+  //   this.handlePlot = this.handlePlot.bind(this);
     
-  }
+  // }
 
-  handleCharacters(event){
-    event.preventDefault();
+  // handlePlot(event){
+  //   event.preventDefault();
     
-    var error = false;
+  //   var error = false;
 
-    var name = event.target[0].value;
-    var race = event.target[1].value;
-    var age = event.target[2].value;
-    var birthday = event.target[3].value;
-    // var physical_desc = event.target[4].value;
+  //   var name = event.target[0].value;
+  //   var race = event.target[1].value;
+  //   var age = event.target[2].value;
+  //   var birthday = event.target[3].value;
+  //   // var physical_desc = event.target[4].value;
  
-    var username = this.props.registerResponse.name;
-    console.log(username);
-    //Name
-    if(name.length < 1){
-      var nameError = "error"; 
-      error=true;
-    }
-    else{ 
-      var nameError = "success"
-    }
+  //   var username = this.props.registerResponse.name;
+  //   console.log(username);
+  //   //Name
+  //   if(name.length < 1){
+  //     var nameError = "error"; 
+  //     error=true;
+  //   }
+  //   else{ 
+  //     var nameError = "success"
+  //   }
 
-    //Email
-    // if(name.length < 3){var emailError = "error"; error=true}
-    // else{var emailError = "success"}
+  //   Email
+  //   if(name.length < 3){var emailError = "error"; error=true}
+  //   else{var emailError = "success"}
 
 
-    // console.log(name);
-    if(error){
-       console.log("HERE!!!")
-      this.setState({
-        formError: true,
-        nameError: nameError
-      }) 
+  //   // console.log(name);
+  //   if(error){
+  //      console.log("HERE!!!")
+  //     this.setState({
+  //       formError: true,
+  //       nameError: nameError
+  //     }) 
 
-    console.log(error);
-    }else{    
-      this.props.characterAction({
-        name: name,
-        age: age,
-        race: race,
-        birthday: birthday,
-        // physical_desc: physical_desc,
-        username: username
+  //   console.log(error);
+  //   }else{    
+  //     this.props.characterAction({
+  //       name: name,
+  //       age: age,
+  //       race: race,
+  //       birthday: birthday,
+  //       // physical_desc: physical_desc,
+  //       username: username
         
-      });
-    }
+  //     });
+  //   }
 
-  }
+  // }
 
  
 	render(){
@@ -94,7 +91,7 @@ class tPlot extends Component{
                 <Slider {...settings}>
 
                   <div className = "slick-form 1">
-        						<Form onSubmit={this.handleCharacters}>
+        						<Form onSubmit={this.handlePlot}>
         							<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>Which events in the book are the major ones/the ones advancing the plot?</ControlLabel>
               							<FormControl componentClass="textarea" placeholder="main-plot" />
@@ -129,7 +126,7 @@ class tPlot extends Component{
                     </div> 
 
                     <div className = "slick-form 2">
-                      <Form onSubmit={this.handleCharacters}>
+                      <Form onSubmit={this.handlePlot}>
                         <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>What are the characters main motivations?</ControlLabel>
                               <FormControl componentClass="textarea" placeholder="motivation" />
@@ -147,14 +144,14 @@ class tPlot extends Component{
                           </FormGroup>
 
 
-                          <FormGroup controlId="formControlsTextarea">
+                          <FormGroup controlId= "formControlsTextarea">
                             <ControlLabel>What are the critical points of foreshadowing?</ControlLabel>
                               <FormControl componentClass="textarea" placeholder="foreshadow" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>How is the plot credible according to the rules of the book's world?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="credibility" />
+                            <ControlLabel>How is the plot credible according to the rules of the world?</ControlLabel>
+                              <FormControl componentClass="textarea" placeholder= "credibility" />
                           </FormGroup>
 
                           <Button className = "btn" type="submit">
@@ -170,8 +167,8 @@ class tPlot extends Component{
                               <FormControl componentClass="textarea" placeholder="flashbacks" />
                           </FormGroup>
 
-                          <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>What is the main character's overall arc or journey?</ControlLabel>
+                          <FormGroup controlId= "formControlsTextarea">
+                            <ControlLabel>What is the overall arc or journey of the character?</ControlLabel>
                               <FormControl componentClass="textarea" placeholder="journey" />
                           </FormGroup>
 
