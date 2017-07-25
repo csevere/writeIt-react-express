@@ -115,7 +115,7 @@ class tPlot extends Component{
         						<Form onSubmit={this.handlePlot}>
         							<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>Which events in the book are the major ones/the ones advancing the plot?</ControlLabel>
-              							<FormControl id="main_plot" componentClass="textarea" placeholder="main-plot" />
+              							<FormControl id="main_plot" componentClass="textarea" placeholder="main_plot" />
             						</FormGroup>
 
             						<FormGroup controlId="formControlsTextarea">
@@ -126,18 +126,18 @@ class tPlot extends Component{
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>What justifies the subplots if there are any?</ControlLabel>
-              							<FormControl id="subplot-reasons" componentClass="textarea" placeholder="subplot-reasons" />
+              							<FormControl id="subplot-reasons" componentClass="textarea" placeholder="subplot_reasons" />
             						</FormGroup>
 
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>What direct actions from the main characters affect the plot?</ControlLabel>
-              							<FormControl id="direct_actions" componentClass="textarea" placeholder="direct-actions" />
+              							<FormControl id="direct_actions" componentClass="textarea" placeholder="direct_actions" />
             						</FormGroup>
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>What indirect actions from the main character affect the plot?</ControlLabel>
-              							<FormControl id="indirect_actions" componentClass="textarea" placeholder="indirect-actions" />
+              							<FormControl id="indirect_actions" componentClass="textarea" placeholder="indirect_actions" />
             						</FormGroup>
 
             						<Button className = "btn" type="submit">
@@ -155,13 +155,13 @@ class tPlot extends Component{
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>What type of plot?Character,plot, or idea driven?</ControlLabel>
-                              <FormControl id="plot_type" componentClass="textarea" placeholder="plot-type" />
+                              <FormControl id="plot_type" componentClass="textarea" placeholder="plot_type" />
                           </FormGroup>
 
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Do the events unfold chronologically or non-chronologically?</ControlLabel>
-                              <FormControl id="plot_order" componentClass="textarea" placeholder="plot-order" />
+                              <FormControl id="plot_order" componentClass="textarea" placeholder="plot_order" />
                           </FormGroup>
 
 

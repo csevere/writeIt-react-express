@@ -8,83 +8,97 @@ import {connect} from 'react-redux';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
-
-
+import PlotAction from '../actions/PlotAction';
 
 
 class tChapters extends Component{
   constructor(props) {
     super(props);
     this.state = {
-      registerMessage: "",
-      nameError: null,
-      emailError: null,
-      formError: false
+      // registerMessage: "",
+      // nameError: null,
+      // emailError: null,
+      // formError: false
     }
-    this.handleCharacters = this.handleCharacters.bind(this);
+    this.handlePlot = this.handlePlot.bind(this);
     
   }
 
-  handleCharacters(event){
+  handlePlot(event){
     event.preventDefault();
     
     var error = false;
 
-    var name = event.target[0].value;
-    var race = event.target[1].value;
-    var age = event.target[2].value;
-    var birthday = event.target[3].value;
-    // var physical_desc = event.target[4].value;
- 
-    var username = this.props.registerResponse.name;
-    console.log(username);
-    //Name
-    if(name.length < 1){
-      var nameError = "error"; 
-      error=true;
-    }
-    else{ 
-      var nameError = "success"
-    }
+    var scene_number = document.getElementById('scene_number').value;
+    var scene_plot = document.getElementById('scene_plot').value;
+    var scene_char1 = document.getElementById('scene_char1').value;
+    var scene_dialogue = document.getElementById('scene_dialogue').value;
+    var scene_conflict = document.getElementById('scene_conflict').value;
+    var relevant_dialogue = document.getElementById('relevant_dialogue').value;
+    var char_thought = document.getElementById('char_thought').value;
+    var pov = document.getElementById('pov').value;
+    var pov_char= document.getElementById('pov_char').value;
+    var setting = document.getElementById('setting').value;
+    var setting_char = document.getElementById('setting_char').value;
+    var setting_plot = document.getElementById('setting_plot').value;
+    var setting_rev = document.getElementById('setting_rev').value;
+    var scene_mood = document.getElementById('scene_mood').value;
+    var scene_char2 = document.getElementById('scene_char2').value;
 
-    //Email
+    // var username = this.props.registerResponse.name;
+    // console.log(username);
+    // //Name
+    // if(name.length < 1){
+    //   var nameError = "error"; 
+    //   error=true;
+    // }
+    // else{ 
+    //   var nameError = "success"
+    // }
+
+    // Email
     // if(name.length < 3){var emailError = "error"; error=true}
     // else{var emailError = "success"}
 
 
     // console.log(name);
     if(error){
-       console.log("HERE!!!")
-      this.setState({
-        formError: true,
-        nameError: nameError
-      }) 
-
-    console.log(error);
+       console.log("ERROR!!!")
+      // this.setState({
+      //   formError: true,
+      //   nameError: nameError
+      // }) 
+      console.log(error);
     }else{    
-      this.props.characterAction({
-        name: name,
-        age: age,
-        race: race,
-        birthday: birthday,
-        // physical_desc: physical_desc,
-        username: username
-        
+      this.props.plotAction({
+        scene_number: scene_number,
+        scene_plot: scene_plot,
+        scene_char1: scene_char1,
+        scene_dialogue: scene_dialogue,
+        scene_conflict: scene_conflict,
+        relevant_dialogue: relevant_dialogue,
+        char_thought: char_thought,
+        pov: pov,
+        pov_char: pov_char,
+        setting: setting_char,
+        setting_plot: setting_plot,
+        setting_rev: setting_rev,
+        scene_mood: scene_mood,
+        scene_char2: scene_char2
+
+
       });
     }
 
   }
-
- 
-	render(){
-      const settings = {
-        dots: true,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      }
+  render(){
+    const settings = {
+     dots: true,
+     infinite: false,
+     speed: 500,
+     slidesToShow: 1,
+     slidesToScroll: 1,
+    };
     console.log(this.props)
 		return(
 			<div>
@@ -97,29 +111,29 @@ class tChapters extends Component{
         						<Form onSubmit={this.handleCharacters}>
         							<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>What is the point of the chapter in one sentence?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="scene-number" />
+              							<FormControl componentClass="textarea" placeholder="scene_number" />
             						</FormGroup>
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>How do the scenes directly affect the plot or subplot?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="scene-plot" />
+              							<FormControl componentClass="textarea" placeholder="scene_plot" />
             						</FormGroup>
 
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>How do the scenes directly affect character development?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="scene-char1" />
+              							<FormControl componentClass="textarea" placeholder="scene_char1" />
             						</FormGroup>
 
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>How do the characters personalities come out through the dialogue?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="scene-dialogue" />
+              							<FormControl componentClass="textarea" placeholder="scene_dialogue" />
             						</FormGroup>
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>What are the major conflicts in the scenes?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="scene-conflict" />
+              							<FormControl componentClass="textarea" placeholder="scene_conflict" />
             						</FormGroup>
 
             						<Button className = "btn" type="submit">
@@ -132,12 +146,12 @@ class tChapters extends Component{
                       <Form onSubmit={this.handleCharacters}>
                         <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Are there places where dialogue could be replaced with action instead?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="relevant-dialogue" />
+                              <FormControl componentClass="textarea" placeholder="relevant_dialogue" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>How much character thought and reflection is there? Is there too much?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="char-thought" />
+                              <FormControl componentClass="textarea" placeholder="char_thought" />
                           </FormGroup>
 
 
@@ -149,7 +163,7 @@ class tChapters extends Component{
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>What is the POV character for the scenes?Protagonist, antagonist, or ally?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="pov-char" />
+                              <FormControl componentClass="textarea" placeholder="pov_char" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
@@ -167,7 +181,7 @@ class tChapters extends Component{
                         <Form onSubmit={this.handleCharacters}>
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>How important is the setting to the character?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="setting-char" />
+                              <FormControl componentClass="textarea" placeholder="setting_char" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
@@ -183,12 +197,12 @@ class tChapters extends Component{
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>What kind of mood do the scenes have?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="scene-mood" />
+                              <FormControl componentClass="textarea" placeholder="scene_mood" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Are the characters actions predictable or complex?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="scene-char2" />
+                              <FormControl componentClass="textarea" placeholder="scene_char2" />
                           </FormGroup>
 
                           <Button className = "btn" type="submit">

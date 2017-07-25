@@ -42,9 +42,6 @@ class App extends Component {
               <Route exact path="/tplot" component = {tPlot} />
               <Route exact path="/tchapters" component={tChapters} />
 
-              <Route exact path = "/tplot" component = {tPlot}/>
-              <Route exact path="/tchapters" component={tChapters} />
-
             </div> 
           </div>
         </Router>
