@@ -11,6 +11,7 @@ import Character from './components/Character';
 import tCharacter from './tester/tCharacter'; 
 import tPlot from './tester/tPlot';
 import tChapters from './tester/tChapters';
+import tQueryLetter from './tester/tQueryLetter';
 
 
 
@@ -42,8 +43,7 @@ class App extends Component {
               <Route exact path="/tplot" component = {tPlot} />
               <Route exact path="/tchapters" component={tChapters} />
 
-              <Route exact path = "/tplot" component = {tPlot}/>
-              <Route exact path="/tchapters" component={tChapters} />
+              <Route exact path="/tQueryLetter" component={tQueryLetter} />
 
             </div> 
           </div>
