@@ -10,7 +10,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 
-class tPlot extends Component{
+class tSynopsis extends Component{
   // constructor(props) {
   //   super(props);
   //   this.state = {
@@ -91,32 +91,32 @@ class tPlot extends Component{
                 <Slider {...settings}>
 
                   <div className = "slick-form 1">
-        						<Form onSubmit={this.handlePlot}>
+        						<Form onSubmit={this.handleSynopsis}>
         							<FormGroup controlId="formControlsTextarea">
-             							<ControlLabel>Which events in the book are the major ones/the ones advancing the plot?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="main-plot" />
+             							<ControlLabel>Where and when does the story take place?</ControlLabel>
+              							<FormControl componentClass="textarea" placeholder="confusing sections" />
             						</FormGroup>
 
             						<FormGroup controlId="formControlsTextarea">
-             							<ControlLabel>How do the minor events contribute to the main plot?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="subplot" />
-            						</FormGroup>
-
-
-            						<FormGroup controlId="formControlsTextarea">
-             							<ControlLabel>What justifies the subplots if there are any?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="subplot-reasons" />
+             							<ControlLabel>Who is the protagonist?</ControlLabel>
+              							<FormControl componentClass="textarea" placeholder="repetitious sections" />
             						</FormGroup>
 
 
             						<FormGroup controlId="formControlsTextarea">
-             							<ControlLabel>What direct actions from the main characters affect the plot?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="direct-actions" />
+             							<ControlLabel>What major and immediate problem is the protagonist facing?</ControlLabel>
+              							<FormControl componentClass="textarea" placeholder="balance" />
+            						</FormGroup>
+
+
+            						<FormGroup controlId="formControlsTextarea">
+             							<ControlLabel>Does your protagonist decide to take a leap of faith to change?</ControlLabel>
+              							<FormControl componentClass="textarea" placeholder="advancing the story" />
             						</FormGroup>
 
             						<FormGroup controlId="formControlsTextarea">
-             							<ControlLabel>What indirect actions from the main character affect the plot?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="indirect-actions" />
+             							<ControlLabel>How has the situation of your protagonist changed at the end of the novel?</ControlLabel>
+              							<FormControl componentClass="textarea" placeholder="too many plot questions raised?" />
             						</FormGroup>
 
             						<Button className = "btn" type="submit">
@@ -126,32 +126,32 @@ class tPlot extends Component{
                     </div> 
 
                     <div className = "slick-form 2">
-                      <Form onSubmit={this.handlePlot}>
+                      <Form onSubmit={this.handleSynopsis}>
                         <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>What are the characters main motivations?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="motivation" />
+                            <ControlLabel>6</ControlLabel>
+                              <FormControl componentClass="textarea" placeholder="unique voices for characters" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>What type of plot?Character,plot, or idea driven?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="plot-type" />
+                            <ControlLabel>7</ControlLabel>
+                              <FormControl componentClass="textarea" placeholder="character personality fit" />
                           </FormGroup>
 
 
                           <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>Do the events unfold chronologically or non-chronologically?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="plot-order" />
+                            <ControlLabel>8</ControlLabel>
+                              <FormControl componentClass="textarea" placeholder="real strengths and weaknesses" />
                           </FormGroup>
 
 
                           <FormGroup controlId= "formControlsTextarea">
-                            <ControlLabel>What are the critical points of foreshadowing?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="foreshadow" />
+                            <ControlLabel>9</ControlLabel>
+                              <FormControl componentClass="textarea" placeholder="romance arc strong?" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>How is the plot credible according to the rules of the world?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder= "credibility" />
+                            <ControlLabel>10</ControlLabel>
+                              <FormControl componentClass="textarea" placeholder= "conflit strong?" />
                           </FormGroup>
 
                           <Button className = "btn" type="submit">
@@ -161,22 +161,33 @@ class tPlot extends Component{
                       </div> 
 
                       <div className = "slick-form 3">
-                        <Form onSubmit={this.handleCharacters}>
+                        <Form onSubmit={this.handleSynopsis}>
                           <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>Are all flashbacks strong or do some lessen the dramatic movement of the story?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="flashbacks" />
+                            <ControlLabel>11</ControlLabel>
+                              <FormControl componentClass="textarea" placeholder="protagonist pushed to limits?" />
                           </FormGroup>
 
                           <FormGroup controlId= "formControlsTextarea">
-                            <ControlLabel>What is the overall arc or journey of the character?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="journey" />
+                            <ControlLabel>12</ControlLabel>
+                              <FormControl componentClass="textarea" placeholder="character pov" />
                           </FormGroup>
 
 
                           <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>What are the stakes for the main characters?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="stakes" />
+                            <ControlLabel>13</ControlLabel>
+                              <FormControl componentClass="textarea" placeholder="sentence length" />
                           </FormGroup>
+
+                          <FormGroup controlId="formControlsTextarea">
+                            <ControlLabel>14</ControlLabel>
+                              <FormControl componentClass="textarea" placeholder="show don't tell" />
+                          </FormGroup>
+
+                          <FormGroup controlId="formControlsTextarea">
+                            <ControlLabel>15</ControlLabel>
+                              <FormControl componentClass="textarea" placeholder="good world-building?" />
+                          </FormGroup>
+
 
                           <Button className = "btn" type="submit">
                               submit
@@ -210,4 +221,4 @@ class tPlot extends Component{
 //   }, dispatch)
 // }
 
-export default tPlot;
+export default tSynopsis;

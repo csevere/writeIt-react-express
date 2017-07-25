@@ -38,8 +38,8 @@ class writeMenu extends Component{
 
 
 									<li>
-										<Link to ="/scenes">
-											<div className="post4 text-center"><h3>SCENES</h3></div>
+										<Link to ="/critiques">
+											<div className="post4 text-center"><h3>CRITIQUES</h3></div>
 										</Link>
 									</li>
 

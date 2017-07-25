@@ -10,7 +10,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 
-class tPlot extends Component{
+class tCritique extends Component{
   // constructor(props) {
   //   super(props);
   //   this.state = {
@@ -91,32 +91,32 @@ class tPlot extends Component{
                 <Slider {...settings}>
 
                   <div className = "slick-form 1">
-        						<Form onSubmit={this.handlePlot}>
+        						<Form onSubmit={this.handleCritqiue}>
         							<FormGroup controlId="formControlsTextarea">
-             							<ControlLabel>Which events in the book are the major ones/the ones advancing the plot?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="main-plot" />
+             							<ControlLabel>Are there any parts in the sample that you found confusing?</ControlLabel>
+              							<FormControl componentClass="textarea" placeholder="confusing sections" />
             						</FormGroup>
 
             						<FormGroup controlId="formControlsTextarea">
-             							<ControlLabel>How do the minor events contribute to the main plot?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="subplot" />
-            						</FormGroup>
-
-
-            						<FormGroup controlId="formControlsTextarea">
-             							<ControlLabel>What justifies the subplots if there are any?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="subplot-reasons" />
+             							<ControlLabel>Did you find any section boring or repetitious?</ControlLabel>
+              							<FormControl componentClass="textarea" placeholder="repetitious sections" />
             						</FormGroup>
 
 
             						<FormGroup controlId="formControlsTextarea">
-             							<ControlLabel>What direct actions from the main characters affect the plot?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="direct-actions" />
+             							<ControlLabel>Is there a right balance of action, dialogue, and description?</ControlLabel>
+              							<FormControl componentClass="textarea" placeholder="balance" />
+            						</FormGroup>
+
+
+            						<FormGroup controlId="formControlsTextarea">
+             							<ControlLabel>Does the sample, scene, or chapter advance the story or develop character?</ControlLabel>
+              							<FormControl componentClass="textarea" placeholder="advancing the story" />
             						</FormGroup>
 
             						<FormGroup controlId="formControlsTextarea">
-             							<ControlLabel>What indirect actions from the main character affect the plot?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="indirect-actions" />
+             							<ControlLabel>Are more plot questions raised before a plot question is resolved?</ControlLabel>
+              							<FormControl componentClass="textarea" placeholder="too many plot questions raised?" />
             						</FormGroup>
 
             						<Button className = "btn" type="submit">
@@ -126,32 +126,32 @@ class tPlot extends Component{
                     </div> 
 
                     <div className = "slick-form 2">
-                      <Form onSubmit={this.handlePlot}>
+                      <Form onSubmit={this.handleCritqiue}>
                         <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>What are the characters main motivations?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="motivation" />
+                            <ControlLabel>Do the characters all sound the same or do they have unique voices?</ControlLabel>
+                              <FormControl componentClass="textarea" placeholder="unique voices for characters" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>What type of plot?Character,plot, or idea driven?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="plot-type" />
+                            <ControlLabel>Are the actions of the characters reasonable, fitting with their personalities?</ControlLabel>
+                              <FormControl componentClass="textarea" placeholder="character personality fit" />
                           </FormGroup>
 
 
                           <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>Do the events unfold chronologically or non-chronologically?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="plot-order" />
+                            <ControlLabel>Do the characters have clear strength and weaknesses affected by the plot?</ControlLabel>
+                              <FormControl componentClass="textarea" placeholder="real strengths and weaknesses" />
                           </FormGroup>
 
 
                           <FormGroup controlId= "formControlsTextarea">
-                            <ControlLabel>What are the critical points of foreshadowing?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="foreshadow" />
+                            <ControlLabel>If there’s a romantic relationship, is the emotional conflict strong enough for the entire work?</ControlLabel>
+                              <FormControl componentClass="textarea" placeholder="romance arc strong?" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>How is the plot credible according to the rules of the world?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder= "credibility" />
+                            <ControlLabel>Is the conflict between the main character and the antagonist strong enough?</ControlLabel>
+                              <FormControl componentClass="textarea" placeholder= "conflit strong?" />
                           </FormGroup>
 
                           <Button className = "btn" type="submit">
@@ -161,22 +161,33 @@ class tPlot extends Component{
                       </div> 
 
                       <div className = "slick-form 3">
-                        <Form onSubmit={this.handleCharacters}>
+                        <Form onSubmit={this.handleCritqiue}>
                           <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>Are all flashbacks strong or do some lessen the dramatic movement of the story?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="flashbacks" />
+                            <ControlLabel>Does the opponent push the main character to his or her limits?</ControlLabel>
+                              <FormControl componentClass="textarea" placeholder="protagonist pushed to limits?" />
                           </FormGroup>
 
                           <FormGroup controlId= "formControlsTextarea">
-                            <ControlLabel>What is the overall arc or journey of the character?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="journey" />
+                            <ControlLabel>Would a scene work better in the point of view of another character?</ControlLabel>
+                              <FormControl componentClass="textarea" placeholder="character pov" />
                           </FormGroup>
 
 
                           <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>What are the stakes for the main characters?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="stakes" />
+                            <ControlLabel>Do the sentences vary in length?</ControlLabel>
+                              <FormControl componentClass="textarea" placeholder="sentence length" />
                           </FormGroup>
+
+                          <FormGroup controlId="formControlsTextarea">
+                            <ControlLabel>Is there more telling than showing?</ControlLabel>
+                              <FormControl componentClass="textarea" placeholder="show don't tell" />
+                          </FormGroup>
+
+                          <FormGroup controlId="formControlsTextarea">
+                            <ControlLabel>If sci-fi, fantasy, or paranormal element, does the writer build a convincing world?</ControlLabel>
+                              <FormControl componentClass="textarea" placeholder="good world-building?" />
+                          </FormGroup>
+
 
                           <Button className = "btn" type="submit">
                               submit
@@ -210,4 +221,4 @@ class tPlot extends Component{
 //   }, dispatch)
 // }
 
-export default tPlot;
+export default tCritique;
