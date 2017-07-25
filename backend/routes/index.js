@@ -151,52 +151,38 @@ router.post('/characters',(req,res)=>{
 	var father_info = req.body.father_info;
 	var mother_info = req.body.mother_info;
 	var sibling_info = req.body.sibling_info;
-	var family_position = req.body.family_position;
 	var relatives = req.body.relatives;
-	var fam_relationships = req.body.fam_relationships;
 	var friends = req.body.friends;
 	var enemies = req.body.enemies;
-	var influences = req.body.influences;
+	var mentor = req.body.mentor;
 	var hobbies = req.body.hobbies;
-	var sports = req.body.sports;
-	var food = req.body.food;
 	var dress = req.body.dress;
-	var religion = req.body.religion;
-	var attitude_religion = req.body.attitude_religion;
-	var relationship_boys = req.body.relationship_boys;
-	var relationship_girls = req.body.relationship_girls;
 	var leader_follower = req.body.leader_follower;
 	var positive_traits = req.body.positive_traits;
 	var negative_traits = req.body.negative_traits;
-	var humor = req.body.humor;
 	var temper = req.body.temper;
-	var seen_by_others = req.body.seen_by_others;
-	var opinion_of_self = req.body.opinion_of_self;
-	var other_traits = req.body.other_traits;
-	var ambitions = req.body.ambitions;
+	var star_sign = req.body.star_sign;
+	var personality = req.body.personality;
 	var philosophy = req.body.philosophy;
-	var important_points = req.body.important_points;
+	var ambitions = req.body.ambitions;
 	var liked_disliked = req.body.liked_disliked;
 
 
 	var characterQuery = `SELECT * FROM characters WHERE username = ? and name = ?`;
 	var insertCharacterQuery = `INSERT INTO characters 
-		(name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,family_position,
-		relatives,fam_relationships,friends,enemies,influences,hobbies,sports,food,dress,religion,attitude_religion,relationship_boys,
-		relationship_girls,leader_follower,positive_traits,negative_traits,humor,temper,seen_by_others,opinion_of_self,other_traits,ambitions,philosophy,
-		important_points,liked_disliked) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
+		(name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
+		relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
+		liked_disliked) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
 	connection.query(characterQuery, [username,name], (error,results)=>{
 		if(error) throw error;
 		if(results.length === 0){
-			connection.query(insertCharacterQuery, [name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,family_position,
-				relatives,fam_relationships,friends,enemies,influences,hobbies,sports,food,dress,religion,attitude_religion,attitude_religion,relationship_boys,
-				relationship_girls,leader_follower,positive_traits,negative_traits,humor,temper,seen_by_others,opinion_of_self,other_traits,ambitions,philosophy,
-				important_points,liked_disliked], (error2,results2)=>{
+			connection.query(insertCharacterQuery, [name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
+				relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
+				liked_disliked], (error2,results2)=>{
 					if(error2) throw error2;
-					var characterArray = [name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,family_position,
-					relatives,fam_relationships,friends,enemies,influences,hobbies,sports,food,dress,religion,attitude_religion,attitude_religion,relationship_boys,
-					relationship_girls,leader_follower,positive_traits,negative_traits,humor,temper,seen_by_others,opinion_of_self,other_traits,ambitions,philosophy,
-					important_points,liked_disliked]
+					var characterArray = [name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
+					relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
+					liked_disliked]
 					res.json({
 						msg:'characterInserted',
 						characterData: characterArray
@@ -205,10 +191,9 @@ router.post('/characters',(req,res)=>{
 
 		}else{
 			var updateCharacterQuery = `UPDATE characters SET
-				(name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,family_position,
-				relatives,fam_relationships,friends,enemies,influences,hobbies,sports,food,dress,religion,attitude_religion,attitude_religion,relationship_boys,
-				relationship_girls,leader_follower,positive_traits,negative_traits,humor,temper,seen_by_others,opinion_of_self,other_traits,ambitions,philosophy,
-				important_points,liked_disliked) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
+				(name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
+				relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
+				liked_disliked) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
 			connection.query(insertCharacterQuery, [name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,family_position,
 				relatives,fam_relationships,friends,enemies,influences,hobbies,sports,food,dress,religion,attitude_religion,attitude_religion,relationship_boys,
 				relationship_girls,leader_follower,positive_traits,negative_traits,humor,temper,seen_by_others,opinion_of_self,other_traits,ambitions,philosophy,

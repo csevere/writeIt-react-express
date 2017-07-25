@@ -135,5 +135,5 @@ class Character extends Component{
 //   }, dispatch)
 // }
 
-// // export default Character;
+export default Character;
 // export default connect(mapStateToProps,mapDispatchToProps)(Character);
