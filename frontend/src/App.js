@@ -7,11 +7,14 @@ import Write from './components/Write';
 import writeMenu from './components/writeMenu'; 
 import NewBook from './components/NewBook';
 import Login from './containers/Login';
-// import Character from './components/Character'; 
+import Character from './components/Character'; 
 import tCharacter from './tester/tCharacter'; 
+<<<<<<< HEAD
 import Character from './components/Character';
 import tPlot from './tester/tPlot';
 import tChapters from './tester/tChapters';
+=======
+>>>>>>> 1fbebf8cf04663e7d44afc7e781919b680f2922c
 
 
 // import logo from './logo.svg';
@@ -38,8 +41,11 @@ class App extends Component {
               <Route exact path="/newbook" component= {NewBook} />
               <Route exact path ="/writemenu" component = {writeMenu}/>
               <Route exact path ="/tcharacter" component = {tCharacter}/>
+<<<<<<< HEAD
               <Route exact path="/tplot" component = {tPlot} />
               <Route exact path="/tchapters" component={tChapters} />
+=======
+>>>>>>> 1fbebf8cf04663e7d44afc7e781919b680f2922c
 
 
             </div> 
