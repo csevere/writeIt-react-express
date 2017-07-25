@@ -7,7 +7,8 @@ import Write from './components/Write';
 import writeMenu from './components/writeMenu'; 
 import NewBook from './components/NewBook';
 import Login from './containers/Login';
-import Character from './components/Character'; 
+// import Character from './components/Character'; 
+import tCharacter from './tester/tCharacter'; 
 
 
 // import logo from './logo.svg';
@@ -28,11 +29,10 @@ class App extends Component {
               <Route exact path="/write" component={Write} />
               <Route path = "/writemenu" component = {writeMenu}/>
               <Route exact path="/newbook" component={NewBook} />
-              <Route exact path="/write" component={Character} />
+              <Route exact path="/write" component={tCharacter} />
               <Route path = "/writemenu" component = {writeMenu}/>
               <Route exact path="/newbook" component={NewBook} />
-              <Route path = "/writemenu" component = {writeMenu}/>
-              <Route exact path = "/character" component = {Character}/>
+              <Route exact path = "/character" component = {tCharacter}/>
 
             </div> 
           </div>

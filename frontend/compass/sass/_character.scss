@@ -1,34 +1,121 @@
 .character{
 
 	position: absolute;	
-	background-image: url('https://static.pexels.com/photos/268976/pexels-photo-268976.jpeg');
+	background-image: url('https://static.pexels.com/photos/326311/pexels-photo-326311.jpeg');
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-position: center; 
-	color: $yellow; 
+	color: $black; 
 	top: 0;
 	left:0;
 	margin: 0; 
-	z-index: -1; 
+	z-index: 1; 
 	min-width: 102%;
 	min-height: 100%;
+	width: 100vw; 
 	overflow: scroll; 
-	display: flex; 
+	 
 }
 
 
 .ch-forms{
 
-	margin-top: 8em;
-    margin-left: 34em;
+	.form-control {
+		width: 80% !important;
+		margin-left: 5em;
+    	padding-top: 0em;
+	}
 
-    .btn{
-    	margin-top: 10em !important;
-    	margin-left: 21em !important;
+	.slick-prev, .slick-next {
+		position: absolute;
+		top: 37% !important; 
+
+	}
+
+	.slick-dots {
+	display: block; 
+    position: absolute;
+    bottom: -28px;
+    display: block;
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    left: -52em;
+		li {
+			position: relative;
+			left: 51.5em;
+		    top: -8em;
+		}
+	}
+
+
+	.ch-forms-2{
+		display: block; 
+		width: 45em;
+	    height: 41em;
+	    margin-top: 7em;
+		background: azure;
+
+		box-shadow:
+	    /* The top layer shadow */
+	    0 1px 1px rgba(0,0,0,0.15),
+	    /* The second layer */
+	    0 10px 0 -5px #eee,
+	    /* The second layer shadow */
+	    0 10px 1px -4px rgba(0,0,0,0.15),
+	     /* The third layer */
+	    0 20px 0 -10px #eee,
+	    /* The third layer shadow */
+	    0 20px 1px -9px rgba(0,0,0,0.15);
+	    /* Padding for demo purposes */
+	    padding: 4em 0em 0em 0em;
+	 
+
+	    .btn{
+	    	
+	    	margin-top: 10em !important;
+	    	margin-left: 21em !important;
+		}
 	}
     	
 }
+
+
+
+
+
+
+//     .slick-track {
+//     opacity: 1;
+//     transform: translate3d(0px, 0px, 0px);
+//     width: 500px !important;
+//     position: relative;
+//     top: 0;
+//     left: 0;
+//     display: block;
+// }
+
+
+// .slick-dots li button {
+//     font-size: 0;
+//     line-height: 0;
+//     display: block;
+//     width: 20px;
+//     height: 20px;
+//     padding: 5px;
+//     cursor: pointer;
+//     color: transparent;
+//     border: 0;
+//     outline: none;
+//     background: transparent;
+//     left: 29em !important;
+//     top: 1em; 
+//     position: absolute;
+// }
+
+

@@ -4,7 +4,7 @@ import { Form, Grid, Row, Col, FormGroup, FormControl, Button, ControlLabel } fr
 import About from './About';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import  {bindActionCreators} from 'redux';
-import CharacterAction from '../actions/CharacterAction';
+// import CharacterAction from '../actions/CharacterAction';
 import {connect} from 'react-redux';
 
 
@@ -121,19 +121,19 @@ class Character extends Component{
 }
 
 
-function mapStateToProps(state){
-  return{
-    characterResponse: state.characterReducer,
-    registerResponse: state.registerReducer
+// function mapStateToProps(state){
+//   return{
+//     characterResponse: state.characterReducer,
+//     registerResponse: state.registerReducer
 
-  }
-}
+//   }
+// }
 
-function mapDispatchToProps(dispatch){
-  return bindActionCreators({
-    characterAction: CharacterAction
-  }, dispatch)
-}
+// function mapDispatchToProps(dispatch){
+//   return bindActionCreators({
+//     characterAction: CharacterAction
+//   }, dispatch)
+// }
 
-// export default Character;
-export default connect(mapStateToProps,mapDispatchToProps)(Character);
+// // export default Character;
+// export default connect(mapStateToProps,mapDispatchToProps)(Character);

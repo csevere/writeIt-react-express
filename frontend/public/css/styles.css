@@ -621,7 +621,7 @@ h1 {
 /* line 4, ../../compass/sass/_writemenu.scss */
 .writemenu {
   position: absolute;
-  background-image: url("https://static.pexels.com/photos/268976/pexels-photo-268976.jpeg");
+  background-image: url("https://static.pexels.com/photos/326311/pexels-photo-326311.jpeg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -802,32 +802,67 @@ h1 {
 /* line 1, ../../compass/sass/_character.scss */
 .character {
   position: absolute;
-  background-image: url("https://static.pexels.com/photos/268976/pexels-photo-268976.jpeg");
+  background-image: url("https://static.pexels.com/photos/326311/pexels-photo-326311.jpeg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center;
-  color: #ffcc00;
+  color: #000000;
   top: 0;
   left: 0;
   margin: 0;
-  z-index: -1;
+  z-index: 1;
   min-width: 102%;
   min-height: 100%;
+  width: 100vw;
   overflow: scroll;
-  display: flex;
 }
 
-/* line 24, ../../compass/sass/_character.scss */
-.ch-forms {
-  margin-top: 8em;
-  margin-left: 34em;
+/* line 26, ../../compass/sass/_character.scss */
+.ch-forms .form-control {
+  width: 80% !important;
+  margin-left: 5em;
+  padding-top: 0em;
 }
-/* line 29, ../../compass/sass/_character.scss */
-.ch-forms .btn {
+/* line 32, ../../compass/sass/_character.scss */
+.ch-forms .slick-prev, .ch-forms .slick-next {
+  position: absolute;
+  top: 37% !important;
+}
+/* line 38, ../../compass/sass/_character.scss */
+.ch-forms .slick-dots {
+  display: block;
+  position: absolute;
+  bottom: -28px;
+  display: block;
+  width: 100%;
+  padding: 20px;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  left: -52em;
+}
+/* line 49, ../../compass/sass/_character.scss */
+.ch-forms .slick-dots li {
+  position: relative;
+  left: 51.5em;
+  top: -8em;
+}
+/* line 57, ../../compass/sass/_character.scss */
+.ch-forms .ch-forms-2 {
+  display: block;
+  width: 45em;
+  height: 41em;
+  margin-top: 7em;
+  background: azure;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px #eee, 0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee, 0 20px 1px -9px rgba(0, 0, 0, 0.15);
+  /* Padding for demo purposes */
+  padding: 4em 0em 0em 0em;
+}
+/* line 79, ../../compass/sass/_character.scss */
+.ch-forms .ch-forms-2 .btn {
   margin-top: 10em !important;
   margin-left: 21em !important;
 }
