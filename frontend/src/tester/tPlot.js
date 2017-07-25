@@ -8,70 +8,91 @@ import {connect} from 'react-redux';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import PlotAction from '../actions/PlotAction';
 
 
 class tPlot extends Component{
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     registerMessage: "",
-  //     nameError: null,
-  //     emailError: null,
-  //     formError: false
-  //   }
-  //   this.handlePlot = this.handlePlot.bind(this);
+  constructor(props) {
+    super(props);
+    this.state = {
+      // registerMessage: "",
+      // nameError: null,
+      // emailError: null,
+      // formError: false
+    }
+    this.handlePlot = this.handlePlot.bind(this);
     
-  // }
+  }
 
-  // handlePlot(event){
-  //   event.preventDefault();
+  handlePlot(event){
+    event.preventDefault();
     
-  //   var error = false;
+    var error = false;
 
-  //   var name = event.target[0].value;
-  //   var race = event.target[1].value;
-  //   var age = event.target[2].value;
-  //   var birthday = event.target[3].value;
-  //   // var physical_desc = event.target[4].value;
+    var main_plot = document.getElementById('main_plot').value;
+    var subplot = document.getElementById('subplot').value;
+    var subplot_reasons = document.getElementById('subplot_reasons').value;
+    var direct_actions = document.getElementById('direct_actions').value;
+    var indirect_actions = document.getElementById('indirect_actions').value;
+    var motivation = document.getElementById('motivation').value;
+    var plot_type = document.getElementById('lot_type').value;
+    var plot_order = document.getElementById('plot_order').value;
+    var foreshadow = document.getElementById('foreshadow').value;
+    var credibility = document.getElementById('credibility').value;
+    var flashbacks = document.getElementById('flashbacks').value;
+    var journey = document.getElementById('journey').value;
+    var stakes = document.getElementById('stakes').value;
+    var antagonist = document.getElementById('antagonist').value;
+    var summary = document.getElementById('summary').value;
+
  
-  //   var username = this.props.registerResponse.name;
-  //   console.log(username);
-  //   //Name
-  //   if(name.length < 1){
-  //     var nameError = "error"; 
-  //     error=true;
-  //   }
-  //   else{ 
-  //     var nameError = "success"
-  //   }
+    // var username = this.props.registerResponse.name;
+    // console.log(username);
+    // //Name
+    // if(name.length < 1){
+    //   var nameError = "error"; 
+    //   error=true;
+    // }
+    // else{ 
+    //   var nameError = "success"
+    // }
 
-  //   Email
-  //   if(name.length < 3){var emailError = "error"; error=true}
-  //   else{var emailError = "success"}
+    // Email
+    // if(name.length < 3){var emailError = "error"; error=true}
+    // else{var emailError = "success"}
 
 
-  //   // console.log(name);
-  //   if(error){
-  //      console.log("HERE!!!")
-  //     this.setState({
-  //       formError: true,
-  //       nameError: nameError
-  //     }) 
+    // console.log(name);
+    if(error){
+       console.log("ERROR!!!")
+      // this.setState({
+      //   formError: true,
+      //   nameError: nameError
+      // }) 
 
-  //   console.log(error);
-  //   }else{    
-  //     this.props.characterAction({
-  //       name: name,
-  //       age: age,
-  //       race: race,
-  //       birthday: birthday,
-  //       // physical_desc: physical_desc,
-  //       username: username
+    console.log(error);
+    }else{    
+      this.props.plotAction({
+        main_plot: main_plot,
+        subplot: subplot,
+        subplot_reasons: subplot_reasons,
+        direct_actions: direct_actions,
+        indirect_actions: indirect_actions,
+        motivation: motivation,
+        plot_type: plot_type,
+        plot_order: plot_order,
+        foreshadow: foreshadow,
+        credibility: credibility,
+        flashbacks: flashbacks,
+        journey: journey,
+        stakes: stakes,
+        antagonist: antagonist,
+        summary: summary
         
-  //     });
-  //   }
+      });
+    }
 
-  // }
+  }
 
  
 	render(){
@@ -94,29 +115,29 @@ class tPlot extends Component{
         						<Form onSubmit={this.handlePlot}>
         							<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>Which events in the book are the major ones/the ones advancing the plot?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="main-plot" />
+              							<FormControl id="main_plot" componentClass="textarea" placeholder="main-plot" />
             						</FormGroup>
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>How do the minor events contribute to the main plot?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="subplot" />
+              							<FormControl id="subplot" componentClass="textarea" placeholder="subplot" />
             						</FormGroup>
 
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>What justifies the subplots if there are any?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="subplot-reasons" />
+              							<FormControl id="subplot-reasons" componentClass="textarea" placeholder="subplot-reasons" />
             						</FormGroup>
 
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>What direct actions from the main characters affect the plot?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="direct-actions" />
+              							<FormControl id="direct_actions" componentClass="textarea" placeholder="direct-actions" />
             						</FormGroup>
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>What indirect actions from the main character affect the plot?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="indirect-actions" />
+              							<FormControl id="indirect_actions" componentClass="textarea" placeholder="indirect-actions" />
             						</FormGroup>
 
             						<Button className = "btn" type="submit">
@@ -129,29 +150,29 @@ class tPlot extends Component{
                       <Form onSubmit={this.handlePlot}>
                         <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>What are the characters main motivations?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="motivation" />
+                              <FormControl id="motivation" componentClass="textarea" placeholder="motivation" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>What type of plot?Character,plot, or idea driven?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="plot-type" />
+                              <FormControl id="plot_type" componentClass="textarea" placeholder="plot-type" />
                           </FormGroup>
 
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Do the events unfold chronologically or non-chronologically?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="plot-order" />
+                              <FormControl id="plot_order" componentClass="textarea" placeholder="plot-order" />
                           </FormGroup>
 
 
                           <FormGroup controlId= "formControlsTextarea">
                             <ControlLabel>What are the critical points of foreshadowing?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="foreshadow" />
+                              <FormControl id="foreshadow" componentClass="textarea" placeholder="foreshadow" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>How is the plot credible according to the rules of the world?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder= "credibility" />
+                              <FormControl id="credibility" componentClass="textarea" placeholder= "credibility" />
                           </FormGroup>
 
                           <Button className = "btn" type="submit">
@@ -164,18 +185,27 @@ class tPlot extends Component{
                         <Form onSubmit={this.handleCharacters}>
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Are all flashbacks strong or do some lessen the dramatic movement of the story?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="flashbacks" />
+                              <FormControl id="flashbacks" componentClass="textarea" placeholder="flashbacks" />
                           </FormGroup>
 
                           <FormGroup controlId= "formControlsTextarea">
                             <ControlLabel>What is the overall arc or journey of the character?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="journey" />
+                              <FormControl id="journey" componentClass="textarea" placeholder="journey" />
                           </FormGroup>
-
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>What are the stakes for the main characters?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="stakes" />
+                              <FormControl id="stakes" componentClass="textarea" placeholder="stakes" />
+                          </FormGroup>
+
+                          <FormGroup controlId="formControlsTextarea">
+                            <ControlLabel>Who is your character’s worthy opponent? Describe</ControlLabel>
+                              <FormControl id="antagonist" componentClass="textarea" placeholder="antagonist" />
+                          </FormGroup>
+
+                          <FormGroup controlId="formControlsTextarea">
+                            <ControlLabel>What’s the plot summary in one sentence?</ControlLabel>
+                              <FormControl id="summary" componentClass="textarea" placeholder="summary" />
                           </FormGroup>
 
                           <Button className = "btn" type="submit">
@@ -196,18 +226,22 @@ class tPlot extends Component{
 }
 
 
-// function mapStateToProps(state){
-//   return{
-//     characterResponse: state.characterReducer,
-//     registerResponse: state.registerReducer
+function mapStateToProps(state){
+  return{
+    // characterResponse: state.characterReducer,
+    registerResponse: state.registerReducer,
+    plotResponse: state.loginReducer
 
-//   }
-// }
+  }
+}
 
-// function mapDispatchToProps(dispatch){
-//   return bindActionCreators({
-//     characterAction: CharacterAction
-//   }, dispatch)
-// }
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({
+    plotAction: PlotAction
+  }, dispatch)
+}
 
-export default tPlot;
+// export default tPlot;
+export default connect(mapStateToProps,mapDispatchToProps)(tPlot);
+
+

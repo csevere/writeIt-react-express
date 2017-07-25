@@ -10,8 +10,6 @@ import Login from './containers/Login';
 import Character from './components/Character'; 
 import tCharacter from './tester/tCharacter'; 
 import tPlot from './tester/tPlot';
-import Character from './components/Character';
-import tPlot from './tester/tPlot';
 import tChapters from './tester/tChapters';
 
 
@@ -40,7 +38,7 @@ class App extends Component {
               <Route exact path="/newbook" component= {NewBook} />
               <Route exact path ="/writemenu" component = {writeMenu}/>
               <Route exact path ="/tcharacter" component = {tCharacter}/>
-              <Route exact path = "/tplot" component = {tPlot}/>
+              <Route exact path ="/tplot" component ={tPlot}/>
               <Route exact path="/tchapters" component={tChapters} />
 
 

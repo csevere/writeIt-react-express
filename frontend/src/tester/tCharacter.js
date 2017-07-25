@@ -17,10 +17,7 @@ class tCharacter extends Component{
   constructor(props) {
     super(props);
     this.state = {
-      registerMessage: "",
-      nameError: null,
-      emailError: null,
-      formError: false
+     
     }
     this.handleCharacters = this.handleCharacters.bind(this);
     
@@ -77,11 +74,11 @@ class tCharacter extends Component{
 
     // console.log(name);
     if(error){
-       console.log("HERE!!!")
-      this.setState({
-        formError: true,
-        nameError: nameError
-      }) 
+       console.log("ERROR!!!")
+      // this.setState({
+      //   formError: true,
+      //   nameError: nameError
+      // }) 
 
     console.log(error);
     }else{    
@@ -339,3 +336,6 @@ function mapDispatchToProps(dispatch){
 
 // export default tCharacter;
 export default connect(mapStateToProps,mapDispatchToProps)(tCharacter);
+
+
+
