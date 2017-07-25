@@ -3,7 +3,7 @@ import { Link} from 'react-router-dom';
 import { Form, Grid, Row, Col, FormGroup, FormControl, Button, ControlLabel } from 'react-bootstrap';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import  {bindActionCreators} from 'redux';
-// import CharacterAction from '../actions/CharacterAction';
+import CharacterAction from '../actions/CharacterAction';
 import {connect} from 'react-redux';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -28,14 +28,36 @@ class tCharacter extends Component{
 
   handleCharacters(event){
     event.preventDefault();
+    // console.log(event.targets.length)
+    // console.log(document.getElementById('neighborhood').value)
     
     var error = false;
 
-    var name = event.target[0].value;
-    var race = event.target[1].value;
-    var age = event.target[2].value;
-    var birthday = event.target[3].value;
-    // var physical_desc = event.target[4].value;
+    var name = document.getElementById('name').value;
+    var race = document.getElementById('race').value;
+    var age = document.getElementById('age').value;
+    var birthday = document.getElementById('birthday').value;
+    var physical_desc = document.getElementById('physical_desc').value;
+    var hometown = document.getElementById('hometown').value;
+    var type_of_home = document.getElementById('type_of_home').value;
+    var father_info = document.getElementById('father_info').value;
+    var mother_info = document.getElementById('mother_info').value;
+    var sibling_info = document.getElementById('sibling_info').value;
+    var relatives = document.getElementById('relatives').value;
+    var friends = document.getElementById('friends').value;
+    var enemies = document.getElementById('enemies').value;
+    var mentor = document.getElementById('mentor').value;
+    var hobbies = document.getElementById('hobbies').value;
+    var dress = document.getElementById('dress').value;
+    var leader_follower = document.getElementById('leader_follower').value;
+    var positive_traits = document.getElementById('positive_traits').value;
+    var negative_traits = document.getElementById('negative_traits').value;
+    var temper = document.getElementById('temper').value;
+    var star_sign = document.getElementById('star_sign').value;
+    var personality = document.getElementById('personality').value;
+    var philosophy = document.getElementById('philosophy').value;
+    var ambitions = document.getElementById('ambitions').value;
+    var liked_disliked = document.getElementById('liked_disliked').value;
  
     var username = this.props.registerResponse.name;
     console.log(username);
@@ -68,8 +90,28 @@ class tCharacter extends Component{
         age: age,
         race: race,
         birthday: birthday,
-        // physical_desc: physical_desc,
-        username: username
+        physical_desc: physical_desc,
+        username: username,
+        hometown: hometown,
+        type_of_home: type_of_home,
+        father_info: father_info,
+        mother_info: mother_info,
+        sibling_info: sibling_info,
+        relatives: relatives,
+        friends: friends,
+        enemies: enemies,
+        mentor: mentor, 
+        hobbies: hobbies,
+        dress: dress,
+        leader_follower: leader_follower,
+        positive_traits: positive_traits,
+        negative_traits: negative_traits,
+        temper: temper, 
+        star_sign: star_sign,
+        personality: personality,
+        philosophy: philosophy,
+        ambitions: ambitions,
+        liked_disliked: liked_disliked
         
       });
     }
@@ -97,29 +139,29 @@ class tCharacter extends Component{
         						<Form onSubmit={this.handleCharacters}>
         							<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>Name:</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="name" />
+              							<FormControl id="name" componentClass="textarea" placeholder="name" />
             						</FormGroup>
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>Race:</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="race" />
+              							<FormControl id="race" componentClass="textarea" placeholder="race" />
             						</FormGroup>
 
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>Age:</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="age" />
+              							<FormControl id="age" componentClass="textarea" placeholder="age" />
             						</FormGroup>
 
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>Birthday:</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="birthday" />
+              							<FormControl id="birthday" componentClass="textarea" placeholder="birthday" />
             						</FormGroup>
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>General Physical Description:</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="description" />
+              							<FormControl id="physical_desc" componentClass="textarea" placeholder="description" />
             						</FormGroup>
 
             						<Button className = "btn" type="submit">
@@ -132,29 +174,29 @@ class tCharacter extends Component{
                       <Form onSubmit={this.handleCharacters}>
                         <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Hometown:</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="hometown" />
+                              <FormControl id="hometown" componentClass="textarea" placeholder="hometown" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Neighborhood Type:</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="neighborhood" />
+                              <FormControl id="type_of_home" componentClass="textarea" placeholder="neighborhood" />
                           </FormGroup>
 
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Name and Occupation of Father:</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="father" />
+                              <FormControl id="father_info" componentClass="textarea" placeholder="father" />
                           </FormGroup>
 
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Name and Occupation of Mother:</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="mother" />
+                              <FormControl id="mother_info" componentClass="textarea" placeholder="mother" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Siblings:</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="siblings" />
+                              <FormControl id="sibling_info" componentClass="textarea" placeholder="siblings" />
                           </FormGroup>
 
                           <Button className = "btn" type="submit">
@@ -167,29 +209,29 @@ class tCharacter extends Component{
                         <Form onSubmit={this.handleCharacters}>
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Close Relatives:</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="relatives" />
+                              <FormControl id="relatives" componentClass="textarea" placeholder="relatives" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Best Friends:</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="friends" />
+                              <FormControl id="friends" componentClass="textarea" placeholder="friends" />
                           </FormGroup>
 
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Enemies:</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="enemies" />
+                              <FormControl id="enemies" componentClass="textarea" placeholder="enemies" />
                           </FormGroup>
 
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Mentor:</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="mentor" />
+                              <FormControl id="mentor" componentClass="textarea" placeholder="mentor" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Hobbies:</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="hobbies" />
+                              <FormControl id="hobbies" componentClass="textarea" placeholder="hobbies" />
                           </FormGroup>
 
                           <Button className = "btn" type="submit">
@@ -202,29 +244,29 @@ class tCharacter extends Component{
                         <Form onSubmit={this.handleCharacters}>
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Dress Style:</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="dress-style" />
+                              <FormControl id="dress" componentClass="textarea" placeholder="dress-style" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Leader or Follower:</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="leader or follower?" />
+                              <FormControl id="leader_follower" componentClass="textarea" placeholder="leader or follower?" />
                           </FormGroup>
 
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Strongest Postive Trait:</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="strongest positive" />
+                              <FormControl id="positive_traits" componentClass="textarea" placeholder="strongest positive" />
                           </FormGroup>
 
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Strongest Negative Trait:</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="strongest negative" />
+                              <FormControl id="negative_traits" componentClass="textarea" placeholder="strongest negative" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Temper:</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="chill, hot-headed, etc" />
+                              <FormControl id="temper" componentClass="textarea" placeholder="chill, hot-headed, etc" />
                           </FormGroup>
 
                           <Button className = "btn" type="submit">
@@ -237,29 +279,29 @@ class tCharacter extends Component{
                         <Form onSubmit={this.handleCharacters}>
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Star Sign:</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="Aries, Capricorn, etc" />
+                              <FormControl id="star_sign" componentClass="textarea" placeholder="Aries, Capricorn, etc" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Personality Type:</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="INFP, ESTP, etc" />
+                              <FormControl id="personality" componentClass="textarea" placeholder="INFP, ESTP, etc" />
                           </FormGroup>
 
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Life Philosopy:</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="zen, nihilism, etc" />
+                              <FormControl id="philosophy" componentClass="textarea" placeholder="zen, nihilism, etc" />
                           </FormGroup>
 
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Ambitions:</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="goals, dreams, etc" />
+                              <FormControl id="ambitions" componentClass="textarea" placeholder="goals, dreams, etc" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Likeable or unlikeable:</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="Will readers like or dislike? Why?" />
+                              <FormControl id="liked_disliked" componentClass="textarea" placeholder="Will readers like or dislike? Why?" />
                           </FormGroup>
 
                           <Button className = "btn" type="submit">
@@ -281,18 +323,19 @@ class tCharacter extends Component{
 }
 
 
-// function mapStateToProps(state){
-//   return{
-//     characterResponse: state.characterReducer,
-//     registerResponse: state.registerReducer
+function mapStateToProps(state){
+  return{
+    characterResponse: state.characterReducer,
+    registerResponse: state.registerReducer
 
-//   }
-// }
+  }
+}
 
-// function mapDispatchToProps(dispatch){
-//   return bindActionCreators({
-//     characterAction: CharacterAction
-//   }, dispatch)
-// }
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({
+    characterAction: CharacterAction
+  }, dispatch)
+}
 
-export default tCharacter;
+// export default tCharacter;
+export default connect(mapStateToProps,mapDispatchToProps)(tCharacter);
