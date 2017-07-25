@@ -11,6 +11,7 @@ import Login from './containers/Login';
 import tCharacter from './tester/tCharacter'; 
 import Character from './components/Character';
 import tPlot from './tester/tPlot';
+import tChapters from './tester/tChapters';
 
 
 // import logo from './logo.svg';
@@ -38,6 +39,7 @@ class App extends Component {
               <Route exact path ="/writemenu" component = {writeMenu}/>
               <Route exact path ="/tcharacter" component = {tCharacter}/>
               <Route exact path="/tplot" component = {tPlot} />
+              <Route exact path="/tchapters" component={tChapters} />
 
 
             </div> 
