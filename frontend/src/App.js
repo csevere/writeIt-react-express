@@ -7,7 +7,7 @@ import Write from './components/Write';
 import writeMenu from './components/writeMenu'; 
 import NewBook from './components/NewBook';
 import Login from './containers/Login';
-// import Character from './components/Character'; 
+import Character from './components/Character'; 
 import tCharacter from './tester/tCharacter'; 
 
 
@@ -34,7 +34,7 @@ class App extends Component {
               <Route exact path ="/writemenu" component = {writeMenu}/>
               <Route exact path="/newbook" component= {NewBook} />
               <Route exact path ="/writemenu" component = {writeMenu}/>
-              <Route exact path ="/character" component = {Character}/>
+              <Route exact path ="/tcharacter" component = {tCharacter}/>
 
 
             </div> 
