@@ -10,8 +10,6 @@ import Login from './containers/Login';
 import Character from './components/Character'; 
 import tCharacter from './tester/tCharacter'; 
 import tPlot from './tester/tPlot';
-import Character from './components/Character';
-import tPlot from './tester/tPlot';
 import tChapters from './tester/tChapters';
 
 

@@ -96,7 +96,7 @@ class tChapters extends Component{
                   <div className = "slick-form 1">
         						<Form onSubmit={this.handleCharacters}>
         							<FormGroup controlId="formControlsTextarea">
-             							<ControlLabel>How many scenes are in the chapter?</ControlLabel>
+             							<ControlLabel>What is the point of the chapter in one sentence?</ControlLabel>
               							<FormControl componentClass="textarea" placeholder="scene-number" />
             						</FormGroup>
 
