@@ -18,13 +18,13 @@ class writeMenu extends Component{
 						<div className ="container writeNav">
 							<Row>
 								<ul>
-									<li><Link to ="/character">
+									<li><Link to ="/tcharacter">
 										<div className="post1 text-center"><h3>CHARACTER</h3></div>
 										</Link>
 									</li>
 
 									<li>
-										<Link to ="/plot">
+										<Link to ="/tplot">
 											<div className="post2 text-center"><h3>PLOT</h3></div>
 										</Link>
 									</li>
@@ -65,7 +65,7 @@ class writeMenu extends Component{
 
 									<li>
 										<Link to ="/q-letter">
-											<div className="post8 text-center"><h3>QUERY LETTR</h3></div>
+											<div className="post8 text-center"><h3>QUERY LETTER</h3></div>
 										</Link>
 									</li>
 								</ul>

@@ -38,12 +38,9 @@ class App extends Component {
               <Route exact path="/newbook" component= {NewBook} />
               <Route exact path ="/writemenu" component = {writeMenu}/>
               <Route exact path ="/tcharacter" component = {tCharacter}/>
-
               <Route exact path="/tplot" component = {tPlot} />
               <Route exact path="/tchapters" component={tChapters} />
 
-              <Route exact path = "/tplot" component = {tPlot}/>
-              <Route exact path="/tchapters" component={tChapters} />
 
             </div> 
           </div>
