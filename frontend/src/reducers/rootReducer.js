@@ -14,6 +14,8 @@ import RegisterReducer from './RegisterReducer';
 import LoginReducer from './LoginReducer';
 import CharacterReducer from './CharacterReducer';
 import PlotReducer from './PlotReducer';
+import CritiqueReducer from './CritiqueReducer';
+import SynopsisReducer from './SynopsisReducer'; 
 
 
 // create a rootReducer using the combineReducer method, so we can export it
@@ -24,7 +26,9 @@ const rootReducer = combineReducers({
 	registerReducer: RegisterReducer,
 	loginReducer: LoginReducer,
 	characterReducer: CharacterReducer,
-	plotReducer: PlotReducer
+	plotReducer: PlotReducer,
+	critiqueReducer: CritiqueReducer,
+	synopsisReducer: SynopsisReducer
 	
 })
 

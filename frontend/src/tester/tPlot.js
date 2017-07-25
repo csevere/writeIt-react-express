@@ -230,7 +230,7 @@ function mapStateToProps(state){
   return{
     // characterResponse: state.characterReducer,
     registerResponse: state.registerReducer,
-    plotResponse: state.loginReducer
+    plotResponse: state.plotReducer
 
   }
 }

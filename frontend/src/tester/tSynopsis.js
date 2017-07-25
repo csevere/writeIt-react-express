@@ -11,67 +11,89 @@ import 'slick-carousel/slick/slick-theme.css';
 
 
 class tSynopsis extends Component{
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     registerMessage: "",
-  //     nameError: null,
-  //     emailError: null,
-  //     formError: false
-  //   }
-  //   this.handlePlot = this.handlePlot.bind(this);
+  constructor(props) {
+    super(props);
+    this.state = {
+      // registerMessage: "",
+      // nameError: null,
+      // emailError: null,
+      // formError: false
+    }
+    this.handleSynopsis = this.handleSynopsis.bind(this);
     
-  // }
+  }
 
-  // handlePlot(event){
-  //   event.preventDefault();
+  handleSynopsis(event){
+    event.preventDefault();
     
-  //   var error = false;
+    var error = false;
 
-  //   var name = event.target[0].value;
-  //   var race = event.target[1].value;
-  //   var age = event.target[2].value;
-  //   var birthday = event.target[3].value;
-  //   // var physical_desc = event.target[4].value;
+    var synop_beg1 = document.getElementById('synop_beg1').value;
+    var synop_prot = document.getElementById('synop_prot').value;
+    var synop_prob = document.getElementById('synop_prob').value;
+    var synop_char = document.getElementById('synop_char')
+    var synop_change1= document.getElementById('synop_change1').value;
+    var synop_reader = document.getElementById('synop_reader').value;
+    var synop_impact = document.getElementById('synop_impact').value;
+    var synop_change2 = document.getElementById('synop_change2').value;
+    var synop_rel_start = document.getElementById('synop_rel_start').value;
+    var synop_test = document.getElementById('synop_test').value;
+    var synop_rel_conflict = document.getElementById('synop_rel_conflict').value;
+    var synop_rel_end = document.getElementById('synop_rel_end').value;
+    var synop_issue = document.getElementById('synop_issue').value
+    var synop_theme = document.getElementById('synop_theme').value;
+    var synop_message = document.getElementById('synop_message').value;
+   
+
  
-  //   var username = this.props.registerResponse.name;
-  //   console.log(username);
-  //   //Name
-  //   if(name.length < 1){
-  //     var nameError = "error"; 
-  //     error=true;
-  //   }
-  //   else{ 
-  //     var nameError = "success"
-  //   }
+    // var username = this.props.registerResponse.name;
+    // console.log(username);
+    // //Name
+    // if(name.length < 1){
+    //   var nameError = "error"; 
+    //   error=true;
+    // }
+    // else{ 
+    //   var nameError = "success"
+    // }
 
-  //   Email
-  //   if(name.length < 3){var emailError = "error"; error=true}
-  //   else{var emailError = "success"}
+    // Email
+    // if(name.length < 3){var emailError = "error"; error=true}
+    // else{var emailError = "success"}
 
 
-  //   // console.log(name);
-  //   if(error){
-  //      console.log("HERE!!!")
-  //     this.setState({
-  //       formError: true,
-  //       nameError: nameError
-  //     }) 
+    // console.log(name);
+    if(error){
+       console.log("ERROR!!!")
+      // this.setState({
+      //   formError: true,
+      //   nameError: nameError
+      // }) 
 
-  //   console.log(error);
-  //   }else{    
-  //     this.props.characterAction({
-  //       name: name,
-  //       age: age,
-  //       race: race,
-  //       birthday: birthday,
-  //       // physical_desc: physical_desc,
-  //       username: username
+    console.log(error);
+    }else{    
+      this.props.synopsisAction({
+        synop_beg1: synop_beg1,
+        synop_prot: synop_prot,
+        synop_prob: synop_prob,
+        synop_char: synop_char,
+        synop_change1: synop_change1,
+        synop_reader: synop_reader,
+        synop_impact: synop_impact,
+        synop_change2: synop_change2,
+        synop_rel_start: synop_rel_start,
+        synop_test: synop_test,
+        synop_rel_conflict: synop_rel_conflict,
+        synop_rel_end: synop_rel_end,
+        synop_issue: synop_issue,
+        synop_theme: synop_theme,
+        synop_message: synop_message
         
-  //     });
-  //   }
+      });
+    }
 
-  // }
+  }
+
 
  
 	render(){
@@ -94,29 +116,29 @@ class tSynopsis extends Component{
         						<Form onSubmit={this.handleSynopsis}>
         							<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>Where and when does the story take place?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="confusing sections" />
+              							<FormControl id = "synop_beg1" componentClass="textarea" placeholder="confusing sections" />
             						</FormGroup>
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>Who is the protagonist?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="repetitious sections" />
+              							<FormControl id = "synop_prot" componentClass="textarea" placeholder="repetitious sections" />
             						</FormGroup>
 
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>What major and immediate problem is the protagonist facing?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="balance" />
+              							<FormControl id = "synop_prob" componentClass="textarea" placeholder="balance" />
             						</FormGroup>
 
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>Does your protagonist decide to take a leap of faith to change?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="advancing the story" />
+              							<FormControl id = "synop_char" componentClass="textarea" placeholder="advancing the story" />
             						</FormGroup>
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>How has the situation of your protagonist changed at the end of the novel?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="too many plot questions raised?" />
+              							<FormControl id = "synop_change1" componentClass="textarea" placeholder="too many plot questions raised?" />
             						</FormGroup>
 
             						<Button className = "btn" type="submit">
@@ -128,30 +150,30 @@ class tSynopsis extends Component{
                     <div className = "slick-form 2">
                       <Form onSubmit={this.handleSynopsis}>
                         <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>6</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="unique voices for characters" />
+                            <ControlLabel>Will readers feel that your protagonist has made the right decision?</ControlLabel>
+                              <FormControl id = "synop_reader" componentClass="textarea" placeholder="unique voices for characters" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>7</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="character personality fit" />
+                            <ControlLabel>Who is the impact character for the protagonist?</ControlLabel>
+                              <FormControl id = "synop_impact" componentClass="textarea" placeholder="character personality fit" />
                           </FormGroup>
 
 
                           <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>8</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="real strengths and weaknesses" />
+                            <ControlLabel>How does the impact character influence the main character to change?</ControlLabel>
+                              <FormControl id = "synop_change2" componentClass="textarea" placeholder="real strengths and weaknesses" />
                           </FormGroup>
 
 
                           <FormGroup controlId= "formControlsTextarea">
-                            <ControlLabel>9</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="romance arc strong?" />
+                            <ControlLabel>Where does the relationship between the protagonist and the impact character stand in the beginning of the work?</ControlLabel>
+                              <FormControl id = "synop_rel_start" componentClass="textarea" placeholder="romance arc strong?" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>10</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder= "conflit strong?" />
+                            <ControlLabel>How is their relationship tested throughout the story?</ControlLabel>
+                              <FormControl id = "synop_test" componentClass="textarea" placeholder= "conflit strong?" />
                           </FormGroup>
 
                           <Button className = "btn" type="submit">
@@ -163,29 +185,29 @@ class tSynopsis extends Component{
                       <div className = "slick-form 3">
                         <Form onSubmit={this.handleSynopsis}>
                           <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>11</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="protagonist pushed to limits?" />
+                            <ControlLabel>What is the biggest change in their relationship?</ControlLabel>
+                              <FormControl id = "synop_rel_conflict" componentClass="textarea" placeholder="protagonist pushed to limits?" />
                           </FormGroup>
 
                           <FormGroup controlId= "formControlsTextarea">
-                            <ControlLabel>12</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="character pov" />
+                            <ControlLabel>How is their relationship different by the end of the story?</ControlLabel>
+                              <FormControl id = "synop_rel_end" componentClass="textarea" placeholder="character pov" />
                           </FormGroup>
 
 
                           <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>13</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="sentence length" />
+                            <ControlLabel>What issues does your character struggle with throughout the story?</ControlLabel>
+                              <FormControl id = "synop_issue" componentClass="textarea" placeholder="sentence length" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>14</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="show don't tell" />
+                            <ControlLabel>What are the themes of your story?</ControlLabel>
+                              <FormControl id = "synop_theme" componentClass="textarea" placeholder="show don't tell" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
-                            <ControlLabel>15</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="good world-building?" />
+                            <ControlLabel>What is the message or moral of your story?</ControlLabel>
+                              <FormControl id = "synop_message" componentClass="textarea" placeholder="good world-building?" />
                           </FormGroup>
 
 
@@ -207,18 +229,23 @@ class tSynopsis extends Component{
 }
 
 
-// function mapStateToProps(state){
-//   return{
-//     characterResponse: state.characterReducer,
-//     registerResponse: state.registerReducer
+function mapStateToProps(state){
+  return{
+    // characterResponse: state.characterReducer,
+    registerResponse: state.registerReducer,
+    synopsisResponse: state.synopsisReducer
 
-//   }
-// }
+  }
+}
 
-// function mapDispatchToProps(dispatch){
-//   return bindActionCreators({
-//     characterAction: CharacterAction
-//   }, dispatch)
-// }
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({
+    synopsisAction: SynopsisAction
+  }, dispatch)
+}
 
-export default tSynopsis;
+// export default tPlot;
+export default connect(mapStateToProps,mapDispatchToProps)(tSynopsis);
+
+
+// export default tSynopsis;
