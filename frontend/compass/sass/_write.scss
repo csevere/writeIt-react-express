@@ -1,20 +1,16 @@
 @import 'variables';
 // ******************Write Section**********************************
-.page-header{
-	margin-top: 10em;
-    text-align: center;
-}
+
 
 .img-thumbnail{
-	margin-left: 8em;
-    margin-top: -38em;
+	margin-left: 9em;
+    margin-top: -44em;
 }
 
- h1,h2{
+h2 {
 	font-weight: bold;
     font-size: 5em;
-    margin-left:1em;
-    
+    margin-left:0em;  
 }
 
 .btn-primary{
@@ -28,18 +24,30 @@
 .btn{
 	position: relative;
     top: -9em;
-    left: -11em;
+    left: -14em;
     right: -14em;
     margin: auto;
 }
 
 .writeBookBackground {
 	background-color:#fc6554;
+    border:5px solid black;
 }
 
 .newBook{
-	position: relative;
-    left: 46em;
-    top: -41em;
+	left: -25em;
+    top: 11em;
     text-align: center;
+}
+
+.myBook{
+   position: relative;
+    left: 36em;
+    top: -41.5em;
+    text-align: center;
+}
+.btn-danger1{
+    margin-top:0em;
+    background-color:red;
+    color:white;
 }

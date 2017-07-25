@@ -523,56 +523,65 @@ body {
   z-index: 3;
 }
 
-/* line 3, ../../compass/sass/_write.scss */
-.page-header {
-  margin-top: 10em;
-  text-align: center;
-}
-
-/* line 8, ../../compass/sass/_write.scss */
+/* line 5, ../../compass/sass/_write.scss */
 .img-thumbnail {
-  margin-left: 8em;
-  margin-top: -38em;
+  margin-left: 9em;
+  margin-top: -44em;
 }
 
-/* line 13, ../../compass/sass/_write.scss */
-h1, h2 {
+/* line 10, ../../compass/sass/_write.scss */
+h2 {
   font-weight: bold;
   font-size: 5em;
-  margin-left: 1em;
+  margin-left: 0em;
 }
 
-/* line 20, ../../compass/sass/_write.scss */
+/* line 16, ../../compass/sass/_write.scss */
 .btn-primary {
   margin-top: 0em;
   margin-left: -38em;
 }
 
-/* line 24, ../../compass/sass/_write.scss */
+/* line 20, ../../compass/sass/_write.scss */
 .btn-success {
   margin-right: 2em;
 }
 
-/* line 28, ../../compass/sass/_write.scss */
+/* line 24, ../../compass/sass/_write.scss */
 .btn {
   position: relative;
   top: -9em;
-  left: -11em;
+  left: -14em;
   right: -14em;
   margin: auto;
 }
 
-/* line 36, ../../compass/sass/_write.scss */
+/* line 32, ../../compass/sass/_write.scss */
 .writeBookBackground {
   background-color: #fc6554;
+  border: 5px solid black;
 }
 
-/* line 40, ../../compass/sass/_write.scss */
+/* line 37, ../../compass/sass/_write.scss */
 .newBook {
-  position: relative;
-  left: 46em;
-  top: -41em;
+  left: -25em;
+  top: 11em;
   text-align: center;
+}
+
+/* line 43, ../../compass/sass/_write.scss */
+.myBook {
+  position: relative;
+  left: 36em;
+  top: -41.5em;
+  text-align: center;
+}
+
+/* line 49, ../../compass/sass/_write.scss */
+.btn-danger1 {
+  margin-top: 0em;
+  background-color: red;
+  color: white;
 }
 
 /* line 3, ../../compass/sass/_about.scss */
