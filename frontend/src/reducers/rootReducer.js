@@ -16,6 +16,9 @@ import CharacterReducer from './CharacterReducer';
 import PlotReducer from './PlotReducer';
 import QueryLetterReducer from './QueryLetterReducer';
 import ChaptersReducer from './ChaptersReducer'
+import CritiqueReducer from './CritiqueReducer';
+import SynopsisReducer from './SynopsisReducer'; 
+
 
 
 // create a rootReducer using the combineReducer method, so we can export it
@@ -29,7 +32,8 @@ const rootReducer = combineReducers({
 	plotReducer: PlotReducer,
 	queryletterReducer: QueryLetterReducer,
 	chaptersReducer: ChaptersReducer,
-	
+	critiqueReducer: CritiqueReducer,
+	synopsisReducer: SynopsisReducer	
 })
 
 export default rootReducer;

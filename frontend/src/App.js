@@ -11,6 +11,8 @@ import Character from './components/Character';
 import tCharacter from './tester/tCharacter'; 
 import tPlot from './tester/tPlot';
 import tChapters from './tester/tChapters';
+import tCritique from './tester/tCritique';
+import tSynopsis from './tester/tSynopsis';
 
 
 
@@ -38,9 +40,10 @@ class App extends Component {
               <Route exact path="/newbook" component= {NewBook} />
               <Route exact path ="/writemenu" component = {writeMenu}/>
               <Route exact path ="/tcharacter" component = {tCharacter}/>
-
               <Route exact path="/tplot" component = {tPlot} />
               <Route exact path="/tchapters" component={tChapters} />
+              <Route exact path="/tcritique" component={tCritique} />
+              <Route exact path="/tsynopsis" component={tSynopsis} />
 
             </div> 
           </div>
