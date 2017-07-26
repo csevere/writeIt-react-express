@@ -3,7 +3,7 @@ import $ from 'jquery';
 
 
 export default function(userData){
-	console.log("QueryLetterAction")
+	console.log("ChapterAction")
 	var thePromise = $.ajax({
 		method: "POST",
 		url: window.hostAddress + '/chapters',
