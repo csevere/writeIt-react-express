@@ -24,7 +24,7 @@ class writeMenu extends Component{
 									</li>
 
 									<li>
-										<Link to ="/tplot">
+										<Link to ="/plot">
 											<div className="post2 text-center"><h3>PLOT</h3></div>
 										</Link>
 									</li>

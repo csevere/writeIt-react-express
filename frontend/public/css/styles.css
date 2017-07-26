@@ -32,49 +32,48 @@
 .navbar-wrapper .title li a {
   display: block;
   float: left;
-  padding-left: 1em;
   font-weight: bolder;
   font-family: 'Montserrat', sans-serif;
   font-size: 36px;
   color: #fff;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
-/* line 51, ../../compass/sass/_navbar.scss */
+/* line 50, ../../compass/sass/_navbar.scss */
 .navbar-wrapper .title li a:hover {
   background-color: transparent;
   cursor: pointer;
 }
 
-/* line 60, ../../compass/sass/_navbar.scss */
+/* line 59, ../../compass/sass/_navbar.scss */
 .float-right {
   float: right;
   font-size: 1em;
 }
-/* line 65, ../../compass/sass/_navbar.scss */
+/* line 64, ../../compass/sass/_navbar.scss */
 .float-right .login, .float-right .signup {
   border: 3px solid #fff;
   padding: 15px;
   border-radius: 5px;
   font-family: 'Heebo', sans-serif;
 }
-/* line 73, ../../compass/sass/_navbar.scss */
+/* line 72, ../../compass/sass/_navbar.scss */
 .float-right .login {
   background-color: #fff;
   color: #2e6da4 !important;
   margin-right: 1em;
 }
-/* line 81, ../../compass/sass/_navbar.scss */
+/* line 80, ../../compass/sass/_navbar.scss */
 .float-right .login:hover {
   background: #2e6da4;
   color: #fff !important;
   cursor: pointer;
 }
-/* line 87, ../../compass/sass/_navbar.scss */
+/* line 86, ../../compass/sass/_navbar.scss */
 .float-right .signup {
   color: #fff;
   margin-right: 1em;
 }
-/* line 92, ../../compass/sass/_navbar.scss */
+/* line 91, ../../compass/sass/_navbar.scss */
 .float-right .signup:hover {
   background-color: #fff;
   color: #2e6da4;
@@ -808,8 +807,8 @@ h1 {
   background: #ccf;
 }
 
-/* line 1, ../../compass/sass/_character.scss */
-.character {
+/* line 1, ../../compass/sass/_writemenucat.scss */
+.writemenucat {
   position: absolute;
   background-image: url("https://static.pexels.com/photos/326311/pexels-photo-326311.jpeg");
   -webkit-background-size: cover;
@@ -829,18 +828,18 @@ h1 {
   overflow: scroll;
 }
 
-/* line 26, ../../compass/sass/_character.scss */
+/* line 26, ../../compass/sass/_writemenucat.scss */
 .ch-forms .form-control {
   width: 80% !important;
   margin-left: 5em;
   padding-top: 0em;
 }
-/* line 32, ../../compass/sass/_character.scss */
+/* line 32, ../../compass/sass/_writemenucat.scss */
 .ch-forms .slick-prev, .ch-forms .slick-next {
   position: absolute;
   top: 37% !important;
 }
-/* line 38, ../../compass/sass/_character.scss */
+/* line 38, ../../compass/sass/_writemenucat.scss */
 .ch-forms .slick-dots {
   display: block;
   position: absolute;
@@ -853,13 +852,13 @@ h1 {
   text-align: center;
   left: -52em;
 }
-/* line 49, ../../compass/sass/_character.scss */
+/* line 49, ../../compass/sass/_writemenucat.scss */
 .ch-forms .slick-dots li {
   position: relative;
   left: 51.5em;
   top: -8em;
 }
-/* line 57, ../../compass/sass/_character.scss */
+/* line 57, ../../compass/sass/_writemenucat.scss */
 .ch-forms .ch-forms-2 {
   display: block;
   width: 45em;
@@ -870,8 +869,54 @@ h1 {
   /* Padding for demo purposes */
   padding: 4em 0em 0em 0em;
 }
-/* line 79, ../../compass/sass/_character.scss */
+/* line 79, ../../compass/sass/_writemenucat.scss */
 .ch-forms .ch-forms-2 .btn {
   margin-top: 10em !important;
   margin-left: 21em !important;
+}
+
+/* line 4, ../../compass/sass/_user.scss */
+.profile {
+  position: absolute;
+}
+/* line 7, ../../compass/sass/_user.scss */
+.profile .header {
+  padding-top: 108px;
+  text-align: center;
+  position: relative;
+  background-color: #CAEFF0;
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center center;
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  line-height: 50px;
+  box-shadow: -1px -4px 9px 0px rgba(0, 0, 0, 0.2);
+}
+/* line 22, ../../compass/sass/_user.scss */
+.profile .username {
+  margin-left: -1em;
+}
+/* line 26, ../../compass/sass/_user.scss */
+.profile .prof-pic img {
+  margin-top: 10em;
+  border-radius: 125px;
+}
+
+/* line 36, ../../compass/sass/_user.scss */
+.stats li {
+  float: right;
+  bottom: -2em;
+  padding: 8px;
+  display: inline-block;
+  list-style: none;
+  text-decoration: none;
+  margin-top: 25em;
+  border: 1px solid #ddd;
+}
+
+/* line 47, ../../compass/sass/_user.scss */
+.addfriends h4 {
+  background-color: #9966ff;
 }

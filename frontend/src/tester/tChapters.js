@@ -102,7 +102,7 @@ class tChapters extends Component{
     console.log(this.props)
 		return(
 			<div>
-				<Grid className = "character text-center ch-forms">
+				<Grid className = "writemenucat text-center ch-forms">
 					<Row>
               <Col sm = {8} md = {10} className = "ch-forms-2 col-md-offset-3">
                 <Slider {...settings}>

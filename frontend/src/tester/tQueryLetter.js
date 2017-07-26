@@ -8,7 +8,7 @@ import {connect} from 'react-redux';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import PlotAction from '../actions/PlotAction';
+import QueryLetterAction from '../actions/QueryLetterAction';
 
 
 class tQueryLetter extends Component{
@@ -97,7 +97,7 @@ class tQueryLetter extends Component{
     console.log(this.props)
 		return(
 			<div>
-				<Grid className = "character text-center ch-forms">
+				<Grid className = "writemenucat text-center ch-forms">
 					<Row>
               <Col sm = {8} md = {10} className = "ch-forms-2 col-md-offset-3">
                 <Slider {...settings}>

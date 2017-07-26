@@ -1,0 +1,51 @@
+@import 'variables'; 
+
+
+.profile{
+	position: absolute;
+
+	.header{
+		padding-top: 108px; 
+		text-align: center; 
+		position: relative; 
+		background-color: $sky-blue;
+		background-size: cover; 
+		background-repeat: repeat; 
+		background-position: center center; 
+		display: flex; 
+		width: 100%;
+		padding: 10px;
+		line-height: 50px; 
+		box-shadow: -1px -4px 9px 0px rgba(0, 0, 0, 0.2); 
+	} 
+
+	.username{
+		margin-left: -1em; 
+	}
+
+	.prof-pic img{
+		margin-top: 10em;
+		border-radius: 125px;  
+	}
+
+
+
+}
+
+
+.stats li{
+		float: right; 
+		bottom: -2em; 
+		padding:8px; 
+		display: inline-block;
+		list-style: none; 
+		text-decoration: none;
+		margin-top: 25em; 
+		border: 1px solid #ddd; 
+	}	
+
+	.addfriends h4{
+		background-color: $purple; 
+	}
+
+
