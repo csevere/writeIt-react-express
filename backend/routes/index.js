@@ -172,7 +172,7 @@ router.post('/characters',(req,res)=>{
 	var insertCharacterQuery = `INSERT INTO characters 
 		(username,name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
 		relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
-		liked_disliked) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
+		liked_disliked,time_stamp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW())`;
 	connection.query(characterQuery, [username,name], (error,results)=>{
 		if(error) throw error;
 		if(results.length === 0){
