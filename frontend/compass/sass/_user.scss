@@ -65,9 +65,34 @@
 		border: 1px solid #ddd;
 	}
 
+	.mybooks-right{
+		display: inline-block;
+
+	}
+
+	
+	.book {
+  		display: flex;
+  		box-shadow: 5px 5px 20px #333;
+  		margin: 10px;
+	    margin: 10px;
+	    height: 81px;
+	    padding: 10px;
+	    width: 67px;
+	    margin-left: 2em; 
+	}
+
+	.createbook{
+		 
+			button {
+				top: 0em;
+				right: 0em;
+				left: 2em;  
+				margin: auto;
 
 
-
+			}
+	}
 
 
 

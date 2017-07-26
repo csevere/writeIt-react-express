@@ -141,8 +141,24 @@ class tUserProfile extends Component{
                 </Col>
 
                 <Col md = {7} className = "mybooks-right">
-                  <div><h4>My Books</h4></div> 
+                  <div><h4>My Books</h4></div>
 
+                  <Col md = {3}>
+                      <div className = "createbook">
+                        
+                        <div className = "book">Create Book</div>
+
+                        <div>
+                          <form> 
+                            <Link to="/newbook"><button className="btn-primary btn btn-book">Create</button></Link>
+                          </form> 
+                        </div> 
+                      </div>
+                      
+                  </Col> 
+
+                  
+                  
                 </Col>
               </Grid> 
 

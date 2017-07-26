@@ -7,34 +7,45 @@ import {connect} from 'react-redux';
 
 
 
-class tBook extends Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      handleCreateBook: true
-    }
-    this.handleCreateBook = this.CreateBook.bind(this);
-    
-  }
+let tBook = function statelessFunctionComponentClass(props){
+	let title = props.title;
 
-  handleCreateBook(){
-  	let BookObj = {}
-
-  }
-
-
-
-  render(){
-     
-    console.log(this.props)
-		return(
-			<div>
-				   
-		  </div>
-
-		)
-	}
+	let style = {
+		width: '50px',
+		margin: '10px 5px 0px 5px'
+	} 
 }
+
+
+
+// class tBook extends Component{
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       handleCreateBook: true
+//     }
+//     this.handleCreateBook = this.CreateBook.bind(this);
+    
+//   }
+
+//   handleCreateBook(){
+//   	let BookObj = {}
+
+//   }
+
+
+
+//   render(){
+     
+//     console.log(this.props)
+// 		return(
+// 			<div>
+				   
+// 		  </div>
+
+// 		)
+// 	}
+// }
 
 
 // function mapStateToProps(state){

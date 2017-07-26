@@ -605,14 +605,27 @@ h2 {
 }
 
 /* line 1, ../../compass/sass/_newbook.scss */
-h1 {
+.new-book-form {
+  display: inline-block;
+  margin-top: 13em;
+  background-color: #f8f8ff;
+  border: 1px solid #ddd;
+  padding-top: 10px;
+}
+/* line 8, ../../compass/sass/_newbook.scss */
+.new-book-form h1 {
   margin-top: 2em;
 }
-
-/* line 6, ../../compass/sass/_newbook.scss */
-.btn-danger {
+/* line 13, ../../compass/sass/_newbook.scss */
+.new-book-form .btn-primary {
   margin-top: 8em;
   margin-left: 30em;
+}
+/* line 18, ../../compass/sass/_newbook.scss */
+.new-book-form .form-group {
+  margin-bottom: 15px;
+  padding: 50px;
+  line-height: 50px;
 }
 
 /* line 3, ../../compass/sass/_register.scss */
@@ -934,8 +947,30 @@ h1 {
   padding: 10px;
   border: 1px solid #ddd;
 }
+/* line 68, ../../compass/sass/_user.scss */
+.profile .mybooks-right {
+  display: inline-block;
+}
+/* line 74, ../../compass/sass/_user.scss */
+.profile .book {
+  display: flex;
+  box-shadow: 5px 5px 20px #333;
+  margin: 10px;
+  margin: 10px;
+  height: 81px;
+  padding: 10px;
+  width: 67px;
+  margin-left: 2em;
+}
+/* line 87, ../../compass/sass/_user.scss */
+.profile .createbook button {
+  top: 0em;
+  right: 0em;
+  left: 2em;
+  margin: auto;
+}
 
-/* line 77, ../../compass/sass/_user.scss */
+/* line 102, ../../compass/sass/_user.scss */
 .stats-right li {
   float: right;
   bottom: -2em;
@@ -947,7 +982,7 @@ h1 {
   border: 1px solid #ddd;
 }
 
-/* line 88, ../../compass/sass/_user.scss */
+/* line 113, ../../compass/sass/_user.scss */
 .addfriends h4 {
   background-color: #9966ff;
 }
