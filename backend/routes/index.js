@@ -172,7 +172,7 @@ router.post('/characters',(req,res)=>{
 	var insertCharacterQuery = `INSERT INTO characters 
 		(username,name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
 		relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
-		liked_disliked,time_stamp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW())`;
+		liked_disliked,time_stamp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?, NOW())`;
 	connection.query(characterQuery, [username,name], (error,results)=>{
 		if(error) throw error;
 		if(results.length === 0){
@@ -191,27 +191,82 @@ router.post('/characters',(req,res)=>{
 
 		}else{
 			var updateCharacterQuery = `UPDATE characters SET
-				(name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
-				relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
-				liked_disliked) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
-			connection.query(insertCharacterQuery, [name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
-			relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
-			liked_disliked], (error3,results3)=>{
-					if(error3) throw error3;
+				name = '${name}',race = '${race}',age = '${age}',birthday = '${birthday}',physical_desc = '${physical_desc}',hometown = '${hometown}',type_of_home = '${type_of_home}',father_info = '${father_info}',mother_info = '${mother_info}',sibling_info = '${sibling_info}',
+				relatives = '${relatives}',friends = '${friends}',enemies = '${enemies}',mentor = '${mentor}',hobbies = '${hobbies}',dress = '${dress}',leader_follower = '${leader_follower}',positive_traits = '${positive_traits}',negative_traits = '${negative_traits}',temper = '${temper}',star_sign = '${star_sign}',personality = '${personality}',philosophy = '${philosophy}',ambitions = '${ambitions}',
+				liked_disliked = '${liked_disliked}',time_stamp = NOW() WHERE username = '${username}' AND name = '${name}'`;
+			connection.query(updateCharacterQuery, (error3,results3)=>{
 					var characterArray = [name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
 					relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
 					liked_disliked]
+					// console.log(characterArray);
+					if(error3) throw error3;
 					res.json({
 						msg:'characterUpdated',
 						characterData: characterArray
 					})
+					
 			})
 		}
 	})
 
 });
 
-
+router.post('/plot',(req,res)=>{
+	console.log("PLOT REQUEST")
+ 
+	var username = req.body.username;
+ 	var main_plot = req.body.main_plot;
+	var subplot = req.body.subplot;
+	var subplot_reasons = req.body.subplot_reasons;
+	var direct_actions = req.body.direct_actions;
+	var indirect_actions = req.body.indirect_actions;
+	var motivation = req.body.motivation;
+	var plot_type = req.body.lot_type;
+	var plot_order = req.body.plot_order;
+	var foreshadow = req.body.foreshadow;
+	var credibility = req.body.credibility;
+	var flashbacks = req.body.flashbacks;
+	var journey = req.body.journey;
+	var stakes = req.body.stakes;
+	var antagonist = req.body.antagonist;
+	var summary = req.body.summary;
+ 
+    console.log(req.body)
+ 
+    var plotQuery = `SELECT * FROM plot WHERE username = ? and main_plot = ?`;
+ 	var insertPlotQuery = `INSERT INTO plot 
+ 		(username,main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
+ 		credibility,flashbacks,journey,stakes,antagonist,summary,time_stamp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW())`;
+ 		connection.query(plotQuery, [username,main_plot], (error,results)=>{
+ 			if(error) throw error;
+ 			if(results.length === 0){
+ 				connection.query(insertPlotQuery, [username, main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
+ 				credibility,flashbacks,journey,stakes,antagonist,summary],(error2,results2)=>{
+ 						if(error2) throw error2;
+ 						var plotArray = [main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
+ 						credibility,flashbacks,journey,stakes,antagonist,summary]
+ 						res.json({
+ 							msg:'plotInserted',
+ 							plotData: plotArray
+ 						})
+ 				})
+ 			}else{
+ 				var updatePlotQuery = `UPDATE plot SET
+ 					main_plot = '${main_plot}',subplot = '${subplot}',subplot_reasons = '${subplot_reasons}',direct_actions = '${direct_actions}',indirect_actions = '${indirect_actions}',motivation = '${motivation}',plot_type = '${plot_type}',plot_order = '${plot_order}',foreshadow = '${foreshadow}',
+ 					credibility = '${credibility}',flashbacks = '${flashbacks}',journey = '${journey}',stakes = '${stakes}',antagonist = '${antagonist}',summary = '${summary}',time_stamp = NOW() WHERE username = '${username}' AND main_plot = '${main_plot}';`;
+ 				connection.query(updatePlotQuery,(error3,results3)=>{
+ 					if(error3) throw error3;
+ 					var plotArray = [main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
+ 					credibility,flashbacks,journey,stakes,antagonist,summary]
+ 					res.json({
+ 							msg:'plotUpdated',
+ 							plotData: plotArray
+ 						})
+ 				})
+ 			}
+ 		})
+  
+ })
 
 
 
