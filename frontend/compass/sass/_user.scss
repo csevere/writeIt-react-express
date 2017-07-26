@@ -1,6 +1,7 @@
 @import 'variables'; 
 
 
+
 .profile{
 	position: absolute;
 
@@ -28,12 +29,52 @@
 		border-radius: 125px;  
 	}
 
+	// .second-row{
+	// 	border: 5px solid green; 
+	// }
+
+	.about-left, .twitter-left{
+		float: left; 
+		background-color: $ghost-white; 
+		height: 34vh;
+		border: 1px solid #ddd; 
+		padding-top: 10px;
+		margin-top: 1em;  
+		width: 40%; 
+	 
+	}
+
+	.mybooks-right, .messages-left{
+		float: right; 
+		background-color: $ghost-white;
+		border: 1px solid #ddd; 
+		margin-top: 1em;
+		padding-top: 10px;
+		padding-bottom: 10px;   
+	}
+
+	.display-message{
+		background-color: $white-smoke;
+		border: 1px solid #ddd;  
+		padding: 10px; 
+	}
+
+	.write-message-box{
+		background-color: $sea-shell;
+		padding: 10px; 
+		border: 1px solid #ddd;
+	}
+
+
+
+
+
 
 
 }
 
 
-.stats li{
+.stats-right li{
 		float: right; 
 		bottom: -2em; 
 		padding:8px; 
