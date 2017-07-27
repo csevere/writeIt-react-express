@@ -39,6 +39,8 @@ class tQueryLetter extends Component{
     var query_action = document.getElementById('query_action').value;
     var query_personality = document.getElementById('query_personality').value;
     var query_romance = document.getElementById('query_romance').value;
+
+    var username = this.props.registerResponse.name;
     
 
  
@@ -78,7 +80,8 @@ class tQueryLetter extends Component{
         query_voice: query_voice,
         query_action: query_action,
         query_personality: query_personality,
-        query_romance: query_romance, 
+        query_romance: query_romance,
+        username: username
       });
     }
 
