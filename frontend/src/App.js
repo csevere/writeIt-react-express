@@ -15,6 +15,7 @@ import tCritique from './tester/tCritique';
 import tSynopsis from './tester/tSynopsis';
 import tQueryLetter from './tester/tQueryLetter';
 import tUserProfile from './tester/tUserProfile';
+import tWriteOption from './tester/tWriteOption';
 
 
 
@@ -46,8 +47,7 @@ class App extends Component {
               <Route exact path= "/synopsis" component ={tSynopsis}/>
               <Route exact path= "/q-letter" component ={tQueryLetter}/>
               <Route exact path= "/user" component ={tUserProfile}/>
-
-
+              <Route  path= "/option" component ={tWriteOption}/>
 
             </div> 
           </div>

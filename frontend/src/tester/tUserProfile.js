@@ -107,30 +107,34 @@ class tUserProfile extends Component{
 				<Grid className = "profile">
 					<Row>
 
-            <div className = "fluid-container header">
-              <Col md ={4} className = "col-md-offset-4 left">
+            <div className = "container-fluid header">
+              <Col md={12}>
+                
+                  <Col md ={4} className = "col-md-offset-4 left">
 
-                <div className = "prof-pic">
-                  <a href="https://placeholder.com"><img src="http://via.placeholder.com/200x200"/></a>
-                </div>
-          
-                <div className = "username text-center">
-                  <h3>Username</h3>
-                  <h4>Location</h4> 
-                </div> 
-              </Col> 
+                    <div className = "prof-pic">
+                      <a href="https://placeholder.com"><img src="http://via.placeholder.com/200x200"/></a>
+                    </div>
+              
+                    <div className = "username text-center">
+                      <h3>Username</h3>
+                      <h4>Location</h4> 
+                    </div> 
+                  </Col> 
+              
+  
+                  <Col md = {4}>
+                   <div className = "stats-right">
+                        <div>
+                          <ul>
+                            <li style = {{background: "white"}}><div id= "friends"><h4>0 Friends</h4></div></li>
+                            <li style = {{background: "blue", color: "white", cursor: "pointer"}}><div id = "addfriend"><h4> + Add Friend</h4></div></li>
+                          </ul>   
+                        </div>
+                    </div>
+                  </Col> 
 
-
-              <Col md = {4}>
-                 <div className = "stats-right">
-                      <div>
-                        <ul>
-                          <li style = {{background: "white"}}><div id= "friends"><h4>0 Friends</h4></div></li>
-                          <li style = {{background: "blue", color: "white", cursor: "pointer"}}><div id = "addfriend"><h4> + Add Friend</h4></div></li>
-                        </ul>   
-                      </div>
-                  </div>
-              </Col> 
+                </Col> 
             </div>
 
             <Row className = "second-row">
