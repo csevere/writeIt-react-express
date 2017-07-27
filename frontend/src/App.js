@@ -15,11 +15,9 @@ import tCritique from './tester/tCritique';
 import tSynopsis from './tester/tSynopsis';
 import tQueryLetter from './tester/tQueryLetter';
 import tUserProfile from './tester/tUserProfile';
-<<<<<<< HEAD
 import NotePad from './components/NotePad';
-=======
 import tWriteOption from './tester/tWriteOption';
->>>>>>> b38dc4dfee8e74f738c1924e1dd61c1948882f78
+
 
 
 
@@ -47,22 +45,13 @@ class App extends Component {
               <Route exact path="/tcharacter" component = {tCharacter}/>
               <Route exact path="/plot" component = {tPlot} />
               <Route exact path="/chapters" component={tChapters} />
-<<<<<<< HEAD
               <Route exact path= "/critique" component ={tCritique}/>
               <Route exact path= "/synopsis" component ={tSynopsis}/>
               <Route exact path= "/q-letter" component ={tQueryLetter}/>
               <Route exact path= "/user" component ={tUserProfile}/>
               <Route exact path= "/notepad" component={NotePad} />
-              
-
-
-=======
-              <Route exact path="/critique" component ={tCritique}/>
-              <Route exact path="/synopsis" component ={tSynopsis}/>
-              <Route exact path="/q-letter" component ={tQueryLetter}/>
-              <Route exact path="/user" component ={tUserProfile}/>
               <Route exact path="/option" component ={tWriteOption}/>
->>>>>>> b38dc4dfee8e74f738c1924e1dd61c1948882f78
+
 
             </div> 
           </div>
