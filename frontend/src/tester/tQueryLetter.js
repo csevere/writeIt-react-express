@@ -92,31 +92,32 @@ class tQueryLetter extends Component{
               <Col sm = {8} md = {10} className = "ch-forms-2 col-md-offset-3">
                 <Slider {...settings}>
                   <div className = "slick-form 1">
-                                <Form onSubmit={this.handleQueryLetter}>
-                                    <FormGroup controlId="formControlsTextarea">
-                                        <ControlLabel>Have you researched the agent and the type of authods he/she represents?</ControlLabel>
-                                        <FormControl id="query_clarity" componentClass="textarea" placeholder="query_clarity" />
-                                    </FormGroup>
-                                    <FormGroup controlId="formControlsTextarea">
-                                        <ControlLabel>In setting up the story, specify exactly what your character wants the most in the world?</ControlLabel>
-                                        <FormControl id="query_boring" componentClass="textarea" placeholder="query_boring" />
-                                    </FormGroup>
-                                    <FormGroup controlId="formControlsTextarea">
-                                        <ControlLabel>Specify what's getting in the way of your character's goals?</ControlLabel>
-                                        <FormControl id="query_balance" componentClass="textarea" placeholder="query_balance" />
-                                    </FormGroup>
-                                    <FormGroup controlId="formControlsTextarea">
-                                        <ControlLabel>Whats at stake if your character fails?</ControlLabel>
-                                        <FormControl id="query_stakes" componentClass="textarea" placeholder="query_stakes" />
-                                    </FormGroup>
-                                    <FormGroup controlId="formControlsTextarea">
-                                        <ControlLabel>How can you show rather than tell the agent about your main character?</ControlLabel>
-                                        <FormControl id="query_advance" componentClass="textarea" placeholder="query_advance" />
-                                    </FormGroup>
-                                    <Button className = "btn" type="submit">
-                                        submit
-                                    </Button>                 
-                                  </Form>
+                    <Form onSubmit={this.handleQueryLetter}>
+                        <FormGroup controlId="formControlsTextarea">
+                            <ControlLabel>Have you researched the agent and the type of authods he/she represents?</ControlLabel>
+                            <FormControl id="query_clarity" componentClass="textarea" placeholder="query_clarity" />
+                        </FormGroup>
+                        <FormGroup controlId="formControlsTextarea">
+                            <ControlLabel>In setting up the story, specify exactly what your character wants the most in the world?</ControlLabel>
+                            <FormControl id="query_boring" componentClass="textarea" placeholder="query_boring" />
+                        </FormGroup>
+                        <FormGroup controlId="formControlsTextarea">
+                            <ControlLabel>Specify what's getting in the way of your character's goals?</ControlLabel>
+                            <FormControl id="query_balance" componentClass="textarea" placeholder="query_balance" />
+                        </FormGroup>
+                        <FormGroup controlId="formControlsTextarea">
+                            <ControlLabel>Whats at stake if your character fails?</ControlLabel>
+                            <FormControl id="query_stakes" componentClass="textarea" placeholder="query_stakes" />
+                        </FormGroup>
+                        <FormGroup controlId="formControlsTextarea">
+                            <ControlLabel>How can you show rather than tell the agent about your main character?</ControlLabel>
+                            <FormControl id="query_advance" componentClass="textarea" placeholder="query_advance" />
+                        </FormGroup>
+                        <Button className = "btn" type="submit">
+                            submit
+                        </Button>                 
+                      </Form>
+
                     </div> 
                     <div className = "slick-form 2">
                       <Form onSubmit={this.handleQueryLetter}>
