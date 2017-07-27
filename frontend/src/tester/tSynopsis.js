@@ -32,7 +32,7 @@ class tSynopsis extends Component{
     var synop_beg1 = document.getElementById('synop_beg1').value;
     var synop_prot = document.getElementById('synop_prot').value;
     var synop_prob = document.getElementById('synop_prob').value;
-    var synop_char = document.getElementById('synop_char')
+    var synop_char = document.getElementById('synop_char').value;
     var synop_change1= document.getElementById('synop_change1').value;
     var synop_reader = document.getElementById('synop_reader').value;
     var synop_impact = document.getElementById('synop_impact').value;
@@ -44,6 +44,8 @@ class tSynopsis extends Component{
     var synop_issue = document.getElementById('synop_issue').value
     var synop_theme = document.getElementById('synop_theme').value;
     var synop_message = document.getElementById('synop_message').value;
+
+    var username = this.props.registerResponse.name;
    
 
  
@@ -88,7 +90,8 @@ class tSynopsis extends Component{
         synop_rel_end: synop_rel_end,
         synop_issue: synop_issue,
         synop_theme: synop_theme,
-        synop_message: synop_message
+        synop_message: synop_message,
+        username: username
         
       });
     }
@@ -221,6 +224,19 @@ class tSynopsis extends Component{
                   </Slider> 
 
                 </Col> 
+
+
+                <Row>
+                  <Grid className = "fourth-row-left">
+                    <Col md = {3}>
+                      <Link to = "/writeMenu" className = "return-writemenu">
+                        <img src = "https://cdn4.iconfinder.com/data/icons/lifestyle-set-2/100/07a3c3443f894cb3fa7a93ee3c496233-512.png"/>
+                        <div>Return to Write Menu</div>
+                      </Link>
+                    </Col> 
+                  </Grid>
+                </Row>
+                
             </Row>	
 		      </Grid>   
 		    </div>

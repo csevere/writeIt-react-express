@@ -1,7 +1,9 @@
+@import 'variables'; 
+
 .writemenucat{
 
 	position: absolute;	
-	background-image: url('https://static.pexels.com/photos/326311/pexels-photo-326311.jpeg');
+	background-image: url('https://static.pexels.com/photos/301717/pexels-photo-301717.jpeg');
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -18,6 +20,30 @@
 	width: 100vw; 
 	overflow: scroll; 
 	 
+}
+
+
+.fourth-row-left{
+	float: left;
+	margin-top: -13em; 
+	img{
+		width: 50%; 
+
+	} 
+
+	a{
+		text-decoration: none; 
+		font-size: 15px;
+		font-weight: bolder; 
+		color: $black; 
+
+	}
+
+	a:hover{
+		color: $soft-green; 
+		cursor: pointer; 
+		text-decoration: underline;
+	}
 }
 
 

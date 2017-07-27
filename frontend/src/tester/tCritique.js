@@ -30,7 +30,7 @@ class tCritique extends Component{
     var error = false;
 
     var critique_clarity = document.getElementById('critique_clarity').value;
-    var critique_boring = document.getElementById('critique_boring.value');
+    var critique_boring = document.getElementById('critique_boring').value;
     var critique_balance = document.getElementById('critique_balance').value;
     var critique_advance = document.getElementById('critique_advance').value;
     var critique_resolve = document.getElementById('critique_resolve').value;
@@ -44,6 +44,8 @@ class tCritique extends Component{
     var critique_sent = document.getElementById('critique_sent').value;
     var critique_lang = document.getElementById('critique_lang').value;
     var critique_element = document.getElementById('critique_element').value;
+
+    var username = this.props.registerResponse.name;
 
  
     // var username = this.props.registerResponse.name;
@@ -87,7 +89,8 @@ class tCritique extends Component{
         critique_pov: critique_pov,
         critique_sent: critique_sent,
         critique_lang: critique_lang,
-        critique_element: critique_element
+        critique_element: critique_element,
+        username: username
         
       });
     }
@@ -112,7 +115,7 @@ class tCritique extends Component{
                 <Slider {...settings}>
 
                   <div className = "slick-form 1">
-        						<Form onSubmit={this.handleCritqiue}>
+        						<Form onSubmit={this.handleCritique}>
         							<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>Are there any parts in the sample that you found confusing?</ControlLabel>
               							<FormControl id = "critique_clarity"  componentClass="textarea" placeholder="confusing sections" />
@@ -147,7 +150,7 @@ class tCritique extends Component{
                     </div> 
 
                     <div className = "slick-form 2">
-                      <Form onSubmit={this.handleCritqiue}>
+                      <Form onSubmit={this.handleCritique}>
                         <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Do the characters all sound the same or do they have unique voices?</ControlLabel>
                               <FormControl id = "critique_voice" componentClass="textarea" placeholder="unique voices for characters" />
@@ -182,7 +185,7 @@ class tCritique extends Component{
                       </div> 
 
                       <div className = "slick-form 3">
-                        <Form onSubmit={this.handleCritqiue}>
+                        <Form onSubmit={this.handleCritique}>
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Does the opponent push the main character to his or her limits?</ControlLabel>
                               <FormControl id = "critique_limit"componentClass="textarea" placeholder="protagonist pushed to limits?" />
@@ -217,8 +220,18 @@ class tCritique extends Component{
                       </div> 
 
                   </Slider> 
-
                 </Col> 
+
+                <Row>
+                  <Grid className = "fourth-row-left">
+                    <Col md = {3}>
+                      <Link to = "/writeMenu" className = "return-writemenu">
+                        <img src = "https://cdn4.iconfinder.com/data/icons/lifestyle-set-2/100/07a3c3443f894cb3fa7a93ee3c496233-512.png"/>
+                        <div>Return to Write Menu</div>
+                      </Link>
+                    </Col> 
+                  </Grid>
+                </Row>
             </Row>	
 		      </Grid>   
 		    </div>
@@ -244,3 +257,6 @@ function mapDispatchToProps(dispatch){
 
 // export default tCritique;
 export default connect(mapStateToProps,mapDispatchToProps)(tCritique);
+
+
+

@@ -107,40 +107,102 @@ class tUserProfile extends Component{
 				<Grid className = "profile">
 					<Row>
 
-            <div className = "fluid-container header">
-              <Col md ={4} className = "col-md-offset-4 left">
+            <div className = "container-fluid header">
+              <Col md={12}>
+                
+                  <Col md ={4} className = "col-md-offset-4 left">
 
-                <div className = "prof-pic">
-                  <a href="https://placeholder.com"><img src="http://via.placeholder.com/200x200"/></a>
-                </div>
-          
-                <div className = "username text-center">
-                  <h3>Username</h3>
-                  <h4>Location</h4> 
-                </div>
-              </Col> 
+                    <div className = "prof-pic">
+                      <a href="https://placeholder.com"><img src="http://via.placeholder.com/200x200"/></a>
+                    </div>
+              
+                    <div className = "username text-center">
+                      <h3>Username</h3>
+                      <h4>Location</h4> 
+                    </div> 
+                  </Col> 
+              
+  
+                  <Col md = {4}>
+                   <div className = "stats-right">
+                        <div>
+                          <ul>
+                            <li style = {{background: "white"}}><div id= "friends"><h4>0 Friends</h4></div></li>
+                            <li style = {{background: "blue", color: "white", cursor: "pointer"}}><div id = "addfriend"><h4> + Add Friend</h4></div></li>
+                          </ul>   
+                        </div>
+                    </div>
+                  </Col> 
 
-
-              <Col md = {4}>
-                 <div className = "stats">
-                      <div>
-                        <ul>
-                          <li style = {{background: "white"}}><div id= "friends" ><h4> 0 Friends</h4></div></li>
-                          <li style = {{background: "white"}}><div id = "books"><h4> 0 Books </h4></div></li>
-                          <li style = {{background: "blue", color: "white", cursor: "pointer"}}><div id = "addfriend"><h4> + Add Friend</h4></div></li>
-                        </ul>   
-                      </div>
-                  </div>
-              </Col> 
+                </Col> 
             </div>
 
-            <Row>
-              <Col md = {6}> 
+            <Row className = "second-row">
+              <Grid className = "col-md-12">
 
-              </Col> 
+                <Col md = {3} className = "about-left">
+                  <div><h4>About</h4></div> 
+                </Col>
+
+                <Col md = {7} className = "mybooks-right">
+                  <div><h4>My Books</h4></div>
+
+                  <Col md = {3}>
+                      <div className = "createbook">
+                        
+                        <div className = "book">Create Book</div>
+
+                        <div>
+                          <form> 
+                            <Link to="/newbook"><button className="btn-primary btn btn-book">Create</button></Link>
+                          </form> 
+                        </div> 
+                      </div>
+                      
+                  </Col> 
+
+                  
+                  
+                </Col>
+              </Grid> 
 
             </Row>
 
+            <Row className = "third-row">
+              <Grid className = "col-md-12">
+                <Col md = {3} className = "twitter-left">
+                  <div><h4>Twitter</h4></div> 
+                </Col> 
+
+                 <Col md = {7} className = "messages-left">
+                  <div>
+                      <Form >
+                        <FormGroup controlId="formControlsTextarea">
+                          <FormControl id = "post-message" componentClass="textarea" placeholder="post a message" />
+                        </FormGroup>
+                      </Form>
+                  </div> 
+
+                  <div className = "display-message">
+                    <div>(Username)(theDate):</div>
+                    <div>(Posted Message Lorem ipsum dolor sit amet, 
+                      graeci pertinacia est at, essent iisque sea an. 
+                      Eos autem molestiae id, ad vim quot evertitur 
+                      quaerendum. Eligendi patrioque et nec, tritani 
+                      referrentur no sit. Vis graece virtute feugait)
+                    </div>
+                  </div> 
+
+                  <div className = "write-message-box">
+                      <Form>
+                        <FormGroup controlId="formControlsTextarea">
+                          <FormControl id = "post-reply" componentClass="textarea" placeholder="write a reply..." />
+                        </FormGroup>
+                      </Form>
+                  </div> 
+                </Col>
+              </Grid>
+            </Row>
 
           </Row>	
 		    </Grid>   

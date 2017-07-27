@@ -17,8 +17,7 @@ class NewBook extends Component{
 			<div>
 				<Grid>
 					<Row>
-						<Col md={12} >
-							<h1>Welcome to the New Book Page </h1>
+						<Col md={8} sm= {12} className = "col-md-offset-2 new-book-form text-center" >
 							<form>
 								<FormGroup>
 									<ControlLabel>What is the title of your book?</ControlLabel>
@@ -64,7 +63,7 @@ class NewBook extends Component{
 									<ControlLabel>What is the target completion date? </ControlLabel>
 										<DatePicker />
 								</FormGroup>
-								<Link to="/writeMenu"><button className="btn-danger btn">Submit</button></Link>
+								<Link to="/writeMenu"><button className="btn-primary btn">Submit</button></Link>
 							</form>
 						</Col>
 					</Row>

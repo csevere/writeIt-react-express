@@ -3,7 +3,7 @@ import Register from './containers/Register';
 import Home from './components/Home'; 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import Write from './components/Write';
+// import Write from './components/Write';
 import writeMenu from './components/writeMenu'; 
 import NewBook from './components/NewBook';
 import Login from './containers/Login';
@@ -15,7 +15,11 @@ import tCritique from './tester/tCritique';
 import tSynopsis from './tester/tSynopsis';
 import tQueryLetter from './tester/tQueryLetter';
 import tUserProfile from './tester/tUserProfile';
+<<<<<<< HEAD
 import NotePad from './components/NotePad';
+=======
+import tWriteOption from './tester/tWriteOption';
+>>>>>>> b38dc4dfee8e74f738c1924e1dd61c1948882f78
 
 
 
@@ -35,14 +39,15 @@ class App extends Component {
               <Route exact path="/" component= {Home} /> 
               <Route exact path="/signup" component= {Register} />
               <Route exact path="/login" component= {Login} />
-              <Route exact path="/write" component= {Write} />
-              <Route exact path ="/writemenu" component = {writeMenu}/>
+              <Route exact path="/write" component= {writeMenu} />
+              <Route exact path="/writemenu" component = {writeMenu}/>
               <Route exact path="/newbook" component= {NewBook} />
               <Route exact path="/character" component= {tCharacter} />
-              <Route exact path ="/writemenu" component = {writeMenu}/>
-              <Route exact path ="/tcharacter" component = {tCharacter}/>
+              <Route exact path="/writemenu" component = {writeMenu}/>
+              <Route exact path="/tcharacter" component = {tCharacter}/>
               <Route exact path="/plot" component = {tPlot} />
               <Route exact path="/chapters" component={tChapters} />
+<<<<<<< HEAD
               <Route exact path= "/critique" component ={tCritique}/>
               <Route exact path= "/synopsis" component ={tSynopsis}/>
               <Route exact path= "/q-letter" component ={tQueryLetter}/>
@@ -51,6 +56,13 @@ class App extends Component {
               
 
 
+=======
+              <Route exact path="/critique" component ={tCritique}/>
+              <Route exact path="/synopsis" component ={tSynopsis}/>
+              <Route exact path="/q-letter" component ={tQueryLetter}/>
+              <Route exact path="/user" component ={tUserProfile}/>
+              <Route exact path="/option" component ={tWriteOption}/>
+>>>>>>> b38dc4dfee8e74f738c1924e1dd61c1948882f78
 
             </div> 
           </div>

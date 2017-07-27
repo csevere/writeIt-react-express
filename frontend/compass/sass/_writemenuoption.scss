@@ -1,0 +1,126 @@
+@import 'variables';
+
+
+.write-menu-option{
+	position: absolute;	
+	background-image: url('https://static.pexels.com/photos/301717/pexels-photo-301717.jpeg');
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	color: $black; 
+	top: -41px;
+	left:0;
+	margin: 0; 
+	margin-top: 8em;
+	z-index: 1; 
+	min-width: 102%;
+	min-height: 100%;
+	width: 100vw; 
+	overflow: scroll; 
+	padding-top: 10px;
+	 
+
+	.write-cat-left{
+		float: left;
+
+	} 
+
+	.third-row{
+		display: flex; 
+
+	}
+
+
+	.stats-right{
+		float: right;
+		border: 5px solid $black;  
+	}
+
+	a{
+		text-decoration: none; 
+		color: $black; 
+		cursor: pointer;
+	}
+
+	a:hover{
+		color: $soft-green; 
+		cursor: pointer; 
+		text-decoration: underline;
+	}
+
+
+	.fourth-row-left{
+		float: left;
+		margin: -6em 0em 0em 9em; 
+		
+		img{
+			width: 50%; 
+
+		} 
+
+		a{
+			text-decoration: none; 
+			font-size: 15px;
+			font-weight: bolder; 
+			color: $black; 
+
+		}
+
+		a:hover{
+			color: $soft-green; 
+			cursor: pointer; 
+			text-decoration: underline;
+		}
+	}
+
+	.notepad{
+		display: block; 
+		width: 15em;
+	    height: 16em;
+
+	   	img{
+	   		width: 137%;
+    		margin-top: -1.6em;
+	   	}
+
+	   	h4{
+   			position: relative;
+			top: -11.5em;
+			left: 5em;
+
+	   	}
+
+	}
+
+	.guided{
+
+		display: block; 
+		width: 15em;
+	    height: 16em;
+		background: azure;
+
+		box-shadow:
+	    /* The top layer shadow */
+	    0 1px 1px rgba(0,0,0,0.15),
+	    /* The second layer */
+	    0 10px 0 -5px #eee,
+	    /* The second layer shadow */
+	    0 10px 1px -4px rgba(0,0,0,0.15),
+	     /* The third layer */
+	    0 20px 0 -10px #eee,
+	    /* The third layer shadow */
+	    0 20px 1px -9px rgba(0,0,0,0.15);
+	    /* Padding for demo purposes */
+	    padding: 4em 0em 0em 0em;
+
+	}
+
+}
+
+
+
+
+

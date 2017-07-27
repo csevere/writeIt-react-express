@@ -1,20 +1,18 @@
 @import 'variables'; 
 
 
+
 .profile{
 	position: absolute;
 
 	.header{
-		padding-top: 108px; 
+		
 		text-align: center; 
 		position: relative; 
 		background-color: $sky-blue;
-		background-size: cover; 
-		background-repeat: repeat; 
-		background-position: center center; 
 		display: flex; 
 		width: 100%;
-		padding: 10px;
+		
 		line-height: 50px; 
 		box-shadow: -1px -4px 9px 0px rgba(0, 0, 0, 0.2); 
 	} 
@@ -28,12 +26,77 @@
 		border-radius: 125px;  
 	}
 
+	// .second-row{
+	// 	border: 5px solid green; 
+	// }
+
+	.about-left, .twitter-left{
+		float: left; 
+		background-color: $ghost-white; 
+		height: 34vh;
+		border: 1px solid #ddd; 
+		padding-top: 10px;
+		margin-top: 1em;  
+		width: 40%; 
+	 
+	}
+
+	.mybooks-right, .messages-left{
+		float: right; 
+		background-color: $ghost-white;
+		border: 1px solid #ddd; 
+		margin-top: 1em;
+		padding-top: 10px;
+		padding-bottom: 10px;   
+	}
+
+	.display-message{
+		background-color: $white-smoke;
+		border: 1px solid #ddd;  
+		padding: 10px; 
+	}
+
+	.write-message-box{
+		background-color: $sea-shell;
+		padding: 10px; 
+		border: 1px solid #ddd;
+	}
+
+	.mybooks-right{
+		display: inline-block;
+
+	}
+
+	
+	.book {
+  		display: flex;
+  		box-shadow: 5px 5px 20px #333;
+  		margin: 10px;
+	    margin: 10px;
+	    height: 81px;
+	    padding: 10px;
+	    width: 67px;
+	    margin-left: 2em; 
+	}
+
+	.createbook{
+		 
+			button {
+				top: 0em;
+				right: 0em;
+				left: 2em;  
+				margin: auto;
+
+
+			}
+	}
+
 
 
 }
 
 
-.stats li{
+.stats-right li{
 		float: right; 
 		bottom: -2em; 
 		padding:8px; 
