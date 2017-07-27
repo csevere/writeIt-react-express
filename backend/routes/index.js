@@ -269,16 +269,15 @@ router.post('/plot',(req,res)=>{
  })
 
 router.post('/chapters', (req,res)=>{
-	console.log(res);
-
-	var scene_number = req.body.scene_number;
+    console.log(res);
+    var scene_number = req.body.scene_number;
     var scene_plot = req.body.scene_plot;
     var scene_char1 = req.body.scene_char1;
     var scene_dialogue = req.body.scene_dialogue;
     var scene_conflict = req.body.scene_conflict;
     var relevant_dialogue = req.body.relevant_dialogue;
     var char_thought = req.body.char_thought;
-    var pov = req.body.pov;
+    var pov_nar = req.body.pov;
     var pov_char= req.body.pov_char;
     var setting = req.body.setting;
     var setting_char = req.body.setting_char;
@@ -286,31 +285,166 @@ router.post('/chapters', (req,res)=>{
     var setting_rev = req.body.setting_rev;
     var scene_mood = req.body.scene_mood;
     var scene_char2 = req.body.scene_char2;
+    var username = req.body.username;
+    console.log(req.body);
+    var chapterQuery = `SELECT * FROM chapters WHERE username = ? AND scene_number = ?`;
+    var insertChapterQuery = `INSERT INTO chapters
+        (scene_number,scene_plot,scene_char1,scene_dialogue,scene_conflict,relevant_dialogue,char_thought,pov_nar,pov_char,setting,setting_char,
+        setting_plot,setting_rev,scene_mood,scene_char2,username) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);`;
+        connection.query(chapterQuery,[username, scene_number],(error,results)=>{
+            if(error) throw error;
+            if(results.length === 0){
+                console.log('insert');
+                connection.query(insertChapterQuery, [scene_number,scene_plot,scene_char1,scene_dialogue,scene_conflict,relevant_dialogue,char_thought,pov_nar,pov_char,setting,setting_char,
+                setting_plot,setting_rev,scene_mood,scene_char2,username],(error2,results2)=>{
+                        if(error2) throw error2;
+                        var chapterArray = [scene_number,scene_plot,scene_char1,scene_dialogue,scene_conflict,relevant_dialogue,char_thought,pov_nar,pov_char,setting,setting_char,
+                        setting_plot,setting_rev,scene_mood,scene_char2];
+                        res.json({
+                            msg:'chapterInserted',
+                            chapterData: chapterArray
+                        })
+                })
+            }else{
+                var updatePlotQuery = `UPDATE chapters SET
+                    scene_number='${scene_number}',scene_plot='${scene_plot}',scene_char1='${scene_char1}',scene_dialogue='${scene_dialogue}',scene_conflict='${scene_conflict}',relevant_dialogue='${relevant_dialogue}',char_thought='${char_thought}',pov_nar='${pov_nar}',pov_char='${pov_nar}',setting='${setting}',setting_char='${setting_char}',
+                    setting_plot='${setting_plot}',setting_rev='${setting_plot}',scene_mood='${scene_mood}',scene_char2='${scene_char2}' WHERE username = '${username}' AND scene_number='${scene_number}';`;
+                connection.query(updatePlotQuery,(error3,results3)=>{
+                    console.log('update')
+                    if(error3) throw error3;
+                    var chapterArray = [scene_number,scene_plot,scene_char1,scene_dialogue,scene_conflict,relevant_dialogue,char_thought,pov_nar,pov_char,setting,setting_char,
+                        setting_plot,setting_rev,scene_mood,scene_char2];
+                    res.json({
+                        msg:'chapterInserted',
+                        chapterData: chapterArray
+                    })
+                })
+            }
+        })
+});
 
+router.post('/critique', (req,res)=>{
+    console.log(req.body);
+
+    var critique_clarity = req.body.critique_clarity;
+    var critique_boring = req.body.critique_boring;
+    var critique_balance = req.body.critique_balance;
+    var critique_advance = req.body.critique_advance;
+    var critique_resolve = req.body.critique_resolve;
+    var critique_voice = req.body.critique_voice;
+    var critique_action = req.body.critique_action;
+    var critique_personality = req.body.critique_personality;
+    var critique_romance = req.body.critique_romance;
+    var critique_conflict = req.body.critique_conflict;
+    var critique_limit = req.body.critique_limit;
+    var critique_pov = req.body.critique_pov;
+    var critique_sent = req.body.critique_sent;
+    var critique_lang = req.body.critique_lang;
+    var critique_element = req.body.critique_element;
     var username = req.body.username;
 
     console.log(req.body);
+    var critiqueQuery = `SELECT * FROM critique WHERE username = ? AND critique_clarity = ?`;
+    var insertCritiqueQuery = `INSERT INTO critique
+        (critique_clarity, critique_boring, critique_balance, critique_advance, critique_resolve, critique_voice,
+        critique_action, critique_personality, critique_romance, critique_conflict, critique_limit, critique_pov,
+        critique_sent, critique_lang, critique_element, username) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);`;
+    connection.query(critiqueQuery,[username, critique_clarity],(error,results)=>{
+        if(error) throw error;
+        if(results.length === 0){
+            console.log('insert');
+            connection.query(insertCritiqueQuery, [critique_clarity, critique_boring, critique_balance, critique_advance, critique_resolve, critique_voice,
+                critique_action, critique_personality, critique_romance, critique_conflict, critique_limit, critique_pov,
+                critique_sent, critique_lang, critique_element, username],(error2,results2)=>{
+                if(error2) throw error2;
+                var critiqueArray = [critique_clarity, critique_boring, critique_balance, critique_advance, critique_resolve, critique_voice,
+                    critique_action, critique_personality, critique_romance, critique_conflict, critique_limit, critique_pov,
+                    critique_sent, critique_lang, critique_element];
+                res.json({
+                    msg:'critiqueInserted',
+                    critiqueData: critiqueArray
+                })
+            })
+        }else{
+            var updateCritiqueQuery = `UPDATE critique SET
+                    critique_clarity='${critique_clarity}', critique_boring='${critique_boring}', critique_balance='${critique_balance}', critique_advance='${critique_advance}', critique_resolve='${critique_resolve}', critique_voice='${critique_voice}',
+                    critique_action='${critique_action}', critique_personality='${critique_personality}', critique_romance='${critique_romance}', critique_conflict='${critique_conflict}', critique_limit='${critique_limit}', critique_pov='${critique_pov}',
+                    critique_sent='${critique_sent}', critique_lang='${critique_lang}', critique_element='${critique_element}' WHERE username='${username}' AND critique_clarity='${critique_clarity}';`;
+            connection.query(updateCritiqueQuery,(error3,results3)=>{
+                console.log('update')
+                if(error3) throw error3;
+                var critiqueArray = [critique_clarity, critique_boring, critique_balance, critique_advance, critique_resolve, critique_voice,
+                    critique_action, critique_personality, critique_romance, critique_conflict, critique_limit, critique_pov,
+                    critique_sent, critique_lang, critique_element];
+                res.json({
+                    msg:'critiqueInserted',
+                    critiqueData: critiqueArray
+                })
+            })
+        }
+    })
+});
 
-    var chapterQuery = `SELECT * FROM chapters WHERE username = ? AND scene_number = ?`;
-    var insertChapterQuery = `INSERT INTO chapters
-    	(scene_number,scene_plot,scene_char1,scene_dialogue,scene_conflict,relevant_dialogue,char_thought,pov,pov_char,setting,setting_char,
-    	setting_plot,setting_rev,scene_mood,scene_char2) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
-    	connection.query(insertChapterQuery,(error,results)=>{
-    		if(error) throw error;
-    		if(results.length === 0){
- 				connection.query(insertChapterQuery, [scene_number,scene_plot,scene_char1,scene_dialogue,scene_conflict,relevant_dialogue,char_thought,pov,pov_char,setting,setting_char,
-    			setting_plot,setting_rev,scene_mood,scene_char2],(error2,results2)=>{
- 						if(error2) throw error2;
- 						var chapterArray = [scene_number,scene_plot,scene_char1,scene_dialogue,scene_conflict,relevant_dialogue,char_thought,pov,pov_char,setting,setting_char,
-    					setting_plot,setting_rev,scene_mood,scene_char2]
- 						res.json({
- 							msg:'chapterInserted',
- 							chapterData: chapterArray
- 						})
- 				})
- 			}
-    	})
-})
+router.post('/synopsis',(req,res)=>{
+   console.log(req.body);
+   var synop_beg1 = req.body.synop_beg1;
+   var synop_prot = req.body.synop_prot;
+   var synop_prob = req.body.synop_prob;
+   var synop_char = req.body.synop_char;
+   var synop_change1 = req.body.synop_change1;
+   var synop_reader = req.body.synop_reader;
+   var synop_impact = req.body.synop_impact;
+   var synop_change2 = req.body.synop_change2;
+   var synop_rel_start = req.body.synop_rel_start;
+   var synop_test = req.body.synop_test;
+   var synop_rel_conflict = req.body.synop_rel_conflict;
+   var synop_rel_end = req.body.synop_rel_end;
+   var synop_issue = req.body.synop_issue;
+   var synop_theme = req.body.synop_theme;
+   var synop_message = req.body.synop_message;
+
+   var username = req.body.username;
+
+   var synopsisQuery = `SELECT * FROM synopsis WHERE username = ? AND synop_beg1 = ?`;
+   var insertSynopsisQuery = `INSERT INTO synopsis
+    	(synop_beg1,synop_prot,synop_prob,synop_char,synop_change1,synop_reader,synop_impact,synop_change2,synop_rel_start,
+    	synop_test,synop_rel_conflict,synop_rel_end,synop_issue,synop_theme,synop_message,username) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
+
+    	connection.query(synopsisQuery,[username,synop_beg1],(error,results)=>{
+        if(error) throw error;
+        if(results.length === 0){
+            console.log('insertSynopsis');
+            connection.query(insertSynopsisQuery, [synop_beg1,synop_prot,synop_prob,synop_char,synop_change1,synop_reader,synop_impact,synop_change2,synop_rel_start,
+    		synop_test,synop_rel_conflict,synop_rel_end,synop_issue,synop_theme,synop_message,username],(error2,results2)=>{
+                if(error2) throw error2;
+                console.log("SynopsisQuery")
+                var synopsisArray = [synop_beg1,synop_prot,synop_prob,synop_char,synop_change1,synop_reader,synop_impact,synop_change2,synop_rel_start,
+    			synop_test,synop_rel_conflict,synop_rel_end,synop_issue,synop_theme,synop_message];
+                res.json({
+                    msg:'synopsisInserted',
+                    synopsisData: synopsisArray
+                })
+            })
+
+        }else{
+            var updateSynopsisQuery = `UPDATE synopsis SET
+                    synop_beg1='${synop_beg1}', synop_prot='${synop_prot}', synop_prob='${synop_prob}', synop_char='${synop_char}', synop_change1='${synop_change1}', synop_reader='${synop_reader}',
+                    synop_impact='${synop_impact}', synop_change2='${synop_change2}', synop_rel_start='${synop_rel_start}', synop_test='${synop_test}', synop_rel_conflict='${synop_rel_conflict}', synop_rel_end='${synop_rel_end}',
+                    synop_issue='${synop_issue}', synop_theme='${synop_theme}', synop_message='${synop_message}' WHERE username='${username}' AND synop_beg1='${synop_beg1}';`;
+            connection.query(updateSynopsisQuery,(error3,results3)=>{
+                console.log('update')
+                if(error3) throw error3;
+                var synopsisArray = [synop_beg1,synop_prot,synop_prob,synop_char,synop_change1,synop_reader,synop_impact,synop_change2,synop_rel_start,
+    			synop_test,synop_rel_conflict,synop_rel_end,synop_issue,synop_theme,synop_message];
+                res.json({
+                    msg:'synopsisInserted',
+                    synopsisData: synopsisArray
+                })
+            })
+        }
+
+		})
+});
 
 
 
