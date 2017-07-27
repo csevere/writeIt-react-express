@@ -1102,3 +1102,16 @@ h2 {
   /* Padding for demo purposes */
   padding: 4em 0em 0em 0em;
 }
+
+/* line 1, ../../compass/sass/_picture.scss */
+.picture-main {
+  margin: 7em 0em 0em 3em;
+}
+/* line 5, ../../compass/sass/_picture.scss */
+.picture-main .row-one, .picture-main .row-two, .picture-main .row-three {
+  margin-bottom: 1em;
+}
+/* line 9, ../../compass/sass/_picture.scss */
+.picture-main .row-one .col-md-3, .picture-main .row-two .col-md-3, .picture-main .row-three .col-md-3 {
+  margin-right: 1em;
+}

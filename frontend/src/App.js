@@ -16,6 +16,7 @@ import tSynopsis from './tester/tSynopsis';
 import tQueryLetter from './tester/tQueryLetter';
 import tUserProfile from './tester/tUserProfile';
 import tWriteOption from './tester/tWriteOption';
+import tPicture from './tester/tPicture';
 
 
 
@@ -48,6 +49,7 @@ class App extends Component {
               <Route exact path= "/q-letter" component ={tQueryLetter}/>
               <Route exact path= "/user" component ={tUserProfile}/>
               <Route  path= "/option" component ={tWriteOption}/>
+              <Route  path= "/pictures" component ={tPicture}/>
 
             </div> 
           </div>
