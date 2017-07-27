@@ -15,6 +15,7 @@ import tCritique from './tester/tCritique';
 import tSynopsis from './tester/tSynopsis';
 import tQueryLetter from './tester/tQueryLetter';
 import tUserProfile from './tester/tUserProfile';
+import NotePad from './components/NotePad';
 
 
 
@@ -46,6 +47,8 @@ class App extends Component {
               <Route exact path= "/synopsis" component ={tSynopsis}/>
               <Route exact path= "/q-letter" component ={tQueryLetter}/>
               <Route exact path= "/user" component ={tUserProfile}/>
+              <Route exact path= "/notepad" component={NotePad} />
+              
 
 
 
