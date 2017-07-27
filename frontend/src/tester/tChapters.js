@@ -9,6 +9,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import PlotAction from '../actions/PlotAction';
+import ChapterAction from '../actions/ChaptersAction';
 
 
 class tChapters extends Component{
@@ -20,11 +21,11 @@ class tChapters extends Component{
       // emailError: null,
       // formError: false
     }
-    this.handlePlot = this.handlePlot.bind(this);
+    this.handleChapters = this.handleChapters.bind(this);
     
   }
 
-  handlePlot(event){
+  handleChapters(event){
     event.preventDefault();
     
     var error = false;
@@ -44,6 +45,8 @@ class tChapters extends Component{
     var setting_rev = document.getElementById('setting_rev').value;
     var scene_mood = document.getElementById('scene_mood').value;
     var scene_char2 = document.getElementById('scene_char2').value;
+
+    var username = this.props.registerResponse.name;
 
     // var username = this.props.registerResponse.name;
     // console.log(username);
@@ -70,7 +73,7 @@ class tChapters extends Component{
       // }) 
       console.log(error);
     }else{    
-      this.props.plotAction({
+      this.props.chapterAction({
         scene_number: scene_number,
         scene_plot: scene_plot,
         scene_char1: scene_char1,
@@ -84,7 +87,8 @@ class tChapters extends Component{
         setting_plot: setting_plot,
         setting_rev: setting_rev,
         scene_mood: scene_mood,
-        scene_char2: scene_char2
+        scene_char2: scene_char2,
+        username: username
 
 
       });
@@ -108,32 +112,32 @@ class tChapters extends Component{
                 <Slider {...settings}>
 
                   <div className = "slick-form 1">
-        						<Form onSubmit={this.handleCharacters}>
+        						<Form onSubmit={this.handleChapters}>
         							<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>What is the point of the chapter in one sentence?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="scene_number" />
+              							<FormControl id='scene_number' componentClass="textarea" placeholder="scene_number" />
             						</FormGroup>
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>How do the scenes directly affect the plot or subplot?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="scene_plot" />
+              							<FormControl id="scene_plot" componentClass="textarea" placeholder="scene_plot" />
             						</FormGroup>
 
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>How do the scenes directly affect character development?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="scene_char1" />
+              							<FormControl id="scene_char1" componentClass="textarea" placeholder="scene_char1" />
             						</FormGroup>
 
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>How do the characters personalities come out through the dialogue?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="scene_dialogue" />
+              							<FormControl id="scene_dialogue" componentClass="textarea" placeholder="scene_dialogue" />
             						</FormGroup>
 
             						<FormGroup controlId="formControlsTextarea">
              							<ControlLabel>What are the major conflicts in the scenes?</ControlLabel>
-              							<FormControl componentClass="textarea" placeholder="scene_conflict" />
+              							<FormControl id="scene_conflict" componentClass="textarea" placeholder="scene_conflict" />
             						</FormGroup>
 
             						<Button className = "btn" type="submit">
@@ -143,32 +147,32 @@ class tChapters extends Component{
                     </div> 
 
                     <div className = "slick-form 2">
-                      <Form onSubmit={this.handleCharacters}>
+                      <Form onSubmit={this.handleChapters}>
                         <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Are there places where dialogue could be replaced with action instead?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="relevant_dialogue" />
+                              <FormControl id="relevant_dialogue" componentClass="textarea" placeholder="relevant_dialogue" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>How much character thought and reflection is there? Is there too much?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="char_thought" />
+                              <FormControl id="char_thought" componentClass="textarea" placeholder="char_thought" />
                           </FormGroup>
 
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>What is the narrative POV? First, second, omniscient?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="pov" />
+                              <FormControl id="pov" componentClass="textarea" placeholder="pov" />
                           </FormGroup>
 
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>What is the POV character for the scenes?Protagonist, antagonist, or ally?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="pov_char" />
+                              <FormControl id="pov_char" componentClass="textarea" placeholder="pov_char" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>What is the setting for each scene?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="setting" />
+                              <FormControl id="setting" componentClass="textarea" placeholder="setting" />
                           </FormGroup>
 
                           <Button className = "btn" type="submit">
@@ -178,31 +182,31 @@ class tChapters extends Component{
                       </div> 
 
                       <div className = "slick-form 3">
-                        <Form onSubmit={this.handleCharacters}>
+                        <Form onSubmit={this.handleChapters}>
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>How important is the setting to the character?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="setting_char" />
+                              <FormControl id="setting_char" componentClass="textarea" placeholder="setting_char" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>How important is the setting to the plot?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="setting-plot" />
+                              <FormControl id="setting_plot" componentClass="textarea" placeholder="setting_plot" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>How do the characters interact with the setting?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="setting-rev" />
+                              <FormControl id="setting_rev" componentClass="textarea" placeholder="setting_rev" />
                           </FormGroup>
 
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>What kind of mood do the scenes have?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="scene_mood" />
+                              <FormControl id="scene_mood" componentClass="textarea" placeholder="scene_mood" />
                           </FormGroup>
 
                           <FormGroup controlId="formControlsTextarea">
                             <ControlLabel>Are the characters actions predictable or complex?</ControlLabel>
-                              <FormControl componentClass="textarea" placeholder="scene_char2" />
+                              <FormControl id="scene_char2" componentClass="textarea" placeholder="scene_char2" />
                           </FormGroup>
 
                           <Button className = "btn" type="submit">
@@ -234,18 +238,21 @@ class tChapters extends Component{
 }
 
 
-// function mapStateToProps(state){
-//   return{
-//     characterResponse: state.characterReducer,
-//     registerResponse: state.registerReducer
+function mapStateToProps(state){
+  return{
+    chapterResponse: state.chapterReducer,
+    registerResponse: state.registerReducer
 
-//   }
-// }
+  }
+}
 
-// function mapDispatchToProps(dispatch){
-//   return bindActionCreators({
-//     characterAction: CharacterAction
-//   }, dispatch)
-// }
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({
+    chapterAction: ChapterAction
+  }, dispatch)
+}
 
-export default tChapters;
+// export default tChapters;
+export default connect(mapStateToProps,mapDispatchToProps)(tChapters);
+
+

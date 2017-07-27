@@ -268,6 +268,50 @@ router.post('/plot',(req,res)=>{
   
  })
 
+router.post('/chapters', (req,res)=>{
+	console.log(res);
+
+	var scene_number = req.body.scene_number;
+    var scene_plot = req.body.scene_plot;
+    var scene_char1 = req.body.scene_char1;
+    var scene_dialogue = req.body.scene_dialogue;
+    var scene_conflict = req.body.scene_conflict;
+    var relevant_dialogue = req.body.relevant_dialogue;
+    var char_thought = req.body.char_thought;
+    var pov = req.body.pov;
+    var pov_char= req.body.pov_char;
+    var setting = req.body.setting;
+    var setting_char = req.body.setting_char;
+    var setting_plot = req.body.setting_plot;
+    var setting_rev = req.body.setting_rev;
+    var scene_mood = req.body.scene_mood;
+    var scene_char2 = req.body.scene_char2;
+
+    var username = req.body.username;
+
+    console.log(req.body);
+
+    var chapterQuery = `SELECT * FROM chapters WHERE username = ? AND scene_number = ?`;
+    var insertChapterQuery = `INSERT INTO chapters
+    	(scene_number,scene_plot,scene_char1,scene_dialogue,scene_conflict,relevant_dialogue,char_thought,pov,pov_char,setting,setting_char,
+    	setting_plot,setting_rev,scene_mood,scene_char2) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
+    	connection.query(insertChapterQuery,(error,results)=>{
+    		if(error) throw error;
+    		if(results.length === 0){
+ 				connection.query(insertChapterQuery, [scene_number,scene_plot,scene_char1,scene_dialogue,scene_conflict,relevant_dialogue,char_thought,pov,pov_char,setting,setting_char,
+    			setting_plot,setting_rev,scene_mood,scene_char2],(error2,results2)=>{
+ 						if(error2) throw error2;
+ 						var chapterArray = [scene_number,scene_plot,scene_char1,scene_dialogue,scene_conflict,relevant_dialogue,char_thought,pov,pov_char,setting,setting_char,
+    					setting_plot,setting_rev,scene_mood,scene_char2]
+ 						res.json({
+ 							msg:'chapterInserted',
+ 							chapterData: chapterArray
+ 						})
+ 				})
+ 			}
+    	})
+})
+
 
 
 
