@@ -410,21 +410,21 @@ router.post('/synopsis',(req,res)=>{
     	(synop_beg1,synop_prot,synop_prob,synop_char,synop_change1,synop_reader,synop_impact,synop_change2,synop_rel_start,
     	synop_test,synop_rel_conflict,synop_rel_end,synop_issue,synop_theme,synop_message,username) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
 
-    	connection.query(synopsisQuery,[username,synop_beg1],(error,results)=>{
-        if(error) throw error;
-        if(results.length === 0){
-            console.log('insertSynopsis');
-            connection.query(insertSynopsisQuery, [synop_beg1,synop_prot,synop_prob,synop_char,synop_change1,synop_reader,synop_impact,synop_change2,synop_rel_start,
-    		synop_test,synop_rel_conflict,synop_rel_end,synop_issue,synop_theme,synop_message,username],(error2,results2)=>{
-                if(error2) throw error2;
-                console.log("SynopsisQuery")
-                var synopsisArray = [synop_beg1,synop_prot,synop_prob,synop_char,synop_change1,synop_reader,synop_impact,synop_change2,synop_rel_start,
-    			synop_test,synop_rel_conflict,synop_rel_end,synop_issue,synop_theme,synop_message];
-                res.json({
-                    msg:'synopsisInserted',
-                    synopsisData: synopsisArray
-                })
-            })
+	connection.query(synopsisQuery,[username,synop_beg1],(error,results)=>{
+	    if(error) throw error;
+	    if(results.length === 0){
+	        console.log('insertSynopsis');
+	        connection.query(insertSynopsisQuery, [synop_beg1,synop_prot,synop_prob,synop_char,synop_change1,synop_reader,synop_impact,synop_change2,synop_rel_start,
+			synop_test,synop_rel_conflict,synop_rel_end,synop_issue,synop_theme,synop_message,username],(error2,results2)=>{
+	            if(error2) throw error2;
+	            console.log("SynopsisQuery")
+	            var synopsisArray = [synop_beg1,synop_prot,synop_prob,synop_char,synop_change1,synop_reader,synop_impact,synop_change2,synop_rel_start,
+				synop_test,synop_rel_conflict,synop_rel_end,synop_issue,synop_theme,synop_message];
+	            res.json({
+	                msg:'synopsisInserted',
+	                synopsisData: synopsisArray
+	            })
+	        })
 
         }else{
             var updateSynopsisQuery = `UPDATE synopsis SET
@@ -443,10 +443,61 @@ router.post('/synopsis',(req,res)=>{
             })
         }
 
-		})
+	})
 });
 
+router.post('/queryletter', (req,res)=>{
+	console.log(req.body)
 
+	var query_clarity = req.body.query_clarity;
+    var query_boring = req.body.query_boring;
+    var query_balance = req.body.query_balance;
+    var query_stakes = req.body.query_stakes;
+    var query_advance = req.body.query_advance;
+    var query_resolve = req.body.query_resolve;
+    var query_voice = req.body.query_voice;
+    var query_action = req.body.query_action;
+    var query_personality = req.body.query_personality;
+    var query_romance = req.body.query_romance;
+    var username = req.body.username;
+
+    var queryLetterQuery = `SELECT * FROM query_letter WHERE username = ? AND query_clarity = ?`;
+   	var insertQueryLetterQuery = `INSERT INTO query_letter
+    	(query_clarity,query_boring,query_balance,query_stakes,query_advance,query_resolve,query_voice,
+    	query_action,query_personality,query_romance,username) VALUES (?,?,?,?,?,?,?,?,?,?,?)`;
+
+    connection.query(queryLetterQuery,[username,query_clarity],(error,results)=>{
+        if(error) throw error;
+        if(results.length === 0){
+            console.log('q-letter-insert');
+            connection.query(insertQueryLetterQuery, [query_clarity,query_boring,query_balance,query_stakes,query_advance,query_resolve,query_voice,
+    		query_action,query_personality,query_romance,username],(error2,results2)=>{
+                if(error2) throw error2;
+                var queryLetterArray = [query_clarity,query_boring,query_balance,query_stakes,query_advance,query_resolve,query_voice,
+    			query_action,query_personality,query_romance];
+                res.json({
+                    msg:'queryLetterInserted',
+                    queryLetterData: queryLetterArray
+                })
+            })
+        }else{
+            var updateQueryLetterQuery = `UPDATE query_letter SET
+                query_clarity='${query_clarity}', query_boring='${query_boring}', query_balance='${query_balance}', query_stakes='${query_stakes}', query_advance='${query_advance}',
+                query_resolve='${query_resolve}', query_voice='${query_voice}', query_action='${query_action}', query_personality='${query_personality}', query_romance='${query_romance}' WHERE username='${username}' AND query_clarity='${query_clarity}';`;
+            connection.query(updateQueryLetterQuery,(error3,results3)=>{
+                console.log('update')
+                if(error3) throw error3;
+                var queryLetterArray = [query_clarity,query_boring,query_balance,query_stakes,query_advance,query_resolve,query_voice,
+    			query_action,query_personality,query_romance];
+                res.json({
+                    msg:'queryLetterInserted',
+                    queryLetterData: queryLetterArray
+                })
+            })
+        }
+    })
+
+})
 
 
 

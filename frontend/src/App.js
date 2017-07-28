@@ -11,12 +11,7 @@ import Character from './components/Character';
 import tCharacter from './tester/tCharacter'; 
 import tPlot from './tester/tPlot';
 import tChapters from './tester/tChapters';
-import tCritique from './tester/tCritique';
-import tSynopsis from './tester/tSynopsis';
 import tQueryLetter from './tester/tQueryLetter';
-import tUserProfile from './tester/tUserProfile';
-import tWriteOption from './tester/tWriteOption';
-import tPicture from './tester/tPicture';
 
 
 
@@ -41,15 +36,14 @@ class App extends Component {
               <Route exact path="/newbook" component= {NewBook} />
               <Route exact path="/character" component= {tCharacter} />
               <Route exact path ="/writemenu" component = {writeMenu}/>
+              <Route exact path="/newbook" component= {NewBook} />
+              <Route exact path ="/writemenu" component = {writeMenu}/>
               <Route exact path ="/tcharacter" component = {tCharacter}/>
-              <Route exact path="/plot" component = {tPlot} />
-              <Route exact path="/chapters" component={tChapters} />
-              <Route exact path= "/critique" component ={tCritique}/>
-              <Route exact path= "/synopsis" component ={tSynopsis}/>
-              <Route exact path= "/q-letter" component ={tQueryLetter}/>
-              <Route exact path= "/user" component ={tUserProfile}/>
-              <Route  path= "/option" component ={tWriteOption}/>
-              <Route  path= "/pictures" component ={tPicture}/>
+
+              <Route exact path="/tplot" component = {tPlot} />
+              <Route exact path="/tchapters" component={tChapters} />
+
+              <Route exact path="/q-letter" component={tQueryLetter} />
 
             </div> 
           </div>

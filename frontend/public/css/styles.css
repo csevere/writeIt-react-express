@@ -1029,6 +1029,30 @@ h2 {
   background-color: #9966ff;
 }
 
+/* line 3, ../../compass/sass/_notepad.scss */
+.npButton {
+  margin-top: 48em;
+  margin-left: 43em;
+}
+
+/* line 8, ../../compass/sass/_notepad.scss */
+h1 {
+  text-align: center;
+  margin-top: 3em;
+  font-weight: bold;
+}
+
+/* line 14, ../../compass/sass/_notepad.scss */
+textarea {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 20, ../../compass/sass/_notepad.scss */
+.nptextBox {
+  margin-top: -46em;
+}
+
 /* line 4, ../../compass/sass/_writemenuoption.scss */
 .write-menu-option {
   position: absolute;
