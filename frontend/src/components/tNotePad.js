@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Row, Col, Button,Form } from 'react-bootstrap';
 
-class NotePad extends Component{
+class tNotePad extends Component{
 		render(){
 		return(
 			<div>
@@ -28,4 +28,4 @@ class NotePad extends Component{
 }
 
 
-export default NotePad;
+export default tNotePad;

@@ -15,6 +15,7 @@ import tQueryLetter from './tester/tQueryLetter';
 import tChapterBoard from './tester/display-info/tChapterBoard'; 
 import tCritique from './tester/tCritique'; 
 import tPicture from './tester/tPicture'; 
+import tNotePad from './tester/tNotePad';
 
 
 
@@ -46,7 +47,7 @@ class App extends Component {
               <Route exact path="/charboard" component={tChapterBoard} />
               <Route exact path="/critique" component={tCritique} />
               <Route exact path="/pictures" component={tPicture} />
-
+              <Route exact path="/notepad" component={tNotePad} />
             </div> 
           </div>
         </Router>
