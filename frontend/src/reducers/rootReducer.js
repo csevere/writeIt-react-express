@@ -18,6 +18,7 @@ import QueryLetterReducer from './QueryLetterReducer';
 import ChaptersReducer from './ChaptersReducer'
 import CritiqueReducer from './CritiqueReducer';
 import SynopsisReducer from './SynopsisReducer'; 
+import NewBookReducer from './NewBookReducer';
 
 
 
@@ -33,7 +34,8 @@ const rootReducer = combineReducers({
 	queryletterReducer: QueryLetterReducer,
 	chaptersReducer: ChaptersReducer,
 	critiqueReducer: CritiqueReducer,
-	synopsisReducer: SynopsisReducer	
+	synopsisReducer: SynopsisReducer,
+	newBook: NewBookReducer	
 })
 
 export default rootReducer;

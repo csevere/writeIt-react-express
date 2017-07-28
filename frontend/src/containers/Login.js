@@ -63,7 +63,7 @@ class Login extends Component{
 
 		if(nextProps.registerResponse.msg == 'loginSuccess'){
 			// this.props.getCart(nextProps.registerResponse.token)
-			this.props.history.push('/');
+			this.props.history.push('/user');
 		}else if(nextProps.registerResponse.msg == 'userAlreadyExists'){
 			console.log("User name taken!")
 			this.setState({
