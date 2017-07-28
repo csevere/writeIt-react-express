@@ -171,6 +171,28 @@ router.post('/login', (req, res)=>{
 	})
 })
 
+router.post('/newbook',(req,res)=>{
+	console.log(req.body);
+	
+	var username = req.body.username;
+	var title = req.body.title;
+    var genre = req.body.genre;
+    var word_count = req.body.word_count;
+
+    var insertNewBookQuery = `INSERT INTO book
+    (username,title,genre,word_count) VALUES (?,?,?,?)`;
+    connection.query(insertNewBookQuery, [username,title,genre,word_count], (error,results)=>{
+    	if(error) throw error;
+    	res.json({
+    		msg: "NewBookInserted",
+    		newBookData: [username,title,genre,word_count]
+    	})
+    })
+
+})
+
+
+
 router.post('/characters',(req,res)=>{
 	console.log("HELLO");
 	console.log(req.body);
