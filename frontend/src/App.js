@@ -18,7 +18,7 @@ import tPicture from './tester/tPicture';
 import tNotePad from './tester/tNotePad';
 import Resources from './components/Resources';
 import Faqs from './components/Faqs';
-import tUserProfile from './tester/tUserProfile';
+import UserProfile from './components/UserProfile';
 import tSynopsis from './tester/tSynopsis';
 
 
@@ -42,7 +42,7 @@ class App extends Component {
               <Route exact path="/write" component= {writeMenu} />
               <Route exact path ="/writemenu" component = {writeMenu}/>
               <Route exact path="/newbook" component= {NewBook} />
-              <Route exact path="/user" component= {tUserProfile} />
+              <Route exact path="/user" component= {UserProfile} />
               <Route exact path="/character" component= {tCharacter} />
               <Route exact path="/synopsis" component= {tSynopsis} />
               <Route exact path="/plot" component = {tPlot} />

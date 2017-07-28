@@ -23,12 +23,13 @@ class Register extends Component{
 	handleRegistration(event){
 		event.preventDefault();
 		// console.log("User SUbmitted the form!!")
-		var name = event.target[0].value
-		var email = event.target[1].value
-		var username = event.target[2].value
-		var password = event.target[3].value
-		var occupation = event.target[4].value
-		var about = event.target[5].value
+		var name = event.target[0].value;
+		var email = event.target[1].value;
+		var username = event.target[2].value;
+		var password = event.target[3].value;
+		var occupation = event.target[4].value;
+		var about = event.target[5].value;
+		var location = event.target[6].value;
 		var error = false;
 
 		//Name
@@ -61,7 +62,8 @@ class Register extends Component{
 				username: username,
 				password: password,
 				occupation: occupation,
-				about: about
+				about: about,
+				location: location
 			});
 		}
 	}
@@ -72,7 +74,7 @@ class Register extends Component{
 		console.log("=======================")
 
 		if(nextProps.registerResponse.msg == 'userInserted'){
-			this.props.history.push('/');
+			this.props.history.push('/user');
 		}else if(nextProps.registerResponse.msg == 'userAlreadyExists'){
 			console.log("User name taken!")
 			this.setState({
@@ -133,6 +135,14 @@ class Register extends Component{
 						</Col>
 						<Col sm={6}>
 							<FormControl type="text" name="state" placeholder="About" />
+						</Col>
+					</FormGroup>
+					<FormGroup controlId="formHorizontalName">
+						<Col componentClass={ControlLabel} sm={2}>
+							Location
+						</Col>
+						<Col sm={6}>
+							<FormControl type="text" name="state" placeholder="Location" />
 						</Col>
 					</FormGroup>
 					<FormGroup>

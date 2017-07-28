@@ -57,6 +57,24 @@ router.get('/pboard/get', (req, res)=>{
 });
 
 
+router.get('/user', (req,res)=>{
+	var email = req.query.email;
+	console.log('email')
+	var userDataQuery = `SELECT * FROM users WHERE email= '${email}'` ;
+	connection.query(userDataQuery, (error, response)=>{
+		if(error){
+			throw error;
+		}else{
+			res.json({
+				userData: response[0]
+			})
+		}
+
+	})
+
+});
+
+
 ///////////////////////////////////////////////////////////////////
 //////////////////////////POST REQUESTS////////////////////////////
 ///////////////////////////////////////////////////////////////////
@@ -74,6 +92,7 @@ router.post('/register', (req, res)=>{
 	const password = bcrypt.hashSync(req.body.password);
 	const occupation = req.body.occupation;
 	const about = req.body.about;
+	const location = req.body.location;
 
 	console.log(password);
 	
@@ -102,9 +121,9 @@ router.post('/register', (req, res)=>{
 		()=>{
 			// Set up a token for this user. We will give this back to React
 			var token = randToken.uid(40);
-			var insertQuery = "INSERT INTO users (name, email, username, password, occupation, about, token, token_exp, account_created) VALUES (?,?,?,?,?,?,?,DATE_ADD(NOW(), INTERVAL 1 HOUR),NOW())"
+			var insertQuery = "INSERT INTO users (name, email, username, password, occupation, about, token, location, token_exp, account_created) VALUES (?,?,?,?,?,?,?,?,DATE_ADD(NOW(), INTERVAL 1 HOUR),NOW());";
 			// Run the query (for now autoset the sales rep to 1337)
-			connection.query(insertQuery,[name,email,username,password,occupation,about,token],(error, results)=>{
+			connection.query(insertQuery,[name,email,username,password,occupation,about,token,location],(error, results)=>{
 				// Users insert query
 				if(error){
 					throw error
@@ -116,6 +135,8 @@ router.post('/register', (req, res)=>{
 						msg: "userInserted",
 						token: token,
 						username: username,
+						email: email
+
 
 					});
 				}
@@ -156,7 +177,8 @@ router.post('/login', (req, res)=>{
 					res.json({
 						msg: 'loginSuccess',
 						name: results[0].username,
-						token: token
+						token: token,
+						email: results[0].email
 					})
 				})
 			}else{
