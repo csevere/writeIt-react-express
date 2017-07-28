@@ -6,7 +6,6 @@ import ScrollableAnchor from 'react-scrollable-anchor'
 
 
 class writeMenu extends Component{
-
  
 	render(){
 		return(

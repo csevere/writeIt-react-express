@@ -57,7 +57,10 @@ class tCharacter extends Component{
     var liked_disliked = document.getElementById('liked_disliked').value;
  
     var username = this.props.registerResponse.name;
+    var book = this.props.newBookResponse.title;
+    console.log(this.props.newBookResponse)
     console.log(username);
+    console.log(book);
     //Name
     if(name.length < 1){
       var nameError = "error"; 
@@ -345,7 +348,8 @@ class tCharacter extends Component{
 function mapStateToProps(state){
   return{
     characterResponse: state.characterReducer,
-    registerResponse: state.registerReducer
+    registerResponse: state.registerReducer,
+    newBookResponse: state.newBookReducer
 
   }
 }

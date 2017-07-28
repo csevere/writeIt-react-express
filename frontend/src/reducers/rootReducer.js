@@ -35,7 +35,7 @@ const rootReducer = combineReducers({
 	chaptersReducer: ChaptersReducer,
 	critiqueReducer: CritiqueReducer,
 	synopsisReducer: SynopsisReducer,
-	newBook: NewBookReducer	
+	newBookReducer: NewBookReducer	
 })
 
 export default rootReducer;

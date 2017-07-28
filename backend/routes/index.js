@@ -184,8 +184,13 @@ router.post('/newbook',(req,res)=>{
     connection.query(insertNewBookQuery, [username,title,genre,word_count], (error,results)=>{
     	if(error) throw error;
     	res.json({
-    		msg: "NewBookInserted",
-    		newBookData: [username,title,genre,word_count]
+    		msg: "newBookInserted",
+    		newBookData: {
+    			username,
+    			title,
+    			genre,
+    			word_count
+    		}
     	})
     })
 
@@ -197,6 +202,7 @@ router.post('/characters',(req,res)=>{
 	console.log("HELLO");
 	console.log(req.body);
 	var username = req.body.username;
+	var book = req.body.book;
 	var name = req.body.name;
 	var race = req.body.race;
 	var age = req.body.age
@@ -224,19 +230,19 @@ router.post('/characters',(req,res)=>{
 	var liked_disliked = req.body.liked_disliked;
 
 
-	var characterQuery = `SELECT * FROM characters WHERE username = ? and name = ?`;
+	var characterQuery = `SELECT * FROM characters WHERE username = ? and book = ?`;
 	var insertCharacterQuery = `INSERT INTO characters 
-		(username,name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
+		(username,book,name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
 		relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
-		liked_disliked,time_stamp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?, NOW())`;
+		liked_disliked,time_stamp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?, NOW())`;
 	connection.query(characterQuery, [username,name], (error,results)=>{
 		if(error) throw error;
 		if(results.length === 0){
-			connection.query(insertCharacterQuery, [username,name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
+			connection.query(insertCharacterQuery, [username,book,name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
 				relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
 				liked_disliked], (error2,results2)=>{
 					if(error2) throw error2;
-					var characterArray = [name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
+					var characterArray = [book,name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
 					relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
 					liked_disliked]
 					res.json({

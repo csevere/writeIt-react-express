@@ -70,9 +70,9 @@ class NewBook extends Component{
 		if(nextProps.newBookResponse.msg == 'newBookInserted'){
 			this.props.history.push('/write');
 		}else if(nextProps.newBookResponse.msg == 'bookAlreadyExists'){
-			console.log("")
+			console.log("Book Exists!")
 			this.setState({
-				registerMessage: "Sorry, this book is already taken."
+				newBookResponse: "Sorry, this book is already taken."
 			})
 		}		
 	}
