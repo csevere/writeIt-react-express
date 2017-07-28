@@ -75,6 +75,35 @@ class tQueryLetter extends Component{
       });
     }
   }
+<<<<<<< HEAD
+=======
+
+
+
+class tQueryLetter extends Component{
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     registerMessage: "",
+  //     nameError: null,
+  //     emailError: null,
+  //     formError: false
+  //   }
+  //   this.handlePlot = this.handlePlot.bind(this);
+    
+  // }
+
+  // handlePlot(event){
+  //   event.preventDefault();
+    
+  //   var error = false;
+
+  //   var name = event.target[0].value;
+  //   var race = event.target[1].value;
+  //   var age = event.target[2].value;
+  //   var birthday = event.target[3].value;
+  //   // var physical_desc = event.target[4].value;
+>>>>>>> Porscha'sBranch
  
     render(){
       const settings = {
