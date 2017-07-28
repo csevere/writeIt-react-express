@@ -57,8 +57,10 @@ class tCharacter extends Component{
     var liked_disliked = document.getElementById('liked_disliked').value;
  
     var username = this.props.registerResponse.name;
-    var book = this.props.newBookResponse.title;
-    console.log(this.props.newBookResponse)
+    var book = this.props.newBookResponse.newBookData.title;
+    // console.log(this.props.newBookResponse)
+    console.log(book);
+
     console.log(username);
     console.log(book);
     //Name
@@ -111,8 +113,8 @@ class tCharacter extends Component{
         personality: personality,
         philosophy: philosophy,
         ambitions: ambitions,
-        liked_disliked: liked_disliked
-        
+        liked_disliked: liked_disliked,
+        book: book
       });
     }
 
