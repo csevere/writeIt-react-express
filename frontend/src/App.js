@@ -16,6 +16,8 @@ import tChapterBoard from './tester/display-info/tChapterBoard';
 import tCritique from './tester/tCritique'; 
 import tPicture from './tester/tPicture'; 
 import tNotePad from './tester/tNotePad';
+import Resources from './components/Resources';
+import Faqs from './components/Faqs';
 
 
 
@@ -48,6 +50,8 @@ class App extends Component {
               <Route exact path="/critique" component={tCritique} />
               <Route exact path="/pictures" component={tPicture} />
               <Route exact path="/notepad" component={tNotePad} />
+              <Route exact path="/resources" component={Resources} />
+              <Route exact path="/faqs" component={Faqs} />
             </div> 
           </div>
         </Router>

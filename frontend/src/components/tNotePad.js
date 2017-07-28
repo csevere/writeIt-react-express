@@ -8,7 +8,7 @@ class tNotePad extends Component{
 			<div>
 				<Grid>
 					<Row>
-						<Col lg={18} >
+						<Col lg={12} >
 							<h1>Welcome to your Note Pad </h1>
 							<Button className="npButton" bsStyle="success" bsSize="small" type="submit">
 								Submit
