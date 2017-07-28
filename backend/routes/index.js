@@ -200,12 +200,13 @@ router.post('/newbook',(req,res)=>{
 
 router.post('/characters',(req,res)=>{
 	console.log("HELLO");
-	console.log(req.body);
+	console.log(req);
+	// console.log(req.body.book);
 	var username = req.body.username;
 	var book = req.body.book;
 	var name = req.body.name;
 	var race = req.body.race;
-	var age = req.body.age
+	var age = req.body.age;
 	var birthday = req.body.birthday;
 	var physical_desc = req.body.physical_desc;
 	var hometown = req.body.hometown;
@@ -255,7 +256,7 @@ router.post('/characters',(req,res)=>{
 			var updateCharacterQuery = `UPDATE characters SET
 				name = '${name}',race = '${race}',age = '${age}',birthday = '${birthday}',physical_desc = '${physical_desc}',hometown = '${hometown}',type_of_home = '${type_of_home}',father_info = '${father_info}',mother_info = '${mother_info}',sibling_info = '${sibling_info}',
 				relatives = '${relatives}',friends = '${friends}',enemies = '${enemies}',mentor = '${mentor}',hobbies = '${hobbies}',dress = '${dress}',leader_follower = '${leader_follower}',positive_traits = '${positive_traits}',negative_traits = '${negative_traits}',temper = '${temper}',star_sign = '${star_sign}',personality = '${personality}',philosophy = '${philosophy}',ambitions = '${ambitions}',
-				liked_disliked = '${liked_disliked}',time_stamp = NOW() WHERE username = '${username}' AND name = '${name}'`;
+				liked_disliked = '${liked_disliked}',time_stamp = NOW() WHERE username = '${username}' AND book = '${book}'`;
 			connection.query(updateCharacterQuery, (error3,results3)=>{
 					var characterArray = [name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
 					relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
