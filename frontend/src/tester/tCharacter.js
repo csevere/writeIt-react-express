@@ -312,14 +312,25 @@ class tCharacter extends Component{
                 </Col> 
 
                <Row>
+
                 <Grid className = "fourth-row-left">
                   <Col md = {3}>
                     <Link to = "/writeMenu" className = "return-writemenu">
                       <img src = "https://cdn4.iconfinder.com/data/icons/lifestyle-set-2/100/07a3c3443f894cb3fa7a93ee3c496233-512.png"/>
                       <div>Return to Write Menu</div>
                     </Link>
-                  </Col> 
+                  </Col>
                 </Grid>
+
+                <Grid className = "fourth-row-right">
+                  <Col md = {3} className = "col-md-offset-8">
+                    <Link to = "/charboard" className = "charboard">
+                    <img src = "https://cdn4.iconfinder.com/data/icons/office-34/256/10-512.png"/>
+                    <div>View Character</div>
+                  </Link>
+                </Col>
+              </Grid>
+
               </Row>
                 
             </Row>	

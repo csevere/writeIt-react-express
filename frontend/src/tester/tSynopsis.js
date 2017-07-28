@@ -225,7 +225,6 @@ class tSynopsis extends Component{
 
                 </Col> 
 
-
                 <Row>
                   <Grid className = "fourth-row-left">
                     <Col md = {3}>
@@ -234,6 +233,15 @@ class tSynopsis extends Component{
                         <div>Return to Write Menu</div>
                       </Link>
                     </Col> 
+                  </Grid>
+
+                <Grid className = "fourth-row-right">
+                    <Col md = {3} className = "col-md-offset-8">
+                      <Link to = "/sboard" className = "sboard">
+                        <img src = "https://cdn4.iconfinder.com/data/icons/office-34/256/10-512.png"/>
+                        <div>View Synopsis</div>
+                      </Link>
+                    </Col>
                   </Grid>
                 </Row>
                 

@@ -231,6 +231,16 @@ class tCritique extends Component{
                       </Link>
                     </Col> 
                   </Grid>
+
+                  <Grid className = "fourth-row-right">
+                    <Col md = {3} className = "col-md-offset-8">
+                      <Link to = "/critboard" className = "critboard">
+                        <img src = "https://cdn4.iconfinder.com/data/icons/office-34/256/10-512.png"/>
+                        <div>View Critique</div>
+                      </Link>
+                    </Col>
+                  </Grid>
+
                 </Row>
             </Row>	
 		      </Grid>   

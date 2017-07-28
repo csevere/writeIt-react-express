@@ -47,6 +47,32 @@
 }
 
 
+.fourth-row-right{
+	float: right;
+	margin-top: -10em; 
+	img{
+		width: 35%; 
+
+	} 
+
+	a{
+		text-decoration: none; 
+		font-size: 15px;
+		font-weight: bolder; 
+		color: $black; 
+
+	}
+
+	a:hover{
+		color: $soft-green; 
+		cursor: pointer; 
+		text-decoration: underline;
+	}
+}
+
+
+
+
 .ch-forms{
 
 	.form-control {

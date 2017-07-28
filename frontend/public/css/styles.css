@@ -865,18 +865,41 @@ h2 {
   text-decoration: underline;
 }
 
-/* line 52, ../../compass/sass/_writemenucat.scss */
+/* line 50, ../../compass/sass/_writemenucat.scss */
+.fourth-row-right {
+  float: right;
+  margin-top: -10em;
+}
+/* line 53, ../../compass/sass/_writemenucat.scss */
+.fourth-row-right img {
+  width: 35%;
+}
+/* line 58, ../../compass/sass/_writemenucat.scss */
+.fourth-row-right a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bolder;
+  color: #000000;
+}
+/* line 66, ../../compass/sass/_writemenucat.scss */
+.fourth-row-right a:hover {
+  color: #0f820f;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* line 78, ../../compass/sass/_writemenucat.scss */
 .ch-forms .form-control {
   width: 80% !important;
   margin-left: 5em;
   padding-top: 0em;
 }
-/* line 58, ../../compass/sass/_writemenucat.scss */
+/* line 84, ../../compass/sass/_writemenucat.scss */
 .ch-forms .slick-prev, .ch-forms .slick-next {
   position: absolute;
   top: 37% !important;
 }
-/* line 64, ../../compass/sass/_writemenucat.scss */
+/* line 90, ../../compass/sass/_writemenucat.scss */
 .ch-forms .slick-dots {
   display: block;
   position: absolute;
@@ -889,13 +912,13 @@ h2 {
   text-align: center;
   left: -52em;
 }
-/* line 75, ../../compass/sass/_writemenucat.scss */
+/* line 101, ../../compass/sass/_writemenucat.scss */
 .ch-forms .slick-dots li {
   position: relative;
   left: 51.5em;
   top: -8em;
 }
-/* line 83, ../../compass/sass/_writemenucat.scss */
+/* line 109, ../../compass/sass/_writemenucat.scss */
 .ch-forms .ch-forms-2 {
   display: block;
   width: 45em;
@@ -906,7 +929,7 @@ h2 {
   /* Padding for demo purposes */
   padding: 4em 0em 0em 0em;
 }
-/* line 105, ../../compass/sass/_writemenucat.scss */
+/* line 131, ../../compass/sass/_writemenucat.scss */
 .ch-forms .ch-forms-2 .btn {
   margin-top: 10em !important;
   margin-left: 21em !important;

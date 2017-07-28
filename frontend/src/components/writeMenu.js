@@ -52,8 +52,8 @@ class writeMenu extends Component{
 
 
 									<li>
-										<Link to ="/other">
-											<div className="post6 text-center"><h3>OTHER</h3></div>
+										<Link to ="/notepad">
+											<div className="post6 text-center"><h3>NOTEPAD</h3></div>
 										</Link>
 									</li>
 

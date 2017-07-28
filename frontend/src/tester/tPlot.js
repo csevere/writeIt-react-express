@@ -231,6 +231,15 @@ class tPlot extends Component{
                       </Link>
                     </Col> 
                   </Grid>
+
+                  <Grid className = "fourth-row-right">
+                    <Col md = {3} className = "col-md-offset-8">
+                      <Link to = "/pboard" className = "pboard">
+                        <img src = "https://cdn4.iconfinder.com/data/icons/office-34/256/10-512.png"/>
+                        <div>View Plot</div>
+                      </Link>
+                    </Col>
+                  </Grid>
                 </Row> 
                 
             </Row>	

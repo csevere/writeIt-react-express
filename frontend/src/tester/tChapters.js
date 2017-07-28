@@ -227,6 +227,17 @@ class tChapters extends Component{
                       </Link>
                     </Col> 
                   </Grid>
+
+                  <Grid className = "fourth-row-right">
+                    <Col md = {3} className = "col-md-offset-8">
+                      <Link to = "/chboard" className = "chboard">
+                        <img src = "https://cdn4.iconfinder.com/data/icons/office-34/256/10-512.png"/>
+                        <div>View Chapter</div>
+                      </Link>
+                    </Col>
+                  </Grid>
+
+
                 </Row>
 
             </Row>	
