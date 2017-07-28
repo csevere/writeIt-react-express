@@ -13,6 +13,8 @@ import tPlot from './tester/tPlot';
 import tChapters from './tester/tChapters';
 import tQueryLetter from './tester/tQueryLetter';
 import tChapterBoard from './tester/display-info/tChapterBoard'; 
+import tCritique from './tester/tCritique'; 
+import tPicture from './tester/tPicture'; 
 
 
 
@@ -35,18 +37,15 @@ class App extends Component {
               <Route exact path="/write" component= {writeMenu} />
               <Route exact path ="/writemenu" component = {writeMenu}/>
               <Route exact path="/newbook" component= {NewBook} />
+             
+           
               <Route exact path="/character" component= {tCharacter} />
-              <Route exact path ="/writemenu" component = {writeMenu}/>
-              <Route exact path="/newbook" component= {NewBook} />
-              <Route exact path ="/writemenu" component = {writeMenu}/>
-              <Route exact path ="/tcharacter" component = {tCharacter}/>
-
-              <Route exact path="/tplot" component = {tPlot} />
-              <Route exact path="/tchapters" component={tChapters} />
-
+              <Route exact path="/plot" component = {tPlot} />
+              <Route exact path="/chapters" component={tChapters} />
               <Route exact path="/q-letter" component={tQueryLetter} />
               <Route exact path="/charboard" component={tChapterBoard} />
-           
+              <Route exact path="/critique" component={tCritique} />
+              <Route exact path="/pictures" component={tPicture} />
 
             </div> 
           </div>

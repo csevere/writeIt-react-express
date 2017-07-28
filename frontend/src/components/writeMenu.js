@@ -18,7 +18,7 @@ class writeMenu extends Component{
 						<div className ="container writeNav">
 							<Row>
 								<ul>
-									<li><Link to ="/tcharacter">
+									<li><Link to ="/character">
 										<div className="post1 text-center"><h3>CHARACTER</h3></div>
 										</Link>
 									</li>
@@ -31,7 +31,7 @@ class writeMenu extends Component{
 
 
 									<li>
-										<Link to ="/tchapters">
+										<Link to ="/chapters">
 											<div className="post3 text-center"><h3>CHAPTERS</h3></div>
 										</Link>
 									</li>
