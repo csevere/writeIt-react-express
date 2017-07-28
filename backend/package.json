@@ -16,6 +16,8 @@
     "morgan": "~1.8.1",
     "mysql": "^2.14.0",
     "rand-token": "^0.3.0",
-    "serve-favicon": "~2.4.2"
+    "serve-favicon": "~2.4.2",
+    "twitter": "^1.7.1",
+    "twitter-api-node-express": "^0.1.0"
   }
 }

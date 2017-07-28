@@ -28,7 +28,7 @@ class tChapterBoard extends Component{
 	}
 
 	getChapters(props){
-		const ch = props.match.params.chapter
+		const ch = props.match.params.chapters
 		// console.log(pl)
 		const url = window.hostAddress + `/chapters/${ch}/get`
 		$.getJSON(url,(data)=>{
