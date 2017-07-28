@@ -8,7 +8,6 @@ import {connect} from 'react-redux';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-<<<<<<< HEAD
 import QueryLetterAction from '../actions/QueryLetterAction';
 
 
@@ -88,7 +87,6 @@ class tQueryLetter extends Component{
 
   }
 
-=======
 
 
 class tQueryLetter extends Component{
