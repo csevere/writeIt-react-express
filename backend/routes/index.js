@@ -236,14 +236,14 @@ router.post('/characters',(req,res)=>{
 		(username,book,name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
 		relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
 		liked_disliked,time_stamp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?, NOW())`;
-	connection.query(characterQuery, [username,name], (error,results)=>{
+	connection.query(characterQuery, [username,book], (error,results)=>{
 		if(error) throw error;
 		if(results.length === 0){
 			connection.query(insertCharacterQuery, [username,book,name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
 				relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
 				liked_disliked], (error2,results2)=>{
 					if(error2) throw error2;
-					var characterArray = [book,name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
+					var characterArray = [name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
 					relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
 					liked_disliked]
 					res.json({
@@ -278,6 +278,7 @@ router.post('/plot',(req,res)=>{
 	console.log("PLOT REQUEST")
  
 	var username = req.body.username;
+	var book = req.body.book;
  	var main_plot = req.body.main_plot;
 	var subplot = req.body.subplot;
 	var subplot_reasons = req.body.subplot_reasons;
@@ -296,14 +297,14 @@ router.post('/plot',(req,res)=>{
  
     console.log(req.body)
  
-    var plotQuery = `SELECT * FROM plot WHERE username = ? and main_plot = ?`;
+    var plotQuery = `SELECT * FROM plot WHERE username = ? and book = ?`;
  	var insertPlotQuery = `INSERT INTO plot 
- 		(username,main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
- 		credibility,flashbacks,journey,stakes,antagonist,summary,time_stamp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW())`;
- 		connection.query(plotQuery, [username,main_plot], (error,results)=>{
+ 		(username,book,main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
+ 		credibility,flashbacks,journey,stakes,antagonist,summary,time_stamp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW())`;
+ 		connection.query(plotQuery, [username,book], (error,results)=>{
  			if(error) throw error;
  			if(results.length === 0){
- 				connection.query(insertPlotQuery, [username, main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
+ 				connection.query(insertPlotQuery, [username,book,main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
  				credibility,flashbacks,journey,stakes,antagonist,summary],(error2,results2)=>{
  						if(error2) throw error2;
  						var plotArray = [main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
@@ -316,7 +317,7 @@ router.post('/plot',(req,res)=>{
  			}else{
  				var updatePlotQuery = `UPDATE plot SET
  					main_plot = '${main_plot}',subplot = '${subplot}',subplot_reasons = '${subplot_reasons}',direct_actions = '${direct_actions}',indirect_actions = '${indirect_actions}',motivation = '${motivation}',plot_type = '${plot_type}',plot_order = '${plot_order}',foreshadow = '${foreshadow}',
- 					credibility = '${credibility}',flashbacks = '${flashbacks}',journey = '${journey}',stakes = '${stakes}',antagonist = '${antagonist}',summary = '${summary}',time_stamp = NOW() WHERE username = '${username}' AND main_plot = '${main_plot}';`;
+ 					credibility = '${credibility}',flashbacks = '${flashbacks}',journey = '${journey}',stakes = '${stakes}',antagonist = '${antagonist}',summary = '${summary}',time_stamp = NOW() WHERE username = '${username}' AND book = '${book}';`;
  				connection.query(updatePlotQuery,(error3,results3)=>{
  					if(error3) throw error3;
  					var plotArray = [main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
@@ -349,17 +350,19 @@ router.post('/chapters', (req,res)=>{
     var scene_mood = req.body.scene_mood;
     var scene_char2 = req.body.scene_char2;
     var username = req.body.username;
+    var book = req.body.book;
     console.log(req.body);
-    var chapterQuery = `SELECT * FROM chapters WHERE username = ? AND scene_number = ?`;
+
+    var chapterQuery = `SELECT * FROM chapters WHERE username = ? AND book = ?`;
     var insertChapterQuery = `INSERT INTO chapters
         (scene_number,scene_plot,scene_char1,scene_dialogue,scene_conflict,relevant_dialogue,char_thought,pov_nar,pov_char,setting,setting_char,
-        setting_plot,setting_rev,scene_mood,scene_char2,username) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);`;
-        connection.query(chapterQuery,[username, scene_number],(error,results)=>{
+        setting_plot,setting_rev,scene_mood,scene_char2,username,book) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);`;
+        connection.query(chapterQuery,[username, book],(error,results)=>{
             if(error) throw error;
             if(results.length === 0){
                 console.log('insert');
                 connection.query(insertChapterQuery, [scene_number,scene_plot,scene_char1,scene_dialogue,scene_conflict,relevant_dialogue,char_thought,pov_nar,pov_char,setting,setting_char,
-                setting_plot,setting_rev,scene_mood,scene_char2,username],(error2,results2)=>{
+                setting_plot,setting_rev,scene_mood,scene_char2,username,book],(error2,results2)=>{
                         if(error2) throw error2;
                         var chapterArray = [scene_number,scene_plot,scene_char1,scene_dialogue,scene_conflict,relevant_dialogue,char_thought,pov_nar,pov_char,setting,setting_char,
                         setting_plot,setting_rev,scene_mood,scene_char2];
@@ -371,7 +374,7 @@ router.post('/chapters', (req,res)=>{
             }else{
                 var updatePlotQuery = `UPDATE chapters SET
                     scene_number='${scene_number}',scene_plot='${scene_plot}',scene_char1='${scene_char1}',scene_dialogue='${scene_dialogue}',scene_conflict='${scene_conflict}',relevant_dialogue='${relevant_dialogue}',char_thought='${char_thought}',pov_nar='${pov_nar}',pov_char='${pov_nar}',setting='${setting}',setting_char='${setting_char}',
-                    setting_plot='${setting_plot}',setting_rev='${setting_plot}',scene_mood='${scene_mood}',scene_char2='${scene_char2}' WHERE username = '${username}' AND scene_number='${scene_number}';`;
+                    setting_plot='${setting_plot}',setting_rev='${setting_plot}',scene_mood='${scene_mood}',scene_char2='${scene_char2}' WHERE username = '${username}' AND book='${book}';`;
                 connection.query(updatePlotQuery,(error3,results3)=>{
                     console.log('update')
                     if(error3) throw error3;
@@ -405,20 +408,21 @@ router.post('/critique', (req,res)=>{
     var critique_lang = req.body.critique_lang;
     var critique_element = req.body.critique_element;
     var username = req.body.username;
+    var book = req.body.book;
 
     console.log(req.body);
-    var critiqueQuery = `SELECT * FROM critique WHERE username = ? AND critique_clarity = ?`;
+    var critiqueQuery = `SELECT * FROM critique WHERE username = ? AND book = ?`;
     var insertCritiqueQuery = `INSERT INTO critique
         (critique_clarity, critique_boring, critique_balance, critique_advance, critique_resolve, critique_voice,
         critique_action, critique_personality, critique_romance, critique_conflict, critique_limit, critique_pov,
-        critique_sent, critique_lang, critique_element, username) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);`;
-    connection.query(critiqueQuery,[username, critique_clarity],(error,results)=>{
+        critique_sent, critique_lang, critique_element, username,book) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);`;
+    connection.query(critiqueQuery,[username, book],(error,results)=>{
         if(error) throw error;
         if(results.length === 0){
             console.log('insert');
             connection.query(insertCritiqueQuery, [critique_clarity, critique_boring, critique_balance, critique_advance, critique_resolve, critique_voice,
                 critique_action, critique_personality, critique_romance, critique_conflict, critique_limit, critique_pov,
-                critique_sent, critique_lang, critique_element, username],(error2,results2)=>{
+                critique_sent, critique_lang, critique_element, username,book],(error2,results2)=>{
                 if(error2) throw error2;
                 var critiqueArray = [critique_clarity, critique_boring, critique_balance, critique_advance, critique_resolve, critique_voice,
                     critique_action, critique_personality, critique_romance, critique_conflict, critique_limit, critique_pov,
@@ -432,7 +436,7 @@ router.post('/critique', (req,res)=>{
             var updateCritiqueQuery = `UPDATE critique SET
                     critique_clarity='${critique_clarity}', critique_boring='${critique_boring}', critique_balance='${critique_balance}', critique_advance='${critique_advance}', critique_resolve='${critique_resolve}', critique_voice='${critique_voice}',
                     critique_action='${critique_action}', critique_personality='${critique_personality}', critique_romance='${critique_romance}', critique_conflict='${critique_conflict}', critique_limit='${critique_limit}', critique_pov='${critique_pov}',
-                    critique_sent='${critique_sent}', critique_lang='${critique_lang}', critique_element='${critique_element}' WHERE username='${username}' AND critique_clarity='${critique_clarity}';`;
+                    critique_sent='${critique_sent}', critique_lang='${critique_lang}', critique_element='${critique_element}' WHERE username='${username}' AND book='${book}';`;
             connection.query(updateCritiqueQuery,(error3,results3)=>{
                 console.log('update')
                 if(error3) throw error3;
@@ -467,18 +471,19 @@ router.post('/synopsis',(req,res)=>{
    var synop_message = req.body.synop_message;
 
    var username = req.body.username;
+   var book = req.body.book;
 
-   var synopsisQuery = `SELECT * FROM synopsis WHERE username = ? AND synop_beg1 = ?`;
+   var synopsisQuery = `SELECT * FROM synopsis WHERE username = ? AND book = ?`;
    var insertSynopsisQuery = `INSERT INTO synopsis
     	(synop_beg1,synop_prot,synop_prob,synop_char,synop_change1,synop_reader,synop_impact,synop_change2,synop_rel_start,
-    	synop_test,synop_rel_conflict,synop_rel_end,synop_issue,synop_theme,synop_message,username) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
+    	synop_test,synop_rel_conflict,synop_rel_end,synop_issue,synop_theme,synop_message,username,book) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
 
-	connection.query(synopsisQuery,[username,synop_beg1],(error,results)=>{
+	connection.query(synopsisQuery,[username,book],(error,results)=>{
 	    if(error) throw error;
 	    if(results.length === 0){
 	        console.log('insertSynopsis');
 	        connection.query(insertSynopsisQuery, [synop_beg1,synop_prot,synop_prob,synop_char,synop_change1,synop_reader,synop_impact,synop_change2,synop_rel_start,
-			synop_test,synop_rel_conflict,synop_rel_end,synop_issue,synop_theme,synop_message,username],(error2,results2)=>{
+			synop_test,synop_rel_conflict,synop_rel_end,synop_issue,synop_theme,synop_message,username,book],(error2,results2)=>{
 	            if(error2) throw error2;
 	            console.log("SynopsisQuery")
 	            var synopsisArray = [synop_beg1,synop_prot,synop_prob,synop_char,synop_change1,synop_reader,synop_impact,synop_change2,synop_rel_start,
@@ -493,7 +498,7 @@ router.post('/synopsis',(req,res)=>{
             var updateSynopsisQuery = `UPDATE synopsis SET
                     synop_beg1='${synop_beg1}', synop_prot='${synop_prot}', synop_prob='${synop_prob}', synop_char='${synop_char}', synop_change1='${synop_change1}', synop_reader='${synop_reader}',
                     synop_impact='${synop_impact}', synop_change2='${synop_change2}', synop_rel_start='${synop_rel_start}', synop_test='${synop_test}', synop_rel_conflict='${synop_rel_conflict}', synop_rel_end='${synop_rel_end}',
-                    synop_issue='${synop_issue}', synop_theme='${synop_theme}', synop_message='${synop_message}' WHERE username='${username}' AND synop_beg1='${synop_beg1}';`;
+                    synop_issue='${synop_issue}', synop_theme='${synop_theme}', synop_message='${synop_message}' WHERE username='${username}' AND book='${book}';`;
             connection.query(updateSynopsisQuery,(error3,results3)=>{
                 console.log('update')
                 if(error3) throw error3;
@@ -523,18 +528,19 @@ router.post('/queryletter', (req,res)=>{
     var query_personality = req.body.query_personality;
     var query_romance = req.body.query_romance;
     var username = req.body.username;
+    var book = req.body.book;
 
-    var queryLetterQuery = `SELECT * FROM query_letter WHERE username = ? AND query_clarity = ?`;
+    var queryLetterQuery = `SELECT * FROM query_letter WHERE username = ? AND book = ?`;
    	var insertQueryLetterQuery = `INSERT INTO query_letter
     	(query_clarity,query_boring,query_balance,query_stakes,query_advance,query_resolve,query_voice,
-    	query_action,query_personality,query_romance,username) VALUES (?,?,?,?,?,?,?,?,?,?,?)`;
+    	query_action,query_personality,query_romance,username,book) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)`;
 
-    connection.query(queryLetterQuery,[username,query_clarity],(error,results)=>{
+    connection.query(queryLetterQuery,[username,book],(error,results)=>{
         if(error) throw error;
         if(results.length === 0){
             console.log('q-letter-insert');
             connection.query(insertQueryLetterQuery, [query_clarity,query_boring,query_balance,query_stakes,query_advance,query_resolve,query_voice,
-    		query_action,query_personality,query_romance,username],(error2,results2)=>{
+    		query_action,query_personality,query_romance,username,book],(error2,results2)=>{
                 if(error2) throw error2;
                 var queryLetterArray = [query_clarity,query_boring,query_balance,query_stakes,query_advance,query_resolve,query_voice,
     			query_action,query_personality,query_romance];
@@ -546,7 +552,7 @@ router.post('/queryletter', (req,res)=>{
         }else{
             var updateQueryLetterQuery = `UPDATE query_letter SET
                 query_clarity='${query_clarity}', query_boring='${query_boring}', query_balance='${query_balance}', query_stakes='${query_stakes}', query_advance='${query_advance}',
-                query_resolve='${query_resolve}', query_voice='${query_voice}', query_action='${query_action}', query_personality='${query_personality}', query_romance='${query_romance}' WHERE username='${username}' AND query_clarity='${query_clarity}';`;
+                query_resolve='${query_resolve}', query_voice='${query_voice}', query_action='${query_action}', query_personality='${query_personality}', query_romance='${query_romance}' WHERE username='${username}' AND book='${book}';`;
             connection.query(updateQueryLetterQuery,(error3,results3)=>{
                 console.log('update')
                 if(error3) throw error3;

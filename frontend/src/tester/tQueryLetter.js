@@ -40,6 +40,8 @@ class tQueryLetter extends Component{
     var query_personality = document.getElementById('query_personality').value;
     var query_romance = document.getElementById('query_romance').value;
     var username = this.props.registerResponse.name;
+    var book = this.props.newBookResponse.newBookData.title;
+    console.log(book);
     
  
     // var username = this.props.registerResponse.name;
@@ -75,7 +77,8 @@ class tQueryLetter extends Component{
         query_action: query_action,
         query_personality: query_personality,
         query_romance: query_romance,
-        username: username
+        username: username,
+        book: book
       });
     }
   }
@@ -186,7 +189,8 @@ class tQueryLetter extends Component{
 function mapStateToProps(state){
   return{
     queryLetterResponse: state.queryLetterReducer,
-    registerResponse: state.registerReducer
+    registerResponse: state.registerReducer,
+    newBookResponse: state.newBookReducer
   }
 }
 function mapDispatchToProps(dispatch){

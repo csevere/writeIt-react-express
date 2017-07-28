@@ -58,11 +58,10 @@ class tCharacter extends Component{
  
     var username = this.props.registerResponse.name;
     var book = this.props.newBookResponse.newBookData.title;
-    // console.log(this.props.newBookResponse)
     console.log(book);
 
     console.log(username);
-    console.log(book);
+    // console.log(book);
     //Name
     if(name.length < 1){
       var nameError = "error"; 

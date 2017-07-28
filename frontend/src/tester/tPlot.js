@@ -48,9 +48,10 @@ class tPlot extends Component{
  
 
     console.log(this.props.registerResponse)
-
+    var book = this.props.newBookResponse.newBookData.title;
     var username = this.props.registerResponse.name;
     console.log(username);
+    console.log(book);
     // //Name
     // if(name.length < 1){
     //   var nameError = "error"; 
@@ -91,7 +92,8 @@ class tPlot extends Component{
         journey: journey,
         stakes: stakes,
         antagonist: antagonist,
-        summary: summary
+        summary: summary,
+        book: book
         
       });
     }
@@ -255,7 +257,8 @@ function mapStateToProps(state){
   return{
     // characterResponse: state.characterReducer,
     registerResponse: state.registerReducer,
-    plotResponse: state.plotReducer
+    plotResponse: state.plotReducer,
+    newBookResponse: state.newBookReducer
 
   }
 }

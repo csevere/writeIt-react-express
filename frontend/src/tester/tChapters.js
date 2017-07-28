@@ -47,6 +47,7 @@ class tChapters extends Component{
     var scene_char2 = document.getElementById('scene_char2').value;
 
     var username = this.props.registerResponse.name;
+    var book = this.props.newBookResponse.newBookData.title;
 
     // var username = this.props.registerResponse.name;
     // console.log(username);
@@ -88,7 +89,8 @@ class tChapters extends Component{
         setting_rev: setting_rev,
         scene_mood: scene_mood,
         scene_char2: scene_char2,
-        username: username
+        username: username,
+        book: book
 
 
       });
@@ -252,7 +254,8 @@ class tChapters extends Component{
 function mapStateToProps(state){
   return{
     chapterResponse: state.chapterReducer,
-    registerResponse: state.registerReducer
+    registerResponse: state.registerReducer,
+    newBookResponse: state.newBookReducer
 
   }
 }

@@ -46,6 +46,7 @@ class tCritique extends Component{
     var critique_element = document.getElementById('critique_element').value;
 
     var username = this.props.registerResponse.name;
+    var book = this.props.newBookResponse.newBookData.title;
 
  
     // var username = this.props.registerResponse.name;
@@ -90,7 +91,8 @@ class tCritique extends Component{
         critique_sent: critique_sent,
         critique_lang: critique_lang,
         critique_element: critique_element,
-        username: username
+        username: username,
+        book: book
         
       });
     }
@@ -254,7 +256,8 @@ class tCritique extends Component{
 function mapStateToProps(state){
   return{
     registerResponse: state.registerReducer,
-    critiqueResponse: state.critiqueReducer
+    critiqueResponse: state.critiqueReducer,
+    newBookResponse: state.newBookReducer
 
   }
 }

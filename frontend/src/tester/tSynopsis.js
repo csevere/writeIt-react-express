@@ -46,6 +46,8 @@ class tSynopsis extends Component{
     var synop_message = document.getElementById('synop_message').value;
 
     var username = this.props.registerResponse.name;
+    var book = this.props.newBookResponse.newBookData.title;
+    console.log(book);
    
 
  
@@ -91,7 +93,8 @@ class tSynopsis extends Component{
         synop_issue: synop_issue,
         synop_theme: synop_theme,
         synop_message: synop_message,
-        username: username
+        username: username,
+        book: book
         
       });
     }
@@ -258,7 +261,8 @@ function mapStateToProps(state){
   return{
     // characterResponse: state.characterReducer,
     registerResponse: state.registerReducer,
-    synopsisResponse: state.synopsisReducer
+    synopsisResponse: state.synopsisReducer,
+    newBookResponse: state.newBookReducer
 
   }
 }

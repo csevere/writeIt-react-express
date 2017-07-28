@@ -19,6 +19,7 @@ import tNotePad from './tester/tNotePad';
 import Resources from './components/Resources';
 import Faqs from './components/Faqs';
 import tUserProfile from './tester/tUserProfile';
+import tSynopsis from './tester/tSynopsis';
 
 
 
@@ -43,6 +44,7 @@ class App extends Component {
               <Route exact path="/newbook" component= {NewBook} />
               <Route exact path="/user" component= {tUserProfile} />
               <Route exact path="/character" component= {tCharacter} />
+              <Route exact path="/synopsis" component= {tSynopsis} />
               <Route exact path="/plot" component = {tPlot} />
               <Route exact path="/chapters" component={tChapters} />
               <Route exact path="/q-letter" component={tQueryLetter} />
