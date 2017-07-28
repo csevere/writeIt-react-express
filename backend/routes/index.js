@@ -29,6 +29,40 @@ router.get('/', function(req, res, next) {
 
 module.exports = router;
 
+///////////////////////////////////////////////////////////////////
+///////////////////////////GET REQUESTS////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+router.get('/charboard/get', (req, res)=>{
+	const selectCharacterQuery = `SELECT * FROM characters`
+	connection.query(selectCharacterQuery,(error, results, fields)=>{
+		if(error){
+			throw error
+		}else{
+			res.json(results);
+		}
+	});
+});
+
+router.get('/pboard/get', (req, res)=>{
+	// res.json({msg:"test"})
+	const selectPlotQuery = `SELECT * FROM plot`
+	connection.query(selectPlotQuery,(error,results,fields)=>{
+		if(error){
+			throw error
+		}else{
+			res.json(results);
+		}
+	})
+});
+
+
+///////////////////////////////////////////////////////////////////
+//////////////////////////POST REQUESTS////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+
+
 
 router.post('/register', (req, res)=>{
 	console.log(req.body)
