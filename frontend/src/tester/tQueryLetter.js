@@ -90,6 +90,7 @@ class tQueryLetter extends Component{
         slidesToScroll: 1,
       }
     console.log(this.props)
+
         return(
             <div>
               <Grid className = "writemenucat text-center ch-forms">

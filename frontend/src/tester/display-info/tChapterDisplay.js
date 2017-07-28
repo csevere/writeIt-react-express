@@ -1,7 +1,20 @@
 import React from 'react';
+import { Form, Grid, Row, Col, FormGroup, FormControl, Button, ControlLabel } from 'react-bootstrap';
+import ScrollableAnchor from 'react-scrollable-anchor';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { Link} from 'react-router-dom';
 
 function tChapterDisplay(props){ 
 	const chapters = props.chapters
+	const settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+     }
 
 	return (		
 		<Grid className = "writemenucat text-center ch-forms">
@@ -13,27 +26,27 @@ function tChapterDisplay(props){
 					<Grid>
 						<div>
  							<div id = "one">What is the point of the chapter in one sentence?</div>
-  							<div>{chapters.scene_number}
+  							<div>{chapters.scene_number}</div>
 						</div>
 
 						<div>
  							<div id = "two">How do the scenes directly affect the plot or subplot?</div>
-  							<div>{chapters.scene_plot}
+  							<div>{chapters.scene_plot}</div>
 						</div>
 
 						<div>
  							<div id = "three">How do the scenes directly affect character development?</div>
-  							<div>{chapters.scene_char1}
+  							<div>{chapters.scene_char1}</div>
 						</div>
 
 						<div>
  							<div id = "four">How do the characters personalities come out through the dialogue?</div>
-  							<div>{chapters.scene_dialogue}
+  							<div>{chapters.scene_dialogue}</div>
 						</div>
 
 						<div>
  							<div id = "five">What are the major conflicts in the scenes?</div>
-  							<div>{chapters.relevant_conflict}
+  							<div>{chapters.relevant_conflict}</div>
 						</div>
 
 					  </Grid>
@@ -43,27 +56,27 @@ function tChapterDisplay(props){
                       	<Grid>
 							<div>
 	 							<div id = "one">Are there places where dialogue could be replaced with action instead?</div>
-	  							<div>{chapters.relevant_dialogue}
+	  							<div>{chapters.relevant_dialogue}</div>
 							</div>
 
 							<div>
 	 							<div id = "two">How much character thought and reflection is there? Is there too much?</div>
-	  							<div>{chapters.char_thought}
+	  							<div>{chapters.char_thought}</div>
 							</div>
 
 							<div>
 	 							<div id = "three">What is the narrative POV? First, second, omniscient?</div>
-	  							<div>{chapters.pov}
+	  							<div>{chapters.pov}</div>
 							</div>
 
 							<div>
 	 							<div id = "four">What is the POV character for the scenes?Protagonist, antagonist, or ally?</div>
-	  							<div>{chapters.pov_char}
+	  							<div>{chapters.pov_char}</div>
 							</div>
 
 							<div>
 	 							<div id = "five">What is the setting for each scene?</div>
-	  							<div>{chapters.setting}
+	  							<div>{chapters.setting}</div>
 							</div>
 
 					  	</Grid>
@@ -73,27 +86,27 @@ function tChapterDisplay(props){
                        	<Grid>
 							<div>
 	 							<div id = "one">How important is the setting to the character?</div>
-	  							<div>{chapters.setting_char}
+	  							<div>{chapters.setting_char}</div>
 							</div>
 
 							<div>
 	 							<div id = "two">How important is the setting to the plot?</div>
-	  							<div>{chapters.setting_plot}
+	  							<div>{chapters.setting_plot}</div>
 							</div>
 
 							<div>
 	 							<div id = "three">How do the characters interact with the setting?</div>
-	  							<div>{chapters.setting_rev}
+	  							<div>{chapters.setting_rev}</div>
 							</div>
 
 							<div>
 	 							<div id = "four">What kind of mood do the scenes have?</div>
-	  							<div>{chapters.scene_mood}
+	  							<div>{chapters.scene_mood}</div>
 							</div>
 
 							<div>
 	 							<div id = "five">Are the characters actions predictable or complex?</div>
-	  							<div>{chapters.scene_char2}
+	  							<div>{chapters.scene_char2}</div>
 							</div>
 
 					  	</Grid>

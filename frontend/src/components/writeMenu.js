@@ -31,7 +31,7 @@ class writeMenu extends Component{
 
 
 									<li>
-										<Link to ="/chapters">
+										<Link to ="/tchapters">
 											<div className="post3 text-center"><h3>CHAPTERS</h3></div>
 										</Link>
 									</li>

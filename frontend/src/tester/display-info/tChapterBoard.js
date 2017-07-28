@@ -4,9 +4,8 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import { Link} from 'react-router-dom';
 import { Form, Grid, Row, Col, FormGroup, FormControl, Button, ControlLabel } from 'react-bootstrap';
-import  {bindActionCreators} from 'redux';
 import tChapterDisplay from './tChapterDisplay'; 
-import ChapterAction from '../actions/ChaptersAction';
+// import ChapterAction from '..../actions/ChaptersAction';
 
 
 class tChapterBoard extends Component{
@@ -57,6 +56,7 @@ class tChapterBoard extends Component{
 			var textHeader = "It doesn't exist. Go back and create one!"
 		}else{
 			var textHeader = "Your Chapter Responses";
+		}
 
     console.log(this.props);
 
@@ -78,7 +78,7 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
 	return bindActionCreators({
-		chapterAction: ChapterAction
+		// chapterAction: ChapterAction
 	}, dispatch)
 }
 
