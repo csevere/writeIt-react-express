@@ -9,17 +9,17 @@ import NewBook from './components/NewBook';
 import Login from './containers/Login';
 import Character from './components/Character'; 
 import tCharacter from './tester/tCharacter'; 
-import tPlot from './tester/tPlot';
-import tChapters from './tester/tChapters';
-import tQueryLetter from './tester/tQueryLetter';
+import Plot from './components/Plot';
+import Chapters from './components/Chapters';
+import QueryLetter from './components/QueryLetter';
 import tChapterBoard from './tester/display-info/tChapterBoard'; 
-import tCritique from './tester/tCritique'; 
+import Critique from './components/Critique';
 import tPicture from './tester/tPicture'; 
 import tNotePad from './tester/tNotePad';
 import Resources from './components/Resources';
 import Faqs from './components/Faqs';
 import UserProfile from './components/UserProfile';
-import tSynopsis from './tester/tSynopsis';
+import Synopsis from './components/Synopsis';
 
 
 
@@ -40,18 +40,18 @@ class App extends Component {
               <Route exact path="/signup" component= {Register} />
               <Route exact path="/login" component= {Login} />
               <Route exact path="/write/:book" component= {writeMenu} />
-              <Route exact path ="/writemenu" component = {writeMenu}/>
+
               <Route exact path="/newbook" component= {NewBook} />
               <Route exact path="/user" component= {UserProfile} />
-              <Route exact path="/character/:book" component= {tCharacter} />
-              <Route exact path="/synopsis" component= {tSynopsis} />
-              <Route exact path="/plot" component = {tPlot} />
-              <Route exact path="/chapters" component={tChapters} />
-              <Route exact path="/q-letter" component={tQueryLetter} />
+              <Route exact path="/character/:book" component= {Character} />
+              <Route exact path="/synopsis/:book" component= {Synopsis} />
+              <Route exact path="/plot/:book" component = {Plot} />
+              <Route exact path="/chapters/:book" component={Chapters} />
+              <Route exact path="/q-letter/:book" component={QueryLetter} />
               <Route exact path="/charboard" component={tChapterBoard} />
-              <Route exact path="/critique" component={tCritique} />
+              <Route exact path="/critique/:book" component={Critique} />
               <Route exact path="/pictures" component={tPicture} />
-              <Route exact path="/notepad" component={tNotePad} />
+              <Route exact path="/notepad/:book" component={tNotePad} />
               <Route exact path="/resources" component={Resources} />
               <Route exact path="/faqs" component={Faqs} />
             </div> 

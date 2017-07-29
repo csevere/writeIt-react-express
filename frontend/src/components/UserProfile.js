@@ -23,7 +23,8 @@ class UserProfile extends Component{
                 location: null,
                 username: null,
                 about: null,
-            }
+            },
+            bookData: []
             // nameError: null,
             // emailError: null,
             // formError: false
@@ -41,8 +42,14 @@ class UserProfile extends Component{
             })
         })
 
-
-
+        $.getJSON(`http://localhost:5000/book?username=${this.props.registerResponse.name}`, (serverData)=>{
+            // log the JSON response from Express
+            //console.log(serverData.bookData)
+            this.setState({
+                bookData: serverData.bookData
+            })
+        });
+        console.log(this.state.bookData)
     }
 
 
@@ -51,6 +58,28 @@ class UserProfile extends Component{
         var username = this.state.userData.username;
         var location = this.state.userData.location;
         var about = this.state.userData.about;
+
+        var bookArray = [];
+
+        this.state.bookData.map((book, index)=>{
+           var link = '/write/' +  book.title;
+           bookArray.push(
+               <Col key={index} md = {3}>
+                   <div className = "createbook">
+
+                       <div className = "book">{book.title}</div>
+
+                       <div>
+                           <form>
+                               <Link to={link}><button className="btn-primary btn btn-book">Edit</button></Link>
+                           </form>
+                       </div>
+                   </div>
+
+               </Col>
+
+           )
+        });
 
         console.log(this.props)
         return(
@@ -111,6 +140,7 @@ class UserProfile extends Component{
                                         </div>
 
                                     </Col>
+                                    {bookArray}
 
 
 

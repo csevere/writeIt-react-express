@@ -47,7 +47,7 @@ class tChapters extends Component{
     var scene_char2 = document.getElementById('scene_char2').value;
 
     var username = this.props.registerResponse.name;
-    var book = this.props.newBookResponse.newBookData.title;
+    var book = this.props.match.params.book;
 
     // var username = this.props.registerResponse.name;
     // console.log(username);
@@ -94,6 +94,7 @@ class tChapters extends Component{
 
 
       });
+      this.props.history.push(`/write/${book}`);
     }
 
   }

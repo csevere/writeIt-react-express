@@ -47,11 +47,10 @@ class tPlot extends Component{
 
  
 
-    console.log(this.props.registerResponse)
-    var book = this.props.newBookResponse.newBookData.title;
+    console.log(this.props.registerResponse);
+    var book = this.props.match.params.book;
     var username = this.props.registerResponse.name;
-    console.log(username);
-    console.log(book);
+
     // //Name
     // if(name.length < 1){
     //   var nameError = "error"; 
@@ -96,6 +95,7 @@ class tPlot extends Component{
         book: book
         
       });
+      this.props.history.push(`/write/${book}`);
     }
 
   }

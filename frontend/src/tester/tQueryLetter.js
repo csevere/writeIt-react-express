@@ -40,8 +40,8 @@ class tQueryLetter extends Component{
     var query_personality = document.getElementById('query_personality').value;
     var query_romance = document.getElementById('query_romance').value;
     var username = this.props.registerResponse.name;
-    var book = this.props.newBookResponse.newBookData.title;
-    console.log(book);
+    var book = this.props.match.params.book;
+    //console.log(book);
     
  
     // var username = this.props.registerResponse.name;
@@ -80,6 +80,7 @@ class tQueryLetter extends Component{
         username: username,
         book: book
       });
+      this.props.history.push(`/write/${book}`);
     }
   }
 

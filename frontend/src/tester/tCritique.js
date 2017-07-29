@@ -46,7 +46,7 @@ class tCritique extends Component{
     var critique_element = document.getElementById('critique_element').value;
 
     var username = this.props.registerResponse.name;
-    var book = this.props.newBookResponse.newBookData.title;
+    var book = this.props.match.params.book;
 
  
     // var username = this.props.registerResponse.name;
@@ -95,6 +95,7 @@ class tCritique extends Component{
         book: book
         
       });
+      this.props.history.push(`/write/${book}`);
     }
 
   }
@@ -108,7 +109,8 @@ class tCritique extends Component{
         slidesToShow: 1,
         slidesToScroll: 1,
       }
-    console.log(this.props)
+      var writeMenu = '/write/' + this.props.match.params.book;
+      //console.log(this.props)
 		return(
 			<div>
 				<Grid className = "writemenucat text-center ch-forms">
@@ -227,7 +229,7 @@ class tCritique extends Component{
                 <Row>
                   <Grid className = "fourth-row-left">
                     <Col md = {3}>
-                      <Link to = "/writeMenu" className = "return-writemenu">
+                      <Link to = {writeMenu} className = "return-writemenu">
                         <img src = "https://cdn4.iconfinder.com/data/icons/lifestyle-set-2/100/07a3c3443f894cb3fa7a93ee3c496233-512.png"/>
                         <div>Return to Write Menu</div>
                       </Link>

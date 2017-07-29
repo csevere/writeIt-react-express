@@ -46,7 +46,7 @@ class tSynopsis extends Component{
     var synop_message = document.getElementById('synop_message').value;
 
     var username = this.props.registerResponse.name;
-    var book = this.props.newBookResponse.newBookData.title;
+    var book = this.props.match.params.book;
     console.log(book);
    
 
@@ -97,9 +97,12 @@ class tSynopsis extends Component{
         book: book
         
       });
+        this.props.history.push(`/write/${book}`);
     }
 
   }
+
+
 
 
  
