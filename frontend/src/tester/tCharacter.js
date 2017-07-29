@@ -58,7 +58,7 @@ class tCharacter extends Component{
  
     var username = this.props.registerResponse.name;
     // var book = this.props.newBookResponse.newBookData.title;
-    console.log(this.props.match.params)
+    console.log(this.props.match.params);
     var book = this.props.match.params.book;
     console.log(book);
 

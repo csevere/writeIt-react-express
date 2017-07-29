@@ -253,12 +253,12 @@ router.post('/characters',(req,res)=>{
 	var liked_disliked = req.body.liked_disliked;
 
 
-	var characterQuery = `SELECT * FROM characters WHERE username = ? and book = ?`;
+	var characterQuery = `SELECT * FROM characters WHERE username = ? and book = ? AND name = ?`;
 	var insertCharacterQuery = `INSERT INTO characters 
 		(username,book,name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
 		relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
 		liked_disliked,time_stamp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?, NOW())`;
-	connection.query(characterQuery, [username,book], (error,results)=>{
+	connection.query(characterQuery, [username,book, name], (error,results)=>{
 		if(error) throw error;
 		if(results.length === 0){
 			connection.query(insertCharacterQuery, [username,book,name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
@@ -297,7 +297,7 @@ router.post('/characters',(req,res)=>{
 });
 
 router.post('/plot',(req,res)=>{
-	console.log("PLOT REQUEST")
+	console.log("PLOT REQUEST");
  
 	var username = req.body.username;
 	var book = req.body.book;

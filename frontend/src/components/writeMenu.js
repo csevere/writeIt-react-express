@@ -9,7 +9,15 @@ class writeMenu extends Component{
  
 	render(){
 		console.log(this.props.match.params.book);
-		var book = '/character/' + this.props.match.params.book;
+		var character = '/character/' + this.props.match.params.book;
+        var plot = '/plot/' + this.props.match.params.book;
+        var chapters = '/chapters/' + this.props.match.params.book;
+        var critique = '/critique/' + this.props.match.params.book;
+        var pictures = '/pictures/' + this.props.match.params.book;
+        var notepad = '/notepad/' + this.props.match.params.book;
+        var synopsis = '/synopsis/' + this.props.match.params.book;
+        var qletter = '/q-letter/' + this.props.match.params.book;
+
 		return(
 			<div>
 				<Grid className = "writemenu">
@@ -19,53 +27,53 @@ class writeMenu extends Component{
 						<div className ="container writeNav">
 							<Row>
 								<ul>
-									<li><Link to ={book}>
+									<li><Link to ={character}>
 										<div className="post1 text-center"><h3>CHARACTER</h3></div>
 										</Link>
 									</li>
 
 									<li>
-										<Link to ="/plot">
+										<Link to ={plot}>
 											<div className="post2 text-center"><h3>PLOT</h3></div>
 										</Link>
 									</li>
 
 
 									<li>
-										<Link to ="/chapters">
+										<Link to ={chapters}>
 											<div className="post3 text-center"><h3>CHAPTERS</h3></div>
 										</Link>
 									</li>
 
 
 									<li>
-										<Link to ="/critique">
+										<Link to ={critique}>
 											<div className="post4 text-center"><h3>CRITIQUES</h3></div>
 										</Link>
 									</li>
 
 
 									<li>
-										<Link to ="/pictures">
+										<Link to ={pictures}>
 											<div className="post5 text-center"><h3>PICTURES</h3></div>
 										</Link>
 									</li>
 
 
 									<li>
-										<Link to ="/notepad">
+										<Link to ={notepad}>
 											<div className="post6 text-center"><h3>NOTEPAD</h3></div>
 										</Link>
 									</li>
 
 									<li>
-										<Link to ="/synopsis">
+										<Link to ={synopsis}>
 											<div className="post7 text-center"><h3>SYNOPSIS</h3></div>
 										</Link>
 									</li>
 
 									<li>
-										<Link to ="/q-letter">
+										<Link to ={qletter}>
 											<div className="post8 text-center"><h3>QUERY LETTER</h3></div>
 										</Link>
 									</li>
