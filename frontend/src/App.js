@@ -39,11 +39,11 @@ class App extends Component {
               <Route exact path="/" component= {Home} /> 
               <Route exact path="/signup" component= {Register} />
               <Route exact path="/login" component= {Login} />
-              <Route exact path="/write" component= {writeMenu} />
+              <Route exact path="/write/:book" component= {writeMenu} />
               <Route exact path ="/writemenu" component = {writeMenu}/>
               <Route exact path="/newbook" component= {NewBook} />
               <Route exact path="/user" component= {UserProfile} />
-              <Route exact path="/character" component= {tCharacter} />
+              <Route exact path="/character/:book" component= {tCharacter} />
               <Route exact path="/synopsis" component= {tSynopsis} />
               <Route exact path="/plot" component = {tPlot} />
               <Route exact path="/chapters" component={tChapters} />

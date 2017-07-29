@@ -8,6 +8,8 @@ import ScrollableAnchor from 'react-scrollable-anchor'
 class writeMenu extends Component{
  
 	render(){
+		console.log(this.props.match.params.book);
+		var book = '/character/' + this.props.match.params.book;
 		return(
 			<div>
 				<Grid className = "writemenu">
@@ -17,7 +19,7 @@ class writeMenu extends Component{
 						<div className ="container writeNav">
 							<Row>
 								<ul>
-									<li><Link to ="/character">
+									<li><Link to ={book}>
 										<div className="post1 text-center"><h3>CHARACTER</h3></div>
 										</Link>
 									</li>

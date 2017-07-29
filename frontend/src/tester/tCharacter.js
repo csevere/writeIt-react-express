@@ -57,7 +57,9 @@ class tCharacter extends Component{
     var liked_disliked = document.getElementById('liked_disliked').value;
  
     var username = this.props.registerResponse.name;
-    var book = this.props.newBookResponse.newBookData.title;
+    // var book = this.props.newBookResponse.newBookData.title;
+    console.log(this.props.match.params)
+    var book = this.props.match.params.book;
     console.log(book);
 
     console.log(username);
@@ -115,6 +117,7 @@ class tCharacter extends Component{
         liked_disliked: liked_disliked,
         book: book
       });
+        this.props.history.push(`/write/${book}`);
     }
 
   }

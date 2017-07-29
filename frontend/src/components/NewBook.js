@@ -68,7 +68,7 @@ class NewBook extends Component{
 		console.log("=======================")
 
 		if(nextProps.newBookResponse.msg == 'newBookInserted'){
-			this.props.history.push('/write');
+			this.props.history.push(`/write/${nextProps.newBookResponse.newBookData.title}`);
 		}else if(nextProps.newBookResponse.msg == 'bookAlreadyExists'){
 			console.log("Book Exists!")
 			this.setState({
