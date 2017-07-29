@@ -19,6 +19,7 @@ import ChaptersReducer from './ChaptersReducer'
 import CritiqueReducer from './CritiqueReducer';
 import SynopsisReducer from './SynopsisReducer'; 
 import NewBookReducer from './NewBookReducer';
+import NotePadReducer from './NotePadReducer'
 
 
 
@@ -35,7 +36,8 @@ const rootReducer = combineReducers({
 	chaptersReducer: ChaptersReducer,
 	critiqueReducer: CritiqueReducer,
 	synopsisReducer: SynopsisReducer,
-	newBookReducer: NewBookReducer	
-})
+	newBookReducer: NewBookReducer,
+	notePadReducer: NotePadReducer
+});
 
 export default rootReducer;

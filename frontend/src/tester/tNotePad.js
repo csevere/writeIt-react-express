@@ -1,8 +1,41 @@
 import React,{Component} from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Row, Col, Button,Form } from 'react-bootstrap';
+import NotePadAction from '../actions/NotePadAction';
+import {connect} from 'react-redux';
+import  {bindActionCreators} from 'redux';
 
 class tNotePad extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+
+        }
+        this.handleNotes = this.handleNotes.bind(this);
+
+    }
+
+    handleNotes(event){
+    	event.preventDefault();
+
+
+        var username = this.props.registerResponse.name;
+
+        var book = this.props.match.params.book;
+
+		var notepad = document.getElementById('text').value;
+
+
+
+        this.props.notePadAction({
+            username: username,
+            book: book,
+            notepad: notepad,
+        });
+
+        this.props.history.push(`/write/${book}`);
+
+	}
 		render(){
 		return(
 			<div>
@@ -10,11 +43,11 @@ class tNotePad extends Component{
 					<Row>
 						<Col lg={18} >
 							<h1>Welcome to your Note Pad </h1>
-							<Button className="npButton" bsStyle="success" bsSize="small" type="submit">
+							<Button className="npButton" bsStyle="success" bsSize="small" type="submit" onClick={this.handleNotes}>
 								Submit
 							</Button>
 							<div className="nptextBox">
-								<textarea>
+								<textarea id="text">
 								Feel free to take notes here:
 								</textarea>
 							</div>
@@ -28,4 +61,21 @@ class tNotePad extends Component{
 }
 
 
-export default tNotePad;
+function mapStateToProps(state){
+    return{
+        notePadResponse: state.notePadReducer,
+        registerResponse: state.registerReducer
+
+
+    }
+}
+
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({
+        notePadAction: NotePadAction
+    }, dispatch)
+}
+
+// export default tCharacter;
+export default connect(mapStateToProps,mapDispatchToProps)(tNotePad);
+// export default tNotePad;

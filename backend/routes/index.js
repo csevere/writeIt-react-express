@@ -627,7 +627,43 @@ router.post('/queryletter', (req,res)=>{
         }
     })
 
-})
+});
+
+router.post('/notepad', (req, res)=>{
+	username = req.body.username;
+	book = req.body.book;
+	notepad = req.body.notepad;
+	console.log(req.body);
+    var notePadLetterQuery = `SELECT * FROM notepad WHERE username = ? AND book = ?`;
+    var insertNotePadQuery = `INSERT INTO notepad
+    	(notepad,username,book) VALUES (?,?,?)`;
+    var updateNotePadQuery = `UPDATE notepad SET notepad='${notepad}' WHERE username='${username}' AND book='${book}';`;
+
+    connection.query(notePadLetterQuery, [username, book], (error,results)=>{
+    	if(error) throw error;
+    	if(results.length === 0){
+    		connection.query(insertNotePadQuery, [notepad, username, book],(error2, results2)=>{
+    			if(error2) throw error2;
+    			res.json({
+					msg: 'Inserted'
+				})
+			})
+		}else{
+
+    		connection.query(updateNotePadQuery, (error2, results2)=>{
+                console.log('update')
+                if(error2) throw error2;
+                res.json({
+                    msg: 'Updated'
+                })
+            })
+
+		}
+
+	})
+
+
+});
 
 
 
