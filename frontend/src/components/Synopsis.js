@@ -122,18 +122,18 @@ class Synopsis extends Component{
 
     }
 
-    // componentDidMount(){
-    //     $.getJSON(`http://localhost:5000/synopsis?username=${this.props.registerResponse.name}&book=${this.props.match.params.book}`, (serverData)=>{
-    //         // log the JSON response from Express
-    //         console.log(serverData.synopsisData);
-    //         this.setState({
-    //             synopsisData: serverData.synopsisData
-    //         })
-    //     });
-    //
-    //
-    //     console.log(this.state.synopsisData)
-    // }
+    componentDidMount(){
+        $.getJSON(`http://localhost:5000/synopsis?username=${this.props.registerResponse.name}&book=${this.props.match.params.book}`, (serverData)=>{
+            // log the JSON response from Express
+            console.log(serverData.synopsisData);
+            this.setState({
+                synopsisData: serverData.synopsisData
+            })
+        });
+
+
+        console.log(this.state.synopsisData)
+    }
 
 
 
@@ -147,21 +147,21 @@ class Synopsis extends Component{
         }
 
 
-        // var synop_beg1 = this.state.synopsisData.synop_beg1;
-        // var synop_prot = this.state.synopsisData.synop_prot;
-        // var synop_prob = this.state.synopsisData.synop_prob;
-        // var synop_char = this.state.synopsisData.synop_char;
-        // var synop_change1= this.state.synopsisData.synop_change1;
-        // var synop_reader = this.state.synopsisData.synop_reader;
-        // var synop_impact = this.state.synopsisData.synop_impact;
-        // var synop_change2 = this.state.synopsisData.synop_change2;
-        // var synop_rel_start = this.state.synopsisData.synop_rel_start;
-        // var synop_test = this.state.synopsisData.synop_test;
-        // var synop_rel_conflict = this.state.synopsisData.synop_rel_conflict;
-        // var synop_rel_end = this.state.synopsisData.synop_rel_end;
-        // var synop_issue = this.state.synopsisData.synop_issue;
-        // var synop_theme = this.state.synopsisData.synop_theme;
-        // var synop_message = this.state.synopsisData.synop_message;
+        var synop_beg1 = this.state.synopsisData.synop_beg1;
+        var synop_prot = this.state.synopsisData.synop_prot;
+        var synop_prob = this.state.synopsisData.synop_prob;
+        var synop_char = this.state.synopsisData.synop_char;
+        var synop_change1= this.state.synopsisData.synop_change1;
+        var synop_reader = this.state.synopsisData.synop_reader;
+        var synop_impact = this.state.synopsisData.synop_impact;
+        var synop_change2 = this.state.synopsisData.synop_change2;
+        var synop_rel_start = this.state.synopsisData.synop_rel_start;
+        var synop_test = this.state.synopsisData.synop_test;
+        var synop_rel_conflict = this.state.synopsisData.synop_rel_conflict;
+        var synop_rel_end = this.state.synopsisData.synop_rel_end;
+        var synop_issue = this.state.synopsisData.synop_issue;
+        var synop_theme = this.state.synopsisData.synop_theme;
+        var synop_message = this.state.synopsisData.synop_message;
 
 
         var writeMenu = '/write/' + this.props.match.params.book;
@@ -176,7 +176,9 @@ class Synopsis extends Component{
                                     <Form onSubmit={this.handleSynopsis}>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Where and when does the story take place?</ControlLabel>
-                                            <FormControl type='text' id = "synop_beg1" componentClass="textarea" />
+                                            <FormControl type='text' id = "synop_beg1" componentClass="textarea" >
+
+                                            </FormControl>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
