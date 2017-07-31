@@ -9,13 +9,30 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import PlotAction from '../actions/PlotAction';
+import $ from 'jquery';
 
 
 class Plot extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            // registerMessage: "",
+                plotData: {
+                    main_plot: '',
+                    subplot: '',
+                    subplot_reasons: '',
+                    direct_actions: '',
+                    indirect_actions: '',
+                    motivation: '',
+                    plot_type: '',
+                    plot_order: '',
+                    foreshadow: '',
+                    credibility: '',
+                    flashbacks: '',
+                    journey: '',
+                    stakes: '',
+                    antagonist: '',
+                    summary: '',
+                }
             // nameError: null,
             // emailError: null,
             // formError: false
@@ -50,6 +67,7 @@ class Plot extends Component{
         console.log(this.props.registerResponse);
         var book = this.props.match.params.book;
         var username = this.props.registerResponse.name;
+        var id = this.props.location.search.slice(4);
 
         // //Name
         // if(name.length < 1){
@@ -92,7 +110,8 @@ class Plot extends Component{
                 stakes: stakes,
                 antagonist: antagonist,
                 summary: summary,
-                book: book
+                book: book,
+                id: id
 
             });
             this.props.history.push(`/write/${book}`);
@@ -100,8 +119,47 @@ class Plot extends Component{
 
     }
 
+    componentDidMount(){
+
+        //console.log(this.props.location.search);
+        if(this.props.location.search.length !== 0){
+            var id = this.props.location.search.slice(4);
+            console.log(id);
+            $.getJSON(`http://localhost:5000/plot?id=${id}`, (serverData)=>{
+                // log the JSON response from Express
+                //console.log(serverData);
+                this.setState({
+                    plotData: serverData[0]
+                })
+            })
+        }
+
+
+
+
+    }
+
 
     render(){
+
+
+        var main_plot = this.state.plotData.main_plot;
+        var subplot = this.state.plotData.sub_plot;
+        var subplot_reasons = this.state.plotData.sub;
+        var direct_actions = this.state.plotData.direct_actions;
+        var indirect_actions = this.state.plotData.indirect_actions;
+        var motivation = this.state.plotData.motivation;
+        var plot_type = this.state.plotData.plot_type;
+        var plot_order = this.state.plotData.plot_order;
+        var foreshadow = this.state.plotData.foreshadow;
+        var credibility = this.state.plotData.credibility;
+        var flashbacks = this.state.plotData.flashbacks;
+        var journey = this.state.plotData.journey;
+        var stakes = this.state.plotData.stakes;
+        var antagonist = this.state.plotData.antagonist;
+        var summary = this.state.plotData.summary;
+        
+        
         const settings = {
             dots: true,
             infinite: false,
@@ -110,6 +168,7 @@ class Plot extends Component{
             slidesToScroll: 1,
         }
         var writeMenu = '/write/' + this.props.match.params.book;
+        var plotBoard = '/plotboard/' + this.props.match.params.book;
         return(
             <div>
                 <Grid className = "writemenucat text-center ch-forms">
@@ -160,7 +219,7 @@ class Plot extends Component{
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
-                                            <ControlLabel>What type of plot?Character,plot, or idea driven?</ControlLabel>
+                                            <ControlLabel>What type of plot? Character,plot, or idea driven?</ControlLabel>
                                             <FormControl id="plot_type" componentClass="textarea" placeholder="plot-type" />
                                         </FormGroup>
 
@@ -236,7 +295,7 @@ class Plot extends Component{
 
                             <Grid className = "fourth-row-right">
                                 <Col md = {3} className = "col-md-offset-8">
-                                    <Link to = "/pboard" className = "pboard">
+                                    <Link to = {plotBoard} className = "pboard">
                                         <img src = "https://cdn4.iconfinder.com/data/icons/office-34/256/10-512.png"/>
                                         <div>View Plot</div>
                                     </Link>

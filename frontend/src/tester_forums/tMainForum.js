@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
 import { Link} from 'react-router-dom';
+<<<<<<< HEAD
+import { Form, Grid, Row, Col, FormGroup, FormControl, Button, ControlLabel } from 'react-bootstrap';
+import ScrollableAnchor from 'react-scrollable-anchor';
+=======
 import { Grid, Row, Col } from 'react-bootstrap';
+>>>>>>> f6fe4f57add43b9a82257ee3e06a9a9f1472135f
 import  {bindActionCreators} from 'redux';
 // import CharacterAction from '../actions/CharacterAction';
 import {connect} from 'react-redux';
@@ -10,6 +15,180 @@ import {connect} from 'react-redux';
 
 
 
+<<<<<<< HEAD
+// class tMainForum extends Component{
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       // registerMessage: "",
+//       // nameError: null,
+//       // emailError: null,
+//       // formError: false
+//     }
+//     // this.handleUserProfile = this.UserProfile.bind(this);
+    
+//   }
+
+
+ 
+// 	render(){
+     
+//     console.log(this.props)
+// 		return(
+// 			<div>
+// 				<Grid className = "forum-wrapper">
+// 					<Row>
+//                         <Col md={12}>
+
+//                             <Row>
+                                    
+//                                 <Grid className = "latest-comments left">
+//                                     <h2 className = "header" style = {{float: "left", marginleft:"20px"}}> MOST RECENT COMMENTS</h2>
+
+//                                     <Grid className = "comments-view">
+//                                         <Link to = "/user" />
+//                                             <img src = ""/>
+//                                             <div style = {{paddingleft: "4px"}}>UsernameA</div>  
+//                                         </Link>
+//                                         <div className = "commentbubble" onClick = "">
+//                                             <div>UsernameA comments are here</div> 
+//                                             <div><Link to ="/home">Category Name ex SCIFI</Link></div>
+//                                             <div><Link to = "/home">Category Page Title ex Chapter One Critique</Link></div>
+//                                         </div> 
+//                                 </Grid>
+
+
+//                                     <Grid className = "comments-view">
+//                                         <Link to = "/user" />
+//                                             <img src = ""/>
+//                                             <div style = {{paddingleft: "4px"}}>UsernameB</div>  
+//                                         </Link>
+//                                         <div className = "commentbubble" onClick = "">
+//                                             <div>UsernameB comments are here</div> 
+//                                             <div><Link to ="/home">Category Name ex SCIFI</Link></div>
+//                                             <div><Link to = "/home">Category Page Title ex Chapter One Critique</Link></div>
+//                                         </div> 
+//                                     </Grid>
+
+
+//                                     <Grid className = "comments-view">
+//                                         <Link to = "/user" />
+//                                             <img src = ""/>
+//                                             <div style = {{paddingleft: "4px"}}>UsernameC</div>  
+//                                         </Link>
+//                                         <div className = "commentbubble" onClick = "">
+//                                             <div>UsernameC comments are here</div> 
+//                                             <div><Link to ="/home">Category Name ex SCIFI</Link></div>
+//                                             <div><Link to = "/home">Category Page Title ex Chapter One Critique</Link></div>
+//                                         </div> 
+//                                     </Grid>
+
+
+//                                     <Grid className = "comments-view">
+//                                         <Link to = "/user" />
+//                                             <img src = ""/>
+//                                             <div style = {{paddingleft: "4px"}}>UsernameX</div>  
+//                                         </Link>
+//                                         <div className = "commentbubble" onClick = "">
+//                                             <div>UsernameX comments are here</div> 
+//                                             <div><Link to ="/home">Category Name ex SCIFI</Link></div>
+//                                             <div><Link to = "/home">Category Page Title ex Chapter One Critique</Link></div>
+//                                         </div> 
+//                                     </Grid>
+
+
+//                                     <Grid className = "comments-view">
+//                                         <Link to = "/user" />
+//                                             <img src = ""/>
+//                                             <div style = {{paddingleft: "4px"}}>UsernameY</div>  
+//                                         </Link>
+//                                         <div className = "commentbubble" onClick = "">
+//                                             <div>UsernameY comments are here</div> 
+//                                             <div><Link to ="/home">Category Name ex SCIFI</Link></div>
+//                                             <div><Link to = "/home">Category Page Title ex Chapter One Critique</Link></div>
+//                                         </div> 
+//                                     </Grid>
+
+
+//                                     <Grid className = "comments-view">
+//                                         <Link to = "/user" />
+//                                             <img src = ""/>
+//                                             <div style = {{paddingleft: "4px"}}>UsernameZ</div>  
+//                                         </Link>
+//                                         <div className = "commentbubble" onClick = "">
+//                                             <div>UsernameZ comments are here</div> 
+//                                             <div><Link to ="/home">Category Name ex SCIFI</Link></div>
+//                                             <div><Link to = "/home">Category Page Title ex Chapter One Critique</Link></div>
+//                                         </div> 
+//                                     </Grid>
+                                 
+
+//                                     <Grid className = "categories right">
+//                                         <h2 className = "cat-header"> CATEGORIES</h2>
+
+
+                                        
+//                                     </Grid>
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 
+
+                                         
+
+
+
+
+                                    
+//                                 </Grid> 
+                            
+
+
+
+
+
+
+
+
+
+
+
+//                                 <Col md = {4} className = "categories">
+
+
+
+
+//                                 </Col>
+
+
+
+
+//                             </Row>
+
+
+
+//                         </Col>
+
+
+//                     </Row>
+
+
+//                 </Grid>
+
+
+
+
+
+
+                
+// 		  </div>
+
+// 		)
+// 	}
+// }
+=======
 class tMainForum extends Component{
   constructor(props) {
     super(props);
@@ -202,6 +381,7 @@ class tMainForum extends Component{
 		)
 	}
 }
+>>>>>>> f6fe4f57add43b9a82257ee3e06a9a9f1472135f
 
 
 // function mapStateToProps(state){
@@ -219,5 +399,9 @@ class tMainForum extends Component{
 //   }, dispatch)
 // }
 
+<<<<<<< HEAD
+// export default tMainForum;
+=======
 export default tMainForum;
+>>>>>>> f6fe4f57add43b9a82257ee3e06a9a9f1472135f
 // export default connect(mapStateToProps,mapDispatchToProps)(tMainForum);
