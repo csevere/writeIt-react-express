@@ -76,7 +76,7 @@ class UserProfile extends Component{
 
         this.loadPosts();
 
-        setInterval(this.loadPosts, 5000);
+        //setInterval(this.loadPosts, 30000);
 
 
 
@@ -99,6 +99,7 @@ class UserProfile extends Component{
         var username = this.state.userData.username;
         var location = this.state.userData.location;
         var about = this.state.userData.about;
+        console.log(location)
 
         var bookArray = [];
         var postArray = [];
@@ -166,6 +167,13 @@ class UserProfile extends Component{
                                             </ul>
                                         </div>
                                     </div>
+                                    <form method="post" action="http://127.0.0.1:5000/profilepic" enctype="multipart/form-data">
+                                        <div class="md-col-4 md-col-offset-2">
+                                            <input name='user' type='hidden' value={this.state.userData.username} />
+                                            <input type='file' name='fileUploaded' />
+                                            <input class="btn btn-primary" type="submit" />
+                                        </div>
+                                    </form>
                                 </Col>
 
                             </Col>

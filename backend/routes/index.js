@@ -3,6 +3,10 @@ var router = express.Router();
 var router = express.Router();
 var mysql = require('mysql');
 var config = require('../config/config');
+var multer = require('multer');
+var upload = multer({dest: 'public/images'});
+
+var fs = require('fs');
 
 // include bcrpyt for hasing and checking password
 var bcrypt = require('bcrypt-nodejs');
@@ -906,6 +910,28 @@ router.post('/post', (req, res)=>{
 });
 
 
+//Add multer file upload
+router.post('/profilepic', upload.single('fileUploaded'), function(req, res, next){
+	console.log('req file below')
+	console.log(req.files)
+	//res.json(req.file);
+	console.log('req body below')
+	console.log(req.body);
+
+	var tmp_path = req.file.path;
+
+	var target_path = 'public/images/' + req.file.originalname
+	fs.readFile(tmp_path, function (error, data){
+		fs.writeFile(target_path, data, function(error){
+			if(error) throw error
+			//res.json('File Uploaded to ' + target_path);
+			// db.insert into the mongdo, the path and name of the new file.
+			// res.redirect('/')
+
+
+		});
+	});
+});
 
 
 
