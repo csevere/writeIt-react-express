@@ -1,10 +1,12 @@
 import React,{Component} from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Row, Col, Button,Form } from 'react-bootstrap';
+import { Grid, Row, Col, Button,Form,FormGroup,ControlLabel,FormControl,Image } from 'react-bootstrap';
 import NotePadAction from '../actions/NotePadAction';
 import {connect} from 'react-redux';
 import  {bindActionCreators} from 'redux';
 import $ from 'jquery';
+import writeMenu from '../components/writeMenu';
+import notePadBoard from '../tester/display-info/tNotePadBoard';
 
 class NotePad extends Component{
     constructor(props) {
@@ -81,24 +83,36 @@ class NotePad extends Component{
         var notePadBoard = '/noteboard/' + this.props.match.params.book;
 
         return(
-            <div>
-                <Grid>
+             <div>
+                <Grid className = "notepad-wrapper">
                     <Row>
-                        <Col lg={18} >
-                            <h1>Welcome to your Note Pad </h1>
-                            <Button className="npButton" bsStyle="success" bsSize="small" type="submit" onClick={this.handleNotes}>
-                                Submit
-                            </Button>
-                            <div className="nptextBox">
-								<textarea id="text">
-								Feel free to take notes here:
-								</textarea>
-                            </div>
 
+                        <Col md = {8} className = "col-md-offset-2 notepad-form">
+
+                            <Form>
+
+                                <FormGroup controlId="formControlsTextarea">
+                                    <ControlLabel>Title:</ControlLabel>
+                                    <FormControl id="title" componentClass="textarea" />
+                                </FormGroup>
+
+
+                                <FormGroup controlId="formControlsTextarea">
+                                    <ControlLabel>Notes:</ControlLabel>
+                                    <FormControl id="notes" componentClass="textarea" />
+                                </FormGroup>
+
+                                <Link to = "/writeMenu"><Button className = "btn-default btn" bsSize="medium"type="submit">Submit</Button></Link> 
+
+                            </Form> 
                         </Col>
+                        
                     </Row>
-                    <Row>
-                        <Grid className = "fourth-row-left">
+
+
+                </Grid>
+                 <Row>
+                        <Grid className = "np-row-left">
                             <Col md = {3}>
                                 <Link to = {writeMenu} className = "return-writemenu">
                                     <img src = "https://cdn4.iconfinder.com/data/icons/lifestyle-set-2/100/07a3c3443f894cb3fa7a93ee3c496233-512.png"/>
@@ -107,7 +121,7 @@ class NotePad extends Component{
                             </Col>
                         </Grid>
 
-                        <Grid className = "fourth-row-right">
+                        <Grid className = "np-row-right">
                             <Col md = {3} className = "col-md-offset-8">
                                 <Link to = {notePadBoard} className = "chboard">
                                     <img src = "https://cdn4.iconfinder.com/data/icons/office-34/256/10-512.png"/>
@@ -115,11 +129,8 @@ class NotePad extends Component{
                                 </Link>
                             </Col>
                         </Grid>
-
-
                     </Row>
-                </Grid>
-            </div>
+                </div>
         )
     }
 }
