@@ -21,6 +21,11 @@ import Faqs from './components/Faqs';
 import UserProfile from './components/UserProfile';
 import Synopsis from './components/Synopsis';
 
+//Forums
+import tMainForum from './tester_forums/tMainForum';
+import tContempForum from './tester_forums/tContempForum';
+
+
 
 
 // import logo from './logo.svg';
@@ -54,6 +59,9 @@ class App extends Component {
               <Route exact path="/notepad/:book" component={tNotePad} />
               <Route exact path="/resources" component={Resources} />
               <Route exact path="/faqs" component={Faqs} />
+
+              <Route exact path = "/forums" component = {tMainForum}/>
+              <Route exact path = "/contemp" component = {tContempForum}/>
             </div> 
           </div>
         </Router>
