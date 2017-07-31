@@ -1596,3 +1596,39 @@ textarea {
   right: 0em;
   margin-right: 10px;
 }
+
+/* line 1, ../../compass/sass/_faq.scss */
+.panel-group {
+  margin-top: 8em;
+}
+
+/* line 6, ../../compass/sass/_faq.scss */
+.faqHeader {
+  font-size: 27px;
+  margin: 20px;
+}
+
+/* line 11, ../../compass/sass/_faq.scss */
+.panel-heading [data-toggle="collapse"]:after {
+  font-family: 'Glyphicons Halflings';
+  content: "e072";
+  float: right;
+  color: #F58723;
+  font-size: 18px;
+  line-height: 22px;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+/* line 27, ../../compass/sass/_faq.scss */
+.panel-heading [data-toggle="collapse"].collapsed:after {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  color: #454444;
+}
