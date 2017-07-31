@@ -591,18 +591,98 @@ h2 {
   background-color: #fff;
 }
 
-/* line 10, ../../compass/sass/_about.scss */
+/* line 9, ../../compass/sass/_about.scss */
+h2 {
+  font-weight: bold;
+  font-size: 5em;
+  margin-left: 7em;
+  padding-bottom: 1em;
+  width: 100%;
+}
+
+/* line 17, ../../compass/sass/_about.scss */
 #about {
   background-color: #fff;
   top: 0;
   padding-bottom: 2em;
   margin-top: -58.5em;
   z-index: -1;
-  min-width: 111%;
+  width: 100%;
+  overflow-x: hidden;
   min-height: 100%;
   overflow: scroll;
   display: flex;
   color: #000000;
+  border: 1px solid green;
+}
+
+/* line 32, ../../compass/sass/_about.scss */
+p {
+  margin-left: 0em;
+  font-size: 20px;
+  font-family: 'BenchNine';
+}
+
+/* line 38, ../../compass/sass/_about.scss */
+.about-row1 {
+  margin-top: 20em;
+  margin-left: -63em;
+  border: 1px solid red;
+  height: 50%;
+  width: 90%;
+}
+
+/* line 46, ../../compass/sass/_about.scss */
+.about-row2 {
+  margin-top: 48em;
+  margin-left: -88em;
+  width: 100%;
+  border: 1px solid blue;
+}
+
+/* line 53, ../../compass/sass/_about.scss */
+hr {
+  margin-top: -24px;
+  margin-bottom: 21px;
+  border-top: 2px solid #eee;
+  width: 67%;
+}
+
+/* line 60, ../../compass/sass/_about.scss */
+h3 {
+  margin-right: 1.5em;
+}
+
+/* line 65, ../../compass/sass/_about.scss */
+#title {
+  margin-top: -3em;
+  margin-right: 18em;
+  width: 6%;
+  border: 2px solid black;
+}
+
+/* line 72, ../../compass/sass/_about.scss */
+#safety {
+  width: 56%;
+  margin-left: 5em;
+}
+
+/* line 77, ../../compass/sass/_about.scss */
+#organization {
+  width: 68%;
+  margin-left: 10em;
+}
+
+/* line 82, ../../compass/sass/_about.scss */
+#fun {
+  width: 60%;
+  margin-left: 1em;
+}
+
+/* line 87, ../../compass/sass/_about.scss */
+#social {
+  width: 58%;
+  margin-left: 5em;
 }
 
 /* line 1, ../../compass/sass/_newbook.scss */
@@ -1029,13 +1109,6 @@ h2 {
   background-color: #9966ff;
 }
 
-/* line 3, ../../compass/sass/_notepad.scss */
-.npButton {
-  margin-top: 48em;
-  margin-left: 43em;
-  text-align: center;
-}
-
 /* line 9, ../../compass/sass/_notepad.scss */
 h1 {
   text-align: center;
@@ -1049,9 +1122,64 @@ textarea {
   height: 100%;
 }
 
-/* line 21, ../../compass/sass/_notepad.scss */
-.nptextBox {
-  margin-top: -40em;
+/* line 25, ../../compass/sass/_notepad.scss */
+.notepad-wrapper {
+  position: absolute;
+  background-color: white;
+  top: 22em;
+  left: 0;
+  margin: 0;
+  z-index: -1;
+  min-width: 102%;
+  min-height: 50%;
+  height: 90px;
+}
+
+/* line 38, ../../compass/sass/_notepad.scss */
+.notepad-form {
+  margin-top: 7em;
+  background-color: #A83B56;
+  border: 1px solid #A83B56;
+  box-shadow: 2px 2px 11px 1px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+}
+/* line 46, ../../compass/sass/_notepad.scss */
+.notepad-form .btn {
+  top: 0em;
+  left: 0em;
+  right: 0em;
+  margin-right: 30px;
+  font-weight: bold;
+}
+/* line 56, ../../compass/sass/_notepad.scss */
+.notepad-form #message {
+  height: 12em;
+}
+
+/* line 61, ../../compass/sass/_notepad.scss */
+.np-row-left {
+  float: left;
+  margin-top: 41em;
+}
+/* line 65, ../../compass/sass/_notepad.scss */
+.np-row-left img {
+  margin-top: 28em;
+  position: relative;
+  left: -36em;
+  height: 13em;
+}
+
+/* line 73, ../../compass/sass/_notepad.scss */
+.np-row-right {
+  float: right;
+  margin-top: 41em;
+}
+/* line 77, ../../compass/sass/_notepad.scss */
+.np-row-right img {
+  margin-top: 28em;
+  position: relative;
+  left: -36em;
+  height: 13em;
 }
 
 /* line 4, ../../compass/sass/_writemenuoption.scss */

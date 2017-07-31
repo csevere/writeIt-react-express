@@ -52,7 +52,7 @@ class App extends Component {
               <Route exact path="/login" component= {Login} />
               <Route exact path="/write/:book" component= {writeMenu} />
               <Route path = "/notepad" component = {NotePad}/>
-
+             
 
               <Route exact path="/newbook" component= {NewBook} />
               <Route exact path="/user" component= {UserProfile} />
