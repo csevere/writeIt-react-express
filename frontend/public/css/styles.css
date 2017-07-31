@@ -15,20 +15,26 @@
   display: flex;
   text-decoration: none;
 }
-/* line 22, ../../compass/sass/_navbar.scss */
+@media screen and (min-width: 1200px) {
+  /* line 16, ../../compass/sass/_navbar.scss */
+  .navbar-wrapper ul {
+    margin-right: 3em;
+  }
+}
+/* line 26, ../../compass/sass/_navbar.scss */
 .navbar-wrapper img {
   height: 20px;
 }
-/* line 26, ../../compass/sass/_navbar.scss */
+/* line 30, ../../compass/sass/_navbar.scss */
 .navbar-wrapper a:link {
   color: #fff;
   text-decoration: none;
 }
-/* line 33, ../../compass/sass/_navbar.scss */
+/* line 37, ../../compass/sass/_navbar.scss */
 .navbar-wrapper .navbar-nav li a {
   color: #fff;
 }
-/* line 39, ../../compass/sass/_navbar.scss */
+/* line 43, ../../compass/sass/_navbar.scss */
 .navbar-wrapper .title li a {
   display: block;
   float: left;
@@ -38,18 +44,24 @@
   color: #fff;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
-/* line 50, ../../compass/sass/_navbar.scss */
+@media screen and (min-width: 1200px) {
+  /* line 43, ../../compass/sass/_navbar.scss */
+  .navbar-wrapper .title li a {
+    margin-left: -1em;
+  }
+}
+/* line 57, ../../compass/sass/_navbar.scss */
 .navbar-wrapper .title li a:hover {
   background-color: transparent;
   cursor: pointer;
 }
 
-/* line 59, ../../compass/sass/_navbar.scss */
+/* line 69, ../../compass/sass/_navbar.scss */
 .float-right {
   float: right;
   font-size: 1em;
 }
-/* line 64, ../../compass/sass/_navbar.scss */
+/* line 74, ../../compass/sass/_navbar.scss */
 .float-right .login, .float-right .signup {
   border: 3px solid #fff;
   padding: 7px;
@@ -57,24 +69,24 @@
   font-family: 'Heebo', sans-serif;
   margin-top: 7px;
 }
-/* line 73, ../../compass/sass/_navbar.scss */
+/* line 83, ../../compass/sass/_navbar.scss */
 .float-right .login {
   background-color: #fff;
   color: #2e6da4 !important;
   margin-right: 1em;
 }
-/* line 81, ../../compass/sass/_navbar.scss */
+/* line 91, ../../compass/sass/_navbar.scss */
 .float-right .login:hover {
   background: #2e6da4;
   color: #fff !important;
   cursor: pointer;
 }
-/* line 87, ../../compass/sass/_navbar.scss */
+/* line 97, ../../compass/sass/_navbar.scss */
 .float-right .signup {
   color: #fff;
   margin-right: 1em;
 }
-/* line 92, ../../compass/sass/_navbar.scss */
+/* line 102, ../../compass/sass/_navbar.scss */
 .float-right .signup:hover {
   background-color: #fff;
   color: #2e6da4;
@@ -629,15 +641,51 @@ h2 {
   line-height: 50px;
 }
 
-/* line 3, ../../compass/sass/_register.scss */
-.register-wrapper {
-  margin-top: 11em;
-  background: #fff;
-  padding: 10px;
+/* line 4, ../../compass/sass/_register.scss */
+.register-wrapperb {
+  background-image: url("https://static.pexels.com/photos/34627/pexels-photo.jpg");
+  position: absolute;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
 }
-/* line 8, ../../compass/sass/_register.scss */
-.register-wrapper .button {
-  top: 1em;
+/* line 22, ../../compass/sass/_register.scss */
+.register-wrapperb .register {
+  border: 2px solid #f5f5f5;
+  margin-top: 13em;
+  background-color: #f5f5f5;
+  color: #525174;
+  padding: 35px;
+  border-radius: 5px;
+  box-shadow: 6px 5px 11px 1px #333;
+}
+/* line 33, ../../compass/sass/_register.scss */
+.register-wrapperb h2 {
+  font-size: 32px;
+}
+/* line 37, ../../compass/sass/_register.scss */
+.register-wrapperb .form-horizontal {
+  margin-top: 2em;
+}
+/* line 41, ../../compass/sass/_register.scss */
+.register-wrapperb .btn {
+  position: relative;
+  top: 0em;
+  left: 0em;
+  right: 0em;
+  margin: auto;
+  width: 100%;
+  font-size: 15px;
 }
 
 /* line 4, ../../compass/sass/_writemenu.scss */
@@ -1598,37 +1646,68 @@ textarea {
 }
 
 /* line 1, ../../compass/sass/_faq.scss */
-.panel-group {
+.faq-wrapper {
   margin-top: 8em;
 }
-
-/* line 6, ../../compass/sass/_faq.scss */
-.faqHeader {
+/* line 4, ../../compass/sass/_faq.scss */
+.faq-wrapper .header {
   font-size: 27px;
   margin: 20px;
 }
-
-/* line 11, ../../compass/sass/_faq.scss */
-.panel-heading [data-toggle="collapse"]:after {
-  font-family: 'Glyphicons Halflings';
-  content: "e072";
-  float: right;
-  color: #F58723;
-  font-size: 18px;
-  line-height: 22px;
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  transform: rotate(-90deg);
+/* line 10, ../../compass/sass/_faq.scss */
+.faq-wrapper .btn {
+  position: relative;
+  top: -1em;
+  left: 0em;
+  right: -6em;
+  margin: auto;
+  width: 100%;
+  padding-right: 70em;
 }
 
-/* line 27, ../../compass/sass/_faq.scss */
-.panel-heading [data-toggle="collapse"].collapsed:after {
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  transform: rotate(90deg);
-  color: #454444;
+/* line 3, ../../compass/sass/_login.scss */
+.register-wrapper {
+  background-image: url("https://static.pexels.com/photos/34627/pexels-photo.jpg");
+  position: absolute;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+/* line 21, ../../compass/sass/_login.scss */
+.register-wrapper .login {
+  border: 2px solid #f5f5f5;
+  margin-top: 13em;
+  background-color: #f5f5f5;
+  color: #525174;
+  padding: 35px;
+  border-radius: 5px;
+  box-shadow: 6px 5px 11px 1px #333;
+}
+/* line 33, ../../compass/sass/_login.scss */
+.register-wrapper h2 {
+  font-size: 32px;
+}
+/* line 37, ../../compass/sass/_login.scss */
+.register-wrapper .form-horizontal {
+  margin-top: -7em;
+}
+/* line 41, ../../compass/sass/_login.scss */
+.register-wrapper .btn {
+  position: relative;
+  top: 0em;
+  left: 0em;
+  right: 0em;
+  margin: auto;
+  width: 100%;
+  font-size: 15px;
 }

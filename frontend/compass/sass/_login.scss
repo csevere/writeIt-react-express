@@ -1,7 +1,6 @@
 @import 'variables';
 
-
-.register-wrapperb{
+.register-wrapper{
 	background-image: url('https://static.pexels.com/photos/34627/pexels-photo.jpg');
 	position: absolute;	
 	-webkit-background-size: cover;
@@ -19,7 +18,7 @@
 	width: 100%; 
 
 
-	.register{
+	.login{
 		border: 2px solid $white-smoke;
 		margin-top: 13em; 
 		background-color: $white-smoke;
@@ -28,6 +27,7 @@
 		border-radius: 5px; 
 		box-shadow: 6px 5px 11px 1px #333;
 
+
 	}
 
 	h2{
@@ -35,7 +35,7 @@
 	}
 
 	.form-horizontal{
-		margin-top: 2em; 
+		margin-top: -7em; 
 	}
 
 	.btn{
@@ -50,7 +50,5 @@
 	}
 	 
 
+
 }
-
-		
-

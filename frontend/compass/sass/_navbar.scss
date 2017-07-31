@@ -16,7 +16,11 @@
 		ul{
 			margin-top: 0; 
 			display: flex; 
-			text-decoration: none; 
+			text-decoration: none;
+			@media screen and(min-width:$break-large){	
+				margin-right: 3em;
+			} 
+
 		}
 
 		img{
@@ -44,7 +48,10 @@
 			font-size: 36px; 
 			color: $white; 
 			text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
-			// border: 5px solid $cyan; 
+			// border: 5px solid $cyan;
+			@media screen and(min-width:$break-large){	
+				margin-left: -1em;
+			}  
 		}
 
 		.title li a:hover{
@@ -53,6 +60,9 @@
 		}
 
 }
+
+
+
 
 
 

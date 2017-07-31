@@ -19,10 +19,12 @@ import tNotePadBoard from './tester/display-info/tNotePadBoard';
 import Critique from './components/Critique';
 import tPicture from './tester/tPicture'; 
 import NotePad from './components/NotePad';
+
 import Resources from './components/Resources';
 import Faqs from './components/Faqs';
 import UserProfile from './components/UserProfile';
 import Synopsis from './components/Synopsis';
+
 
 
 //Forums

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Form, FormGroup, ControlLabel, FormControl, Button, Col ,MenuItem} from 'react-bootstrap'
+import { Form, FormGroup, ControlLabel, FormControl, Button, Col ,MenuItem, Grid} from 'react-bootstrap'
 // Our action needs bindActionCreators from redux
 import  {bindActionCreators} from 'redux';
 // Get the registerAction function which runs on submission
@@ -79,33 +79,40 @@ class Login extends Component{
 		// })
 
 		return(
-			<div className="register-wrapper">
-				<h1 className="text-danger">{this.state.registerMessage}</h1>
-				<Form horizontal onSubmit={this.handleLogin}>
-					<FormGroup controlId="formHorizontalName" validationState={this.state.nameError}>
-						<Col componentClass={ControlLabel} sm={2}>
-							Email
-						</Col>
-						<Col sm={10}>
-							<FormControl type="email" name="email" placeholder="Email" />
-						</Col>
-					</FormGroup>
-					<FormGroup controlId="formHorizontalName" validationState={this.state.emailError}>
-						<Col componentClass={ControlLabel} sm={2}>
-							Password
-						</Col>
-						<Col sm={10}>
-							<FormControl type="password" name="password" placeholder="Password" />
-						</Col>
-					</FormGroup>
-					<FormGroup>
-						<Col smOffset={2} sm={10}>
-							<Button bsStyle="success" bsSize="small" type="submit">
-								Login
-							</Button>
-						</Col>
-					</FormGroup>
-				</Form>
+			<div>
+				<Grid className = "register-wrapper">
+					<Col md = {6} className = "login col-md-offset-3">
+						<div className = "text-center"><h2>Log in to writeIT</h2><br/>
+							<h3>Write, organize, and interact with other writers on writeIT.</h3>
+						</div> 
+						<h4 className="text-danger">{this.state.registerMessage}</h4>
+						<Form horizontal onSubmit={this.handleLogin}>
+							<FormGroup controlId="formHorizontalName" validationState={this.state.nameError}>
+								<Col componentClass={ControlLabel} sm={2}>
+									Email
+								</Col>
+								<Col sm={10}>
+									<FormControl type="email" name="email" placeholder="Email" />
+								</Col>
+							</FormGroup>
+							<FormGroup controlId="formHorizontalName" validationState={this.state.emailError}>
+								<Col componentClass={ControlLabel} sm={2}>
+									Password
+								</Col>
+								<Col sm={10}>
+									<FormControl type="password" name="password" placeholder="Password" />
+								</Col>
+							</FormGroup>
+							<FormGroup>
+								<Col smOffset={2} sm={10}>
+									<Button bsStyle="primary" bsSize="small" type="submit">
+										Login
+									</Button>
+								</Col>
+							</FormGroup>
+						</Form>
+					</Col>
+				</Grid>
 			</div>
 		)
 	}
