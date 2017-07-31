@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link} from 'react-router-dom';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, Table } from 'react-bootstrap';
 import  {bindActionCreators} from 'redux';
 // import CharacterAction from '../actions/CharacterAction';
 import {connect} from 'react-redux';
@@ -30,172 +30,86 @@ class tContempForum extends Component{
     console.log(this.props)
 		return(
 			<div>
-				<Grid className = "forum-wrapper">
+				<Grid className = "contemp-forum-wrapper">
 					<Row>
                         
                             
-                        <Col md = {7} className = "latest-comments-left">
+                        <Col md = {7} className = "latest-topics-left">
+                            <h2>RECENT TOPICS</h2> 
 
-                            <h2 className = "header"> MOST RECENT COMMENTS</h2>
+                            <Table className="contemp-table" striped bordered responsive>
+                                    <thead>
+                                      <tr>
+                                        <th>Discussion</th>
+                                        <th>Author</th>
+                                        <th>Replies</th>
+                                      </tr>
+                                    </thead>
 
-                            <Grid className = "comments-view">
-                                <Link to = "/user">
-                                    <img src = "http://via.placeholder.com/64x64"/>
-                                    <div>UsernameA</div>  
-                                </Link>
-                                <div className = "commentbubble" onClick = "">
-                                    <div>UsernameA comments are here</div> 
-                                    <div><Link to ="/home">Category Name ex SCIFI</Link></div>
-                                    <div><Link to = "/home">Category Page Title ex Chapter One Critique</Link></div>
-                                </div> 
-                            </Grid>
+                                    <tbody>
 
+                                      <tr>
+                                        <td><img src = "images/pin-icon.png"/>Forum Guidlines</td>
+                                        <td>Admin</td>
+                                        <td>number of replies</td>
+                                      </tr>
 
-                            <Grid className = "comments-view">
-                                <Link to = "/user">
-                                    <img src = "http://via.placeholder.com/64x64"/>
-                                    <div>UsernameB</div>  
-                                </Link>
-                                <div className = "commentbubble" onClick = "">
-                                    <div>UsernameB comments are here</div> 
-                                    <div><Link to ="/home">Category Name ex SCIFI</Link></div>
-                                    <div><Link to = "/home">Category Page Title ex Chapter One Critique</Link></div>
-                                </div> 
-                            </Grid>
+                                      <tr>
+                                        <td>FORUM TOPIC A</td>
+                                        <td><Link to = "/user">UsernameA</Link></td>
+                                        <td>number of replies</td>
+                                       
+                                      </tr>
 
+                                      <tr>
+                                        <td>FORUM TOPIC B</td>
+                                        <td><Link to = "/user">UsernameB</Link></td>
+                                        <td>number of replies</td>
+                                      </tr>
 
-                            <Grid className = "comments-view">
-                                <Link to = "/user">
-                                    <img src = "http://via.placeholder.com/64x64"/>
-                                    <div>UsernameC</div>  
-                                </Link>
-                                <div className = "commentbubble" onClick = "">
-                                    <div>UsernameC comments are here</div> 
-                                    <div><Link to ="/home">Category Name ex SCIFI</Link></div>
-                                    <div><Link to = "/home">Category Page Title ex Chapter One Critique</Link></div>
-                                </div> 
-                            </Grid>
+                                       <tr>
+                                        <td>FORUM TOPIC C</td>
+                                        <td><Link to = "/user">UsernameC</Link></td>
+                                        <td>number of replies</td>
+                                      </tr>
 
 
-                            <Grid className = "comments-view">
-                                <Link to = "/user">
-                                    <img src = "http://via.placeholder.com/64x64"/>
-                                    <div>UsernameX</div>  
-                                </Link>
-                                <div className = "commentbubble" onClick = "">
-                                    <div>UsernameX comments are here</div> 
-                                    <div><Link to ="/home">Category Name ex SCIFI</Link></div>
-                                    <div><Link to = "/home">Category Page Title ex Chapter One Critique</Link></div>
-                                </div> 
-                            </Grid>
+                                       <tr>
+                                        <td>FORUM TOPIC X</td>
+                                        <td><Link to = "/user">UsernameX</Link></td>
+                                        <td>number of replies</td>
+                                      </tr>
 
+                                    </tbody>
+                                </Table>
 
-                            <Grid className = "comments-view">
-                                <Link to = "/user">
-                                    <img src = "http://via.placeholder.com/64x64"/>
-                                    <div>UsernameY</div>  
-                                </Link>
-                                <div className = "commentbubble" onClick = "">
-                                    <div>UsernameY comments are here</div> 
-                                    <div><Link to ="/home">Category Name ex SCIFI</Link></div>
-                                    <div><Link to = "/home">Category Page Title ex Chapter One Critique</Link></div>
-                                </div> 
-                            </Grid>
-
-
-                            <Grid className = "comments-view">
-                                <Link to = "/user">
-                                    <img src = "http://via.placeholder.com/64x64"/>
-                                    <div>UsernameZ</div>  
-                                </Link>
-                                <div className = "commentbubble" onClick = "">
-                                    <div>UsernameZ comments are here</div> 
-                                    <div><Link to ="/home">Category Name ex SCIFI</Link></div>
-                                    <div><Link to = "/home">Category Page Title ex Chapter One Critique</Link></div>
-                                </div> 
-                            </Grid>
+                                <div className = "all-topics">
+                                    <Link to = "/home">All topics</Link> 
+                                    <img src = "images/arrow-right.png"/>
+                                   
+                                </div>
                         </Col> 
                       
 
                          
 
-                        <Col  md = {4} className = "categories-right">
-                            <h2 className = "cat-header"> FORUM CATEGORIES</h2>
+                        <Col  md = {4} className = "forum-cat-right">
+                            <h2 className = "forum-cat-header"> CONTEMPORARY FICTION</h2>
 
-                           
-                            <Grid className = "cat-view">
-                                <Link to = "/contemp">
-                                    <img src = "http://via.placeholder.com/64x64"/> 
-                                </Link>
-                                <div className = "cat-info" onClick = "">
-                                    <div><Link to ="/home">Contemporary Fiction</Link></div>
-                                    <div>Join discussions for plot-driven fiction set in modern times.</div>
-                                </div> 
-                            </Grid>
+                            <Grid className = "forum-cat-view">
+                                <div>
+                                    <img src = "images/gen-fic-icon.png"/> 
+                                </div>
+                                <div className = "forum-cat-info" onClick = "">
+                                    <div>Join discussions for fiction set in modern times. You can start a discussion or chat with other writers of General Ficiton.</div>
+                                </div>
 
-
-                            <Grid className = "cat-view">
-                                <Link to = "/romance">
-                                    <img src = "http://via.placeholder.com/64x64"/>
-                                </Link>
-                                <div className = "cat-info" onClick = "">
-                                    <div><Link to ="/home">Romance</Link></div>
-                                    <div>Join discussions for fiction that places the primary focus on the relationship and romantic love...</div>
-                                </div> 
-                            </Grid>
-
-                             <Grid className = "cat-view">
-                                <Link to = "/sf">
-                                    <img src = "http://via.placeholder.com/64x64"/> 
-                                </Link>
-                                <div className = "cat-info" onClick = "">
-                                    <div><Link to ="/sf">Science Fiction</Link></div>
-                                    <div>Join discussions for fiction based on future scientific or technological advances and major social...</div>
-                                </div> 
-                            </Grid>
-
-
-                            <Grid className = "cat-view">
-                                <Link to = "/fantasy">
-                                    <img src = "http://via.placeholder.com/64x64"/>
-                                </Link>
-                                <div className = "cat-info" onClick = "">
-                                    <div><Link to ="/fantasy">Fantasy</Link></div>
-                                    <div>Join discussions for fiction that contains unrealistic settings, or magic, often set in a...</div>
-                                </div> 
-                            </Grid>
-
-
-                            <Grid className = "cat-view">
-                                <Link to = "/mystery">
-                                    <img src = "http://via.placeholder.com/64x64"/>  
-                                </Link>
-                                <div className = "cat-info" onClick = ""> 
-                                    <div><Link to ="/mystery">Mystery/Thriller</Link></div>
-                                    <div>Join discussions for fiction defined by the moods they elicit, giving viewers heightened feelings...</div>
-                                </div> 
-                            </Grid>
-
-
-                            <Grid className = "cat-view">
-                                <Link to = "/horror">
-                                    <img src = "http://via.placeholder.com/64x64"/>
-                                </Link>
-                                <div className = "cat-info" onClick = "">
-                                    <div><Link to ="/horr">Horror</Link></div>
-                                    <div>Join discussions for fiction intended to, or has the capacity to frighten, scare, disgust...</div>
-                                </div> 
+                                <div className = "new-topic">
+                                    <Link to= "/home">Start New Topic  </Link> 
+                                    <img src = "images/quote-bubble.png" /> 
+                                </div>
                             </Grid>  
-                            
-
-
                         </Col>
-
-                          
-                        
-                    
-                             
-                    
 
                     </Row>
 

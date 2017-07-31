@@ -1280,3 +1280,79 @@ textarea {
 .forum-wrapper .categories-right .cat-info {
   padding-left: 10px;
 }
+
+/* line 3, ../../compass/sass/_catforums.scss */
+.contemp-forum-wrapper {
+  margin-top: 7em;
+  display: flex;
+}
+/* line 6, ../../compass/sass/_catforums.scss */
+.contemp-forum-wrapper h2 {
+  font-size: 1.5em;
+}
+/* line 10, ../../compass/sass/_catforums.scss */
+.contemp-forum-wrapper thead {
+  background-color: #B2BEB5;
+  color: #000000;
+  font-weight: bolder;
+}
+/* line 16, ../../compass/sass/_catforums.scss */
+.contemp-forum-wrapper td img {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+/* line 22, ../../compass/sass/_catforums.scss */
+.contemp-forum-wrapper .latest-topics-left {
+  display: block;
+  float: left;
+  background-color: #f8f8ff;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 11px 1px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+/* line 29, ../../compass/sass/_catforums.scss */
+.contemp-forum-wrapper .latest-topics-left img {
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+}
+/* line 35, ../../compass/sass/_catforums.scss */
+.contemp-forum-wrapper .latest-topics-left .all-topics {
+  display: flex;
+  float: right;
+}
+/* line 43, ../../compass/sass/_catforums.scss */
+.contemp-forum-wrapper .forum-cat-right {
+  float: right;
+  margin-right: 6em;
+  background-color: #f8f8ff;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 11px 1px rgba(0, 0, 0, 0.2);
+}
+/* line 49, ../../compass/sass/_catforums.scss */
+.contemp-forum-wrapper .forum-cat-right img {
+  width: 128px;
+  height: 128px;
+}
+/* line 55, ../../compass/sass/_catforums.scss */
+.contemp-forum-wrapper .forum-cat-right .forum-cat-view {
+  width: 100%;
+  margin-bottom: 2em;
+  padding: 10px;
+  word-wrap: break-word;
+}
+/* line 61, ../../compass/sass/_catforums.scss */
+.contemp-forum-wrapper .forum-cat-right .forum-cat-info {
+  padding-left: 10px;
+}
+/* line 65, ../../compass/sass/_catforums.scss */
+.contemp-forum-wrapper .forum-cat-right .new-topic {
+  margin-top: 1em;
+  padding-left: 10px;
+}
+/* line 69, ../../compass/sass/_catforums.scss */
+.contemp-forum-wrapper .forum-cat-right .new-topic img {
+  width: 20px;
+  height: 20px;
+}
