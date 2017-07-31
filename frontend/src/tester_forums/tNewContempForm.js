@@ -39,7 +39,7 @@ class tNewContempForm extends Component{
 
                                 <FormGroup controlId="formControlsTextarea">
                                     <ControlLabel>Title:</ControlLabel>
-                                    <FormControl id="title" componentClass="textarea" />
+                                    <FormControl id="titlez" componentClass="textarea" />
                                 </FormGroup>
 
 
