@@ -41,7 +41,9 @@ $gold: #AE7F25;
 $soft-green: #0f820f;
 $fun-cyan: #14a3ba; 
 $midnight-blue: #0a093e;
+
 $perfect-blue: #2e6da4; 
+$baby-blue: #e8f3f3; 
 
 
 
@@ -56,3 +58,13 @@ $ash-gray: #B2BEB5;
 
 //create a default text color
 $default-text-color: $black !default; 
+
+
+
+
+// MEDIA QUERIES
+
+$break-small: 360px;
+$break-medium: 767px; 
+$break-lg-medium: 991px; 
+$break-large: 1200px; 

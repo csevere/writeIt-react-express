@@ -1,0 +1,44 @@
+@import 'variables';
+
+
+.form-wrapper{
+	position: absolute;	
+	background-image: url('https://static.pexels.com/photos/448835/pexels-photo-448835.jpeg');
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center; 
+	top: 0;
+	left:0;
+	margin: 0; 
+	z-index: -1; 
+	min-width: 102%;
+	min-height: 100%;
+
+}
+
+
+.contemp-form{
+
+	margin-top: 7em; 
+	background-color: $ash-gray;
+	border: 1px solid $ash-gray; 
+	box-shadow: 2px 2px 11px 1px rgba(0,0,0,.2);
+	padding: 15px; 
+
+	.btn{
+		top: 0em;
+		left: 0em;
+		right: 0em;
+		margin-right: 10px; 
+
+
+	}
+
+	#message{
+		height:12em; 
+	}
+}

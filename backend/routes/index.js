@@ -22,10 +22,8 @@ connection.connect();
 
 
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+
+
 
 module.exports = router;
 
@@ -33,9 +31,30 @@ module.exports = router;
 ///////////////////////////GET REQUESTS////////////////////////////
 ///////////////////////////////////////////////////////////////////
 
-router.get('/charboard/get', (req, res)=>{
-	const selectCharacterQuery = `SELECT * FROM characters`
-	connection.query(selectCharacterQuery,(error, results, fields)=>{
+router.get('/chapters', (req, res)=>{
+
+	var id = req.query.id;
+	console.log('here');
+	console.log(id);
+	var username = req.query.username;
+	console.log(username)
+	var book = req.query.book;
+	console.log(book);
+    var deleteId = req.query.action;
+    console.log(deleteId);
+
+
+	if(id !== '' && id !==undefined){
+        var selectCharacterQuery = `SELECT * FROM chapters WHERE id = ${id}`
+	}else if(book !== undefined  && username !== undefined){
+        var selectCharacterQuery = `SELECT * FROM chapters WHERE username = '${username}' AND book = '${book}'`
+	}else if(deleteId !== undefined){
+        var selectCharacterQuery = `DELETE FROM chapters WHERE id = ${deleteId}`
+	}
+
+
+	connection.query(selectCharacterQuery, (error, results)=>{
+		console.log(selectCharacterQuery);
 		if(error){
 			throw error
 		}else{
@@ -44,17 +63,106 @@ router.get('/charboard/get', (req, res)=>{
 	});
 });
 
-router.get('/pboard/get', (req, res)=>{
-	// res.json({msg:"test"})
-	const selectPlotQuery = `SELECT * FROM plot`
-	connection.query(selectPlotQuery,(error,results,fields)=>{
-		if(error){
-			throw error
-		}else{
-			res.json(results);
-		}
-	})
+
+router.get('/notepad', (req, res)=>{
+
+    var id = req.query.id;
+    console.log('here');
+    console.log(id);
+    var username = req.query.username;
+    console.log(username)
+    var book = req.query.book;
+    console.log(book);
+    var deleteId = req.query.action;
+    console.log(deleteId);
+
+
+    if(id !== '' && id !==undefined){
+        var selectNotePadQuery = `SELECT * FROM notepad WHERE id = ${id}`
+    }else if(book !== undefined  && username !== undefined){
+        var selectNotePadQuery = `SELECT * FROM notepad WHERE username = '${username}' AND book = '${book}'`
+    }else if(deleteId !== undefined){
+        var selectNotePadQuery = `DELETE FROM notepad WHERE id = ${deleteId}`
+    }
+
+
+    connection.query(selectNotePadQuery, (error, results)=>{
+        console.log(selectNotePadQuery);
+        if(error){
+            throw error
+        }else{
+            res.json(results);
+        }
+    });
 });
+
+
+router.get('/characters', (req, res)=>{
+
+    var id = req.query.id;
+    console.log('here');
+    console.log(id);
+    var username = req.query.username;
+    console.log(username)
+    var book = req.query.book;
+    console.log(book);
+    var deleteId = req.query.action;
+    console.log(deleteId);
+
+
+    if(id !== '' && id !==undefined){
+        var selectCharacterQuery = `SELECT * FROM characters WHERE id = ${id}`
+    }else if(book !== undefined  && username !== undefined){
+        var selectCharacterQuery = `SELECT * FROM characters WHERE username = '${username}' AND book = '${book}'`
+    }else if(deleteId !== undefined){
+        var selectCharacterQuery = `DELETE FROM characters WHERE id = ${deleteId}`
+    }
+
+
+    connection.query(selectCharacterQuery, (error, results)=>{
+        console.log(selectCharacterQuery);
+        if(error){
+            throw error
+        }else{
+            res.json(results);
+        }
+    });
+});
+
+
+router.get('/plot', (req, res)=>{
+
+    var id = req.query.id;
+    console.log('here');
+    console.log(id);
+    var username = req.query.username;
+    console.log(username)
+    var book = req.query.book;
+    console.log(book);
+    var deleteId = req.query.action;
+    console.log(deleteId);
+
+
+    if(id !== '' && id !==undefined){
+        var selectPlotQuery = `SELECT * FROM plot WHERE id = ${id}`
+    }else if(book !== undefined  && username !== undefined){
+        var selectPlotQuery = `SELECT * FROM plot WHERE username = '${username}' AND book = '${book}'`
+    }else if(deleteId !== undefined){
+        var selectPlotQuery = `DELETE FROM plot WHERE id = ${deleteId}`
+    }
+
+
+    connection.query(selectPlotQuery, (error, results)=>{
+        console.log(selectPlotQuery);
+        if(error){
+            throw error
+        }else{
+            res.json(results);
+        }
+    });
+});
+
+
 
 
 router.get('/user', (req,res)=>{
@@ -92,25 +200,25 @@ router.get('/book', (req,res)=>{
 
 });
 
-// router.get('/synopsis', (req,res)=>{
-//     var username = req.query.username;
-//     var book = req.query.book;
-//     console.log('called');
-// 	console.log(username, book);
-//     var synopsisDataQuery = `SELECT * FROM synopsis WHERE username= '${username}' AND book = '${book}';`;
-//     connection.query(synopsisDataQuery, (error, response)=>{
-//         if(error){
-//             throw error;
-//         }else{
-//             console.log(response);
-//             res.json({
-//                 synopsisData: response[0]
-//             })
-//         }
-//
-//     })
-//
-// });
+router.get('/synopsis', (req,res)=>{
+    var username = req.query.username;
+    var book = req.query.book;
+    console.log('called');
+	console.log(username, book);
+    var synopsisDataQuery = `SELECT * FROM synopsis WHERE username= '${username}' AND book = '${book}';`;
+    connection.query(synopsisDataQuery, (error, response)=>{
+        if(error){
+            throw error;
+        }else{
+            console.log(response);
+            res.json({
+                synopsisData: response[0]
+            })
+        }
+
+    })
+
+});
 
 
 ///////////////////////////////////////////////////////////////////
@@ -259,7 +367,7 @@ router.post('/newbook',(req,res)=>{
 
 
 router.post('/characters',(req,res)=>{
-	console.log("HELLO");
+	console.log("CHARACTER POST");
 	console.log(req);
 	// console.log(req.body.book);
 	var username = req.body.username;
@@ -290,47 +398,74 @@ router.post('/characters',(req,res)=>{
 	var ambitions = req.body.ambitions;
 	var liked_disliked = req.body.liked_disliked;
 
+    var id = req.body.id;
+    console.log(id);
 
-	var characterQuery = `SELECT * FROM characters WHERE username = ? and book = ? AND name = ?`;
-	var insertCharacterQuery = `INSERT INTO characters 
+    console.log(req.body)
+
+
+	if(id!==''){
+        var updateCharacterQuery = `UPDATE characters SET
+				name = '${name}',race = '${race}',age = '${age}',birthday = '${birthday}',physical_desc = '${physical_desc}',hometown = '${hometown}',type_of_home = '${type_of_home}',father_info = '${father_info}',mother_info = '${mother_info}',sibling_info = '${sibling_info}',
+				relatives = '${relatives}',friends = '${friends}',enemies = '${enemies}',mentor = '${mentor}',hobbies = '${hobbies}',dress = '${dress}',leader_follower = '${leader_follower}',positive_traits = '${positive_traits}',negative_traits = '${negative_traits}',temper = '${temper}',star_sign = '${star_sign}',personality = '${personality}',philosophy = '${philosophy}',ambitions = '${ambitions}',
+				liked_disliked = '${liked_disliked}',time_stamp = NOW() WHERE id = '${id}'`;
+        connection.query(updateCharacterQuery, (error3,results3)=>{
+            var characterArray = [name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
+                relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
+                liked_disliked]
+            // console.log(characterArray);
+            if(error3) throw error3;
+            res.json({
+                msg:'characterUpdated',
+                characterData: characterArray
+            })
+
+        })
+	}else{
+        var characterQuery = `SELECT * FROM characters WHERE username = ? and book = ? AND name = ?`;
+        var insertCharacterQuery = `INSERT INTO characters 
 		(username,book,name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
 		relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
 		liked_disliked,time_stamp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?, NOW())`;
-	connection.query(characterQuery, [username,book, name], (error,results)=>{
-		if(error) throw error;
-		if(results.length === 0){
-			connection.query(insertCharacterQuery, [username,book,name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
-				relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
-				liked_disliked], (error2,results2)=>{
-					if(error2) throw error2;
-					var characterArray = [name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
-					relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
-					liked_disliked]
-					res.json({
-						msg:'characterInserted',
-						characterData: characterArray
-					})
-				})
+        connection.query(characterQuery, [username,book, name], (error,results)=>{
+            if(error) throw error;
+            if(results.length === 0){
+                connection.query(insertCharacterQuery, [username,book,name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
+                    relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
+                    liked_disliked], (error2,results2)=>{
+                    if(error2) throw error2;
+                    var characterArray = [name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
+                        relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
+                        liked_disliked]
+                    res.json({
+                        msg:'characterInserted',
+                        characterData: characterArray
+                    })
+                })
 
-		}else{
-			var updateCharacterQuery = `UPDATE characters SET
+            }else{
+                var updateCharacterQuery = `UPDATE characters SET
 				name = '${name}',race = '${race}',age = '${age}',birthday = '${birthday}',physical_desc = '${physical_desc}',hometown = '${hometown}',type_of_home = '${type_of_home}',father_info = '${father_info}',mother_info = '${mother_info}',sibling_info = '${sibling_info}',
 				relatives = '${relatives}',friends = '${friends}',enemies = '${enemies}',mentor = '${mentor}',hobbies = '${hobbies}',dress = '${dress}',leader_follower = '${leader_follower}',positive_traits = '${positive_traits}',negative_traits = '${negative_traits}',temper = '${temper}',star_sign = '${star_sign}',personality = '${personality}',philosophy = '${philosophy}',ambitions = '${ambitions}',
 				liked_disliked = '${liked_disliked}',time_stamp = NOW() WHERE username = '${username}' AND book = '${book}' AND name='${name}'`;
-			connection.query(updateCharacterQuery, (error3,results3)=>{
-					var characterArray = [name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
-					relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
-					liked_disliked]
-					// console.log(characterArray);
-					if(error3) throw error3;
-					res.json({
-						msg:'characterUpdated',
-						characterData: characterArray
-					})
-					
-			})
-		}
-	})
+                connection.query(updateCharacterQuery, (error3,results3)=>{
+                    var characterArray = [name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
+                        relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
+                        liked_disliked]
+                    // console.log(characterArray);
+                    if(error3) throw error3;
+                    res.json({
+                        msg:'characterUpdated',
+                        characterData: characterArray
+                    })
+
+                })
+            }
+        })
+
+	}
+
+
 
 });
 
@@ -354,47 +489,68 @@ router.post('/plot',(req,res)=>{
 	var stakes = req.body.stakes;
 	var antagonist = req.body.antagonist;
 	var summary = req.body.summary;
+
+    var id = req.body.id;
+    console.log(id);
  
     console.log(req.body)
- 
-    var plotQuery = `SELECT * FROM plot WHERE username = ? and book = ?`;
- 	var insertPlotQuery = `INSERT INTO plot 
+
+	if(id!==''){
+        var updatePlotQuery = `UPDATE plot SET
+ 					main_plot = '${main_plot}',subplot = '${subplot}',subplot_reasons = '${subplot_reasons}',direct_actions = '${direct_actions}',indirect_actions = '${indirect_actions}',motivation = '${motivation}',plot_type = '${plot_type}',plot_order = '${plot_order}',foreshadow = '${foreshadow}',
+ 					credibility = '${credibility}',flashbacks = '${flashbacks}',journey = '${journey}',stakes = '${stakes}',antagonist = '${antagonist}',summary = '${summary}',time_stamp = NOW() WHERE id = '${id}';`;
+        connection.query(updatePlotQuery,(error3,results3)=>{
+            console.log('here')
+            if(error3) throw error3;
+            var plotArray = [main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
+                credibility,flashbacks,journey,stakes,antagonist,summary];
+            res.json({
+                msg:'plotUpdated',
+                plotData: plotArray
+            })
+        })
+	}else{
+        var plotQuery = `SELECT * FROM plot WHERE username = ? and book = ? and main_plot=?`;
+        var insertPlotQuery = `INSERT INTO plot 
  		(username,book,main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
  		credibility,flashbacks,journey,stakes,antagonist,summary,time_stamp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW())`;
- 		connection.query(plotQuery, [username,book], (error,results)=>{
- 			if(error) throw error;
- 			if(results.length === 0){
- 				connection.query(insertPlotQuery, [username,book,main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
- 				credibility,flashbacks,journey,stakes,antagonist,summary],(error2,results2)=>{
- 						if(error2) throw error2;
- 						var plotArray = [main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
- 						credibility,flashbacks,journey,stakes,antagonist,summary]
- 						res.json({
- 							msg:'plotInserted',
- 							plotData: plotArray
- 						})
- 				})
- 			}else{
- 				var updatePlotQuery = `UPDATE plot SET
+        connection.query(plotQuery, [username,book, main_plot], (error,results)=>{
+            if(error) throw error;
+            if(results.length === 0){
+                connection.query(insertPlotQuery, [username,book,main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
+                    credibility,flashbacks,journey,stakes,antagonist,summary],(error2,results2)=>{
+                    if(error2) throw error2;
+                    var plotArray = [main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
+                        credibility,flashbacks,journey,stakes,antagonist,summary]
+                    res.json({
+                        msg:'plotInserted',
+                        plotData: plotArray
+                    })
+                })
+            }else{
+                var updatePlotQuery = `UPDATE plot SET
  					main_plot = '${main_plot}',subplot = '${subplot}',subplot_reasons = '${subplot_reasons}',direct_actions = '${direct_actions}',indirect_actions = '${indirect_actions}',motivation = '${motivation}',plot_type = '${plot_type}',plot_order = '${plot_order}',foreshadow = '${foreshadow}',
  					credibility = '${credibility}',flashbacks = '${flashbacks}',journey = '${journey}',stakes = '${stakes}',antagonist = '${antagonist}',summary = '${summary}',time_stamp = NOW() WHERE username = '${username}' AND book = '${book}';`;
- 				connection.query(updatePlotQuery,(error3,results3)=>{
- 					console.log('here')
- 					if(error3) throw error3;
- 					var plotArray = [main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
- 					credibility,flashbacks,journey,stakes,antagonist,summary];
- 					res.json({
- 							msg:'plotUpdated',
- 							plotData: plotArray
- 						})
- 				})
- 			}
- 		})
+                connection.query(updatePlotQuery,(error3,results3)=>{
+                    console.log('here')
+                    if(error3) throw error3;
+                    var plotArray = [main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
+                        credibility,flashbacks,journey,stakes,antagonist,summary];
+                    res.json({
+                        msg:'plotUpdated',
+                        plotData: plotArray
+                    })
+                })
+            }
+        })
+	}
+ 
+
   
- })
+ });
 
 router.post('/chapters', (req,res)=>{
-    console.log(res);
+    //console.log(res);
     var scene_number = req.body.scene_number;
     var scene_plot = req.body.scene_plot;
     var scene_char1 = req.body.scene_char1;
@@ -412,42 +568,66 @@ router.post('/chapters', (req,res)=>{
     var scene_char2 = req.body.scene_char2;
     var username = req.body.username;
     var book = req.body.book;
-    console.log(req.body);
 
-    var chapterQuery = `SELECT * FROM chapters WHERE username = ? AND book = ? AND scene_number = ?`;
-    var insertChapterQuery = `INSERT INTO chapters
+    var id = req.body.id;
+
+    //console.log(id);
+
+
+    //console.log(req.body);
+
+    if(id !== ''){
+        var updatePlotQuery = `UPDATE chapters SET
+                    scene_number='${scene_number}',scene_plot='${scene_plot}',scene_char1='${scene_char1}',scene_dialogue='${scene_dialogue}',scene_conflict='${scene_conflict}',relevant_dialogue='${relevant_dialogue}',char_thought='${char_thought}',pov_nar='${pov_nar}',pov_char='${pov_nar}',setting='${setting}',setting_char='${setting_char}',
+                    setting_plot='${setting_plot}',setting_rev='${setting_plot}',scene_mood='${scene_mood}',scene_char2='${scene_char2}' WHERE id = '${id}';`;
+        connection.query(updatePlotQuery,(error3,results3)=>{
+            console.log('update')
+            if(error3) throw error3;
+            var chapterArray = [scene_number,scene_plot,scene_char1,scene_dialogue,scene_conflict,relevant_dialogue,char_thought,pov_nar,pov_char,setting,setting_char,
+                setting_plot,setting_rev,scene_mood,scene_char2];
+            res.json({
+                msg:'chapterInserted',
+                chapterData: chapterArray
+            })
+        })
+	}else {
+
+
+        var chapterQuery = `SELECT * FROM chapters WHERE username = ? AND book = ? AND scene_number = ?`;
+        var insertChapterQuery = `INSERT INTO chapters
         (scene_number,scene_plot,scene_char1,scene_dialogue,scene_conflict,relevant_dialogue,char_thought,pov_nar,pov_char,setting,setting_char,
         setting_plot,setting_rev,scene_mood,scene_char2,username,book) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);`;
-        connection.query(chapterQuery,[username, book, scene_number],(error,results)=>{
-            if(error) throw error;
-            if(results.length === 0){
+        connection.query(chapterQuery, [username, book, scene_number], (error, results) => {
+            if (error) throw error;
+            if (results.length === 0) {
                 console.log('insert');
-                connection.query(insertChapterQuery, [scene_number,scene_plot,scene_char1,scene_dialogue,scene_conflict,relevant_dialogue,char_thought,pov_nar,pov_char,setting,setting_char,
-                setting_plot,setting_rev,scene_mood,scene_char2,username,book],(error2,results2)=>{
-                        if(error2) throw error2;
-                        var chapterArray = [scene_number,scene_plot,scene_char1,scene_dialogue,scene_conflict,relevant_dialogue,char_thought,pov_nar,pov_char,setting,setting_char,
-                        setting_plot,setting_rev,scene_mood,scene_char2];
-                        res.json({
-                            msg:'chapterInserted',
-                            chapterData: chapterArray
-                        })
+                connection.query(insertChapterQuery, [scene_number, scene_plot, scene_char1, scene_dialogue, scene_conflict, relevant_dialogue, char_thought, pov_nar, pov_char, setting, setting_char,
+                    setting_plot, setting_rev, scene_mood, scene_char2, username, book], (error2, results2) => {
+                    if (error2) throw error2;
+                    var chapterArray = [scene_number, scene_plot, scene_char1, scene_dialogue, scene_conflict, relevant_dialogue, char_thought, pov_nar, pov_char, setting, setting_char,
+                        setting_plot, setting_rev, scene_mood, scene_char2];
+                    res.json({
+                        msg: 'chapterInserted',
+                        chapterData: chapterArray
+                    })
                 })
-            }else{
+            } else {
                 var updatePlotQuery = `UPDATE chapters SET
                     scene_number='${scene_number}',scene_plot='${scene_plot}',scene_char1='${scene_char1}',scene_dialogue='${scene_dialogue}',scene_conflict='${scene_conflict}',relevant_dialogue='${relevant_dialogue}',char_thought='${char_thought}',pov_nar='${pov_nar}',pov_char='${pov_nar}',setting='${setting}',setting_char='${setting_char}',
                     setting_plot='${setting_plot}',setting_rev='${setting_plot}',scene_mood='${scene_mood}',scene_char2='${scene_char2}' WHERE username = '${username}' AND book='${book}' AND scene_number='${scene_number}';`;
-                connection.query(updatePlotQuery,(error3,results3)=>{
+                connection.query(updatePlotQuery, (error3, results3) => {
                     console.log('update')
-                    if(error3) throw error3;
-                    var chapterArray = [scene_number,scene_plot,scene_char1,scene_dialogue,scene_conflict,relevant_dialogue,char_thought,pov_nar,pov_char,setting,setting_char,
-                        setting_plot,setting_rev,scene_mood,scene_char2];
+                    if (error3) throw error3;
+                    var chapterArray = [scene_number, scene_plot, scene_char1, scene_dialogue, scene_conflict, relevant_dialogue, char_thought, pov_nar, pov_char, setting, setting_char,
+                        setting_plot, setting_rev, scene_mood, scene_char2];
                     res.json({
-                        msg:'chapterInserted',
+                        msg: 'chapterInserted',
                         chapterData: chapterArray
                     })
                 })
             }
         })
+    }
 });
 
 router.post('/critique', (req,res)=>{
@@ -633,34 +813,55 @@ router.post('/notepad', (req, res)=>{
 	username = req.body.username;
 	book = req.body.book;
 	notepad = req.body.notepad;
-	console.log(req.body);
-    var notePadLetterQuery = `SELECT * FROM notepad WHERE username = ? AND book = ?`;
+
+
+    var id = req.body.id;
+    console.log(id);
+
+    console.log(req.body);
+
+    var notePadLetterQuery = `SELECT * FROM notepad WHERE username = ? AND book = ? AND notepad = ?`;
     var insertNotePadQuery = `INSERT INTO notepad
     	(notepad,username,book) VALUES (?,?,?)`;
     var updateNotePadQuery = `UPDATE notepad SET notepad='${notepad}' WHERE username='${username}' AND book='${book}';`;
 
-    connection.query(notePadLetterQuery, [username, book], (error,results)=>{
-    	if(error) throw error;
-    	if(results.length === 0){
-    		connection.query(insertNotePadQuery, [notepad, username, book],(error2, results2)=>{
-    			if(error2) throw error2;
-    			res.json({
-					msg: 'Inserted'
-				})
-			})
-		}else{
 
-    		connection.query(updateNotePadQuery, (error2, results2)=>{
-                console.log('update')
-                if(error2) throw error2;
-                res.json({
-                    msg: 'Updated'
-                })
+    if(id!==''){
+        var editNotePadQuery = `UPDATE notepad SET notepad='${notepad}' WHERE id='${id}';`;
+        connection.query(editNotePadQuery, (error2, results2)=>{
+            console.log('update')
+            if(error2) throw error2;
+            res.json({
+                msg: 'Updated'
             })
+        })
+	}else{
+        connection.query(notePadLetterQuery, [username, book, notepad], (error,results)=>{
+            if(error) throw error;
+            if(results.length === 0){
+                connection.query(insertNotePadQuery, [notepad, username, book],(error2, results2)=>{
+                    if(error2) throw error2;
+                    res.json({
+                        msg: 'Inserted'
+                    })
+                })
+            }else{
 
-		}
+                connection.query(updateNotePadQuery, (error2, results2)=>{
+                    console.log('update')
+                    if(error2) throw error2;
+                    res.json({
+                        msg: 'Updated'
+                    })
+                })
 
-	})
+            }
+
+        })
+
+	}
+
+
 
 
 });

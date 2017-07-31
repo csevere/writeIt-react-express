@@ -10,16 +10,30 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import PlotAction from '../actions/PlotAction';
 import ChapterAction from '../actions/ChaptersAction';
+import $ from 'jquery';
 
 
 class Chapters extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            // registerMessage: "",
-            // nameError: null,
-            // emailError: null,
-            // formError: false
+            chapterData: {
+                scene_number: '',
+                scene_plot: '',
+                scene_char1: '',
+                scene_dialogue: '',
+                scene_conflict: '',
+                relevant_dialogue: '',
+                char_thought: '',
+                pov: '',
+                pov_char: '',
+                setting: '',
+                setting_char: '',
+                setting_plot: '',
+                setting_rev: '',
+                scene_mood: '',
+                scene_char2: '',
+            }
         }
         this.handleChapters = this.handleChapters.bind(this);
 
@@ -48,21 +62,11 @@ class Chapters extends Component{
 
         var username = this.props.registerResponse.name;
         var book = this.props.match.params.book;
+        var id = this.props.location.search.slice(4);
 
-        // var username = this.props.registerResponse.name;
-        // console.log(username);
-        // //Name
-        // if(name.length < 1){
-        //   var nameError = "error";
-        //   error=true;
-        // }
-        // else{
-        //   var nameError = "success"
-        // }
 
-        // Email
-        // if(name.length < 3){var emailError = "error"; error=true}
-        // else{var emailError = "success"}
+
+
 
 
         // console.log(name);
@@ -87,10 +91,12 @@ class Chapters extends Component{
                 setting: setting_char,
                 setting_plot: setting_plot,
                 setting_rev: setting_rev,
+                setting_char: setting_char,
                 scene_mood: scene_mood,
                 scene_char2: scene_char2,
                 username: username,
-                book: book
+                book: book,
+                id: id
 
 
             });
@@ -98,7 +104,49 @@ class Chapters extends Component{
         }
 
     }
+
+    componentDidMount(){
+
+        //console.log(this.props.location.search);
+        if(this.props.location.search.length !== 0){
+            var id = this.props.location.search.slice(4);
+            console.log(id);
+            $.getJSON(`http://localhost:5000/chapters?id=${id}`, (serverData)=>{
+                // log the JSON response from Express
+                //console.log(serverData);
+                this.setState({
+                    chapterData: serverData[0]
+                })
+            })
+        }
+
+
+
+
+    }
+
+
+
     render(){
+        console.log(this.state.chapterData)
+        var scene_number = this.state.chapterData.scene_number;
+        console.log(scene_number);
+        var scene_plot = this.state.chapterData.scene_plot;
+        var scene_char1 = this.state.chapterData.scene_char1;
+        var scene_dialogue = this.state.chapterData.scene_dialogue;
+        var scene_conflict = this.state.chapterData.scene_conflict;
+        var relevant_dialogue = this.state.chapterData.relevant_dialogue;
+        var char_thought = this.state.chapterData.char_thought;
+        var pov = this.state.chapterData.pov;
+        var pov_char= this.state.chapterData.pov_char;
+        var setting = this.state.chapterData.setting;
+        var setting_char = this.state.chapterData.setting_char;
+        var setting_plot = this.state.chapterData.setting_plot;
+        var setting_rev = this.state.chapterData.setting_rev;
+        var scene_mood = this.state.chapterData.scene_mood;
+        var scene_char2 = this.state.chapterData.scene_char2;
+
+
         const settings = {
             dots: true,
             infinite: false,
@@ -107,6 +155,7 @@ class Chapters extends Component{
             slidesToScroll: 1,
         };
         var writeMenu = '/write/' + this.props.match.params.book;
+        var chapterBoard = '/chapboard/' + this.props.match.params.book;
         return(
             <div>
                 <Grid className = "writemenucat text-center ch-forms">
@@ -115,32 +164,43 @@ class Chapters extends Component{
                             <Slider {...settings}>
 
                                 <div className = "slick-form 1">
-                                    <Form onSubmit={this.handleChapters}>
+                                    <Form onSubmit={this.handleChapters} >
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What is the point of the chapter in one sentence?</ControlLabel>
-                                            <FormControl id='scene_number' componentClass="textarea" placeholder="scene_number" />
+                                            <FormControl id='scene_number' componentClass="textarea" >
+                                                {scene_number}
+                                            </FormControl>
+
+
                                         </FormGroup>
 
-                                        <FormGroup controlId="formControlsTextarea">
+                                        <FormGroup controlId="formControlsTextarea" defaultValue={scene_plot}>
                                             <ControlLabel>How do the scenes directly affect the plot or subplot?</ControlLabel>
-                                            <FormControl id="scene_plot" componentClass="textarea" placeholder="scene_plot" />
+                                            <FormControl id="scene_plot" type='input'   componentClass="textarea" placeholder="scene_plot"/>
+
+
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>How do the scenes directly affect character development?</ControlLabel>
-                                            <FormControl id="scene_char1" componentClass="textarea" placeholder="scene_char1" />
+                                            <FormControl id="scene_char1" componentClass="textarea" placeholder="scene_char1"/>
+
+
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>How do the characters personalities come out through the dialogue?</ControlLabel>
-                                            <FormControl id="scene_dialogue" componentClass="textarea" placeholder="scene_dialogue" />
+                                            <FormControl id="scene_dialogue" componentClass="textarea" placeholder="scene_dialogue"/>
+
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What are the major conflicts in the scenes?</ControlLabel>
-                                            <FormControl id="scene_conflict" componentClass="textarea" placeholder="scene_conflict" />
+                                            <FormControl id="scene_conflict" componentClass="textarea" placeholder="scene_conflict" >
+                                                {scene_conflict}
+                                            </FormControl>
                                         </FormGroup>
 
                                         <Button className = "btn" type="submit">
@@ -233,7 +293,7 @@ class Chapters extends Component{
 
                             <Grid className = "fourth-row-right">
                                 <Col md = {3} className = "col-md-offset-8">
-                                    <Link to = "/chboard" className = "chboard">
+                                    <Link to = {chapterBoard} className = "chboard">
                                         <img src = "https://cdn4.iconfinder.com/data/icons/office-34/256/10-512.png"/>
                                         <div>View Chapter</div>
                                     </Link>

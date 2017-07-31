@@ -23,8 +23,8 @@ class Home extends Component{
 							<Row>
 								<ul>
 									<li><Link to ="/"><div className="hex hexagon text-center"><h3>HOME</h3></div></Link></li>
-									<li><Link to ="/write"><div className="hex hex2 text-center"><h3>WRITE</h3></div></Link></li>
-									<li><Link to ="/community"><div className="hex hex3 text-center"><h3>COMMUNITY</h3></div></Link></li>
+									<li><Link to ="/user"><div className="hex hex2 text-center"><h3>DASHBOARD</h3></div></Link></li>
+									<li><Link to ="/forums"><div className="hex hex3 text-center"><h3>COMMUNITY</h3></div></Link></li>
 									<li><Link to ="/resources"><div className="hex hex4 text-center"><h3>RESOURCES</h3></div></Link></li>
 									<li><a href ="#about"><div className="hex hex5 text-center"><h3>ABOUT</h3></div></a></li>
 									<li><Link to ="/faqs"><div className="hex hex6 text-center"><h3>FAQ</h3></div></Link></li>

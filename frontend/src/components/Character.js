@@ -8,6 +8,7 @@ import {connect} from 'react-redux';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import $ from 'jquery';
 
 
 
@@ -17,6 +18,34 @@ class Character extends Component{
     constructor(props) {
         super(props);
         this.state = {
+            characterData: {
+                name: '',
+                age: '',
+                race: '',
+                birthday: '',
+                physical_desc: '',
+                username: '',
+                hometown: '',
+                type_of_home: '',
+                father_info: '',
+                mother_info: '',
+                sibling_info: '',
+                relatives: '',
+                friends: '',
+                enemies: '',
+                mentor: '',
+                hobbies: '',
+                dress: '',
+                leader_follower: '',
+                positive_traits: '',
+                negative_traits: '',
+                temper: '',
+                star_sign: '',
+                personality: '',
+                philosophy: '',
+                ambitions: '',
+                liked_disliked: ''
+            }
 
         }
         this.handleCharacters = this.handleCharacters.bind(this);
@@ -58,11 +87,12 @@ class Character extends Component{
 
         var username = this.props.registerResponse.name;
         // var book = this.props.newBookResponse.newBookData.title;
-        console.log(this.props.match.params);
+        //console.log(this.props.match.params);
         var book = this.props.match.params.book;
-        console.log(book);
+        var id = this.props.location.search.slice(4);
+        console.log(id);
 
-        console.log(username);
+        //console.log(username);
         // console.log(book);
         //Name
         if(name.length < 1){
@@ -115,15 +145,65 @@ class Character extends Component{
                 philosophy: philosophy,
                 ambitions: ambitions,
                 liked_disliked: liked_disliked,
-                book: book
+                book: book,
+                id: id
             });
             this.props.history.push(`/write/${book}`);
         }
 
     }
 
+    componentDidMount(){
+
+        //console.log(this.props.location.search);
+        if(this.props.location.search.length !== 0){
+            var id = this.props.location.search.slice(4);
+            console.log(id);
+            $.getJSON(`http://localhost:5000/characters?id=${id}`, (serverData)=>{
+                // log the JSON response from Express
+                //console.log(serverData);
+                this.setState({
+                    characterData: serverData[0]
+                })
+            })
+        }
+
+
+
+
+    }
+
 
     render(){
+        console.log(this.state.characterData);
+
+        var name = this.state.characterData.name;
+        var race = this.state.characterData.race;
+        var age = this.state.characterData.age;
+        var birthday = this.state.characterData.birthday;
+        var physical_desc = this.state.characterData.physical_desc;
+        var hometown = this.state.characterData.hometown;
+        var type_of_home = this.state.characterData.type_of_home;
+        var father_info = this.state.characterData.father_info;
+        var mother_info = this.state.characterData.mother_info;
+        var sibling_info = this.state.characterData.sibling_info;
+        var relatives = this.state.characterData.relatives;
+        var friends = this.state.characterData.friends;
+        var enemies = this.state.characterData.enemies;
+        var mentor = this.state.characterData.mentor;
+        var hobbies = this.state.characterData.hobbies;
+        var dress = this.state.characterData.dress;
+        var leader_follower = this.state.characterData.leader_follower;
+        var positive_traits = this.state.characterData.positive_traits;
+        var negative_traits = this.state.characterData.negative_traits;
+        var temper = this.state.characterData.temper;
+        var star_sign = this.state.characterData.star_sign;
+        var personality = this.state.characterData.personality;
+        var philosophy = this.state.characterData.philosophy;
+        var ambitions = this.state.characterData.ambitions;
+        var liked_disliked = this.state.characterData.liked_disliked;
+
+
         const settings = {
             dots: true,
             infinite: false,
@@ -133,6 +213,8 @@ class Character extends Component{
         }
         //console.log(this.props)
         var writeMenu = '/write/' + this.props.match.params.book;
+        var characterBoard = '/charboard/' + this.props.match.params.book;
+        console.log(characterBoard);
         return(
             <div>
                 <Grid className = "writemenucat text-center ch-forms">
@@ -332,7 +414,7 @@ class Character extends Component{
 
                             <Grid className = "fourth-row-right">
                                 <Col md = {3} className = "col-md-offset-8">
-                                    <Link to = "/charboard" className = "charboard">
+                                    <Link to = {characterBoard} className = "charboard">
                                         <img src = "https://cdn4.iconfinder.com/data/icons/office-34/256/10-512.png"/>
                                         <div>View Character</div>
                                     </Link>
