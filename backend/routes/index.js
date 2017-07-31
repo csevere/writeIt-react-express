@@ -64,6 +64,39 @@ router.get('/chapters', (req, res)=>{
 });
 
 
+router.get('/notepad', (req, res)=>{
+
+    var id = req.query.id;
+    console.log('here');
+    console.log(id);
+    var username = req.query.username;
+    console.log(username)
+    var book = req.query.book;
+    console.log(book);
+    var deleteId = req.query.action;
+    console.log(deleteId);
+
+
+    if(id !== '' && id !==undefined){
+        var selectNotePadQuery = `SELECT * FROM notepad WHERE id = ${id}`
+    }else if(book !== undefined  && username !== undefined){
+        var selectNotePadQuery = `SELECT * FROM notepad WHERE username = '${username}' AND book = '${book}'`
+    }else if(deleteId !== undefined){
+        var selectNotePadQuery = `DELETE FROM notepad WHERE id = ${deleteId}`
+    }
+
+
+    connection.query(selectNotePadQuery, (error, results)=>{
+        console.log(selectNotePadQuery);
+        if(error){
+            throw error
+        }else{
+            res.json(results);
+        }
+    });
+});
+
+
 router.get('/characters', (req, res)=>{
 
     var id = req.query.id;
@@ -780,34 +813,55 @@ router.post('/notepad', (req, res)=>{
 	username = req.body.username;
 	book = req.body.book;
 	notepad = req.body.notepad;
-	console.log(req.body);
-    var notePadLetterQuery = `SELECT * FROM notepad WHERE username = ? AND book = ?`;
+
+
+    var id = req.body.id;
+    console.log(id);
+
+    console.log(req.body);
+
+    var notePadLetterQuery = `SELECT * FROM notepad WHERE username = ? AND book = ? AND notepad = ?`;
     var insertNotePadQuery = `INSERT INTO notepad
     	(notepad,username,book) VALUES (?,?,?)`;
     var updateNotePadQuery = `UPDATE notepad SET notepad='${notepad}' WHERE username='${username}' AND book='${book}';`;
 
-    connection.query(notePadLetterQuery, [username, book], (error,results)=>{
-    	if(error) throw error;
-    	if(results.length === 0){
-    		connection.query(insertNotePadQuery, [notepad, username, book],(error2, results2)=>{
-    			if(error2) throw error2;
-    			res.json({
-					msg: 'Inserted'
-				})
-			})
-		}else{
 
-    		connection.query(updateNotePadQuery, (error2, results2)=>{
-                console.log('update')
-                if(error2) throw error2;
-                res.json({
-                    msg: 'Updated'
-                })
+    if(id!==''){
+        var editNotePadQuery = `UPDATE notepad SET notepad='${notepad}' WHERE id='${id}';`;
+        connection.query(editNotePadQuery, (error2, results2)=>{
+            console.log('update')
+            if(error2) throw error2;
+            res.json({
+                msg: 'Updated'
             })
+        })
+	}else{
+        connection.query(notePadLetterQuery, [username, book, notepad], (error,results)=>{
+            if(error) throw error;
+            if(results.length === 0){
+                connection.query(insertNotePadQuery, [notepad, username, book],(error2, results2)=>{
+                    if(error2) throw error2;
+                    res.json({
+                        msg: 'Inserted'
+                    })
+                })
+            }else{
 
-		}
+                connection.query(updateNotePadQuery, (error2, results2)=>{
+                    console.log('update')
+                    if(error2) throw error2;
+                    res.json({
+                        msg: 'Updated'
+                    })
+                })
 
-	})
+            }
+
+        })
+
+	}
+
+
 
 
 });
