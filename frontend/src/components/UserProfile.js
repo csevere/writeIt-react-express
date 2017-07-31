@@ -11,7 +11,8 @@ import {connect} from 'react-redux';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import $ from 'jquery'
+import $ from 'jquery';
+import PostAction from '../actions/PostAction';
 // import UserProfileAction from '../actions/UserProfileAction';
 
 
@@ -24,13 +25,36 @@ class UserProfile extends Component{
                 username: null,
                 about: null,
             },
-            bookData: []
+            bookData: [],
+            postData: [],
+
             // nameError: null,
             // emailError: null,
             // formError: false
         }
-        // this.handleUserProfile = this.UserProfile.bind(this);
+        this.handlePost = this.handlePost.bind(this);
+        this.loadPosts = this.loadPosts.bind(this);
 
+    }
+
+    handlePost(event){
+        event.preventDefault();
+
+
+        var username = this.props.registerResponse.name;
+        var post = document.getElementById('post').value;
+        var from_user = this.props.registerResponse.name;
+       
+
+
+
+        this.props.postAction({
+            username: username,
+            post: post,
+            from_user: from_user,
+
+        });
+        
     }
 
     componentDidMount(){
@@ -49,7 +73,24 @@ class UserProfile extends Component{
                 bookData: serverData.bookData
             })
         });
-        console.log(this.state.bookData)
+
+        this.loadPosts();
+
+        setInterval(this.loadPosts, 5000);
+
+
+
+        // console.log(this.state.bookData)
+    }
+
+    loadPosts(){
+            $.getJSON(`http://localhost:5000/post?username=${this.props.registerResponse.name}`, (serverData)=>{
+            // log the JSON response from Express
+            //console.log(serverData.bookData)
+            this.setState({
+                postData: serverData.postData
+            })
+        });
     }
 
 
@@ -60,6 +101,7 @@ class UserProfile extends Component{
         var about = this.state.userData.about;
 
         var bookArray = [];
+        var postArray = [];
 
         this.state.bookData.map((book, index)=>{
            var link = '/write/' +  book.title;
@@ -77,6 +119,18 @@ class UserProfile extends Component{
                    </div>
 
                </Col>
+
+           )
+        });
+
+        this.state.postData.map((post, index)=>{
+           postArray.push(
+               <div className = "display-message">
+                    <div>{post.from_user}{post.time_posted}:</div>
+                    <div>{post.post}</div>
+                    <br/>
+                    <hr/>
+                </div>
 
            )
         });
@@ -157,28 +211,18 @@ class UserProfile extends Component{
 
                                 <Col md = {7} className = "messages-left">
                                     <div>
-                                        <Form >
-                                            <FormGroup controlId="formControlsTextarea">
-                                                <FormControl id = "post-message" componentClass="textarea" placeholder="post a message" />
-                                            </FormGroup>
-                                        </Form>
+                                        {postArray}
                                     </div>
 
-                                    <div className = "display-message">
-                                        <div>(Username)(theDate):</div>
-                                        <div>(Posted Message Lorem ipsum dolor sit amet,
-                                            graeci pertinacia est at, essent iisque sea an.
-                                            Eos autem molestiae id, ad vim quot evertitur
-                                            quaerendum. Eligendi patrioque et nec, tritani
-                                            referrentur no sit. Vis graece virtute feugait)
-                                        </div>
-                                    </div>
+                                    
 
                                     <div className = "write-message-box">
-                                        <Form>
+                                        <Form onSubmit={this.handlePost}>
                                             <FormGroup controlId="formControlsTextarea">
-                                                <FormControl id = "post-reply" componentClass="textarea" placeholder="write a reply..." />
+                                                <FormControl id = "post" componentClass="textarea" placeholder="write a reply..." />
+                                                <button className="btn-primary btn btn-book" type='submit'>Post</button>
                                             </FormGroup>
+                                            
                                         </Form>
                                     </div>
                                 </Col>
@@ -196,18 +240,22 @@ class UserProfile extends Component{
 
 function mapStateToProps(state){
   return{
-    // characterResponse: state.characterReducer,
-    registerResponse: state.registerReducer
-    //UserProfileResponse: state.UserProfileReducer
+    characterResponse: state.characterReducer,
+    registerResponse: state.registerReducer,
+    postResponse: state.postReducer
 
   }
 }
 
-// function mapDispatchToProps(dispatch){
-//   return bindActionCreators({
-//     userprofileAction: UserProfileAction
-//   }, dispatch)
-// }
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({
+    postAction: PostAction
+  }, dispatch)
+}
 
 // export default UserProfile;
-export default connect(mapStateToProps)(UserProfile);
+export default connect(mapStateToProps,mapDispatchToProps)(UserProfile);
+
+
+
+

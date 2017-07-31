@@ -220,6 +220,24 @@ router.get('/synopsis', (req,res)=>{
 
 });
 
+router.get('/post', (req,res)=>{
+	var username = req.query.username;
+	console.log(username)
+	var postDataQuery = `SELECT * FROM post WHERE username= '${username}'` ;
+	connection.query(postDataQuery, (error, response)=>{
+		if(error){
+			throw error;
+		}else{
+			console.log(response)
+			res.json({
+				postData: response
+			})
+		}
+
+	})
+
+});
+
 
 ///////////////////////////////////////////////////////////////////
 //////////////////////////POST REQUESTS////////////////////////////
@@ -810,9 +828,9 @@ router.post('/queryletter', (req,res)=>{
 });
 
 router.post('/notepad', (req, res)=>{
-	username = req.body.username;
-	book = req.body.book;
-	notepad = req.body.notepad;
+	var username = req.body.username;
+	var book = req.body.book;
+	var notepad = req.body.notepad;
 
 
     var id = req.body.id;
@@ -860,6 +878,27 @@ router.post('/notepad', (req, res)=>{
         })
 
 	}
+});
+
+router.post('/post', (req, res)=>{
+	console.log('post post request')
+	var username = req.body.username;
+	var post = req.body.post;
+	var from_user = req.body.from_user;
+
+
+    console.log(req.body);
+
+    var insertPostQuery = `INSERT INTO post (post,username,from_user,time_posted) VALUES (?,?,?,NOW())`;
+
+
+    connection.query(insertPostQuery,[post,username,from_user],(error, response)=>{
+    	console.log(insertPostQuery);
+    	if(error) throw error;
+    	res.json({
+    		postData: response
+    	})
+    })
 
 
 
