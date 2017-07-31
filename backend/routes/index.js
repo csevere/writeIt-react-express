@@ -63,17 +63,39 @@ router.get('/chapters', (req, res)=>{
 	});
 });
 
-router.get('/pboard/get', (req, res)=>{
-	// res.json({msg:"test"})
-	const selectPlotQuery = `SELECT * FROM plot`
-	connection.query(selectPlotQuery,(error,results,fields)=>{
-		if(error){
-			throw error
-		}else{
-			res.json(results);
-		}
-	})
+router.get('/plot', (req, res)=>{
+
+    var id = req.query.id;
+    console.log('here');
+    console.log(id);
+    var username = req.query.username;
+    console.log(username)
+    var book = req.query.book;
+    console.log(book);
+    var deleteId = req.query.action;
+    console.log(deleteId);
+
+
+    if(id !== '' && id !==undefined){
+        var selectPlotQuery = `SELECT * FROM plot WHERE id = ${id}`
+    }else if(book !== undefined  && username !== undefined){
+        var selectPlotQuery = `SELECT * FROM plot WHERE username = '${username}' AND book = '${book}'`
+    }else if(deleteId !== undefined){
+        var selectPlotQuery = `DELETE FROM plot WHERE id = ${deleteId}`
+    }
+
+
+    connection.query(selectPlotQuery, (error, results)=>{
+        console.log(selectPlotQuery);
+        if(error){
+            throw error
+        }else{
+            res.json(results);
+        }
+    });
 });
+
+
 
 
 router.get('/user', (req,res)=>{
@@ -373,44 +395,65 @@ router.post('/plot',(req,res)=>{
 	var stakes = req.body.stakes;
 	var antagonist = req.body.antagonist;
 	var summary = req.body.summary;
+
+    var id = req.body.id;
+    console.log(id);
  
     console.log(req.body)
- 
-    var plotQuery = `SELECT * FROM plot WHERE username = ? and book = ?`;
- 	var insertPlotQuery = `INSERT INTO plot 
+
+	if(id!==''){
+        var updatePlotQuery = `UPDATE plot SET
+ 					main_plot = '${main_plot}',subplot = '${subplot}',subplot_reasons = '${subplot_reasons}',direct_actions = '${direct_actions}',indirect_actions = '${indirect_actions}',motivation = '${motivation}',plot_type = '${plot_type}',plot_order = '${plot_order}',foreshadow = '${foreshadow}',
+ 					credibility = '${credibility}',flashbacks = '${flashbacks}',journey = '${journey}',stakes = '${stakes}',antagonist = '${antagonist}',summary = '${summary}',time_stamp = NOW() WHERE id = '${id}';`;
+        connection.query(updatePlotQuery,(error3,results3)=>{
+            console.log('here')
+            if(error3) throw error3;
+            var plotArray = [main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
+                credibility,flashbacks,journey,stakes,antagonist,summary];
+            res.json({
+                msg:'plotUpdated',
+                plotData: plotArray
+            })
+        })
+	}else{
+        var plotQuery = `SELECT * FROM plot WHERE username = ? and book = ? and main_plot=?`;
+        var insertPlotQuery = `INSERT INTO plot 
  		(username,book,main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
  		credibility,flashbacks,journey,stakes,antagonist,summary,time_stamp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW())`;
- 		connection.query(plotQuery, [username,book], (error,results)=>{
- 			if(error) throw error;
- 			if(results.length === 0){
- 				connection.query(insertPlotQuery, [username,book,main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
- 				credibility,flashbacks,journey,stakes,antagonist,summary],(error2,results2)=>{
- 						if(error2) throw error2;
- 						var plotArray = [main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
- 						credibility,flashbacks,journey,stakes,antagonist,summary]
- 						res.json({
- 							msg:'plotInserted',
- 							plotData: plotArray
- 						})
- 				})
- 			}else{
- 				var updatePlotQuery = `UPDATE plot SET
+        connection.query(plotQuery, [username,book, main_plot], (error,results)=>{
+            if(error) throw error;
+            if(results.length === 0){
+                connection.query(insertPlotQuery, [username,book,main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
+                    credibility,flashbacks,journey,stakes,antagonist,summary],(error2,results2)=>{
+                    if(error2) throw error2;
+                    var plotArray = [main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
+                        credibility,flashbacks,journey,stakes,antagonist,summary]
+                    res.json({
+                        msg:'plotInserted',
+                        plotData: plotArray
+                    })
+                })
+            }else{
+                var updatePlotQuery = `UPDATE plot SET
  					main_plot = '${main_plot}',subplot = '${subplot}',subplot_reasons = '${subplot_reasons}',direct_actions = '${direct_actions}',indirect_actions = '${indirect_actions}',motivation = '${motivation}',plot_type = '${plot_type}',plot_order = '${plot_order}',foreshadow = '${foreshadow}',
  					credibility = '${credibility}',flashbacks = '${flashbacks}',journey = '${journey}',stakes = '${stakes}',antagonist = '${antagonist}',summary = '${summary}',time_stamp = NOW() WHERE username = '${username}' AND book = '${book}';`;
- 				connection.query(updatePlotQuery,(error3,results3)=>{
- 					console.log('here')
- 					if(error3) throw error3;
- 					var plotArray = [main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
- 					credibility,flashbacks,journey,stakes,antagonist,summary];
- 					res.json({
- 							msg:'plotUpdated',
- 							plotData: plotArray
- 						})
- 				})
- 			}
- 		})
+                connection.query(updatePlotQuery,(error3,results3)=>{
+                    console.log('here')
+                    if(error3) throw error3;
+                    var plotArray = [main_plot,subplot,subplot_reasons,direct_actions,indirect_actions,motivation,plot_type,plot_order,foreshadow,
+                        credibility,flashbacks,journey,stakes,antagonist,summary];
+                    res.json({
+                        msg:'plotUpdated',
+                        plotData: plotArray
+                    })
+                })
+            }
+        })
+	}
+ 
+
   
- })
+ });
 
 router.post('/chapters', (req,res)=>{
     //console.log(res);
