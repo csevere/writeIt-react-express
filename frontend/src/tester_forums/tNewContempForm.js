@@ -32,7 +32,7 @@ class tNewContempForm extends Component{
 			<div>
 				<Grid className = "form-wrapper">
 					<Row>
-                        
+
                         <Col md = {8} className = "col-md-offset-2 contemp-form">
 
                             <Form>
@@ -48,7 +48,7 @@ class tNewContempForm extends Component{
                                     <FormControl id="message" componentClass="textarea" />
                                 </FormGroup>
 
-                                <Button className = "btn-default btn" type="submit">Post</Button> 
+                                <Link to = "/contemptopic"><Button className = "btn-default btn" type="submit">Post</Button></Link> 
 
                                 <Link to ="/contemp" type="submit">Cancel</Link> 
 

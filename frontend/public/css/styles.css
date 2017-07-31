@@ -1156,7 +1156,7 @@ textarea {
   position: absolute;
   background-color: #e8f3f3;
   width: 100%;
-  height: 100%;
+  height: 160%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -1216,6 +1216,7 @@ textarea {
 .mainforum-wrapper .comments-view .commentbubble {
   position: relative;
   width: 510px;
+  display: table;
   height: 125px;
   padding: 10px;
   border-radius: 5px;
@@ -1231,15 +1232,15 @@ textarea {
     width: 410px;
   }
 }
-/* line 81, ../../compass/sass/_forumsmain.scss */
+/* line 82, ../../compass/sass/_forumsmain.scss */
 .mainforum-wrapper .comments-view .commentbubble a {
   color: #ffcc00;
 }
-/* line 84, ../../compass/sass/_forumsmain.scss */
+/* line 85, ../../compass/sass/_forumsmain.scss */
 .mainforum-wrapper .comments-view .commentbubble a:hover {
   color: #FC6554;
 }
-/* line 90, ../../compass/sass/_forumsmain.scss */
+/* line 91, ../../compass/sass/_forumsmain.scss */
 .mainforum-wrapper .comments-view .commentbubble:before {
   content: "";
   position: absolute;
@@ -1251,7 +1252,7 @@ textarea {
   border-right: 26px solid #2e6da4;
   border-bottom: 13px solid transparent;
 }
-/* line 103, ../../compass/sass/_forumsmain.scss */
+/* line 104, ../../compass/sass/_forumsmain.scss */
 .mainforum-wrapper .comments-view .commentbubble textarea {
   position: inherit;
   width: inherit;
@@ -1262,33 +1263,34 @@ textarea {
   border: none;
   resize: none;
 }
-/* line 117, ../../compass/sass/_forumsmain.scss */
+/* line 118, ../../compass/sass/_forumsmain.scss */
 .mainforum-wrapper .categories-right {
   float: right;
+  height: 100%;
   margin-right: 6em;
   background-color: #f8f8ff;
   border: 1px solid #ddd;
   box-shadow: 2px 2px 11px 1px rgba(0, 0, 0, 0.2);
 }
 @media screen and (max-width: 991px) {
-  /* line 117, ../../compass/sass/_forumsmain.scss */
+  /* line 118, ../../compass/sass/_forumsmain.scss */
   .mainforum-wrapper .categories-right {
     width: 75%;
     margin: 1em 11em 0em 0em;
   }
 }
-/* line 129, ../../compass/sass/_forumsmain.scss */
+/* line 131, ../../compass/sass/_forumsmain.scss */
 .mainforum-wrapper .categories-right img {
   width: 64px;
   height: 64px;
 }
 @media screen and (max-width: 360px) {
-  /* line 117, ../../compass/sass/_forumsmain.scss */
+  /* line 118, ../../compass/sass/_forumsmain.scss */
   .mainforum-wrapper .categories-right {
     margin: 1em 7em 0em 0em;
   }
 }
-/* line 145, ../../compass/sass/_forumsmain.scss */
+/* line 147, ../../compass/sass/_forumsmain.scss */
 .mainforum-wrapper .categories-right .cat-view {
   width: 100%;
   display: flex;
@@ -1296,7 +1298,7 @@ textarea {
   padding: 10px;
   word-wrap: break-word;
 }
-/* line 154, ../../compass/sass/_forumsmain.scss */
+/* line 156, ../../compass/sass/_forumsmain.scss */
 .mainforum-wrapper .categories-right .cat-info {
   padding-left: 10px;
 }
@@ -1433,4 +1435,165 @@ textarea {
 /* line 41, ../../compass/sass/_catform.scss */
 .contemp-form #message {
   height: 12em;
+}
+
+/* line 3, ../../compass/sass/_cattopic.scss */
+.bg-topic img {
+  position: absolute;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: -1;
+  height: 182%;
+  width: 100%;
+}
+
+/* line 22, ../../compass/sass/_cattopic.scss */
+.cat-topic-wrapper {
+  overflow-x: auto;
+  margin-top: 7em;
+  display: flex;
+}
+@media screen and (max-width: 767px) {
+  /* line 22, ../../compass/sass/_cattopic.scss */
+  .cat-topic-wrapper {
+    margin-top: 10em;
+  }
+}
+/* line 30, ../../compass/sass/_cattopic.scss */
+.cat-topic-wrapper h2 {
+  font-size: 1.5em;
+}
+/* line 34, ../../compass/sass/_cattopic.scss */
+.cat-topic-wrapper .topic-message-left {
+  float: left;
+  margin-right: 1em;
+  background-color: #B2BEB5;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 11px 1px rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 1200px) {
+  /* line 34, ../../compass/sass/_cattopic.scss */
+  .cat-topic-wrapper .topic-message-left {
+    width: 56%;
+  }
+}
+@media screen and (max-width: 991px) {
+  /* line 34, ../../compass/sass/_cattopic.scss */
+  .cat-topic-wrapper .topic-message-left {
+    width: 75%;
+    margin-left: 4em;
+  }
+}
+/* line 63, ../../compass/sass/_cattopic.scss */
+.cat-topic-wrapper .topic-view {
+  display: flex;
+  margin-bottom: 2em;
+}
+/* line 68, ../../compass/sass/_cattopic.scss */
+.cat-topic-wrapper .topic-view .commentbubbleT {
+  position: relative;
+  width: 510px;
+  display: table;
+  padding: 10px;
+  border-radius: 5px;
+  border: solid #f8f8ff;
+  background: #f8f8ff;
+  margin-left: 2em;
+  color: black;
+  box-shadow: 1px 3px 9px 1px #82817b;
+}
+@media screen and (max-width: 1200px) {
+  /* line 68, ../../compass/sass/_cattopic.scss */
+  .cat-topic-wrapper .topic-view .commentbubbleT {
+    width: 410px;
+  }
+}
+/* line 82, ../../compass/sass/_cattopic.scss */
+.cat-topic-wrapper .topic-view .commentbubbleT a {
+  color: #4444E4;
+}
+/* line 85, ../../compass/sass/_cattopic.scss */
+.cat-topic-wrapper .topic-view .commentbubbleT a:hover {
+  color: #e8f3f3;
+}
+/* line 91, ../../compass/sass/_cattopic.scss */
+.cat-topic-wrapper .topic-view .commentbubbleT:before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 26px;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-right: 26px solid #f8f8ff;
+  border-bottom: 13px solid transparent;
+}
+/* line 104, ../../compass/sass/_cattopic.scss */
+.cat-topic-wrapper .topic-view .commentbubbleT textarea {
+  position: inherit;
+  width: inherit;
+  height: inherit;
+  background: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
+  resize: none;
+}
+/* line 118, ../../compass/sass/_cattopic.scss */
+.cat-topic-wrapper .categories-right {
+  float: right;
+  height: 100%;
+  margin-right: 6em;
+  background-color: #f8f8ff;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 11px 1px rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 991px) {
+  /* line 118, ../../compass/sass/_cattopic.scss */
+  .cat-topic-wrapper .categories-right {
+    width: 75%;
+    margin: 1em 11em 0em 0em;
+  }
+}
+/* line 131, ../../compass/sass/_cattopic.scss */
+.cat-topic-wrapper .categories-right img {
+  width: 64px;
+  height: 64px;
+}
+@media screen and (max-width: 360px) {
+  /* line 118, ../../compass/sass/_cattopic.scss */
+  .cat-topic-wrapper .categories-right {
+    margin: 1em 7em 0em 0em;
+  }
+}
+/* line 147, ../../compass/sass/_cattopic.scss */
+.cat-topic-wrapper .categories-right .cat-view {
+  width: 100%;
+  display: flex;
+  margin-bottom: 2em;
+  padding: 10px;
+  word-wrap: break-word;
+}
+/* line 156, ../../compass/sass/_cattopic.scss */
+.cat-topic-wrapper .categories-right .cat-info {
+  padding-left: 10px;
+}
+/* line 162, ../../compass/sass/_cattopic.scss */
+.cat-topic-wrapper .comment-view {
+  display: flex;
+}
+/* line 164, ../../compass/sass/_cattopic.scss */
+.cat-topic-wrapper .comment-view .btn {
+  top: 0em;
+  left: 0em;
+  right: 0em;
+  margin-right: 10px;
 }

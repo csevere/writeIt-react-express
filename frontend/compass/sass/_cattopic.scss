@@ -1,10 +1,7 @@
 @import 'variables';
 
-.forum-wrapper-main{
-	position: absolute;
-	background-color: $baby-blue; 
-	width: 100%; 
-	height: 160%; 
+.bg-topic img{
+	position: absolute;	
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -15,10 +12,14 @@
 	top: 0;
 	left:0;
 	margin: 0; 
-	z-index: -1; 
+	z-index: -1;
+	height: 182%;
+	width: 100%;  
+
 }
 
-.mainforum-wrapper{
+
+.cat-topic-wrapper{
 	overflow-x: auto; 
 	margin-top: 7em; 
 	display: flex;
@@ -30,10 +31,10 @@
 		font-size: 1.5em; 
 	}
 
-	.latest-comments-left{
+	.topic-message-left{
 		float: left;
 		margin-right: 1em; 
-		background-color: $ghost-white;
+		background-color: $ash-gray;
 		border: 1px solid #ddd; 
 		box-shadow: 2px 2px 11px 1px rgba(0,0,0,.2);
 
@@ -59,36 +60,35 @@
 
 	}
 
-	.comments-view{
+	.topic-view{
 		display: flex;
 		margin-bottom: 2em; 
 		
 
-		.commentbubble{
+		.commentbubbleT{
 			position: relative;
 			width: 510px;
 			display: table; 
 			@media screen and(max-width:$break-large){	
 				width: 410px; 
 			}
-			height: 125px;
 			padding: 10px;
 			border-radius: 5px;
-			border: solid $perfect-blue;
-			background: $perfect-blue;
+			border: solid $ghost-white;
+			background: $ghost-white;
 			margin-left: 2em;  
-			color: white; 
+			color: black; 
 			box-shadow: 1px 3px 9px 1px #82817b; 
 			 a{
-			 	color: $yellow; 
+			 	color: $blue; 
 			 }
 			 a:hover{
-			 	color: $sunset-orange; 
+			 	color: $baby-blue; 
 			 }
 		}
 
 
-		.commentbubble:before {
+		.commentbubbleT:before {
 			content:"";
 			position: absolute;
 			right: 100%;
@@ -97,11 +97,11 @@
 			height: 0;
 
 			border-top: 13px solid transparent;
-			border-right: 26px solid $perfect-blue;
+			border-right: 26px solid $ghost-white;
 			border-bottom: 13px solid transparent;
 		}
 
-		.commentbubble textarea {
+		.commentbubbleT textarea {
 			position: inherit;
 			width: inherit;
 			height: inherit;
@@ -158,12 +158,16 @@
 		}
 
 	}
+
+	.comment-view{
+		display: flex;
+		.btn{
+			top: 0em;
+			left: 0em;
+			right: 0em;
+			margin-right: 10px; 
+		}
+	}
 	
 
 }
-
-
-
-
-
-
