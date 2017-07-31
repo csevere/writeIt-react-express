@@ -23,7 +23,7 @@ import Resources from './components/Resources';
 import Faqs from './components/Faqs';
 import UserProfile from './components/UserProfile';
 import Synopsis from './components/Synopsis';
-import tMainForum from './tester_forums/tMainForum';
+
 
 //Forums
 import tMainForum from './tester_forums/tMainForum';
@@ -70,15 +70,13 @@ class App extends Component {
               <Route exact path="/noteboard/:book" component={tNotePadBoard} />
               <Route exact path="/resources" component={Resources} />
               <Route exact path="/faqs" component={Faqs} />
-
-<<<<<<< HEAD
               <Route exact path = "/forums/:main" component = {tMainForum}/>
-=======
+
               <Route exact path = "/forums" component = {tMainForum}/>
               <Route exact path = "/contemp" component = {tContempForum}/>
               <Route exact path = "/contempform" component = {tNewContempForm}/>
               <Route exact path = "/contemptopic" component = {tContempTopic}/>
->>>>>>> f6fe4f57add43b9a82257ee3e06a9a9f1472135f
+
             </div> 
           </div>
         </Router>
