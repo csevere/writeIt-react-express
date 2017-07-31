@@ -24,6 +24,8 @@ import Synopsis from './components/Synopsis';
 //Forums
 import tMainForum from './tester_forums/tMainForum';
 import tContempForum from './tester_forums/tContempForum';
+import tNewContempForm from './tester_forums/tNewContempForm';
+// import tContempTopic from './tester_forums/tContempTopic';
 
 
 
@@ -45,6 +47,8 @@ class App extends Component {
               <Route exact path="/signup" component= {Register} />
               <Route exact path="/login" component= {Login} />
               <Route exact path="/write/:book" component= {writeMenu} />
+              <Route path = "/notepad" component = {NotePad}/>
+
 
               <Route exact path="/newbook" component= {NewBook} />
               <Route exact path="/user" component= {UserProfile} />
@@ -62,6 +66,7 @@ class App extends Component {
 
               <Route exact path = "/forums" component = {tMainForum}/>
               <Route exact path = "/contemp" component = {tContempForum}/>
+              <Route exact path = "/contempform" component = {tNewContempForm}/>
             </div> 
           </div>
         </Router>

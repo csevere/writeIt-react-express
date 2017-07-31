@@ -42,13 +42,13 @@ class tNotePad extends Component{
 				<Grid>
 					<Row>
 						<Col lg={18} >
-							<h1>Welcome to your Note Pad </h1>
+							<h1>NoteBook</h1>
 							<Button className="npButton" bsStyle="success" bsSize="small" type="submit" onClick={this.handleNotes}>
 								Submit
 							</Button>
 							<div className="nptextBox">
 								<textarea id="text">
-								Feel free to take notes here:
+								
 								</textarea>
 							</div>
 

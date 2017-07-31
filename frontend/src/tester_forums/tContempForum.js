@@ -30,86 +30,91 @@ class tContempForum extends Component{
     console.log(this.props)
 		return(
 			<div>
-				<Grid className = "contemp-forum-wrapper">
+				<Grid className = "forum-wrapper">
+                    <div className = "bg">
+                        <img src = "https://static.pexels.com/photos/448835/pexels-photo-448835.jpeg"/>
+                    </div> 
 					<Row>
                         
-                            
-                        <Col md = {7} className = "latest-topics-left">
-                            <h2>RECENT TOPICS</h2> 
+                        <Grid className = "cat-forum"> 
 
-                            <Table className="contemp-table" striped bordered responsive>
-                                    <thead>
-                                      <tr>
-                                        <th>Discussion</th>
-                                        <th>Author</th>
-                                        <th>Replies</th>
-                                      </tr>
-                                    </thead>
+                            <Col md = {7} className = "latest-topics-left">
+                                <h2>RECENT TOPICS</h2> 
 
-                                    <tbody>
+                                <Table className="cat-table" striped bordered responsive>
+                                        <thead>
+                                          <tr>
+                                            <th>Discussion</th>
+                                            <th>Author</th>
+                                            <th>Replies</th>
+                                          </tr>
+                                        </thead>
 
-                                      <tr>
-                                        <td><img src = "images/pin-icon.png"/>Forum Guidlines</td>
-                                        <td>Admin</td>
-                                        <td>number of replies</td>
-                                      </tr>
+                                        <tbody>
 
-                                      <tr>
-                                        <td>FORUM TOPIC A</td>
-                                        <td><Link to = "/user">UsernameA</Link></td>
-                                        <td>number of replies</td>
+                                          <tr>
+                                            <td><img src = "images/pin-icon.png"/>Forum Guidlines</td>
+                                            <td>Admin</td>
+                                            <td>number of replies</td>
+                                          </tr>
+
+                                          <tr>
+                                            <td>FORUM TOPIC A</td>
+                                            <td><Link to = "/user">UsernameA</Link></td>
+                                            <td>number of replies</td>
+                                           
+                                          </tr>
+
+                                          <tr>
+                                            <td>FORUM TOPIC B</td>
+                                            <td><Link to = "/user">UsernameB</Link></td>
+                                            <td>number of replies</td>
+                                          </tr>
+
+                                           <tr>
+                                            <td>FORUM TOPIC C</td>
+                                            <td><Link to = "/user">UsernameC</Link></td>
+                                            <td>number of replies</td>
+                                          </tr>
+
+
+                                           <tr>
+                                            <td>FORUM TOPIC X</td>
+                                            <td><Link to = "/user">UsernameX</Link></td>
+                                            <td>number of replies</td>
+                                          </tr>
+
+                                        </tbody>
+                                    </Table>
+
+                                    <div className = "all-topics">
+                                        <Link to = "/home">All topics</Link> 
+                                        <img src = "images/arrow-right.png"/>
                                        
-                                      </tr>
+                                    </div>
+                            </Col> 
+                          
 
-                                      <tr>
-                                        <td>FORUM TOPIC B</td>
-                                        <td><Link to = "/user">UsernameB</Link></td>
-                                        <td>number of replies</td>
-                                      </tr>
+                             
 
-                                       <tr>
-                                        <td>FORUM TOPIC C</td>
-                                        <td><Link to = "/user">UsernameC</Link></td>
-                                        <td>number of replies</td>
-                                      </tr>
+                            <Col  md = {4} className = "forum-cat-right">
+                                <h2 className = "forum-cat-header"> CONTEMPORARY FICTION</h2>
 
+                                <Grid className = "forum-cat-view">
+                                    <div>
+                                        <img src = "images/gen-fic-icon.png"/> 
+                                    </div>
+                                    <div className = "forum-cat-info" onClick = "">
+                                        <div>Join discussions for fiction set in modern times. You can start a discussion or chat with other writers of General Ficiton.</div>
+                                    </div>
 
-                                       <tr>
-                                        <td>FORUM TOPIC X</td>
-                                        <td><Link to = "/user">UsernameX</Link></td>
-                                        <td>number of replies</td>
-                                      </tr>
-
-                                    </tbody>
-                                </Table>
-
-                                <div className = "all-topics">
-                                    <Link to = "/home">All topics</Link> 
-                                    <img src = "images/arrow-right.png"/>
-                                   
-                                </div>
-                        </Col> 
-                      
-
-                         
-
-                        <Col  md = {4} className = "forum-cat-right">
-                            <h2 className = "forum-cat-header"> CONTEMPORARY FICTION</h2>
-
-                            <Grid className = "forum-cat-view">
-                                <div>
-                                    <img src = "images/gen-fic-icon.png"/> 
-                                </div>
-                                <div className = "forum-cat-info" onClick = "">
-                                    <div>Join discussions for fiction set in modern times. You can start a discussion or chat with other writers of General Ficiton.</div>
-                                </div>
-
-                                <div className = "new-topic">
-                                    <Link to= "/home">Start New Topic  </Link> 
-                                    <img src = "images/quote-bubble.png" /> 
-                                </div>
-                            </Grid>  
-                        </Col>
+                                    <div className = "new-topic">
+                                        <Link to= "/contempform">Start New Topic  </Link> 
+                                        <img src = "images/quote-bubble.png" /> 
+                                    </div>
+                                </Grid>  
+                            </Col>
+                        </Grid>
 
                     </Row>
 
