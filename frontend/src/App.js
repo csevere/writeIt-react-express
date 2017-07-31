@@ -20,6 +20,7 @@ import Resources from './components/Resources';
 import Faqs from './components/Faqs';
 import UserProfile from './components/UserProfile';
 import Synopsis from './components/Synopsis';
+import tMainForum from './tester_forums/tMainForum';
 
 
 
@@ -54,6 +55,8 @@ class App extends Component {
               <Route exact path="/notepad/:book" component={tNotePad} />
               <Route exact path="/resources" component={Resources} />
               <Route exact path="/faqs" component={Faqs} />
+
+              <Route exact path = "/forums/:main" component = {tMainForum}/>
             </div> 
           </div>
         </Router>

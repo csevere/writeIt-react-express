@@ -8,6 +8,7 @@
   "dependencies": {
     "bcrypt": "^1.0.2",
     "bcrypt-nodejs": "0.0.3",
+    "bluebird": "^3.5.0",
     "body-parser": "~1.17.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
@@ -15,6 +16,7 @@
     "jade": "~1.11.0",
     "morgan": "~1.8.1",
     "mysql": "^2.14.0",
+    "pg-promise": "^6.3.6",
     "rand-token": "^0.3.0",
     "serve-favicon": "~2.4.2",
     "twitter": "^1.7.1",
