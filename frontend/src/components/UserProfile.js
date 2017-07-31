@@ -27,6 +27,9 @@ class UserProfile extends Component{
             },
             bookData: [],
             postData: [],
+            picData: {
+                picture: ''
+            }
 
             // nameError: null,
             // emailError: null,
@@ -51,7 +54,7 @@ class UserProfile extends Component{
         this.props.postAction({
             username: username,
             post: post,
-            from_user: from_user,
+            from_user: from_user
 
         });
         
@@ -60,7 +63,7 @@ class UserProfile extends Component{
     componentDidMount(){
         $.getJSON(`http://localhost:5000/user?email=${this.props.registerResponse.email}`, (serverData)=>{
             // log the JSON response from Express
-            console.log(serverData.userData)
+            //console.log(serverData.userData)
             this.setState({
                 userData: serverData.userData
             })
@@ -76,9 +79,20 @@ class UserProfile extends Component{
 
         this.loadPosts();
 
-        setInterval(this.loadPosts, 5000);
+        //setInterval(this.loadPosts, 30000);
+
+        $.getJSON(`http://localhost:5000/profilepic?username=${this.props.registerResponse.name}`, (serverData)=>{
+            // log the JSON response from Express
+            console.log(serverData)
+            if(serverData.picData !== undefined){
+                this.setState({
+                    picData: serverData.picData
+            })
+
+            }
 
 
+        });
 
         // console.log(this.state.bookData)
     }
@@ -96,9 +110,18 @@ class UserProfile extends Component{
 
     render(){
 
+        var profilepic = this.state.picData.picture;
+        var picLocation;
+        if(profilepic.length > 2){
+            picLocation = profilepic.slice(18);
+            console.log(picLocation)
+        }
+        console.log('pic path here');
+        console.log(profilepic);
         var username = this.state.userData.username;
         var location = this.state.userData.location;
         var about = this.state.userData.about;
+        console.log(location)
 
         var bookArray = [];
         var postArray = [];
@@ -147,7 +170,7 @@ class UserProfile extends Component{
                                 <Col md ={4} className = "col-md-offset-4 left">
 
                                     <div className = "prof-pic">
-                                        <a href="https://placeholder.com"><img src="http://via.placeholder.com/200x200"/></a>
+                                        <img src={picLocation}/>
                                     </div>
 
                                     <div className = "username text-center">
@@ -166,6 +189,13 @@ class UserProfile extends Component{
                                             </ul>
                                         </div>
                                     </div>
+                                    <form method="post" action="http://127.0.0.1:5000/profilepic" encType="multipart/form-data">
+                                        <div class="md-col-4 md-col-offset-2">
+                                            <input name='username' type='hidden' value={this.state.userData.username} />
+                                            <input type='file' name='fileUploaded' />
+                                            <input class="btn btn-primary" type="submit" />
+                                        </div>
+                                    </form>
                                 </Col>
 
                             </Col>

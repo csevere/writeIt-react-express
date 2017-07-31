@@ -3,6 +3,10 @@ var router = express.Router();
 var router = express.Router();
 var mysql = require('mysql');
 var config = require('../config/config');
+var multer = require('multer');
+var upload = multer({dest: '../frontend/public/images'});
+
+var fs = require('fs');
 
 // include bcrpyt for hasing and checking password
 var bcrypt = require('bcrypt-nodejs');
@@ -231,6 +235,24 @@ router.get('/post', (req,res)=>{
 			console.log(response)
 			res.json({
 				postData: response
+			})
+		}
+
+	})
+
+});
+
+router.get('/profilepic', (req,res)=>{
+	var username = req.query.username;
+	console.log(username)
+	var postDataQuery = `SELECT * FROM profilepic WHERE username= '${username}'` ;
+	connection.query(postDataQuery, (error, response)=>{
+		if(error){
+			throw error;
+		}else{
+			console.log(response)
+			res.json({
+				picData: response[0]
 			})
 		}
 
@@ -906,6 +928,39 @@ router.post('/post', (req, res)=>{
 });
 
 
+//Add multer file upload
+router.post('/profilepic', upload.single('fileUploaded'), function(req, res, next){
+	console.log('req  below')
+	console.log(req.file)
+	var username = req.body.username;
+	//res.json(req.file);rs
+
+	console.log('req body below')
+	console.log(req.body);
+
+	var tmp_path = req.file.path;
+
+	var target_path = '../frontend/public/images/' + req.file.originalname
+	fs.readFile(tmp_path, function (error, data){
+		fs.writeFile(target_path, data, function(error){
+			if(error) throw error
+			//res.json('File Uploaded to ' + target_path);
+			// db.insert into the mongdo, the path and name of the new file.
+			// res.redirect('/')
+			var insertPicQuery = 'INSERT into profilepic (username, picture) VALUES (?,?);';
+
+			connection.query(insertPicQuery, [username, target_path], (error, response)=>{
+				if(error) throw error;
+				res.json({
+					msg: 'picInserted'
+				})
+
+			})
+
+		});
+	});
+
+});
 
 
 
