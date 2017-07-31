@@ -63,6 +63,40 @@ router.get('/chapters', (req, res)=>{
 	});
 });
 
+
+router.get('/characters', (req, res)=>{
+
+    var id = req.query.id;
+    console.log('here');
+    console.log(id);
+    var username = req.query.username;
+    console.log(username)
+    var book = req.query.book;
+    console.log(book);
+    var deleteId = req.query.action;
+    console.log(deleteId);
+
+
+    if(id !== '' && id !==undefined){
+        var selectCharacterQuery = `SELECT * FROM characters WHERE id = ${id}`
+    }else if(book !== undefined  && username !== undefined){
+        var selectCharacterQuery = `SELECT * FROM characters WHERE username = '${username}' AND book = '${book}'`
+    }else if(deleteId !== undefined){
+        var selectCharacterQuery = `DELETE FROM characters WHERE id = ${deleteId}`
+    }
+
+
+    connection.query(selectCharacterQuery, (error, results)=>{
+        console.log(selectCharacterQuery);
+        if(error){
+            throw error
+        }else{
+            res.json(results);
+        }
+    });
+});
+
+
 router.get('/plot', (req, res)=>{
 
     var id = req.query.id;
@@ -300,7 +334,7 @@ router.post('/newbook',(req,res)=>{
 
 
 router.post('/characters',(req,res)=>{
-	console.log("HELLO");
+	console.log("CHARACTER POST");
 	console.log(req);
 	// console.log(req.body.book);
 	var username = req.body.username;
@@ -331,47 +365,74 @@ router.post('/characters',(req,res)=>{
 	var ambitions = req.body.ambitions;
 	var liked_disliked = req.body.liked_disliked;
 
+    var id = req.body.id;
+    console.log(id);
 
-	var characterQuery = `SELECT * FROM characters WHERE username = ? and book = ? AND name = ?`;
-	var insertCharacterQuery = `INSERT INTO characters 
+    console.log(req.body)
+
+
+	if(id!==''){
+        var updateCharacterQuery = `UPDATE characters SET
+				name = '${name}',race = '${race}',age = '${age}',birthday = '${birthday}',physical_desc = '${physical_desc}',hometown = '${hometown}',type_of_home = '${type_of_home}',father_info = '${father_info}',mother_info = '${mother_info}',sibling_info = '${sibling_info}',
+				relatives = '${relatives}',friends = '${friends}',enemies = '${enemies}',mentor = '${mentor}',hobbies = '${hobbies}',dress = '${dress}',leader_follower = '${leader_follower}',positive_traits = '${positive_traits}',negative_traits = '${negative_traits}',temper = '${temper}',star_sign = '${star_sign}',personality = '${personality}',philosophy = '${philosophy}',ambitions = '${ambitions}',
+				liked_disliked = '${liked_disliked}',time_stamp = NOW() WHERE id = '${id}'`;
+        connection.query(updateCharacterQuery, (error3,results3)=>{
+            var characterArray = [name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
+                relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
+                liked_disliked]
+            // console.log(characterArray);
+            if(error3) throw error3;
+            res.json({
+                msg:'characterUpdated',
+                characterData: characterArray
+            })
+
+        })
+	}else{
+        var characterQuery = `SELECT * FROM characters WHERE username = ? and book = ? AND name = ?`;
+        var insertCharacterQuery = `INSERT INTO characters 
 		(username,book,name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
 		relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
 		liked_disliked,time_stamp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?, NOW())`;
-	connection.query(characterQuery, [username,book, name], (error,results)=>{
-		if(error) throw error;
-		if(results.length === 0){
-			connection.query(insertCharacterQuery, [username,book,name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
-				relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
-				liked_disliked], (error2,results2)=>{
-					if(error2) throw error2;
-					var characterArray = [name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
-					relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
-					liked_disliked]
-					res.json({
-						msg:'characterInserted',
-						characterData: characterArray
-					})
-				})
+        connection.query(characterQuery, [username,book, name], (error,results)=>{
+            if(error) throw error;
+            if(results.length === 0){
+                connection.query(insertCharacterQuery, [username,book,name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
+                    relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
+                    liked_disliked], (error2,results2)=>{
+                    if(error2) throw error2;
+                    var characterArray = [name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
+                        relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
+                        liked_disliked]
+                    res.json({
+                        msg:'characterInserted',
+                        characterData: characterArray
+                    })
+                })
 
-		}else{
-			var updateCharacterQuery = `UPDATE characters SET
+            }else{
+                var updateCharacterQuery = `UPDATE characters SET
 				name = '${name}',race = '${race}',age = '${age}',birthday = '${birthday}',physical_desc = '${physical_desc}',hometown = '${hometown}',type_of_home = '${type_of_home}',father_info = '${father_info}',mother_info = '${mother_info}',sibling_info = '${sibling_info}',
 				relatives = '${relatives}',friends = '${friends}',enemies = '${enemies}',mentor = '${mentor}',hobbies = '${hobbies}',dress = '${dress}',leader_follower = '${leader_follower}',positive_traits = '${positive_traits}',negative_traits = '${negative_traits}',temper = '${temper}',star_sign = '${star_sign}',personality = '${personality}',philosophy = '${philosophy}',ambitions = '${ambitions}',
 				liked_disliked = '${liked_disliked}',time_stamp = NOW() WHERE username = '${username}' AND book = '${book}' AND name='${name}'`;
-			connection.query(updateCharacterQuery, (error3,results3)=>{
-					var characterArray = [name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
-					relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
-					liked_disliked]
-					// console.log(characterArray);
-					if(error3) throw error3;
-					res.json({
-						msg:'characterUpdated',
-						characterData: characterArray
-					})
-					
-			})
-		}
-	})
+                connection.query(updateCharacterQuery, (error3,results3)=>{
+                    var characterArray = [name,race,age,birthday,physical_desc,hometown,type_of_home,father_info,mother_info,sibling_info,
+                        relatives,friends,enemies,mentor,hobbies,dress,leader_follower,positive_traits,negative_traits,temper,star_sign,personality,philosophy,ambitions,
+                        liked_disliked]
+                    // console.log(characterArray);
+                    if(error3) throw error3;
+                    res.json({
+                        msg:'characterUpdated',
+                        characterData: characterArray
+                    })
+
+                })
+            }
+        })
+
+	}
+
+
 
 });
 
