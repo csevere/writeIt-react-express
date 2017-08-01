@@ -13,7 +13,7 @@ class About extends Component{
 				<Grid  id = "about">
 					<Row>
 						<div className = "dividing-line"></div>
-						<Col xs = {12}>
+						<Col xs = {12} className ="ab-header">
 							<h2>What is writeIT?</h2>
 							<hr id='title' />
 						</Col>
@@ -21,7 +21,8 @@ class About extends Component{
 					<Row className="about-row1">
 						<Col xs={6}>
 							<div>
-				        		<h3> Simplicity </h3><hr id="simplicity" />
+				        		<h3> Simplicity </h3>
+				        		<hr id="simplicity" />
 				        		<p>
 				        		Writing a book can be an intimidating, complex endeavor.<br /> With writeIT, we give you simple tools to break the task into easy, manageable parts.<br />
 					        	You’ll spend more time creating your story rather than stressing out about how you’ll do it.<br />

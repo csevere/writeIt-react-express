@@ -56,10 +56,15 @@ body {
 .subtitle{
 	float: left; 
 	color: $white;
-	margin: 9em 0em 0em 0em; 
+	margin: 9em 0em 0em 1em; 
 	z-index: 1; 
 	font-weight: bolder;
 	font-family: 'Heebo',sans-serif;
+
+	@media screen and(min-width:$break-xlarge){	
+		margin: 9em 0em 0em -23em; 
+				
+	} 
 
 }
 
@@ -72,10 +77,11 @@ body {
 	h3{
 		top: 35px;
 		position: relative;
-		color: $white; 
+		color: $white;
+		margin-right: 0.5em;
+    } 
 
 
-	}
 	ul{
 		list-style: none;
 	}
@@ -422,7 +428,7 @@ body {
 	border: 3px solid white;
 	border-radius: 23px;
 	z-index: 3; 
-	top:-76em;
+	top:-77em;
 	left: 0em;
 }
 

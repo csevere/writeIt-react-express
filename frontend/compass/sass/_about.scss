@@ -3,7 +3,7 @@
 .dividing-line{
 	height: 78px;
 	width: 100%;
-	background-color: $white; 
+	background-color: $ghost-white; 
 }
 
 h2{
@@ -15,10 +15,10 @@ h2{
 }
 
 #about{
-	background-color: $white; 
+	background-color: $ghost-white; 
 	top: 0;
 	padding-bottom: 2em; 
-	margin-top: -58.5em; 
+	margin-top: -47.2em; 
 	z-index: -1; 
 	width:100%;
 	overflow-x:hidden;
@@ -26,67 +26,86 @@ h2{
 	overflow: scroll; 
 	display: flex; 
 	color: $black; 
-	border:1px solid green;
-}
+	// border:1px solid green;
 
-p{
+	.ab-header{
+		margin-left: -3em;
+
+	}
+
+
+	p{
 	margin-left:0em;
-	font-size:20px;
+	font-size:22px;
 	font-family:'BenchNine';
+	}
+
+	.about-row1, .about-row2{
+		word-spacing: 3px; 
+
+	}
+
+	.about-row1{
+		margin-top: 20em;
+	    margin-left: -63em;
+	    height: 50%;
+	    width: 90%;
+	    // border: 1px solid red;
+	}
+
+	.about-row2{
+	    margin-top: 48em;
+	    margin-left: -88em;
+	    width: 100%;
+	    // border: 1px solid blue;
+	}
+
+	hr{
+		margin-top: -24px;
+	    margin-bottom: 21px;
+	    border-top: 2px solid #ccc;
+	    width: 67%;
+	}
+
+	h3{
+		margin-right:1.5em;
+	}
+
+	// HR Styles
+	#title{
+		margin: 0em 18em 0em 49em; 
+	    width: 6%;
+	    border-top: 2px solid $black ;
+	    // border: 2px solid black;
+	}
+
+	#simplicity{
+		width: 58%;
+		margin-left: 8em;
+	}
+
+	#safety{
+		width: 56%;
+	    margin-left: 6em;
+	}
+
+	#organization{
+	width: 68%;
+	margin-left: 10.5em;
+	}
+
+	#fun{
+	width: 60%;
+	margin-left:4em
+	}
+
+	#social{
+	width: 58%;
+	margin-left: 5.5em;
+	}
+
+
 }
 
-.about-row1{
-	margin-top: 20em;
-    margin-left: -63em;
-    border: 1px solid red;
-    height: 50%;
-    width: 90%;
-}
-
-.about-row2{
-    margin-top: 48em;
-    margin-left: -88em;
-    width: 100%;
-    border: 1px solid blue;
-}
-
-hr{
-	margin-top: -24px;
-    margin-bottom: 21px;
-    border-top: 2px solid #eee;
-    width: 67%;
-}
-
-h3{
-	margin-right:1.5em;
-}
-
-// HR Styles
-#title{
-	margin-top: -3em;
-    margin-right: 18em;
-    width: 6%;
-    border: 2px solid black;
-}
-
-#safety{
-	 width: 56%;
-    margin-left: 5em;
-}
-
-#organization{
-width: 68%;
-margin-left: 10em;
-}
-
-#fun{
-width: 60%;
-margin-left:1em
-}
-
-#social{
-width: 58%;
-margin-left: 5em;
-}
 
 

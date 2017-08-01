@@ -14,7 +14,7 @@ class Home extends Component{
 					<Row>
 						<div className = "overlay"></div> 
 						<div className = "container">
-							<Col sm = {8} className = "subtitle">
+							<Col sm = {12} smOffset ={1} className = "subtitle">
 								<div><h3>Writing a novel is now fun and easy for everyone.</h3></div> 
 							</Col>
 						</div> 
