@@ -83,7 +83,7 @@ class writeMenu extends Component{
 
 						<div className = "container right-db">
 							<Row>
-								<div className = "stats"> STATS:</div> 
+								<div className = "stats"> <h3>STATS:</h3></div> 
 								<ul>
 									<li><div className="genre"><h3>Genre: {}</h3></div></li>
 									<li><div className="wordcount"><h3>Word Count: {} </h3></div></li>
@@ -101,11 +101,11 @@ class writeMenu extends Component{
 									<FormGroup>
 
 										<Radio name = "radioGroup" inline>
-											Dictionary
+											<h4>Dictionary</h4>
 										</Radio>
 
 										<Radio name = "radioGroup" inline>
-											Thesaurus 
+											<h4>Thesaurus</h4> 
 										</Radio>
 
 									</FormGroup>

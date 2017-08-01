@@ -21,13 +21,21 @@
 	display: flex; 
 }
 
-
 /// WRITE NAV ///
 
 .writeNav{
 
 	margin: 8em 0em 0em 9em;
 	display: flex; 
+	@media screen and(min-width:$break-xlarge){	
+		margin: 8em 0em 0em 23em;
+	}
+	@media screen and(min-width:$break-small){
+		margin: 8em 0em 0em 2em;
+	}
+	@media screen and(min-width:$break-xsmall){
+		margin:8em 0em 0em -1em;
+	}
 
 	h3{
 		top: 35px;
@@ -201,14 +209,42 @@
 		background:#ccf;
 	}
 }
+//********************** RADIO STYLES********************
+.radio-inline{
+	font-size:18px;
+}
 
+
+//*****************ENTER TEXT BOX**********************
+.form-control{
+	@media screen and(min-width:$break-large){	
+			width: 90% ;
+	} 
+	@media screen and(min-width:$break-small){
+		width:78%;
+	}
+	@media screen and(min-width:$break-xsmall){
+		width:71%;
+	}
+}
+
+//*******************STATS SECTION**********************
+.right-db{
+	@media screen and(min-width:$break-xlarge){	
+		margin-right:-5em;
+	}
+	@media screen and(min-width:$break-medium){
+		padding-left:28px;
+	}
+	@media screen and(min-width:$break-small){
+		padding-left:34px;
+	}
+	@media screen and(min-width:$break-xsmall){
+		padding-left:42px;
+	}
+}
 
 // ******************THE POST IT**************
-
-
-
-
-
 
 // .post1 {
 //     float: left;
