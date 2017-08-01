@@ -79,7 +79,7 @@ class UserProfile extends Component{
 
         this.loadPosts();
 
-        //setInterval(this.loadPosts, 30000);
+        // setInterval(this.loadPosts, 30000);
 
         $.getJSON(`http://localhost:5000/profilepic?username=${this.props.registerResponse.name}`, (serverData)=>{
             // log the JSON response from Express
@@ -98,13 +98,13 @@ class UserProfile extends Component{
     }
 
     loadPosts(){
-            $.getJSON(`http://localhost:5000/post?username=${this.props.registerResponse.name}`, (serverData)=>{
-            // log the JSON response from Express
-            //console.log(serverData.bookData)
-            this.setState({
-                postData: serverData.postData
-            })
-        });
+        $.getJSON(`http://localhost:5000/post?username=${this.props.registerResponse.name}`, (serverData)=>{
+        // log the JSON response from Express
+        //console.log(serverData.bookData)
+        this.setState({
+            postData: serverData.postData
+        })
+    });
     }
 
 

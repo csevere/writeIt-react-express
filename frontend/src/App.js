@@ -73,7 +73,7 @@ class App extends Component {
               <Route exact path="/chapboard/:book" component={tChapterBoard} />
               <Route exact path="/critique/:book" component={Critique} />
               <Route exact path="/critboard/:book" component={tCritiqueBoard} />
-              <Route exact path="/pictures" component={tPicture} />
+              <Route exact path="/pictures/:book" component={tPicture} />
               <Route exact path="/notepad/:book" component={NotePad} />
               <Route exact path="/noteboard/:book" component={tNotePadBoard} />
               <Route exact path="/resources" component={Resources} />

@@ -96,7 +96,7 @@ class NewBook extends Component{
 									/>
 									<ControlLabel>What is the genre? </ControlLabel>
 									<FormControl id="genre" componentClass="select" placeholder="select">
-										<option value="Select">Select </option>
+										<option value="Unknown">Select </option>
 										<option value="Action">Action </option>
 										<option value="Adventure">Adventure </option>
 										<option value="ChickLit">ChickLit</option>
@@ -120,19 +120,19 @@ class NewBook extends Component{
 									</FormControl>	
 									<ControlLabel>What is the word count? </ControlLabel>
 									<FormControl id="word_count" componentClass="select" placeholder="word count">
-										<option value="Select">Select </option>
-										<option value="20">20,000 - 35,000</option>
-										<option value="35">35,000 - 55,000</option>
-										<option value="55">55,000 - 80,000</option>
-										<option value="80">80,000 -89,999 </option>
-										<option value="90">90,000 - 99,999 </option>
-										<option value="100">100,000 - 109,999</option>
-										<option value="110">110,000 or above </option>
+										<option value="Unknown">Select </option>
+										<option value="20,000 - 35,000">20,000 - 35,000</option>
+										<option value="35,000 - 55,000">35,000 - 55,000</option>
+										<option value="55,000 - 80,000">55,000 - 80,000</option>
+										<option value="80,000- 90,000">80,000 - 90,000 </option>
+										<option value="90,000 - 100,00">90,000 - 100,000 </option>
+										<option value="100,000 - 109,000">100,000 - 110,000</option>
+										<option value="110,000 or above">110,000 or above </option>
 									</FormControl>
 									<ControlLabel>What is the target completion date? </ControlLabel>
 										<DatePicker />
 								</FormGroup>
-								<button type="submit" className="btn-primary btn">Submit</button>
+								<button type="submit" defaultValue="" className="btn-primary btn">Submit</button>
 							</Form>
 						</Col>
 					</Row>
