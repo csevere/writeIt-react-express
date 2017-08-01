@@ -9,6 +9,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import QueryLetterAction from '../actions/QueryLetterAction';
+import $ from 'jquery';
 
 
 
@@ -16,7 +17,18 @@ class QueryLetter extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            // registerMessage: "",
+            queryLetterData: {
+                query_clarity: '',
+                query_boring: '',
+                query_balance: '',
+                query_stakes: '',
+                query_advance: '',
+                query_resolve: '',
+                query_voice: '',
+                query_action: '',
+                query_personality: '',
+                query_romance: '',
+            }
             // nameError: null,
             // emailError: null,
             // formError: false
@@ -41,6 +53,7 @@ class QueryLetter extends Component{
         var query_romance = document.getElementById('query_romance').value;
         var username = this.props.registerResponse.name;
         var book = this.props.match.params.book;
+        var id = this.props.location.search.slice(4);
         //console.log(book);
 
 
@@ -78,10 +91,31 @@ class QueryLetter extends Component{
                 query_personality: query_personality,
                 query_romance: query_romance,
                 username: username,
-                book: book
+                book: book,
+                id: id
             });
             this.props.history.push(`/write/${book}`);
         }
+    }
+
+    componentDidMount(){
+
+        //console.log(this.props.location.search);
+        if(this.props.location.search.length !== 0){
+            var id = this.props.location.search.slice(4);
+            console.log(id);
+            $.getJSON(`http://localhost:5000/queryletter?id=${id}`, (serverData)=>{
+                // log the JSON response from Express
+                //console.log(serverData);
+                this.setState({
+                    queryLetterData: serverData[0]
+                })
+            })
+        }
+
+
+
+
     }
 
 
@@ -93,7 +127,20 @@ class QueryLetter extends Component{
             slidesToShow: 1,
             slidesToScroll: 1,
         }
+
+        var query_clarity = this.state.queryLetterData.query_clarity;
+        var query_boring = this.state.queryLetterData.query_clarity;
+        var query_balance = this.state.queryLetterData.query_clarity;
+        var query_stakes= this.state.queryLetterData.query_clarity;
+        var query_advance = this.state.queryLetterData.query_clarity;
+        var query_resolve = this.state.queryLetterData.query_clarity;
+        var query_voice = this.state.queryLetterData.query_clarity;
+        var query_action = this.state.queryLetterData.query_clarity;
+        var query_personality = this.state.queryLetterData.query_clarity;
+        var query_romance = this.state.queryLetterData.query_clarity;
+
         var writeMenu = '/write/' + this.props.match.params.book;
+        var queryLetterBoard = '/queryboard/' + this.props.match.params.book;
 
         return(
             <div>
@@ -116,7 +163,7 @@ class QueryLetter extends Component{
                                             <FormControl id="query_balance" componentClass="textarea" placeholder="query_balance" />
                                         </FormGroup>
                                         <FormGroup controlId="formControlsTextarea">
-                                            <ControlLabel>Whats at stake if your character fails?</ControlLabel>
+                                            <ControlLabel>What's at stake if your character fails?</ControlLabel>
                                             <FormControl id="query_stakes" componentClass="textarea" placeholder="query_stakes" />
                                         </FormGroup>
                                         <FormGroup controlId="formControlsTextarea">
@@ -170,7 +217,7 @@ class QueryLetter extends Component{
 
                             <Grid className = "fourth-row-right">
                                 <Col md = {3} className = "col-md-offset-8">
-                                    <Link to = "/qlboard" className = "qlboard">
+                                    <Link to = {queryLetterBoard} className = "qlboard">
                                         <img src = "https://cdn4.iconfinder.com/data/icons/office-34/256/10-512.png"/>
                                         <div>View Query Letter</div>
                                     </Link>
