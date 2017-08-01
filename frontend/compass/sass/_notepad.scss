@@ -23,33 +23,31 @@ textarea{
 // }
 
 .notepad-wrapper { // notepad text box
-	position: absolute;	
-	background-color:white;
-	top: 22em;
-	left:0;
-	margin: 0; 
-	z-index: -1; 
-	min-width: 102%;
-	min-height: 50%;
-	height:90px;
+    position: absolute;
+    background-color: white;
+    margin-top: 22em;
+    left: 0;
+    margin: 0;
+    z-index: -1;
+    min-width: 65%;
 }
 
 
 .notepad-form{
 
 	margin-top: 7em; 
-	background-color: $english-red;
-	border: 1px solid $english-red; 
+	background-color: grey;
+	border: 1px solid grey; 
 	box-shadow: 2px 2px 11px 1px rgba(0,0,0,.2);
 	padding: 15px; 
+	height:34em;
 
 	.btn{
-		top: 0em;
-		left: 0em;
+		top: 7em;
+		left: 25em;
 		right: 0em;
 		margin-right: 30px; 
-		font-weight:bold;
-
+		width:6em;
 
 	}
 
@@ -58,15 +56,22 @@ textarea{
 	}
 }
 
+
 .np-row-left{
 	float: left;
 	margin-top:41em;
 
 	img{
-		margin-top: 28em;
+		margin-top: -18em;
 	    position: relative;
-	    left: -36em;
+	    left: -22em;
 	    height: 13em;
+	}
+
+	a{
+		margin-top:3em;
+		position:relative;
+		left:2em;
 	}
 
 }
@@ -75,10 +80,40 @@ textarea{
 	margin-top:41em;
 
 	img{
-		margin-top: 28em;
-	    position: relative;
-	    left: -36em;
-	    height: 13em;
+	margin-top: -113em;
+    position: relative;
+    left: -3em;
+    height: 7em;
 	}
 
 }
+#title {
+    margin-top: -3em;
+    margin-right: 18em;
+    width:100%;
+    border: 2px solid black;
+ }
+
+ #notes{
+ 	border:2px solid black;
+ 	margin-top:-2em;
+ 	height:14em;
+ }
+
+ .control-label{
+ 	margin-bottom:3em;
+ }
+
+ #writeMenu{
+    position: relative;
+    margin-top: 3em;
+    left: -9em;
+ }
+
+ #viewNotePad{
+ 	margin-top: -44em;
+    position: relative;
+    margin-left: 11em;
+ }
+
+ // Media Queries

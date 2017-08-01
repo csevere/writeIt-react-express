@@ -87,7 +87,7 @@ class NotePad extends Component{
                 <Grid className = "notepad-wrapper">
                     <Row>
 
-                        <Col md = {8} className = "col-md-offset-2 notepad-form">
+                        <Col md = {8} className = "col-md-offset-4 notepad-form">
 
                             <Form>
 
@@ -102,7 +102,8 @@ class NotePad extends Component{
                                     <FormControl id="notes" componentClass="textarea" />
                                 </FormGroup>
 
-                                <Link to = "/writeMenu"><Button className = "btn-default btn" bsSize="medium"type="submit">Submit</Button></Link> 
+                                <Link to = "/"><Button className = "btn-default btn" bsStyle="primary" bsSize="large"
+                                type="submit">Submit</Button></Link> 
 
                             </Form> 
                         </Col>
@@ -116,7 +117,8 @@ class NotePad extends Component{
                             <Col md = {3}>
                                 <Link to = {writeMenu} className = "return-writemenu">
                                     <img src = "https://cdn4.iconfinder.com/data/icons/lifestyle-set-2/100/07a3c3443f894cb3fa7a93ee3c496233-512.png"/>
-                                    <div>Return to Write Menu</div>
+                                    <div id="writeMenu"><Link to = "/writeMenu"><Button className = "btn-default btn" bsStyle="warning" bsSize="large"
+                                    type="submit">Return to Write Menu</Button></Link></div>
                                 </Link>
                             </Col>
                         </Grid>
@@ -125,7 +127,8 @@ class NotePad extends Component{
                             <Col md = {3} className = "col-md-offset-8">
                                 <Link to = {notePadBoard} className = "chboard">
                                     <img src = "https://cdn4.iconfinder.com/data/icons/office-34/256/10-512.png"/>
-                                    <div>View Notepad</div>
+                                    <div id="viewNotePad"><Link to = "/notepad"><Button className = "btn-default btn" bsStyle="danger" bsSize="large"
+                                    type="submit">View Notepad</Button></Link></div>
                                 </Link>
                             </Col>
                         </Grid>
