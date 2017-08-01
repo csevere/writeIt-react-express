@@ -81,7 +81,7 @@ class Login extends Component{
 		return(
 			<div>
 				<Grid className = "register-wrapper">
-					<Col md = {6} className = "login col-md-offset-3">
+					<Col md = {6} mdOffset={3} className = "login">
 						<div className = "text-center"><h2>Log in to writeIT</h2><br/>
 							<h3>Write, organize, and interact with other writers on writeIT.</h3>
 						</div> 

@@ -93,73 +93,74 @@ class Register extends Component{
 							<h3>Write, organize, and interact with other writers on writeIT.</h3>
 						</div>
 						<h4>{this.state.registerMessage}</h4>
-							
-							<Form horizontal onSubmit={this.handleRegistration}>
-								<FormGroup controlId="formHorizontalName" validationState={this.state.nameError}>
-									<Col componentClass={ControlLabel} sm={2}>
-										Name
-									</Col>
-									<Col sm={6}>
-										<FormControl type="text" name="Name" placeholder="Name" />
-									</Col>
-								</FormGroup>
-								<FormGroup controlId="formHorizontalName" validationState={this.state.emailError}>
-									<Col componentClass={ControlLabel} sm={2}>
-										Email
-									</Col>
-									<Col sm={6}>
-										<FormControl type="email" name="email" placeholder="Email" />
-									</Col>
-								</FormGroup>
-								<FormGroup controlId="formHorizontalName">
-									<Col componentClass={ControlLabel} sm={2}>
-										Username
-									</Col>
-									<Col sm={6}>
-										<FormControl type="text" name="username" placeholder="Username"/>
-									</Col>
-								</FormGroup>
-								<FormGroup controlId="formHorizontalName">
-									<Col componentClass={ControlLabel} sm={2}>
-										Password
-									</Col>
-									<Col sm={6}>
-										<FormControl type="password" name="password" placeholder="Password" />
-									</Col>
-								</FormGroup>
-								<FormGroup controlId="formHorizontalName">
-									<Col componentClass={ControlLabel} sm={2}>
-										Occupation
-									</Col>
-									<Col sm={6}>
-										<FormControl type="text" name="occupation" placeholder="Occupation" />
-									</Col>
-								</FormGroup>
-								<FormGroup controlId="formHorizontalName">
-									<Col componentClass={ControlLabel} sm={2}>
-										About
-									</Col>
-									<Col sm={6}>
-										<FormControl type="text" name="state" placeholder="About" />
-									</Col>
-								</FormGroup>
-								<FormGroup controlId="formHorizontalName">
-									<Col componentClass={ControlLabel} sm={2}>
-										Location
-									</Col>
-									<Col sm={6}>
-										<FormControl type="text" name="state" placeholder="Location" />
-									</Col>
-								</FormGroup>
-								<FormGroup>
-									<Col smOffset={2} sm={6}>
-										<Button className="button" bsStyle="primary" bsSize="small" type="submit">
-											Register
-										</Button>
-									</Col>
-								</FormGroup>
-								
-							</Form>
+							<Col md = {8} mdOffset ={1}>
+								<Form horizontal onSubmit={this.handleRegistration}>
+									<FormGroup controlId="formHorizontalName" validationState={this.state.nameError}>
+										<Col componentClass={ControlLabel} sm={2}>
+											Name
+										</Col>
+										<Col sm={6}>
+											<FormControl type="text" name="Name" placeholder="Name" />
+										</Col>
+									</FormGroup>
+									<FormGroup controlId="formHorizontalName" validationState={this.state.emailError}>
+										<Col componentClass={ControlLabel} sm={2}>
+											Email
+										</Col>
+										<Col sm={6}>
+											<FormControl type="email" name="email" placeholder="Email" />
+										</Col>
+									</FormGroup>
+									<FormGroup controlId="formHorizontalName">
+										<Col componentClass={ControlLabel} sm={2}>
+											Username
+										</Col>
+										<Col sm={6}>
+											<FormControl type="text" name="username" placeholder="Username"/>
+										</Col>
+									</FormGroup>
+									<FormGroup controlId="formHorizontalName">
+										<Col componentClass={ControlLabel} sm={2}>
+											Password
+										</Col>
+										<Col sm={6}>
+											<FormControl type="password" name="password" placeholder="Password" />
+										</Col>
+									</FormGroup>
+									<FormGroup controlId="formHorizontalName">
+										<Col componentClass={ControlLabel} sm={2}>
+											Occupation
+										</Col>
+										<Col sm={6}>
+											<FormControl type="text" name="occupation" placeholder="Occupation" />
+										</Col>
+									</FormGroup>
+									<FormGroup controlId="formHorizontalName">
+										<Col componentClass={ControlLabel} sm={2}>
+											About
+										</Col>
+										<Col sm={6}>
+											<FormControl type="text" name="state" placeholder="About" />
+										</Col>
+									</FormGroup>
+									<FormGroup controlId="formHorizontalName">
+										<Col componentClass={ControlLabel} sm={2}>
+											Location
+										</Col>
+										<Col sm={6}>
+											<FormControl type="text" name="state" placeholder="Location" />
+										</Col>
+									</FormGroup>
+									<FormGroup>
+										<Col smOffset={2} sm={6}>
+											<Button className="button" bsStyle="primary" bsSize="small" type="submit">
+												Register
+											</Button>
+										</Col>
+									</FormGroup>
+									
+								</Form>
+							</Col>
 						
 					</Col> 
 				</Grid> 
