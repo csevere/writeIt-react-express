@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d65a446-ab4d-4f9e-8145-ea379d42d1ad" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/routes/index.js" afterPath="$PROJECT_DIR$/backend/routes/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/App.js" afterPath="$PROJECT_DIR$/frontend/src/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/components/Critique.js" afterPath="$PROJECT_DIR$/frontend/src/components/Critique.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/components/Synopsis.js" afterPath="$PROJECT_DIR$/frontend/src/components/Synopsis.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,8 +22,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10369">
-              <caret line="789" column="5" lean-forward="true" selection-start-line="789" selection-start-column="5" selection-end-line="789" selection-end-column="5" />
+            <state relative-caret-position="-2141">
+              <caret line="847" column="20" lean-forward="false" selection-start-line="847" selection-start-column="20" selection-end-line="847" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -33,11 +32,10 @@
       <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="71" column="67" lean-forward="false" selection-start-line="71" selection-start-column="67" selection-end-line="71" selection-end-column="67" />
+            <state relative-caret-position="-631">
+              <caret line="19" column="64" lean-forward="false" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
               <folding>
-                <element signature="e#280#327#0" expanded="true" />
-                <element signature="e#1300#1352#0" expanded="true" />
+                <element signature="e#1367#1419#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -46,30 +44,8 @@
       <file leaf-file-name="Chapters.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/components/Chapters.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tChapterBoard.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/tester/display-info/tChapterBoard.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Critique.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/components/Critique.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="111" column="35" lean-forward="true" selection-start-line="111" selection-start-column="35" selection-end-line="111" selection-end-column="35" />
+            <state relative-caret-position="979">
+              <caret line="157" column="0" lean-forward="false" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="72" />
               <folding>
                 <element signature="e#342#378#0" expanded="true" />
               </folding>
@@ -77,11 +53,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tCritiqueBoard.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frontend/src/tester/display-info/tCritiqueBoard.js">
+      <file leaf-file-name="tChapterBoard.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/tester/display-info/tChapterBoard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="52" column="50" lean-forward="true" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
+            <state relative-caret-position="126">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Synopsis.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/components/Synopsis.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2512">
+              <caret line="284" column="80" lean-forward="true" selection-start-line="284" selection-start-column="80" selection-end-line="284" selection-end-column="80" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tSynopsisBoard.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/src/tester/display-info/tSynopsisBoard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="48" column="38" lean-forward="true" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
               <folding>
                 <element signature="e#42#80#0" expanded="true" />
               </folding>
@@ -130,7 +128,6 @@
         <option value="$PROJECT_DIR$/frontend/src/tester/tNotePad.js" />
         <option value="$PROJECT_DIR$/frontend/src/tester/display-info/tChapterDisplay.js" />
         <option value="$PROJECT_DIR$/frontend/src/tester/display-info/ChapterDisplay.js" />
-        <option value="$PROJECT_DIR$/frontend/src/components/Synopsis.js" />
         <option value="$PROJECT_DIR$/frontend/src/tester/display-info/tChapterBoard.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/Chapters.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/Plot.js" />
@@ -140,10 +137,12 @@
         <option value="$PROJECT_DIR$/frontend/src/components/NotePad.js" />
         <option value="$PROJECT_DIR$/frontend/src/tester/display-info/tNotePadBoard.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/UserProfile.js" />
-        <option value="$PROJECT_DIR$/frontend/src/App.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/Critique.js" />
-        <option value="$PROJECT_DIR$/backend/routes/index.js" />
         <option value="$PROJECT_DIR$/frontend/src/tester/display-info/tCritiqueBoard.js" />
+        <option value="$PROJECT_DIR$/frontend/src/components/Synopsis.js" />
+        <option value="$PROJECT_DIR$/frontend/src/App.js" />
+        <option value="$PROJECT_DIR$/backend/routes/index.js" />
+        <option value="$PROJECT_DIR$/frontend/src/tester/display-info/tSynopsisBoard.js" />
       </list>
     </option>
   </component>
@@ -465,7 +464,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80118000" />
+    <option name="totallyTimeSpent" value="82392000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="716" extended-state="0" />
@@ -500,13 +499,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/src/containers/Register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="71" column="46" lean-forward="false" selection-start-line="71" selection-start-column="46" selection-end-line="71" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-452">
@@ -542,8 +534,7 @@
         <state relative-caret-position="330">
           <caret line="41" column="66" lean-forward="false" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
           <folding>
-            <element signature="e#280#327#0" expanded="true" />
-            <element signature="e#1300#1352#0" expanded="true" />
+            <element signature="e#1367#1419#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -757,13 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/Synopsis.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="178" column="113" lean-forward="false" selection-start-line="178" selection-start-column="113" selection-end-line="178" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/tester/tNotePad.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
@@ -850,32 +834,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/App.js">
+    <entry file="file://$PROJECT_DIR$/frontend/src/tester/display-info/tCritiqueBoard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="71" column="67" lean-forward="false" selection-start-line="71" selection-start-column="67" selection-end-line="71" selection-end-column="67" />
+        <state relative-caret-position="483">
+          <caret line="52" column="50" lean-forward="true" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
           <folding>
-            <element signature="e#280#327#0" expanded="true" />
-            <element signature="e#1300#1352#0" expanded="true" />
+            <element signature="e#42#80#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/tester/display-info/tChapterBoard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/Chapters.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -889,18 +854,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/routes/index.js">
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/Chapters.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10369">
-          <caret line="789" column="5" lean-forward="true" selection-start-line="789" selection-start-column="5" selection-end-line="789" selection-end-column="5" />
+        <state relative-caret-position="979">
+          <caret line="157" column="0" lean-forward="false" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="72" />
+          <folding>
+            <element signature="e#342#378#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/tester/display-info/tChapterBoard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-631">
+          <caret line="19" column="64" lean-forward="false" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
+          <folding>
+            <element signature="e#1367#1419#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/Synopsis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2512">
+          <caret line="284" column="80" lean-forward="true" selection-start-line="284" selection-start-column="80" selection-end-line="284" selection-end-column="80" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/tester/display-info/tCritiqueBoard.js">
+    <entry file="file://$PROJECT_DIR$/backend/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="52" column="50" lean-forward="true" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
+        <state relative-caret-position="-2141">
+          <caret line="847" column="20" lean-forward="false" selection-start-line="847" selection-start-column="20" selection-end-line="847" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/tester/display-info/tSynopsisBoard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="48" column="38" lean-forward="true" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
           <folding>
             <element signature="e#42#80#0" expanded="true" />
           </folding>

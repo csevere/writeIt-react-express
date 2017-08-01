@@ -17,6 +17,7 @@ import tPlotBoard from './tester/display-info/tPlotBoard';
 import tCharacterBoard from './tester/display-info/tCharacterBoard';
 import tCritiqueBoard from './tester/display-info/tCritiqueBoard';
 import tNotePadBoard from './tester/display-info/tNotePadBoard';
+import tSynopsisBoard from './tester/display-info/tSynopsisBoard';
 import Critique from './components/Critique';
 import tPicture from './tester/tPicture'; 
 import NotePad from './components/NotePad';
@@ -62,6 +63,7 @@ class App extends Component {
               <Route exact path="/character/:book" component= {Character} />
               <Route exact path="/charboard/:book" component={tCharacterBoard} />
               <Route exact path="/synopsis/:book" component= {Synopsis} />
+              <Route exact path="/synopboard/:book" component={tSynopsisBoard} />
               <Route exact path="/plot/:book" component = {Plot} />
               <Route exact path="/plotboard/:book" component={tPlotBoard} />
               <Route exact path="/chapters/:book" component={Chapters} />
