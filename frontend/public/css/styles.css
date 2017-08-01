@@ -752,12 +752,14 @@ h3 {
 /* line 33, ../../compass/sass/_register.scss */
 .register-wrapperb h2 {
   font-size: 32px;
+  margin-left: 0em !important;
+  padding-bottom: 0em !important;
 }
-/* line 37, ../../compass/sass/_register.scss */
+/* line 39, ../../compass/sass/_register.scss */
 .register-wrapperb .form-horizontal {
   margin-top: 2em;
 }
-/* line 41, ../../compass/sass/_register.scss */
+/* line 43, ../../compass/sass/_register.scss */
 .register-wrapperb .btn {
   position: relative;
   top: 0em;
@@ -1824,12 +1826,14 @@ textarea {
 /* line 33, ../../compass/sass/_login.scss */
 .register-wrapper h2 {
   font-size: 32px;
+  margin-left: 0em !important;
+  padding-bottom: 0em !important;
 }
-/* line 37, ../../compass/sass/_login.scss */
+/* line 40, ../../compass/sass/_login.scss */
 .register-wrapper .form-horizontal {
-  margin-top: -7em;
+  margin-top: 2em;
 }
-/* line 41, ../../compass/sass/_login.scss */
+/* line 44, ../../compass/sass/_login.scss */
 .register-wrapper .btn {
   position: relative;
   top: 0em;
