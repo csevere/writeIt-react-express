@@ -168,6 +168,39 @@ router.get('/characters', (req, res)=>{
 });
 
 
+router.get('/queryletter', (req, res)=>{
+
+    var id = req.query.id;
+    console.log('here');
+    console.log(id);
+    var username = req.query.username;
+    console.log(username)
+    var book = req.query.book;
+    console.log(book);
+    var deleteId = req.query.action;
+    console.log(deleteId);
+
+
+    if(id !== '' && id !==undefined){
+        var selectQueryLetterQuery = `SELECT * FROM query_letter WHERE id = ${id}`
+    }else if(book !== undefined  && username !== undefined){
+        var selectQueryLetterQuery = `SELECT * FROM query_letter WHERE username = '${username}' AND book = '${book}'`
+    }else if(deleteId !== undefined){
+        var selectQueryLetterQuery = `DELETE FROM query_letter WHERE id = ${deleteId}`
+    }
+
+
+    connection.query(selectQueryLetterQuery, (error, results)=>{
+        console.log(selectQueryLetterQuery);
+        if(error){
+            throw error
+        }else{
+            res.json(results);
+        }
+    });
+});
+
+
 router.get('/plot', (req, res)=>{
 
     var id = req.query.id;
@@ -906,41 +939,65 @@ router.post('/queryletter', (req,res)=>{
     var username = req.body.username;
     var book = req.body.book;
 
-    var queryLetterQuery = `SELECT * FROM query_letter WHERE username = ? AND book = ?`;
-   	var insertQueryLetterQuery = `INSERT INTO query_letter
+    console.log('==========')
+    var id = req.body.id;
+    console.log(id);
+
+    if(id!==''){
+        var updateQueryLetterQuery = `UPDATE query_letter SET
+                query_clarity='${query_clarity}', query_boring='${query_boring}', query_balance='${query_balance}', query_stakes='${query_stakes}', query_advance='${query_advance}',
+                query_resolve='${query_resolve}', query_voice='${query_voice}', query_action='${query_action}', query_personality='${query_personality}', query_romance='${query_romance}' WHERE id='${id}';`;
+        connection.query(updateQueryLetterQuery,(error3,results3)=>{
+            console.log('update')
+            if(error3) throw error3;
+            var queryLetterArray = [query_clarity,query_boring,query_balance,query_stakes,query_advance,query_resolve,query_voice,
+                query_action,query_personality,query_romance];
+            res.json({
+                msg:'queryLetterInserted',
+                queryLetterData: queryLetterArray
+            })
+        })
+
+    }else{
+        var queryLetterQuery = `SELECT * FROM query_letter WHERE username = ? AND book = ? AND query_clarity = ?`;
+        var insertQueryLetterQuery = `INSERT INTO query_letter
     	(query_clarity,query_boring,query_balance,query_stakes,query_advance,query_resolve,query_voice,
     	query_action,query_personality,query_romance,username,book) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)`;
 
-    connection.query(queryLetterQuery,[username,book],(error,results)=>{
-        if(error) throw error;
-        if(results.length === 0){
-            console.log('q-letter-insert');
-            connection.query(insertQueryLetterQuery, [query_clarity,query_boring,query_balance,query_stakes,query_advance,query_resolve,query_voice,
-    		query_action,query_personality,query_romance,username,book],(error2,results2)=>{
-                if(error2) throw error2;
-                var queryLetterArray = [query_clarity,query_boring,query_balance,query_stakes,query_advance,query_resolve,query_voice,
-    			query_action,query_personality,query_romance];
-                res.json({
-                    msg:'queryLetterInserted',
-                    queryLetterData: queryLetterArray
+        connection.query(queryLetterQuery,[username,book, query_clarity],(error,results)=>{
+            if(error) throw error;
+            if(results.length === 0){
+                console.log('q-letter-insert');
+                connection.query(insertQueryLetterQuery, [query_clarity,query_boring,query_balance,query_stakes,query_advance,query_resolve,query_voice,
+                    query_action,query_personality,query_romance,username,book],(error2,results2)=>{
+                    if(error2) throw error2;
+                    var queryLetterArray = [query_clarity,query_boring,query_balance,query_stakes,query_advance,query_resolve,query_voice,
+                        query_action,query_personality,query_romance];
+                    res.json({
+                        msg:'queryLetterInserted',
+                        queryLetterData: queryLetterArray
+                    })
                 })
-            })
-        }else{
-            var updateQueryLetterQuery = `UPDATE query_letter SET
+            }else{
+                var updateQueryLetterQuery = `UPDATE query_letter SET
                 query_clarity='${query_clarity}', query_boring='${query_boring}', query_balance='${query_balance}', query_stakes='${query_stakes}', query_advance='${query_advance}',
                 query_resolve='${query_resolve}', query_voice='${query_voice}', query_action='${query_action}', query_personality='${query_personality}', query_romance='${query_romance}' WHERE username='${username}' AND book='${book}';`;
-            connection.query(updateQueryLetterQuery,(error3,results3)=>{
-                console.log('update')
-                if(error3) throw error3;
-                var queryLetterArray = [query_clarity,query_boring,query_balance,query_stakes,query_advance,query_resolve,query_voice,
-    			query_action,query_personality,query_romance];
-                res.json({
-                    msg:'queryLetterInserted',
-                    queryLetterData: queryLetterArray
+                connection.query(updateQueryLetterQuery,(error3,results3)=>{
+                    console.log('update')
+                    if(error3) throw error3;
+                    var queryLetterArray = [query_clarity,query_boring,query_balance,query_stakes,query_advance,query_resolve,query_voice,
+                        query_action,query_personality,query_romance];
+                    res.json({
+                        msg:'queryLetterInserted',
+                        queryLetterData: queryLetterArray
+                    })
                 })
-            })
-        }
-    })
+            }
+        })
+
+    }
+
+
 
 });
 
@@ -1056,37 +1113,6 @@ router.post('/profilepic', upload.single('fileUploaded'), function(req, res, nex
 	});
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
