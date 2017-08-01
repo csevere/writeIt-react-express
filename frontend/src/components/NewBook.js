@@ -97,24 +97,24 @@ class NewBook extends Component{
 									<ControlLabel>What is the genre? </ControlLabel>
 									<FormControl id="genre" componentClass="select" placeholder="select">
 										<option value="Select">Select </option>
-										<option value="action">Action </option>
-										<option value="adventure">Adventure </option>
-										<option value="chicklit">ChickLit</option>
-										<option value="classics">Classics </option>
-										<option value="fanfiction">FanFiction </option>
-										<option value="fantasy">Fantasy </option>
-										<option value="general-fiction">GeneralFiction </option>
-										<option value="historical-fiction">HistoricalFiction </option>
-										<option value="horror">Horror</option>
-										<option value="mystery/thriller">Mystery/Thriller</option>
-										<option value="nonfiction">NonFiction </option>
-										<option value="paranormal">Paranormal</option>
-										<option value="random">Random </option>
-										<option value="romance">Romance </option>
-										<option value="sciencefiction">ScienceFiction</option>
-										<option value="shortstory">ShortStory</option>
-										<option value="spiritual">Spiritual</option>
-										<option value="teenfiction">TeenFiction</option>
+										<option value="Action">Action </option>
+										<option value="Adventure">Adventure </option>
+										<option value="ChickLit">ChickLit</option>
+										<option value="Classics">Classics </option>
+										<option value="FanFiction">FanFiction </option>
+										<option value="Fantasy">Fantasy </option>
+										<option value="General-Fiction">GeneralFiction </option>
+										<option value="Historical-fiction">HistoricalFiction </option>
+										<option value="Horror">Horror</option>
+										<option value="Mystery/Thriller">Mystery/Thriller</option>
+										<option value="Nonfiction">NonFiction </option>
+										<option value="Paranormal">Paranormal</option>
+										<option value="Random">Random </option>
+										<option value="Romance">Romance </option>
+										<option value="Science Fiction">ScienceFiction</option>
+										<option value="Shortstory">ShortStory</option>
+										<option value="Spiritual">Spiritual</option>
+										<option value="Teen Fiction">TeenFiction</option>
 										<option value="Vampire">Vampire</option>
 										<option value="other">...</option>	
 									</FormControl>	

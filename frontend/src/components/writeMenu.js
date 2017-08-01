@@ -2,12 +2,60 @@ import React, {Component} from 'react';
 import { Link} from 'react-router-dom';
 import { Grid, Row, Col, FormGroup, FormControl, Radio } from 'react-bootstrap';
 import About from './About';
-import ScrollableAnchor from 'react-scrollable-anchor'
+import  {bindActionCreators} from 'redux';
+import ScrollableAnchor from 'react-scrollable-anchor';
+import {connect} from 'react-redux';
+import $ from 'jquery';
 
 
 class writeMenu extends Component{
+	 constructor(props) {
+			super(props);
+			this.state = {
+				bookData: {
+					title: "",
+					genre: "",
+					word_count: "",
+					target_date: ""
+				}
+			}
+			
+		}
+
+	    componentDidMount(){
+
+        //console.log(this.props.location.search);
+        
+        	var username = this.props.registerResponse.name;
+        	var book = this.props.match.params.book;
+            $.getJSON(`http://localhost:5000/book?username=${username}&book=${book}`, (serverData)=>{
+                // log the JSON response from Express
+                console.log(serverData);
+                this.setState({
+                    bookData: serverData.bookData[0]
+                })
+            })
+        }
+
+
+
+
+    
  
 	render(){
+
+
+		var bookTitle = this.state.bookData.title;
+		var bookGenre = this.state.bookData.genre;	
+		var bookWordCount = this.state.bookData.word_count;
+		var bookTargetDate = this.state.bookData.target_date;
+
+		
+
+
+
+		var book = this.props.match.params.book;	
+
 		console.log(this.props.match.params.book);
 		var character = '/character/' + this.props.match.params.book;
         var plot = '/plot/' + this.props.match.params.book;
@@ -85,9 +133,10 @@ class writeMenu extends Component{
 							<Row>
 								<div className = "stats"> STATS:</div> 
 								<ul>
-									<li><div className="genre"><h3>Genre: {}</h3></div></li>
-									<li><div className="wordcount"><h3>Word Count: {} </h3></div></li>
-									<li><div className="t-date"><h3>Target Date: {}</h3></div></li>
+									<li><div className="genre"><h3>Title: {book}</h3></div></li>
+									<li><div className="genre"><h3>Genre: {bookGenre}</h3></div></li>
+									<li><div className="wordcount"><h3>Word Count: {bookWordCount} </h3></div></li>
+									<li><div className="t-date"><h3>Target Date: {bookTargetDate}</h3></div></li>
 
 								</ul>
 
@@ -123,4 +172,15 @@ class writeMenu extends Component{
 	}
 }
 
-export default writeMenu; 
+function mapStateToProps(state){
+    return{
+        
+        registerResponse: state.registerReducer,
+        newBookResponse: state.newBookReducer
+
+    }
+}
+
+//export default writeMenu; 
+
+export default connect(mapStateToProps,null)(writeMenu);
