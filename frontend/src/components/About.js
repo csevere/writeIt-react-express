@@ -49,7 +49,7 @@ class About extends Component{
 					</Row>
 						<Row className="about-row2">
 						<Col xs={4}>
-							<div class="organization">
+							<div className="organization">
 				        		<h3> Organization </h3><hr id='organization' />
 				        		<p>
 				        		Some people write best without structure, freely typing words from beginning to end.  

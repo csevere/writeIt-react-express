@@ -56,30 +56,30 @@
   cursor: pointer;
 }
 
-/* line 70, ../../compass/sass/_navbar.scss */
+/* line 66, ../../compass/sass/_navbar.scss */
 .float-right {
   float: right;
   font-size: 1em;
 }
 @media screen and (min-width: 1200px) {
-  /* line 70, ../../compass/sass/_navbar.scss */
+  /* line 66, ../../compass/sass/_navbar.scss */
   .float-right {
     margin-left: 8em;
   }
 }
 @media screen and (min-width: 767px) {
-  /* line 70, ../../compass/sass/_navbar.scss */
+  /* line 66, ../../compass/sass/_navbar.scss */
   .float-right {
     margin-right: 7em;
   }
 }
 @media screen and (min-width: 1732px) {
-  /* line 70, ../../compass/sass/_navbar.scss */
+  /* line 66, ../../compass/sass/_navbar.scss */
   .float-right {
     margin-right: -8em;
   }
 }
-/* line 92, ../../compass/sass/_navbar.scss */
+/* line 88, ../../compass/sass/_navbar.scss */
 .float-right .login, .float-right .signup {
   border: 3px solid #fff;
   padding: 7px;
@@ -87,24 +87,24 @@
   font-family: 'Heebo', sans-serif;
   margin-top: 7px;
 }
-/* line 101, ../../compass/sass/_navbar.scss */
+/* line 97, ../../compass/sass/_navbar.scss */
 .float-right .login {
   background-color: #fff;
   color: #2e6da4 !important;
   margin-right: 1em;
 }
-/* line 109, ../../compass/sass/_navbar.scss */
+/* line 105, ../../compass/sass/_navbar.scss */
 .float-right .login:hover {
   background: #2e6da4;
   color: #fff !important;
   cursor: pointer;
 }
-/* line 115, ../../compass/sass/_navbar.scss */
+/* line 111, ../../compass/sass/_navbar.scss */
 .float-right .signup {
   color: #fff;
   margin-right: 1em;
 }
-/* line 120, ../../compass/sass/_navbar.scss */
+/* line 116, ../../compass/sass/_navbar.scss */
 .float-right .signup:hover {
   background-color: #fff;
   color: #2e6da4;
