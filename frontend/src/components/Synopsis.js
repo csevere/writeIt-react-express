@@ -67,7 +67,7 @@ class Synopsis extends Component{
 
         var username = this.props.registerResponse.name;
         var book = this.props.match.params.book;
-        console.log(book);
+        var id = this.props.location.search.slice(4);
 
 
 
@@ -114,7 +114,8 @@ class Synopsis extends Component{
                 synop_theme: synop_theme,
                 synop_message: synop_message,
                 username: username,
-                book: book
+                book: book,
+                id: id
 
             });
             this.props.history.push(`/write/${book}`);
@@ -123,16 +124,23 @@ class Synopsis extends Component{
     }
 
     componentDidMount(){
-        $.getJSON(`http://localhost:5000/synopsis?username=${this.props.registerResponse.name}&book=${this.props.match.params.book}`, (serverData)=>{
-            // log the JSON response from Express
-            console.log(serverData.synopsisData);
-            this.setState({
-                synopsisData: serverData.synopsisData
+
+        //console.log(this.props.location.search);
+        if(this.props.location.search.length !== 0){
+            var id = this.props.location.search.slice(4);
+            console.log(id);
+            $.getJSON(`http://localhost:5000/synopsis?id=${id}`, (serverData)=>{
+                // log the JSON response from Express
+                //console.log(serverData);
+                this.setState({
+                    synopsisData: serverData[0]
+                })
             })
-        });
+        }
 
 
-        console.log(this.state.synopsisData)
+
+
     }
 
 
@@ -165,6 +173,7 @@ class Synopsis extends Component{
 
 
         var writeMenu = '/write/' + this.props.match.params.book;
+        var synopsisBoard = '/synopBoard/' + this.props.match.params.book;
         return(
             <div>
                 <Grid className = "writemenucat text-center ch-forms">
@@ -295,7 +304,7 @@ class Synopsis extends Component{
 
                             <Grid className = "fourth-row-right">
                                 <Col md = {3} className = "col-md-offset-8">
-                                    <Link to = "/sboard" className = "sboard">
+                                    <Link to = {synopsisBoard} className = "sboard">
                                         <img src = "https://cdn4.iconfinder.com/data/icons/office-34/256/10-512.png"/>
                                         <div>View Synopsis</div>
                                     </Link>

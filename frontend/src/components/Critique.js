@@ -9,13 +9,30 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import CritiqueAction from '../actions/CritiqueAction';
+import $ from 'jquery';
 
 
 class Critique extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            // registerMessage: "",
+            critiqueData: {
+                critique_clarity: '',
+                critique_boring: '',
+                critique_balance: '',
+                critique_advance: '',
+                critique_resolve: '',
+                critique_voice: '',
+                critique_action: '',
+                critique_personality: '',
+                critique_romance: '',
+                critique_conflict: '',
+                critique_limit: '',
+                critique_pov: '',
+                critique_sent: '',
+                critique_lang: '',
+                critique_element: '',
+            }
             // nameError: null,
             // emailError: null,
             // formError: false
@@ -47,6 +64,7 @@ class Critique extends Component{
 
         var username = this.props.registerResponse.name;
         var book = this.props.match.params.book;
+        var id = this.props.location.search.slice(4);
 
 
         // var username = this.props.registerResponse.name;
@@ -92,11 +110,32 @@ class Critique extends Component{
                 critique_lang: critique_lang,
                 critique_element: critique_element,
                 username: username,
-                book: book
+                book: book,
+                id: id
 
             });
             this.props.history.push(`/write/${book}`);
         }
+
+    }
+
+    componentDidMount(){
+
+        //console.log(this.props.location.search);
+        if(this.props.location.search.length !== 0){
+            var id = this.props.location.search.slice(4);
+            console.log(id);
+            $.getJSON(`http://localhost:5000/critique?id=${id}`, (serverData)=>{
+                // log the JSON response from Express
+                //console.log(serverData);
+                this.setState({
+                    critiqueData: serverData[0]
+                })
+            })
+        }
+
+
+
 
     }
 
@@ -108,8 +147,27 @@ class Critique extends Component{
             speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1,
-        }
+        };
+
+        var critique_clarity = this.state.critiqueData.critique_clarity;
+        var critique_boring = this.state.critiqueData.critique_boring;
+        var critique_balance = this.state.critiqueData.critique_balance;
+        var critique_advance = this.state.critiqueData.critique_advance;
+        var critique_resolve = this.state.critiqueData.critique_resolve;
+        var critique_voice = this.state.critiqueData.critique_voice;
+        var critique_action = this.state.critiqueData.critique_action;
+        var critique_personality = this.state.critiqueData.critique_personality;
+        var critique_romance = this.state.critiqueData.critique_romance;
+        var critique_conflict = this.state.critiqueData.critique_conflict;
+        var critique_limit = this.state.critiqueData.critique_limit;
+        var critique_pov = this.state.critiqueData.critique_pov;
+        var critique_sent = this.state.critiqueData.critique_sent;
+        var critique_lang = this.state.critiqueData.critique_lang;
+        var critique_element = this.state.critiqueData.critique_element;
+
+
         var writeMenu = '/write/' + this.props.match.params.book;
+        var critBoard = '/critboard/' + this.props.match.params.book;
         //console.log(this.props)
         return(
             <div>
@@ -238,7 +296,7 @@ class Critique extends Component{
 
                             <Grid className = "fourth-row-right">
                                 <Col md = {3} className = "col-md-offset-8">
-                                    <Link to = "/critboard" className = "critboard">
+                                    <Link to = {critBoard} className = "critboard">
                                         <img src = "https://cdn4.iconfinder.com/data/icons/office-34/256/10-512.png"/>
                                         <div>View Critique</div>
                                     </Link>

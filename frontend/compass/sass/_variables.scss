@@ -64,7 +64,9 @@ $default-text-color: $black !default;
 
 // MEDIA QUERIES
 
-$break-small: 360px;
+
+$break-xsmall: 320px; 
+$break-small: 414px;
 $break-medium: 767px; 
 $break-lg-medium: 991px; 
 $break-large: 1200px; 

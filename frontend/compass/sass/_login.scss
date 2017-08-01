@@ -1,0 +1,58 @@
+@import 'variables';
+
+.register-wrapper{
+	background-image: url('https://static.pexels.com/photos/34627/pexels-photo.jpg');
+	position: absolute;	
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center; 
+	top: 0;
+	left:0;
+	margin: 0; 
+	z-index: -1; 
+	height: 100%;
+	width: 100%; 
+
+
+	.login{
+		border: 2px solid $white-smoke;
+		margin-top: 13em; 
+		background-color: $white-smoke;
+		color: $independence; 
+		padding: 35px; 
+		border-radius: 5px; 
+		box-shadow: 6px 5px 11px 1px #333;
+
+
+	}
+
+	h2{
+		font-size: 32px; 
+		margin-left: 0em !important; 
+    	padding-bottom: 0em !important;
+    	line-height: 0px;  
+   	
+	}
+
+	.form-horizontal{
+		margin-top: 2em; 
+	}
+
+	.btn{
+		position: relative;
+	    top: 0em;
+	    left:0em;
+	    right: 0em;
+	    margin: auto; 
+	    width: 100%;
+	    font-size: 15px; 
+
+	}
+	 
+
+
+}
