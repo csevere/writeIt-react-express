@@ -93,7 +93,7 @@ class Register extends Component{
 							<h3>Write, organize, and interact with other writers on writeIT.</h3>
 						</div>
 						<h4>{this.state.registerMessage}</h4>
-							<Col md = {8} mdOffset ={1}>
+							<Col md = {12} mdOffset ={1}>
 								<Form horizontal onSubmit={this.handleRegistration}>
 									<FormGroup controlId="formHorizontalName" validationState={this.state.nameError}>
 										<Col componentClass={ControlLabel} sm={2}>
