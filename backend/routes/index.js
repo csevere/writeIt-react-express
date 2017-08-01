@@ -255,9 +255,15 @@ router.get('/user', (req,res)=>{
 
 router.get('/book', (req,res)=>{
     var username = req.query.username;
-    console.log('email')
+    console.log('=========')
+    var book = req.query.book;
+    console.log(book);
+    console.log('here')
+
+    if(book === undefined){
     var bookDataQuery = `SELECT * FROM book WHERE username= '${username}'` ;
     connection.query(bookDataQuery, (error, response)=>{
+    	console.log('fired 1')
         if(error){
             throw error;
         }else{
@@ -268,6 +274,25 @@ router.get('/book', (req,res)=>{
         }
 
     })
+
+    }else{
+    	var bookDataQuery = `SELECT * FROM book WHERE username= '${username}' AND title='${book}'` ;
+    	connection.query(bookDataQuery, (error, response)=>{
+    		console.log('fired 2')
+        	if(error){
+            	throw error;
+        	}else{
+        		console.log(response);
+            	res.json({
+                	bookData: response
+            	})
+        	}
+
+    	})
+
+
+    }
+
 
 });
 
