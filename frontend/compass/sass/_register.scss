@@ -15,29 +15,91 @@
 	left:0;
 	margin: 0; 
 	z-index: -1; 
-	height: 100%;
+	height: 115%;
 	width: 100%; 
+	@media screen and(max-width:$break-lg-medium){	
+		width: 110%;
+    		
+	} 
+
+	@media screen and(max-width:$break-small){	
+		height: 156%;  
+			
+	} 
+
+	@media screen and(max-width:$break-xsmall){	
+		height: 180%;  
+			
+	} 
 
 
 	.register{
 		border: 2px solid $white-smoke;
-		margin-top: 13em; 
+		margin-top: 7em; 
 		background-color: $white-smoke;
 		color: $independence; 
 		padding: 35px; 
 		border-radius: 5px; 
 		box-shadow: 6px 5px 11px 1px #333;
 
+		@media screen and(max-width:$break-lg-medium){	
+			width: 73%;
+    		margin-left: 5em;
+			
+		} 
+
+		@media screen and(max-width:$break-medium){	
+			width: 70%;
+			margin-top: 10em; 
+	
+		}
+
+		@media screen and(max-width:$break-small){	
+			margin-left: 0em; 
+			width: 100%; 
+			
+		}  
+
 	}
 
 	h2{
 		font-size: 32px;
 		margin-left: 0em !important;
-    	padding-bottom: 0em !important; 
+    	padding-bottom: 0em !important;
+    	line-height: 0px; 
+    	@media screen and(max-width:$break-small){	
+			font-size: 29px; 
+			
+		} 
+
+		@media screen and(max-width:$break-xsmall){	
+			font-size: 24px; 
+			
+		}  
+	}
+
+	h3{
+		font-size: 21px;
+		
 	}
 
 	.form-horizontal{
 		margin-top: 2em; 
+		@media screen and(max-width:$break-large){	
+			margin-top: 1em; 
+			width: 144%;
+		}
+
+		@media screen and(min-width:$break-large){	
+			width: 138% 
+		} 
+
+		@media screen and(max-width:$break-medium){	
+			width: 100%;
+			
+		} 
+
+
 	}
 
 	.btn{
@@ -49,10 +111,15 @@
 	    width: 100%;
 	    font-size: 15px; 
 
-	}
-	 
+	}	 
 
 }
+
+
+
+
+
+
 
 		
 

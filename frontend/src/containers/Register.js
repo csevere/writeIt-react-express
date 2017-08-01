@@ -88,12 +88,12 @@ class Register extends Component{
 		return(
 			<div>
 				<Grid className = "register-wrapperb">
-					<Col md = {5} className = "register col-md-offset-4">
+					<Col md = {5} mdOffset = {3} className = "register">
 						<div className = "text-center"><h2>Sign up for writeIT</h2><br/>
 							<h3>Write, organize, and interact with other writers on writeIT.</h3>
 						</div>
 						<h4>{this.state.registerMessage}</h4>
-							<Col md = {12} mdOffset ={1}>
+							<Col md = {12}>
 								<Form horizontal onSubmit={this.handleRegistration}>
 									<FormGroup controlId="formHorizontalName" validationState={this.state.nameError}>
 										<Col componentClass={ControlLabel} sm={2}>
