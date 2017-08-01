@@ -20,7 +20,7 @@ h2{
 	padding-bottom: 2em; 
 	margin-top: -47.2em; 
 	z-index: -1; 
-	width:130%;
+	width:100%;
 	overflow-x:hidden;
 	min-height: 100%;
 	overflow: scroll; 
@@ -33,6 +33,11 @@ h2{
 
 	}
 
+	@media screen and(min-width:$break-xlarge){
+		margin-top: -44.2em;		 
+					
+	}  
+
 
 	p{
 	margin-left:0em;
@@ -40,18 +45,18 @@ h2{
 	font-family:'BenchNine';
 	}
 
-<<<<<<< HEAD
+
 	.about-row1, .about-row2{
 		word-spacing: 3px; 
-=======
-.about-row1{
-	margin-top: 20em;
-    margin-left: -33em;
-    border: 1px solid red;
-    height: 50%;
-    width: 90%;
-}
->>>>>>> origin/master
+
+	.about-row1{
+		margin-top: 20em;
+	    margin-left: -33em;
+	    border: 1px solid red;
+	    height: 50%;
+	    width: 90%;
+	}
+
 
 	}
 
@@ -65,7 +70,7 @@ h2{
 
 	.about-row2{
 	    margin-top: 48em;
-	    margin-left: -88em;
+	    margin-left: -84em;
 	    width: 100%;
 	    // border: 1px solid blue;
 	}

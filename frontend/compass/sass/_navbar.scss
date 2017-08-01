@@ -71,10 +71,6 @@
 	float: right;
 	font-size: 1em;
 
-	@media screen and(min-width:$break-xlarge){	
-		margin-right: -10em;
-				
-	} 
 
 	@media screen and(min-width:$break-large){	
 		margin-left: 8em;
@@ -82,6 +78,11 @@
 
 	@media screen and(min-width:$break-medium){	
 		margin-right: 7em;
+				
+	}
+
+	@media screen and(min-width:$break-xlarge){	
+		margin-right: -8em;
 				
 	}
 

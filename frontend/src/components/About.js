@@ -24,11 +24,15 @@ class About extends Component{
 				        		<h3> Simplicity </h3>
 				        		<hr id="simplicity" />
 				        		<p>
-				        		Writing a book can be an intimidating, complex endeavor.<br /> With writeIT, we give you simple tools to break the task into easy, manageable parts.<br />
-					        	You’ll spend more time creating your story rather than stressing out about how you’ll do it.<br />
-								Just think of writeIT as the bridge getting you from only thinking about a book idea to actually writing it. <br />
-								<br />If you’re already a seasoned writer, you’ll appreciate how writeIT simplifies your writing dashboard by putting the 
-								essential tools in one, easily-accessible place.
+				        		Writing a book can be an intimidating, complex endeavor.With writeIT, we give<br/> 
+				        		you simple tools to break the task into easy, manageable parts. You’ll spend<br/> 
+				        		more time creating your story rather than stressing out about how you’ll do it.</p>
+
+				        		<p>
+								Just think of writeIT as the bridge getting you from only thinking about a book<br/> 
+								idea to actually writing it. If you’re already a seasoned writer, you’ll appreciate<br/> 
+								how writeIT simplifies your writing dashboard by putting the essential tools in one,<br/>
+								easily-accessible place.
 				        		</p>
 				        	</div>
 				        </Col>
@@ -50,11 +54,11 @@ class About extends Component{
 				        		<p>
 				        		Some people write best without structure, freely typing words from beginning to end.  
 				        		And that’s totally cool! Others need organization.
-				        		 If you’re in the latter group, you’ll love writeIT for the way it helps you keep tabs<br />
-				        		  on essential components such as characters or the plot. <br />
+				        		If you’re in the latter group, you’ll love writeIT for the way it helps you keep tabs on essential components<br/> 
+				        		such as characters or the plot. <br/>
 
-				        		  <br />You’ll also find suggestions for critiquing other writers’ work and yours,<br />
-				        		   along with writing a query letter and the dreaded synopsis for literary agents. <br />
+								<br />You’ll also find suggestions for critiquing other writers’ work and yours, along with writing a query letter and<br/> 
+								the dreaded synopsis for literary agents. <br />
 				        		</p>
 				        	</div>
 				        </Col>
