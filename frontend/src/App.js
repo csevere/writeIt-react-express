@@ -57,16 +57,11 @@ class App extends Component {
               <Route exact path="/" component= {Home} /> 
               <Route exact path="/signup" component= {Register} />
               <Route exact path="/login" component= {Login} />
-<<<<<<< HEAD
+
               <Route exact path="/user" component= {UserProfile} />
               <Route exact path = "/otheruser" component = {tOtherUser}/>
-=======
-              <Route exact path="/write/:book" component= {writeMenu} />
-              <Route path = "/notepad/:book" component = {NotePad}/>
-             
->>>>>>> origin/master
 
-              <Route exact path="/write/:book" component= {writeMenu} />
+              <Route exact path="/write/:book" component= {writeMenu} />             
               <Route exact path="/newbook" component= {NewBook} />
               <Route exact path="/character/:book" component= {Character} />
               <Route exact path="/charboard/:book" component={tCharacterBoard} />

@@ -66,17 +66,9 @@ class NotePad extends Component{
 
     render(){
 
-<<<<<<< HEAD
-=======
-        const settings = {
-            dots: true,
-            infinite: false,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1
-        };
+
         console.log(this.props.match.params.book)
->>>>>>> origin/master
+
 
         var notepad = this.state.notePadData.notepad;
         var writeMenu = '/write/' + this.props.match.params.book;
