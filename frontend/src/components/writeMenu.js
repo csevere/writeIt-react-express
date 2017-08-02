@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link} from 'react-router-dom';
-import { Grid, Row, Col, FormGroup, FormControl, Radio } from 'react-bootstrap';
+import { Form, Grid, Row, Col, FormGroup, FormControl, Radio, Button } from 'react-bootstrap';
 import About from './About';
 import  {bindActionCreators} from 'redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
@@ -17,8 +17,11 @@ class writeMenu extends Component{
 					genre: "",
 					word_count: "",
 					target_date: ""
-				}
+				},
+				definition: [],
+				thesaurus: []
 			}
+			this.handleDict = this.handleDict.bind(this);
 			
 		}
 
@@ -37,6 +40,37 @@ class writeMenu extends Component{
             })
         }
 
+        handleDict(event){
+        	event.preventDefault();
+
+        	var input = document.getElementById('dict-input').value
+        	// console.log(input);
+        	// console.log(document.getElementById('dictionary').checked);
+        	// console.log(document.getElementById('thesaurus').checked);
+        	var dictRequest = document.getElementById('dictionary').checked;
+			var thesRequest = document.getElementById('thesaurus').checked;
+
+			
+
+			if(thesRequest){
+				$.getJSON(`http://api.wordnik.com:80/v4/word.json/${input}/relatedWords?useCanonical=false&
+				relationshipTypes=synonym&limitPerRelationshipType=10&api_key=bd7b9ca31317e1142010a015fb505cd1eea03a91c0d74beb9`, (serverData)=>{
+					console.log(serverData[0].words);
+					this.setState({
+                    	thesaurus: serverData[0].words
+                	})
+				})
+			}else if(dictRequest){
+				$.getJSON(`http://api.wordnik.com:80/v4/word.json/${input}/definitions?limit=200&includeRelated=false&
+				useCanonical=false&includeTags=false&api_key=bd7b9ca31317e1142010a015fb505cd1eea03a91c0d74beb9`,(serverData)=>{
+					console.log(serverData);
+					this.setState({
+                    	definition: serverData
+                	})
+				})
+			}
+        }
+
 
 
 
@@ -50,11 +84,32 @@ class writeMenu extends Component{
 		var bookWordCount = this.state.bookData.word_count;
 		var bookTargetDate = this.state.bookData.target_date;
 
-		
-
-
-
 		var book = this.props.match.params.book;	
+
+		var definition = this.state.definition;
+		
+		var synonymArray = [];
+		var definitionArray = [];
+
+		this.state.thesaurus.map((synonym, index)=>{
+			synonymArray.push(
+
+				<div>{synonym}</div>
+				)
+
+		});
+
+		this.state.definition.map((definition, index)=>{
+			definitionArray.push(
+
+				<div>{definition.partOfSpeech}: {definition.text}</div>
+				)
+
+		});
+
+
+
+
 
 		console.log(this.props.match.params.book);
 		var character = '/character/' + this.props.match.params.book;
@@ -140,27 +195,25 @@ class writeMenu extends Component{
 
 								</ul>
 
-								<form>
-
+								<Form onSubmit={this.handleDict}>
 									<FormGroup>
-										<FormControl type = "text" placeholder = "Enter text"/>
-									</FormGroup>
-
-
-									<FormGroup>
-
-										<Radio name = "radioGroup" inline>
+										<Radio id="dictionary" name="radioGroup" value="dictionary" inline>
 											<h4>Dictionary</h4>
 										</Radio>
 
-										<Radio name = "radioGroup" inline>
+										<Radio id="thesaurus" name="radioGroup" value="thesaurus" inline>
 											<h4>Thesaurus</h4> 
 										</Radio>
-
+										<Button className="btn-primary btn btn-book" type='submit'>Search</Button>
 									</FormGroup>
 
-								</form>
-
+									<FormGroup >
+										<FormControl id="dict-input" type = "text" placeholder = "Enter text"/>
+										
+									</FormGroup>
+								</Form>
+								{synonymArray}
+								{definitionArray}
 							</Row>
 						</div> 
 

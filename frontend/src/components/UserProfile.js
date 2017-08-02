@@ -10,7 +10,7 @@ import  {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import $ from 'jquery';
 import PostAction from '../actions/PostAction';
-import  {Timeline} from 'react-twitter-widgets'; 
+import  {Timeline} from '../../node_modules/react-twitter-widgets'; 
 // import UserProfileAction from '../actions/UserProfileAction';
 
 
@@ -27,7 +27,7 @@ class UserProfile extends Component{
             bookData: [],
             postData: [],
             picData: {
-                picture:"images/profile-pic.png"
+                picture:"./public/frontend/images/profile-pic.png"
                 
             }
 
