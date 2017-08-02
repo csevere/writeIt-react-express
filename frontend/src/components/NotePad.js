@@ -61,22 +61,11 @@ class NotePad extends Component{
             })
         }
 
-
-
-
     }
-
 
 
     render(){
 
-        const settings = {
-            dots: true,
-            infinite: false,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-        };
 
         var notepad = this.state.notePadData.notepad;
         var writeMenu = '/write/' + this.props.match.params.book;
@@ -84,7 +73,7 @@ class NotePad extends Component{
 
         return(
              <div>
-                <Grid className = "notepad-wrapper">
+                 <Grid className = "notepad-wrapper">
                     <Row>
 
                         <Col md = {8} className = "col-md-offset-4 notepad-form">

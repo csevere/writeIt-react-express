@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import {Nav, Navbar, NavItem} from "react-bootstrap"; 
+import { Nav, Navbar, NavItemForm, Grid, Row, Col, Form, FormGroup, FormControl, Button, ControlLabel } from 'react-bootstrap';
 
 
 class NavBar extends Component{
@@ -15,6 +15,17 @@ class NavBar extends Component{
 					    <ul className="nav navbar-nav title">
 					    	<li><Link to="/">writeIT</Link></li> 	
 					    </ul>
+
+					    <Col sm = {5}>
+
+						    <Form>
+						    	<FormGroup>
+	      							<FormControl id="search" type="text" placeholder="Search writeIT" />
+	      							<img src = "images/search-icon.png"/>
+	    						</FormGroup>
+						    </Form>
+						</Col>
+
 					  <div className="container right">
 						   <ul className="nav navbar-nav float-right">
 							   	<li><Link className = "login" to="/login">Log in</Link></li>

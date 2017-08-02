@@ -35,24 +35,24 @@ class tNewContempForm extends Component{
 
                         <Col md = {8} className = "col-md-offset-2 contemp-form">
 
-                            <Form>
+                              <Form>
 
-                                <FormGroup controlId="formControlsTextarea">
-                                    <ControlLabel>Title:</ControlLabel>
-                                    <FormControl id="titlez" componentClass="textarea" />
-                                </FormGroup>
+                                  <FormGroup controlId="formControlsTextarea">
+                                      <ControlLabel>Title:</ControlLabel>
+                                      <FormControl id="titlez" componentClass="textarea" />
+                                  </FormGroup>
 
 
-                                <FormGroup controlId="formControlsTextarea">
-                                    <ControlLabel>Message:</ControlLabel>
-                                    <FormControl id="message" componentClass="textarea" />
-                                </FormGroup>
+                                  <FormGroup controlId="formControlsTextarea">
+                                      <ControlLabel>Message:</ControlLabel>
+                                      <FormControl id="message" componentClass="textarea" />
+                                  </FormGroup>
 
-                                <Link to = "/contemptopic"><Button className = "btn-default btn" type="submit">Post</Button></Link> 
+                                  <Link to = "/contemptopic"><Button className = "btn-default btn" type="submit">Post</Button></Link> 
 
-                                <Link to ="/contemp" type="submit">Cancel</Link> 
+                                  <Link to ="/contemp" type="submit">Cancel</Link> 
 
-                            </Form> 
+                              </Form> 
                         </Col>
                         
                     </Row>

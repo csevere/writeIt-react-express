@@ -21,7 +21,7 @@ body {
 
 
 .overlay {
-	height: 46%;
+	height: 44.9%;
     width: 100%;
     position: absolute;
     top: 0px;
@@ -65,15 +65,22 @@ body {
 .subtitle{
 	float: left; 
 	color: $white;
-	margin: 9em 0em 0em 1em; 
+	margin: 6em 0em 0em -3em; 
 	z-index: 1; 
 	font-weight: bolder;
 	font-family: 'Heebo',sans-serif;
 
 	@media screen and(min-width:$break-xlarge){	
-		margin: 9em 0em 0em -23em; 
+		margin: 9em 0em 0em -17em; 
 				
 	} 
+
+	@media screen and(max-width:$break-medium){	
+		margin: 9em 0em 0em -3em;
+				
+	} 
+
+
 
 }
 
@@ -82,12 +89,29 @@ body {
 
 	margin: 3em 0em 0em 4em;
 	display: flex; 
+	@media screen and(min-width:$break-xlarge){	
+		margin: 3em 0em 0em 12em;
+   					
+	} 
+	@media screen and(max-width:$break-lg-medium){	
+		margin: 5em 0em 0em -1em;
+				
+	}
+
+	@media screen and(max-width:$break-lg-medium){	
+		h3{
+			font-size: 18px; 
+		}
+				
+	}
+
 
 	h3{
 		top: 35px;
 		position: relative;
 		color: $white;
 		margin-right: 0.5em;
+
     } 
 
 
@@ -113,30 +137,52 @@ body {
 
 
 
-.hexagon {
+.hex{
 	position: relative;
 	width: 202px; 
 	height: 114.47px;
-	background-color: $english-red;
-	margin: 57.74px 0;
-	z-index: 3; 
-	line-height: 60px; 
+	z-index: 3;
+	@media screen and(max-width:$break-lg-medium){	
+		width: 165px;
+    	height: 87.47px;
+				
+	}
 
 }
 
-.hexagon:before,
-.hexagon:after {
+.hex:before,
+.hex:after {
 	content: "";
 	position: absolute;
 	width: 0;
 	border-left: 100px solid transparent;
 	border-right: 102px solid transparent;
+	@media screen and(max-width:$break-lg-medium){	
+		border-left: 80px solid transparent;
+		border-right: 85px solid transparent;
+		
+				
+	}
 }
+
+.hexagon {
+	background-color: $english-red;
+	margin: 57.74px 0;
+	z-index: 3; 
+	line-height: 60px; 
+	
+
+}
+
 
 .hexagon:before {
 	left:0%;
   	bottom: 100%;
   	border-bottom: 57.74px solid $english-red;
+  	@media screen and(max-width:$break-lg-medium){	
+  		border-bottom: 52.74px solid $english-red;
+				
+	}
 }
 
 .hexagon:after {
@@ -144,34 +190,35 @@ body {
 	width: 0;
 	left: 0%;
 	border-top: 57.74px solid $english-red;
+	@media screen and(max-width:$break-lg-medium){	
+  		border-top: 56.74px solid $english-red;
+				
+	}
 }
 
 // /********  HEX 2 ********/
 .hex2 {
-	position: relative;
-	width: 202px; 
-	height: 114.47px;
 	background-color: $independence;
 	margin: 57.74px 0;
-	z-index: 3; 
 	line-height: 60px;
 	left: 10em;
+	@media screen and(max-width:$break-lg-medium){
+		left: 8em;
+		bottom: 4em;
+
+	}
     bottom: 5em;
 }
 
-.hex2:before,
-.hex2:after {
-	content: "";
-	position: absolute;
-	width: 0;
-	border-left: 100px solid transparent;
-	border-right: 102px solid transparent;
-}
 
 .hex2:before {
 	left:0%;
   	bottom: 100%;
   	border-bottom: 57.74px solid $independence;
+  	@media screen and(max-width:$break-lg-medium){	
+  		border-bottom: 52.74px solid $independence ;
+				
+	}
 }
 
 .hex2:after {
@@ -179,36 +226,38 @@ body {
 	width: 0;
 	left: 0%;
 	border-top: 57.74px solid $independence;
+	@media screen and(max-width:$break-lg-medium){	
+  		border-top: 56.74px solid $independence ;
+				
+	}
 }
 
 
 // /****** HEX 3 ********/
 
 .hex3 {
-	position: relative;
-	width: 202px; 
-	height: 114.47px;
 	background-color: $fun-cyan;
 	margin: 57.74px 0;
-	z-index: 3; 
 	line-height: 60px;
 	left: 20em;
-    bottom: 33em
-}
+    bottom: 33em;
+    @media screen and(max-width:$break-lg-medium){
+    	left: 16em;
+    	bottom: 29em;
+		
 
-.hex3:before,
-.hex3:after {
-	content: "";
-	position: absolute;
-	width: 0;
-	border-left: 100px solid transparent;
-	border-right: 102px solid transparent;
+	}
 }
 
 .hex3:before {
 	left:0%;
   	bottom: 100%;
   	border-bottom: 57.74px solid $fun-cyan;
+  	@media screen and(max-width:$break-lg-medium){	
+  		border-bottom: 52.74px solid $fun-cyan;
+				
+	}
+
 }
 
 .hex3:after {
@@ -216,35 +265,35 @@ body {
 	width: 0;
 	left: 0%;
 	border-top: 57.74px solid $fun-cyan;
+	@media screen and(max-width:$break-lg-medium){	
+  		border-top: 56.74px solid $fun-cyan;
+				
+	}
 }
 
 // /****** HEX 4 ********/
 .hex4 {
-	position: relative;
-	width: 202px; 
-	height: 114.47px;
 	background-color: $midnight-blue;
 	margin: 57.74px 0;
-	z-index: 3; 
 	line-height: 60px;
 	left: 30em;
     bottom: 38em;
+    @media screen and(max-width:$break-lg-medium){
+    	left: 24em;
+    	bottom: 33em;
+		
+	}
 
-}
-
-.hex4:before,
-.hex4:after {
-	content: "";
-	position: absolute;
-	width: 0;
-	border-left: 100px solid transparent;
-	border-right: 102px solid transparent;
 }
 
 .hex4:before {
 	left:0%;
   	bottom: 100%;
   	border-bottom: 57.74px solid $midnight-blue;
+  	@media screen and(max-width:$break-lg-medium){	
+  		border-bottom: 52.74px solid $midnight-blue;
+				
+	}
 }
 
 .hex4:after {
@@ -252,36 +301,37 @@ body {
 	width: 0;
 	left: 0%;
 	border-top: 57.74px solid $midnight-blue;
+	@media screen and(max-width:$break-lg-medium){	
+  		border-top: 56.74px solid $midnight-blue;
+				
+	}
 }
 
 
 // /****** HEX 5 ********/
 .hex5 {
-	position: relative;
-	width: 202px; 
-	height: 114.47px;
 	background-color: $english-red;
 	margin: 57.74px 0;
-	z-index: 3; 
 	line-height: 60px;
 	left: 40em;
     bottom: 66em;
+    @media screen and(max-width:$break-lg-medium){
+	    left: 32.5em;
+    	bottom: 58em;
+
+	}
 
 }
 
-.hex5:before,
-.hex5:after {
-	content: "";
-	position: absolute;
-	width: 0;
-	border-left: 100px solid transparent;
-	border-right: 102px solid transparent;
-}
 
 .hex5:before {
 	left:0%;
   	bottom: 100%;
   	border-bottom: 57.74px solid $english-red;
+  	@media screen and(max-width:$break-lg-medium){	
+  		border-bottom: 52.74px solid $english-red ;
+				
+	}
 }
 
 .hex5:after {
@@ -289,35 +339,38 @@ body {
 	width: 0;
 	left: 0%;
 	border-top: 57.74px solid $english-red;
+	@media screen and(max-width:$break-lg-medium){	
+  		border-top: 56.74px solid $english-red;
+				
+	}
 }
 
 
 // /***********  HEX 6**************/
 .hex6 {
-	position: relative;
-	width: 202px; 
-	height: 114.47px;
 	background-color: $fun-cyan;
 	margin: 57.74px 0;
-	z-index: 3; 
 	line-height: 60px;
 	left: 50em;
     bottom: 71em;
+    @media screen and(max-width:$break-lg-medium){
+    	left: 40em;
+    	bottom: 61.9em;
+		
+
+	}
 }
 
-.hex6:before,
-.hex6:after {
-	content: "";
-	position: absolute;
-	width: 0;
-	border-left: 100px solid transparent;
-	border-right: 102px solid transparent;
-}
+
 
 .hex6:before {
 	left:0%;
   	bottom: 100%;
   	border-bottom: 57.74px solid $fun-cyan;
+  	@media screen and(max-width:$break-lg-medium){	
+  		border-bottom: 52.74px solid $fun-cyan;
+				
+	}
 }
 
 .hex6:after {
@@ -325,6 +378,10 @@ body {
 	width: 0;
 	left: 0%;
 	border-top: 57.74px solid $fun-cyan;
+	@media screen and(max-width:$break-lg-medium){	
+  		border-top: 56.74px solid $fun-cyan ;
+				
+	}
 }
 
 
@@ -437,13 +494,18 @@ body {
 	border: 3px solid white;
 	border-radius: 23px;
 	z-index: 3; 
-	top:-77em;
+	top:-75em;
 	left: 0em;
 
 	@media screen and(min-width:$break-xlarge){	
 		top: -56em; 
 				
 	} 
+
+	@media screen and(max-width:$break-lg-medium){	
+		top: -68em;
+	} 			
+	
 }
 
 .scroll-btn .mouse > * {

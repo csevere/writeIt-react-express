@@ -6,13 +6,6 @@
 	background-color: $ghost-white; 
 }
 
-h2{
-	font-weight: bold;
-    font-size: 5em;
-    margin-left: 7em;
-    padding-bottom:1em;
-    width:100%;
-}
 
 #about{
 	background-color: $ghost-white; 
@@ -32,6 +25,15 @@ h2{
 		margin-left: -3em;
 
 	}
+
+	
+h2{
+	font-weight: bold;
+    font-size: 5em;
+    margin-left: 7em;
+    padding-bottom:1em;
+    width:100%;
+}
 
 	@media screen and(min-width:$break-xlarge){
 		margin-top: -44.2em;		 
