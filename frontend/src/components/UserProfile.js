@@ -13,6 +13,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import $ from 'jquery';
 import PostAction from '../actions/PostAction';
+import  {Timeline} from 'react-twitter-widgets'; 
 // import UserProfileAction from '../actions/UserProfileAction';
 
 
@@ -24,11 +25,13 @@ class UserProfile extends Component{
                 location: null,
                 username: null,
                 about: null,
+                t_username: null
             },
             bookData: [],
             postData: [],
             picData: {
-                picture: ''
+                picture:"images/profile-pic.png"
+                
             }
 
             // nameError: null,
@@ -87,6 +90,7 @@ class UserProfile extends Component{
             if(serverData.picData !== undefined){
                 this.setState({
                     picData: serverData.picData
+                    
             })
 
             }
@@ -121,6 +125,7 @@ class UserProfile extends Component{
         var username = this.state.userData.username;
         var location = this.state.userData.location;
         var about = this.state.userData.about;
+        var t_username = this.state.userData.t_username; 
         console.log(location)
 
         var bookArray = [];
@@ -190,10 +195,10 @@ class UserProfile extends Component{
                                         </div>
                                     </div>
                                     <form method="post" action="http://127.0.0.1:5000/profilepic" encType="multipart/form-data">
-                                        <div class="md-col-4 md-col-offset-2">
+                                        <div className="md-col-4 md-col-offset-2">
                                             <input name='username' type='hidden' value={this.state.userData.username} />
                                             <input type='file' name='fileUploaded' />
-                                            <input class="btn btn-primary" type="submit" />
+                                            <input className="btn btn-primary" type="submit" />
                                         </div>
                                     </form>
                                 </Col>
@@ -204,14 +209,17 @@ class UserProfile extends Component{
                         <Row className = "second-row">
                             <Grid className = "col-md-12">
 
-                                <Col md = {3} className = "about-left">
-                                    <div><h4>{about}</h4></div>
+                                <Col sm = {3} className = "about-left">
+                                    <div className = "about-user">
+                                        <div>About</div>
+                                        <p><h4>{about}</h4></p>
+                                    </div> 
                                 </Col>
 
-                                <Col md = {7} className = "mybooks-right">
+                                <Col sm = {5} className = "mybooks-right">
                                     <div><h4>My Books</h4></div>
 
-                                    <Col md = {3}>
+                                    <Col sm = {3}>
                                         <div className = "createbook">
 
                                             <div className = "book">Create Book</div>
@@ -236,10 +244,36 @@ class UserProfile extends Component{
                         <Row className = "third-row">
                             <Grid className = "col-md-12">
                                 <Col md = {3} className = "twitter-left">
-                                    <div><h4>Twitter</h4></div>
+                                    <div>
+                                    <h4>Follow {t_username} On Twitter</h4>
+
+                                    <Timeline
+                                        dataSource={{
+
+                                        sourceType: 'profile',
+                                        screenName: `${t_username}`
+                                        }}
+
+                                        options={{
+
+                                        username: `${t_username}`,
+                                        height: '400'
+                                        }}
+                                       
+
+
+                                        onLoad={() => console.log('Timeline is loaded!')}
+                                    />
+
+
+                                     
+                                                                        
+
+
+                                    </div>
                                 </Col>
 
-                                <Col md = {7} className = "messages-left">
+                                <Col md = {3} className = "messages-left">
                                     <div>
                                         {postArray}
                                     </div>

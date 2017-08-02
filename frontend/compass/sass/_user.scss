@@ -1,10 +1,28 @@
 @import 'variables'; 
 
+ *{
+ 	box-sizing: border-box;
+ }
+
 
 
 .profile{
 	position: absolute;
-
+	background-color: $baby-blue; 
+	width: 100%; 
+	height: 115%; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center; 
+	top: 0;
+	left:0;
+	margin: 0; 
+	z-index: -1; 
+	
 	.header{
 		
 		text-align: center; 
@@ -23,7 +41,9 @@
 
 	.prof-pic img{
 		margin-top: 10em;
-		border-radius: 125px;  
+	    border-radius: 130px;
+	    width: 13em;
+	    height: 13em;
 	}
 
 	// .second-row{
@@ -32,23 +52,42 @@
 
 	.about-left, .twitter-left{
 		float: left; 
+		margin: 1em 0em 0em 18em; 
 		background-color: $ghost-white; 
-		height: 34vh;
-		border: 1px solid #ddd; 
-		padding-top: 10px;
-		margin-top: 1em;  
-		width: 40%; 
-	 
+		border: 1px solid #ddd;   
+		border-radius: 5px; 
+		padding: 20px 15px;
+ 
+	}
+
+	#twitter-widget-0{
+		display: none !important; 
+	}
+
+
+
+	.about-user{
+		overflow-x: hidden; 
 	}
 
 	.mybooks-right, .messages-left{
 		float: right; 
+		display: inline-block;
+		margin: 1em 25em 0em 0em; 
 		background-color: $ghost-white;
 		border: 1px solid #ddd; 
-		margin-top: 1em;
 		padding-top: 10px;
-		padding-bottom: 10px;   
+		padding-bottom: 10px; 
+		border-radius: 5px;   
 	}
+
+	 .messages-left{
+	 	
+
+	 }
+
+
+
 
 	.display-message{
 		background-color: $white-smoke;

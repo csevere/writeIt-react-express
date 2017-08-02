@@ -383,6 +383,7 @@ router.post('/register', (req, res)=>{
 	const occupation = req.body.occupation;
 	const about = req.body.about;
 	const location = req.body.location;
+    const t_username = req.body.t_username; 
 
 	console.log(password);
 	
@@ -411,9 +412,9 @@ router.post('/register', (req, res)=>{
 		()=>{
 			// Set up a token for this user. We will give this back to React
 			var token = randToken.uid(40);
-			var insertQuery = "INSERT INTO users (name, email, username, password, occupation, about, token, location, token_exp, account_created) VALUES (?,?,?,?,?,?,?,?,DATE_ADD(NOW(), INTERVAL 1 HOUR),NOW());";
+			var insertQuery = "INSERT INTO users (name, email, username, password, occupation, about, token, location, token_exp, account_created, t_username) VALUES (?,?,?,?,?,?,?,?,DATE_ADD(NOW(), INTERVAL 1 HOUR),NOW(), ?);";
 			// Run the query (for now autoset the sales rep to 1337)
-			connection.query(insertQuery,[name,email,username,password,occupation,about,token,location],(error, results)=>{
+			connection.query(insertQuery,[name,email,username,password,occupation,about,token,location, t_username],(error, results)=>{
 				// Users insert query
 				if(error){
 					throw error
@@ -1138,6 +1139,100 @@ router.post('/profilepic', upload.single('fileUploaded'), function(req, res, nex
 	});
 
 });
+
+
+
+///////////////////////////////////////////////////////////////////
+///////////////////////////TWITTER////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+
+// var express = require('express'); 
+// var bodyParser = require('body-parser');
+// var Twitter = require('twitter');
+// // var config = require('../config/config');
+// // var router = require('./router')
+
+// //Callback functions
+// // setting success and error callbacks that are used when getting a response from Twitter’s servers after making a request
+// var error = function (err, response, body) {
+//     console.log('ERROR [%s]', JSON.stringify((err)));
+// };
+// var success = function (data) {
+//     console.log('Data [%s]', data);
+// };
+
+// //new instance
+// // var tweet = []; 
+// var twitter = new Twitter({
+//     consumer_key: config.consumer_key,
+//     consumer_secret: config.consumer_secret,
+//     access_token_key: config.access_token_key,
+//     access_token_secret: config.access_token_secret
+
+// });
+
+
+// var screen_name = 'Carla_Severe'; 
+
+// var params = {
+//     screen_name: screen_name,
+//     result_type: 'recent',
+//     lang: 'en',
+//     include_rts: "true"
+// }
+
+// twitter.get('statuses/user_timeline', params, function( error, data, response){
+//      console.log(data)
+//    if(!error){
+//         tweetUrl = 'https://twitter.com/status/Carla_Severe';
+//         // console.log(tweet);
+//         var options = {
+//             url: tweetUrl,
+//             lang:"en",
+//             theme:"dark",
+//             link_color:"#2B7BB9",
+//             hide_media:"true",
+//             include_rts: "false",
+//         }
+//     }
+
+// }); 
+
+
+
+// app.use(bodyParser.json());  //support for JSON-encoded bodies
+// app.use(bodyParser.urlencoded({   //support for URL-encoded bodies
+//     extended: true
+// }));
+
+// app.use(express.static('public'));
+
+
+// //post to retrieve user data
+// app.post('/twitter/user', (req, res)=>{
+//     var username = req.body.username;
+//     var data = twitter.getUser({screen_name: username}, function(error, response, body){
+//         res.status(404).send({
+//             "error": "User Not Found"
+//         });
+
+
+//     }, (data)=>{
+//         res.send({
+//             result: {
+//                 "userData": data
+//             }
+//         });
+
+//     });
+
+// });
+
+
+
+
+
 
 
 

@@ -26,10 +26,13 @@ class Register extends Component{
 		var name = event.target[0].value;
 		var email = event.target[1].value;
 		var username = event.target[2].value;
-		var password = event.target[3].value;
-		var occupation = event.target[4].value;
-		var about = event.target[5].value;
-		var location = event.target[6].value;
+		var t_username = event.target[3].value;
+		var password = event.target[4].value;
+		var occupation = event.target[5].value;
+		var about = event.target[6].value;
+		var location = event.target[7].value;
+		
+
 		var error = false;
 
 		//Name
@@ -63,7 +66,8 @@ class Register extends Component{
 				password: password,
 				occupation: occupation,
 				about: about,
-				location: location
+				location: location,
+				t_username: t_username 
 			});
 		}
 	}
@@ -94,6 +98,7 @@ class Register extends Component{
 						</div>
 						<h4>{this.state.registerMessage}</h4>
 							<Col md = {12}>
+
 								<Form horizontal onSubmit={this.handleRegistration}>
 									<FormGroup controlId="formHorizontalName" validationState={this.state.nameError}>
 										<Col componentClass={ControlLabel} sm={2}>
@@ -103,6 +108,8 @@ class Register extends Component{
 											<FormControl type="text" name="Name" placeholder="Name" />
 										</Col>
 									</FormGroup>
+
+
 									<FormGroup controlId="formHorizontalName" validationState={this.state.emailError}>
 										<Col componentClass={ControlLabel} sm={2}>
 											Email
@@ -111,6 +118,8 @@ class Register extends Component{
 											<FormControl type="email" name="email" placeholder="Email" />
 										</Col>
 									</FormGroup>
+
+
 									<FormGroup controlId="formHorizontalName">
 										<Col componentClass={ControlLabel} sm={2}>
 											Username
@@ -119,6 +128,18 @@ class Register extends Component{
 											<FormControl type="text" name="username" placeholder="Username"/>
 										</Col>
 									</FormGroup>
+
+
+									<FormGroup controlId="formHorizontalName">
+										<Col componentClass={ControlLabel} sm={2}>
+											Twitter Handle @
+										</Col>
+										<Col sm={6}>
+											<FormControl type="text" name="t_username" placeholder="Username"/>
+										</Col>
+									</FormGroup>
+
+
 									<FormGroup controlId="formHorizontalName">
 										<Col componentClass={ControlLabel} sm={2}>
 											Password
@@ -127,6 +148,8 @@ class Register extends Component{
 											<FormControl type="password" name="password" placeholder="Password" />
 										</Col>
 									</FormGroup>
+
+
 									<FormGroup controlId="formHorizontalName">
 										<Col componentClass={ControlLabel} sm={2}>
 											Occupation
@@ -135,6 +158,8 @@ class Register extends Component{
 											<FormControl type="text" name="occupation" placeholder="Occupation" />
 										</Col>
 									</FormGroup>
+
+
 									<FormGroup controlId="formHorizontalName">
 										<Col componentClass={ControlLabel} sm={2}>
 											About
@@ -143,6 +168,8 @@ class Register extends Component{
 											<FormControl type="text" name="state" placeholder="About" />
 										</Col>
 									</FormGroup>
+
+
 									<FormGroup controlId="formHorizontalName">
 										<Col componentClass={ControlLabel} sm={2}>
 											Location
@@ -151,6 +178,8 @@ class Register extends Component{
 											<FormControl type="text" name="state" placeholder="Location" />
 										</Col>
 									</FormGroup>
+
+
 									<FormGroup>
 										<Col smOffset={2} sm={6}>
 											<Button className="button" bsStyle="primary" bsSize="small" type="submit">
