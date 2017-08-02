@@ -167,10 +167,6 @@ class Character extends Component{
                 })
             })
         }
-
-
-
-
     }
 
 

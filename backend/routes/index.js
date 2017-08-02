@@ -234,6 +234,39 @@ router.get('/plot', (req, res)=>{
 });
 
 
+router.get('/bookpic', (req, res)=>{
+
+    var id = req.query.id;
+    console.log('here');
+    console.log(id);
+    var username = req.query.username;
+    console.log(username)
+    var book = req.query.book;
+    console.log(book);
+    var deleteId = req.query.action;
+    console.log(deleteId);
+
+
+    if(id !== '' && id !==undefined){
+        var selectPlotQuery = `SELECT * FROM book_images WHERE id = ${id}`
+    }else if(book !== undefined  && username !== undefined){
+        var selectPlotQuery = `SELECT * FROM book_images WHERE username = '${username}' AND book = '${book}'`
+    }else if(deleteId !== undefined){
+        var selectPlotQuery = `DELETE FROM book_images WHERE id = ${deleteId}`
+    }
+
+
+    connection.query(selectPlotQuery, (error, results)=>{
+        console.log(selectPlotQuery);
+        if(error){
+            throw error
+        }else{
+            res.json(results);
+        }
+    });
+});
+
+
 
 
 router.get('/user', (req,res)=>{
@@ -1131,6 +1164,40 @@ router.post('/profilepic', upload.single('fileUploaded'), function(req, res, nex
 				if(error) throw error;
 				res.json({
 					msg: 'picInserted'
+				})
+
+			})
+
+		});
+	});
+
+});
+
+router.post('/bookpic', upload.single('fileUploaded'), function(req, res, next){
+	console.log('req  below')
+	console.log(req.file)
+	var username = req.body.username;
+	var book = req.body.book;
+	//res.json(req.file);rs
+
+	console.log('req body below')
+	console.log(req.body);
+
+	var tmp_path = req.file.path;
+
+	var target_path = '../frontend/public/images/' + req.file.originalname
+	fs.readFile(tmp_path, function (error, data){
+		fs.writeFile(target_path, data, function(error){
+			if(error) throw error
+			//res.json('File Uploaded to ' + target_path);
+			// db.insert into the mongdo, the path and name of the new file.
+			// res.redirect('/')
+			var insertBookPicQuery = 'INSERT into book_images (username,book,book_image) VALUES (?,?,?);';
+
+			connection.query(insertBookPicQuery, [username,book,target_path], (error, response)=>{
+				if(error) throw error;
+				res.json({
+					msg: 'bookPicInserted'
 				})
 
 			})
