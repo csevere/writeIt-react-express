@@ -19,6 +19,19 @@
 	min-height: 100%;
 	overflow: scroll; 
 	display: flex; 
+
+		//*****************ENTER TEXT BOX**********************
+	.form-control{
+		@media screen and(min-width:$break-large){	
+				width: 90% ;
+		} 
+		@media screen and(min-width:$break-small){
+			width:78%;
+		}
+		@media screen and(min-width:$break-xsmall){
+			width:71%;
+		}
+	}
 }
 
 /// WRITE NAV ///
@@ -215,18 +228,7 @@
 }
 
 
-//*****************ENTER TEXT BOX**********************
-.form-control{
-	@media screen and(min-width:$break-large){	
-			width: 90% ;
-	} 
-	@media screen and(min-width:$break-small){
-		width:78%;
-	}
-	@media screen and(min-width:$break-xsmall){
-		width:71%;
-	}
-}
+
 
 //*******************STATS SECTION**********************
 .right-db{
