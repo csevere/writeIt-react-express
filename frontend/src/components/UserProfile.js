@@ -214,7 +214,7 @@ class UserProfile extends Component{
                                 </Col>
 
                                 <Col sm = {5} className = "mybooks-right">
-                                    <div><h4>{username} Carla&apos;s Books</h4></div>
+                                    <div><h4>{username}&apos;s Books</h4></div>
 
                                     <Col sm = {3}>
                                         <div className = "createbook">
