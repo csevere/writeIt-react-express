@@ -60,43 +60,43 @@ class UserProfile extends Component{
         
     }
 
-    // componentDidMount(){
-    //     $.getJSON(`http://localhost:5000/user?email=${this.props.registerResponse.email}`, (serverData)=>{
-    //         // log the JSON response from Express
-    //         //console.log(serverData.userData)
-    //         this.setState({
-    //             userData: serverData.userData
-    //         })
-    //     })
+    componentDidMount(){
+        $.getJSON(`http://localhost:5000/user?email=${this.props.registerResponse.email}`, (serverData)=>{
+            // log the JSON response from Express
+            //console.log(serverData.userData)
+            this.setState({
+                userData: serverData.userData
+            })
+        })
 
-    //     $.getJSON(`http://localhost:5000/book?username=${this.props.registerResponse.name}`, (serverData)=>{
-    //         // log the JSON response from Express
-    //         //console.log(serverData.bookData)
-    //         this.setState({
-    //             bookData: serverData.bookData
-    //         })
-    //     });
+        $.getJSON(`http://localhost:5000/book?username=${this.props.registerResponse.name}`, (serverData)=>{
+            // log the JSON response from Express
+            //console.log(serverData.bookData)
+            this.setState({
+                bookData: serverData.bookData
+            })
+        });
 
-    //     this.loadPosts();
+        this.loadPosts();
 
-    //     // setInterval(this.loadPosts, 30000);
+        // setInterval(this.loadPosts, 30000);
 
-    //     $.getJSON(`http://localhost:5000/profilepic?username=${this.props.registerResponse.name}`, (serverData)=>{
-    //         // log the JSON response from Express
-    //         console.log(serverData)
-    //         if(serverData.picData !== undefined){
-    //             this.setState({
-    //                 picData: serverData.picData
+        $.getJSON(`http://localhost:5000/profilepic?username=${this.props.registerResponse.name}`, (serverData)=>{
+            // log the JSON response from Express
+            console.log(serverData)
+            if(serverData.picData !== undefined){
+                this.setState({
+                    picData: serverData.picData
                     
-    //         })
+            })
 
-    //         }
+            }
 
 
-    //     });
+        });
 
-    //     // console.log(this.state.bookData)
-    // }
+        // console.log(this.state.bookData)
+    }
 
     loadPosts(){
         $.getJSON(`http://localhost:5000/post?username=${this.props.registerResponse.name}`, (serverData)=>{
@@ -258,13 +258,8 @@ class UserProfile extends Component{
                                         }}
                                        
 
-
                                         onLoad={() => console.log('Timeline is loaded!')}
                                     />
-
-
-                                     
-                                                                        
 
 
                                     </div>
