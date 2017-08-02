@@ -46,13 +46,54 @@
 	    height: 13em;
 	}
 
+	.pic-sub{
+
+		input{
+			position: relative;
+			top: 4em;
+			left: -12em;
+
+			@media screen and(min-width:$break-md-large){
+				position: relative;
+				top: 26em;
+				left: -12em;	
+			}
+		
+		}
+
+		.btn{
+
+			position: relative;
+		    top: 0em;
+		    left: 0em;
+		    right: 0em;
+		    margin: auto;
+
+
+		    @media screen and(min-width:$break-md-large){
+
+				position: relative;
+			    top: 22em;
+			    left: 0em;
+			    right: 0em;
+			    margin: auto
+					
+			}
+
+		}
+
+	}
+
 	// .second-row{
 	// 	border: 5px solid green; 
 	// }
 
 	.about-left, .twitter-left{
 		float: left; 
-		margin: 1em 0em 0em 18em; 
+		margin: 3em 0em 0em 16em;
+		@media screen and(min-width:$break-md-large){
+			margin: 3em 0em 0em 18em;			
+		}
 		background-color: $ghost-white; 
 		border: 1px solid #ddd;   
 		border-radius: 5px; 
@@ -64,28 +105,21 @@
 		display: none !important; 
 	}
 
-
-
+	
 	.about-user{
 		overflow-x: hidden; 
 	}
 
-	.mybooks-right, .messages-left{
+	.mybooks-right, .messages-right{
 		float: right; 
 		display: inline-block;
-		margin: 1em 25em 0em 0em; 
+		margin: 3em 11em 0em 0em;
 		background-color: $ghost-white;
 		border: 1px solid #ddd; 
 		padding-top: 10px;
 		padding-bottom: 10px; 
 		border-radius: 5px;   
 	}
-
-	 .messages-left{
-	 	
-
-	 }
-
 
 
 
@@ -97,7 +131,7 @@
 
 	.write-message-box{
 		background-color: $sea-shell;
-		padding: 10px; 
+		padding: 20px; 
 		border: 1px solid #ddd;
 	}
 
@@ -120,15 +154,24 @@
 
 	.createbook{
 		 
-			button {
-				top: 0em;
-				right: 0em;
-				left: 2em;  
-				margin: auto;
+		button {
+			top: 0em;
+			right: 0em;
+			left: 2em;  
+			margin: auto;
 
 
-			}
+		}
 	}
+
+		.write-message-box{
+		button {
+			top: 2em;
+		    left: 31.5em;
+			
+		}
+	}
+
 
 
 

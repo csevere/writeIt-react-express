@@ -14,7 +14,7 @@ import  {Timeline} from 'react-twitter-widgets';
 // import UserProfileAction from '../actions/UserProfileAction';
 
 
-class UserProfile extends Component{
+class tOtherUser extends Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -27,7 +27,7 @@ class UserProfile extends Component{
             bookData: [],
             postData: [],
             picData: {
-                picture:"images/profile-pic.png"
+                picture: 'images/profile-pic.png'
                 
             }
 
@@ -35,8 +35,8 @@ class UserProfile extends Component{
             // emailError: null,
             // formError: false
         }
-        this.handlePost = this.handlePost.bind(this);
-        this.loadPosts = this.loadPosts.bind(this);
+        // this.handlePost = this.handlePost.bind(this);
+        // this.loadPosts = this.loadPosts.bind(this);
 
     }
 
@@ -98,15 +98,15 @@ class UserProfile extends Component{
     //     // console.log(this.state.bookData)
     // }
 
-    loadPosts(){
-        $.getJSON(`http://localhost:5000/post?username=${this.props.registerResponse.name}`, (serverData)=>{
-        // log the JSON response from Express
-        //console.log(serverData.bookData)
-        this.setState({
-            postData: serverData.postData
-        })
-    });
-    }
+    // loadPosts(){
+    //     $.getJSON(`http://localhost:5000/post?username=${this.props.registerResponse.name}`, (serverData)=>{
+    //     // log the JSON response from Express
+    //     //console.log(serverData.bookData)
+    //     this.setState({
+    //         postData: serverData.postData
+    //     })
+    // });
+    // }
 
 
     render(){
@@ -187,17 +187,10 @@ class UserProfile extends Component{
                                         <div>
                                             <ul>
                                                 <li style = {{background: "white"}}><div id= "friends"><h4>0 Friends</h4></div></li>
-                                                <li style = {{background: "white"}}><div id= "friends"><h4>0 Messages</h4></div></li>
+                                                <li style = {{background: "blue", color: "white", cursor: "pointer"}}><div id = "addfriend"><h4> + Add Friend</h4></div></li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <form method="post" action="http://127.0.0.1:5000/profilepic" encType="multipart/form-data">
-                                        <Col md = {4} mdOffset = {2} className="pic-sub">
-                                            <input name='username' type='hidden' value={this.state.userData.username} />
-                                            <input type='file' name='fileUploaded' />
-                                            <input className="btn btn-primary" type="submit" />
-                                        </Col>
-                                    </form>
                                 </Col>
 
                             </Col>
@@ -214,24 +207,9 @@ class UserProfile extends Component{
                                 </Col>
 
                                 <Col sm = {5} className = "mybooks-right">
-                                    <div><h4>{username} Carla&apos;s Books</h4></div>
+                                    <div><h4>{username} &apos;s Books</h4></div>
 
-                                    <Col sm = {3}>
-                                        <div className = "createbook">
-
-                                            <div className = "book">Create Book</div>
-
-                                            <div>
-                                                <form>
-                                                   <Link to="/newbook"><button className="btn-primary btn btn-book">Create</button></Link> 
-                                                </form>
-                                            </div>
-                                        </div>
-
-                                    </Col>
                                     {bookArray}
-
-
 
                                 </Col>
                             </Grid>
@@ -262,11 +240,7 @@ class UserProfile extends Component{
                                         onLoad={() => console.log('Timeline is loaded!')}
                                     />
 
-
-                                     
-                                                                        
-
-
+                                    
                                     </div>
                                 </Col>
 
@@ -315,7 +289,7 @@ function mapDispatchToProps(dispatch){
 }
 
 // export default UserProfile;
-export default connect(mapStateToProps,mapDispatchToProps)(UserProfile);
+export default connect(mapStateToProps,mapDispatchToProps)(tOtherUser);
 
 
 

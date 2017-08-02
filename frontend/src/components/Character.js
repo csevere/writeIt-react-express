@@ -148,7 +148,7 @@ class Character extends Component{
                 book: book,
                 id: id
             });
-            this.props.history.push(`/write/${book}`);
+            this.props.history.push(`/charboard/${book}`);
         }
 
     }

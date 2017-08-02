@@ -28,6 +28,8 @@ import Faqs from './components/Faqs';
 import UserProfile from './components/UserProfile';
 import Synopsis from './components/Synopsis';
 
+import tOtherUser from './tester/tOtherUser';
+
 
 
 //Forums
@@ -84,6 +86,8 @@ class App extends Component {
               <Route exact path = "/contemp" component = {tContempForum}/>
               <Route exact path = "/contempform" component = {tNewContempForm}/>
               <Route exact path = "/contemptopic" component = {tContempTopic}/>
+              <Route exact path = "/otheruser" component = {tOtherUser}/>
+
 
             </div> 
           </div>
