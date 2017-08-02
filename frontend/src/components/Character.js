@@ -49,6 +49,7 @@ class Character extends Component{
 
         }
         this.handleCharacters = this.handleCharacters.bind(this);
+        this.changeCharacter = this.changeCharacter.bind(this);
 
     }
 
@@ -169,6 +170,28 @@ class Character extends Component{
         }
     }
 
+    changeCharacter(event){
+        //console.dir(event.target)
+
+        var propName = event.target.id
+        console.dir(event)
+        console.dir(propName)
+        
+
+        var stateCopy = this.state.characterData;
+
+
+        stateCopy[propName] = event.target.value
+
+
+        this.setState({
+            characterData: stateCopy
+
+        })
+
+
+    }
+
 
     render(){
         console.log(this.state.characterData);
@@ -222,29 +245,29 @@ class Character extends Component{
                                     <Form onSubmit={this.handleCharacters}>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Name:</ControlLabel>
-                                            <FormControl id="name" componentClass="textarea" placeholder="name" />
+                                            <FormControl value={name} id="name" componentClass="textarea" placeholder="name" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Race:</ControlLabel>
-                                            <FormControl id="race" componentClass="textarea" placeholder="race" />
+                                            <FormControl value={race} id="race" componentClass="textarea" placeholder="race" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Age:</ControlLabel>
-                                            <FormControl id="age" componentClass="textarea" placeholder="age" />
+                                            <FormControl value={age} id="age" componentClass="textarea" placeholder="age" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Birthday:</ControlLabel>
-                                            <FormControl id="birthday" componentClass="textarea" placeholder="birthday" />
+                                            <FormControl value={birthday} id="birthday" componentClass="textarea" placeholder="birthday" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>General Physical Description:</ControlLabel>
-                                            <FormControl id="physical_desc" componentClass="textarea" placeholder="description" />
+                                            <FormControl value={physical_desc} id="physical_desc" componentClass="textarea" placeholder="description" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
                                         <Button className = "btn" type="submit">
@@ -257,29 +280,29 @@ class Character extends Component{
                                     <Form onSubmit={this.handleCharacters}>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Hometown:</ControlLabel>
-                                            <FormControl id="hometown" componentClass="textarea" placeholder="hometown" />
+                                            <FormControl value={hometown} id="hometown" componentClass="textarea" placeholder="hometown" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Neighborhood Type:</ControlLabel>
-                                            <FormControl id="type_of_home" componentClass="textarea" placeholder="neighborhood" />
+                                            <FormControl value={type_of_home} id="type_of_home" componentClass="textarea" placeholder="neighborhood" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Name and Occupation of Father:</ControlLabel>
-                                            <FormControl id="father_info" componentClass="textarea" placeholder="father" />
+                                            <FormControl value={father_info} id="father_info" componentClass="textarea" placeholder="father" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Name and Occupation of Mother:</ControlLabel>
-                                            <FormControl id="mother_info" componentClass="textarea" placeholder="mother" />
+                                            <FormControl value={mother_info} id="mother_info" componentClass="textarea" placeholder="mother" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Siblings:</ControlLabel>
-                                            <FormControl id="sibling_info" componentClass="textarea" placeholder="siblings" />
+                                            <FormControl value={sibling_info} id="sibling_info" componentClass="textarea" placeholder="siblings" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
                                         <Button className = "btn" type="submit">
@@ -292,29 +315,29 @@ class Character extends Component{
                                     <Form onSubmit={this.handleCharacters}>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Close Relatives:</ControlLabel>
-                                            <FormControl id="relatives" componentClass="textarea" placeholder="relatives" />
+                                            <FormControl value={relatives} id="relatives" componentClass="textarea" placeholder="relatives" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Best Friends:</ControlLabel>
-                                            <FormControl id="friends" componentClass="textarea" placeholder="friends" />
+                                            <FormControl value={friends} id="friends" componentClass="textarea" placeholder="friends" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Enemies:</ControlLabel>
-                                            <FormControl id="enemies" componentClass="textarea" placeholder="enemies" />
+                                            <FormControl value={enemies} id="enemies" componentClass="textarea" placeholder="enemies" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Mentor:</ControlLabel>
-                                            <FormControl id="mentor" componentClass="textarea" placeholder="mentor" />
+                                            <FormControl value={mentor} id="mentor" componentClass="textarea" placeholder="mentor" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Hobbies:</ControlLabel>
-                                            <FormControl id="hobbies" componentClass="textarea" placeholder="hobbies" />
+                                            <FormControl value={hobbies} id="hobbies" componentClass="textarea" placeholder="hobbies" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
                                         <Button className = "btn" type="submit">
@@ -327,29 +350,29 @@ class Character extends Component{
                                     <Form onSubmit={this.handleCharacters}>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Dress Style:</ControlLabel>
-                                            <FormControl id="dress" componentClass="textarea" placeholder="dress-style" />
+                                            <FormControl value={dress} id="dress" componentClass="textarea" placeholder="dress-style" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Leader or Follower:</ControlLabel>
-                                            <FormControl id="leader_follower" componentClass="textarea" placeholder="leader or follower?" />
+                                            <FormControl value={leader_follower} id="leader_follower" componentClass="textarea" placeholder="leader or follower?" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Strongest Postive Trait:</ControlLabel>
-                                            <FormControl id="positive_traits" componentClass="textarea" placeholder="strongest positive" />
+                                            <FormControl value={positive_traits} id="positive_traits" componentClass="textarea" placeholder="strongest positive" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Strongest Negative Trait:</ControlLabel>
-                                            <FormControl id="negative_traits" componentClass="textarea" placeholder="strongest negative" />
+                                            <FormControl value={negative_traits} id="negative_traits" componentClass="textarea" placeholder="strongest negative" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Temper:</ControlLabel>
-                                            <FormControl id="temper" componentClass="textarea" placeholder="chill, hot-headed, etc" />
+                                            <FormControl value={temper} id="temper" componentClass="textarea" placeholder="chill, hot-headed, etc" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
                                         <Button className = "btn" type="submit">
@@ -362,29 +385,29 @@ class Character extends Component{
                                     <Form onSubmit={this.handleCharacters}>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Star Sign:</ControlLabel>
-                                            <FormControl id="star_sign" componentClass="textarea" placeholder="Aries, Capricorn, etc" />
+                                            <FormControl value={star_sign} id="star_sign" componentClass="textarea" placeholder="Aries, Capricorn, etc" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Personality Type:</ControlLabel>
-                                            <FormControl id="personality" componentClass="textarea" placeholder="INFP, ESTP, etc" />
+                                            <FormControl value={personality} id="personality" componentClass="textarea" placeholder="INFP, ESTP, etc" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Life Philosopy:</ControlLabel>
-                                            <FormControl id="philosophy" componentClass="textarea" placeholder="zen, nihilism, etc" />
+                                            <FormControl value={philosophy} id="philosophy" componentClass="textarea" placeholder="zen, nihilism, etc" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Ambitions:</ControlLabel>
-                                            <FormControl id="ambitions" componentClass="textarea" placeholder="goals, dreams, etc" />
+                                            <FormControl value={ambitions} id="ambitions" componentClass="textarea" placeholder="goals, dreams, etc" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Likeable or unlikeable:</ControlLabel>
-                                            <FormControl id="liked_disliked" componentClass="textarea" placeholder="Will readers like or dislike? Why?" />
+                                            <FormControl value={liked_disliked} id="liked_disliked" componentClass="textarea" placeholder="Will readers like or dislike? Why?" onChange={this.changeCharacter}/>
                                         </FormGroup>
 
                                         <Button className = "btn" type="submit">

@@ -36,6 +36,7 @@ class Chapters extends Component{
             }
         }
         this.handleChapters = this.handleChapters.bind(this);
+        this.changeChapter = this.changeChapter.bind(this);
 
     }
 
@@ -119,10 +120,24 @@ class Chapters extends Component{
                 })
             })
         }
+    }
 
+    changeChapter(event){
+        //console.dir(event.target)
 
+        var propName = event.target.id
+        console.dir(event)
+        console.dir(propName)
+        
 
+        var stateCopy = this.state.chapterData;
 
+        stateCopy[propName] = event.target.value
+
+        this.setState({
+            chapterData: stateCopy
+
+        })
     }
 
 
@@ -167,40 +182,32 @@ class Chapters extends Component{
                                     <Form onSubmit={this.handleChapters} >
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What is the point of the chapter in one sentence?</ControlLabel>
-                                            <FormControl id='scene_number' componentClass="textarea" >
+                                            <FormControl value={scene_number} id='scene_number' componentClass="textarea" onChange={this.changeChapter}/>
                                                 {scene_number}
-                                            </FormControl>
-
-
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea" defaultValue={scene_plot}>
                                             <ControlLabel>How do the scenes directly affect the plot or subplot?</ControlLabel>
-                                            <FormControl id="scene_plot" type='input'   componentClass="textarea" placeholder="scene_plot"/>
-
-
+                                            <FormControl value={scene_plot} id="scene_plot" type='input'   componentClass="textarea" placeholder="scene_plot" onChange={this.changeChapter}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>How do the scenes directly affect character development?</ControlLabel>
-                                            <FormControl id="scene_char1" componentClass="textarea" placeholder="scene_char1"/>
-
-
+                                            <FormControl value={scene_char1} id="scene_char1" componentClass="textarea" placeholder="scene_char1" onChange={this.changeChapter}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>How do the characters personalities come out through the dialogue?</ControlLabel>
-                                            <FormControl id="scene_dialogue" componentClass="textarea" placeholder="scene_dialogue"/>
+                                            <FormControl value={scene_dialogue} id="scene_dialogue" componentClass="textarea" placeholder="scene_dialogue" onChange={this.changeChapter}/>
 
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What are the major conflicts in the scenes?</ControlLabel>
-                                            <FormControl id="scene_conflict" componentClass="textarea" placeholder="scene_conflict" >
+                                            <FormControl value={scene_conflict} id="scene_conflict" componentClass="textarea" placeholder="scene_conflict" onChange={this.changeChapter}/>
                                                 {scene_conflict}
-                                            </FormControl>
                                         </FormGroup>
 
                                         <Button className = "btn" type="submit">
@@ -213,29 +220,29 @@ class Chapters extends Component{
                                     <Form onSubmit={this.handleChapters}>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Are there places where dialogue could be replaced with action instead?</ControlLabel>
-                                            <FormControl id="relevant_dialogue" componentClass="textarea" placeholder="relevant_dialogue" />
+                                            <FormControl value={relevant_dialogue} id="relevant_dialogue" componentClass="textarea" placeholder="relevant_dialogue" onChange={this.changeChapter}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>How much character thought and reflection is there? Is there too much?</ControlLabel>
-                                            <FormControl id="char_thought" componentClass="textarea" placeholder="char_thought" />
+                                            <FormControl value={char_thought} id="char_thought" componentClass="textarea" placeholder="char_thought" onChange={this.changeChapter}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What is the narrative POV? First, second, omniscient?</ControlLabel>
-                                            <FormControl id="pov" componentClass="textarea" placeholder="pov" />
+                                            <FormControl value={pov} id="pov" componentClass="textarea" placeholder="pov" onChange={this.changeChapter}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What is the POV character for the scenes?Protagonist, antagonist, or ally?</ControlLabel>
-                                            <FormControl id="pov_char" componentClass="textarea" placeholder="pov_char" />
+                                            <FormControl value={pov_char} id="pov_char" componentClass="textarea" placeholder="pov_char" onChange={this.changeChapter}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What is the setting for each scene?</ControlLabel>
-                                            <FormControl id="setting" componentClass="textarea" placeholder="setting" />
+                                            <FormControl value={setting} id="setting" componentClass="textarea" placeholder="setting" onChange={this.changeChapter}/>
                                         </FormGroup>
 
                                         <Button className = "btn" type="submit">
@@ -248,28 +255,28 @@ class Chapters extends Component{
                                     <Form onSubmit={this.handleChapters}>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>How important is the setting to the character?</ControlLabel>
-                                            <FormControl id="setting_char" componentClass="textarea" placeholder="setting_char" />
+                                            <FormControl value={setting_char} id="setting_char" componentClass="textarea" placeholder="setting_char" onChange={this.changeChapter}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>How important is the setting to the plot?</ControlLabel>
-                                            <FormControl id="setting_plot" componentClass="textarea" placeholder="setting_plot" />
+                                            <FormControl value={setting_plot} id="setting_plot" componentClass="textarea" placeholder="setting_plot" onChange={this.changeChapter}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>How do the characters interact with the setting?</ControlLabel>
-                                            <FormControl id="setting_rev" componentClass="textarea" placeholder="setting_rev" />
+                                            <FormControl value={setting_rev} id="setting_rev" componentClass="textarea" placeholder="setting_rev" onChange={this.changeChapter}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What kind of mood do the scenes have?</ControlLabel>
-                                            <FormControl id="scene_mood" componentClass="textarea" placeholder="scene_mood" />
+                                            <FormControl value={scene_mood} id="scene_mood" componentClass="textarea" placeholder="scene_mood" onChange={this.changeChapter}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Are the characters actions predictable or complex?</ControlLabel>
-                                            <FormControl id="scene_char2" componentClass="textarea" placeholder="scene_char2" />
+                                            <FormControl value={scene_char2} id="scene_char2" componentClass="textarea" placeholder="scene_char2" onChange={this.changeChapter}/>
                                         </FormGroup>
 
                                         <Button className = "btn" type="submit">
