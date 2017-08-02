@@ -1780,6 +1780,56 @@ h2 {
   padding: 4em 0em 0em 0em;
 }
 
+/* line 2, ../../compass/sass/_resources.scss */
+.resources-wrapper {
+  background-image: url("https://static.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg");
+  position: absolute;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: -1;
+  min-width: 102%;
+  min-height: 100%;
+  overflow: scroll;
+  display: flex;
+}
+/* line 21, ../../compass/sass/_resources.scss */
+.resources-wrapper h1 {
+  color: white;
+  font-size: 6em;
+  margin-top: 2em;
+  margin-right: 1em;
+}
+/* line 29, ../../compass/sass/_resources.scss */
+.resources-wrapper #book, .resources-wrapper #TandA, .resources-wrapper #description {
+  font-size: 3em;
+  color: black;
+  text-align: center;
+}
+/* line 35, ../../compass/sass/_resources.scss */
+.resources-wrapper td {
+  color: black;
+  font-size: 2em;
+  font-weight: bold;
+  border: 1px solid white;
+}
+/* line 41, ../../compass/sass/_resources.scss */
+.resources-wrapper .table-bordered {
+  margin-right: -2em;
+}
+/* line 44, ../../compass/sass/_resources.scss */
+.resources-wrapper .table-responsive {
+  background-color: white;
+  opacity: 0.3;
+}
+
 /* line 3, ../../compass/sass/_forumsmain.scss */
 .forum-wrapper-main {
   position: absolute;

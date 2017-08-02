@@ -41,6 +41,7 @@ class Synopsis extends Component{
             // formError: false
         }
         this.handleSynopsis = this.handleSynopsis.bind(this);
+        this.changeSynop = this.changeSynop.bind(this);
 
     }
 
@@ -137,10 +138,22 @@ class Synopsis extends Component{
                 })
             })
         }
+    }
 
+    changeSynop(event){
+        //console.dir(event.target)
+        var propName = event.target.id
+        console.dir(event)
+        console.dir(propName)
+        
+        var stateCopy = this.state.synopsisData;
 
+        stateCopy[propName] = event.target.value
 
+        this.setState({
+            synopsisData: stateCopy
 
+        })
     }
 
 
@@ -185,31 +198,29 @@ class Synopsis extends Component{
                                     <Form onSubmit={this.handleSynopsis}>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Where and when does the story take place?</ControlLabel>
-                                            <FormControl type='text' id = "synop_beg1" componentClass="textarea" >
-
-                                            </FormControl>
+                                            <FormControl value={synop_beg1} id = "synop_beg1" componentClass="textarea" onChange={this.changeSynop} />
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Who is the protagonist?</ControlLabel>
-                                            <FormControl id = "synop_prot" componentClass="textarea"  />
+                                            <FormControl value={synop_prot} id = "synop_prot" componentClass="textarea" onChange={this.changeSynop} />
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What major and immediate problem is the protagonist facing?</ControlLabel>
-                                            <FormControl id = "synop_prob" componentClass="textarea"  />
+                                            <FormControl value={synop_prob} id = "synop_prob" componentClass="textarea" onChange={this.changeSynop} />
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Does your protagonist decide to take a leap of faith to change?</ControlLabel>
-                                            <FormControl id = "synop_char" componentClass="textarea"  />
+                                            <FormControl value={synop_char} id = "synop_char" componentClass="textarea" onChange={this.changeSynop} />
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>How has the situation of your protagonist changed at the end of the novel?</ControlLabel>
-                                            <FormControl id = "synop_change1" componentClass="textarea" />
+                                            <FormControl value={synop_change1} id = "synop_change1" componentClass="textarea" onChange={this.changeSynop} />
                                         </FormGroup>
 
                                         <Button className = "btn" type="submit">
@@ -222,29 +233,29 @@ class Synopsis extends Component{
                                     <Form onSubmit={this.handleSynopsis}>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Will readers feel that your protagonist has made the right decision?</ControlLabel>
-                                            <FormControl id = "synop_reader" componentClass="textarea" />
+                                            <FormControl value={synop_reader} id = "synop_reader" componentClass="textarea" onChange={this.changeSynop}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Who is the impact character for the protagonist?</ControlLabel>
-                                            <FormControl id = "synop_impact" componentClass="textarea" />
+                                            <FormControl value={synop_impact} id = "synop_impact" componentClass="textarea" onChange={this.changeSynop}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>How does the impact character influence the main character to change?</ControlLabel>
-                                            <FormControl id = "synop_change2" componentClass="textarea" />
+                                            <FormControl value={synop_change2} id = "synop_change2" componentClass="textarea" onChange={this.changeSynop}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId= "formControlsTextarea">
                                             <ControlLabel>Where does the relationship between the protagonist and the impact character stand in the beginning of the work?</ControlLabel>
-                                            <FormControl id = "synop_rel_start" componentClass="textarea" />
+                                            <FormControl value={synop_rel_start} id = "synop_rel_start" componentClass="textarea" onChange={this.changeSynop}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>How is their relationship tested throughout the story?</ControlLabel>
-                                            <FormControl id = "synop_test" componentClass="textarea" />
+                                            <FormControl value={synop_test} id = "synop_test" componentClass="textarea" onChange={this.changeSynop}/>
                                         </FormGroup>
 
                                         <Button className = "btn" type="submit">
@@ -257,28 +268,28 @@ class Synopsis extends Component{
                                     <Form onSubmit={this.handleSynopsis}>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What is the biggest change in their relationship?</ControlLabel>
-                                            <FormControl type='text' id = "synop_rel_conflict" componentClass="textarea" />
+                                            <FormControl value={synop_rel_conflict} id = "synop_rel_conflict" componentClass="textarea" onChange={this.changeSynop}/>
                                         </FormGroup>
 
                                         <FormGroup controlId= "formControlsTextarea">
                                             <ControlLabel>How is their relationship different by the end of the story?</ControlLabel>
-                                            <FormControl id = "synop_rel_end" componentClass="textarea" />
+                                            <FormControl value={synop_rel_end} id = "synop_rel_end" componentClass="textarea" onChange={this.changeSynop}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What issues does your character struggle with throughout the story?</ControlLabel>
-                                            <FormControl id = "synop_issue" componentClass="textarea" />
+                                            <FormControl value={synop_issue} id = "synop_issue" componentClass="textarea" onChange={this.changeSynop}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What are the themes of your story?</ControlLabel>
-                                            <FormControl id = "synop_theme" componentClass="textarea" />
+                                            <FormControl value={synop_theme} id = "synop_theme" componentClass="textarea" onChange={this.changeSynop}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What is the message or moral of your story?</ControlLabel>
-                                            <FormControl id = "synop_message" componentClass="textarea" />
+                                            <FormControl value={synop_message} id = "synop_message" componentClass="textarea" onChange={this.changeSynop}/>
                                         </FormGroup>
 
 

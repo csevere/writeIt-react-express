@@ -38,6 +38,7 @@ class Plot extends Component{
             // formError: false
         }
         this.handlePlot = this.handlePlot.bind(this);
+        this.changePlot = this.changePlot.bind(this);
 
     }
 
@@ -133,8 +134,26 @@ class Plot extends Component{
                 })
             })
         }
+    }
+
+    changePlot(event){
+        //console.dir(event.target)
+
+        var propName = event.target.id
+        console.dir(event)
+        console.dir(propName)
+        
+
+        var stateCopy = this.state.plotData;
 
 
+        stateCopy[propName] = event.target.value
+
+
+        this.setState({
+            plotData: stateCopy
+
+        })
 
 
     }
@@ -180,29 +199,29 @@ class Plot extends Component{
                                     <Form onSubmit={this.handlePlot}>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Which events in the book are the major ones/the ones advancing the plot?</ControlLabel>
-                                            <FormControl id="main_plot" componentClass="textarea" placeholder="main-plot" />
+                                            <FormControl value={main_plot} id="main_plot" componentClass="textarea" placeholder="main-plot" onChange={this.changePlot} />
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>How do the minor events contribute to the main plot?</ControlLabel>
-                                            <FormControl id="subplot" componentClass="textarea" placeholder="subplot" />
+                                            <FormControl value={subplot} id="subplot" componentClass="textarea" placeholder="subplot" onChange={this.changePlot}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What justifies the subplots if there are any?</ControlLabel>
-                                            <FormControl id="subplot_reasons" componentClass="textarea" placeholder="subplot-reasons" />
+                                            <FormControl value={subplot_reasons} id="subplot_reasons" componentClass="textarea" placeholder="subplot-reasons" onChange={this.changePlot}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What direct actions from the main characters affect the plot?</ControlLabel>
-                                            <FormControl id="direct_actions" componentClass="textarea" placeholder="direct-actions" />
+                                            <FormControl value={direct_actions} id="direct_actions" componentClass="textarea" placeholder="direct-actions" onChange={this.changePlot}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What indirect actions from the main character affect the plot?</ControlLabel>
-                                            <FormControl id="indirect_actions" componentClass="textarea" placeholder="indirect-actions" />
+                                            <FormControl value={indirect_actions} id="indirect_actions" componentClass="textarea" placeholder="indirect-actions" onChange={this.changePlot}/>
                                         </FormGroup>
 
                                         <Button className = "btn" type="submit">
@@ -215,29 +234,29 @@ class Plot extends Component{
                                     <Form onSubmit={this.handlePlot}>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What are the characters main motivations?</ControlLabel>
-                                            <FormControl id="motivation" componentClass="textarea" placeholder="motivation" />
+                                            <FormControl value={motivation} id="motivation" componentClass="textarea" placeholder="motivation" onChange={this.changePlot}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What type of plot? Character,plot, or idea driven?</ControlLabel>
-                                            <FormControl id="plot_type" componentClass="textarea" placeholder="plot-type" />
+                                            <FormControl value={plot_type} id="plot_type" componentClass="textarea" placeholder="plot-type" onChange={this.changePlot}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Do the events unfold chronologically or non-chronologically?</ControlLabel>
-                                            <FormControl id="plot_order" componentClass="textarea" placeholder="plot-order" />
+                                            <FormControl value={plot_order} id="plot_order" componentClass="textarea" placeholder="plot-order" onChange={this.changePlot}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId= "formControlsTextarea">
                                             <ControlLabel>What are the critical points of foreshadowing?</ControlLabel>
-                                            <FormControl id="foreshadow" componentClass="textarea" placeholder="foreshadow" />
+                                            <FormControl value={foreshadow} id="foreshadow" componentClass="textarea" placeholder="foreshadow" onChange={this.changePlot}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>How is the plot credible according to the rules of the world?</ControlLabel>
-                                            <FormControl id="credibility" componentClass="textarea" placeholder= "credibility" />
+                                            <FormControl value={credibility} id="credibility" componentClass="textarea" placeholder= "credibility" onChange={this.changePlot}/>
                                         </FormGroup>
 
                                         <Button className = "btn" type="submit">
@@ -250,27 +269,27 @@ class Plot extends Component{
                                     <Form onSubmit={this.handlePlot}>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Are all flashbacks strong or do some lessen the dramatic movement of the story?</ControlLabel>
-                                            <FormControl id="flashbacks" componentClass="textarea" placeholder="flashbacks" />
+                                            <FormControl value={flashbacks} id="flashbacks" componentClass="textarea" placeholder="flashbacks" onChange={this.changePlot}/>
                                         </FormGroup>
 
                                         <FormGroup controlId= "formControlsTextarea">
                                             <ControlLabel>What is the overall arc or journey of the character?</ControlLabel>
-                                            <FormControl id="journey" componentClass="textarea" placeholder="journey" />
+                                            <FormControl value={journey} id="journey" componentClass="textarea" placeholder="journey" onChange={this.changePlot}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What are the stakes for the main characters?</ControlLabel>
-                                            <FormControl id="stakes" componentClass="textarea" placeholder="stakes" />
+                                            <FormControl value={stakes} id="stakes" componentClass="textarea" placeholder="stakes" onChange={this.changePlot}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Who is your character’s worthy opponent? Describe</ControlLabel>
-                                            <FormControl id="antagonist" componentClass="textarea" placeholder="antagonist" />
+                                            <FormControl value={antagonist} id="antagonist" componentClass="textarea" placeholder="antagonist" onChange={this.changePlot}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What’s the plot summary in one sentence?</ControlLabel>
-                                            <FormControl id="summary" componentClass="textarea" placeholder="summary" />
+                                            <FormControl value={summary} id="summary" componentClass="textarea" placeholder="summary" onChange={this.changePlot}/>
                                         </FormGroup>
 
                                         <Button className = "btn" type="submit">

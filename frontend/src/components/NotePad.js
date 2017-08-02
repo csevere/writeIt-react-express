@@ -41,7 +41,7 @@ class NotePad extends Component{
             id: id
         });
 
-        this.props.history.push(`/write/${book}`);
+        this.props.history.push(`/write/${this.props.match.params.book}`);
 
     }
 
@@ -66,6 +66,17 @@ class NotePad extends Component{
 
     render(){
 
+<<<<<<< HEAD
+=======
+        const settings = {
+            dots: true,
+            infinite: false,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        };
+        console.log(this.props.match.params.book)
+>>>>>>> origin/master
 
         var notepad = this.state.notePadData.notepad;
         var writeMenu = '/write/' + this.props.match.params.book;
@@ -106,7 +117,7 @@ class NotePad extends Component{
                             <Col md = {3}>
                                 <Link to = {writeMenu} className = "return-writemenu">
                                     <img src = "https://cdn4.iconfinder.com/data/icons/lifestyle-set-2/100/07a3c3443f894cb3fa7a93ee3c496233-512.png"/>
-                                    <div id="writeMenu"><Link to = "/writeMenu"><Button className = "btn-default btn" bsStyle="warning" bsSize="large"
+                                    <div id="writeMenu"><Link to = {writeMenu}><Button className = "btn-default btn" bsStyle="warning" bsSize="large"
                                     type="submit">Return to Write Menu</Button></Link></div>
                                 </Link>
                             </Col>
