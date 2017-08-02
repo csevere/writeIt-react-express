@@ -34,6 +34,7 @@ class QueryLetter extends Component{
             // formError: false
         }
         this.handleQueryLetter = this.handleQueryLetter.bind(this);
+        this.changeQueryLetter = this.changeQueryLetter.bind(this);
 
     }
 
@@ -112,10 +113,22 @@ class QueryLetter extends Component{
                 })
             })
         }
+    }
 
+    changeQueryLetter(event){
+        //console.dir(event.target)
+        var propName = event.target.id
+        console.dir(event)
+        console.dir(propName)
+        
+        var stateCopy = this.state.queryLetterData;
 
+        stateCopy[propName] = event.target.value
 
+        this.setState({
+            queryLetterData: stateCopy
 
+        })
     }
 
 
@@ -129,15 +142,15 @@ class QueryLetter extends Component{
         }
 
         var query_clarity = this.state.queryLetterData.query_clarity;
-        var query_boring = this.state.queryLetterData.query_clarity;
-        var query_balance = this.state.queryLetterData.query_clarity;
-        var query_stakes= this.state.queryLetterData.query_clarity;
-        var query_advance = this.state.queryLetterData.query_clarity;
-        var query_resolve = this.state.queryLetterData.query_clarity;
-        var query_voice = this.state.queryLetterData.query_clarity;
-        var query_action = this.state.queryLetterData.query_clarity;
-        var query_personality = this.state.queryLetterData.query_clarity;
-        var query_romance = this.state.queryLetterData.query_clarity;
+        var query_boring = this.state.queryLetterData.query_boring;
+        var query_balance = this.state.queryLetterData.query_balance;
+        var query_stakes = this.state.queryLetterData.query_stakes;
+        var query_advance = this.state.queryLetterData.query_advance;
+        var query_resolve = this.state.queryLetterData.query_resolve;
+        var query_voice = this.state.queryLetterData.query_voice;
+        var query_action = this.state.queryLetterData.query_action;
+        var query_personality = this.state.queryLetterData.query_personality;
+        var query_romance = this.state.queryLetterData.query_romance;
 
         var writeMenu = '/write/' + this.props.match.params.book;
         var queryLetterBoard = '/queryboard/' + this.props.match.params.book;
@@ -152,23 +165,23 @@ class QueryLetter extends Component{
                                     <Form onSubmit={this.handleQueryLetter}>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Have you researched the agent and the type of authods he/she represents?</ControlLabel>
-                                            <FormControl id="query_clarity" componentClass="textarea" placeholder="query_clarity" />
+                                            <FormControl value={query_clarity} id="query_clarity" componentClass="textarea" placeholder="query_clarity" onChange={this.changeQueryLetter}/>
                                         </FormGroup>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>In setting up the story, specify exactly what your character wants the most in the world?</ControlLabel>
-                                            <FormControl id="query_boring" componentClass="textarea" placeholder="query_boring" />
+                                            <FormControl value={query_boring} id="query_boring" componentClass="textarea" placeholder="query_boring" onChange={this.changeQueryLetter}/>
                                         </FormGroup>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Specify what's getting in the way of your character's goals?</ControlLabel>
-                                            <FormControl id="query_balance" componentClass="textarea" placeholder="query_balance" />
+                                            <FormControl value={query_balance} id="query_balance" componentClass="textarea" placeholder="query_balance" onChange={this.changeQueryLetter}/>
                                         </FormGroup>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What's at stake if your character fails?</ControlLabel>
-                                            <FormControl id="query_stakes" componentClass="textarea" placeholder="query_stakes" />
+                                            <FormControl value={query_stakes} id="query_stakes" componentClass="textarea" placeholder="query_stakes" onChange={this.changeQueryLetter}/>
                                         </FormGroup>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>How can you show rather than tell the agent about your main character?</ControlLabel>
-                                            <FormControl id="query_advance" componentClass="textarea" placeholder="query_advance" />
+                                            <FormControl value={query_advance} id="query_advance" componentClass="textarea" placeholder="query_advance" onChange={this.changeQueryLetter}/>
                                         </FormGroup>
                                         <Button className = "btn" type="submit">
                                             submit
@@ -180,23 +193,23 @@ class QueryLetter extends Component{
                                     <Form onSubmit={this.handleQueryLetter}>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>How can you show your characters emotional journey from start to end?</ControlLabel>
-                                            <FormControl id="query_resolve" componentClass="textarea" placeholder="query_resolve" />
+                                            <FormControl value={query_resolve} id="query_resolve" componentClass="textarea" placeholder="query_resolve" onChange={this.changeQueryLetter}/>
                                         </FormGroup>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What are the stats of your book: Genre,target audience, word count?</ControlLabel>
-                                            <FormControl id="query_voice" componentClass="textarea" placeholder="query_voice" />
+                                            <FormControl value={query_voice} id="query_voice" componentClass="textarea" placeholder="query_voice" onChange={this.changeQueryLetter}/>
                                         </FormGroup>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What comtemporary titles match your book?</ControlLabel>
-                                            <FormControl id="query_action" componentClass="textarea" placeholder="query_action" />
+                                            <FormControl value={query_action} id="query_action" componentClass="textarea" placeholder="query_action" onChange={this.changeQueryLetter}/>
                                         </FormGroup>
                                         <FormGroup controlId= "formControlsTextarea">
                                             <ControlLabel>Is your bio too long?</ControlLabel>
-                                            <FormControl id="query_personality" componentClass="textarea" placeholder="query_personality" />
+                                            <FormControl value={query_personality} id="query_personality" componentClass="textarea" placeholder="query_personality" onChange={this.changeQueryLetter}/>
                                         </FormGroup>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Which sentences generate multiple questions? Rewrite them here.</ControlLabel>
-                                            <FormControl id="query_romance" componentClass="textarea" placeholder= "query_romance" />
+                                            <FormControl value={query_romance} id="query_romance" componentClass="textarea" placeholder= "query_romance" onChange={this.changeQueryLetter}/>
                                         </FormGroup>
                                         <Button className = "btn" type="submit">
                                             submit

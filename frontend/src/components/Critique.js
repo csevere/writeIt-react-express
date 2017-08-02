@@ -38,6 +38,7 @@ class Critique extends Component{
             // formError: false
         }
         this.handleCritique = this.handleCritique.bind(this);
+        this.changeCritique = this.changeCritique.bind(this);
 
     }
 
@@ -133,10 +134,22 @@ class Critique extends Component{
                 })
             })
         }
+    }
 
+    changeCritique(event){
+        //console.dir(event.target)
+        var propName = event.target.id
+        console.dir(event)
+        console.dir(propName)
 
+        var stateCopy = this.state.critiqueData;
 
+        stateCopy[propName] = event.target.value
 
+        this.setState({
+            critiqueData: stateCopy
+
+        })
     }
 
 
@@ -180,32 +193,32 @@ class Critique extends Component{
                                     <Form onSubmit={this.handleCritique}>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Are there any parts in the sample that you found confusing?</ControlLabel>
-                                            <FormControl id = "critique_clarity"  componentClass="textarea" placeholder="confusing sections" />
+                                            <FormControl value={critique_clarity} id="critique_clarity"  componentClass="textarea" placeholder="confusing sections" onChange={this.changeCritique}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Did you find any section boring or repetitious?</ControlLabel>
-                                            <FormControl id = "critique_boring" componentClass="textarea" placeholder="repetitious sections" />
+                                            <FormControl value={critique_boring} id="critique_boring" componentClass="textarea" placeholder="repetitious sections" onChange={this.changeCritique}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Is there a right balance of action, dialogue, and description?</ControlLabel>
-                                            <FormControl id = "critique_balance" componentClass="textarea" placeholder="balance" />
+                                            <FormControl value={critique_balance} id="critique_balance" componentClass="textarea" placeholder="balance" onChange={this.changeCritique}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Does the sample, scene, or chapter advance the story or develop character?</ControlLabel>
-                                            <FormControl id = "critique_advance" componentClass="textarea" placeholder="advancing the story" />
+                                            <FormControl value={critique_advance} id="critique_advance" componentClass="textarea" placeholder="advancing the story" onChange={this.changeCritique}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Are more plot questions raised before a plot question is resolved?</ControlLabel>
-                                            <FormControl id = "critique_resolve" componentClass="textarea" placeholder="too many plot questions raised?" />
+                                            <FormControl value={critique_resolve} id="critique_resolve" componentClass="textarea" placeholder="too many plot questions raised?" onChange={this.changeCritique}/>
                                         </FormGroup>
 
-                                        <Button className = "btn" type="submit">
+                                        <Button className="btn" type="submit">
                                             submit
                                         </Button>
                                     </Form>
@@ -215,29 +228,29 @@ class Critique extends Component{
                                     <Form onSubmit={this.handleCritique}>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Do the characters all sound the same or do they have unique voices?</ControlLabel>
-                                            <FormControl id = "critique_voice" componentClass="textarea" placeholder="unique voices for characters" />
+                                            <FormControl value={critique_voice} id = "critique_voice" componentClass="textarea" placeholder="unique voices for characters" onChange={this.changeCritique}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Are the actions of the characters reasonable, fitting with their personalities?</ControlLabel>
-                                            <FormControl id = "critique_action" componentClass="textarea" placeholder="character personality fit" />
+                                            <FormControl value={critique_action} id = "critique_action" componentClass="textarea" placeholder="character personality fit" onChange={this.changeCritique}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Do the characters have clear strength and weaknesses affected by the plot?</ControlLabel>
-                                            <FormControl id = "critique_personality" componentClass="textarea" placeholder="real strengths and weaknesses" />
+                                            <FormControl value={critique_personality} id = "critique_personality" componentClass="textarea" placeholder="real strengths and weaknesses" onChange={this.changeCritique}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId= "formControlsTextarea">
                                             <ControlLabel>If there’s a romantic relationship, is the emotional conflict strong enough for the entire work?</ControlLabel>
-                                            <FormControl id = "critique_romance" componentClass="textarea" placeholder="romance arc strong?" />
+                                            <FormControl value={critique_romance} id = "critique_romance" componentClass="textarea" placeholder="romance arc strong?" onChange={this.changeCritique}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Is the conflict between the main character and the antagonist strong enough?</ControlLabel>
-                                            <FormControl id = "critique_conflict" componentClass="textarea" placeholder= "conflit strong?" />
+                                            <FormControl value={critique_conflict} id = "critique_conflict" componentClass="textarea" placeholder= "conflit strong?" onChange={this.changeCritique}/>
                                         </FormGroup>
 
                                         <Button className = "btn" type="submit">
@@ -250,28 +263,28 @@ class Critique extends Component{
                                     <Form onSubmit={this.handleCritique}>
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Does the opponent push the main character to his or her limits?</ControlLabel>
-                                            <FormControl id = "critique_limit"componentClass="textarea" placeholder="protagonist pushed to limits?" />
+                                            <FormControl value={critique_limit} id = "critique_limit"componentClass="textarea" placeholder="protagonist pushed to limits?" onChange={this.changeCritique}/>
                                         </FormGroup>
 
                                         <FormGroup controlId= "formControlsTextarea">
                                             <ControlLabel>Would a scene work better in the point of view of another character?</ControlLabel>
-                                            <FormControl id = "critique_pov" componentClass="textarea" placeholder="character pov" />
+                                            <FormControl value={critique_pov} id = "critique_pov" componentClass="textarea" placeholder="character pov" onChange={this.changeCritique}/>
                                         </FormGroup>
 
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Do the sentences vary in length?</ControlLabel>
-                                            <FormControl id = "critique_sent" componentClass="textarea" placeholder="sentence length" />
+                                            <FormControl value={critique_sent} id = "critique_sent" componentClass="textarea" placeholder="sentence length" onChange={this.changeCritique}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>Is there more telling than showing?</ControlLabel>
-                                            <FormControl id = "critique_lang" componentClass="textarea" placeholder="show don't tell" />
+                                            <FormControl value={critique_lang} id = "critique_lang" componentClass="textarea" placeholder="show don't tell" onChange={this.changeCritique}/>
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>If sci-fi, fantasy, or paranormal element, does the writer build a convincing world?</ControlLabel>
-                                            <FormControl id = "critique_element" componentClass="textarea" placeholder="good world-building?" />
+                                            <FormControl value={critique_element} id = "critique_element" componentClass="textarea" placeholder="good world-building?" onChange={this.changeCritique}/>
                                         </FormGroup>
 
 
