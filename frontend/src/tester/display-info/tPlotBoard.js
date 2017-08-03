@@ -48,7 +48,7 @@ class tPlotBoard extends Component{
             // })
 
         });
-        this.props.history.push(`/write/${book}`);
+        this.props.history.push(`/plotboard/${book}`);
     }
 
 
@@ -64,110 +64,112 @@ class tPlotBoard extends Component{
             var edit = '/plot/' + this.props.match.params.book +'?id=' + plot.id;
 
             plotArray.push(
-                <div className="text-center">
+                <div>
+                    <Grid className="view-width">
+                        <Col md = {10} className="view-card">
 
 
-                    <div>
-                        <div id = "one">Which events in the book are the major ones/the ones advancing the plot?</div>
-                        <div>{plot.main_plot}</div>
-                    </div>
+                            <div>
+                                <div className = "questions">1. Which events in the book are the major ones/the ones advancing the plot?</div>
+                                <div>{plot.main_plot}</div>
+                            </div>
 
-                    <div>
-                        <div id = "two">How do the minor events contribute to the main plot?</div>
-                        <div>{plot.subplot}</div>
-                    </div>
+                            <div>
+                                <div className = "questions">2. How do the minor events contribute to the main plot?</div>
+                                <div>{plot.subplot}</div>
+                            </div>
 
-                    <div>
-                        <div id = "three">What justifies the subplots if there are any?</div>
-                        <div>{plot.subplot_reasons}</div>
-                    </div>
+                            <div>
+                                <div className = "questions">3. What justifies the subplots if there are any?</div>
+                                <div>{plot.subplot_reasons}</div>
+                            </div>
 
-                    <div>
-                        <div id = "four">What direct actions from the main characters affect the plot?</div>
-                        <div>{plot.direct_actions}</div>
-                    </div>
+                            <div>
+                                <div className = "questions">4. What direct actions from the main characters affect the plot?</div>
+                                <div>{plot.direct_actions}</div>
+                            </div>
 
-                    <div>
-                        <div id = "five">What indirect actions from the main character affect the plot?</div>
-                        <div>{plot.indirect_actions}</div>
-                    </div>
-
-
-
-
-
-
-                    <div>
-                        <div id = "one">What are the characters main motivations?</div>
-                        <div>{plot.motivation}</div>
-                    </div>
-
-                    <div>
-                        <div id = "two">What type of plot? Character,plot, or idea driven?</div>
-                        <div>{plot.plot_type}</div>
-                    </div>
-
-                    <div>
-                        <div id = "three">Do the events unfold chronologically or non-chronologically?</div>
-                        <div>{plot.plot_order}</div>
-                    </div>
-
-                    <div>
-                        <div id = "four">What are the critical points of foreshadowing?</div>
-                        <div>{plot.foreshadow}</div>
-                    </div>
-
-                    <div>
-                        <div id = "five">How is the plot credible according to the rules of the world?</div>
-                        <div>{plot.credibility}</div>
-                    </div>
+                            <div>
+                                <div className = "questions">5. What indirect actions from the main character affect the plot?</div>
+                                <div>{plot.indirect_actions}</div>
+                            </div>
 
 
 
 
 
 
-                    <div>
-                        <div id = "one">Are all flashbacks strong or do some lessen the dramatic movement of the story?</div>
-                        <div>{plot.flashbacks}</div>
-                    </div>
+                            <div>
+                                <div id = "one">What are the characters main motivations?</div>
+                                <div>{plot.motivation}</div>
+                            </div>
 
-                    <div>
-                        <div id = "two">What is the overall arc or journey of the character?</div>
-                        <div>{plot.journey}</div>
-                    </div>
+                            <div>
+                                <div id = "two">What type of plot? Character,plot, or idea driven?</div>
+                                <div>{plot.plot_type}</div>
+                            </div>
 
-                    <div>
-                        <div id = "three">What are the stakes for the main characters?</div>
-                        <div>{plot.stakes}</div>
-                    </div>
+                            <div>
+                                <div id = "three">Do the events unfold chronologically or non-chronologically?</div>
+                                <div>{plot.plot_order}</div>
+                            </div>
 
-                    <div>
-                        <div id = "four">Who is your character’s worthy opponent? Describe</div>
-                        <div>{plot.antagonist}</div>
-                    </div>
+                            <div>
+                                <div id = "four">What are the critical points of foreshadowing?</div>
+                                <div>{plot.foreshadow}</div>
+                            </div>
 
-                    <div>
-                        <div id = "five">What’s the plot summary in one sentence?</div>
-                        <div>{plot.summary}</div>
-                        <br/><br/>
-
-
-                    </div>
-                    <br/>
-                    <div><br/><Link to = {edit} className = "chboard">
-                        <Button className = "btn" type="button">
-                            Edit Chapter
-                        </Button>
-                    </Link>	<Button className = "btn" type="button" onClick={()=>{this.deletePlot(plot.id)}}>
-                        Delete Chapter
-                    </Button></div>
+                            <div>
+                                <div id = "five">How is the plot credible according to the rules of the world?</div>
+                                <div>{plot.credibility}</div>
+                            </div>
 
 
 
 
 
 
+                            <div>
+                                <div id = "one">Are all flashbacks strong or do some lessen the dramatic movement of the story?</div>
+                                <div>{plot.flashbacks}</div>
+                            </div>
+
+                            <div>
+                                <div id = "two">What is the overall arc or journey of the character?</div>
+                                <div>{plot.journey}</div>
+                            </div>
+
+                            <div>
+                                <div id = "three">What are the stakes for the main characters?</div>
+                                <div>{plot.stakes}</div>
+                            </div>
+
+                            <div>
+                                <div id = "four">Who is your character’s worthy opponent? Describe</div>
+                                <div>{plot.antagonist}</div>
+                            </div>
+
+                            <div>
+                                <div id = "five">What’s the plot summary in one sentence?</div>
+                                <div>{plot.summary}</div>
+                                <br/><br/>
+
+
+                            </div>
+                            <br/>
+                            <div><br/><Link to = {edit} className = "chboard">
+                                <Button className = "btn btn-info" type="button">
+                                    Edit Chapter
+                                </Button>
+                            </Link>	<Button className = "btn btn-danger" type="button" onClick={()=>{this.deletePlot(plot.id)}}>
+                                Delete Chapter
+                            </Button></div>
+
+
+
+                        </Col>
+
+                    </Grid>
                 </div>
 
 

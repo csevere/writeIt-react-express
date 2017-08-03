@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link} from 'react-router-dom';
 import { Form, FormGroup, ControlLabel, FormControl, Button, Col ,MenuItem, Grid} from 'react-bootstrap'
 // Our action needs bindActionCreators from redux
 import  {bindActionCreators} from 'redux';
@@ -111,6 +112,7 @@ class Login extends Component{
 								</Col>
 							</FormGroup>
 						</Form>
+						<div><h4 className = "text-center">Don&#39;t have an account? <Link to = "/signup">Create one!</Link></h4></div>
 					</Col>
 				</Grid>
 			</div>
