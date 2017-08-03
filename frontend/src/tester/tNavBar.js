@@ -15,6 +15,7 @@ class tNavBar extends React.Component {
                 {value: 'none', label: 'none'}     
             ]
         }
+        this.logChange = this.logChange.bind(this);
     }
 
     componentDidMount(){
@@ -36,6 +37,12 @@ class tNavBar extends React.Component {
         })
     }
 
+    logChange(val) {
+	  this.setState({
+	  		selectVal: val.value
+	  })
+	}
+
 
 
 
@@ -43,13 +50,7 @@ class tNavBar extends React.Component {
 
   	var Select = require('react-select');
 
-	function logChange(val) {
-	  console.log("Selected: " + JSON.stringify(val));
-	  input = JSON.stringify(val)
-	  console.log(input)
-	  document.getElementById('search').value = val.value;
-
-	}
+	
 
 	console.log(this.state.options)
 	//console.log(document.getElementById('search').value)
@@ -63,9 +64,9 @@ class tNavBar extends React.Component {
 				id='special'
 				placeholder='input'
 				name="form-field-name"
-				value={input}
+				value={this.state.selectVal}
 				options={this.state.options}
-				onChange={logChange}
+				onChange={this.logChange}
 			/>
 		</div>
     )
