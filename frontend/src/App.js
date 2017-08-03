@@ -90,6 +90,9 @@ class App extends Component {
               <Route exact path = "/contemp" component = {tContempForum}/>
               <Route exact path = "/contempform" component = {tNewContempForm}/>
               <Route exact path = "/contemptopic" component = {tContempTopic}/>
+
+              <Route exact path="/character" component= {Character} />
+
             </div> 
 
           </div>

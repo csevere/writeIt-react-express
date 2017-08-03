@@ -19,6 +19,10 @@
 	min-height: 100%;
 	width: 100vw; 
 	overflow: scroll; 
+
+	.control-label{
+		margin-bottom: 1em; 
+	}
 	 
 }
 
@@ -78,7 +82,12 @@
 	.form-control {
 		width: 80% !important;
 		margin-left: 5em;
-    	padding-top: 0em;
+    	padding: 4px; 
+
+	}
+
+	.text-area{
+		line-height: 50px;
 	}
 
 	.slick-prev, .slick-next {
@@ -129,9 +138,8 @@
 	 
 
 	    .btn{
-	    	
-	    	margin-top: 10em !important;
-	    	margin-left: 21em !important;
+	    	margin: 14em 0em 0em 28em !important; 
+	    
 		}
 	}
     	

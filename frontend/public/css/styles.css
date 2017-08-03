@@ -1205,65 +1205,73 @@ h2 {
   width: 100vw;
   overflow: scroll;
 }
+/* line 23, ../../compass/sass/_writemenucat.scss */
+.writemenucat .control-label {
+  margin-bottom: 1em;
+}
 
-/* line 26, ../../compass/sass/_writemenucat.scss */
+/* line 30, ../../compass/sass/_writemenucat.scss */
 .fourth-row-left {
   float: left;
   margin-top: -13em;
 }
-/* line 29, ../../compass/sass/_writemenucat.scss */
+/* line 33, ../../compass/sass/_writemenucat.scss */
 .fourth-row-left img {
   width: 50%;
 }
-/* line 34, ../../compass/sass/_writemenucat.scss */
+/* line 38, ../../compass/sass/_writemenucat.scss */
 .fourth-row-left a {
   text-decoration: none;
   font-size: 15px;
   font-weight: bolder;
   color: #000000;
 }
-/* line 42, ../../compass/sass/_writemenucat.scss */
+/* line 46, ../../compass/sass/_writemenucat.scss */
 .fourth-row-left a:hover {
   color: #0f820f;
   cursor: pointer;
   text-decoration: underline;
 }
 
-/* line 50, ../../compass/sass/_writemenucat.scss */
+/* line 54, ../../compass/sass/_writemenucat.scss */
 .fourth-row-right {
   float: right;
   margin-top: -10em;
 }
-/* line 53, ../../compass/sass/_writemenucat.scss */
+/* line 57, ../../compass/sass/_writemenucat.scss */
 .fourth-row-right img {
   width: 35%;
 }
-/* line 58, ../../compass/sass/_writemenucat.scss */
+/* line 62, ../../compass/sass/_writemenucat.scss */
 .fourth-row-right a {
   text-decoration: none;
   font-size: 15px;
   font-weight: bolder;
   color: #000000;
 }
-/* line 66, ../../compass/sass/_writemenucat.scss */
+/* line 70, ../../compass/sass/_writemenucat.scss */
 .fourth-row-right a:hover {
   color: #0f820f;
   cursor: pointer;
   text-decoration: underline;
 }
 
-/* line 78, ../../compass/sass/_writemenucat.scss */
+/* line 82, ../../compass/sass/_writemenucat.scss */
 .ch-forms .form-control {
   width: 80% !important;
   margin-left: 5em;
-  padding-top: 0em;
+  padding: 4px;
 }
-/* line 84, ../../compass/sass/_writemenucat.scss */
+/* line 89, ../../compass/sass/_writemenucat.scss */
+.ch-forms .text-area {
+  line-height: 50px;
+}
+/* line 93, ../../compass/sass/_writemenucat.scss */
 .ch-forms .slick-prev, .ch-forms .slick-next {
   position: absolute;
   top: 37% !important;
 }
-/* line 90, ../../compass/sass/_writemenucat.scss */
+/* line 99, ../../compass/sass/_writemenucat.scss */
 .ch-forms .slick-dots {
   display: block;
   position: absolute;
@@ -1276,13 +1284,13 @@ h2 {
   text-align: center;
   left: -52em;
 }
-/* line 101, ../../compass/sass/_writemenucat.scss */
+/* line 110, ../../compass/sass/_writemenucat.scss */
 .ch-forms .slick-dots li {
   position: relative;
   left: 51.5em;
   top: -8em;
 }
-/* line 109, ../../compass/sass/_writemenucat.scss */
+/* line 118, ../../compass/sass/_writemenucat.scss */
 .ch-forms .ch-forms-2 {
   display: block;
   width: 45em;
@@ -1293,10 +1301,9 @@ h2 {
   /* Padding for demo purposes */
   padding: 4em 0em 0em 0em;
 }
-/* line 131, ../../compass/sass/_writemenucat.scss */
+/* line 140, ../../compass/sass/_writemenucat.scss */
 .ch-forms .ch-forms-2 .btn {
-  margin-top: 10em !important;
-  margin-left: 21em !important;
+  margin: 14em 0em 0em 28em !important;
 }
 
 /* line 3, ../../compass/sass/_user.scss */
@@ -2253,3 +2260,64 @@ h2 {
   list-style: none;
   display: flex;
 }
+
+/* line 3, ../../compass/sass/_viewboard.scss */
+.view-board {
+  position: absolute;
+  background-image: url("https://static.pexels.com/photos/301717/pexels-photo-301717.jpeg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #000000;
+  top: 0;
+  left: 0;
+  margin-top: 4em;
+  z-index: 1;
+  min-width: 102%;
+  min-height: 100%;
+  width: 100vw;
+  overflow: scroll;
+  display: flex;
+}
+/* line 23, ../../compass/sass/_viewboard.scss */
+.view-board .display-resp {
+  display: flex;
+}
+/* line 28, ../../compass/sass/_viewboard.scss */
+.view-board .view-width {
+  width: 557px;
+}
+/* line 34, ../../compass/sass/_viewboard.scss */
+.view-board .view-card {
+  height: 85%;
+  width: 50%;
+  margin-top: 1em;
+  position: relative;
+  padding: 25px;
+  background-color: #f0ffff;
+  font-size: 20px;
+  font-family: 'Cabin', sans-serif;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+/* line 54, ../../compass/sass/_viewboard.scss */
+.view-board .view-card::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border-style: solid;
+  border-width: 0 100px 100px 0;
+  border-color: #ddd #344;
+  transition: all ease 0.5s;
+}
+/* line 65, ../../compass/sass/_viewboard.scss */
+.view-board .view-card:hover::before {
+  border-width: 0 150px 150px 0;
+  border-color: #eee #5bc0de;
+}
+
+/* folding */
