@@ -71,27 +71,27 @@ class tCritiqueBoard extends Component{
                         <Col sm = {5} className="view-card">
 
                             <div>
-                                <div classquestions = "questions"> 1. Are there any parts in the sample that you found confusing?</div>
+                                <div className="questions"> 1. Are there any parts in the sample that you found confusing?</div>
                                 <div>{critiques.critique_clarity}</div>
                             </div>
 
                             <div>
-                                <div classquestions = "questions">2. Did you find any section boring or repetitious?</div>
+                                <div className = "questions">2. Did you find any section boring or repetitious?</div>
                                 <div>{critiques.critique_boring}</div>
                             </div>
 
                             <div>
-                                <div classquestions = "questions">3. Is there a right balance of action, dialogue, and description?</div>
+                                <div className = "questions">3. Is there a right balance of action, dialogue, and description?</div>
                                 <div>{critiques.critique_balance}</div>
                             </div>
 
                             <div>
-                                <div classquestions = "questions">4. Does the sample, scene, or chapter advance the story or develop character?</div>
+                                <div className = "questions">4. Does the sample, scene, or chapter advance the story or develop character?</div>
                                 <div>{critiques.critique_advance}</div>
                             </div>
 
                             <div>
-                                <div classquestions = "questions"> 5. Are more plot questions raised before a plot question is resolved?</div>
+                                <div className = "questions"> 5. Are more plot questions raised before a plot question is resolved?</div>
                                 <div>{critiques.critique_resolve}</div>
                             </div>
 

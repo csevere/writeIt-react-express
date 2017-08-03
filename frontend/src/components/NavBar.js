@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import { Nav, Navbar, NavItemForm, Grid, Row, Col, Form, FormGroup, FormControl, Button, ControlLabel } from 'react-bootstrap';
-import {Autocomplete} from 'react-autocomplete';
+// import {Autocomplete} from 'react-autocomplete';
 
 class NavBar extends Component{
 	
