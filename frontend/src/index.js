@@ -23,6 +23,7 @@ const theStore = applyMiddleware(reduxPromise)(createStore)(RootReducer)
 
 
 
+
 ReactDOM.render(
 	<Provider store={theStore}>
 		<App />

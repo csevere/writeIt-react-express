@@ -398,6 +398,24 @@ router.get('/profilepic', (req,res)=>{
 });
 
 
+router.get('/profiles', (req,res)=>{
+
+	var profileQuery = `SELECT username FROM users` ;
+	connection.query(profileQuery, (error, response)=>{
+		if(error){
+			throw error;
+		}else{
+			console.log(response)
+			res.json({
+				profileData: response
+			})
+		}
+
+	})
+
+});
+
+
 ///////////////////////////////////////////////////////////////////
 //////////////////////////POST REQUESTS////////////////////////////
 ///////////////////////////////////////////////////////////////////
