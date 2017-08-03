@@ -415,6 +415,23 @@ router.get('/profiles', (req,res)=>{
 
 });
 
+router.get('/results', (req,res)=>{
+
+	var resultsQuery = `SELECT * FROM users 
+	LEFT JOIN profilepic on users.username = profilepic.username;` ;
+	connection.query(resultsQuery, (error, response)=>{
+		if(error){
+			throw error;
+		}else{
+			console.log(response)
+			res.json({
+				resultsData: response
+			})
+		}
+
+	})
+
+});
 
 ///////////////////////////////////////////////////////////////////
 //////////////////////////POST REQUESTS////////////////////////////
