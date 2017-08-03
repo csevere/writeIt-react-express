@@ -41,6 +41,7 @@ import tMainForum from './tester_forums/tMainForum';
 import tContempForum from './tester_forums/tContempForum';
 import tNewContempForm from './tester_forums/tNewContempForm';
 import tContempTopic from './tester_forums/tContempTopic';
+import tNavBar from './tester/tNavBar';
 
 
 
@@ -57,12 +58,13 @@ class App extends Component {
           <div className="App">
             <NavBar/>
             <div className = "container main">
+              <Route exact path='/test' component={tNavBar} />
               <Route exact path="/" component= {Home} /> 
               <Route exact path="/signup" component= {Register} />
               <Route exact path="/login" component= {Login} />
 
               <Route exact path="/user" component= {UserProfile} />
-              <Route exact path = "/otheruser" component = {tOtherUser}/>
+              <Route exact path = "/otheruser/:profile" component = {tOtherUser}/>
               <Route exact path = "/search" component = {tResultsPage}/>
 
               <Route exact path="/write/:book" component= {writeMenu} />             
