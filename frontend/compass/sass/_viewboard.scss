@@ -20,6 +20,13 @@
 	overflow: scroll;
 	display: flex; 
 
+
+
+	.fourth-row-left {
+	    float: left;
+	    margin-top: 45em;
+	}
+
 	.btn {
 	    position: relative;
 	    top: -4em;
@@ -40,7 +47,11 @@
 
 	.view-card{
     	width: 85%;
-    	margin-top: 1em; 
+    	height: 132vh;
+    	@media screen and(min-width:$break-xlarge){
+			height: 105vh			
+		}
+    	margin-top: 2em; 
 		position: relative;
 		padding: 25px;
 		background-color: $azure; 
@@ -53,8 +64,11 @@
 	    // .view-card:hover{ 
 	    // 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 	    // }
-
 	   
+	}
+
+	.questions{
+		color: $independence; 
 	}
 
 	.view-card::before {
@@ -63,14 +77,14 @@
 		top: 0px;
 		right: 0px;
 		border-style: solid;
-		border-width: 0 100px 100px 0;
+		border-width: 0 89px 77px 0;
 		border-color: #ddd #344;
 		transition: all ease 0.5s;
 	}
 
 	.view-card:hover::before {
-		border-width: 0 150px 150px 0;
-		border-color: #eee #5bc0de;
+		border-width: 0 100px 100px 0;
+		border-color: #ddd #5bc0de
 	}
 	 
 

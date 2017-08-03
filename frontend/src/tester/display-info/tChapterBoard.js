@@ -65,31 +65,32 @@ class tChapterBoard extends Component{
             var edit = '/chapters/' + this.props.match.params.book +'?id=' + chapters.id;
 
 			chaptersArray.push(
-				<div className="text-center">
+				<div>
 
-
+					<Grid className="view-width">
+						<Col sm = {5} className="view-card">
 							<div>
-								<div id = "one">What is the point of the chapter in one sentence?</div>
+								<div className = "questions">1. What is the point of the chapter in one sentence?</div>
 								<div>{chapters.scene_number}</div>
 							</div>
 
 							<div>
-								<div id = "two">How do the scenes directly affect the plot or subplot?</div>
+								<div className = "questions"> 2. How do the scenes directly affect the plot or subplot?</div>
 								<div>{chapters.scene_plot}</div>
 							</div>
 
 							<div>
-								<div id = "three">How do the scenes directly affect character development?</div>
+								<div className = "questions"> 3. How do the scenes directly affect character development?</div>
 								<div>{chapters.scene_char1}</div>
 							</div>
 
 							<div>
-								<div id = "four">How do the characters personalities come out through the dialogue?</div>
+								<div className = "questions"> 4.How do the characters personalities come out through the dialogue?</div>
 								<div>{chapters.scene_dialogue}</div>
 							</div>
 
 							<div>
-								<div id = "five">What are the major conflicts in the scenes?</div>
+								<div className = "questions"> 5.What are the major conflicts in the scenes?</div>
 								<div>{chapters.relevant_conflict}</div>
 							</div>
 
@@ -99,27 +100,27 @@ class tChapterBoard extends Component{
 
 
 							<div>
-								<div id = "one">Are there places where dialogue could be replaced with action instead?</div>
+								<div className = "questions"> 6. Are there places where dialogue could be replaced with action instead?</div>
 								<div>{chapters.relevant_dialogue}</div>
 							</div>
 
 							<div>
-								<div id = "two">How much character thought and reflection is there? Is there too much?</div>
+								<div className = "questions"> 7. How much character thought and reflection is there? Is there too much?</div>
 								<div>{chapters.char_thought}</div>
 							</div>
 
 							<div>
-								<div id = "three">What is the narrative POV? First, second, omniscient?</div>
+								<div className = "questions"> 8. What is the narrative POV? First, second, omniscient?</div>
 								<div>{chapters.pov}</div>
 							</div>
 
 							<div>
-								<div id = "four">What is the POV character for the scenes?Protagonist, antagonist, or ally?</div>
+								<div className = "questions"> 9. What is the POV character for the scenes?Protagonist, antagonist, or ally?</div>
 								<div>{chapters.pov_char}</div>
 							</div>
 
 							<div>
-								<div id = "five">What is the setting for each scene?</div>
+								<div className = "questions"> 10. What is the setting for each scene?</div>
 								<div>{chapters.setting}</div>
 							</div>
 
@@ -129,40 +130,44 @@ class tChapterBoard extends Component{
 
 
 							<div>
-								<div id = "one">How important is the setting to the character?</div>
+								<div className = "questions"> 11. How important is the setting to the character?</div>
 								<div>{chapters.setting_char}</div>
 							</div>
 
 							<div>
-								<div id = "two">How important is the setting to the plot?</div>
+								<div className = "questions">12. How important is the setting to the plot?</div>
 								<div>{chapters.setting_plot}</div>
 							</div>
 
 							<div>
-								<div id = "three">How do the characters interact with the setting?</div>
+								<div className = "questions"> 13. How do the characters interact with the setting?</div>
 								<div>{chapters.setting_rev}</div>
 							</div>
 
 							<div>
-								<div id = "four">What kind of mood do the scenes have?</div>
+								<div className = "questions"> 14. What kind of mood do the scenes have?</div>
 								<div>{chapters.scene_mood}</div>
 							</div>
 
 							<div>
-								<div id = "five">Are the characters actions predictable or complex?</div>
+								<div className = "questions"> 15. Are the characters actions predictable or complex?</div>
 								<div>{chapters.scene_char2}</div>
 								<br/><br/>
 
-
 							</div>
+
 							<br/>
-					<div><br/><Link to = {edit} className = "chboard">
-						<Button className = "btn" type="button">
-							Edit Chapter
-						</Button>
-					</Link>	<Button className = "btn" type="button" onClick={()=>{this.deleteChapter(chapters.id)}}>
-						Delete Chapter
-					</Button></div>
+							<div><br/><Link to = {edit} className = "chboard">
+								<Button className = "btn" type="button">
+									Edit Chapter
+								</Button>
+							</Link>	<Button className = "btn" type="button" onClick={()=>{this.deleteChapter(chapters.id)}}>
+								Delete Chapter
+							</Button></div>
+
+						</Col>
+
+					</Grid> 
 
 
 
@@ -176,26 +181,34 @@ class tChapterBoard extends Component{
 		})
 
 		if(chaptersArray.length === 0){
-			var textHeader = "It doesn't exist. Go back and create one!"
+			var textHeader = "You have no chapters to view. Go back and create one!"
 		}else{
-			var textHeader = "Your Chapter Responses";
+			var textHeader = "Your Chapters";
 		}
 
 
 
 		return(
 			<div>
-				<h1>{textHeader}</h1> 
-				 {chaptersArray}
-
-
-				<Grid className = "fourth-row-left">
-					<Col md = {3}>
-						<Link to = {writeMenu} className = "return-writemenu">
-							<img src = "https://cdn4.iconfinder.com/data/icons/lifestyle-set-2/100/07a3c3443f894cb3fa7a93ee3c496233-512.png"/>
-							<div>Return to Write Menu</div>
-						</Link>
-					</Col>
+				<Grid className = "view-board">
+					<Row>
+						<Col sm = {12} className = "display-resp">
+							<h1>{textHeader}</h1> 
+							 {chaptersArray}
+						</Col>
+					</Row>
+						
+				
+					<Row>
+						<Grid className = "fourth-row-left">
+							<Col md = {3}>
+								<Link to = {writeMenu} className = "return-writemenu">
+									<img src = "https://cdn4.iconfinder.com/data/icons/lifestyle-set-2/100/07a3c3443f894cb3fa7a93ee3c496233-512.png"/>
+									<div>Return to Write Menu</div>
+								</Link>
+							</Col>
+						</Grid>
+					</Row>
 				</Grid>
 
 		    </div>

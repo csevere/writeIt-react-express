@@ -73,49 +73,24 @@ class tCharacterBoard extends Component{
                         <Col sm = {2} className="view-card">
 
                             <div>
-                                <div id = "one">Name:&nbsp;{characters.name}</div>
+                                <div className = "questions">1. Name:&nbsp;{characters.name}</div>
                             </div>
 
                             <div>
-                                <div id = "two">Race:&nbsp;{characters.race}</div>
+                                <div className = "questions">2. Race:&nbsp;{characters.race}</div>
                             </div>
 
                             <div>
-                                <div id = "three">Age:&nbsp;{characters.age}</div>
+                                <div className = "questions">3. Age:&nbsp;{characters.age}</div>
                                 
                             </div>
 
                             <div>
-                                <div id = "four">Birthday:&nbsp;{characters.birthday}</div>
+                                <div className = "questions">4. Birthday:&nbsp;{characters.birthday}</div>
                             </div>
 
                             <div>
-                                <div id = "five">General Physical Description:&nbsp;{characters.physical_desc}</div>
-                            </div>
-
-
-
-
-
-
-                            <div>
-                                <div id = "one">Hometown:&nbsp;{characters.hometown}</div>
-                            </div>
-
-                            <div>
-                                <div id = "two">Neighborhood Type:&nbsp;{characters.type_of_home}</div>
-                            </div>
-
-                            <div>
-                                <div id = "three">Name and Occupation of Father:&nbsp;{characters.father_info}</div>
-                            </div>
-
-                            <div>
-                                <div id = "four">Name and Occupation of Mother:&nbsp;{characters.mother_info}</div>
-                            </div>
-
-                            <div>
-                                <div id = "five">Siblings:&nbsp;{characters.sibling_info}</div>
+                                <div className = "questions">5.General Physical Description:&nbsp;{characters.physical_desc}</div>
                             </div>
 
 
@@ -124,71 +99,96 @@ class tCharacterBoard extends Component{
 
 
                             <div>
-                                <div id = "one">Close Relatives:&nbsp;{characters.relatives}</div>
+                                <div id = "one">6. Hometown:&nbsp;{characters.hometown}</div>
                             </div>
 
                             <div>
-                                <div id = "two">Best Friends:&nbsp;{characters.friends}</div>
+                                <div id = "two">7. Neighborhood Type:&nbsp;{characters.type_of_home}</div>
                             </div>
 
                             <div>
-                                <div id = "three">Enemies:&nbsp;{characters.enemies}</div>
+                                <div id = "three">8. Name and Occupation of Father:&nbsp;{characters.father_info}</div>
                             </div>
 
                             <div>
-                                <div id = "four">Mentor:&nbsp;{characters.mentor}</div>
+                                <div id = "four">9. Name and Occupation of Mother:&nbsp;{characters.mother_info}</div>
                             </div>
 
                             <div>
-                                <div id = "five">Hobbies:&nbsp;{characters.hobbies}</div>
-
-
-
-                            </div>
-
-                            <div>
-                                <div id = "one">Dress Style:&nbsp;{characters.dress}</div>
-                            </div>
-
-                            <div>
-                                <div id = "two">Leader or Follower:&nbsp;{characters.leader_follower}</div>
-                            </div>
-
-                            <div>
-                                <div id = "three">Strongest Postive Trait:&nbsp;{characters.positive_traits}</div>
-                            </div>
-
-                            <div>
-                                <div id = "four">Strongest Negative Trait:&nbsp;{characters.negative_traits}</div>
-                            </div>
-
-                            <div>
-                                <div id = "five">Temper:&nbsp;{characters.temper}</div>
-
-
-
+                                <div id = "five"> 10. Siblings:&nbsp;{characters.sibling_info}</div>
                             </div>
 
 
 
+
+
+
                             <div>
-                                <div id = "one">Star Sign:&nbsp;{characters.star_sign}</div>
+                                <div className = "questions"> 11.Close Relatives:&nbsp;{characters.relatives}</div>
                             </div>
 
                             <div>
-                                <div id = "two">Personality Type:&nbsp;{characters.personality}</div>
+                                <div className = "questions"> 12. Best Friends:&nbsp;{characters.friends}</div>
                             </div>
 
                             <div>
-                                <div id = "three">Life Philosopy:&nbsp;{characters.philosophy}</div>
+                                <div className = "questions">13. Enemies:&nbsp;{characters.enemies}</div>
                             </div>
 
                             <div>
-                                <div id = "four">Ambitions:&nbsp;{characters.ambitions}</div>
+                                <div className = "questions">14.Mentor:&nbsp;{characters.mentor}</div>
                             </div>
 
                             <div>
-                                <div id = "five">Likeable or unlikeable:&nbsp;{characters.liked_disliked}</div>
+                                <div className = "questions">15. Hobbies:&nbsp;{characters.hobbies}</div>
+
+
+
+                            </div>
+
+                            <div>
+                                <div id = "one">16. Dress Style:&nbsp;{characters.dress}</div>
+                            </div>
+
+                            <div>
+                                <div id = "two"> 17. Leader or Follower:&nbsp;{characters.leader_follower}</div>
+                            </div>
+
+                            <div>
+                                <div id = "three"> 18. Strongest Postive Trait:&nbsp;{characters.positive_traits}</div>
+                            </div>
+
+                            <div>
+                                <div id = "four">19. Strongest Negative Trait:&nbsp;{characters.negative_traits}</div>
+                            </div>
+
+                            <div>
+                                <div id = "five">20. Temper:&nbsp;{characters.temper}</div>
+
+
+
+                            </div>
+
+
+
+                            <div>
+                                <div className = "questions">21. Star Sign:&nbsp;{characters.star_sign}</div>
+                            </div>
+
+                            <div>
+                                <div className = "questions"> 22. Personality Type:&nbsp;{characters.personality}</div>
+                            </div>
+
+                            <div>
+                                <div className = "questions"> 23. Life Philosopy:&nbsp;{characters.philosophy}</div>
+                            </div>
+
+                            <div>
+                                <div className = "questions">24. Ambitions:&nbsp;{characters.ambitions}</div>
+                            </div>
+
+                            <div>
+                                <div className = "questions">25. Likeable or unlikeable:&nbsp;{characters.liked_disliked}</div>
                              
                             </div>
 
@@ -212,7 +212,7 @@ class tCharacterBoard extends Component{
         })
 
         if(charactersArray.length === 0){
-            var textHeader = "It doesn't exist. Go back and create one!"
+            var textHeader = "You have no characters to view. Go back and create one!"
         }else{
             var textHeader = "Your Characters";
         }
