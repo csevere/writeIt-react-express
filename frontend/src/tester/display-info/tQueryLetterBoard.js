@@ -57,6 +57,7 @@ class tQueryLetterBoard extends Component{
     render(){
 
         var writeMenu = '/write/' + this.props.match.params.book;
+        var qletter = '/q-letter/' + this.props.match.params.book;
         var queryLetterArray = [];
 
         this.state.queryLetterData.map((query, index)=>{
@@ -67,10 +68,10 @@ class tQueryLetterBoard extends Component{
             queryLetterArray.push(
                 <div>
                     <Grid className="view-width">
-                        <Col md = {10} className="view-card">
+                        <Col sm = {5} className="view-card">
 
                             <div>
-                                <div className = "questions">1. Have you researched the agent and the type of authors he/she represents?</div>
+                                <div className = "questions">1. Have you researched the genres the agent represents?</div>
                                 <div>{query.query_clarity}</div>
                             </div>
 
@@ -80,7 +81,7 @@ class tQueryLetterBoard extends Component{
                             </div>
 
                             <div>
-                                <div className = "questions">3. Specify what&apos;s getting in the way of your character&apos;s goals?</div>
+                                <div className = "questions">3. What does your character want the most in the world?</div>
                                 <div>{query.query_balance}</div>
                             </div>
 
@@ -162,11 +163,18 @@ class tQueryLetterBoard extends Component{
                         
                 
                     <Row>
-                        <Grid className = "fourth-row-left">
+                        <Grid className = "fourth-row-leftb">
                             <Col md = {3}>
                                 <Link to = {writeMenu} className = "return-writemenu">
                                     <img src = "/images/writemenu-icon.png"/>
-                                    <div>Return to Write Menu</div>
+                                    <div><h5>Return to Write Menu</h5></div>
+                                </Link>
+                            </Col>
+
+                            <Col md = {3}>
+                                <Link to = {qletter} className = "return-quest">
+                                    <img src = "/images/create-new-icon.png"/>
+                                    <div className = "text-center"><h5>Create a new Query Letter Guide</h5></div>
                                 </Link>
                             </Col>
                         </Grid>

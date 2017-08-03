@@ -101,7 +101,7 @@ class Chapters extends Component{
 
 
             });
-            this.props.history.push(`/write/${book}`);
+            this.props.history.push(`/chapboard/${book}`);
         }
 
     }

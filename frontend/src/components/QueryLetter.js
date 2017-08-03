@@ -95,7 +95,7 @@ class QueryLetter extends Component{
                 book: book,
                 id: id
             });
-            this.props.history.push(`/write/${book}`);
+            this.props.history.push(`/queryboard/${book}`);
         }
     }
 
@@ -164,19 +164,19 @@ class QueryLetter extends Component{
                                 <div className = "slick-form 1">
                                     <Form onSubmit={this.handleQueryLetter}>
                                         <FormGroup controlId="formControlsTextarea">
-                                            <ControlLabel>Have you researched the agent and the type of authods he/she represents?</ControlLabel>
+                                            <ControlLabel>Have you researched the genres the agent represents?</ControlLabel>
                                             <FormControl value={query_clarity} id="query_clarity" componentClass="textarea" placeholder="query_clarity" onChange={this.changeQueryLetter}/>
                                         </FormGroup>
                                         <FormGroup controlId="formControlsTextarea">
-                                            <ControlLabel>In setting up the story, specify exactly what your character wants the most in the world?</ControlLabel>
+                                            <ControlLabel>What does your character want the most in the world?</ControlLabel>
                                             <FormControl value={query_boring} id="query_boring" componentClass="textarea" placeholder="query_boring" onChange={this.changeQueryLetter}/>
                                         </FormGroup>
                                         <FormGroup controlId="formControlsTextarea">
-                                            <ControlLabel>Specify what's getting in the way of your character's goals?</ControlLabel>
+                                            <ControlLabel>Specify what&#39;s getting in the way of your character&#39;s goals?</ControlLabel>
                                             <FormControl value={query_balance} id="query_balance" componentClass="textarea" placeholder="query_balance" onChange={this.changeQueryLetter}/>
                                         </FormGroup>
                                         <FormGroup controlId="formControlsTextarea">
-                                            <ControlLabel>What's at stake if your character fails?</ControlLabel>
+                                            <ControlLabel>What&#39;s at stake if your character fails?</ControlLabel>
                                             <FormControl value={query_stakes} id="query_stakes" componentClass="textarea" placeholder="query_stakes" onChange={this.changeQueryLetter}/>
                                         </FormGroup>
                                         <FormGroup controlId="formControlsTextarea">

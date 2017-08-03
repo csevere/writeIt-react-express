@@ -56,6 +56,7 @@ class tPlotBoard extends Component{
     render(){
 
         var writeMenu = '/write/' + this.props.match.params.book;
+        var plot = '/plot/' + this.props.match.params.book;
         var plotArray = [];
 
         this.state.plotData.map((plot, index)=>{
@@ -66,7 +67,7 @@ class tPlotBoard extends Component{
             plotArray.push(
                 <div>
                     <Grid className="view-width">
-                        <Col md = {10} className="view-card">
+                        <Col md = {5} className="view-card">
 
 
                             <div>
@@ -96,31 +97,28 @@ class tPlotBoard extends Component{
 
 
 
-
-
-
                             <div>
-                                <div id = "one">What are the characters main motivations?</div>
+                                <div className= "questions">6. What are the characters main motivations?</div>
                                 <div>{plot.motivation}</div>
                             </div>
 
                             <div>
-                                <div id = "two">What type of plot? Character,plot, or idea driven?</div>
+                                <div className = "questions">7. What type of plot? Character,plot, or idea driven?</div>
                                 <div>{plot.plot_type}</div>
                             </div>
 
                             <div>
-                                <div id = "three">Do the events unfold chronologically or non-chronologically?</div>
+                                <div className = "questions">8. Do the events unfold chronologically or non-chronologically?</div>
                                 <div>{plot.plot_order}</div>
                             </div>
 
                             <div>
-                                <div id = "four">What are the critical points of foreshadowing?</div>
+                                <div className = "questions">9. What are the critical points of foreshadowing?</div>
                                 <div>{plot.foreshadow}</div>
                             </div>
 
                             <div>
-                                <div id = "five">How is the plot credible according to the rules of the world?</div>
+                                <div className = "questions">10. How is the plot credible according to the rules of the world?</div>
                                 <div>{plot.credibility}</div>
                             </div>
 
@@ -130,27 +128,27 @@ class tPlotBoard extends Component{
 
 
                             <div>
-                                <div id = "one">Are all flashbacks strong or do some lessen the dramatic movement of the story?</div>
+                                <div className = "questions">11. Are all flashbacks strong or do some lessen the dramatic movement of the story?</div>
                                 <div>{plot.flashbacks}</div>
                             </div>
 
                             <div>
-                                <div id = "two">What is the overall arc or journey of the character?</div>
+                                <div className = "questions">12. What is the overall arc or journey of the character?</div>
                                 <div>{plot.journey}</div>
                             </div>
 
                             <div>
-                                <div id = "three">What are the stakes for the main characters?</div>
+                                <div className = "questions"> 13. What are the stakes for the main characters?</div>
                                 <div>{plot.stakes}</div>
                             </div>
 
                             <div>
-                                <div id = "four">Who is your character’s worthy opponent? Describe</div>
+                                <div className = "questions">14. Who is your character’s worthy opponent? Describe</div>
                                 <div>{plot.antagonist}</div>
                             </div>
 
                             <div>
-                                <div id = "five">What’s the plot summary in one sentence?</div>
+                                <div className = "questions">15. What’s the plot summary in one sentence?</div>
                                 <div>{plot.summary}</div>
                                 <br/><br/>
 
@@ -177,26 +175,41 @@ class tPlotBoard extends Component{
         })
 
         if(plotArray.length === 0){
-            var textHeader = "It doesn't exist. Go back and create one!"
+            var textHeader = "You have no plot guide to view. Return and create one."
         }else{
-            var textHeader = "Your Chapter Responses";
+            var textHeader = "Your Plot Guide";
         }
-
 
 
         return(
             <div>
-                <h1>{textHeader}</h1>
-                {plotArray}
 
+               <Grid className = "view-board">
+                    <Row>
+                        <Col sm = {12} className = "display-resp">
+                            <h1>{textHeader}</h1>                  
+                            {plotArray}
+                        </Col>
+                    </Row>
+                        
+                
+                    <Row>
+                        <Grid className = "fourth-row-left">
+                            <Col md = {3}>
+                                <Link to = {writeMenu} className = "return-writemenu">
+                                    <img src = "/images/writemenu-icon.png"/>
+                                    <div><h5>Return to Write Menu</h5></div>
+                                </Link>
+                            </Col>
 
-                <Grid className = "fourth-row-left">
-                    <Col md = {3}>
-                        <Link to = {writeMenu} className = "return-writemenu">
-                            <img src = "https://cdn4.iconfinder.com/data/icons/lifestyle-set-2/100/07a3c3443f894cb3fa7a93ee3c496233-512.png"/>
-                            <div>Return to Write Menu</div>
-                        </Link>
-                    </Col>
+                            <Col md = {3}>
+                                <Link to = {plot} className = "return-quest">
+                                    <img src = "/images/create-new-icon.png"/>
+                                    <div><h5>Create a new Plot Guide</h5></div>
+                                </Link>
+                            </Col>
+                        </Grid>
+                    </Row>
                 </Grid>
 
             </div>
@@ -205,6 +218,7 @@ class tPlotBoard extends Component{
         )
     }
 }
+
 
 function mapStateToProps(state){
     return{

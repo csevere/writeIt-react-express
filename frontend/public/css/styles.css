@@ -1319,60 +1319,94 @@ h2 {
 /* line 33, ../../compass/sass/_writemenucat.scss */
 .fourth-row-left img {
   width: 50%;
+  position: relative;
+  top: 2em;
 }
-/* line 38, ../../compass/sass/_writemenucat.scss */
+/* line 39, ../../compass/sass/_writemenucat.scss */
+.fourth-row-left h5 {
+  font-size: 18px;
+}
+/* line 43, ../../compass/sass/_writemenucat.scss */
 .fourth-row-left a {
   text-decoration: none;
   font-size: 15px;
   font-weight: bolder;
   color: #000000;
 }
-/* line 46, ../../compass/sass/_writemenucat.scss */
+/* line 51, ../../compass/sass/_writemenucat.scss */
 .fourth-row-left a:hover {
   color: #0f820f;
   cursor: pointer;
   text-decoration: underline;
 }
 
-/* line 54, ../../compass/sass/_writemenucat.scss */
+/* line 59, ../../compass/sass/_writemenucat.scss */
+.fourth-row-leftb img {
+  width: 50%;
+  position: relative;
+  top: 2em;
+}
+/* line 65, ../../compass/sass/_writemenucat.scss */
+.fourth-row-leftb h5 {
+  font-size: 18px;
+}
+/* line 69, ../../compass/sass/_writemenucat.scss */
+.fourth-row-leftb a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bolder;
+  color: #000000;
+}
+/* line 77, ../../compass/sass/_writemenucat.scss */
+.fourth-row-leftb a:hover {
+  color: #0f820f;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* line 86, ../../compass/sass/_writemenucat.scss */
 .fourth-row-right {
   float: right;
   margin-top: -10em;
 }
-/* line 57, ../../compass/sass/_writemenucat.scss */
+/* line 89, ../../compass/sass/_writemenucat.scss */
 .fourth-row-right img {
   width: 35%;
 }
-/* line 62, ../../compass/sass/_writemenucat.scss */
+/* line 94, ../../compass/sass/_writemenucat.scss */
+.fourth-row-right h5 {
+  font-size: 18px;
+}
+/* line 98, ../../compass/sass/_writemenucat.scss */
 .fourth-row-right a {
   text-decoration: none;
   font-size: 15px;
   font-weight: bolder;
   color: #000000;
 }
-/* line 70, ../../compass/sass/_writemenucat.scss */
+/* line 106, ../../compass/sass/_writemenucat.scss */
 .fourth-row-right a:hover {
   color: #0f820f;
   cursor: pointer;
   text-decoration: underline;
 }
 
-/* line 82, ../../compass/sass/_writemenucat.scss */
+/* line 118, ../../compass/sass/_writemenucat.scss */
 .ch-forms .form-control {
   width: 80% !important;
   margin-left: 5em;
   padding: 4px;
 }
-/* line 89, ../../compass/sass/_writemenucat.scss */
+/* line 125, ../../compass/sass/_writemenucat.scss */
 .ch-forms .text-area {
   line-height: 50px;
 }
-/* line 93, ../../compass/sass/_writemenucat.scss */
+/* line 129, ../../compass/sass/_writemenucat.scss */
 .ch-forms .slick-prev, .ch-forms .slick-next {
   position: absolute;
   top: 37% !important;
 }
-/* line 99, ../../compass/sass/_writemenucat.scss */
+/* line 135, ../../compass/sass/_writemenucat.scss */
 .ch-forms .slick-dots {
   display: block;
   position: absolute;
@@ -1385,13 +1419,13 @@ h2 {
   text-align: center;
   left: -52em;
 }
-/* line 110, ../../compass/sass/_writemenucat.scss */
+/* line 146, ../../compass/sass/_writemenucat.scss */
 .ch-forms .slick-dots li {
   position: relative;
   left: 51.5em;
   top: -8em;
 }
-/* line 118, ../../compass/sass/_writemenucat.scss */
+/* line 154, ../../compass/sass/_writemenucat.scss */
 .ch-forms .ch-forms-2 {
   display: block;
   width: 45em;
@@ -1402,7 +1436,7 @@ h2 {
   /* Padding for demo purposes */
   padding: 4em 0em 0em 0em;
 }
-/* line 140, ../../compass/sass/_writemenucat.scss */
+/* line 176, ../../compass/sass/_writemenucat.scss */
 .ch-forms .ch-forms-2 .btn {
   margin: 14em 0em 0em 28em !important;
 }
@@ -2400,32 +2434,49 @@ h2 {
 }
 /* line 29, ../../compass/sass/_viewboard.scss */
 .view-board .fourth-row-left .return-quest img {
-  width: 30%;
-  margin: 3.6em 0em 0em 3em;
+  width: 25%;
+  margin: 4.3em 0em 0em 4em;
+  position: relative;
+  top: 0em;
 }
-/* line 36, ../../compass/sass/_viewboard.scss */
+/* line 38, ../../compass/sass/_viewboard.scss */
+.view-board .fourth-row-leftb {
+  float: left;
+  margin-top: 29em;
+}
+/* line 42, ../../compass/sass/_viewboard.scss */
+.view-board .fourth-row-leftb .return-quest img {
+  width: 25%;
+  margin: 4.3em 0em 0em 4em;
+  position: relative;
+  top: 0em;
+}
+/* line 51, ../../compass/sass/_viewboard.scss */
 .view-board .btn {
   position: relative;
   top: 0em;
-  left: 0em;
+  left: 6em;
   right: -14em;
   margin: auto;
   font-size: 14px;
   letter-spacing: 2px;
   font-family: monospace;
 }
-/* line 54, ../../compass/sass/_viewboard.scss */
+/* line 69, ../../compass/sass/_viewboard.scss */
 .view-board .display-resp {
   display: flex;
 }
-/* line 59, ../../compass/sass/_viewboard.scss */
+/* line 74, ../../compass/sass/_viewboard.scss */
 .view-board .view-width {
   width: 557px;
 }
-/* line 64, ../../compass/sass/_viewboard.scss */
+/* line 78, ../../compass/sass/_viewboard.scss */
+.view-board h5 {
+  font-size: 18px;
+}
+/* line 83, ../../compass/sass/_viewboard.scss */
 .view-board .view-card {
-  width: 85%;
-  height: 132vh;
+  width: 100%;
   margin-top: 2em;
   position: relative;
   padding: 25px;
@@ -2436,33 +2487,32 @@ h2 {
   transition: 0.3s;
 }
 @media screen and (min-width: 1732px) {
-  /* line 64, ../../compass/sass/_viewboard.scss */
+  /* line 83, ../../compass/sass/_viewboard.scss */
   .view-board .view-card {
     height: 105vh;
   }
 }
-/* line 86, ../../compass/sass/_viewboard.scss */
+/* line 104, ../../compass/sass/_viewboard.scss */
 .view-board .questions {
   color: #525174;
 }
-/* line 90, ../../compass/sass/_viewboard.scss */
+/* line 108, ../../compass/sass/_viewboard.scss */
 .view-board .view-card::before {
   content: "";
   position: absolute;
   top: 0px;
   right: 0px;
   border-style: solid;
-  border-width: 0 89px 77px 0;
+  border-width: 0 73px 77px 0;
   border-color: #ddd #344;
   transition: all ease 0.5s;
 }
-/* line 101, ../../compass/sass/_viewboard.scss */
+/* line 119, ../../compass/sass/_viewboard.scss */
 .view-board .view-card:hover::before {
   border-width: 0 100px 100px 0;
   border-color: #ddd #5bc0de;
 }
 
-/* folding */
 /* line 4, ../../compass/sass/_search.scss */
 .search-wrapper-main {
   position: absolute;

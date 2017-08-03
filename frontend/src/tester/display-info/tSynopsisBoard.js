@@ -60,6 +60,8 @@ class tSynopsisBoard extends Component{
     render(){
 
         var writeMenu = '/write/' + this.props.match.params.book;
+        var synopsis = '/synopsis/' + this.props.match.params.book;
+
         var synopsisArray = [];
 
         this.state.synopsisData.map((synopsis, index)=>{
@@ -202,7 +204,14 @@ class tSynopsisBoard extends Component{
                             <Col md = {3}>
                                 <Link to = {writeMenu} className = "return-writemenu">
                                     <img src = "/images/writemenu-icon.png"/>
-                                    <div>Return to Write Menu</div>
+                                    <div><h5>Return to Write Menu</h5></div>
+                                </Link>
+                            </Col>
+
+                            <Col md = {3}>
+                                <Link to = {synopsis} className = "return-quest">
+                                    <img src = "/images/create-new-icon.png"/>
+                                    <div><h5>Create a new Synopsis Guide</h5></div>
                                 </Link>
                             </Col>
                         </Grid>

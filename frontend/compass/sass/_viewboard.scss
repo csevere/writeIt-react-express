@@ -27,8 +27,23 @@
 	    margin-top: 45em;
 	    .return-quest{
 	    	img{
-	    		width: 30%;
-	    		margin: 3.6em 0em 0em 3em; 
+	    		width: 25%;
+	    		margin: 4.3em 0em 0em 4em; 
+	    		position: relative;
+    			top: 0em;
+	    	}
+	    }
+	}
+
+	.fourth-row-leftb {
+	    float: left;
+	    margin-top: 29em;
+	    .return-quest{
+	    	img{
+	    		width: 25%;
+	    		margin: 4.3em 0em 0em 4em; 
+	    		position: relative;
+    			top: 0em;
 	    	}
 	    }
 	}
@@ -36,7 +51,7 @@
 	.btn {
 	    position: relative;
 	    top: 0em;
-	    left: 0em;
+	    left: 6em;
 	    right: -14em;
 	    margin: auto;
 	    font-size: 14px;
@@ -59,11 +74,14 @@
 	.view-width{
 		width: 557px
 	}
+
+	h5{
+		font-size: 18px; 
+	}
 	
 
 	.view-card{
-    	width: 85%;
-    	height: 132vh;
+    	width: 100%;
     	@media screen and(min-width:$break-xlarge){
 			height: 105vh			
 		}
@@ -93,7 +111,7 @@
 		top: 0px;
 		right: 0px;
 		border-style: solid;
-		border-width: 0 89px 77px 0;
+		border-width: 0 73px 77px 0;
 		border-color: #ddd #344;
 		transition: all ease 0.5s;
 	}
@@ -110,4 +128,4 @@
 
 
 
-/* folding */
+
