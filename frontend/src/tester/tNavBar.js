@@ -3,6 +3,7 @@ import DOM from 'react-dom'
 import Autocomplete from 'react-autocomplete';
 import Select from 'react-select';
 import $ from 'jquery';
+import 'react-select/dist/react-select.css';
 
 
 
@@ -11,17 +12,9 @@ class tNavBar extends React.Component {
         super(props);
         this.state = {
             options: [
-                {value: 'none', label: 'none'}
-            	
-                
+                {value: 'none', label: 'none'}     
             ]
-
-            // nameError: null,
-            // emailError: null,
-            // formError: false
         }
-
-
     }
 
     componentDidMount(){
@@ -50,24 +43,27 @@ class tNavBar extends React.Component {
 
   	var Select = require('react-select');
 
-	var options = [
-	  { value: 'one', label: 'One' },
-	  { value: 'two', label: 'Two' }
-	];
-
 	function logChange(val) {
 	  console.log("Selected: " + JSON.stringify(val));
+	  input = JSON.stringify(val)
+	  console.log(input)
+	  document.getElementById('search').value = val.value;
+
 	}
 
 	console.log(this.state.options)
-
+	//console.log(document.getElementById('search').value)
+	var input = 's'
+	console.log(document.getElementById('special'))
 	
     return (
     	<div>
 	    	<p><br/><br/><br/><br/><br/><br/><br/><br/><br/></p>
 			<Select
+				id='special'
+				placeholder='input'
 				name="form-field-name"
-				value="one"
+				value={input}
 				options={this.state.options}
 				onChange={logChange}
 			/>
