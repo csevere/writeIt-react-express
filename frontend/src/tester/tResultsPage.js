@@ -8,6 +8,7 @@ import {connect} from 'react-redux';
 // import Slider from 'react-slick';
 // import 'slick-carousel/slick/slick.css';
 // import 'slick-carousel/slick/slick-theme.css';
+import $ from 'jquery';
 
 
 
@@ -15,19 +16,51 @@ class tResultsPage extends Component{
   constructor(props) {
     super(props);
     this.state = {
-      // registerMessage: "",
-      // nameError: null,
-      // emailError: null,
-      // formError: false
+        resultsData:[]
     }
-    // this.handleUserProfile = this.UserProfile.bind(this);
     
   }
 
+    componentDidMount(){
+        $.getJSON(`http://localhost:5000/results`, (serverData)=>{
+            console.log(serverData);
+            this.setState({
+                resultsData: serverData.resultsData
+            })
+        })
+        
+    }
+
+
  
 	render(){
+        var resultsArray = [];
+        var linkToUser = "/otheruser"
+
+        this.state.resultsData.map((user, index)=>{
+            var imageLocation = './public/frontend/images/profile-pic.png'
+            if(user.picture !== null){
+                imageLocation = user.picture.slice(18);
+            }else{
+                imageLocation = imageLocation.slice(18);
+            }
+
+           resultsArray.push(
+               <div className = "user-results">
+                    <Grid className = "user-view">
+                        <Link to={linkToUser + user.username}>
+                            <img src={imageLocation} />
+                            <div>{user.username}</div>  
+                        </Link>
+                        <div className = "userbubble" onClick = "">
+                            <div>{user.about}</div> 
+                        </div> 
+                    </Grid>
+                </div>
+
+           )
+        });
      
-    console.log(this.props)
 		return(
 			<div>
 				<Grid className = "search-wrapper-main">
@@ -36,51 +69,10 @@ class tResultsPage extends Component{
 
                             
                             <Col md = {7} mdOffset = {3} className = "results">
+                                
+                                {resultsArray}
+                               
 
-                                <h2 className = "header">The input search field</h2>
-
-                                <Grid className = "user-view">
-                                    <Link to = "/otheruser">
-                                        <img src = "http://via.placeholder.com/64x64"/>
-                                        <div> UsernameA</div>  
-                                    </Link>
-                                    <div className = "userbubble" onClick = "">
-                                        <div>About UsernameA</div> 
-                                    </div> 
-                                </Grid>
-
-
-                                <Grid className = "user-view">
-                                    <Link to = "/user">
-                                        <img src = "http://via.placeholder.com/64x64"/>
-                                        <div>UsernameB</div>  
-                                    </Link>
-                                    <div className = "userbubble" onClick = "">
-                                        <div>About UsernameB</div> 
-                                    </div> 
-                                </Grid>
-
-
-                                <Grid className = "user-view">
-                                    <Link to = "/user">
-                                        <img src = "http://via.placeholder.com/64x64"/>
-                                        <div>UsernameC</div>  
-                                    </Link>
-                                    <div className = "userbubble" onClick = "">
-                                        <div>About UsernameC</div> 
-                                    </div> 
-                                </Grid>
-
-
-                                <Grid className = "user-view">
-                                    <Link to = "/user">
-                                        <img src = "http://via.placeholder.com/64x64"/>
-                                        <div>UsernameX</div>  
-                                    </Link>
-                                    <div className = "userbubble" onClick = "">
-                                        <div>About UsernameX</div> 
-                                    </div> 
-                                </Grid>
                             </Col> 
                           
 
