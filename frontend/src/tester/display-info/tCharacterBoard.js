@@ -73,7 +73,7 @@ class tCharacterBoard extends Component{
                         <Col sm = {2} className="view-card">
 
                             <div>
-                                <div id = "one">Name:<div>&nbsp;{characters.name}</div></div>
+                                <div id = "one">Name:&nbsp;{characters.name}</div>
                             </div>
 
                             <div>
@@ -189,11 +189,8 @@ class tCharacterBoard extends Component{
 
                             <div>
                                 <div id = "five">Likeable or unlikeable:&nbsp;{characters.liked_disliked}</div>
-                                <br/><br/>
-
-
+                             
                             </div>
-
 
 
                             <br/>
