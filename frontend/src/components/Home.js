@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import { Link} from 'react-router-dom';
 import { Grid, Row, Col } from 'react-bootstrap';
-import About from './About';
-import ScrollableAnchor from 'react-scrollable-anchor'
-
 
 class Home extends Component{
 	 
@@ -26,28 +23,11 @@ class Home extends Component{
 									<li><Link to ="/user"><div className="hex hex2 text-center"><h3>DASHBOARD</h3></div></Link></li>
 									<li><Link to ="/forums"><div className="hex hex3 text-center"><h3>COMMUNITY</h3></div></Link></li>
 									<li><Link to ="/resources"><div className="hex hex4 text-center"><h3>RESOURCES</h3></div></Link></li>
-									<li><a href ="#about"><div className="hex hex5 text-center"><h3>ABOUT</h3></div></a></li>
+									<li><Link to ="/about"><div className="hex hex5 text-center"><h3>ABOUT</h3></div></Link></li>
 									<li><Link to ="/faqs"><div className="hex hex6 text-center"><h3>FAQ</h3></div></Link></li>
 								</ul>
 							</Row>
-						</div>
-
-						<div>
-							<div className="scroll-btn">
-								<a href="#about">
-									<div className="mouse">
-										<div>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-					
-						<ScrollableAnchor id = {'about'}>
-							<About />	
-						</ScrollableAnchor> 
-					
+						</div>				
 
 					</Row>	
 		        </Grid>   

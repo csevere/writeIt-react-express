@@ -36,10 +36,16 @@
 
 		img{
 			height: 20px;
-			margin: -6em 0em 0em 35em;
+			margin: -6em 0em 0em 42em;
 			@media screen and(min-width:$break-xlarge){
 				margin: -6em 0em 0em 52em;	
 			
+			}
+
+			@media screen and(max-width:$break-large){
+				margin: -6em 0em 0em 37em;	
+					
+						
 			}
 			@media screen and(max-width:$break-lg-medium){	
 				margin: -6em 0em 0em 19em;
@@ -50,7 +56,6 @@
 		}
 
 		a:link{
-			color: $white; 
 			text-decoration: none; 
 		}
 
@@ -62,9 +67,15 @@
 		}
 
 		.form-control{
-			margin: 0.5em 0em 0em 5em; 
+			margin: 0.5em 0em 0em 12em; 
 			@media screen and(min-width:$break-xlarge){	
 				margin: 1em 0em 0em 22em !important; 
+			}
+
+
+			@media screen and(max-width:$break-large){	
+				margin: 0.5em 0em 0em 7em; 	
+						
 			}
 
 			@media screen and(max-width:$break-lg-medium){	
@@ -104,13 +115,11 @@
 .float-right{
 	float: right;
 	font-size: 1em;
+	color: $white;
+	margin-right: 1em; 
+  
 
-
-	@media screen and(min-width:$break-large){	
-		margin-left: 8em;
-	}  
-
-	@media screen and(min-width:$break-medium){	
+	@media screen and(max-width:$break-medium){	
 		margin-right: 7em;
 				
 	}
@@ -130,25 +139,45 @@
 
 	// border: 5px solid $blue; 
 
-		.login, .signup{
-			border: 3px solid $white;
+		.login, .signup, .home-nav{
 			padding: 4px;
-			border-radius: 5px;
 			font-family: 'Heebo', sans-serif;
 			margin-top: 7px; 
+			margin-right: 1em; 
 			@media screen and(min-width:$break-xlarge){	
 				margin-top: 13px; 
+			} 
    					
-		}	
-	
+		}
+
+		.home-nav{
+			margin-top: 9px;
+
+			@media screen and(min-width:$break-xlarge){	
+				margin-top: 16px;
+						
+			}
+
+			
+		}
+
+		.home-nav:hover{
+			background-color: transparent !important;
+			text-decoration: underline !important;
+
+		}
+
+		.login, .signup{
+			border: 3px solid $white;
+			border-radius: 5px;
 			 
 		}
+
 
 		.login{
 			background-color: $white;
 			color: $perfect-blue !important; 
-			margin-right: 1em; 
-
+			
 		}
 
 
@@ -160,7 +189,7 @@
 
 		.signup{
 			color:$white;
-			margin-right: 1em; 
+			
 		}
 
 		.signup:hover{

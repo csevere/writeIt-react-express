@@ -5,6 +5,8 @@ import Login from './containers/Login';
 
 import Home from './components/Home'; 
 import NavBar from './components/NavBar';
+import Footer from './components/Footer'; 
+
 
 import UserProfile from './components/UserProfile';
 import tOtherUser from './tester/tOtherUser';
@@ -31,6 +33,7 @@ import tPicture from './tester/write-menu/tPicture';
 //OTHER HOME PAGE LINKS
 import Resources from './components/Resources';
 import Faqs from './components/Faqs';
+import About from './components/About';
 
 //FORUMS
 import tMainForum from './tester_forums/tMainForum';
@@ -53,7 +56,6 @@ class App extends Component {
           <div className="App">
             <NavBar/>
             <div className = "container main">
-
               <Route exact path="/" component= {Home} /> 
               <Route exact path="/signup" component= {Register} />
               <Route exact path="/login" component= {Login} />
@@ -81,15 +83,15 @@ class App extends Component {
 
               <Route exact path="/resources" component={Resources} />
               <Route exact path="/faqs" component={Faqs} />
+              <Route exact path="/about" component={About} />
+
 
               <Route exact path = "/forums" component = {tMainForum}/>
               <Route exact path = "/contemp" component = {tContempForum}/>
               <Route exact path = "/contempform" component = {tNewContempForm}/>
               <Route exact path = "/contemptopic" component = {tContempTopic}/>
-              
-
-
             </div> 
+
           </div>
         </Router>
       </div> 

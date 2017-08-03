@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
+
 // Go get the createStore method from the redux module
 // Add apllyMiddleware to the list
 import { createStore , applyMiddleware} from 'redux';
