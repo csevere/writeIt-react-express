@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import UserProfile from './components/UserProfile';
 import tOtherUser from './tester/tOtherUser';
 import NewBook from './components/NewBook';
+import tResultsPage from './tester/tResultsPage';
 
 //WRITE MENU//
 import writeMenu from './components/writeMenu'; 
@@ -62,6 +63,7 @@ class App extends Component {
 
               <Route exact path="/user" component= {UserProfile} />
               <Route exact path = "/otheruser" component = {tOtherUser}/>
+              <Route exact path = "/search" component = {tResultsPage}/>
 
               <Route exact path="/write/:book" component= {writeMenu} />             
               <Route exact path="/newbook" component= {NewBook} />
@@ -92,6 +94,7 @@ class App extends Component {
               <Route exact path = "/contemptopic" component = {tContempTopic}/>
 
               <Route exact path="/character" component= {Character} />
+
 
             </div> 
 
