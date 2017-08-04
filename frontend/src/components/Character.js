@@ -426,7 +426,7 @@ class Character extends Component{
                                 <Col md = {3}>
                                     <Link to = {writeMenu} className = "return-writemenu">
                                           <img src = "/images/writemenu-icon.png"/>
-                                        <div>Return to Write Menu</div>
+                                        <div><h5>Return to Write Menu</h5></div>
                                     </Link>
                                 </Col>
                             </Grid>
@@ -435,7 +435,7 @@ class Character extends Component{
                                 <Col md = {3} className = "col-md-offset-8">
                                     <Link to = {characterBoard} className = "charboard">
                                         <img src = "/images/viewboard-icon.png"/>
-                                        <div>View Character</div>
+                                        <div><h5>View Characters</h5></div>
                                     </Link>
                                 </Col>
                             </Grid>

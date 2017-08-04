@@ -115,7 +115,7 @@ class Critique extends Component{
                 id: id
 
             });
-            this.props.history.push(`/write/${book}`);
+            this.props.history.push(`/critboard/${book}`);
         }
 
     }
