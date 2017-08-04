@@ -222,16 +222,26 @@
 		background:#ccf;
 	}
 }
-//********************** RADIO STYLES********************
-.radio-inline{
-	font-size:18px;
-}
-
-
 
 
 //*******************STATS SECTION**********************
 .right-db{
+
+	border: 6px solid black;
+	width: 54%;
+	margin-left:3em;
+	background-color: #ccf;
+
+	.btn-primary{
+		left: 15em;
+    	top: 3em;
+	}
+
+	.radio-inline{
+		font-size:18px;
+	}
+
+
 	@media screen and(min-width:$break-xlarge){	
 		margin-right:-5em;
 	}

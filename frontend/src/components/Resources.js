@@ -9,7 +9,7 @@ class Resources extends Component{
 			<div>
 				<Grid className="resources-wrapper">
 					<Row>
-						<Col md = {8} mdOffset={3} >
+						<Col md = {7} mdOffset={3} >
 							<div>
 								<h1>Top 10 Resources for Writers</h1>
 								<hr id="resource-line" />

@@ -1155,31 +1155,42 @@ h2 {
   background: #ccf;
 }
 
-/* line 226, ../../compass/sass/_writemenu.scss */
-.radio-inline {
+/* line 228, ../../compass/sass/_writemenu.scss */
+.right-db {
+  border: 6px solid black;
+  width: 54%;
+  margin-left: 3em;
+  background-color: #ccf;
+}
+/* line 235, ../../compass/sass/_writemenu.scss */
+.right-db .btn-primary {
+  left: 15em;
+  top: 3em;
+}
+/* line 240, ../../compass/sass/_writemenu.scss */
+.right-db .radio-inline {
   font-size: 18px;
 }
-
 @media screen and (min-width: 1732px) {
-  /* line 234, ../../compass/sass/_writemenu.scss */
+  /* line 228, ../../compass/sass/_writemenu.scss */
   .right-db {
     margin-right: -5em;
   }
 }
 @media screen and (min-width: 767px) {
-  /* line 234, ../../compass/sass/_writemenu.scss */
+  /* line 228, ../../compass/sass/_writemenu.scss */
   .right-db {
     padding-left: 28px;
   }
 }
 @media screen and (min-width: 414px) {
-  /* line 234, ../../compass/sass/_writemenu.scss */
+  /* line 228, ../../compass/sass/_writemenu.scss */
   .right-db {
     padding-left: 34px;
   }
 }
 @media screen and (min-width: 320px) {
-  /* line 234, ../../compass/sass/_writemenu.scss */
+  /* line 228, ../../compass/sass/_writemenu.scss */
   .right-db {
     padding-left: 42px;
   }
@@ -1497,59 +1508,79 @@ h2 {
 
 /* line 39, ../../compass/sass/_notepad.scss */
 .notepad-form {
-  margin-top: 7em;
+  margin-top: 11em;
   background-color: grey;
   border: 1px solid grey;
   box-shadow: 2px 2px 11px 1px rgba(0, 0, 0, 0.2);
   padding: 15px;
-  height: 34em;
+  height: 32em;
+  margin-left: 17em;
 }
-/* line 48, ../../compass/sass/_notepad.scss */
-.notepad-form .btn {
-  top: 7em;
-  left: 25em;
-  right: 0em;
-  margin-right: 30px;
-  width: 6em;
+/* line 49, ../../compass/sass/_notepad.scss */
+.notepad-form .btn-default {
+  position: relative;
+  top: -12em;
+  left: 90em;
+  margin: auto;
+  width: 13em;
+  font-size: 0.5em;
 }
-/* line 57, ../../compass/sass/_notepad.scss */
+/* line 58, ../../compass/sass/_notepad.scss */
 .notepad-form #message {
   height: 12em;
 }
 
-/* line 63, ../../compass/sass/_notepad.scss */
+/* line 64, ../../compass/sass/_notepad.scss */
 .np-row-left {
   float: left;
   margin-top: 41em;
 }
-/* line 67, ../../compass/sass/_notepad.scss */
+/* line 68, ../../compass/sass/_notepad.scss */
 .np-row-left img {
   margin-top: -18em;
   position: relative;
   left: -22em;
   height: 13em;
 }
-/* line 74, ../../compass/sass/_notepad.scss */
+/* line 75, ../../compass/sass/_notepad.scss */
 .np-row-left a {
   margin-top: 3em;
   position: relative;
   left: 2em;
 }
+/* line 80, ../../compass/sass/_notepad.scss */
+.np-row-left .btn-default {
+  position: relative;
+  top: -12em;
+  left: 90em;
+  margin: auto;
+  width: 13em;
+  font-size: 0.5em;
+}
 
-/* line 81, ../../compass/sass/_notepad.scss */
+/* line 90, ../../compass/sass/_notepad.scss */
 .np-row-right {
   float: right;
   margin-top: 41em;
 }
-/* line 85, ../../compass/sass/_notepad.scss */
+/* line 94, ../../compass/sass/_notepad.scss */
 .np-row-right img {
-  margin-top: -113em;
+  margin-top: -104em;
   position: relative;
-  left: -3em;
-  height: 7em;
+  left: 57em;
+  height: 5em;
+}
+/* line 100, ../../compass/sass/_notepad.scss */
+.np-row-right .btn-default {
+  position: relative;
+  top: -12em;
+  left: 90em;
+  margin: auto;
+  width: 13em;
+  font-size: 0.5em;
 }
 
-/* line 93, ../../compass/sass/_notepad.scss */
+/* line 110, ../../compass/sass/_notepad.scss */
 #title {
   margin-top: -3em;
   margin-right: 18em;
@@ -1557,26 +1588,26 @@ h2 {
   border: 2px solid black;
 }
 
-/* line 100, ../../compass/sass/_notepad.scss */
+/* line 117, ../../compass/sass/_notepad.scss */
 #notes {
   border: 2px solid black;
   margin-top: -2em;
   height: 14em;
 }
 
-/* line 106, ../../compass/sass/_notepad.scss */
+/* line 123, ../../compass/sass/_notepad.scss */
 .control-label {
   margin-bottom: 3em;
 }
 
-/* line 110, ../../compass/sass/_notepad.scss */
+/* line 127, ../../compass/sass/_notepad.scss */
 #writeMenu {
   position: relative;
   margin-top: 3em;
   left: -9em;
 }
 
-/* line 116, ../../compass/sass/_notepad.scss */
+/* line 133, ../../compass/sass/_notepad.scss */
 #viewNotePad {
   margin-top: -44em;
   position: relative;
@@ -1703,31 +1734,34 @@ h2 {
 /* line 21, ../../compass/sass/_resources.scss */
 .resources-wrapper h1 {
   color: white;
-  font-size: 6em;
+  font-size: 3em;
   margin-top: 2em;
-  margin-right: 1em;
+  margin-right: 0em;
+  width: 92%;
 }
 /* line 29, ../../compass/sass/_resources.scss */
 .resources-wrapper #book, .resources-wrapper #TandA, .resources-wrapper #description {
-  font-size: 3em;
-  color: black;
+  font-size: 2em;
+  color: white;
   text-align: center;
 }
 /* line 35, ../../compass/sass/_resources.scss */
 .resources-wrapper td {
-  color: black;
+  color: white;
   font-size: 2em;
-  font-weight: bold;
   border: 1px solid white;
 }
-/* line 41, ../../compass/sass/_resources.scss */
+/* line 40, ../../compass/sass/_resources.scss */
 .resources-wrapper .table-bordered {
   margin-right: -2em;
 }
-/* line 44, ../../compass/sass/_resources.scss */
+/* line 43, ../../compass/sass/_resources.scss */
 .resources-wrapper .table-responsive {
-  background-color: white;
-  opacity: 0.3;
+  background-color: black;
+  opacity: 0.8;
+  width: 156%;
+  margin-left: -20em;
+  font-size: 9px;
 }
 
 /* line 3, ../../compass/sass/_forumsmain.scss */
