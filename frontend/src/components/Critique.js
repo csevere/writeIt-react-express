@@ -301,7 +301,7 @@ class Critique extends Component{
                             <Grid className = "fourth-row-left">
                                 <Col md = {3}>
                                     <Link to = {writeMenu} className = "return-writemenu">
-                                        <img src = "https://cdn4.iconfinder.com/data/icons/lifestyle-set-2/100/07a3c3443f894cb3fa7a93ee3c496233-512.png"/>
+                                        <img src = "/images/writemenu-icon.png"/>
                                         <div>Return to Write Menu</div>
                                     </Link>
                                 </Col>
@@ -310,7 +310,7 @@ class Critique extends Component{
                             <Grid className = "fourth-row-right">
                                 <Col md = {3} className = "col-md-offset-8">
                                     <Link to = {critBoard} className = "critboard">
-                                        <img src = "https://cdn4.iconfinder.com/data/icons/office-34/256/10-512.png"/>
+                                        <img src = "/images/viewboard-icon.png"/>
                                         <div>View Critique</div>
                                     </Link>
                                 </Col>

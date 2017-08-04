@@ -49,7 +49,7 @@ class tQueryLetterBoard extends Component{
             // })
 
         });
-        this.props.history.push(`/write/${book}`);
+        this.props.history.push(`/queryboard/${book}`);
     }
 
 
@@ -65,79 +65,77 @@ class tQueryLetterBoard extends Component{
             var edit = '/q-letter/' + this.props.match.params.book +'?id=' + query.id;
 
             queryLetterArray.push(
-                <div className="text-center">
+                <div>
+                    <Grid className="view-width">
+                        <Col md = {10} className="view-card">
 
+                            <div>
+                                <div className = "questions">1. Have you researched the agent and the type of authors he/she represents?</div>
+                                <div>{query.query_clarity}</div>
+                            </div>
 
-                    <div>
-                        <div id = "one">Have you researched the agent and the type of authods he/she represents?</div>
-                        <div>{query.query_clarity}</div>
-                    </div>
+                            <div>
+                                <div className = "questions">2. In setting up the story, specify exactly what your character wants the most in the world?</div>
+                                <div>{query.query_boring}</div>
+                            </div>
 
-                    <div>
-                        <div id = "two">In setting up the story, specify exactly what your character wants the most in the world?</div>
-                        <div>{query.query_boring}</div>
-                    </div>
+                            <div>
+                                <div className = "questions">3. Specify what&apos;s getting in the way of your character&apos;s goals?</div>
+                                <div>{query.query_balance}</div>
+                            </div>
 
-                    <div>
-                        <div id = "three">Specify what's getting in the way of your character's goals?</div>
-                        <div>{query.query_balance}</div>
-                    </div>
+                            <div>
+                                <div className = "questions">4. What&apos;s at stake if your character fails?</div>
+                                <div>{query.query_stakes}</div>
+                            </div>
 
-                    <div>
-                        <div id = "four">What's at stake if your character fails?</div>
-                        <div>{query.query_stakes}</div>
-                    </div>
-
-                    <div>
-                        <div id = "five">How can you show rather than tell the agent about your main character?</div>
-                        <div>{query.query_advance}</div>
-                    </div>
-
-
-
-
-
-                    <div>
-                        <div id = "one">How can you show your characters emotional journey from start to end?</div>
-                        <div>{query.query_resolve}</div>
-                    </div>
-
-                    <div>
-                        <div id = "two">What are the stats of your book: Genre,target audience, word count?</div>
-                        <div>{query.query_voice}</div>
-                    </div>
-
-                    <div>
-                        <div id = "three">What comtemporary titles match your book?</div>
-                        <div>{query.query_action}</div>
-                    </div>
-
-                    <div>
-                        <div id = "four">Is your bio too long?</div>
-                        <div>{query.query_personality}</div>
-                    </div>
-
-                    <div>
-                        <div id = "five">Which sentences generate multiple questions? Rewrite them here.</div>
-                        <div>{query.query_romance}</div>
-                        <br/><br/>
-
-
-                    </div>
-                    <br/>
-                    <div><br/><Link to = {edit} className = "chboard">
-                        <Button className = "btn" type="button">
-                            Edit Query Letter
-                        </Button>
-                    </Link>	<Button className = "btn" type="button" onClick={()=>{this.deleteQueryLetter(query.id)}}>
-                        Delete Query Letter
-                    </Button></div>
+                            <div>
+                                <div className = "questions">5. How can you show rather than tell the agent about your main character?</div>
+                                <div>{query.query_advance}</div>
+                            </div>
 
 
 
 
 
+                            <div>
+                                <div className = "questions">6. How can you show your characters emotional journey from start to end?</div>
+                                <div>{query.query_resolve}</div>
+                            </div>
 
+                            <div>
+                                <div className = "questions">7. What are the stats of your book: Genre,target audience, word count?</div>
+                                <div>{query.query_voice}</div>
+                            </div>
+
+                            <div>
+                                <div className = "questions">8. What comtemporary titles match your book?</div>
+                                <div>{query.query_action}</div>
+                            </div>
+
+                            <div>
+                                <div className = "questions">9. Is your bio too long?</div>
+                                <div>{query.query_personality}</div>
+                            </div>
+
+                            <div>
+                                <div className = "questions"> 10. Which sentences generate multiple questions? Rewrite them here.</div>
+                                <div>{query.query_romance}</div>
+                                <br/><br/>
+
+
+                            </div>
+                            <br/>
+                            <div><br/><Link to = {edit} className = "chboard">
+                                <Button className = "btn btn-info" type="button">
+                                    Edit Letter
+                                </Button>
+                            </Link>	<Button className = "btn btn-danger" type="button" onClick={()=>{this.deleteQueryLetter(query.id)}}>
+                                Delete Letter
+                            </Button></div>
+
+                        </Col>
+                    </Grid>
                 </div>
 
 
@@ -145,34 +143,41 @@ class tQueryLetterBoard extends Component{
         })
 
         if(queryLetterArray.length === 0){
-            var textHeader = "It doesn't exist. Go back and create one!"
+            var textHeader = "You have no query letter guide to view. Return and create one."
         }else{
-            var textHeader = "Your Chapter Responses";
+            var textHeader = "Your Query Letter Guide";
         }
 
 
 
         return(
-            <div>
-                <h1>{textHeader}</h1>
-                {queryLetterArray}
-
-
-                <Grid className = "fourth-row-left">
-                    <Col md = {3}>
-                        <Link to = {writeMenu} className = "return-writemenu">
-                            <img src = "https://cdn4.iconfinder.com/data/icons/lifestyle-set-2/100/07a3c3443f894cb3fa7a93ee3c496233-512.png"/>
-                            <div>Return to Write Menu</div>
-                        </Link>
-                    </Col>
+           <div>
+                <Grid className = "view-board">
+                    <Row>
+                        <Col sm = {12} className = "display-resp">
+                            <h1>{textHeader}</h1>                  
+                            {queryLetterArray}
+                        </Col>
+                    </Row>
+                        
+                
+                    <Row>
+                        <Grid className = "fourth-row-left">
+                            <Col md = {3}>
+                                <Link to = {writeMenu} className = "return-writemenu">
+                                    <img src = "/images/writemenu-icon.png"/>
+                                    <div>Return to Write Menu</div>
+                                </Link>
+                            </Col>
+                        </Grid>
+                    </Row>
                 </Grid>
-
             </div>
-
 
         )
     }
 }
+
 
 function mapStateToProps(state){
     return{

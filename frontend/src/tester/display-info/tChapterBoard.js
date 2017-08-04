@@ -49,7 +49,7 @@ class tChapterBoard extends Component{
             // })
 
         });
-        this.props.history.push(`/write/${book}`);
+        this.props.history.push(`/chapboard/${book}`);
 	}
 
 
@@ -57,6 +57,7 @@ class tChapterBoard extends Component{
 	render(){
 
         var writeMenu = '/write/' + this.props.match.params.book;
+        var chapters = '/chapters/' + this.props.match.params.book;
     	var chaptersArray = [];
 
 		this.state.chapterData.map((chapters, index)=>{
@@ -69,6 +70,7 @@ class tChapterBoard extends Component{
 
 					<Grid className="view-width">
 						<Col sm = {5} className="view-card">
+
 							<div>
 								<div className = "questions">1. What is the point of the chapter in one sentence?</div>
 								<div>{chapters.scene_number}</div>
@@ -158,21 +160,16 @@ class tChapterBoard extends Component{
 
 							<br/>
 							<div><br/><Link to = {edit} className = "chboard">
-								<Button className = "btn" type="button">
+								<Button className = "btn btn-info" type="button">
 									Edit Chapter
 								</Button>
-							</Link>	<Button className = "btn" type="button" onClick={()=>{this.deleteChapter(chapters.id)}}>
+							</Link>	<Button className = "btn btn-danger" type="button" onClick={()=>{this.deleteChapter(chapters.id)}}>
 								Delete Chapter
 							</Button></div>
 
 						</Col>
 
 					</Grid> 
-
-
-
-
-
 
 				</div>
 
@@ -181,7 +178,7 @@ class tChapterBoard extends Component{
 		})
 
 		if(chaptersArray.length === 0){
-			var textHeader = "You have no chapters to view. Go back and create one!"
+			var textHeader = "You have no chapters to view. Return and create one."
 		}else{
 			var textHeader = "Your Chapters";
 		}
@@ -203,11 +200,18 @@ class tChapterBoard extends Component{
 						<Grid className = "fourth-row-left">
 							<Col md = {3}>
 								<Link to = {writeMenu} className = "return-writemenu">
-									<img src = "https://cdn4.iconfinder.com/data/icons/lifestyle-set-2/100/07a3c3443f894cb3fa7a93ee3c496233-512.png"/>
+									<img src = "/images/writemenu-icon.png"/>
 									<div>Return to Write Menu</div>
 								</Link>
 							</Col>
-						</Grid>
+
+							<Col md = {3}>
+								<Link to = {chapters} className = "return-quest">
+									<img src = "/images/create-new-icon.png"/>
+									<div>Create a new chapter</div>
+								</Link>
+							</Col>
+						</Grid>	
 					</Row>
 				</Grid>
 
@@ -232,3 +236,10 @@ function mapStateToProps(state){
 
 // export default tChapterBoard
 export default connect(mapStateToProps,null)(tChapterBoard);
+
+
+
+// <div>
+// 	<div className = "questions">Chapter Title:</div>
+// 	<div>{chapters.chapter_title}</div>
+// </div>

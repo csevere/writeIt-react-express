@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link} from 'react-router-dom';
 import { Form, FormGroup, ControlLabel, FormControl, Button, Col ,MenuItem, Grid} from 'react-bootstrap'
 // Our action needs bindActionCreators from redux
 import  {bindActionCreators} from 'redux';
@@ -132,10 +133,10 @@ class Register extends Component{
 
 									<FormGroup controlId="formHorizontalName">
 										<Col componentClass={ControlLabel} sm={2}>
-											Twitter Handle @
+											Twitter Handle 
 										</Col>
 										<Col sm={6}>
-											<FormControl type="text" name="t_username" placeholder="Username"/>
+											<FormControl type="text" name="t_username" placeholder="don't include @"/>
 										</Col>
 									</FormGroup>
 
@@ -189,6 +190,7 @@ class Register extends Component{
 									</FormGroup>
 									
 								</Form>
+								<div><h4 className = "text-center">Already have an account? <Link to = "/login">Log in!</Link></h4></div>
 							</Col>
 						
 					</Col> 

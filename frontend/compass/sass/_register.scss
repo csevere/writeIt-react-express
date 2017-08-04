@@ -2,7 +2,7 @@
 
 
 .register-wrapperb{
-	background-image: url('https://static.pexels.com/photos/34627/pexels-photo.jpg');
+	background-image: url('/images/register-bg.jpg');
 	position: absolute;	
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -15,15 +15,30 @@
 	left:0;
 	margin: 0; 
 	z-index: -1; 
-	height: 115%;
+	height: 137%;
 	width: 100%; 
+
+	@media screen and(min-width:$break-xlarge){
+		height: 104%; 			
+	}
+
+	@media screen and(max-width:$break-large){
+		height: 137%; 			
+	}
+
+
 	@media screen and(max-width:$break-lg-medium){	
 		width: 110%;
-    		
-	} 
+		
+	}
+
+	@media screen and(max-width:$break-medium){	
+		height: 156%;  		
+	}  
 
 	@media screen and(max-width:$break-small){	
 		height: 156%;  
+		width: 100%; 
 			
 	} 
 
@@ -50,11 +65,12 @@
 
 		@media screen and(max-width:$break-medium){	
 			width: 70%;
-			margin-top: 10em; 
+			margin-top: 5em; 
 	
 		}
 
 		@media screen and(max-width:$break-small){	
+			margin-top: 9em; 
 			margin-left: 0em; 
 			width: 100%; 
 			
@@ -66,7 +82,12 @@
 		font-size: 32px;
 		margin-left: 0em !important;
     	padding-bottom: 0em !important;
-    	line-height: 0px; 
+    	line-height: 0px;
+
+    	@media screen and(max-width:$break-medium){	
+			font-size: 24px;   		
+		}  
+
     	@media screen and(max-width:$break-small){	
 			font-size: 29px; 
 			
@@ -79,7 +100,14 @@
 	}
 
 	h3{
-		font-size: 21px;
+		font-size: 19px;
+		@media screen and(min-width:$break-xlarge){
+			font-size: 25px; 			
+		}
+
+		@media screen and(max-width:$break-medium){	
+			font-size: 18px;   		
+		} 
 		
 	}
 
@@ -100,6 +128,13 @@
 		} 
 
 
+	}
+
+	.control-label {
+    	@media screen and(max-width:$break-medium){	
+			margin-bottom: 0em;
+			
+		} 
 	}
 
 	.btn{

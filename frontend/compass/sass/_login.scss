@@ -38,6 +38,13 @@
    	
 	}
 
+	h3{
+		font-size: 23px; 
+		@media screen and(min-width:$break-xlarge){
+			font-size: 25px; 			
+		}
+	}
+
 	.form-horizontal{
 		margin-top: 2em; 
 	}
