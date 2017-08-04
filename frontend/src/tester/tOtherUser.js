@@ -27,7 +27,7 @@ class tOtherUser extends Component{
             bookData: [],
             postData: [],
             picData: {
-                picture: 'images/profile-pic.png'
+                picture: '../public/frontend/images/profile-pic.png'
                 
             }
 
@@ -35,16 +35,16 @@ class tOtherUser extends Component{
             // emailError: null,
             // formError: false
         }
-        // this.handlePost = this.handlePost.bind(this);
-        // this.loadPosts = this.loadPosts.bind(this);
+        this.handlePost = this.handlePost.bind(this);
+        this.loadPosts = this.loadPosts.bind(this);
 
     }
 
     handlePost(event){
         event.preventDefault();
 
-
-        var username = this.props.registerResponse.name;
+        console.log(this.props.match.params.profile);
+        var username = this.props.match.params.profile;
         var post = document.getElementById('post').value;
         var from_user = this.props.registerResponse.name;
        
@@ -60,62 +60,67 @@ class tOtherUser extends Component{
         
     }
 
-    // componentDidMount(){
-    //     $.getJSON(`http://localhost:5000/user?email=${this.props.registerResponse.email}`, (serverData)=>{
-    //         // log the JSON response from Express
-    //         //console.log(serverData.userData)
-    //         this.setState({
-    //             userData: serverData.userData
-    //         })
-    //     })
+    componentDidMount(){
+        $.getJSON(`http://localhost:5000/user?username=${this.props.match.params.profile}`, (serverData)=>{
+            // log the JSON response from Express
+            //console.log(serverData.userData)
+            this.setState({
+                userData: serverData.userData
+            })
+        })
 
-    //     $.getJSON(`http://localhost:5000/book?username=${this.props.registerResponse.name}`, (serverData)=>{
-    //         // log the JSON response from Express
-    //         //console.log(serverData.bookData)
-    //         this.setState({
-    //             bookData: serverData.bookData
-    //         })
-    //     });
+        $.getJSON(`http://localhost:5000/book?username=${this.props.match.params.profile}`, (serverData)=>{
+            // log the JSON response from Express
+            //console.log(serverData.bookData)
+            this.setState({
+                bookData: serverData.bookData
+            })
+        });
 
-    //     this.loadPosts();
+        this.loadPosts();
 
-    //     // setInterval(this.loadPosts, 30000);
+        setInterval(this.loadPosts, 30000);
 
-    //     $.getJSON(`http://localhost:5000/profilepic?username=${this.props.registerResponse.name}`, (serverData)=>{
-    //         // log the JSON response from Express
-    //         console.log(serverData)
-    //         if(serverData.picData !== undefined){
-    //             this.setState({
-    //                 picData: serverData.picData
+        $.getJSON(`http://localhost:5000/profilepic?username=${this.props.match.params.profile}`, (serverData)=>{
+            // log the JSON response from Express
+            console.log(serverData)
+            if(serverData.picData !== undefined){
+                this.setState({
+                    picData: serverData.picData
                     
-    //         })
+            })
 
-    //         }
+            }
 
 
-    //     });
+        });
 
-    //     // console.log(this.state.bookData)
-    // }
+        // console.log(this.state.bookData)
+    }
 
-    // loadPosts(){
-    //     $.getJSON(`http://localhost:5000/post?username=${this.props.registerResponse.name}`, (serverData)=>{
-    //     // log the JSON response from Express
-    //     //console.log(serverData.bookData)
-    //     this.setState({
-    //         postData: serverData.postData
-    //     })
-    // });
-    // }
+    loadPosts(){
+        $.getJSON(`http://localhost:5000/post?username=${this.props.match.params.profile}`, (serverData)=>{
+        // log the JSON response from Express
+        //console.log(serverData.bookData)
+        this.setState({
+            postData: serverData.postData
+        })
+    });
+    }
 
 
     render(){
 
+        console.log(this.props.match.params.profile);
+
         var profilepic = this.state.picData.picture;
-        var picLocation;
+        var picLocation = '../public/frontend/images/profile-pic.png';
         if(profilepic.length > 2){
             picLocation = profilepic.slice(18);
             console.log(picLocation)
+        }else{
+            picLocation = picLocation.slice(18);
+
         }
         console.log('pic path here');
         console.log(profilepic);

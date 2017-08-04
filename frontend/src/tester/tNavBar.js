@@ -2,6 +2,7 @@ import React from 'react'
 import DOM from 'react-dom'
 import Autocomplete from 'react-autocomplete';
 import Select from 'react-select';
+import { Form, Grid, Row, Col, FormGroup, FormControl, Button, ControlLabel } from 'react-bootstrap';
 import $ from 'jquery';
 import 'react-select/dist/react-select.css';
 
@@ -16,6 +17,8 @@ class tNavBar extends React.Component {
             ]
         }
         this.logChange = this.logChange.bind(this);
+        this.performSearch = this.performSearch.bind(this);
+
     }
 
     componentDidMount(){
@@ -41,7 +44,14 @@ class tNavBar extends React.Component {
 	  this.setState({
 	  		selectVal: val.value
 	  })
+        this.props.history.push(`/profile/${val.value}`);
 	}
+
+	performSearch(){
+        console.log('called');
+        var searchInput = document.getElementById('special').value;
+        console.log(searchInput)
+    }
 
 
 
@@ -67,7 +77,12 @@ class tNavBar extends React.Component {
 				value={this.state.selectVal}
 				options={this.state.options}
 				onChange={this.logChange}
+
 			/>
+            <div className="text-center">
+                <Button type='submit' className='btn btn-primary' onClick={this.performSearch}>Search</Button>
+
+            </div>
 		</div>
     )
   }
