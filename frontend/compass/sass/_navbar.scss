@@ -8,7 +8,7 @@
 	width: 100%;
 	height: 9%; 
 	@media screen and(min-width:$break-xlarge){
-		height: 10%; 
+		height: 7%; 
 	}
 
 	@media screen and(max-width:$break-lg-medium){	
@@ -36,6 +36,7 @@
 			margin-top: 0; 
 			display: flex; 
 			text-decoration: none;
+			list-style: none;
 
 		}
 

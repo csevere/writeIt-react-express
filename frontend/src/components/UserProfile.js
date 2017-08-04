@@ -207,10 +207,10 @@ class UserProfile extends Component{
                                             <input name='username' type='hidden' value={this.state.userData.username} />
                                             <FileInput name = "fileUploaded"
                                                        accept = ".png,.jpg,.jpeg,.gif"
-                                                       placeholder = "Upload Profile Picture"
+                                                       placeholder = "Choose Image"
                                                        className = "InputClass"
                                                                              /> 
-                                            <input type = "submit" /> 
+                                            <input type = "submit" value = "Upload Image" className = "submit" /> 
  
                                         </Col>
                                     </form>

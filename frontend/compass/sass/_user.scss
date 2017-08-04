@@ -41,9 +41,13 @@
 
 		.edit-left{
 			position: relative;
-		    top: 22em; 
+		    top: 34em; 
 		    left: 1em;
 		    display: -webkit-box;
+		    @media screen and(min-width:$break-xlarge){
+				top: 38em; 
+			}
+
 
 		    .btn{
 
@@ -88,7 +92,7 @@
 
 		input{
 			position: relative;
-    		top: 0.2em;
+    		top: 7.5em;
     		left: -27em;
     		cursor: pointer; 
     		position: relative;
