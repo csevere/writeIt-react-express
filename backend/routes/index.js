@@ -270,18 +270,36 @@ router.get('/bookpic', (req, res)=>{
 
 router.get('/user', (req,res)=>{
 	var email = req.query.email;
-	console.log('email')
-	var userDataQuery = `SELECT * FROM users WHERE email= '${email}'` ;
-	connection.query(userDataQuery, (error, response)=>{
-		if(error){
-			throw error;
-		}else{
-			res.json({
-				userData: response[0]
-			})
-		}
+	var username = req.query.username;
+	console.log(email);
+	console.log(username);
+	if(email !== undefined){
+        var userDataQuery = `SELECT * FROM users WHERE email= '${email}'` ;
+        connection.query(userDataQuery, (error, response)=>{
+            if(error){
+                throw error;
+            }else{
+                res.json({
+                    userData: response[0]
+                })
+            }
 
-	})
+        })
+    }else{
+        var userDataQuery = `SELECT * FROM users WHERE username= '${username}'` ;
+        connection.query(userDataQuery, (error, response)=>{
+            if(error){
+                throw error;
+            }else{
+                res.json({
+                    userData: response[0]
+                })
+            }
+
+        })
+
+    }
+
 
 });
 

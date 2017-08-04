@@ -46,22 +46,22 @@ class NotePad extends Component{
     }
 
 
-    componentDidMount(){
+    // componentDidMount(){
 
-        //console.log(this.props.location.search);
-        if(this.props.location.search.length !== 0){
-            var id = this.props.location.search.slice(4);
-            console.log(id);
-            $.getJSON(`http://localhost:5000/notepad?id=${id}`, (serverData)=>{
-                // log the JSON response from Express
-                //console.log(serverData);
-                this.setState({
-                    notePadData: serverData[0]
-                })
-            })
-        }
+    //     //console.log(this.props.location.search);
+    //     if(this.props.location.search.length !== 0){
+    //         var id = this.props.location.search.slice(4);
+    //         console.log(id);
+    //         $.getJSON(`http://localhost:5000/notepad?id=${id}`, (serverData)=>{
+    //             // log the JSON response from Express
+    //             //console.log(serverData);
+    //             this.setState({
+    //                 notePadData: serverData[0]
+    //             })
+    //         })
+    //     }
 
-    }
+    // }
 
 
     render(){
@@ -106,7 +106,7 @@ class NotePad extends Component{
                 </Grid>
                  <Row>
                         <Grid className = "np-row-left">
-                            <Col md = {3}>
+                            <Col md = {6}>
                                 <Link to = {writeMenu} className = "return-writemenu">
                                     <img src = "/images/writemenu-icon.png"/>
                                     <div id="writeMenu"><Link to = {writeMenu}><Button className = "btn-default btn" bsStyle="warning" bsSize="large"
@@ -116,11 +116,11 @@ class NotePad extends Component{
                         </Grid>
 
                         <Grid className = "np-row-right">
-                            <Col md = {3} className = "col-md-offset-8">
+                            <Col md = {6}>
                                 <Link to = {notePadBoard} className = "chboard">
                                     <img src = "/images/viewboard-icon.png"/>
                                     <div id="viewNotePad"><Link to = "/notepad"><Button className = "btn-default btn" bsStyle="danger" bsSize="large"
-                                    type="submit">View Notepad</Button></Link></div>
+                                    type="submit">View Notebook</Button></Link></div>
                                 </Link>
                             </Col>
                         </Grid>

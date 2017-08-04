@@ -10,7 +10,7 @@ import  {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import $ from 'jquery';
 import PostAction from '../actions/PostAction';
-import  {Timeline} from 'react-twitter-widgets'; 
+import  {Timeline} from 'react-twitter-widgets';
 // import UserProfileAction from '../actions/UserProfileAction';
 
 
@@ -79,7 +79,7 @@ class UserProfile extends Component{
 
         this.loadPosts();
 
-        // setInterval(this.loadPosts, 30000);
+        setInterval(this.loadPosts, 30000);
 
         $.getJSON(`http://localhost:5000/profilepic?username=${this.props.registerResponse.name}`, (serverData)=>{
             // log the JSON response from Express

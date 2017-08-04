@@ -38,20 +38,21 @@
 
 .notepad-form{
 
-	margin-top: 7em; 
-	background-color: grey;
-	border: 1px solid grey; 
-	box-shadow: 2px 2px 11px 1px rgba(0,0,0,.2);
-	padding: 15px; 
-	height:34em;
+	margin-top: 11em;
+    background-color: grey;
+    border: 1px solid grey;
+    box-shadow: 2px 2px 11px 1px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    height: 32em;
+    margin-left: 17em;
 
-	.btn{
-		top: 7em;
-		left: 25em;
-		right: 0em;
-		margin-right: 30px; 
-		width:6em;
-
+	.btn-default{
+		position: relative;
+    	top: -12em;
+    	left: 90em;
+    	margin: auto;
+    	width: 13em;
+    	font-size: 0.5em;
 	}
 
 	#message{
@@ -76,6 +77,14 @@
 		position:relative;
 		left:2em;
 	}
+	.btn-default{
+		position: relative;
+    	top: -12em;
+    	left: 90em;
+    	margin: auto;
+    	width: 13em;
+    	font-size: 0.5em;
+	}
 
 }
 .np-row-right{
@@ -83,10 +92,18 @@
 	margin-top:41em;
 
 	img{
-	margin-top: -113em;
-    position: relative;
-    left: -3em;
-    height: 7em;
+	    margin-top: -104em;
+    	position: relative;
+    	left: 57em;
+    	height: 5em;
+	}
+	.btn-default{
+		position: relative;
+    	top: -12em;
+    	left: 90em;
+    	margin: auto;
+    	width: 13em;
+    	font-size: 0.5em;
 	}
 
 }
