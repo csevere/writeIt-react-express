@@ -44,12 +44,12 @@ class tNavBar extends React.Component {
 	  this.setState({
 	  		selectVal: val.value
 	  })
-        this.props.history.push(`/profile/${val.value}`);
+        this.props.history.push(`/profiles?user=${val.value}`);
 	}
 
 	performSearch(){
         console.log('called');
-        var searchInput = document.getElementById('special').value;
+        var searchInput = document.getElementsByClassName('Select-input');
         console.log(searchInput)
     }
 
@@ -58,31 +58,25 @@ class tNavBar extends React.Component {
 
   render() {
 
-  	var Select = require('react-select');
+  	//var Select = require('react-select');
 
 	
 
-	console.log(this.state.options)
-	//console.log(document.getElementById('search').value)
-	var input = 's'
-	console.log(document.getElementById('special'))
+
 	
     return (
     	<div>
 	    	<p><br/><br/><br/><br/><br/><br/><br/><br/><br/></p>
 			<Select
 				id='special'
-				placeholder='input'
+				placeholder='Search users'
 				name="form-field-name"
 				value={this.state.selectVal}
 				options={this.state.options}
 				onChange={this.logChange}
 
 			/>
-            <div className="text-center">
-                <Button type='submit' className='btn btn-primary' onClick={this.performSearch}>Search</Button>
 
-            </div>
 		</div>
     )
   }

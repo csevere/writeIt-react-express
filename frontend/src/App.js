@@ -65,7 +65,7 @@ class App extends Component {
 
               <Route exact path="/user" component= {UserProfile} />
               <Route exact path = "/profile/:profile" component = {tOtherUser}/>
-              <Route exact path = "/search" component = {tResultsPage}/>
+              <Route exact path = "/profiles/" component = {tResultsPage}/>
 
               <Route exact path="/write/:book" component= {writeMenu} />             
               <Route exact path="/newbook" component= {NewBook} />

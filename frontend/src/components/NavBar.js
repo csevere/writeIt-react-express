@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Nav, Navbar, NavItemForm, Grid, Row, Col, Form, FormGroup, FormControl, Button, ControlLabel } from 'react-bootstrap';
 // import {Autocomplete} from 'react-autocomplete';
 import {connect} from 'react-redux';
+import tNavBar from '../tester/tNavBar';
 
 class NavBar extends Component{
 	
@@ -20,6 +21,7 @@ class NavBar extends Component{
 		}else{
 			var rightBar = [
 				<ul>
+					<li className="home-nav">Welcome, <Link to='/user'>{this.props.registerInfo.name}</Link></li>
 					<li><Link className = "home-nav" to="/">Home</Link></li>
 				   	<li className = "logout"><a href="http://localhost:3000/">Logout</a></li>
 		      	</ul>
@@ -38,11 +40,11 @@ class NavBar extends Component{
 
 						    <Form>
 						    	<FormGroup>
-	      							<FormControl id="search" type="text" placeholder="Search writeIT" />
+	      							<tNavBar />
 	      							<datalist>
 	      								<option value='mall' />
 	      							</datalist>
-	      							<img src = "images/search-icon.png"/>
+	      							<Link classname='search-users' to='/profiles/'><img src = "images/search-icon.png"/></Link>
 	    						</FormGroup>
 						    </Form>
 						</Col>

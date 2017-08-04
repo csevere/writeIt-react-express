@@ -29,8 +29,8 @@ class UserProfile extends Component{
             picData: {
                 picture:"./public/frontend/images/profile-pic.png"
                 
-            }
-
+            },
+            followData: 0
             // nameError: null,
             // emailError: null,
             // formError: false
@@ -77,6 +77,8 @@ class UserProfile extends Component{
             })
         });
 
+
+
         this.loadPosts();
 
         setInterval(this.loadPosts, 30000);
@@ -86,14 +88,22 @@ class UserProfile extends Component{
             console.log(serverData)
             if(serverData.picData !== undefined){
                 this.setState({
-                    picData: serverData.picData
-                    
+                    picData: serverData.picData      
             })
 
             }
-
-
         });
+
+
+        $.getJSON(`http://localhost:5000/follow?username=${this.props.registerResponse.name}`, (serverData)=>{
+            // log the JSON response from Express
+            console.log('follow');
+            console.log(serverData);
+            this.setState({
+                followData: serverData.followers.length
+            })
+        });
+
 
         // console.log(this.state.bookData)
     }
@@ -186,8 +196,7 @@ class UserProfile extends Component{
                                     <div className = "stats-right">
                                         <div>
                                             <ul>
-                                                <li style = {{background: "white"}}><div id= "friends"><h4>0 Friends</h4></div></li>
-                                                <li style = {{background: "white"}}><div id= "friends"><h4>0 Messages</h4></div></li>
+                                                <li style = {{background: "white"}}><div id= "friends"><h4>{this.state.followData} Followers</h4></div></li>
                                             </ul>
                                         </div>
                                     </div>
