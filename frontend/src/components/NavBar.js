@@ -2,11 +2,29 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import { Nav, Navbar, NavItemForm, Grid, Row, Col, Form, FormGroup, FormControl, Button, ControlLabel } from 'react-bootstrap';
 // import {Autocomplete} from 'react-autocomplete';
+import {connect} from 'react-redux';
 
 class NavBar extends Component{
 	
 
 	render(){
+
+		if(this.props.registerInfo.name == undefined){
+			var rightBar = [
+				<ul>
+					<li><Link className = "home-nav" to="/">Home</Link></li>
+				   	<li><Link className = "login" to="/login">Login</Link></li>
+			      	<li><Link className = "signup" to="/signup">Sign up</Link></li>	
+		      	</ul>
+			]
+		}else{
+			var rightBar = [
+				<ul>
+					<li><Link className = "home-nav" to="/">Home</Link></li>
+				   	<li className = "logout"><a href="http://localhost:3000/">Logout</a></li>
+		      	</ul>
+			]		
+		}
 
 		return(
 			<div>
@@ -31,9 +49,7 @@ class NavBar extends Component{
 
 					  <div className="container right">
 						   <ul className="nav navbar-nav float-right">
-						   		<li><Link className = "home-nav" to="/">Home</Link></li>
-							   	<li><Link className = "login" to="/login">Log in</Link></li>
-						      	<li><Link className = "signup" to="/signup">Sign up</Link></li>
+						   		{rightBar}
 						   </ul>
 					  </div>
 					</div>
@@ -43,9 +59,16 @@ class NavBar extends Component{
 		)
   	}
 }
+
+function mapStateToProps(state){
+	return{
+		registerInfo: state.registerReducer,
+	}
+}
 	
 
-export default NavBar; 
+// export default NavBar; 
+export default connect(mapStateToProps)(NavBar)
 
 
 
