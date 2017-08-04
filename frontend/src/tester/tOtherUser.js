@@ -111,6 +111,9 @@ class tOtherUser extends Component{
 
     render(){
 
+        var from_user = this.props.registerResponse.name;
+        console.log(from_user);
+
         console.log(this.props.match.params.profile);
 
         var profilepic = this.state.picData.picture;
@@ -143,7 +146,7 @@ class tOtherUser extends Component{
 
                        <div>
                            <form>
-                               <Link to={link}><button className="btn-primary btn btn-book">Edit</button></Link>
+                               
                            </form>
                        </div>
                    </div>
@@ -191,8 +194,8 @@ class tOtherUser extends Component{
                                     <div className = "stats-right">
                                         <div>
                                             <ul>
-                                                <li style = {{background: "white"}}><div id= "friends"><h4>0 Friends</h4></div></li>
-                                                <li style = {{background: "blue", color: "white", cursor: "pointer"}}><div id = "addfriend"><h4> + Add Friend</h4></div></li>
+                                                <li style = {{background: "white"}}><div id= "friends"><h4>0 Followers</h4></div></li>
+                                                <li style = {{background: "blue", color: "white"}}><Button className="btn-primary btn btn-book" type='submit'>Unfollow</Button></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -260,7 +263,7 @@ class tOtherUser extends Component{
                                         <Form onSubmit={this.handlePost}>
                                             <FormGroup controlId="formControlsTextarea">
                                                 <FormControl id = "post" componentClass="textarea" placeholder="write a reply..." />
-                                                <button className="btn-primary btn btn-book" type='submit'>Post</button>
+                                                <Button className="btn-primary btn btn-book" type='submit'>Post</Button>
                                             </FormGroup>
                                             
                                         </Form>

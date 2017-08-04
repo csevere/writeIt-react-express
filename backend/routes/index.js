@@ -434,19 +434,89 @@ router.get('/profiles', (req,res)=>{
 
 router.get('/results', (req,res)=>{
 
-	var resultsQuery = `SELECT * FROM users 
-	LEFT JOIN profilepic on users.username = profilepic.username;` ;
-	connection.query(resultsQuery, (error, response)=>{
-		if(error){
-			throw error;
-		}else{
-			console.log(response)
-			res.json({
-				resultsData: response
+	var specificUser = req.query.specificUser
+	console.log(specificUser)
+
+	if(specificUser.length > 0){
+		var resultsQuery = `SELECT * FROM users LEFT JOIN profilepic on users.username = profilepic.username WHERE users.username = '${specificUser}' ;` ;
+		connection.query(resultsQuery, (error, response)=>{
+			console.log(resultsQuery);
+			if(error){
+				throw error;
+			}else{
+				console.log(response)
+				res.json({
+					resultsData: response
+				})
+			}
+
+		})
+
+	}else{
+		var resultsQuery = `SELECT * FROM users 
+		LEFT JOIN profilepic on users.username = profilepic.username;` ;
+		connection.query(resultsQuery, (error, response)=>{
+			console.log(resultsQuery);
+			if(error){
+				throw error;
+			}else{
+				console.log(response)
+				res.json({
+					resultsData: response
+				})
+			}
+
+		})
+
+	}
+
+
+
+});
+
+router.get('/follow', (req,res)=>{
+	var userFollowed = req.query.userFollowed;
+	var userFollowing = req.query.userFollowing;
+
+	var username = req.query.username;
+
+	console.log('=========PPPP==========');
+	console.log(userFollowing);
+
+	
+		if(username !== undefined){
+			var followQuery = `SELECT * FROM follow WHERE user_followed = '${username}'`;
+			console.log(followQuery);
+			connection.query(followQuery, (error, response)=>{
+				if(error){
+					throw error;
+				}else{
+					res.json({
+						followers: response 
+					})
+				}
+
 			})
+
+
+		}else{
+			var followQuery = `INSERT INTO follow (user_followed, user_following) VALUES (?,?);`;
+			connection.query(followQuery, [userFollowed, userFollowing],(error, response)=>{
+				console.log(followQuery);
+				if(error){
+					throw error;
+				}else{
+					res.json({
+						msg: 'success'
+					})
+				}
+
+			})
+
 		}
 
-	})
+
+
 
 });
 

@@ -22,20 +22,55 @@ class tResultsPage extends Component{
   }
 
     componentDidMount(){
-        $.getJSON(`http://localhost:5000/results`, (serverData)=>{
-            console.log(serverData);
-            this.setState({
-                resultsData: serverData.resultsData
+        var specificUser = this.props.location.search.slice(6);
+        console.log(specificUser);
+        if(specificUser !== undefined){
+            $.getJSON(`http://localhost:5000/results?specificUser=${specificUser}`, (serverData)=>{
+                console.log(serverData);
+                this.setState({
+                    resultsData: serverData.resultsData
+                })
             })
-        })
+
+
+        }else{
+            $.getJSON(`http://localhost:5000/results`, (serverData)=>{
+                console.log(serverData);
+                this.setState({
+                    resultsData: serverData.resultsData
+                })
+            })
+
+        }
+
+
+
         
+    }
+
+
+
+    followUser(username){
+        console.log(username)
+        var userFollowed = username;
+        var userFollowing = this.props.registerResponse.name;
+        $.getJSON(`http://localhost:5000/follow?userFollowed=${userFollowed}&userFollowing=${userFollowing}`, (serverData)=>{
+            console.log(serverData);
+            
+        })
+        this.props.history.push(`/profile/${userFollowed}`);
+
     }
 
 
  
 	render(){
+
+        
+
+
         var resultsArray = [];
-        var linkToUser = "/otheruser"
+        var linkToUser = "/profile/"
 
         this.state.resultsData.map((user, index)=>{
             var imageLocation = './public/frontend/images/profile-pic.png'
@@ -48,10 +83,10 @@ class tResultsPage extends Component{
            resultsArray.push(
                <div className = "user-results">
                     <Grid className = "user-view">
-                        <Link to={linkToUser + user.username}>
+                        <button onClick={()=>this.followUser(user.username)} className="btn-primary btn btn-book" type='submit'>Follow</button>
                             <img src={imageLocation} />
                             <div>{user.username}</div>  
-                        </Link>
+                        
                         <div className = "userbubble" onClick = "">
                             <div>{user.about}</div> 
                         </div> 
@@ -92,14 +127,14 @@ class tResultsPage extends Component{
 
 
 
-// function mapStateToProps(state){
-//   return{
-//     // characterResponse: state.characterReducer,
-//     registerResponse: state.registerReducer,
-//     resultspage: state.resultspageReducer
+function mapStateToProps(state){
+  return{
+    // characterResponse: state.characterReducer,
+    registerResponse: state.registerReducer
+    
 
-//   }
-// }
+  }
+}
 
 // function mapDispatchToProps(dispatch){
 //   return bindActionCreators({
@@ -108,7 +143,8 @@ class tResultsPage extends Component{
 // }
 
 
+//
+// export default tResultsPage;
 
-export default tResultsPage;
+export default connect(mapStateToProps,null)(tResultsPage);
 
-// export default connect(mapStateToProps,mapDispatchToProps)(tResultsPage);
