@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import { Nav, Navbar, NavItemForm, Grid, Row, Col, Form, FormGroup, FormControl, Button, ControlLabel } from 'react-bootstrap';
-
+// import {Autocomplete} from 'react-autocomplete';
 
 class NavBar extends Component{
 	
@@ -21,6 +21,9 @@ class NavBar extends Component{
 						    <Form>
 						    	<FormGroup>
 	      							<FormControl id="search" type="text" placeholder="Search writeIT" />
+	      							<datalist>
+	      								<option value='mall' />
+	      							</datalist>
 	      							<img src = "images/search-icon.png"/>
 	    						</FormGroup>
 						    </Form>

@@ -51,7 +51,7 @@ class tCharacterBoard extends Component{
             // })
 
         });
-        this.props.history.push(`/write/${book}`);
+        this.props.history.push(`/charboard/${book}`);
     }
 
 
@@ -59,6 +59,7 @@ class tCharacterBoard extends Component{
     render(){
 
         var writeMenu = '/write/' + this.props.match.params.book;
+        var character = '/character/' + this.props.match.params.book;
         var charactersArray = [];
 
         this.state.characterData.map((characters, index)=>{
@@ -99,23 +100,23 @@ class tCharacterBoard extends Component{
 
 
                             <div>
-                                <div id = "one">6. Hometown:&nbsp;{characters.hometown}</div>
+                                <div className = "questions">6. Hometown:&nbsp;{characters.hometown}</div>
                             </div>
 
                             <div>
-                                <div id = "two">7. Neighborhood Type:&nbsp;{characters.type_of_home}</div>
+                                <div className = "questions">7. Neighborhood Type:&nbsp;{characters.type_of_home}</div>
                             </div>
 
                             <div>
-                                <div id = "three">8. Name and Occupation of Father:&nbsp;{characters.father_info}</div>
+                                <div className = "questions">8. Name and Occupation of Father:&nbsp;{characters.father_info}</div>
                             </div>
 
                             <div>
-                                <div id = "four">9. Name and Occupation of Mother:&nbsp;{characters.mother_info}</div>
+                                <div className = "questions">9. Name and Occupation of Mother:&nbsp;{characters.mother_info}</div>
                             </div>
 
                             <div>
-                                <div id = "five"> 10. Siblings:&nbsp;{characters.sibling_info}</div>
+                                <div className = "questions"> 10. Siblings:&nbsp;{characters.sibling_info}</div>
                             </div>
 
 
@@ -147,23 +148,23 @@ class tCharacterBoard extends Component{
                             </div>
 
                             <div>
-                                <div id = "one">16. Dress Style:&nbsp;{characters.dress}</div>
+                                <div className = "questions">16. Dress Style:&nbsp;{characters.dress}</div>
                             </div>
 
                             <div>
-                                <div id = "two"> 17. Leader or Follower:&nbsp;{characters.leader_follower}</div>
+                                <div className = "questions"> 17. Leader or Follower:&nbsp;{characters.leader_follower}</div>
                             </div>
 
                             <div>
-                                <div id = "three"> 18. Strongest Postive Trait:&nbsp;{characters.positive_traits}</div>
+                                <div className = "questions"> 18. Strongest Postive Trait:&nbsp;{characters.positive_traits}</div>
                             </div>
 
                             <div>
-                                <div id = "four">19. Strongest Negative Trait:&nbsp;{characters.negative_traits}</div>
+                                <div className = "questions">19. Strongest Negative Trait:&nbsp;{characters.negative_traits}</div>
                             </div>
 
                             <div>
-                                <div id = "five">20. Temper:&nbsp;{characters.temper}</div>
+                                <div className = "questions">20. Temper:&nbsp;{characters.temper}</div>
 
 
 
@@ -195,10 +196,10 @@ class tCharacterBoard extends Component{
 
                             <br/>
                             <div><br/><Link to = {edit} className = "chboard">
-                                <Button className = "btn" type="button">
+                                <Button className = "btn btn-info" type="button">
                                     Edit Character
                                 </Button>
-                            </Link>	<Button className = "btn" type="button" onClick={()=>{this.deleteCharacter(characters.id)}}>
+                            </Link>	<Button className = "btn btn-danger" type="button" onClick={()=>{this.deleteCharacter(characters.id)}}>
                                 Delete Character
                             </Button></div>
                         </Col>
@@ -212,7 +213,7 @@ class tCharacterBoard extends Component{
         })
 
         if(charactersArray.length === 0){
-            var textHeader = "You have no characters to view. Go back and create one!"
+            var textHeader = "You have no characters to view. Return and create one."
         }else{
             var textHeader = "Your Characters";
         }
@@ -234,11 +235,21 @@ class tCharacterBoard extends Component{
                         <Grid className = "fourth-row-left">
                             <Col md = {3}>
                                 <Link to = {writeMenu} className = "return-writemenu">
-                                    <img src = "https://cdn4.iconfinder.com/data/icons/lifestyle-set-2/100/07a3c3443f894cb3fa7a93ee3c496233-512.png"/>
+                                    <img src = "/images/writemenu-icon.png"/>
                                     <div>Return to Write Menu</div>
                                 </Link>
                             </Col>
+
+                            <Col md = {3}>
+                                <Link to = {character} className = "return-quest">
+                                    <img src = "/images/create-new-icon.png"/>
+                                    <div>Create a new Character</div>
+                                </Link>
+                            </Col>
+
                         </Grid>
+
+                       
                     </Row>
 
                 </Grid> 

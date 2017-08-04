@@ -108,7 +108,7 @@ class NotePad extends Component{
                         <Grid className = "np-row-left">
                             <Col md = {6}>
                                 <Link to = {writeMenu} className = "return-writemenu">
-                                    <img src = "https://cdn4.iconfinder.com/data/icons/lifestyle-set-2/100/07a3c3443f894cb3fa7a93ee3c496233-512.png"/>
+                                    <img src = "/images/writemenu-icon.png"/>
                                     <div id="writeMenu"><Link to = {writeMenu}><Button className = "btn-default btn" bsStyle="warning" bsSize="large"
                                     type="submit">Return to Write Menu</Button></Link></div>
                                 </Link>
@@ -118,7 +118,7 @@ class NotePad extends Component{
                         <Grid className = "np-row-right">
                             <Col md = {6}>
                                 <Link to = {notePadBoard} className = "chboard">
-                                    <img src = "https://cdn4.iconfinder.com/data/icons/office-34/256/10-512.png"/>
+                                    <img src = "/images/viewboard-icon.png"/>
                                     <div id="viewNotePad"><Link to = "/notepad"><Button className = "btn-default btn" bsStyle="danger" bsSize="large"
                                     type="submit">View Notebook</Button></Link></div>
                                 </Link>
