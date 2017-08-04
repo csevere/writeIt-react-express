@@ -222,12 +222,12 @@ class UserProfile extends Component{
                                     <div className = "stats-right">
                                         <div>
                                             <ul>
-<<<<<<< HEAD
+
                                                 <li style = {{background: "white"}}><div id= "friends"><h4>0 Followers</h4></div></li>
                                                 <li style = {{background: "white"}}><div id= "messages"><h4>0 Messages</h4></div></li>
-=======
+
                                                 <li style = {{background: "white"}}><div id= "friends"><h4>{this.state.followData} Followers</h4></div></li>
->>>>>>> origin/master
+
                                             </ul>
                                         </div>
                                     </div>
