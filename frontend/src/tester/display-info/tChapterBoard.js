@@ -201,14 +201,14 @@ class tChapterBoard extends Component{
 							<Col md = {3}>
 								<Link to = {writeMenu} className = "return-writemenu">
 									<img src = "/images/writemenu-icon.png"/>
-									<div>Return to Write Menu</div>
+									<div><h5>Return to Write Menu</h5></div>
 								</Link>
 							</Col>
 
 							<Col md = {3}>
 								<Link to = {chapters} className = "return-quest">
 									<img src = "/images/create-new-icon.png"/>
-									<div>Create a new chapter</div>
+									<div><h5>Create a new Chapter</h5></div>
 								</Link>
 							</Col>
 						</Grid>	

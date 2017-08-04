@@ -21,7 +21,7 @@
 	top: 0;
 	left:0;
 	margin: 0; 
-	z-index: -1; 
+	 
 	
 	.header{
 		
@@ -30,28 +30,77 @@
 		background-color: $sky-blue;
 		display: flex; 
 		width: 100%;
-		
-		line-height: 50px; 
-		box-shadow: -1px -4px 9px 0px rgba(0, 0, 0, 0.2); 
+		height: 62vh; 
+		z-index: 0; 
+		line-height: 0px; 
+		box-shadow: -1px -4px 9px 0px rgba(0, 0, 0, 0.2);
+
+		.InputClass{
+
+		}   
+
+		.edit-left{
+			position: relative;
+		    top: 22em; 
+		    left: 1em;
+		    display: -webkit-box;
+
+		    .btn{
+
+		    	position: relative;
+			    top: 0em; 
+			    left: 0em; 
+			    right: -0em; 
+			    margin: auto;
+
+		    }
+
+		    img{
+		    	width: 15px;
+		    }
+		}
+		.header-items-left{
+			margin-top: -8em;
+		}
+
+
 	} 
+
+
 
 	.username{
 		margin-left: -1em; 
 	}
 
 	.prof-pic img{
-		margin-top: 10em;
+		margin-top: 5em;
 	    border-radius: 130px;
 	    width: 13em;
 	    height: 13em;
+	}
+
+	.InputClass{
+		margin-left: -25em;
+		cursor: pointer;
 	}
 
 	.pic-sub{
 
 		input{
 			position: relative;
-			top: 4em;
-			left: -12em;
+    		top: 0.2em;
+    		left: -27em;
+    		cursor: pointer; 
+    		position: relative;
+		    top: 0.2em;
+		    left: -13em;
+		    cursor: pointer;
+		    padding: 6px;
+		    font-size: 14px;
+		    font-weight: 500;
+		    border: 1px solid #ccc;
+		    padding: 8px; 
+		    border-radius: 3px;
 
 			@media screen and(min-width:$break-md-large){
 				position: relative;
@@ -61,14 +110,15 @@
 		
 		}
 
+
 		.btn{
 
 			position: relative;
-		    top: 0em;
-		    left: 0em;
+		    top: -1em;
+		    left: -15em;
 		    right: 0em;
 		    margin: auto;
-
+				
 
 		    @media screen and(min-width:$break-md-large){
 
@@ -76,7 +126,7 @@
 			    top: 22em;
 			    left: 0em;
 			    right: 0em;
-			    margin: auto
+			    margin: auto;
 					
 			}
 
@@ -165,14 +215,12 @@
 	}
 
 		.write-message-box{
-		button {
-			top: 2em;
-		    left: 31.5em;
-			
-		}
+			button {
+				top: 2em;
+			    left: 31.5em;
+				
+			}
 	}
-
-
 
 
 }
@@ -185,12 +233,13 @@
 		display: inline-block;
 		list-style: none; 
 		text-decoration: none;
-		margin-top: 25em; 
+		margin-top: 17em; 
 		border: 1px solid #ddd; 
-	}	
+	
 
 	.addfriends h4{
 		background-color: $purple; 
 	}
+}
 
 

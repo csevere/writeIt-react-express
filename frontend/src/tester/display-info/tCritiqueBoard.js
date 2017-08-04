@@ -58,6 +58,7 @@ class tCritiqueBoard extends Component{
     render(){
 
         var writeMenu = '/write/' + this.props.match.params.book;
+        var critique = '/critique/' + this.props.match.params.book;
         var critiqueArray = [];
 
         this.state.critiqueData.map((critiques, index)=>{
@@ -192,7 +193,15 @@ class tCritiqueBoard extends Component{
                             <Col md = {3}>
                                 <Link to = {writeMenu} className = "return-writemenu">
                                     <img src = "https://cdn4.iconfinder.com/data/icons/lifestyle-set-2/100/07a3c3443f894cb3fa7a93ee3c496233-512.png"/>
-                                    <div>Return to Write Menu</div>
+                                    <div><h5>Return to Write Menu</h5></div>
+                                </Link>
+                            </Col>
+
+
+                            <Col md = {3}>
+                                <Link to = {critique} className = "return-quest">
+                                    <img src = "/images/create-new-icon.png"/>
+                                    <div><h5>Create a new Critique Guide</h5></div>
                                 </Link>
                             </Col>
                         </Grid>

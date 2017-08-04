@@ -8,7 +8,7 @@
 	width: 100%;
 	height: 9%; 
 	@media screen and(min-width:$break-xlarge){
-		height: 8%; 
+		height: 10%; 
 	}
 
 	@media screen and(max-width:$break-lg-medium){	
@@ -74,7 +74,7 @@
 		.form-control{
 			margin: 0.5em 0em 0em 12em; 
 			@media screen and(min-width:$break-xlarge){	
-				margin: 1em 0em 0em 22em !important; 
+				margin: 0.8em 0em 0em 22em !important; 
 			}
 
 
@@ -146,6 +146,13 @@
 	font-size: 1em;
 	color: $white;
 	margin-right: 1em; 
+
+	.navbar-wrapper ul {
+		@media screen and(min-width:$break-xlarge){	
+			margin-top: -5px;
+		}
+
+	}
   
 
 	@media screen and(min-width:$break-xlarge){	

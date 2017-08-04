@@ -124,6 +124,7 @@ function tChapterDisplay(props){
 							<div>Return to Write Menu</div>
 						  </Link>
 						</Col>
+
 					  </Grid>
 
 					  <Grid className = "fourth-row-right">
