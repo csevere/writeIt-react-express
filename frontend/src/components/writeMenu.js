@@ -25,20 +25,20 @@ class writeMenu extends Component{
 			
 		}
 
-	    componentDidMount(){
+	    // componentDidMount(){
 
-        //console.log(this.props.location.search);
+     //    //console.log(this.props.location.search);
         
-        	var username = this.props.registerResponse.name;
-        	var book = this.props.match.params.book;
-            $.getJSON(`http://localhost:5000/book?username=${username}&book=${book}`, (serverData)=>{
-                // log the JSON response from Express
-                console.log(serverData);
-                this.setState({
-                    bookData: serverData.bookData[0]
-                })
-            })
-        }
+     //    	var username = this.props.registerResponse.name;
+     //    	var book = this.props.match.params.book;
+     //        $.getJSON(`http://localhost:5000/book?username=${username}&book=${book}`, (serverData)=>{
+     //            // log the JSON response from Express
+     //            console.log(serverData);
+     //            this.setState({
+     //                bookData: serverData.bookData[0]
+     //            })
+     //        })
+     //    }
 
         handleDict(event){
         	event.preventDefault();
@@ -126,7 +126,6 @@ class writeMenu extends Component{
 				<Grid className = "writemenu">
 					<Row>
 						
-					
 						<div className ="container writeNav">
 							<Row>
 								<ul>
@@ -154,7 +153,6 @@ class writeMenu extends Component{
 											<div className="post4 text-center"><h3>CRITIQUES</h3></div>
 										</Link>
 									</li>
-
 
 									<li>
 										<Link to ={pictures}>
@@ -185,16 +183,6 @@ class writeMenu extends Component{
 						</div>
 
 						<div className = "container right-db">
-							<Row>
-								<div className = "stats"> <h3>STATS:</h3></div> 
-								<ul>
-									<li><div className="genre"><h3>Title: {book}</h3></div></li>
-									<li><div className="genre"><h3>Genre: {bookGenre}</h3></div></li>
-									<li><div className="wordcount"><h3>Word Count: {bookWordCount} </h3></div></li>
-									<li><div className="t-date"><h3>Target Date: {bookTargetDate}</h3></div></li>
-
-								</ul>
-
 								<Form onSubmit={this.handleDict}>
 									<FormGroup>
 										<Radio id="dictionary" name="radioGroup" value="dictionary" inline>
@@ -214,12 +202,21 @@ class writeMenu extends Component{
 								</Form>
 								{synonymArray}
 								{definitionArray}
-							</Row>
 						</div> 
 
 					</Row>	
-		        </Grid>   
+		        </Grid>
+		    			<div className = "your-book"> <h3>Your Book:</h3>
+		    			 <div className="lines"></div>
+		    			<ul className="yourBookInfo">
+							<li><div className="title"><h3>Title: {book}</h3></div></li>
+							<li><div className="genre"><h3>Genre: {bookGenre}</h3></div></li>
+							<li><div className="wordcount"><h3>Word Count: {bookWordCount} </h3></div></li>
+							<li><div className="t-date"><h3>Target Date: {bookTargetDate}</h3></div></li>
+						</ul>
+						</div>  
 		    </div>
+		    		
 
 		)
 	}
