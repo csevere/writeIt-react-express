@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import { Nav, Navbar, NavItemForm, Grid, Row, Col, Form, FormGroup, FormControl, Button, ControlLabel } from 'react-bootstrap';
 // import {Autocomplete} from 'react-autocomplete';
 import {connect} from 'react-redux';
-import tNavBar from '../tester/tNavBar';
+import NavBarTest from '../tester/NavBarTest';
 
 class NavBar extends Component{
 	
@@ -40,7 +40,7 @@ class NavBar extends Component{
 
 						    <Form>
 						    	<FormGroup>
-	      							<tNavBar />
+	      							<Route path='/' component={NavBarTest} />
 	      							<datalist>
 	      								<option value='mall' />
 	      							</datalist>

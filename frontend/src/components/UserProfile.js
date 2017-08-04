@@ -121,6 +121,9 @@ class UserProfile extends Component{
 
     render(){
 
+        
+
+
         var profilepic = this.state.picData.picture;
         var picLocation;
         if(profilepic.length > 2){

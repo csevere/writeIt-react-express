@@ -73,7 +73,7 @@ class tResultsPage extends Component{
         var linkToUser = "/profile/"
 
         this.state.resultsData.map((user, index)=>{
-            var imageLocation = './public/frontend/images/profile-pic.png'
+            var imageLocation = '../public/frontend/images/profile-pic.png'
             if(user.picture !== null){
                 imageLocation = user.picture.slice(18);
             }else{
