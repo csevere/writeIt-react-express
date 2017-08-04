@@ -5,10 +5,11 @@ import Select from 'react-select';
 import { Form, Grid, Row, Col, FormGroup, FormControl, Button, ControlLabel } from 'react-bootstrap';
 import $ from 'jquery';
 import 'react-select/dist/react-select.css';
+import {BrowserRouter, Route} from 'react-router-dom';
 
 
 
-class tNavBar extends React.Component {
+class NavBarTest extends React.Component {
 	    constructor(props) {
         super(props);
         this.state = {
@@ -17,8 +18,6 @@ class tNavBar extends React.Component {
             ]
         }
         this.logChange = this.logChange.bind(this);
-        this.performSearch = this.performSearch.bind(this);
-
     }
 
     componentDidMount(){
@@ -38,13 +37,16 @@ class tNavBar extends React.Component {
                 options: profilesArray
             })
         })
+        console.log(this.props)
     }
 
     logChange(val) {
-	  this.setState({
-	  		selectVal: val.value
-	  })
+		this.setState({
+				selectVal: val.value
+		})
+	  	console.log(this.props);
         this.props.history.push(`/profiles?user=${val.value}`);
+        
 	}
 
 	performSearch(){
@@ -58,15 +60,11 @@ class tNavBar extends React.Component {
 
   render() {
 
-  	//var Select = require('react-select');
-
-	
-
-
+  	// var Select = require('react-select');
 	
     return (
     	<div>
-	    	<p><br/><br/><br/><br/><br/><br/><br/><br/><br/></p>
+	    	
 			<Select
 				id='special'
 				placeholder='Search users'
@@ -82,4 +80,4 @@ class tNavBar extends React.Component {
   }
 }
 
-export default tNavBar;
+export default NavBarTest;
