@@ -11,12 +11,14 @@ import {connect} from 'react-redux';
 import $ from 'jquery';
 import PostAction from '../actions/PostAction';
 import  {Timeline} from 'react-twitter-widgets';
+import FileInput from 'react-file-input'; 
 // import UserProfileAction from '../actions/UserProfileAction';
 
 
 class UserProfile extends Component{
     constructor(props) {
         super(props);
+
         this.state = {
             userData: {
                 location: null,
@@ -27,7 +29,7 @@ class UserProfile extends Component{
             bookData: [],
             postData: [],
             picData: {
-                picture:"./public/frontend/images/profile-pic.png"
+                picture:"./public/frontend/images/profile-pic-icon.png"
                 
             }
 
@@ -37,8 +39,11 @@ class UserProfile extends Component{
         }
         this.handlePost = this.handlePost.bind(this);
         this.loadPosts = this.loadPosts.bind(this);
+        
 
     }
+
+
 
     handlePost(event){
         event.preventDefault();
@@ -160,6 +165,7 @@ class UserProfile extends Component{
            )
         });
 
+
         console.log(this.props)
         return(
             <div>
@@ -169,7 +175,12 @@ class UserProfile extends Component{
                         <div className = "container-fluid header">
                             <Col md={12}>
 
-                                <Col md ={4} className = "col-md-offset-4 left">
+                                <div className = "edit-left">
+                                    <Link to = "/editprofile"><Button type="button" className="btn btn-secondary"><img src = '/images/gear-icon.png'/>  Edit Profile</Button></Link> 
+                                </div>
+
+    
+                                <Col md ={4} mdOffset = {4} className = "left">
 
                                     <div className = "prof-pic">
                                         <img src={picLocation}/>
@@ -179,6 +190,21 @@ class UserProfile extends Component{
                                         <h3>{username}</h3>
                                         <h4>{location}</h4>
                                     </div>
+
+
+                                    <form method="post" action="http://127.0.0.1:5000/profilepic" encType="multipart/form-data">
+                                        <Col md = {4} mdOffset = {2} className="pic-sub">
+                                            <input name='username' type='hidden' value={this.state.userData.username} />
+                                            <FileInput name = "fileUploaded"
+                                                       accept = ".png,.jpg,.jpeg,.gif"
+                                                       placeholder = "Upload Profile Picture"
+                                                       className = "InputClass"
+                                                                             /> 
+                                            <input type = "submit" /> 
+ 
+                                        </Col>
+                                    </form>
+
                                 </Col>
 
 
@@ -186,18 +212,13 @@ class UserProfile extends Component{
                                     <div className = "stats-right">
                                         <div>
                                             <ul>
-                                                <li style = {{background: "white"}}><div id= "friends"><h4>0 Friends</h4></div></li>
-                                                <li style = {{background: "white"}}><div id= "friends"><h4>0 Messages</h4></div></li>
+                                                <li style = {{background: "white"}}><div id= "friends"><h4>0 Followers</h4></div></li>
+                                                <li style = {{background: "white"}}><div id= "messages"><h4>0 Messages</h4></div></li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <form method="post" action="http://127.0.0.1:5000/profilepic" encType="multipart/form-data">
-                                        <Col md = {4} mdOffset = {2} className="pic-sub">
-                                            <input name='username' type='hidden' value={this.state.userData.username} />
-                                            <input type='file' name='fileUploaded' />
-                                            <input className="btn btn-primary" type="submit" />
-                                        </Col>
-                                    </form>
+
+
                                 </Col>
 
                             </Col>
@@ -311,6 +332,10 @@ function mapDispatchToProps(dispatch){
 
 // export default UserProfile;
 export default connect(mapStateToProps,mapDispatchToProps)(UserProfile);
+
+
+// <input type='file' name='fileUploaded' className="custom-input" />
+// <input className="btn btn-primary" type="submit" />
 
 
 

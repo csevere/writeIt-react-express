@@ -13,7 +13,7 @@
 @media screen and (min-width: 1732px) {
   /* line 5, ../../compass/sass/_navbar.scss */
   .navbar-wrapper {
-    height: 7%;
+    height: 10%;
   }
 }
 @media screen and (max-width: 991px) {
@@ -1414,16 +1414,22 @@ h2 {
   margin-left: 5em;
   padding: 4px;
 }
-/* line 125, ../../compass/sass/_writemenucat.scss */
+@media screen and (min-width: 1732px) {
+  /* line 116, ../../compass/sass/_writemenucat.scss */
+  .ch-forms {
+    margin-left: 38em;
+  }
+}
+/* line 129, ../../compass/sass/_writemenucat.scss */
 .ch-forms .text-area {
   line-height: 50px;
 }
-/* line 129, ../../compass/sass/_writemenucat.scss */
+/* line 133, ../../compass/sass/_writemenucat.scss */
 .ch-forms .slick-prev, .ch-forms .slick-next {
   position: absolute;
   top: 37% !important;
 }
-/* line 135, ../../compass/sass/_writemenucat.scss */
+/* line 139, ../../compass/sass/_writemenucat.scss */
 .ch-forms .slick-dots {
   display: block;
   position: absolute;
@@ -1436,13 +1442,13 @@ h2 {
   text-align: center;
   left: -52em;
 }
-/* line 146, ../../compass/sass/_writemenucat.scss */
+/* line 150, ../../compass/sass/_writemenucat.scss */
 .ch-forms .slick-dots li {
   position: relative;
   left: 51.5em;
   top: -8em;
 }
-/* line 154, ../../compass/sass/_writemenucat.scss */
+/* line 158, ../../compass/sass/_writemenucat.scss */
 .ch-forms .ch-forms-2 {
   display: block;
   width: 45em;
@@ -1453,7 +1459,7 @@ h2 {
   /* Padding for demo purposes */
   padding: 4em 0em 0em 0em;
 }
-/* line 176, ../../compass/sass/_writemenucat.scss */
+/* line 180, ../../compass/sass/_writemenucat.scss */
 .ch-forms .ch-forms-2 .btn {
   margin: 14em 0em 0em 28em !important;
 }
@@ -1479,7 +1485,6 @@ h2 {
   top: 0;
   left: 0;
   margin: 0;
-  z-index: -1;
 }
 /* line 26, ../../compass/sass/_user.scss */
 .profile .header {
@@ -1488,44 +1493,85 @@ h2 {
   background-color: #CAEFF0;
   display: flex;
   width: 100%;
-  line-height: 50px;
+  height: 62vh;
+  z-index: 0;
+  line-height: 0px;
   box-shadow: -1px -4px 9px 0px rgba(0, 0, 0, 0.2);
 }
-/* line 38, ../../compass/sass/_user.scss */
+/* line 42, ../../compass/sass/_user.scss */
+.profile .header .edit-left {
+  position: relative;
+  top: 22em;
+  left: 1em;
+  display: -webkit-box;
+}
+/* line 48, ../../compass/sass/_user.scss */
+.profile .header .edit-left .btn {
+  position: relative;
+  top: 0em;
+  left: 0em;
+  right: -0em;
+  margin: auto;
+}
+/* line 58, ../../compass/sass/_user.scss */
+.profile .header .edit-left img {
+  width: 15px;
+}
+/* line 62, ../../compass/sass/_user.scss */
+.profile .header .header-items-left {
+  margin-top: -8em;
+}
+/* line 71, ../../compass/sass/_user.scss */
 .profile .username {
   margin-left: -1em;
 }
-/* line 42, ../../compass/sass/_user.scss */
+/* line 75, ../../compass/sass/_user.scss */
 .profile .prof-pic img {
-  margin-top: 10em;
+  margin-top: 5em;
   border-radius: 130px;
   width: 13em;
   height: 13em;
 }
-/* line 51, ../../compass/sass/_user.scss */
+/* line 82, ../../compass/sass/_user.scss */
+.profile .InputClass {
+  margin-left: -25em;
+  cursor: pointer;
+}
+/* line 89, ../../compass/sass/_user.scss */
 .profile .pic-sub input {
   position: relative;
-  top: 4em;
-  left: -12em;
+  top: 0.2em;
+  left: -27em;
+  cursor: pointer;
+  position: relative;
+  top: 0.2em;
+  left: -13em;
+  cursor: pointer;
+  padding: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 3px;
 }
 @media screen and (min-width: 1399px) {
-  /* line 51, ../../compass/sass/_user.scss */
+  /* line 89, ../../compass/sass/_user.scss */
   .profile .pic-sub input {
     position: relative;
     top: 26em;
     left: -12em;
   }
 }
-/* line 64, ../../compass/sass/_user.scss */
+/* line 114, ../../compass/sass/_user.scss */
 .profile .pic-sub .btn {
   position: relative;
-  top: 0em;
-  left: 0em;
+  top: -1em;
+  left: -15em;
   right: 0em;
   margin: auto;
 }
 @media screen and (min-width: 1399px) {
-  /* line 64, ../../compass/sass/_user.scss */
+  /* line 114, ../../compass/sass/_user.scss */
   .profile .pic-sub .btn {
     position: relative;
     top: 22em;
@@ -1534,7 +1580,7 @@ h2 {
     margin: auto;
   }
 }
-/* line 91, ../../compass/sass/_user.scss */
+/* line 141, ../../compass/sass/_user.scss */
 .profile .about-left, .profile .twitter-left {
   float: left;
   margin: 3em 0em 0em 16em;
@@ -1544,20 +1590,20 @@ h2 {
   padding: 20px 15px;
 }
 @media screen and (min-width: 1399px) {
-  /* line 91, ../../compass/sass/_user.scss */
+  /* line 141, ../../compass/sass/_user.scss */
   .profile .about-left, .profile .twitter-left {
     margin: 3em 0em 0em 18em;
   }
 }
-/* line 104, ../../compass/sass/_user.scss */
+/* line 154, ../../compass/sass/_user.scss */
 .profile #twitter-widget-0 {
   display: none !important;
 }
-/* line 109, ../../compass/sass/_user.scss */
+/* line 159, ../../compass/sass/_user.scss */
 .profile .about-user {
   overflow-x: hidden;
 }
-/* line 113, ../../compass/sass/_user.scss */
+/* line 163, ../../compass/sass/_user.scss */
 .profile .mybooks-right, .profile .messages-right {
   float: right;
   display: inline-block;
@@ -1568,23 +1614,23 @@ h2 {
   padding-bottom: 10px;
   border-radius: 5px;
 }
-/* line 126, ../../compass/sass/_user.scss */
+/* line 176, ../../compass/sass/_user.scss */
 .profile .display-message {
   background-color: #f5f5f5;
   border: 1px solid #ddd;
   padding: 10px;
 }
-/* line 132, ../../compass/sass/_user.scss */
+/* line 182, ../../compass/sass/_user.scss */
 .profile .write-message-box {
   background-color: #fff5ee;
   padding: 20px;
   border: 1px solid #ddd;
 }
-/* line 138, ../../compass/sass/_user.scss */
+/* line 188, ../../compass/sass/_user.scss */
 .profile .mybooks-right {
   display: inline-block;
 }
-/* line 144, ../../compass/sass/_user.scss */
+/* line 194, ../../compass/sass/_user.scss */
 .profile .book {
   display: flex;
   box-shadow: 5px 5px 20px #333;
@@ -1595,20 +1641,20 @@ h2 {
   width: 67px;
   margin-left: 2em;
 }
-/* line 157, ../../compass/sass/_user.scss */
+/* line 207, ../../compass/sass/_user.scss */
 .profile .createbook button {
   top: 0em;
   right: 0em;
   left: 2em;
   margin: auto;
 }
-/* line 168, ../../compass/sass/_user.scss */
+/* line 218, ../../compass/sass/_user.scss */
 .profile .write-message-box button {
   top: 2em;
   left: 31.5em;
 }
 
-/* line 181, ../../compass/sass/_user.scss */
+/* line 229, ../../compass/sass/_user.scss */
 .stats-right li {
   float: right;
   bottom: -2em;
@@ -1616,12 +1662,11 @@ h2 {
   display: inline-block;
   list-style: none;
   text-decoration: none;
-  margin-top: 25em;
+  margin-top: 17em;
   border: 1px solid #ddd;
 }
-
-/* line 192, ../../compass/sass/_user.scss */
-.addfriends h4 {
+/* line 240, ../../compass/sass/_user.scss */
+.stats-right li .addfriends h4 {
   background-color: #9966ff;
 }
 

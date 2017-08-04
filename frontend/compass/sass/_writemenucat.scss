@@ -122,6 +122,10 @@
 
 	}
 
+	@media screen and(min-width:$break-xlarge){
+		margin-left: 38em; 			
+	}
+
 	.text-area{
 		line-height: 50px;
 	}

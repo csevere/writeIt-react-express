@@ -299,7 +299,7 @@ class Chapters extends Component{
                             </Grid>
 
                             <Grid className = "fourth-row-right">
-                                <Col md = {3} className = "col-md-offset-8">
+                                <Col md = {3}>
                                     <Link to = {chapterBoard} className = "chboard">
                                         <img src = "/images/viewboard-icon.png"/>
                                         <div>View Chapter</div>
