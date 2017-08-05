@@ -183,18 +183,12 @@ class UserProfile extends Component{
         return(
             <div>
                 <Grid className = "profile">
+        
                     <Row>
+                         <div className = "container-fluid header">
 
-                        <div className = "container-fluid header">
-                            <Col md={12}>
-
-                                <div className = "edit-left">
-                                    <Link to = "/editprofile"><Button type="button" className="btn btn-secondary"><img src = '/images/gear-icon.png'/>  Edit Profile</Button></Link> 
-                                </div>
-
-    
-                                <Col md ={4} mdOffset = {4} className = "left">
-
+                            <Grid className = "text-center">
+                                <Col sm = {4} smOffset = {4}>
                                     <div className = "prof-pic">
                                         <img src={picLocation}/>
                                     </div>
@@ -203,127 +197,131 @@ class UserProfile extends Component{
                                         <h3>{username}</h3>
                                         <h4>{location}</h4>
                                     </div>
+                                </Col> 
+                            </Grid>
+                        
 
+                        
+                            <Col sm = {5} className = "items-right">
 
-                                    <form method="post" action="http://127.0.0.1:5000/profilepic" encType="multipart/form-data">
-                                        <Col md = {4} mdOffset = {2} className="pic-sub">
-                                            <input name='username' type='hidden' value={this.state.userData.username} />
-                                            <FileInput name = "fileUploaded"
-                                                       accept = ".png,.jpg,.jpeg,.gif"
-                                                       placeholder = "Choose Image"
-                                                       className = "InputClass"
-                                                                             /> 
-                                            <input type = "submit" value = "Upload Image" className = "submit" /> 
- 
-                                        </Col>
-                                    </form>
+                                <form method="post" action="http://127.0.0.1:5000/profilepic" encType="multipart/form-data">
+                                    <div className="pic-sub text-center">
+                                        <input name='username' type='hidden' value={this.state.userData.username} />
+                                        <FileInput name = "fileUploaded"
+                                                   accept = ".png,.jpg,.jpeg,.gif"
+                                                   placeholder = "Choose Profile Image"
+                                                   className = "InputClass"
+                                                   id = "sub"
+                                                                         /> 
+                                        <input type = "submit" value = "Upload Image" className = "submit" /> 
 
-                                </Col>
+                                    </div>
+                                </form>
 
+                                <div className = "edit-right">
+                                    <Link to = "/editprofile"><Button type="button" className="btn btn-secondary"><img src = '/images/gear-icon.png'/>  Edit Profile</Button></Link> 
+                                </div>
+                         
+                           
+                            </Col>
 
-                                <Col md = {4}>
-                                    <div className = "stats-right">
+                            <Col md = {2} class>
+                              
+                                <div className = "stats-left">
+                                    <ul>
+                                        <li>
+                                            <Button className="btn btn-secondary" style = {{background: "white"}}><h4>{this.state.followData} Followers</h4></Button>
+                                       </li>
+                                    </ul>
+                                  </div>
+                               
+                            </Col>
+                              
+                        </div>
+                    </Row>
+
+                    <Row className = "second-row">
+                        <Grid className = "col-md-12">
+
+                            <Col sm = {3} className = "about-left">
+                                <div className = "about-user">
+                                    <h4>About</h4>
+                                    <p><h5>{about}</h5></p>
+                                </div> 
+                            </Col>
+
+                            <Col sm = {5} className = "mybooks-right">
+                                <div><h4>Books by {username}</h4></div>
+
+                                <Col sm = {3}>
+                                    <div className = "createbook">
+
+                                        <div className = "book">Create Book</div>
+
                                         <div>
-                                            <ul>
-
-                                                <li style = {{background: "white"}}><div id= "friends"><h4>0 Followers</h4></div></li>
-                                                <li style = {{background: "white"}}><div id= "messages"><h4>0 Messages</h4></div></li>
-
-                                                <li style = {{background: "white"}}><div id= "friends"><h4>{this.state.followData} Followers</h4></div></li>
-
-                                            </ul>
+                                            <form>
+                                               <Link to="/newbook"><button className="btn-primary btn btn-book">Create</button></Link> 
+                                            </form>
                                         </div>
                                     </div>
 
-
                                 </Col>
+                                {bookArray}
 
                             </Col>
-                        </div>
+                        </Grid>
+                    </Row> 
 
-                        <Row className = "second-row">
-                            <Grid className = "col-md-12">
+                    
 
-                                <Col sm = {3} className = "about-left">
-                                    <div className = "about-user">
-                                        <h4>About</h4>
-                                        <p><h5>{about}</h5></p>
-                                    </div> 
-                                </Col>
+                    <Row className = "third-row">
+                        <Grid className = "col-md-12">
+                            <Col md = {3} className = "twitter-left">
+                                <div>
+                                <h4>Follow {t_username} On Twitter</h4>
 
-                                <Col sm = {5} className = "mybooks-right">
-                                    <div><h4>{username}&apos;s Books</h4></div>
+                                <Timeline
+                                    dataSource={{
 
-                                    <Col sm = {3}>
-                                        <div className = "createbook">
+                                    sourceType: 'profile',
+                                    screenName: `${t_username}`
+                                    }}
 
-                                            <div className = "book">Create Book</div>
+                                    options={{
 
-                                            <div>
-                                                <form>
-                                                   <Link to="/newbook"><button className="btn-primary btn btn-book">Create</button></Link> 
-                                                </form>
-                                            </div>
-                                        </div>
+                                    username: `${t_username}`,
+                                    height: '400'
+                                    }}
+                                   
 
-                                    </Col>
-                                    {bookArray}
+                                    onLoad={() => console.log('Timeline is loaded!')}
+                                />
 
 
+                                </div>
+                            </Col>
 
-                                </Col>
-                            </Grid>
+                            <Col md = {5} className = "messages-right">
+                                <div>
+                                    {postArray}
+                                </div>
 
-                        </Row>
+                                
 
-                        <Row className = "third-row">
-                            <Grid className = "col-md-12">
-                                <Col md = {3} className = "twitter-left">
-                                    <div>
-                                    <h4>Follow {t_username} On Twitter</h4>
-
-                                    <Timeline
-                                        dataSource={{
-
-                                        sourceType: 'profile',
-                                        screenName: `${t_username}`
-                                        }}
-
-                                        options={{
-
-                                        username: `${t_username}`,
-                                        height: '400'
-                                        }}
-                                       
-
-                                        onLoad={() => console.log('Timeline is loaded!')}
-                                    />
-
-
-                                    </div>
-                                </Col>
-
-                                <Col md = {5} className = "messages-right">
-                                    <div>
-                                        {postArray}
-                                    </div>
-
-                                    
-
-                                    <div className = "write-message-box">
-                                        <Form onSubmit={this.handlePost}>
-                                            <FormGroup controlId="formControlsTextarea">
-                                                <FormControl id = "post" componentClass="textarea" placeholder="write a reply..." />
-                                                <button className="btn-primary btn btn-book" type='submit'>Post</button>
-                                            </FormGroup>
-                                            
-                                        </Form>
-                                    </div>
-                                </Col>
-                            </Grid>
-                        </Row>
-
+                                <div className = "write-message-box">
+                                    <Form onSubmit={this.handlePost}>
+                                        <FormGroup controlId="formControlsTextarea">
+                                            <FormControl id = "post" componentClass="textarea" placeholder="Post a message..." />
+                                            <button className="btn-primary btn btn-book" type='submit'>Post</button>
+                                        </FormGroup>
+                                        
+                                    </Form>
+                                </div>
+                            </Col>
+                        </Grid>
                     </Row>
+
+                   
                 </Grid>
             </div>
 
@@ -352,7 +350,8 @@ export default connect(mapStateToProps,mapDispatchToProps)(UserProfile);
 
 
 // <input type='file' name='fileUploaded' className="custom-input" />
-// <input className="btn btn-primary" type="submit" />
+// // <input className="btn btn-primary" type="submit" />
+// <li style = {{background: "white"}}><div id= "messages"><h4>0 Messages</h4></div></li>
 
 
 

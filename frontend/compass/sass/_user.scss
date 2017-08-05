@@ -8,9 +8,8 @@
 
 .profile{
 	position: absolute;
-	background-color: $baby-blue; 
-	width: 100%; 
-	height: 115%; 
+	background-color: $user-blue; 
+	width: 100%;  
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -24,52 +23,59 @@
 	 
 	
 	.header{
-		
+		background-image: url('/images/profile-bg.png');
 		text-align: center; 
 		position: relative; 
 		background-color: $sky-blue;
-		display: flex; 
 		width: 100%;
 		height: 62vh; 
 		z-index: 0; 
 		line-height: 0px; 
 		box-shadow: -1px -4px 9px 0px rgba(0, 0, 0, 0.2);
 
-		.InputClass{
 
-		}   
 
-		.edit-left{
-			position: relative;
-		    top: 34em; 
-		    left: 1em;
-		    display: -webkit-box;
-		    @media screen and(min-width:$break-xlarge){
-				top: 38em; 
+
+		.items-right{
+			display: flex;
+			float: right; 
+			margin-right: 3em;
+
+			ul{
+				list-style: none; 
+				float: left; 
+			}
+
+			.edit-right{
+			    display: -webkit-box;
+			    width: 100%; 
+			    @media screen and(min-width:$break-xlarge){
+					top: 0em; 
+				}
+			}
+
+			//EDIT PROFILE BUTTON
+
+			    .btn{
+
+			    	position: relative;
+			    	top: -1em;
+    				left: 15em; 
+				    right: 0em; 
+				    margin: auto;
+
+			    }
+
+			    img{
+			    	width: 15px;
+			    }
+			}
+			.header-items-left{
+				margin-top: 0em;
 			}
 
 
-		    .btn{
-
-		    	position: relative;
-			    top: 0em; 
-			    left: 0em; 
-			    right: -0em; 
-			    margin: auto;
-
-		    }
-
-		    img{
-		    	width: 15px;
-		    }
-		}
-		.header-items-left{
-			margin-top: -8em;
-		}
-
-
-	} 
-
+		} 
 
 
 	.username{
@@ -77,49 +83,62 @@
 	}
 
 	.prof-pic img{
-		margin-top: 5em;
+		margin-top: 6em;
 	    border-radius: 130px;
 	    width: 13em;
 	    height: 13em;
 	}
 
+	////UPLOAD PIC BUTTONS/////
+
 	.InputClass{
-		margin-left: -25em;
+
+		margin: 2em 0em 0em 0em; 
 		cursor: pointer;
+			.InputClass:hover{
+				opacity: 0.9; 
+			}
+		
 	}
 
 	.pic-sub{
 
 		input{
-			position: relative;
-    		top: 7.5em;
-    		left: -27em;
-    		cursor: pointer; 
-    		position: relative;
-		    top: 0.2em;
-		    left: -13em;
-		    cursor: pointer;
-		    padding: 6px;
+			top: -18.6em !important;
+			left: 24em !important; 
+		   	cursor: pointer;
 		    font-size: 14px;
 		    font-weight: 500;
 		    border: 1px solid #ccc;
 		    padding: 8px; 
-		    border-radius: 3px;
+		    opacity: 0.5;
+
+			
 
 			@media screen and(min-width:$break-md-large){
 				position: relative;
-				top: 26em;
-				left: -12em;	
+					
 			}
 		
 		}
+
+		.submit{
+			position: relative;
+			margin: 1em 0em 0em 1em; 
+		    position: relative;
+		    top: -0.8em;
+		    left: 14em; 
+		    padding: 16px;
+		    
+		}
+
 
 
 		.btn{
 
 			position: relative;
-		    top: -1em;
-		    left: -15em;
+		    top: 0em;
+		    left: 0em;
 		    right: 0em;
 		    margin: auto;
 				
@@ -127,7 +146,7 @@
 		    @media screen and(min-width:$break-md-large){
 
 				position: relative;
-			    top: 22em;
+			    top: 0em;
 			    left: 0em;
 			    right: 0em;
 			    margin: auto;
@@ -138,21 +157,25 @@
 
 	}
 
-	// .second-row{
-	// 	border: 5px solid green; 
-	// }
+
+/// CONTENT ROW ///////
+	
 
 	.about-left, .twitter-left{
 		float: left; 
-		margin: 3em 0em 0em 16em;
+		margin: -4em 0em 0em 16em;
 		@media screen and(min-width:$break-md-large){
 			margin: 3em 0em 0em 18em;			
 		}
-		background-color: $ghost-white; 
+		background-color: $white; 
 		border: 1px solid #ddd;   
 		border-radius: 5px; 
 		padding: 20px 15px;
  
+	}
+
+	.twitter-left{
+		top: 0em; 
 	}
 
 	#twitter-widget-0{
@@ -168,11 +191,15 @@
 		float: right; 
 		display: inline-block;
 		margin: 3em 11em 0em 0em;
-		background-color: $ghost-white;
+		background-color: $white;
 		border: 1px solid #ddd; 
 		padding-top: 10px;
 		padding-bottom: 10px; 
 		border-radius: 5px;   
+	}
+
+	.mybooks-right{
+		margin-top: -4em; 
 	}
 
 
@@ -184,7 +211,7 @@
 	}
 
 	.write-message-box{
-		background-color: $sea-shell;
+		background-color: $lighter-gray;
 		padding: 20px; 
 		border: 1px solid #ddd;
 	}
@@ -230,19 +257,27 @@
 }
 
 
-.stats-right li{
-		float: right; 
-		bottom: -2em; 
+.stats-left li {
+		float: left; 
+		bottom: 0em; 
 		padding:8px; 
 		display: inline-block;
 		list-style: none; 
-		text-decoration: none;
-		margin-top: 17em; 
-		border: 1px solid #ddd; 
+		text-decoration: none; 
+		margin-right: 8em;
+    	margin: 0em 0em 0em 0em; 
+ 
 	
 
 	.addfriends h4{
 		background-color: $purple; 
+	}
+
+	.btn{
+			position: relative;
+		    top: -4em;
+		    left: 0em;
+		    margin: auto
 	}
 }
 
