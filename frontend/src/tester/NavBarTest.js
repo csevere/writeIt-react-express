@@ -5,7 +5,7 @@ import Select from 'react-select';
 import { Form, Grid, Row, Col, FormGroup, FormControl, Button, ControlLabel } from 'react-bootstrap';
 import $ from 'jquery';
 import 'react-select/dist/react-select.css';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Link} from 'react-router-dom';
 
 
 
@@ -75,6 +75,7 @@ class NavBarTest extends React.Component {
 
 			/>
 
+            <Link classname='search-users' to='/profiles/'><img src = "images/search-icon2.png"/></Link>
 		</div>
     )
   }

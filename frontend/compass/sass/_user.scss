@@ -20,6 +20,10 @@
 	top: 0;
 	left:0;
 	margin: 0; 
+
+	h4{
+		font-weight: bold; 
+	}
 	 
 	
 	.header{
@@ -49,9 +53,7 @@
 			.edit-right{
 			    display: -webkit-box;
 			    width: 100%; 
-			    @media screen and(min-width:$break-xlarge){
-					top: 0em; 
-				}
+			    
 			}
 
 			//EDIT PROFILE BUTTON
@@ -63,8 +65,19 @@
     				left: 15em; 
 				    right: 0em; 
 				    margin: auto;
+				    @media screen and(min-width:$break-xlarge){
+					    top: 8em;
+    					left: 19em;
+		
+					} 
 
 			    }
+
+			    
+
+			    @media screen and(min-width:$break-large){
+					top:-2em;			
+				}
 
 			    img{
 			    	width: 15px;
@@ -163,19 +176,33 @@
 
 	.about-left, .twitter-left{
 		float: left; 
-		margin: -4em 0em 0em 16em;
+		margin: -4em 0em 0em 14em;
 		@media screen and(min-width:$break-md-large){
 			margin: 3em 0em 0em 18em;			
+		}
+
+		@media screen and(min-width:$break-xlarge){
+			margin: 3em 0em 0em 24em;
+						
+		} 
+
+		@media screen and(min-width:$break-large){
+			margin-right:15em;			
 		}
 		background-color: $white; 
 		border: 1px solid #ddd;   
 		border-radius: 5px; 
 		padding: 20px 15px;
+		box-shadow: 0 2px 5px rgba(120,120,120,.25);
  
 	}
 
 	.twitter-left{
-		top: 0em; 
+		top: 0em;
+		@media screen and(min-width:$break-xlarge){
+			top: -16em;
+						
+		}  
 	}
 
 	#twitter-widget-0{
@@ -195,11 +222,20 @@
 		border: 1px solid #ddd; 
 		padding-top: 10px;
 		padding-bottom: 10px; 
-		border-radius: 5px;   
+		border-radius: 5px; 
+		box-shadow: 0 2px 5px rgba(120,120,120,.25);
+		@media screen and(min-width:$break-xlarge){
+			margin: -35em 11em 0em 0em;
+						
+		}  
 	}
 
 	.mybooks-right{
-		margin-top: -4em; 
+		margin-top: -4em;
+		@media screen and(min-width:$break-xlarge){
+			margin-top: -8em;
+						
+		} 
 	}
 
 
@@ -214,6 +250,10 @@
 		background-color: $lighter-gray;
 		padding: 20px; 
 		border: 1px solid #ddd;
+		box-shadow: 0 2px 5px rgba(120,120,120,.25);
+			textarea .form-control{
+				line-height: 30px;
+			}
 	}
 
 	.mybooks-right{
@@ -221,25 +261,40 @@
 
 	}
 
+	// THE BOOKS
+
 	
 	.book {
   		display: flex;
-  		box-shadow: 5px 5px 20px #333;
-  		margin: 10px;
+	    box-shadow: 4px 8px 13px 0px #ccc;
 	    margin: 10px;
-	    height: 81px;
+	    margin: 10px;
+	    height: 200px;
 	    padding: 10px;
-	    width: 67px;
-	    margin-left: 2em; 
+	    width: 150px;
+	    margin-left: 2em;
+	    text-align: center;
+	    border: 2px ridge lightslategray;
+	    font-size: 2em;
+	    background: url(/images/profile-bg.jpg);
+	    background-size: cover;
+	    font-family: 'Bitter', serif;
+	    
 	}
 
 	.createbook{
+
+
 		 
 		button {
 			top: 0em;
 			right: 0em;
 			left: 2em;  
 			margin: auto;
+			  @media screen and(min-width:$break-xlarge){
+			  	left: 4em; 
+			  }
+
 
 
 		}
@@ -249,6 +304,10 @@
 			button {
 				top: 2em;
 			    left: 31.5em;
+			    @media screen and(min-width:$break-xlarge){
+					left: 41.5em;
+						
+				} 
 				
 			}
 	}
@@ -256,6 +315,7 @@
 
 }
 
+/// FOLLOWERS ////
 
 .stats-left li {
 		float: left; 
@@ -277,7 +337,14 @@
 			position: relative;
 		    top: -4em;
 		    left: 0em;
-		    margin: auto
+		    margin: auto;
+		    @media screen and(min-width:$break-large){
+				top:-4.5em;			
+			}
+
+			@media screen and(min-width:$break-xlarge){
+				top: 3.5em;    	
+			} 
 	}
 }
 

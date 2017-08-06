@@ -166,8 +166,8 @@ class UserProfile extends Component{
            )
         });
 
-        this.state.postData.map((post, index)=>{
-           postArray.push(
+        this.state.postData.map((post, index)=>{ 
+            postArray.push(
                <div className = "display-message">
                     <div>{post.from_user}{post.time_posted}:</div>
                     <div>{post.post}</div>
@@ -255,12 +255,9 @@ class UserProfile extends Component{
 
                                 <Col sm = {3}>
                                     <div className = "createbook">
-
-                                        <div className = "book">Create Book</div>
-
                                         <div>
                                             <form>
-                                               <Link to="/newbook"><button className="btn-primary btn btn-book">Create</button></Link> 
+                                               <Link to="/newbook"><button className="btn-primary btn btn-book">Create a New Book</button></Link> 
                                             </form>
                                         </div>
                                     </div>
@@ -302,12 +299,7 @@ class UserProfile extends Component{
                             </Col>
 
                             <Col md = {5} className = "messages-right">
-                                <div>
-                                    {postArray}
-                                </div>
-
-                                
-
+                               
                                 <div className = "write-message-box">
                                     <Form onSubmit={this.handlePost}>
                                         <FormGroup controlId="formControlsTextarea">
@@ -317,7 +309,13 @@ class UserProfile extends Component{
                                         
                                     </Form>
                                 </div>
+
+                                 <div>
+                                    {postArray}
+                                </div>
                             </Col>
+
+
                         </Grid>
                     </Row>
 
