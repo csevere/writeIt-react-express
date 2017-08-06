@@ -191,7 +191,7 @@
 
 	.about-left, .twitter-left{
 		float: left; 
-		margin: -4em 0em 0em 14em;
+		margin: -4em 0em 0em 0em;
 		width: 30%;
 		background-color: $white; 
 		border: 1px solid #ddd;   
@@ -219,7 +219,7 @@
 	// TWITTER////////////
 
 	.twitter-left{
-		top: -10.5em;
+		top: -29.5em;
 		@media screen and(min-width:$break-xlarge){
 			top: -47em;
 						
@@ -237,7 +237,7 @@
 
 	.mybooks-right, .messages-right{
 		float: right; 
-		margin: -29.5em 11em 0em 0em;
+		margin: -29.5em 2em 0em 0em;
 		background-color: $white;
 		border: 1px solid #ddd; 
 		padding-top: 10px;
@@ -253,6 +253,17 @@
     		width: 56%; 
 						
 		}  
+	}
+
+	.messages-right{
+		position: relative;
+    	right: 0em;
+    	width: 67%;
+    	@media screen and(min-width:$break-xlarge){
+			width: 56%; 
+						
+		} 
+
 	}
 
 	.mybooks-right{
@@ -277,16 +288,17 @@
 	.messages-right2{
 		float: right; 
 		display: inline-block;
-		margin: -16.5em 11em 0em 0em;
+		margin: -16.5em 2em 0em 0em;
 		background-color: $white;
 		border: 1px solid #ddd; 
 		padding-top: 10px;
 		padding-bottom: 10px; 
 		border-radius: 5px; 
 		box-shadow: 0 2px 5px rgba(120,120,120,.25);
-		width: 56%;
+		width: 67%;
 		@media screen and(min-width:$break-xlarge){
 			margin: 2em 11em 0em 0em;
+			width: 56%; 
 						
 		} 
 
@@ -318,11 +330,11 @@
 
 		button {
 			top: 2em;
-		    left: 30.5em;
+		    left: 55em;
 		    opacity: 0.8; 
 			border: 1px solid;
 		    @media screen and(min-width:$break-xlarge){
-				left: 41.5em;
+				left: 59em;
 					
 			} 
 			
