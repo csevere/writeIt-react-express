@@ -250,10 +250,10 @@ class UserProfile extends Component{
                                 </div> 
                             </Col>
 
-                            <Col sm = {5} className = "mybooks-right">
+                            <div className = "mybooks-right">
                                 <div><h4>Books by {username}</h4></div>
 
-                                <Col sm = {3}>
+                                
                                     <div className = "createbook">
                                         <div>
                                             <form>
@@ -262,10 +262,9 @@ class UserProfile extends Component{
                                         </div>
                                     </div>
 
-                                </Col>
                                 {bookArray}
 
-                            </Col>
+                            </div>
                         </Grid>
                     </Row> 
 
