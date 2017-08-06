@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Register from './containers/Register';
 import Login from './containers/Login';
+import Loading from './components/Loading';
 
 import Home from './components/Home'; 
 import NavBar from './components/NavBar';
@@ -50,7 +51,28 @@ import NavBarTest from './tester/NavBarTest';
 // import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+
+    this.state ={
+      loading: true
+    };
+    
+  }
+
+  componentDidMount() {
+    // this.setState({loading: false})
+    setTimeout(()=> this.setState({loading: false}), 3000);
+  }
+
   render() {
+    const {loading} = this.state; 
+
+    if(loading){
+      // return null; 
+      return <Loading />; //render loading when app is not ready 
+    } 
+
     return (
 
       <div>
@@ -58,6 +80,7 @@ class App extends Component {
           <div className="App">
             <NavBar/>
             <div className = "container main">
+              <Route exact path = '/loading' component ={Loading}/>
               <Route exact path='/test' component={NavBarTest} />
               <Route exact path="/" component= {Home} /> 
               <Route exact path="/signup" component= {Register} />

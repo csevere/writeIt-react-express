@@ -275,7 +275,7 @@ class UserProfile extends Component{
                         <Grid className = "col-md-12">
                             <Col md = {3} className = "twitter-left">
                                 <div>
-                                <h4>Follow {t_username} On Twitter</h4>
+                                <h4>Follow {username} On Twitter</h4>
 
                                 <Timeline
                                     dataSource={{
@@ -309,10 +309,14 @@ class UserProfile extends Component{
                                         
                                     </Form>
                                 </div>
+                                 
+                            </Col>
 
-                                 <div>
+                            <Col md = {5} className = "messages-right2">
+                                <div>
                                     {postArray}
                                 </div>
+
                             </Col>
 
 
