@@ -2028,34 +2028,41 @@ h2 {
 /* line 21, ../../compass/sass/_resources.scss */
 .resources-wrapper h1 {
   color: white;
-  font-size: 3em;
-  margin-top: 2em;
-  margin-right: 0em;
+  font-size: 3.5em;
+  margin-top: 2.5em;
+  margin-left: -1em;
   width: 92%;
 }
 /* line 29, ../../compass/sass/_resources.scss */
 .resources-wrapper #book, .resources-wrapper #TandA, .resources-wrapper #description {
-  font-size: 2em;
-  color: white;
+  font-size: 3em;
+  color: black;
   text-align: center;
 }
 /* line 35, ../../compass/sass/_resources.scss */
 .resources-wrapper td {
-  color: white;
+  color: black;
   font-size: 2em;
-  border: 1px solid white;
+  border: 1px solid black;
+  font-weight: bold;
 }
-/* line 40, ../../compass/sass/_resources.scss */
+/* line 41, ../../compass/sass/_resources.scss */
 .resources-wrapper .table-bordered {
   margin-right: -2em;
+  width: 80%;
 }
-/* line 43, ../../compass/sass/_resources.scss */
+/* line 45, ../../compass/sass/_resources.scss */
 .resources-wrapper .table-responsive {
-  background-color: black;
+  background-color: white;
   opacity: 0.8;
-  width: 156%;
-  margin-left: -20em;
+  width: 100%;
+  margin-left: -10em;
   font-size: 9px;
+}
+/* line 52, ../../compass/sass/_resources.scss */
+.resources-wrapper #resource-line {
+  width: 98%;
+  margin-left: -6em;
 }
 
 /* line 3, ../../compass/sass/_forumsmain.scss */
