@@ -2612,6 +2612,7 @@ h2 {
 /* line 1, ../../compass/sass/_faq.scss */
 .faq-wrapper {
   margin-top: 8em;
+  color: #2e6da4;
 }
 /* line 4, ../../compass/sass/_faq.scss */
 .faq-wrapper .header {
@@ -2627,6 +2628,10 @@ h2 {
   margin: auto;
   width: 100%;
   padding-right: 70em;
+}
+/* line 20, ../../compass/sass/_faq.scss */
+.faq-wrapper .faqsText {
+  color: #2e6da4;
 }
 
 /* line 3, ../../compass/sass/_login.scss */
