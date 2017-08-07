@@ -75,7 +75,7 @@ class NavBarTest extends React.Component {
 
 			/>
 
-            <Link classname='search-users' to='/profiles/'><img src = "images/search-icon2.png"/></Link>
+            <Link classname='search-users' to='/profiles/'><img src = "images/search-icon.png"/></Link>
 		</div>
     )
   }

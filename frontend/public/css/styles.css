@@ -61,7 +61,6 @@
 .navbar-wrapper img {
   height: 22px;
   margin: -6em 0em 0em 41em;
-  z-index: 1;
 }
 @media screen and (max-width: 991px) {
   /* line 64, ../../compass/sass/_navbar.scss */
@@ -99,7 +98,6 @@
 .navbar-wrapper .Select {
   margin: 0.3em 0em 0em 7em;
   width: 115%;
-  z-index: -1;
 }
 @media screen and (min-width: 1732px) {
   /* line 104, ../../compass/sass/_navbar.scss */
@@ -131,7 +129,7 @@
     margin: 1em 0em 0em -2em;
   }
 }
-/* line 139, ../../compass/sass/_navbar.scss */
+/* line 138, ../../compass/sass/_navbar.scss */
 .navbar-wrapper .title li a {
   display: block;
   float: left;
@@ -142,41 +140,41 @@
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
 @media screen and (min-width: 1732px) {
-  /* line 139, ../../compass/sass/_navbar.scss */
+  /* line 138, ../../compass/sass/_navbar.scss */
   .navbar-wrapper .title li a {
     margin-left: -4em !important;
   }
 }
 @media screen and (max-width: 1200px) {
-  /* line 139, ../../compass/sass/_navbar.scss */
+  /* line 138, ../../compass/sass/_navbar.scss */
   .navbar-wrapper .title li a {
     margin-left: -0.5em;
   }
 }
 @media screen and (max-width: 991px) {
-  /* line 139, ../../compass/sass/_navbar.scss */
+  /* line 138, ../../compass/sass/_navbar.scss */
   .navbar-wrapper .title li a {
     margin-left: 0.5em;
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 139, ../../compass/sass/_navbar.scss */
+  /* line 138, ../../compass/sass/_navbar.scss */
   .navbar-wrapper .title li a {
     margin-left: -4.5em;
   }
 }
 @media screen and (max-width: 414px) {
-  /* line 139, ../../compass/sass/_navbar.scss */
+  /* line 138, ../../compass/sass/_navbar.scss */
   .navbar-wrapper .title li a {
     margin-left: 0.5em;
   }
 }
-/* line 169, ../../compass/sass/_navbar.scss */
+/* line 168, ../../compass/sass/_navbar.scss */
 .navbar-wrapper .title li a:hover {
   background-color: transparent;
   cursor: pointer;
 }
-/* line 175, ../../compass/sass/_navbar.scss */
+/* line 174, ../../compass/sass/_navbar.scss */
 .navbar-wrapper .float-right {
   float: right;
   font-size: 1em;
@@ -184,51 +182,51 @@
   margin-right: 1em;
 }
 @media screen and (min-width: 1732px) {
-  /* line 181, ../../compass/sass/_navbar.scss */
+  /* line 180, ../../compass/sass/_navbar.scss */
   .navbar-wrapper .float-right .navbar-wrapper ul {
     margin-top: -5px;
   }
 }
 @media screen and (min-width: 1732px) {
-  /* line 175, ../../compass/sass/_navbar.scss */
+  /* line 174, ../../compass/sass/_navbar.scss */
   .navbar-wrapper .float-right {
     margin-right: -8em;
   }
 }
 @media screen and (max-width: 1200px) {
-  /* line 175, ../../compass/sass/_navbar.scss */
+  /* line 174, ../../compass/sass/_navbar.scss */
   .navbar-wrapper .float-right {
     margin-right: 1em;
   }
 }
 @media screen and (max-width: 991px) {
-  /* line 175, ../../compass/sass/_navbar.scss */
+  /* line 174, ../../compass/sass/_navbar.scss */
   .navbar-wrapper .float-right {
     margin-right: 0em;
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 175, ../../compass/sass/_navbar.scss */
+  /* line 174, ../../compass/sass/_navbar.scss */
   .navbar-wrapper .float-right {
     margin-right: -17em;
     margin-top: -7.5em !important;
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 175, ../../compass/sass/_navbar.scss */
+  /* line 174, ../../compass/sass/_navbar.scss */
   .navbar-wrapper .float-right {
     margin-right: -1em;
     margin-top: -11em !important;
   }
 }
 @media screen and (max-width: 414px) {
-  /* line 175, ../../compass/sass/_navbar.scss */
+  /* line 174, ../../compass/sass/_navbar.scss */
   .navbar-wrapper .float-right {
     margin-right: -3em;
     margin-top: -11em !important;
   }
 }
-/* line 228, ../../compass/sass/_navbar.scss */
+/* line 227, ../../compass/sass/_navbar.scss */
 .navbar-wrapper .float-right .login, .navbar-wrapper .float-right .signup, .navbar-wrapper .float-right .home-nav {
   padding: 4px;
   font-family: 'Heebo', sans-serif;
@@ -236,53 +234,53 @@
   margin-right: 1em;
 }
 @media screen and (min-width: 1732px) {
-  /* line 228, ../../compass/sass/_navbar.scss */
+  /* line 227, ../../compass/sass/_navbar.scss */
   .navbar-wrapper .float-right .login, .navbar-wrapper .float-right .signup, .navbar-wrapper .float-right .home-nav {
     margin-top: 13px;
   }
 }
-/* line 239, ../../compass/sass/_navbar.scss */
+/* line 238, ../../compass/sass/_navbar.scss */
 .navbar-wrapper .float-right .home-nav {
   margin-top: 9px;
 }
 @media screen and (min-width: 1732px) {
-  /* line 239, ../../compass/sass/_navbar.scss */
+  /* line 238, ../../compass/sass/_navbar.scss */
   .navbar-wrapper .float-right .home-nav {
     margin-top: 16px;
   }
 }
 @media screen and (max-width: 414px) {
-  /* line 239, ../../compass/sass/_navbar.scss */
+  /* line 238, ../../compass/sass/_navbar.scss */
   .navbar-wrapper .float-right .home-nav {
     display: hidden;
   }
 }
-/* line 255, ../../compass/sass/_navbar.scss */
+/* line 254, ../../compass/sass/_navbar.scss */
 .navbar-wrapper .float-right .home-nav:hover {
   background-color: transparent !important;
   text-decoration: underline !important;
 }
-/* line 261, ../../compass/sass/_navbar.scss */
+/* line 260, ../../compass/sass/_navbar.scss */
 .navbar-wrapper .float-right .login, .navbar-wrapper .float-right .signup {
   border: 3px solid #fff;
   border-radius: 5px;
 }
-/* line 268, ../../compass/sass/_navbar.scss */
+/* line 267, ../../compass/sass/_navbar.scss */
 .navbar-wrapper .float-right .login {
   background-color: #fff;
   color: #2e6da4 !important;
 }
-/* line 275, ../../compass/sass/_navbar.scss */
+/* line 274, ../../compass/sass/_navbar.scss */
 .navbar-wrapper .float-right .login:hover {
   background: #2e6da4;
   color: #fff !important;
   cursor: pointer;
 }
-/* line 281, ../../compass/sass/_navbar.scss */
+/* line 280, ../../compass/sass/_navbar.scss */
 .navbar-wrapper .float-right .signup {
   color: #fff;
 }
-/* line 286, ../../compass/sass/_navbar.scss */
+/* line 285, ../../compass/sass/_navbar.scss */
 .navbar-wrapper .float-right .signup:hover {
   background-color: #fff;
   color: #2e6da4;
