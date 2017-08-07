@@ -250,10 +250,10 @@ class UserProfile extends Component{
                                 </div> 
                             </Col>
 
-                            <Col sm = {5} className = "mybooks-right">
+                            <div className = "mybooks-right">
                                 <div><h4>Books by {username}</h4></div>
 
-                                <Col sm = {3}>
+                                
                                     <div className = "createbook">
                                         <div>
                                             <form>
@@ -262,10 +262,9 @@ class UserProfile extends Component{
                                         </div>
                                     </div>
 
-                                </Col>
                                 {bookArray}
 
-                            </Col>
+                            </div>
                         </Grid>
                     </Row> 
 
@@ -275,7 +274,7 @@ class UserProfile extends Component{
                         <Grid className = "col-md-12">
                             <Col md = {3} className = "twitter-left">
                                 <div>
-                                <h4>Follow {t_username} On Twitter</h4>
+                                <h4>Follow {username} On Twitter</h4>
 
                                 <Timeline
                                     dataSource={{
@@ -309,10 +308,14 @@ class UserProfile extends Component{
                                         
                                     </Form>
                                 </div>
+                                 
+                            </Col>
 
-                                 <div>
+                            <Col md = {5} className = "messages-right2">
+                                <div>
                                     {postArray}
                                 </div>
+
                             </Col>
 
 
