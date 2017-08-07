@@ -1,0 +1,412 @@
+/* line 3, ../../compass/sass/tOtherUser.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 7, ../../compass/sass/tOtherUser.scss */
+.test {
+  margin-top: 15em;
+}
+
+/* line 12, ../../compass/sass/tOtherUser.scss */
+.profile {
+  position: absolute;
+  background-color: #d5e7f1;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+/* line 27, ../../compass/sass/tOtherUser.scss */
+.profile h4 {
+  font-weight: bold;
+}
+@media screen and (min-width: 1732px) {
+  /* line 27, ../../compass/sass/tOtherUser.scss */
+  .profile h4 {
+    font-size: 20px;
+  }
+}
+/* line 35, ../../compass/sass/tOtherUser.scss */
+.profile h5 {
+  font-size: 17px;
+}
+@media screen and (min-width: 1732px) {
+  /* line 35, ../../compass/sass/tOtherUser.scss */
+  .profile h5 {
+    font-size: 22px;
+  }
+}
+/* line 47, ../../compass/sass/tOtherUser.scss */
+.profile .header {
+  background-image: url("/images/profile-bg.png");
+  text-align: center;
+  position: relative;
+  background-color: #CAEFF0;
+  width: 100%;
+  height: 62vh;
+  z-index: 0;
+  line-height: 0px;
+  box-shadow: -1px -4px 9px 0px rgba(0, 0, 0, 0.2);
+}
+/* line 59, ../../compass/sass/tOtherUser.scss */
+.profile .header .items-right {
+  display: flex;
+  float: right;
+  margin-right: 3em;
+}
+/* line 64, ../../compass/sass/tOtherUser.scss */
+.profile .header .items-right ul {
+  list-style: none;
+  float: left;
+}
+/* line 69, ../../compass/sass/tOtherUser.scss */
+.profile .header .items-right .edit-right {
+  display: -webkit-box;
+  width: 100%;
+}
+/* line 77, ../../compass/sass/tOtherUser.scss */
+.profile .header .items-right .btn {
+  position: relative;
+  top: 3.5em;
+  left: 15em;
+  right: 0em;
+  margin: auto;
+}
+@media screen and (min-width: 1732px) {
+  /* line 77, ../../compass/sass/tOtherUser.scss */
+  .profile .header .items-right .btn {
+    top: 8em;
+    left: 15em;
+  }
+}
+@media screen and (min-width: 1200px) {
+  /* line 59, ../../compass/sass/tOtherUser.scss */
+  .profile .header .items-right {
+    top: -2em;
+  }
+}
+/* line 98, ../../compass/sass/tOtherUser.scss */
+.profile .header .items-right img {
+  width: 15px;
+}
+/* line 102, ../../compass/sass/tOtherUser.scss */
+.profile .header .items-right .header-items-left {
+  margin-top: 0em;
+}
+/* line 108, ../../compass/sass/tOtherUser.scss */
+.profile .header .username {
+  margin-left: -1em;
+}
+/* line 112, ../../compass/sass/tOtherUser.scss */
+.profile .header .prof-pic img {
+  margin-top: 6em;
+  border-radius: 130px;
+  width: 13em;
+  height: 13em;
+}
+/* line 121, ../../compass/sass/tOtherUser.scss */
+.profile .header .InputClass {
+  margin: 2em 0em 0em 0em;
+  cursor: pointer;
+}
+/* line 125, ../../compass/sass/tOtherUser.scss */
+.profile .header .InputClass .InputClass:hover {
+  opacity: 0.9;
+}
+/* line 133, ../../compass/sass/tOtherUser.scss */
+.profile .header .pic-sub input {
+  top: -18.6em !important;
+  left: 24em !important;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #ccc;
+  padding: 8px;
+  opacity: 0.5;
+}
+@media screen and (min-width: 1399px) {
+  /* line 133, ../../compass/sass/tOtherUser.scss */
+  .profile .header .pic-sub input {
+    position: relative;
+  }
+}
+/* line 152, ../../compass/sass/tOtherUser.scss */
+.profile .header .submit {
+  position: relative;
+  margin: 1em 0em 0em 1em;
+  position: relative;
+  top: -0.8em;
+  left: 14em;
+  padding: 16px;
+}
+/* line 164, ../../compass/sass/tOtherUser.scss */
+.profile .header .btn {
+  position: relative;
+  top: 0em;
+  left: 0em;
+  right: 0em;
+  margin: auto;
+}
+@media screen and (min-width: 1399px) {
+  /* line 164, ../../compass/sass/tOtherUser.scss */
+  .profile .header .btn {
+    position: relative;
+    top: 0em;
+    left: 0em;
+    right: 0em;
+    margin: auto;
+  }
+}
+/* line 192, ../../compass/sass/tOtherUser.scss */
+.profile .about-left, .profile .twitter-left {
+  float: left;
+  margin: 0em 0em 0em 19em;
+  width: 30%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px 15px;
+  box-shadow: 0 2px 5px rgba(120, 120, 120, 0.25);
+}
+@media screen and (min-width: 1399px) {
+  /* line 192, ../../compass/sass/tOtherUser.scss */
+  .profile .about-left, .profile .twitter-left {
+    margin: 3em 0em 0em 18em;
+  }
+}
+@media screen and (min-width: 1200px) {
+  /* line 192, ../../compass/sass/tOtherUser.scss */
+  .profile .about-left, .profile .twitter-left {
+    margin-right: 15em;
+  }
+}
+@media screen and (min-width: 1732px) {
+  /* line 192, ../../compass/sass/tOtherUser.scss */
+  .profile .about-left, .profile .twitter-left {
+    margin: 3em 0em 0em 27em;
+  }
+}
+/* line 221, ../../compass/sass/tOtherUser.scss */
+.profile .twitter-left {
+  top: -88.5em;
+}
+@media screen and (min-width: 1732px) {
+  /* line 221, ../../compass/sass/tOtherUser.scss */
+  .profile .twitter-left {
+    top: -140em;
+  }
+}
+/* line 229, ../../compass/sass/tOtherUser.scss */
+.profile #twitter-widget-0 {
+  display: none !important;
+}
+/* line 234, ../../compass/sass/tOtherUser.scss */
+.profile .about-user {
+  overflow-x: hidden;
+}
+/* line 240, ../../compass/sass/tOtherUser.scss */
+.profile .mybooks-right, .profile .messages-right {
+  float: right;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(120, 120, 120, 0.25);
+}
+/* line 254, ../../compass/sass/tOtherUser.scss */
+.profile .messages-right {
+  float: left;
+  position: relative;
+  width: 29.5%;
+  margin: -87em 0em 0em 20em;
+}
+@media screen and (min-width: 1732px) {
+  /* line 254, ../../compass/sass/tOtherUser.scss */
+  .profile .messages-right {
+    margin: -138em 0em 0em 28em;
+  }
+}
+/* line 269, ../../compass/sass/tOtherUser.scss */
+.profile .messages-right2 {
+  float: left;
+  display: inline-block;
+  margin: -73.7em 0em 0em 20em;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(120, 120, 120, 0.25);
+  width: 29.5%;
+}
+@media screen and (min-width: 1732px) {
+  /* line 269, ../../compass/sass/tOtherUser.scss */
+  .profile .messages-right2 {
+    margin: -124em 0em 0em 28em;
+  }
+}
+/* line 289, ../../compass/sass/tOtherUser.scss */
+.profile .display-message {
+  background-color: #f5f8fa;
+  padding: 10px;
+  font-size: 16px;
+}
+@media screen and (min-width: 1732px) {
+  /* line 289, ../../compass/sass/tOtherUser.scss */
+  .profile .display-message {
+    font-size: 20px;
+  }
+}
+/* line 300, ../../compass/sass/tOtherUser.scss */
+.profile .write-message-box {
+  background-color: #fff;
+  padding: 20px;
+}
+/* line 303, ../../compass/sass/tOtherUser.scss */
+.profile .write-message-box textarea .form-control {
+  line-height: 30px;
+}
+/* line 307, ../../compass/sass/tOtherUser.scss */
+.profile .write-message-box button {
+  top: 2em;
+  left: 20em;
+  opacity: 0.8;
+  border: 1px solid;
+}
+@media screen and (min-width: 1732px) {
+  /* line 307, ../../compass/sass/tOtherUser.scss */
+  .profile .write-message-box button {
+    left: 28em;
+  }
+}
+/* line 326, ../../compass/sass/tOtherUser.scss */
+.profile .mybooks-right {
+  margin: -7.8em 20em 0em 0em;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  padding: 20px;
+  text-align: center;
+}
+@media screen and (min-width: 1732px) {
+  /* line 326, ../../compass/sass/tOtherUser.scss */
+  .profile .mybooks-right {
+    margin: 3em 29em 0em 0em;
+    padding: 15px;
+    padding-bottom: 34px;
+  }
+}
+/* line 342, ../../compass/sass/tOtherUser.scss */
+.profile .mybooks-right .book-header {
+  display: flex;
+  position: relative;
+  left: 7em;
+  top: 2em;
+}
+/* line 349, ../../compass/sass/tOtherUser.scss */
+.profile .mybooks-right .book-header .btn {
+  top: 4em;
+  right: 0em;
+  left: -13.5em;
+  opacity: 0.8;
+}
+/* line 357, ../../compass/sass/tOtherUser.scss */
+.profile .mybooks-right .book-array {
+  height: 100%;
+  margin-top: 4em;
+  position: relative;
+  left: 8em;
+}
+@media screen and (min-width: 1732px) {
+  /* line 357, ../../compass/sass/tOtherUser.scss */
+  .profile .mybooks-right .book-array {
+    left: 5em;
+  }
+}
+/* line 369, ../../compass/sass/tOtherUser.scss */
+.profile .mybooks-right .book-array .btn {
+  top: 1em;
+  right: 0em;
+  left: 2em;
+  margin: auto;
+  opacity: 0.8;
+  border: 1px solid;
+}
+@media screen and (min-width: 1732px) {
+  /* line 369, ../../compass/sass/tOtherUser.scss */
+  .profile .mybooks-right .book-array .btn {
+    left: 7em;
+  }
+}
+/* line 385, ../../compass/sass/tOtherUser.scss */
+.profile .mybooks-right .book {
+  border: 5px solid red;
+  display: flex;
+  box-shadow: 4px 8px 13px 0px #ccc;
+  margin-top: 3em;
+  height: 153px;
+  padding: 20px;
+  width: 119px;
+  text-align: center;
+  border: 2px ridge lightslategray;
+  font-size: 19px;
+  background: url(/images/profile-bg.jpg);
+  background-size: cover;
+  font-family: 'Bitter', serif;
+}
+@media screen and (min-width: 1732px) {
+  /* line 385, ../../compass/sass/tOtherUser.scss */
+  .profile .mybooks-right .book {
+    height: 200px;
+    padding: 10px;
+    width: 150px;
+    margin-left: 2em;
+    text-align: center;
+    border: 2px ridge lightslategray;
+    font-size: 2em;
+  }
+}
+/* line 423, ../../compass/sass/tOtherUser.scss */
+.profile .stats-left li {
+  float: left;
+  bottom: 0em;
+  padding: 8px;
+  display: inline-block;
+  list-style: none;
+  text-decoration: none;
+  margin-right: 8em;
+  margin: 0em 0em 0em 0em;
+}
+/* line 435, ../../compass/sass/tOtherUser.scss */
+.profile .stats-left li .addfriends h4 {
+  background-color: #9966ff;
+}
+/* line 439, ../../compass/sass/tOtherUser.scss */
+.profile .stats-left li .btn {
+  position: relative;
+  top: -1em;
+  left: 0em;
+  margin: auto;
+}
+@media screen and (max-width: 1200px) {
+  /* line 439, ../../compass/sass/tOtherUser.scss */
+  .profile .stats-left li .btn {
+    top: -4.5em;
+  }
+}
+@media screen and (min-width: 1732px) {
+  /* line 439, ../../compass/sass/tOtherUser.scss */
+  .profile .stats-left li .btn {
+    top: 3.5em;
+  }
+}

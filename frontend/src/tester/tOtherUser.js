@@ -12,7 +12,7 @@ import $ from 'jquery';
 import PostAction from '../actions/PostAction';
 import  {Timeline} from 'react-twitter-widgets'; 
 // import UserProfileAction from '../actions/UserProfileAction';
-
+import FileInput from 'react-file-input'; 
 
 class tOtherUser extends Component{
     constructor(props) {
