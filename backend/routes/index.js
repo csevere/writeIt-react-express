@@ -519,10 +519,131 @@ router.get('/follow', (req,res)=>{
 
 		}
 
+});
 
 
+
+
+///////////////////////////////////////////////////////////////////
+///////////////////////////THE FORUM GET REQUESTS////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+router.get('/contemp', (req,res)=>{ 
+    var contempDataQuery = `SELECT * FROM forums WHERE category = 'Contemp_fic'`;
+    connection.query(contempDataQuery, (error, response)=>{
+        if(error){
+            throw error;
+        }else{
+            console.log(response)
+            res.json({
+                dataz: response
+            })
+        }
+
+    })
 
 });
+
+router.get('/contemp', (req,res)=>{ 
+    var contempDataQuery = `SELECT * FROM forums WHERE category = 'Romance'`;
+    connection.query(contempDataQuery, (error, response)=>{
+        if(error){
+            throw error;
+        }else{
+            console.log(response)
+            res.json({
+                dataz: response
+            })
+        }
+
+    })
+
+});
+
+
+router.get('/contemp', (req,res)=>{ 
+    var contempDataQuery = `SELECT * FROM forums WHERE category = 'Science_fic'`;
+    connection.query(contempDataQuery, (error, response)=>{
+        if(error){
+            throw error;
+        }else{
+            console.log(response)
+            res.json({
+                dataz: response
+            })
+        }
+
+    })
+
+});
+
+router.get('/contemp', (req,res)=>{ 
+    var contempDataQuery = `SELECT * FROM forums WHERE category = 'Fantasy'`;
+    connection.query(contempDataQuery, (error, response)=>{
+        if(error){
+            throw error;
+        }else{
+            console.log(response)
+            res.json({
+                dataz: response
+            })
+        }
+
+    })
+
+});
+
+router.get('/contemp', (req,res)=>{ 
+    var contempDataQuery = `SELECT * FROM forums WHERE category = 'Mystery'`;
+    connection.query(contempDataQuery, (error, response)=>{
+        if(error){
+            throw error;
+        }else{
+            console.log(response)
+            res.json({
+                dataz: response
+            })
+        }
+
+    })
+
+});
+
+
+router.get('/contemp', (req,res)=>{ 
+    var contempDataQuery = `SELECT * FROM forums WHERE category = 'Horror'`;
+    connection.query(contempDataQuery, (error, response)=>{
+        if(error){
+            throw error;
+        }else{
+            console.log(response)
+            res.json({
+                dataz: response
+            })
+        }
+
+    })
+
+});
+
+
+
+
+///////////////////////////////////////////////////////////////////
+///////////////////////////THE FORUM POST REQUESTS////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
 
 ///////////////////////////////////////////////////////////////////
 //////////////////////////POST REQUESTS////////////////////////////
@@ -1258,8 +1379,6 @@ router.post('/post', (req, res)=>{
     		postData: response
     	})
     })
-
-
 
 
 });

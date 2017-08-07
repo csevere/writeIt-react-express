@@ -4,6 +4,9 @@
  	box-sizing: border-box;
  }
 
+  .test{
+  	    margin-top: 15em;
+  }
 
 
 .profile{
@@ -53,8 +56,6 @@
 		box-shadow: -1px -4px 9px 0px rgba(0, 0, 0, 0.2);
 
 
-
-
 		.items-right{
 			display: flex;
 			float: right; 
@@ -97,57 +98,55 @@
 			    img{
 			    	width: 15px;
 			    }
-			}
+			
 			.header-items-left{
 				margin-top: 0em;
 			}
+		}
 
 
-		} 
+		.username{
+			margin-left: -1em; 
+		}
 
+		.prof-pic img{
+			margin-top: 6em;
+		    border-radius: 130px;
+		    width: 13em;
+		    height: 13em;
+		}
 
-	.username{
-		margin-left: -1em; 
-	}
+		////UPLOAD PIC BUTTONS/////
 
-	.prof-pic img{
-		margin-top: 6em;
-	    border-radius: 130px;
-	    width: 13em;
-	    height: 13em;
-	}
+		.InputClass{
 
-	////UPLOAD PIC BUTTONS/////
+			margin: 2em 0em 0em 0em; 
+			cursor: pointer;
+				.InputClass:hover{
+					opacity: 0.9; 
+				}
+			
+		}
 
-	.InputClass{
+		.pic-sub{
 
-		margin: 2em 0em 0em 0em; 
-		cursor: pointer;
-			.InputClass:hover{
-				opacity: 0.9; 
-			}
-		
-	}
-
-	.pic-sub{
-
-		input{
-			top: -18.6em !important;
-			left: 24em !important; 
-		   	cursor: pointer;
-		    font-size: 14px;
-		    font-weight: 500;
-		    border: 1px solid #ccc;
-		    padding: 8px; 
-		    opacity: 0.5;
+			input{
+				top: -18.6em !important;
+				left: 24em !important; 
+			   	cursor: pointer;
+			    font-size: 14px;
+			    font-weight: 500;
+			    border: 1px solid #ccc;
+			    padding: 8px; 
+			    opacity: 0.5;
 
 			
-
-			@media screen and(min-width:$break-md-large){
-				position: relative;
-					
+				@media screen and(min-width:$break-md-large){
+					position: relative;
+						
+				}
 			}
-		
+
 		}
 
 		.submit{
@@ -183,6 +182,7 @@
 
 		}
 
+
 	}
 
 
@@ -191,7 +191,7 @@
 
 	.about-left, .twitter-left{
 		float: left; 
-		margin: -4em 0em 0em 0em;
+		margin: -3em 0em 0em 0em;
 		width: 30%;
 		background-color: $white; 
 		border: 1px solid #ddd;   
@@ -219,7 +219,7 @@
 	// TWITTER////////////
 
 	.twitter-left{
-		top: -29.5em;
+		top: 4.5em;
 		@media screen and(min-width:$break-xlarge){
 			top: -47em;
 						
@@ -266,24 +266,11 @@
 
 	}
 
-	.mybooks-right{
-		display: block; 
-		padding-bottom: 0px;
-		padding-top: 0px;
-		margin-top: -7.8em;
-		padding-bottom: 30px;
-		@media screen and(min-width:$break-xlarge){
-			margin-top: 3em;
-			width: 56%; 
-			padding: 15px;
-    		padding-bottom: 34px;
-						
-		} 
-
-		h4{
-			margin-left: 3em;  
-		}
-	}
+	
+		// h4{
+		// 	margin-left: 3em;  
+		// }
+	
 
 	.messages-right2{
 		float: right; 
@@ -344,9 +331,37 @@
 
 	// THE BOOKS
 
-	.createbook{
+	.mybooks-right{
+
+			display: flex; 
+			flex-direction: row-reverse; 
+			padding-bottom: 0px;
+			padding-top: 0px;
+			margin-top: -3.8em;
+			padding-bottom: 30px;
+			padding: 24px;
+	    	text-align: center;
+
+			@media screen and(min-width:$break-xlarge){
+				margin-top: 3em;
+				width: 56%; 
+				padding: 15px;
+	    		padding-bottom: 34px;
+							
+			}
+
+		.book-array{
+			border: 5px solid blue; 
+		}
+
+
+		.top-book-array{
+			border: 5px solid green; 
+			display: flex; 
+		}
 
 		.book{
+			border: 5px solid red; 
 			display: flex;
 		    box-shadow: 4px 8px 13px 0px #ccc;
 		    margin-top: 3em; 
@@ -387,42 +402,40 @@
 		}
 	}
 
-	
 
+	/// FOLLOWERS ////
 
-}
+	.stats-left li {
+			float: left; 
+			bottom: 0em; 
+			padding:8px; 
+			display: inline-block;
+			list-style: none; 
+			text-decoration: none; 
+			margin-right: 8em;
+	    	margin: 0em 0em 0em 0em; 
+	 
+		
 
-/// FOLLOWERS ////
+		.addfriends h4{
+			background-color: $purple; 
+		}
 
-.stats-left li {
-		float: left; 
-		bottom: 0em; 
-		padding:8px; 
-		display: inline-block;
-		list-style: none; 
-		text-decoration: none; 
-		margin-right: 8em;
-    	margin: 0em 0em 0em 0em; 
- 
-	
+		.btn{
+				position: relative;
+			    top: -3.5em;
+			    left: 0em;
+			    margin: auto;
+			    @media screen and(max-width:$break-large){
+					top:-4.5em;			
+				}
 
-	.addfriends h4{
-		background-color: $purple; 
+				@media screen and(min-width:$break-xlarge){
+					top: 3.5em;    	
+				} 
+		}
 	}
 
-	.btn{
-			position: relative;
-		    top: -3.5em;
-		    left: 0em;
-		    margin: auto;
-		    @media screen and(max-width:$break-large){
-				top:-4.5em;			
-			}
-
-			@media screen and(min-width:$break-xlarge){
-				top: 3.5em;    	
-			} 
-	}
 }
 
 

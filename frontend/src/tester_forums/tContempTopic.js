@@ -2,11 +2,8 @@ import React, {Component} from 'react';
 import { Link} from 'react-router-dom';
 import { Grid, Row, Col, Form, FormGroup, FormControl, Button} from 'react-bootstrap';
 import  {bindActionCreators} from 'redux';
-// import CharacterAction from '../actions/CharacterAction';
 import {connect} from 'react-redux';
-// import Slider from 'react-slick';
-// import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
+import $ from 'jquery';
 
 
 
@@ -14,24 +11,23 @@ class tContempTopic extends Component{
   constructor(props) {
     super(props);
     this.state = {
-      // registerMessage: "",
-      // nameError: null,
-      // emailError: null,
-      // formError: false
+      
     }
-    // this.handleUserProfile = this.UserProfile.bind(this);
     
   }
 
 
- 
+
 	render(){
      
-    console.log(this.props)
+     
+        console.log(this.props)
 		return(
 			<div>
 				<Grid className = "topic-wrapper-main">
 					<Row>
+                       
+
                         <Grid className = "cat-topic-wrapper">
                             <div className = "bg-topic">
                                 <img src = "https://static.pexels.com/photos/448835/pexels-photo-448835.jpeg"/>
@@ -69,7 +65,6 @@ class tContempTopic extends Component{
                                         fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
                                         sunt in culpa qui officia deserunt mollit anim id est laborum.
                                         </div> 
-                                        <div><Link to ="/home">Reply</Link></div>
                                         <div><Link to = "/home">Report</Link></div>
                                     </div> 
                                 </Grid>
@@ -82,7 +77,6 @@ class tContempTopic extends Component{
                                     </Link>
                                     <div className = "commentbubbleT" onClick = "">
                                         <div>UsernameB comments are here</div> 
-                                        <div><Link to ="/home">Reply</Link></div>
                                         <div><Link to = "/home">Report</Link></div>
                                     </div> 
                                 </Grid>
@@ -95,7 +89,6 @@ class tContempTopic extends Component{
                                     </Link>
                                     <div className = "commentbubbleT" onClick = "">
                                         <div>UsernameC comments are here</div> 
-                                        <div><Link to ="/home">Reply</Link></div>
                                         <div><Link to = "/home">Report</Link></div>
                                     </div> 
                                 </Grid>
@@ -108,7 +101,6 @@ class tContempTopic extends Component{
                                     </Link>
                                     <div className = "commentbubbleT" onClick = "">
                                         <div>UsernameX comments are here</div> 
-                                        <div><Link to ="/home">Reply</Link></div>
                                         <div><Link to = "/home">Report</Link></div>
                                     </div> 
                                 </Grid>

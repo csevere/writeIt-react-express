@@ -27,7 +27,7 @@ import PostReducer from './PostReducer';
 // create a rootReducer using the combineReducer method, so we can export it
 // to the Store in index.js
 const rootReducer = combineReducers({
-	// Inside her, we pass ech reducer as a key/value
+	// Inside here, we pass each reducer as a key/value
 	// Each key will be available as a piece of state later
 	registerReducer: RegisterReducer,
 	loginReducer: LoginReducer,

@@ -2,32 +2,60 @@ import React, {Component} from 'react';
 import { Link} from 'react-router-dom';
 import { Grid, Row, Col, Table } from 'react-bootstrap';
 import  {bindActionCreators} from 'redux';
-// import CharacterAction from '../actions/CharacterAction';
+import ContempAction from './actions/ContempAction';
 import {connect} from 'react-redux';
-// import Slider from 'react-slick';
-// import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
+import $ from 'jquery';
 
 
 
 class tContempForum extends Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      // registerMessage: "",
-      // nameError: null,
-      // emailError: null,
-      // formError: false
+    constructor(props) {
+        super(props);
+        this.state = {
+          forumData: []
+        }
+
     }
-    // this.handleUserProfile = this.UserProfile.bind(this);
-    
-  }
 
+    componentDidMount() {
 
- 
+        //  $.getJSON(`http://localhost:5000/book?username=${this.props.registerResponse.name}`, (serverData)=>{
+        //     // log the JSON response from Express
+        //     //console.log(serverData.bookData)
+        //     this.setState({
+        //         bookData: serverData.bookData
+        //     })
+        // });
+
+        $.getJSON(`http://localhost:5000/contemp`, (contempdata)=>{
+            // log the JSON response from Express
+            //console.log(serverData.bookData)
+            this.setState({
+                forumData: contempdata.dataz 
+
+            })
+            
+        });
+          
+    }
+
 	render(){
+        // console.log(postData)
+
+        var postArray = []; 
+        this.state.forumData.map((post, index)=>{ 
+            postArray.push(
+                <div>
+                    {this.props.registerResponse.name}
+                    {post.username}
+                    {post.topic} 
+                    {post.message}
+                </div>    
+
+            )
+            console.log(postArray); 
+        });
      
-    console.log(this.props)
 		return(
 			<div>
 				<Grid className = "forum-wrapper">
@@ -35,6 +63,10 @@ class tContempForum extends Component{
                         <img src = "https://static.pexels.com/photos/448835/pexels-photo-448835.jpeg"/>
                     </div> 
 					<Row>
+
+                        <div className = "test" style = {{background: 'white'}}>
+                                {postArray}
+                        </div>
                         
                         <Grid className = "cat-forum"> 
 
@@ -128,20 +160,25 @@ class tContempForum extends Component{
 }
 
 
-// function mapStateToProps(state){
-//   return{
-//     // characterResponse: state.characterReducer,
-//     registerResponse: state.registerReducer,
-//     mainforumResponse: state.mainforumReducer
+function mapStateToProps(state){
+  return{
+    // characterResponse: state.characterReducer,
+    registerResponse: state.registerReducer,
+    mainforumResponse: state.mainforumReducer
 
-//   }
-// }
+  }
+}
 
-// function mapDispatchToProps(dispatch){
-//   return bindActionCreators({
-//     mainforumAction: MainForumAction
-//   }, dispatch)
-// }
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({
+    contempAction: ContempAction
+  }, dispatch)
+}
 
-export default tContempForum;
-// export default connect(mapStateToProps,mapDispatchToProps)(tMainForum);
+ // <div>{post.topic}</div>
+                    // <div>{post.message}</div>
+                    // <br/>
+                    // <hr/>
+
+// export default tContempForum;
+export default connect(mapStateToProps,mapDispatchToProps)(tContempForum);

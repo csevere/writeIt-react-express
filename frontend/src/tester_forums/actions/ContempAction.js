@@ -4,7 +4,7 @@ export default function(userData){
     console.log("PostAction")
     var thePromise = $.ajax({
         method: "POST",
-        url: window.hostAddress + '/post',
+        url: window.hostAddress + '/contemp',
         data: userData
     })
     // Reducers get payload
@@ -12,6 +12,5 @@ export default function(userData){
         type: "POST",
         payload: thePromise
     }
-}/**
- * Created by mephisto on 7/29/17.
- */
+}
+

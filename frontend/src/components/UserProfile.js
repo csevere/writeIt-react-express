@@ -48,14 +48,10 @@ class UserProfile extends Component{
     handlePost(event){
         event.preventDefault();
 
-
         var username = this.props.registerResponse.name;
         var post = document.getElementById('post').value;
         var from_user = this.props.registerResponse.name;
        
-
-
-
         this.props.postAction({
             username: username,
             post: post,
@@ -126,7 +122,7 @@ class UserProfile extends Component{
 
     render(){
 
-        
+      
 
 
         var profilepic = this.state.picData.picture;
@@ -149,6 +145,7 @@ class UserProfile extends Component{
         this.state.bookData.map((book, index)=>{
            var link = '/write/' +  book.title;
            bookArray.push(
+
                <Col key={index} md = {3}>
                    <div className = "createbook">
 
@@ -251,9 +248,11 @@ class UserProfile extends Component{
                             </Col>
 
                             <div className = "mybooks-right">
-                                <div><h4>Books by {username}</h4></div>
 
+                                <div className = "top-book-array">
+                                    <h4>Books by {username}</h4>
                                 
+
                                     <div className = "createbook">
                                         <div>
                                             <form>
@@ -261,10 +260,14 @@ class UserProfile extends Component{
                                             </form>
                                         </div>
                                     </div>
+                                </div>
 
-                                {bookArray}
+                                <div className = "book-array">
+                                    {bookArray}
+                                </div>
 
                             </div>
+
                         </Grid>
                     </Row> 
 
