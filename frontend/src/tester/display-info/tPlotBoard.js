@@ -48,7 +48,8 @@ class tPlotBoard extends Component{
             // })
 
         });
-        this.props.history.push(`/plotboard/${book}`);
+        console.log(this.props.history)
+        this.props.history.push(`/write/${book}`);
     }
 
 
