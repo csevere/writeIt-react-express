@@ -229,6 +229,9 @@ class UserProfile extends Component{
                                         <li>
                                             <Button className="btn btn-secondary" style = {{background: "white"}}><h4>{this.state.followData} Followers</h4></Button>
                                        </li>
+
+                                      
+
                                     </ul>
                                   </div>
                                
@@ -299,30 +302,31 @@ class UserProfile extends Component{
 
                                 </div>
                             </Col>
-
-                            <Col md = {5} className = "messages-right">
-                               
-                                <div className = "write-message-box">
-                                    <Form onSubmit={this.handlePost}>
-                                        <FormGroup controlId="formControlsTextarea">
-                                            <FormControl id = "post" componentClass="textarea" placeholder="Post a message..." />
-                                            <button className="btn-primary btn btn-book" type='submit'>Post</button>
-                                        </FormGroup>
-                                        
-                                    </Form>
-                                </div>
-                                 
-                            </Col>
-
-                            <Col md = {5} className = "messages-right2">
-                                <div>
-                                    {postArray}
-                                </div>
-
-                            </Col>
-
-
                         </Grid>
+                    </Row>
+
+                    <Row>
+                        <Col md = {3} className = "messages-right">
+                           
+                            <div className = "write-message-box">
+                                <Form onSubmit={this.handlePost}>
+                                    <FormGroup controlId="formControlsTextarea">
+                                        <FormControl id = "post" componentClass="textarea" placeholder="Post a message..." />
+                                        <button className="btn-primary btn btn-book" type='submit'>Post</button>
+                                    </FormGroup>
+                                    
+                                </Form>
+                            </div>
+                             
+                        </Col>
+
+                        <Col md = {3} className = "messages-right2">
+                            <div>
+                                {postArray}
+                            </div>
+
+                        </Col>
+                       
                     </Row>
 
                    
