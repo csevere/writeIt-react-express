@@ -43,6 +43,7 @@ class tNotePadBoard extends Component{
     }
 
     deleteNotePad(notePadId){
+        var username = this.props.registerResponse.name;
         var book = this.props.match.params.book;
         $.getJSON(`http://localhost:5000/notepad?action=${notePadId}`, (serverData)=>{
 
@@ -51,6 +52,13 @@ class tNotePadBoard extends Component{
             //     chapterData: serverData
             // })
 
+        });
+        $.getJSON(`http://localhost:5000/notepad?username=${username}&book=${book}`, (serverData)=>{
+
+            //console.log(serverData);
+            this.setState({
+                notePadData: serverData
+            })
         });
         this.props.history.push(`/noteboard/${book}`);
     }

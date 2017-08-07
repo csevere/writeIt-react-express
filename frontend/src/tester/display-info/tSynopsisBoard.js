@@ -43,6 +43,7 @@ class tSynopsisBoard extends Component{
     }
 
     deleteSynopsis(synopsisId){
+        var username = this.props.registerResponse.name;
         var book = this.props.match.params.book;
         $.getJSON(`http://localhost:5000/synopsis?action=${synopsisId}`, (serverData)=>{
 
@@ -51,6 +52,13 @@ class tSynopsisBoard extends Component{
             //     chapterData: serverData
             // })
 
+        });
+        $.getJSON(`http://localhost:5000/synopsis?username=${username}&book=${book}`, (serverData)=>{
+
+            //console.log(serverData);
+            this.setState({
+                synopsisData: serverData
+            })
         });
         this.props.history.push(`/synopboard/${book}`);
     }

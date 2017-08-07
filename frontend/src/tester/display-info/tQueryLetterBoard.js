@@ -41,6 +41,7 @@ class tQueryLetterBoard extends Component{
 
     deleteQueryLetter(queryLetterId){
         var book = this.props.match.params.book;
+        var username = this.props.registerResponse.name;
         $.getJSON(`http://localhost:5000/queryletter?action=${queryLetterId}`, (serverData)=>{
 
             //console.log(serverData);
@@ -48,6 +49,13 @@ class tQueryLetterBoard extends Component{
             //     chapterData: serverData
             // })
 
+        });
+        $.getJSON(`http://localhost:5000/queryletter?username=${username}&book=${book}`, (serverData)=>{
+
+            //console.log(serverData);
+            this.setState({
+                queryLetterData: serverData
+            })
         });
         this.props.history.push(`/queryboard/${book}`);
     }

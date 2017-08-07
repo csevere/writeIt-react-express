@@ -182,8 +182,8 @@ class Chapters extends Component{
                                     <Form onSubmit={this.handleChapters} >
                                         <FormGroup controlId="formControlsTextarea">
                                             <ControlLabel>What is the point of the chapter in one sentence?</ControlLabel>
-                                            <FormControl value={scene_number} id='scene_number' componentClass="textarea" onChange={this.changeChapter}/>
-                                                {scene_number}
+                                            <FormControl value={scene_number} id='scene_number' componentClass="textarea" placeholder='scene_number' onChange={this.changeChapter}/>
+
                                         </FormGroup>
 
                                         <FormGroup controlId="formControlsTextarea" defaultValue={scene_plot}>
