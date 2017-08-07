@@ -18,6 +18,7 @@ class tPicture extends Component{
     this.state = {
       picData: []
     }
+    this.handlePictureSubmit = this.handlePictureSubmit.bind(this);
   }
 
 componentDidMount(){
@@ -47,6 +48,26 @@ componentDidMount(){
         this.props.history.push(`/write/${book}`);
     }
 
+    handlePictureSubmit(event){
+      event.preventDefault();
+      console.log(event.target);
+      var bookTitle = document.getElementById('pic-id').value;
+      var bookPicture = document.getElementById('pic-id2').files[0];
+      var formData = new FormData();
+      formData.append('book', bookTitle);
+      formData.append('bookPicture', bookPicture);
+      formData.append('username', this.props.registerResponse.name);
+
+        var thePromise = $.ajax({
+          method: "POST",
+          url: "http://localhost:5000/bookpic",
+              dataType: 'json',
+              cache: false,
+              data: formData,
+              contentType: false
+        });
+        //this.props.history.push(`/write/${this.props.match.params.book}`)
+    }
  
 	render(){
 
@@ -77,11 +98,11 @@ componentDidMount(){
 
         </div>
         <p><br/><br/><br/><br/><br/><br/></p>
-        <form method="post" action="http://127.0.0.1:5000/bookpic" encType="multipart/form-data">
+        <form onSubmit={this.handlePictureSubmit} encType="multipart/form-data">
             <div class="md-col-4 md-col-offset-2">
                 <input name='username' type='hidden' value={username} />
-                <input name='book' type='hidden' value={book} />
-                <input type='file' name='fileUploaded' />
+                <input id='pic-id' name='book' type='hidden' value={book} />
+                <input id='pic-id2' type='file' name='fileUploaded' />
                 <input class="btn btn-primary" type="submit" />
             </div>
         </form> 

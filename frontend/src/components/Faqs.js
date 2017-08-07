@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link} from 'react-router-dom';
-import { Grid, Row, Col, Button, Collapse, Well } from 'react-bootstrap';
+import { Grid, Row, Col, Button, Collapse, Well, Accordion, Panel } from 'react-bootstrap';
 import ScrollableAnchor from 'react-scrollable-anchor';
 
 class Faqs extends Component{
@@ -43,12 +43,30 @@ class Faqs extends Component{
 											<br/>
 											<br/> 
 											From there you can click on any of the eight “Stickies”: Plot, Character, Chapters, Critiques, Pictures, Notebook, Synopsis, or Query Letter. Clicking on Notebook, allows you to write freely and save your words. The Pictures sticky allows you to upload pictures inspiring your imagination. The other stickies offer guided questions to help structure and write your novel.   
-											To join the forums, simply click on Community on the home page. You’ll see the forum page with the option to join discussions under five categories. You can also view the most recent comments. Click on any of the five categories and you
+											To join the forums, simply click on Community on the home page. You’ll see the forum page with the option to join discussions under five categories. You can also view the most recent comments. Click on any of the five categories and you&apos;ll be lead to their individual discussion pages.
+
 
 									</Well>
 								</div>
 							</Collapse> 
-						
+
+
+						  <Accordion>
+						    <Panel header="Collapsible Group Item #1" eventKey="1">
+						    	hi
+						    </Panel>
+						    <Panel header="Collapsible Group Item #2" eventKey="2">
+						    	bye
+						    </Panel>
+						    <Panel header="Collapsible Group Item #3" eventKey="3">
+						    	uh
+						    </Panel>
+						  </Accordion>
+);
+
+
+
+		
 						        
 						</Grid>
 					</Row>

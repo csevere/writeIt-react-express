@@ -1418,7 +1418,7 @@ router.post('/profilepic', upload.single('fileUploaded'), function(req, res, nex
 
 });
 
-router.post('/bookpic', upload.single('fileUploaded'), function(req, res, next){
+router.post('/bookpic', upload.single('bookPicture'), function(req, res, next){
 	console.log('req  below')
 	console.log(req.file)
 	var username = req.body.username;
