@@ -41,6 +41,7 @@ class tChapterBoard extends Component{
 
 	deleteChapter(chapterId){
         var book = this.props.match.params.book;
+        var username = this.props.registerResponse.name;
         $.getJSON(`http://localhost:5000/chapters?action=${chapterId}`, (serverData)=>{
 
             //console.log(serverData);
@@ -48,6 +49,13 @@ class tChapterBoard extends Component{
             //     chapterData: serverData
             // })
 
+        });
+        $.getJSON(`http://localhost:5000/chapters?username=${username}&book=${book}`, (serverData)=>{
+
+            //console.log(serverData);
+            this.setState({
+                chapterData: serverData
+            })
         });
         this.props.history.push(`/chapboard/${book}`);
 	}

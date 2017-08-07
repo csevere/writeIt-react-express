@@ -40,6 +40,7 @@ class tPlotBoard extends Component{
 
     deletePlot(chapterId){
         var book = this.props.match.params.book;
+        var username = this.props.registerResponse.name;
         $.getJSON(`http://localhost:5000/plot?action=${chapterId}`, (serverData)=>{
 
             //console.log(serverData);
@@ -48,7 +49,13 @@ class tPlotBoard extends Component{
             // })
 
         });
-        console.log(this.props.history)
+        $.getJSON(`http://localhost:5000/plot?username=${username}&book=${book}`, (serverData)=>{
+
+            //console.log(serverData);
+            this.setState({
+                plotData: serverData
+            })
+        });
         this.props.history.push(`/write/${book}`);
     }
 
