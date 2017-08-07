@@ -145,20 +145,22 @@ class UserProfile extends Component{
         this.state.bookData.map((book, index)=>{
            var link = '/write/' +  book.title;
            bookArray.push(
+                <Row>
+                   <Col key={index} md = {3}>
+                       <div className = "createbook">
 
-               <Col key={index} md = {3}>
-                   <div className = "createbook">
+                           <div className = "book">{book.title}</div>
+                           <span><div>{this.props.genre}</div></span>
+                           <span><div>{this.props.word_count}</div></span>
 
-                       <div className = "book">{book.title}</div>
-
-                       <div>
-                           <form>
-                               <Link to={link}><button className="btn-primary btn btn-book">Edit</button></Link>
-                           </form>
+                           <div>
+                               <form>
+                                   <Link to={link}><button className="btn-primary btn btn-book">Edit</button></Link>
+                               </form>
+                           </div>
                        </div>
-                   </div>
-
-               </Col>
+                   </Col>
+                </Row> 
 
            )
         });
@@ -251,23 +253,26 @@ class UserProfile extends Component{
                             </Col>
 
                             <div className = "mybooks-right">
-
-                                <div className = "top-book-array">
-                                    <h4>Books by {username}</h4>
-                                
-
-                                    <div className = "createbook">
-                                        <div>
-                                            <form>
-                                               <Link to="/newbook"><button className="btn-primary btn btn-book">Create a New Book</button></Link> 
-                                            </form>
+                                <Row>
+                                    <div className = "book-header">
+                                        <h4>Books by {username}</h4>
+                                    
+                                        <div className = "createbook">
+                                            <div>
+                                                <form>
+                                                   <Link to="/newbook"><button className="btn-primary btn btn-book">Create a New Book</button></Link> 
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </Row>
 
-                                <div className = "book-array">
-                                    {bookArray}
-                                </div>
+                                <Row> 
+
+                                    <div className = "book-array">
+                                        {bookArray}
+                                    </div>
+                                </Row>
 
                             </div>
 
