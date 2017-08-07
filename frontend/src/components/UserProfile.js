@@ -148,11 +148,7 @@ class UserProfile extends Component{
                 <Row>
                    <Col key={index} md = {3}>
                        <div className = "createbook">
-
                            <div className = "book">{book.title}</div>
-                           <span><div>{this.props.genre}</div></span>
-                           <span><div>{this.props.word_count}</div></span>
-
                            <div>
                                <form>
                                    <Link to={link}><button className="btn-primary btn btn-book">Edit</button></Link>
