@@ -7,12 +7,25 @@
 	background: $perfect-blue; 
 	width: 100%;
 	height: 9%; 
+	padding: 10px;
+	line-height: 39px; 
+	top: 0;
+	left: 0;
+	box-shadow: -2px 3px 2px 0px rgba(0,0,0,.2); 
+	// border: 5px solid $red; 
+
 	@media screen and(min-width:$break-xlarge){
-		height: 10%; 
+		height: 8%; 
+	}
+
+	@media screen and(max-width:$break-large){	
+		height: 6%;
+		padding: 6px; 
+					
 	}
 
 	@media screen and(max-width:$break-lg-medium){	
-		height: 6%;
+		height: 7%;
 					
 	}
 
@@ -22,41 +35,57 @@
 			
 	} 
 
+	.home-nav2, .logout{ 
+		font-family: 'Heebo', sans-serif;
+		font-weight: bold;
+		font-size: 15px;
+	}
+
+	.home-nav2{
+		margin: 0px 13px 0px 0px;
+
+	}
+
 	.navbar-white{
 		margin-top: -0.5em; 
 	}
-	padding: 10px;
-	line-height: 50px; 
-	top: 0;
-	left: 0;
-	box-shadow: -2px 3px 2px 0px rgba(0,0,0,.2); 
-	// border: 5px solid $red; 
+
 
 		ul{
-			margin-top: 0; 
+			margin-top: 3px; 
 			display: flex; 
 			text-decoration: none;
+			list-style: none;
 
 		}
 
-		img{
-			height: 20px;
-			margin: -6em 0em 0em 42em;
-			@media screen and(min-width:$break-xlarge){
-				margin: -6em 0em 0em 52em;	
-			
-			}
+		///SEARCH ICON ////
 
-			@media screen and(max-width:$break-large){
-				margin: -6em 0em 0em 31em;	
-					
-						
-			}
+		img{
+			height: 22px;
+    		margin: -6em 0em 0em 41em;
+    		z-index: 1; 
+			
+			
 			@media screen and(max-width:$break-lg-medium){	
-				margin: -6em 0em 0em 19em;
+				margin: -6em 0em 0em 21em;
 				
 			}
 
+			@media screen and(min-width:$break-lg-medium2){	
+				margin: -6em 0em 0em 34em;
+				
+			}
+
+			@media screen and(min-width:$break-large){
+				margin: -6em 0em 0em 41em;	
+								
+			}
+
+			@media screen and(min-width:$break-xlarge){
+				margin: -6em 0em 0em 56em;	
+			
+			}
 
 		}
 
@@ -71,10 +100,14 @@
 			color: $white; 
 		}
 
-		.form-control{
-			margin: 0.5em 0em 0em 12em; 
+			//SEARCH BAR ///////////////////
+		.Select{
+			margin: 0.3em 0em 0em 7em; 
+			width: 115%; 
+			z-index: -1; 
+
 			@media screen and(min-width:$break-xlarge){	
-				margin: 0.8em 0em 0em 22em !important; 
+				margin: 0.3em 0em 0em 22em !important; 
 			}
 
 
@@ -95,7 +128,7 @@
 
 
 			@media screen and(max-width:$break-small){	
-				margin: 1em 0em 0em 1em;
+				margin: 1em 0em 0em -2em;
 				
 					
 			} 
@@ -138,119 +171,126 @@
 			cursor: pointer;
 		}
 
-}
 
+	.float-right{
+		float: right;
+		font-size: 1em;
+		color: $white;
+		margin-right: 1em; 
 
-.float-right{
-	float: right;
-	font-size: 1em;
-	color: $white;
-	margin-right: 1em; 
+		.navbar-wrapper ul {
+			@media screen and(min-width:$break-xlarge){	
+				margin-top: -5px;
+			}
 
-	.navbar-wrapper ul {
+		}
+	  
+
 		@media screen and(min-width:$break-xlarge){	
-			margin-top: -5px;
+			margin-right: -8em;			
 		}
 
-	}
-  
-
-	@media screen and(min-width:$break-xlarge){	
-		margin-right: -8em;			
-	}
-
-	@media screen and(max-width:$break-large){	
-		margin-right: 1em;			
-	}
+		@media screen and(max-width:$break-large){	
+			margin-right: 1em;			
+		}
 
 
-	@media screen and(max-width:$break-lg-medium){	
-		margin-right: 0em;				
-	}
+		@media screen and(max-width:$break-lg-medium){	
+			margin-right: 0em;				
+		}
 
 
-	@media screen and(max-width:$break-medium){	
-		margin-right: -17em; 
-		margin-top: -7.5em !important;  			
-	}
+		@media screen and(max-width:$break-medium){	
+			margin-right: -17em; 
+			margin-top: -7.5em !important;  			
+		}
 
 
-	@media screen and(max-width:$break-medium){	
-		margin-right: -1em; 
-		margin-top: -11em !important;  			
-	}
+		@media screen and(max-width:$break-medium){	
+			margin-right: -1em; 
+			margin-top: -11em !important;  			
+		}
+
+		@media screen and(max-width:$break-small){	
+			margin-right: -3em;
+    		margin-top: -11em !important;
+						
+		}
 
 
 
-	
+
+		
 
 
-	// border: 5px solid $blue; 
+		// border: 5px solid $blue; 
 
-		.login, .signup, .home-nav{
-			padding: 4px;
-			font-family: 'Heebo', sans-serif;
-			margin-top: 7px; 
-			margin-right: 1em; 
-			@media screen and(min-width:$break-xlarge){	
-				margin-top: 13px; 
+			.login, .signup, .home-nav{
+				padding: 4px;
+				font-family: 'Heebo', sans-serif;
+				margin-top: 7px; 
+				margin-right: 1em; 
+				@media screen and(min-width:$break-xlarge){	
+					margin-top: 13px; 
+				} 
+	   					
+			}
+
+			.home-nav{
+				margin-top: 9px;
+
+				@media screen and(min-width:$break-xlarge){	
+					margin-top: 16px;
+							
+				}
+
+				@media screen and(max-width:$break-small){	
+					display: hidden; 
+							
+				}
+
+				
+			}
+
+			.home-nav:hover{
+				background-color: transparent !important;
+				text-decoration: underline !important;
+
+			}
+
+			.login, .signup{
+				border: 3px solid $white;
+				border-radius: 5px;
+				 
+			}
+
+
+			.login{
+				background-color: $white;
+				color: $perfect-blue !important; 
+				
+			}
+
+
+			.login:hover{
+				background: $perfect-blue; 
+				color: $white !important;
+				cursor: pointer;
 			} 
-   					
-		}
 
-		.home-nav{
-			margin-top: 9px;
-
-			@media screen and(min-width:$break-xlarge){	
-				margin-top: 16px;
-						
+			.signup{
+				color:$white;
+				
 			}
 
-			@media screen and(max-width:$break-small){	
-				display: hidden; 
-						
+			.signup:hover{
+				background-color: $white;
+				color: $perfect-blue;
+				cursor: pointer; 
 			}
+		
+	}
 
-			
-		}
-
-		.home-nav:hover{
-			background-color: transparent !important;
-			text-decoration: underline !important;
-
-		}
-
-		.login, .signup{
-			border: 3px solid $white;
-			border-radius: 5px;
-			 
-		}
-
-
-		.login{
-			background-color: $white;
-			color: $perfect-blue !important; 
-			
-		}
-
-
-		.login:hover{
-			background: $perfect-blue; 
-			color: $white !important;
-			cursor: pointer;
-		} 
-
-		.signup{
-			color:$white;
-			
-		}
-
-		.signup:hover{
-			background-color: $white;
-			color: $perfect-blue;
-			cursor: pointer; 
-		}
-	
 }
 
 

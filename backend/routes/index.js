@@ -5,6 +5,7 @@ var config = require('../config/config');
 var multer = require('multer');
 var upload = multer({dest: '../frontend/public/images'});
 
+
 var fs = require('fs');
 
 // include bcrpyt for hasing and checking password
@@ -378,23 +379,26 @@ router.get('/synopsis', (req, res)=>{
     });
 });
 
-router.get('/post', (req,res)=>{
-	var username = req.query.username;
-	console.log(username)
-	var postDataQuery = `SELECT * FROM post WHERE username= '${username}'` ;
-	connection.query(postDataQuery, (error, response)=>{
-		if(error){
-			throw error;
-		}else{
-			console.log(response)
-			res.json({
-				postData: response
-			})
-		}
 
-	})
+router.get('/post', (req,res)=>{
+    var username = req.query.username;
+    console.log(username)
+    var postDataQuery = `SELECT * FROM post WHERE username= '${username}'` ;
+    connection.query(postDataQuery, (error, response)=>{
+        if(error){
+            throw error;
+        }else{
+            console.log(response)
+            res.json({
+                postData: response
+            })
+        }
+
+    })
 
 });
+
+
 
 router.get('/profilepic', (req,res)=>{
 	var username = req.query.username;

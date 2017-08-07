@@ -19,6 +19,62 @@ body {
     //  font-size:100%;
 } 
 
+.loading{
+	margin: 14em 0em 0em 29em; 
+	// 	@media screen and(min-width:$break-xlarge){	
+ //   		height: 60.9%;				
+	// }
+
+}
+
+
+///LOADING////
+// add :empty to the loader's selectors //
+
+// .loader:empty,
+// .loader:empty:after {
+//   border-radius: 50%;
+//   width: 10em;
+//   height: 10em;
+// }
+
+// .loader:empty {
+//   margin: 60px auto;
+//   font-size: 10px;
+//   position: relative;
+//   text-indent: -9999em;
+//   border-top: 1.1em solid rgba(0, 0, 0, 0.2);
+//   border-right: 1.1em solid rgba(0, 0, 0, 0.2);
+//   border-bottom: 1.1em solid rgba(0, 0, 0, 0.2);
+//   border-left: 1.1em solid #000000;
+//   -webkit-transform: translateZ(0);
+//   -ms-transform: translateZ(0);
+//   transform: translateZ(0);
+//   -webkit-animation: load8 1.1s infinite linear;
+//   animation: load8 1.1s infinite linear;
+// }
+
+// @-webkit-keyframes load8 {
+//   0% {
+//     -webkit-transform: rotate(0deg);
+//     transform: rotate(0deg);
+//   }
+//   100% {
+//     -webkit-transform: rotate(360deg);
+//     transform: rotate(360deg);
+//   }
+// }
+
+// @keyframes load8 {
+//   0% {
+//     -webkit-transform: rotate(0deg);
+//     transform: rotate(0deg);
+//   }
+// }
+
+
+
+
 
 .overlay {
 	height: 44.9%;
@@ -30,9 +86,13 @@ body {
     background-color: $grey;
     opacity: 0.6; 
    	@media screen and(min-width:$break-xlarge){	
-   		height: 60.9%;
-					
-	}   
+   		height: 60.9%;				
+	}  
+	@media screen and(max-width:$break-small){	
+		height: 49.9%;  
+		width: 188%;
+						
+	} 
 }
 
 .home{
@@ -57,334 +117,345 @@ body {
 		height: 208%; 
 					
 	}  
-}
 
 
 
-.subtitle{
-	float: left; 
-	color: $white;
-	margin: 6em 0em 0em -3em; 
-	z-index: 1; 
-	font-weight: bolder;
-	font-family: 'Heebo',sans-serif;
 
-	@media screen and(min-width:$break-xlarge){	
-		margin: 9em 0em 0em -4em; 
-				
-	} 
-
-	@media screen and(max-width:$break-medium){	
-		margin: 9em 0em 0em -3em;
-				
-	} 
-
-
-
-}
-
-
-.homeNav{
-
-	margin: 3em 0em 0em 4em;
-	display: flex; 
-	@media screen and(min-width:$break-xlarge){	
-		margin: 3em 0em 0em 12em;
-   					
-	} 
-	@media screen and(max-width:$break-lg-medium){	
-		margin: 5em 0em 0em -1em;
-				
-	}
-
-	@media screen and(max-width:$break-lg-medium){	
-		h3{
-			font-size: 18px; 
-		}
-				
-	}
-
-
-	h3{
-		top: 35px;
-		position: relative;
-		color: $white;
-		margin-right: 0.5em;
-
-    } 
-
-
-	ul{
-		list-style: none;
-	}
-	ul li a{
-		text-decoration: none;
+	.subtitle{
 		float: left; 
+		color: $white;
+		margin: 6em 0em 0em -3em; 
+		z-index: 1; 
+		font-weight: bolder;
+		font-family: 'Heebo',sans-serif;
+
+		@media screen and(min-width:$break-xlarge){	
+			margin: 9em 0em 0em -4em; 
+					
+		} 
+
+		@media screen and(max-width:$break-lg-medium){	
+				margin: 5em 0em 0em 0em;
+				
+		}
+
+
+		@media screen and(max-width:$break-medium){	
+			margin: 9em 0em 0em -3em;
+					
+		} 
+
+		@media screen and(max-width:$break-small){	
+			 margin: 9em 0em 0em 2em;
+						
+		}
+
+
+
+	}
+
+
+	.homeNav{
+
+		margin: 3em 0em 0em 4em;
+		display: flex; 
+		@media screen and(min-width:$break-xlarge){	
+			margin: 3em 0em 0em 12em;
+	   					
+		} 
+		@media screen and(max-width:$break-lg-medium){	
+			margin: 5em 0em 0em -1em;
+					
+		}
+
+		@media screen and(max-width:$break-lg-medium){	
+			h3{
+				font-size: 18px; 
+			}
+					
+		}
+
+
+		h3{
+			top: 35px;
+			position: relative;
+			color: $white;
+			margin-right: 0.5em;
+
+	    } 
+
+
+		ul{
+			list-style: none;
+		}
+		ul li a{
+			text-decoration: none;
+			float: left; 
+			z-index: 3; 
+			list-style: none; 
+			cursor: pointer; 
+		}
+
+		ul li a h3:hover{
+			color: $grey; 
+			cursor: pointer; 
+		}
+	}
+
+
+	// ******************THE HEXAGONS**************
+
+
+
+	.hex{
+		position: relative;
+		width: 202px; 
+		height: 114.47px;
+		z-index: 3;
+		@media screen and(max-width:$break-lg-medium){	
+			width: 165px;
+	    	height: 87.47px;
+					
+		}
+
+	}
+
+	.hex:before,
+	.hex:after {
+		content: "";
+		position: absolute;
+		width: 0;
+		border-left: 100px solid transparent;
+		border-right: 102px solid transparent;
+		@media screen and(max-width:$break-lg-medium){	
+			border-left: 80px solid transparent;
+			border-right: 85px solid transparent;
+			
+					
+		}
+	}
+
+	.hexagon {
+		background-color: $english-red;
+		margin: 57.74px 0;
 		z-index: 3; 
-		list-style: none; 
-		cursor: pointer; 
-	}
-
-	ul li a h3:hover{
-		color: $grey; 
-		cursor: pointer; 
-	}
-}
-
-
-// ******************THE HEXAGONS**************
-
-
-
-.hex{
-	position: relative;
-	width: 202px; 
-	height: 114.47px;
-	z-index: 3;
-	@media screen and(max-width:$break-lg-medium){	
-		width: 165px;
-    	height: 87.47px;
-				
-	}
-
-}
-
-.hex:before,
-.hex:after {
-	content: "";
-	position: absolute;
-	width: 0;
-	border-left: 100px solid transparent;
-	border-right: 102px solid transparent;
-	@media screen and(max-width:$break-lg-medium){	
-		border-left: 80px solid transparent;
-		border-right: 85px solid transparent;
-		
-				
-	}
-}
-
-.hexagon {
-	background-color: $english-red;
-	margin: 57.74px 0;
-	z-index: 3; 
-	line-height: 60px; 
-	
-
-}
-
-
-.hexagon:before {
-	left:0%;
-  	bottom: 100%;
-  	border-bottom: 57.74px solid $english-red;
-  	@media screen and(max-width:$break-lg-medium){	
-  		border-bottom: 52.74px solid $english-red;
-				
-	}
-}
-
-.hexagon:after {
-	top: 100%;
-	width: 0;
-	left: 0%;
-	border-top: 57.74px solid $english-red;
-	@media screen and(max-width:$break-lg-medium){	
-  		border-top: 56.74px solid $english-red;
-				
-	}
-}
-
-// /********  HEX 2 ********/
-.hex2 {
-	background-color: $independence;
-	margin: 57.74px 0;
-	line-height: 60px;
-	left: 10em;
-	@media screen and(max-width:$break-lg-medium){
-		left: 8em;
-		bottom: 4em;
-
-	}
-    bottom: 5em;
-}
-
-
-.hex2:before {
-	left:0%;
-  	bottom: 100%;
-  	border-bottom: 57.74px solid $independence;
-  	@media screen and(max-width:$break-lg-medium){	
-  		border-bottom: 52.74px solid $independence ;
-				
-	}
-}
-
-.hex2:after {
-	top: 100%;
-	width: 0;
-	left: 0%;
-	border-top: 57.74px solid $independence;
-	@media screen and(max-width:$break-lg-medium){	
-  		border-top: 56.74px solid $independence ;
-				
-	}
-}
-
-
-// /****** HEX 3 ********/
-
-.hex3 {
-	background-color: $fun-cyan;
-	margin: 57.74px 0;
-	line-height: 60px;
-	left: 20em;
-    bottom: 33em;
-    @media screen and(max-width:$break-lg-medium){
-    	left: 16em;
-    	bottom: 29em;
+		line-height: 60px; 
 		
 
 	}
-}
 
-.hex3:before {
-	left:0%;
-  	bottom: 100%;
-  	border-bottom: 57.74px solid $fun-cyan;
-  	@media screen and(max-width:$break-lg-medium){	
-  		border-bottom: 52.74px solid $fun-cyan;
-				
+
+	.hexagon:before {
+		left:0%;
+	  	bottom: 100%;
+	  	border-bottom: 57.74px solid $english-red;
+	  	@media screen and(max-width:$break-lg-medium){	
+	  		border-bottom: 52.74px solid $english-red;
+					
+		}
 	}
 
-}
-
-.hex3:after {
-	top: 100%;
-	width: 0;
-	left: 0%;
-	border-top: 57.74px solid $fun-cyan;
-	@media screen and(max-width:$break-lg-medium){	
-  		border-top: 56.74px solid $fun-cyan;
-				
-	}
-}
-
-// /****** HEX 4 ********/
-.hex4 {
-	background-color: $midnight-blue;
-	margin: 57.74px 0;
-	line-height: 60px;
-	left: 30em;
-    bottom: 38em;
-    @media screen and(max-width:$break-lg-medium){
-    	left: 24em;
-    	bottom: 33em;
-		
+	.hexagon:after {
+		top: 100%;
+		width: 0;
+		left: 0%;
+		border-top: 57.74px solid $english-red;
+		@media screen and(max-width:$break-lg-medium){	
+	  		border-top: 56.74px solid $english-red;
+					
+		}
 	}
 
-}
+	// /********  HEX 2 ********/
+	.hex2 {
+		background-color: $independence;
+		margin: 57.74px 0;
+		line-height: 60px;
+		left: 10em;
+		@media screen and(max-width:$break-lg-medium){
+			left: 8em;
+			bottom: 4em;
 
-.hex4:before {
-	left:0%;
-  	bottom: 100%;
-  	border-bottom: 57.74px solid $midnight-blue;
-  	@media screen and(max-width:$break-lg-medium){	
-  		border-bottom: 52.74px solid $midnight-blue;
-				
-	}
-}
-
-.hex4:after {
-	top: 100%;
-	width: 0;
-	left: 0%;
-	border-top: 57.74px solid $midnight-blue;
-	@media screen and(max-width:$break-lg-medium){	
-  		border-top: 56.74px solid $midnight-blue;
-				
-	}
-}
-
-
-// /****** HEX 5 ********/
-.hex5 {
-	background-color: $english-red;
-	margin: 57.74px 0;
-	line-height: 60px;
-	left: 40em;
-    bottom: 66em;
-    @media screen and(max-width:$break-lg-medium){
-	    left: 32.5em;
-    	bottom: 58em;
-
+		}
+	    bottom: 5em;
 	}
 
-}
 
-
-.hex5:before {
-	left:0%;
-  	bottom: 100%;
-  	border-bottom: 57.74px solid $english-red;
-  	@media screen and(max-width:$break-lg-medium){	
-  		border-bottom: 52.74px solid $english-red ;
-				
+	.hex2:before {
+		left:0%;
+	  	bottom: 100%;
+	  	border-bottom: 57.74px solid $independence;
+	  	@media screen and(max-width:$break-lg-medium){	
+	  		border-bottom: 52.74px solid $independence ;
+					
+		}
 	}
-}
 
-.hex5:after {
-	top: 100%;
-	width: 0;
-	left: 0%;
-	border-top: 57.74px solid $english-red;
-	@media screen and(max-width:$break-lg-medium){	
-  		border-top: 56.74px solid $english-red;
-				
+	.hex2:after {
+		top: 100%;
+		width: 0;
+		left: 0%;
+		border-top: 57.74px solid $independence;
+		@media screen and(max-width:$break-lg-medium){	
+	  		border-top: 56.74px solid $independence ;
+					
+		}
 	}
-}
 
 
-// /***********  HEX 6**************/
-.hex6 {
-	background-color: $fun-cyan;
-	margin: 57.74px 0;
-	line-height: 60px;
-	left: 50em;
-    bottom: 71em;
-    @media screen and(max-width:$break-lg-medium){
-    	left: 40em;
-    	bottom: 61.9em;
-		
+	// /****** HEX 3 ********/
+
+	.hex3 {
+		background-color: $fun-cyan;
+		margin: 57.74px 0;
+		line-height: 60px;
+		left: 20em;
+	    bottom: 33em;
+	    @media screen and(max-width:$break-lg-medium){
+	    	left: 16em;
+	    	bottom: 29em;
+			
+
+		}
+	}
+
+	.hex3:before {
+		left:0%;
+	  	bottom: 100%;
+	  	border-bottom: 57.74px solid $fun-cyan;
+	  	@media screen and(max-width:$break-lg-medium){	
+	  		border-bottom: 52.74px solid $fun-cyan;
+					
+		}
 
 	}
-}
 
-
-
-.hex6:before {
-	left:0%;
-  	bottom: 100%;
-  	border-bottom: 57.74px solid $fun-cyan;
-  	@media screen and(max-width:$break-lg-medium){	
-  		border-bottom: 52.74px solid $fun-cyan;
-				
+	.hex3:after {
+		top: 100%;
+		width: 0;
+		left: 0%;
+		border-top: 57.74px solid $fun-cyan;
+		@media screen and(max-width:$break-lg-medium){	
+	  		border-top: 56.74px solid $fun-cyan;
+					
+		}
 	}
-}
 
-.hex6:after {
-	top: 100%;
-	width: 0;
-	left: 0%;
-	border-top: 57.74px solid $fun-cyan;
-	@media screen and(max-width:$break-lg-medium){	
-  		border-top: 56.74px solid $fun-cyan ;
-				
+	// /****** HEX 4 ********/
+	.hex4 {
+		background-color: $midnight-blue;
+		margin: 57.74px 0;
+		line-height: 60px;
+		left: 30em;
+	    bottom: 38em;
+	    @media screen and(max-width:$break-lg-medium){
+	    	left: 24em;
+	    	bottom: 33em;
+			
+		}
+
 	}
+
+	.hex4:before {
+		left:0%;
+	  	bottom: 100%;
+	  	border-bottom: 57.74px solid $midnight-blue;
+	  	@media screen and(max-width:$break-lg-medium){	
+	  		border-bottom: 52.74px solid $midnight-blue;
+					
+		}
+	}
+
+	.hex4:after {
+		top: 100%;
+		width: 0;
+		left: 0%;
+		border-top: 57.74px solid $midnight-blue;
+		@media screen and(max-width:$break-lg-medium){	
+	  		border-top: 56.74px solid $midnight-blue;
+					
+		}
+	}
+
+
+	// /****** HEX 5 ********/
+	.hex5 {
+		background-color: $english-red;
+		margin: 57.74px 0;
+		line-height: 60px;
+		left: 40em;
+	    bottom: 66em;
+	    @media screen and(max-width:$break-lg-medium){
+		    left: 32.5em;
+	    	bottom: 58em;
+
+		}
+
+	}
+
+
+	.hex5:before {
+		left:0%;
+	  	bottom: 100%;
+	  	border-bottom: 57.74px solid $english-red;
+	  	@media screen and(max-width:$break-lg-medium){	
+	  		border-bottom: 52.74px solid $english-red ;
+					
+		}
+	}
+
+	.hex5:after {
+		top: 100%;
+		width: 0;
+		left: 0%;
+		border-top: 57.74px solid $english-red;
+		@media screen and(max-width:$break-lg-medium){	
+	  		border-top: 56.74px solid $english-red;
+					
+		}
+	}
+
+
+	// /***********  HEX 6**************/
+	.hex6 {
+		background-color: $fun-cyan;
+		margin: 57.74px 0;
+		line-height: 60px;
+		left: 50em;
+	    bottom: 71em;
+	    @media screen and(max-width:$break-lg-medium){
+	    	left: 40em;
+	    	bottom: 61.9em;
+			
+
+		}
+	}
+
+
+
+	.hex6:before {
+		left:0%;
+	  	bottom: 100%;
+	  	border-bottom: 57.74px solid $fun-cyan;
+	  	@media screen and(max-width:$break-lg-medium){	
+	  		border-bottom: 52.74px solid $fun-cyan;
+					
+		}
+	}
+
+	.hex6:after {
+		top: 100%;
+		width: 0;
+		left: 0%;
+		border-top: 57.74px solid $fun-cyan;
+		@media screen and(max-width:$break-lg-medium){	
+	  		border-top: 56.74px solid $fun-cyan ;
+					
+		}
+	}
+
+
 }
-
-
-
 
 
 
