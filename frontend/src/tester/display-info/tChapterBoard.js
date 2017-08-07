@@ -159,13 +159,16 @@ class tChapterBoard extends Component{
 							</div>
 
 							<br/>
-							<div><br/><Link to = {edit} className = "chboard">
-								<Button className = "btn btn-info" type="button">
-									Edit Chapter
-								</Button>
-							</Link>	<Button className = "btn btn-danger" type="button" onClick={()=>{this.deleteChapter(chapters.id)}}>
-								Delete Chapter
-							</Button></div>
+							<div><br/>
+								<Link to = {edit} className = "chboard">
+									<Button className = "btn btn-info" type="button">
+										Edit Chapter
+									</Button>
+								</Link>
+									<Button className = "btn btn-danger" type="button" onClick={()=>{this.deleteChapter(chapters.id)}}>
+										Delete Chapter
+									</Button>
+							</div>
 
 						</Col>
 
