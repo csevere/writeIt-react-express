@@ -54,7 +54,7 @@ Once a user creates a book, they can answer various questions regarding each top
 Users are able to change their profile picture, post messages and store the books they create and edit.
 
  <p align='center'>
- 	<img src='public/writeIt-User-Page.png'>
+ 	<img src='public/writeIt-user-page.png'>
  </p>
  
 ## Challenges
