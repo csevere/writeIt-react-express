@@ -80,7 +80,7 @@ class tResultsPage extends Component{
 
 
 
-        console.log(username)
+        console.log(username);
         var userFollowed = username;
         var userFollowing = this.props.registerResponse.name;
         $.getJSON(`http://localhost:5000/follow?userFollowed=${userFollowed}&userFollowing=${userFollowing}`, (serverData)=>{
