@@ -31,7 +31,7 @@ import tNotePadBoard from './tester/display-info/tNotePadBoard';
 import Synopsis from './components/Synopsis';
 import tSynopsisBoard from './tester/display-info/tSynopsisBoard';
 import tPicture from './tester/write-menu/tPicture'; 
-
+import tUserProfile from './tester/tUserProfile';
 //OTHER HOME PAGE LINKS
 import Resources from './components/Resources';
 import Faqs from './components/Faqs';

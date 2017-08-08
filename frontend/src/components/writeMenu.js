@@ -78,7 +78,7 @@ class writeMenu extends Component{
  
 	render(){
 
-
+		console.log(bookTitle)
 		var bookTitle = this.state.bookData.title;
 		var bookGenre = this.state.bookData.genre;	
 		var bookWordCount = this.state.bookData.word_count;
@@ -183,39 +183,53 @@ class writeMenu extends Component{
 						</div>
 
 						<div className = "container right-db">
-								<Form onSubmit={this.handleDict}>
-									<FormGroup>
-										<Radio id="dictionary" name="radioGroup" value="dictionary" inline>
-											<h4>Dictionary</h4>
-										</Radio>
 
-										<Radio id="thesaurus" name="radioGroup" value="thesaurus" inline>
-											<h4>Thesaurus</h4> 
-										</Radio>
-										<Button className="btn-primary btn btn-book" type='submit'>Search</Button>
-									</FormGroup>
+							<div className = "your-book col-sm-4"> <h3>Your Book</h3>
 
-									<FormGroup >
-										<FormControl id="dict-input" type = "text" placeholder = "Enter text"/>
-										
-									</FormGroup>
-								</Form>
+								<ul className="yourBookInfo">
+									<li><div className="title"><h3>Title: {book}</h3></div></li>
+									<li><div className="genre"><h3>Genre: {bookGenre}</h3></div></li>
+									<li><div className="wordcount"><h3>Word Count: {bookWordCount} </h3></div></li>
+									<li><div className="t-date"><h3>Target Date: {bookTargetDate}</h3></div></li>
+								</ul>
+							</div>
+								<div>
+									<Form onSubmit={this.handleDict}>
+
+
+										<FormGroup >
+											<FormControl id="dict-input" type = "text" placeholder = "Enter text"/>
+											<Radio id="dictionary" name="radioGroup" value="dictionary" inline>
+												<h4 className="dict-options">Dictionary</h4>
+											</Radio>
+
+											<Radio id="thesaurus" name="radioGroup" value="thesaurus" inline>
+												<h4 className="dict-options">Thesaurus</h4>
+											</Radio>
+										</FormGroup>
+
+										<FormGroup>
+											<Button id='dict-button' className="btn-primary btn btn-book" type='submit'>Search</Button>
+
+
+										</FormGroup>
+
+									</Form>
+								</div>
+
 								{synonymArray}
 								{definitionArray}
+
+
 						</div> 
 
 					</Row>	
 		        </Grid>
 
-    			<div className = "your-book"> <h3>Your Book</h3>
-    			 	<div className="lines"></div>
-	    			<ul className="yourBookInfo">
-						<li><div className="title"><h3>Title: {book}</h3></div></li>
-						<li><div className="genre"><h3>Genre: {bookGenre}</h3></div></li>
-						<li><div className="wordcount"><h3>Word Count: {bookWordCount} </h3></div></li>
-						<li><div className="t-date"><h3>Target Date: {bookTargetDate}</h3></div></li>
-					</ul>
-				</div>  
+
+
+
+
 		    
 
 		    </div>
