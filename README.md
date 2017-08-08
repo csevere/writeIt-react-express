@@ -5,10 +5,10 @@
 WriteIT is a productivity tool for writers, offering a variety of ways to organize, structure, and plan manuscripts. It also incorporates a social networking feature that allows writers to add friends, share their work, and receive or give feedback.
 
 ## Team Members
-- [ Chad Mckee]
-- [ Porscha Johnson]
-- [ Chris Boekel]
-- [ Carla Severe]
+- [Chad Mckee]
+- [Porscha Johnson]
+- [Chris Boekel]
+- [Carla Severe]
 
 ## Languages and Technologies
 
