@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d65a446-ab4d-4f9e-8145-ea379d42d1ad" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/compass/.sass-cache/3b706159e975dc6831dd4a58944425ec23329521/_writemenu.scssc" afterPath="$PROJECT_DIR$/frontend/compass/.sass-cache/3b706159e975dc6831dd4a58944425ec23329521/_writemenu.scssc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/tester/tResultsPage.js" afterPath="$PROJECT_DIR$/frontend/src/tester/tResultsPage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/compass/sass/_writemenu.scss" afterPath="$PROJECT_DIR$/frontend/compass/sass/_writemenu.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/public/css/styles.css" afterPath="$PROJECT_DIR$/frontend/public/css/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/components/writeMenu.js" afterPath="$PROJECT_DIR$/frontend/src/components/writeMenu.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,8 +44,18 @@
       <file leaf-file-name="writeMenu.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/components/writeMenu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="82" column="9" lean-forward="false" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
+            <state relative-caret-position="307">
+              <caret line="210" column="91" lean-forward="true" selection-start-line="210" selection-start-column="91" selection-end-line="210" selection-end-column="91" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_writemenu.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/compass/sass/_writemenu.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="59">
+              <caret line="49" column="22" lean-forward="true" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -58,34 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tResultsPage.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frontend/src/tester/tResultsPage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="100" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#342#381#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="_search.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/compass/sass/_search.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="512">
               <caret line="47" column="56" lean-forward="false" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_home.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/compass/sass/_home.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="99" column="27" lean-forward="false" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -127,6 +117,7 @@
       <find>login</find>
       <find>this.props.chapters.</find>
       <find>this.state.plotDataData.main_plot;</find>
+      <find>h4</find>
     </findStrings>
     <replaceStrings>
       <replace>this.state.plotData.main_plot;</replace>
@@ -172,9 +163,10 @@
         <option value="$PROJECT_DIR$/frontend/src/tester/display-info/tSynopsisBoard.js" />
         <option value="$PROJECT_DIR$/frontend/src/tester/NavBarTest.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/UserProfile.js" />
-        <option value="$PROJECT_DIR$/frontend/src/components/writeMenu.js" />
         <option value="$PROJECT_DIR$/frontend/compass/sass/_search.scss" />
         <option value="$PROJECT_DIR$/frontend/src/tester/tResultsPage.js" />
+        <option value="$PROJECT_DIR$/frontend/src/components/writeMenu.js" />
+        <option value="$PROJECT_DIR$/frontend/compass/sass/_writemenu.scss" />
       </list>
     </option>
   </component>
@@ -473,7 +465,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103944000" />
+    <option name="totallyTimeSpent" value="106595000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="709" extended-state="6" />
@@ -517,13 +509,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/src/actions/RegisterAction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/reducers/CritiqueReducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -713,7 +698,7 @@
           <caret line="119" column="29" lean-forward="false" selection-start-line="119" selection-start-column="29" selection-end-line="119" selection-end-column="29" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
-            <marker date="1502194985000" expanded="true" signature="9049:9112" ph="&lt;FormGroup/&gt;" />
+            <marker date="1502198025000" expanded="true" signature="9049:9112" ph="&lt;FormGroup/&gt;" />
           </folding>
         </state>
       </provider>
@@ -827,11 +812,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/writeMenu.js">
+    <entry file="file://$PROJECT_DIR$/frontend/src/tester/tResultsPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="82" column="9" lean-forward="false" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="197">
+          <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+            <element signature="e#342#381#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -859,14 +847,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/tester/tResultsPage.js">
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/writeMenu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="100" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#342#381#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="307">
+          <caret line="210" column="91" lean-forward="true" selection-start-line="210" selection-start-column="91" selection-end-line="210" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/compass/sass/_writemenu.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="49" column="22" lean-forward="true" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
