@@ -1124,40 +1124,54 @@ h2 {
   }
 }
 
-/* line 43, ../../compass/sass/_writemenu.scss */
+/* line 41, ../../compass/sass/_writemenu.scss */
+.your-book {
+  display: block;
+  background: rgba(248, 248, 255, 0.8);
+  margin-bottom: 20px;
+  border-radius: 10%;
+}
+
+/* line 48, ../../compass/sass/_writemenu.scss */
+#dict-button {
+  position: static;
+  margin-top: -10px;
+}
+
+/* line 55, ../../compass/sass/_writemenu.scss */
 .writeNav {
   margin: 8em 0em 0em 9em;
   display: flex;
 }
 @media screen and (min-width: 1732px) {
-  /* line 43, ../../compass/sass/_writemenu.scss */
+  /* line 55, ../../compass/sass/_writemenu.scss */
   .writeNav {
     margin: 8em 0em 0em 23em;
   }
 }
 @media screen and (min-width: 414px) {
-  /* line 43, ../../compass/sass/_writemenu.scss */
+  /* line 55, ../../compass/sass/_writemenu.scss */
   .writeNav {
     margin: 8em 0em 0em 2em;
   }
 }
 @media screen and (min-width: 320px) {
-  /* line 43, ../../compass/sass/_writemenu.scss */
+  /* line 55, ../../compass/sass/_writemenu.scss */
   .writeNav {
     margin: 3em 0em 0em -1em;
   }
 }
-/* line 57, ../../compass/sass/_writemenu.scss */
+/* line 69, ../../compass/sass/_writemenu.scss */
 .writeNav h3 {
   top: 35px;
   position: relative;
   color: #000000;
 }
-/* line 64, ../../compass/sass/_writemenu.scss */
+/* line 76, ../../compass/sass/_writemenu.scss */
 .writeNav ul {
   list-style: none;
 }
-/* line 67, ../../compass/sass/_writemenu.scss */
+/* line 79, ../../compass/sass/_writemenu.scss */
 .writeNav ul li a {
   text-decoration: none;
   float: left;
@@ -1165,26 +1179,26 @@ h2 {
   list-style: none;
   cursor: pointer;
 }
-/* line 75, ../../compass/sass/_writemenu.scss */
+/* line 87, ../../compass/sass/_writemenu.scss */
 .writeNav ul li a h3:hover {
   color: #777;
   cursor: pointer;
 }
-/* line 81, ../../compass/sass/_writemenu.scss */
+/* line 93, ../../compass/sass/_writemenu.scss */
 .writeNav h3, .writeNav p {
   font-size: 100%;
   font-weight: normal;
 }
-/* line 86, ../../compass/sass/_writemenu.scss */
+/* line 98, ../../compass/sass/_writemenu.scss */
 .writeNav ul, .writeNav li {
   list-style: none;
 }
-/* line 90, ../../compass/sass/_writemenu.scss */
+/* line 102, ../../compass/sass/_writemenu.scss */
 .writeNav ul {
   overflow: hidden;
   padding: 3em;
 }
-/* line 95, ../../compass/sass/_writemenu.scss */
+/* line 107, ../../compass/sass/_writemenu.scss */
 .writeNav ul li a {
   text-decoration: none;
   color: #000;
@@ -1194,23 +1208,23 @@ h2 {
   width: 10em;
   padding: 1em;
 }
-/* line 105, ../../compass/sass/_writemenu.scss */
+/* line 117, ../../compass/sass/_writemenu.scss */
 .writeNav ul li {
   margin: 1em;
   float: left;
 }
-/* line 111, ../../compass/sass/_writemenu.scss */
+/* line 123, ../../compass/sass/_writemenu.scss */
 .writeNav ul li h3 {
   font-size: 140%;
   font-weight: bold;
   padding-bottom: 10px;
 }
-/* line 117, ../../compass/sass/_writemenu.scss */
+/* line 129, ../../compass/sass/_writemenu.scss */
 .writeNav ul li p {
   font-family: "Reenie Beanie",arial,sans-serif;
   font-size: 180%;
 }
-/* line 124, ../../compass/sass/_writemenu.scss */
+/* line 136, ../../compass/sass/_writemenu.scss */
 .writeNav ul li a {
   text-decoration: none;
   color: #000;
@@ -1226,13 +1240,13 @@ h2 {
   /* Opera */
   box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
 }
-/* line 143, ../../compass/sass/_writemenu.scss */
+/* line 155, ../../compass/sass/_writemenu.scss */
 .writeNav ul li a {
   -webkit-transform: rotate(-6deg);
   -o-transform: rotate(-6deg);
   -moz-transform: rotate(-6deg);
 }
-/* line 150, ../../compass/sass/_writemenu.scss */
+/* line 162, ../../compass/sass/_writemenu.scss */
 .writeNav ul li:nth-child(even) a {
   -o-transform: rotate(4deg);
   -webkit-transform: rotate(4deg);
@@ -1240,7 +1254,7 @@ h2 {
   position: relative;
   top: 5px;
 }
-/* line 158, ../../compass/sass/_writemenu.scss */
+/* line 170, ../../compass/sass/_writemenu.scss */
 .writeNav ul li:nth-child(3n) a {
   -o-transform: rotate(-3deg);
   -webkit-transform: rotate(-3deg);
@@ -1248,7 +1262,7 @@ h2 {
   position: relative;
   top: -5px;
 }
-/* line 166, ../../compass/sass/_writemenu.scss */
+/* line 178, ../../compass/sass/_writemenu.scss */
 .writeNav ul li:nth-child(5n) a {
   -o-transform: rotate(5deg);
   -webkit-transform: rotate(5deg);
@@ -1256,7 +1270,7 @@ h2 {
   position: relative;
   top: -10px;
 }
-/* line 178, ../../compass/sass/_writemenu.scss */
+/* line 190, ../../compass/sass/_writemenu.scss */
 .writeNav ul li a:hover, .writeNav ul li a:focus {
   -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
   -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
@@ -1267,7 +1281,7 @@ h2 {
   position: relative;
   z-index: 5;
 }
-/* line 192, ../../compass/sass/_writemenu.scss */
+/* line 204, ../../compass/sass/_writemenu.scss */
 .writeNav ul li a {
   text-decoration: none;
   color: #000;
@@ -1283,7 +1297,7 @@ h2 {
   -o-transition: -o-transform .15s linear;
   -webkit-transition: -webkit-transform .15s linear;
 }
-/* line 211, ../../compass/sass/_writemenu.scss */
+/* line 223, ../../compass/sass/_writemenu.scss */
 .writeNav ul li:nth-child(even) a {
   -o-transform: rotate(4deg);
   -webkit-transform: rotate(4deg);
@@ -1292,7 +1306,7 @@ h2 {
   top: 5px;
   background: #cfc;
 }
-/* line 220, ../../compass/sass/_writemenu.scss */
+/* line 232, ../../compass/sass/_writemenu.scss */
 .writeNav ul li:nth-child(3n) a {
   -o-transform: rotate(-3deg);
   -webkit-transform: rotate(-3deg);
