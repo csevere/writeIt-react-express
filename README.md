@@ -4,10 +4,6 @@
 ## About
 WriteIT is a productivity tool for writers, offering a variety of ways to organize, structure, and plan manuscripts. It also incorporates a social networking feature that allows writers to add friends, share their work, and receive or give feedback.
 
-<p align='center'>
-  <img src="public/writeIt-page.png">
-</p>
-
 ## Team Members
 - [ Chad Mckee]
 - [ Porscha Johnson]
@@ -48,6 +44,20 @@ The home page is the main hub of the site, users are able to learn more about th
   <img src="public/writeIt-resources.png">
 </p>
 
+### Write Menu
+	Once a user creates a book, they can answer various questions regarding each topic below.
+
+<p align='center'>
+  <img src="public/writeIt-Menu.png">
+ </p>
+
+### User Profile Page
+	Users are able to change their profile picture, post messages and store the books they create and edit.
+
+ <p align='center'>
+ 	<img src='public/writeIt-user-page.png'>
+ </p>
+ 
 ## Challenges
 
 TBD
