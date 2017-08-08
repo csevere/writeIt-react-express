@@ -96,9 +96,9 @@ class tResultsPage extends Component{
 	render(){
 
 
-        if(this.props.registerResponse.name === undefined){
-            this.props.history.push('/login')
-        }
+        // if(this.props.registerResponse.name === undefined){
+        //     this.props.history.push('/login')
+        // }
 
         var resultsArray = [];
         var linkToUser = "/profile/"
@@ -112,16 +112,28 @@ class tResultsPage extends Component{
             }
 
            resultsArray.push(
-               <div className = "user-results">
-                    <Grid className = "user-view">
-                        <button onClick={()=>this.followUser(user.username)} className="btn-primary btn btn-book" type='submit'>Follow</button>
-                            <img src={imageLocation} />
-                            <div>{user.username}</div>  
+               <div className = "user-results text-center">
+
+
+                            <div><img className="user-image" src={imageLocation} /></div>
+
+
+                            <div>{user.username}</div>
+                            <div className = "userbubble" onClick = "">
+                                <div>{user.about}</div>
+                            </div>
+
+                            <div>
+                                <button id='follow-button' onClick={()=>this.followUser(user.username)} className="btn-primary btn " type='submit'>Follow</button>
+                            <br/><br/><hr/>
+                            </div>
+
+
+
+
                         
-                        <div className = "userbubble" onClick = "">
-                            <div>{user.about}</div> 
-                        </div> 
-                    </Grid>
+
+
                 </div>
 
            )

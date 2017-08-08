@@ -890,7 +890,7 @@ h2 {
 .new-book-form {
   display: inline-block;
   margin-top: 13em;
-  background-color: #f8f8ff;
+  background-color: #bdbdbd;
   border: 1px solid #ddd;
   padding-top: 10px;
 }
@@ -2202,7 +2202,7 @@ h2 {
 .mainforum-wrapper .latest-comments-left {
   float: left;
   margin-right: 1em;
-  background-color: #f8f8ff;
+  background-color: #bdbdbd;
   border: 1px solid #ddd;
   box-shadow: 2px 2px 11px 1px rgba(0, 0, 0, 0.2);
 }
@@ -2280,7 +2280,7 @@ h2 {
   float: right;
   height: 100%;
   margin-right: 6em;
-  background-color: #f8f8ff;
+  background-color: #bdbdbd;
   border: 1px solid #ddd;
   box-shadow: 2px 2px 11px 1px rgba(0, 0, 0, 0.2);
 }
@@ -2359,7 +2359,7 @@ h2 {
   margin-right: 1em;
   display: block;
   float: left;
-  background-color: #f8f8ff;
+  background-color: #bdbdbd;
   border: 1px solid #ddd;
   box-shadow: 2px 2px 11px 1px rgba(0, 0, 0, 0.2);
   padding: 10px;
@@ -2379,7 +2379,7 @@ h2 {
 .cat-forum .forum-cat-right {
   float: right;
   margin-right: 6em;
-  background-color: #f8f8ff;
+  background-color: #bdbdbd;
   border: 1px solid #ddd;
   box-shadow: 2px 2px 11px 1px rgba(0, 0, 0, 0.2);
 }
@@ -2515,8 +2515,8 @@ h2 {
   display: table;
   padding: 10px;
   border-radius: 5px;
-  border: solid #f8f8ff;
-  background: #f8f8ff;
+  border: solid #bdbdbd;
+  background: #bdbdbd;
   margin-left: 2em;
   color: black;
   box-shadow: 1px 3px 9px 1px #82817b;
@@ -2544,7 +2544,7 @@ h2 {
   width: 0;
   height: 0;
   border-top: 13px solid transparent;
-  border-right: 26px solid #f8f8ff;
+  border-right: 26px solid #bdbdbd;
   border-bottom: 13px solid transparent;
 }
 /* line 103, ../../compass/sass/_cattopic.scss */
@@ -2563,7 +2563,7 @@ h2 {
   float: right;
   height: 100%;
   margin-right: 6em;
-  background-color: #f8f8ff;
+  background-color: #bdbdbd;
   border: 1px solid #ddd;
   box-shadow: 2px 2px 11px 1px rgba(0, 0, 0, 0.2);
 }
@@ -2699,7 +2699,7 @@ h2 {
   display: flex;
   padding: 0;
   margin: 0;
-  background-color: #f8f8ff;
+  background-color: #bdbdbd;
   margin-top: 46em;
   width: 100%;
 }
@@ -2818,6 +2818,7 @@ h2 {
 
 /* line 4, ../../compass/sass/_search.scss */
 .search-wrapper-main {
+  background-image: url("/images/home-bg.jpeg");
   position: absolute;
   background-color: #e8f3f3;
   width: 100%;
@@ -2836,48 +2837,59 @@ h2 {
   overflow: scroll;
 }
 
-/* line 23, ../../compass/sass/_search.scss */
+/* line 24, ../../compass/sass/_search.scss */
 .search-wrapper {
   margin-top: 7em;
   display: flex;
 }
 @media screen and (max-width: 767px) {
-  /* line 23, ../../compass/sass/_search.scss */
+  /* line 24, ../../compass/sass/_search.scss */
   .search-wrapper {
     margin-top: 10em;
   }
 }
-/* line 30, ../../compass/sass/_search.scss */
+/* line 31, ../../compass/sass/_search.scss */
 .search-wrapper h2 {
   font-size: 1.5em;
 }
-/* line 34, ../../compass/sass/_search.scss */
+/* line 35, ../../compass/sass/_search.scss */
 .search-wrapper .results {
   float: left;
   margin-right: 1em;
-  background-color: #f8f8ff;
+  background-color: ghostwhite;
   border: 1px solid #ddd;
   box-shadow: 2px 2px 11px 1px rgba(0, 0, 0, 0.2);
 }
 @media screen and (max-width: 1200px) {
-  /* line 34, ../../compass/sass/_search.scss */
+  /* line 35, ../../compass/sass/_search.scss */
   .search-wrapper .results {
     width: 56%;
   }
 }
 @media screen and (max-width: 991px) {
-  /* line 34, ../../compass/sass/_search.scss */
+  /* line 35, ../../compass/sass/_search.scss */
   .search-wrapper .results {
     width: 75%;
     margin-left: 4em;
   }
 }
 /* line 63, ../../compass/sass/_search.scss */
+.search-wrapper #follow-button {
+  position: static;
+}
+/* line 67, ../../compass/sass/_search.scss */
+.search-wrapper .user-image {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  height: 250px;
+  width: 200px;
+}
+/* line 74, ../../compass/sass/_search.scss */
 .search-wrapper .user-view {
-  display: flex;
+  display: block;
   margin-bottom: 2em;
 }
-/* line 68, ../../compass/sass/_search.scss */
+/* line 79, ../../compass/sass/_search.scss */
 .search-wrapper .user-view .userbubble {
   position: relative;
   width: 510px;
@@ -2891,20 +2903,20 @@ h2 {
   box-shadow: 1px 3px 9px 1px #82817b;
 }
 @media screen and (max-width: 1200px) {
-  /* line 68, ../../compass/sass/_search.scss */
+  /* line 79, ../../compass/sass/_search.scss */
   .search-wrapper .user-view .userbubble {
     width: 410px;
   }
 }
-/* line 82, ../../compass/sass/_search.scss */
+/* line 93, ../../compass/sass/_search.scss */
 .search-wrapper .user-view .userbubble a {
   color: #ffcc00;
 }
-/* line 85, ../../compass/sass/_search.scss */
+/* line 96, ../../compass/sass/_search.scss */
 .search-wrapper .user-view .userbubble a:hover {
   color: #FC6554;
 }
-/* line 91, ../../compass/sass/_search.scss */
+/* line 102, ../../compass/sass/_search.scss */
 .search-wrapper .user-view .userbubble:before {
   content: "";
   position: absolute;
@@ -2914,7 +2926,7 @@ h2 {
   height: 0;
   border-bottom: 13px solid transparent;
 }
-/* line 101, ../../compass/sass/_search.scss */
+/* line 112, ../../compass/sass/_search.scss */
 .search-wrapper .user-view .userbubble textarea {
   position: inherit;
   width: inherit;
