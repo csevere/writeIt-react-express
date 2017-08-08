@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4d65a446-ab4d-4f9e-8145-ea379d42d1ad" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/compass/sass/_search.scss" afterPath="$PROJECT_DIR$/frontend/compass/sass/_search.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/compass/sass/_variables.scss" afterPath="$PROJECT_DIR$/frontend/compass/sass/_variables.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/public/css/styles.css" afterPath="$PROJECT_DIR$/frontend/public/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/tester/tResultsPage.js" afterPath="$PROJECT_DIR$/frontend/src/tester/tResultsPage.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -61,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tResultsPage.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tResultsPage.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/src/tester/tResultsPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="602">
-              <caret line="127" column="42" lean-forward="false" selection-start-line="127" selection-start-column="42" selection-end-line="127" selection-end-column="42" />
+            <state relative-caret-position="167">
+              <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="100" selection-end-column="9" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#342#381#0" expanded="true" />
@@ -74,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_search.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_search.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/compass/sass/_search.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="37" column="37" lean-forward="false" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+            <state relative-caret-position="512">
+              <caret line="47" column="56" lean-forward="false" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -88,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/frontend/compass/sass/_home.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="498">
-              <caret line="99" column="27" lean-forward="true" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="47" />
+              <caret line="99" column="27" lean-forward="false" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -176,8 +173,8 @@
         <option value="$PROJECT_DIR$/frontend/src/tester/NavBarTest.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/UserProfile.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/writeMenu.js" />
-        <option value="$PROJECT_DIR$/frontend/src/tester/tResultsPage.js" />
         <option value="$PROJECT_DIR$/frontend/compass/sass/_search.scss" />
+        <option value="$PROJECT_DIR$/frontend/src/tester/tResultsPage.js" />
       </list>
     </option>
   </component>
@@ -476,7 +473,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103736000" />
+    <option name="totallyTimeSpent" value="103944000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="709" extended-state="6" />
@@ -716,7 +713,7 @@
           <caret line="119" column="29" lean-forward="false" selection-start-line="119" selection-start-column="29" selection-end-line="119" selection-end-column="29" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
-            <marker date="1502104246000" expanded="true" signature="9049:9112" ph="&lt;FormGroup/&gt;" />
+            <marker date="1502194985000" expanded="true" signature="9049:9112" ph="&lt;FormGroup/&gt;" />
           </folding>
         </state>
       </provider>
@@ -838,6 +835,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/compass/sass/_home.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="99" column="27" lean-forward="false" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/compass/sass/_search.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="47" column="56" lean-forward="false" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/components/UserProfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
@@ -846,30 +859,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/compass/sass/_home.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="99" column="27" lean-forward="true" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/tester/tResultsPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="127" column="42" lean-forward="false" selection-start-line="127" selection-start-column="42" selection-end-line="127" selection-end-column="42" />
+        <state relative-caret-position="167">
+          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="100" selection-end-column="9" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#342#381#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/compass/sass/_search.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="37" column="37" lean-forward="false" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>

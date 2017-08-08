@@ -96,9 +96,9 @@ class tResultsPage extends Component{
 	render(){
 
 
-        // if(this.props.registerResponse.name === undefined){
-        //     this.props.history.push('/login')
-        // }
+        if(this.props.registerResponse.name === undefined){
+            this.props.history.push('/login')
+        }
 
         var resultsArray = [];
         var linkToUser = "/profile/"
