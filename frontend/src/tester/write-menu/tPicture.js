@@ -50,6 +50,7 @@ componentDidMount(){
 
     handlePictureSubmit(event){
       event.preventDefault();
+      event.stopPropagation();
       console.log(event.target);
       var bookTitle = document.getElementById('pic-id').value;
       var bookPicture = document.getElementById('pic-id2').files[0];
@@ -58,14 +59,15 @@ componentDidMount(){
       formData.append('bookPicture', bookPicture);
       formData.append('username', this.props.registerResponse.name);
 
-        var thePromise = $.ajax({
-          method: "POST",
-          url: "http://localhost:5000/bookpic",
-              dataType: 'json',
-              cache: false,
-              data: formData,
-              contentType: false
-        });
+      var thePromise = $.ajax({
+        method: "POST",
+        url: "http://localhost:5000/bookpic",
+        processData: false,
+        dataType: 'json',
+        cache: false,
+        data: formData,
+        contentType: false
+      });
         //this.props.history.push(`/write/${this.props.match.params.book}`)
     }
  
