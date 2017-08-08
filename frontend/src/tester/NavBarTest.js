@@ -6,6 +6,7 @@ import { Form, Grid, Row, Col, FormGroup, FormControl, Button, ControlLabel } fr
 import $ from 'jquery';
 import 'react-select/dist/react-select.css';
 import {BrowserRouter, Route, Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 
 
@@ -40,20 +41,44 @@ class NavBarTest extends React.Component {
         console.log(this.props)
     }
 
+    componentWillReceiveProps(){
+        $.getJSON(`http://localhost:5000/profiles`, (serverData)=>{
+            // log the JSON response from Express
+            var profilesArray = []
+            console.log(serverData.profileData)
+            for(let i = 0; i < serverData.profileData.length; i++){
+                profilesArray.push({value: serverData.profileData[i].username, label: serverData.profileData[i].username})
+                //profilesArray.push('1')
+            }
+            console.log(profilesArray);
+
+            this.setState({
+                options: profilesArray
+            })
+        })
+        console.log(this.props)
+    }
+
+
     logChange(val) {
+
 		this.setState({
 				selectVal: val.value
-		})
+		});
 	  	console.log(this.props);
+
+
         this.props.history.push(`/profiles?user=${val.value}`);
+
+
         
 	}
 
-	performSearch(){
-        console.log('called');
-        var searchInput = document.getElementsByClassName('Select-input');
-        console.log(searchInput)
-    }
+    // performSearch(){
+    //     console.log('called');
+    //     var searchInput = document.getElementsByClassName('Select-input');
+    //     console.log(searchInput)
+    // }
 
 
 
@@ -81,4 +106,24 @@ class NavBarTest extends React.Component {
   }
 }
 
-export default NavBarTest;
+function mapStateToProps(state){
+    return{
+        // characterResponse: state.characterReducer,
+        registerResponse: state.registerReducer
+
+
+    }
+}
+
+// function mapDispatchToProps(dispatch){
+//   return bindActionCreators({
+//     resultspageAction: ResultsPageAction
+//   }, dispatch)
+// }
+
+
+//
+// export default tResultsPage;
+
+export default connect(mapStateToProps,null)(NavBarTest);
+//export default NavBarTest;

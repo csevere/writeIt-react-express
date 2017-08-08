@@ -4,6 +4,7 @@ import { Form, Grid, Row, Col, FormGroup, FormControl, Button, ControlLabel } fr
 import ScrollableAnchor from 'react-scrollable-anchor';
 import  {bindActionCreators} from 'redux';
 // import CharacterAction from '../actions/CharacterAction';
+import {Router} from 'react-router-dom'
 import {connect} from 'react-redux';
 // import Slider from 'react-slick';
 // import 'slick-carousel/slick/slick.css';
@@ -48,9 +49,37 @@ class tResultsPage extends Component{
         
     }
 
+    componentWillReceiveProps(){
+        var specificUser = this.props.location.search.slice(6);
+        console.log(specificUser);
+        if(specificUser !== undefined){
+            $.getJSON(`http://localhost:5000/results?specificUser=${specificUser}`, (serverData)=>{
+                console.log(serverData);
+                this.setState({
+                    resultsData: serverData.resultsData
+                })
+            })
+
+
+        }else{
+            $.getJSON(`http://localhost:5000/results`, (serverData)=>{
+                console.log(serverData);
+                this.setState({
+                    resultsData: serverData.resultsData
+                })
+            })
+
+        }
+
+
+    }
+
 
 
     followUser(username){
+
+
+
         console.log(username)
         var userFollowed = username;
         var userFollowing = this.props.registerResponse.name;
@@ -66,8 +95,10 @@ class tResultsPage extends Component{
  
 	render(){
 
-        
 
+        if(this.props.registerResponse.name === undefined){
+            this.props.history.push('/login')
+        }
 
         var resultsArray = [];
         var linkToUser = "/profile/"
