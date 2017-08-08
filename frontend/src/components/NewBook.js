@@ -127,7 +127,7 @@ class NewBook extends Component{
 										<option value="80,000- 90,000">80,000 - 90,000 </option>
 										<option value="90,000 - 100,00">90,000 - 100,000 </option>
 										<option value="100,000 - 109,000">100,000 - 110,000</option>
-										<option value="110,000 or above">110,000 or above </option>
+										<option value="110,000 or above">110,000 or above</option>
 									</FormControl>
 									<ControlLabel>What is the target completion date? </ControlLabel>
 										<DatePicker />

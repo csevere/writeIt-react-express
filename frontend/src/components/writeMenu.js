@@ -78,7 +78,7 @@ class writeMenu extends Component{
  
 	render(){
 
-
+		console.log(bookTitle)
 		var bookTitle = this.state.bookData.title;
 		var bookGenre = this.state.bookData.genre;	
 		var bookWordCount = this.state.bookData.word_count;
