@@ -109,39 +109,39 @@ class tUserProfile extends Component{
 
             <div className = "container-fluid header">
               <Col md={12}>
-                
+
                   <Col md ={4} className = "col-md-offset-4 left">
 
                     <div className = "prof-pic">
                       <a href="https://placeholder.com"><img src="http://via.placeholder.com/200x200"/></a>
                     </div>
-              
+
                     <div className = "username text-center">
                       <h3>Username</h3>
-                      <h4>Location</h4> 
-                    </div> 
-                  </Col> 
-              
-  
+                      <h4>Location</h4>
+                    </div>
+                  </Col>
+
+
                   <Col md = {4}>
                    <div className = "stats-right">
                         <div>
                           <ul>
                             <li style = {{background: "white"}}><div id= "friends"><h4>0 Friends</h4></div></li>
                             <li style = {{background: "blue", color: "white", cursor: "pointer"}}><div id = "addfriend"><h4> + Add Friend</h4></div></li>
-                          </ul>   
+                          </ul>
                         </div>
                     </div>
-                  </Col> 
+                  </Col>
 
-                </Col> 
+                </Col>
             </div>
 
             <Row className = "second-row">
               <Grid className = "col-md-12">
 
                 <Col md = {3} className = "about-left">
-                  <div><h4>About</h4></div> 
+                  <div><h4>About</h4></div>
                 </Col>
 
                 <Col md = {7} className = "mybooks-right">
@@ -149,30 +149,30 @@ class tUserProfile extends Component{
 
                   <Col md = {3}>
                       <div className = "createbook">
-                        
+
                         <div className = "book">Create Book</div>
 
                         <div>
-                          <form> 
+                          <form>
                             <Link to="/newbook"><button className="btn-primary btn btn-book">Create</button></Link>
-                          </form> 
-                        </div> 
+                          </form>
+                        </div>
                       </div>
-                      
-                  </Col> 
 
-                  
-                  
+                  </Col>
+
+
+
                 </Col>
-              </Grid> 
+              </Grid>
 
             </Row>
 
             <Row className = "third-row">
               <Grid className = "col-md-12">
                 <Col md = {3} className = "twitter-left">
-                  <div><h4>Twitter</h4></div> 
-                </Col> 
+                  <div><h4>Twitter</h4></div>
+                </Col>
 
                  <Col md = {7} className = "messages-left">
                   <div>
@@ -181,17 +181,17 @@ class tUserProfile extends Component{
                           <FormControl id = "post-message" componentClass="textarea" placeholder="post a message" />
                         </FormGroup>
                       </Form>
-                  </div> 
+                  </div>
 
                   <div className = "display-message">
                     <div>(Username)(theDate):</div>
-                    <div>(Posted Message Lorem ipsum dolor sit amet, 
-                      graeci pertinacia est at, essent iisque sea an. 
-                      Eos autem molestiae id, ad vim quot evertitur 
-                      quaerendum. Eligendi patrioque et nec, tritani 
+                    <div>(Posted Message Lorem ipsum dolor sit amet,
+                      graeci pertinacia est at, essent iisque sea an.
+                      Eos autem molestiae id, ad vim quot evertitur
+                      quaerendum. Eligendi patrioque et nec, tritani
                       referrentur no sit. Vis graece virtute feugait)
                     </div>
-                  </div> 
+                  </div>
 
                   <div className = "write-message-box">
                       <Form>
@@ -199,13 +199,13 @@ class tUserProfile extends Component{
                           <FormControl id = "post-reply" componentClass="textarea" placeholder="write a reply..." />
                         </FormGroup>
                       </Form>
-                  </div> 
+                  </div>
                 </Col>
               </Grid>
             </Row>
 
-          </Row>	
-		    </Grid>   
+          </Row>
+		    </Grid>
 		  </div>
 
 		)

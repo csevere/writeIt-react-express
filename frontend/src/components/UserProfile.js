@@ -147,18 +147,30 @@ class UserProfile extends Component{
         this.state.bookData.map((book, index)=>{
            var link = '/write/' +  book.title;
            bookArray.push(
-                <Row>
-                   <Col key={index} md = {3}>
-                       <div className = "createbook">
-                           <div className = "book">{book.title}</div>
-                           <div>
-                               <form>
-                                   <Link to={link}><button className="btn-primary btn btn-book">Edit</button></Link>
-                               </form>
+
+
+                       <div className = "row works col-sm-6 text-center">
+                           <div className="row">
+                               {book.title}
                            </div>
+                           <img className="book-image" src="/images/profile-bg.jpg"/>
+
+                           <div className = "row">
+                               <Link to={link}><button className="btn-primary btn edit-button">Edit</button></Link>
+                           </div>
+
+                           <div className="row">
+
+
+                           </div>
+
+
+
+
+
                        </div>
-                   </Col>
-                </Row> 
+
+
 
            )
         });
@@ -194,7 +206,7 @@ class UserProfile extends Component{
                                         <h3>{username}</h3>
                                         <h4>{location}</h4>
                                     </div>
-                                </Col> 
+                                </Col>
                             </Grid>
                         
 
@@ -215,14 +227,12 @@ class UserProfile extends Component{
                                     </div>
                                 </form>
 
-                                <div className = "edit-right">
-                                    <Link to = "/editprofile"><Button type="button" className="btn btn-secondary"><img src = '/images/gear-icon.png'/>  Edit Profile</Button></Link> 
-                                </div>
+
                          
                            
                             </Col>
 
-                            <Col md = {2} class>
+                            <Col style={{marginTop: -5 +'%'}} md = {2} class>
                               
                                 <div className = "stats-left">
                                     <ul>
@@ -230,7 +240,7 @@ class UserProfile extends Component{
                                             <Button className="btn btn-secondary" style = {{background: "white"}}><h4>{this.state.followData} Followers</h4></Button>
                                        </li>
 
-                                      
+
 
                                     </ul>
                                   </div>
@@ -240,97 +250,99 @@ class UserProfile extends Component{
                         </div>
                     </Row>
 
-                    <Row className = "second-row">
-                        <Grid className = "col-md-12">
 
-                            <Col sm = {3} className = "about-left">
-                                <div className = "about-user">
-                                    <h4>About</h4>
-                                    <p><h5>{about}</h5></p>
-                                </div> 
-                            </Col>
-
-                            <div className = "mybooks-right">
-                                <Row>
-                                    <div className = "book-header">
-                                        <h4>Books by {username}</h4>
-                                    
-                                        <div className = "createbook">
-                                            <div>
-                                                <form>
-                                                   <Link to="/newbook"><button className="btn-primary btn btn-book">Create a New Book</button></Link> 
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </Row>
-
-                                <Row> 
-
-                                    <div className = "book-array">
-                                        {bookArray}
-                                    </div>
-                                </Row>
+                    <div className="container">
+                        <div className="col-sm-12">
+                            <div className="col-sm-1">
 
                             </div>
+                            <div className="col-sm-4 row subsection">
 
-                        </Grid>
-                    </Row> 
+                                    <h4>About</h4>
+                                    <p><h5>{about}</h5></p>
+
+
+                                <div className="row empty">
+                                    <br/>
+                                </div>
+                                
+                                    <h4>Follow {username} On Twitter</h4>
+
+
+
+                                <div className="row">
+                                    <div>
+
+
+                                        <Timeline dataSource={{
+
+                                            sourceType: 'profile',
+                                            screenName: `${t_username}`
+                                        }}
+
+                                                  options={{
+
+                                                      username: `${t_username}`,
+                                                      height: '400'
+                                                  }}
+
+
+                                                  onLoad={() => console.log('Timeline is loaded!')}
+                                        />
+
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div className="col-sm-2">
+
+                            </div>
+                            <div className="col-sm-4 subsection">
+
+                                <h4>Books by {username}</h4>
+                                <Link to="/newbook"><button className="btn-primary btn edit-button">Create a New Book</button></Link>
+
+                                <div className="row">
+
+                                    {bookArray}
+
+                                </div>
+
+                                <div className="row empty">
+                                    <br/>
+                                </div>
+
+                                <h4>Message Board</h4>
+                                <div className="row">
+
+                                    <div className = "write-message-box">
+                                        <Form onSubmit={this.handlePost}>
+                                            <FormGroup controlId="formControlsTextarea">
+                                                <FormControl id = "post" componentClass="textarea" placeholder="Post a message..." />
+                                                <button className="btn-primary btn btn-book" type='submit'>Post</button>
+                                            </FormGroup>
+
+                                        </Form>
+                                    </div>
+                                    <div>
+                                        {postArray}
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
 
                     
 
-                    <Row className = "third-row">
-                        <Grid className = "col-md-12">
-                            <Col md = {3} className = "twitter-left">
-                                <div>
-                                <h4>Follow {username} On Twitter</h4>
-
-                                <Timeline
-                                    dataSource={{
-
-                                    sourceType: 'profile',
-                                    screenName: `${t_username}`
-                                    }}
-
-                                    options={{
-
-                                    username: `${t_username}`,
-                                    height: '400'
-                                    }}
-                                   
-
-                                    onLoad={() => console.log('Timeline is loaded!')}
-                                />
 
 
-                                </div>
-                            </Col>
-                        </Grid>
-                    </Row>
 
-                    <Row>
-                        <Col md = {3} className = "messages-right">
-                           
-                            <div className = "write-message-box">
-                                <Form onSubmit={this.handlePost}>
-                                    <FormGroup controlId="formControlsTextarea">
-                                        <FormControl id = "post" componentClass="textarea" placeholder="Post a message..." />
-                                        <button className="btn-primary btn btn-book" type='submit'>Post</button>
-                                    </FormGroup>
-                                    
-                                </Form>
-                            </div>
-                             
-                        </Col>
-
-                        <Col md = {3} className = "messages-right2">
-                            <div>
-                                {postArray}
-                            </div>
-
-                        </Col>
-                       
-                    </Row>
 
                    
                 </Grid>
