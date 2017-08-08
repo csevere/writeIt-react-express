@@ -21,20 +21,19 @@ A week before the project started, we got together in meetings to brainstorm our
 
 ## Site Walkthrough
 
+ ### Home Page
+The home page is the main hub of the site, users are able to learn more about the site via the FAQ's page, go to the dashboard to edit their profile and add friends to engaging with the community on shared topics of interest.
+
+<p align='center'>
+  <img src="public/writeIt-home.png">
+</p>
+
 ### User Login Page
 User login in page after they have registered and provided detailed information such as their twitter handle,occupation and location.
 
 <p align='center'>
   <img src="public/writeIt-user-login.png">
  </p>
-
-
- ### Home Page
-The home page is the main hub of the site, users are able to learn more about the site via the FAQ's page, go to the dashboard to edit their profile and add friends to engaging with the community on shared topics of interest.
-
-<p align='center'>
-  <img src="public/writeIt-page.png">
-</p>
 
 
  ### Resources
