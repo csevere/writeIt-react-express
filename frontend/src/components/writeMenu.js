@@ -78,11 +78,7 @@ class writeMenu extends Component{
  
 	render(){
 
-        if(this.props.registerResponse.name === undefined){
-            this.props.history.push('/login')
-        }
-
-
+		console.log(bookTitle)
 		var bookTitle = this.state.bookData.title;
 		var bookGenre = this.state.bookData.genre;	
 		var bookWordCount = this.state.bookData.word_count;
