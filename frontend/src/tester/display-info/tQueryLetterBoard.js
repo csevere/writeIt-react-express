@@ -27,7 +27,7 @@ class tQueryLetterBoard extends Component{
         var username = this.props.registerResponse.name;
         var book = this.props.match.params.book;
 
-        $.getJSON(`http://localhost:5000/queryletter?username=${username}&book=${book}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/queryletter?username=${username}&book=${book}`, (serverData)=>{
 
             //console.log(serverData);
             this.setState({
@@ -42,7 +42,7 @@ class tQueryLetterBoard extends Component{
     deleteQueryLetter(queryLetterId){
         var book = this.props.match.params.book;
         var username = this.props.registerResponse.name;
-        $.getJSON(`http://localhost:5000/queryletter?action=${queryLetterId}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/queryletter?action=${queryLetterId}`, (serverData)=>{
 
             //console.log(serverData);
             // this.setState({
@@ -50,7 +50,7 @@ class tQueryLetterBoard extends Component{
             // })
 
         });
-        $.getJSON(`http://localhost:5000/queryletter?username=${username}&book=${book}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/queryletter?username=${username}&book=${book}`, (serverData)=>{
 
             //console.log(serverData);
             this.setState({

@@ -26,7 +26,7 @@ class tResultsPage extends Component{
         var specificUser = this.props.location.search.slice(6);
         console.log(specificUser);
         if(specificUser !== undefined){
-            $.getJSON(`http://localhost:5000/results?specificUser=${specificUser}`, (serverData)=>{
+            $.getJSON(`${window.hostAddress}/results?specificUser=${specificUser}`, (serverData)=>{
                 console.log(serverData);
                 this.setState({
                     resultsData: serverData.resultsData
@@ -35,7 +35,7 @@ class tResultsPage extends Component{
 
 
         }else{
-            $.getJSON(`http://localhost:5000/results`, (serverData)=>{
+            $.getJSON(`${window.hostAddress}/results`, (serverData)=>{
                 console.log(serverData);
                 this.setState({
                     resultsData: serverData.resultsData
@@ -53,7 +53,7 @@ class tResultsPage extends Component{
         var specificUser = this.props.location.search.slice(6);
         console.log(specificUser);
         if(specificUser !== undefined){
-            $.getJSON(`http://localhost:5000/results?specificUser=${specificUser}`, (serverData)=>{
+            $.getJSON(`${window.hostAddress}/results?specificUser=${specificUser}`, (serverData)=>{
                 console.log(serverData);
                 this.setState({
                     resultsData: serverData.resultsData
@@ -62,7 +62,7 @@ class tResultsPage extends Component{
 
 
         }else{
-            $.getJSON(`http://localhost:5000/results`, (serverData)=>{
+            $.getJSON(`${window.hostAddress}/results`, (serverData)=>{
                 console.log(serverData);
                 this.setState({
                     resultsData: serverData.resultsData
@@ -83,7 +83,7 @@ class tResultsPage extends Component{
         console.log(username);
         var userFollowed = username;
         var userFollowing = this.props.registerResponse.name;
-        $.getJSON(`http://localhost:5000/follow?userFollowed=${userFollowed}&userFollowing=${userFollowing}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/follow?userFollowed=${userFollowed}&userFollowing=${userFollowing}`, (serverData)=>{
             console.log(serverData);
             
         })

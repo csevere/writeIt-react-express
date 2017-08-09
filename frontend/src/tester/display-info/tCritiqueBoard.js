@@ -28,7 +28,7 @@ class tCritiqueBoard extends Component{
         var username = this.props.registerResponse.name;
         var book = this.props.match.params.book;
 
-        $.getJSON(`http://localhost:5000/critique?username=${username}&book=${book}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/critique?username=${username}&book=${book}`, (serverData)=>{
 
             //console.log(serverData);
             this.setState({
@@ -43,7 +43,7 @@ class tCritiqueBoard extends Component{
     deleteCritique(critiqueId){
         var book = this.props.match.params.book;
         var username = this.props.registerResponse.name;
-        $.getJSON(`http://localhost:5000/critique?action=${critiqueId}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/critique?action=${critiqueId}`, (serverData)=>{
 
             //console.log(serverData);
             // this.setState({
@@ -51,7 +51,7 @@ class tCritiqueBoard extends Component{
             // })
 
         });
-        $.getJSON(`http://localhost:5000/critique?username=${username}&book=${book}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/critique?username=${username}&book=${book}`, (serverData)=>{
 
             //console.log(serverData);
             this.setState({

@@ -29,7 +29,7 @@ class tCharacterBoard extends Component{
         var username = this.props.registerResponse.name;
         var book = this.props.match.params.book;
 
-        $.getJSON(`http://localhost:5000/characters?username=${username}&book=${book}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/characters?username=${username}&book=${book}`, (serverData)=>{
 
             //console.log(serverData);
             this.setState({
@@ -44,7 +44,7 @@ class tCharacterBoard extends Component{
     deleteCharacter(characterId){
         var book = this.props.match.params.book;
         var username = this.props.registerResponse.name;
-        $.getJSON(`http://localhost:5000/characters?action=${characterId}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/characters?action=${characterId}`, (serverData)=>{
 
             //console.log(serverData);
             // this.setState({
@@ -52,7 +52,7 @@ class tCharacterBoard extends Component{
             // })
 
         });
-        $.getJSON(`http://localhost:5000/characters?username=${username}&book=${book}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/characters?username=${username}&book=${book}`, (serverData)=>{
 
             //console.log(serverData);
             this.setState({

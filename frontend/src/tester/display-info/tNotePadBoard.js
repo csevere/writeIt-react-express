@@ -30,7 +30,7 @@ class tNotePadBoard extends Component{
         var username = this.props.registerResponse.name;
         var book = this.props.match.params.book;
 
-        $.getJSON(`http://localhost:5000/notepad?username=${username}&book=${book}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/notepad?username=${username}&book=${book}`, (serverData)=>{
 
             //console.log(serverData);
             this.setState({
@@ -45,7 +45,7 @@ class tNotePadBoard extends Component{
     deleteNotePad(notePadId){
         var username = this.props.registerResponse.name;
         var book = this.props.match.params.book;
-        $.getJSON(`http://localhost:5000/notepad?action=${notePadId}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/notepad?action=${notePadId}`, (serverData)=>{
 
             //console.log(serverData);
             // this.setState({
@@ -53,7 +53,7 @@ class tNotePadBoard extends Component{
             // })
 
         });
-        $.getJSON(`http://localhost:5000/notepad?username=${username}&book=${book}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/notepad?username=${username}&book=${book}`, (serverData)=>{
 
             //console.log(serverData);
             this.setState({

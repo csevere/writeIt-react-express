@@ -46,22 +46,22 @@ class NotePad extends Component{
     }
 
 
-    componentDidMount(){
+    // componentDidMount(){
 
-        //console.log(this.props.location.search);
-        if(this.props.location.search.length !== 0){
-            var id = this.props.location.search.slice(4);
-            console.log(id);
-            $.getJSON(`http://localhost:5000/notepad?id=${id}`, (serverData)=>{
-                // log the JSON response from Express
-                //console.log(serverData);
-                this.setState({
-                    notePadData: serverData[0]
-                })
-            })
-        }
+    //     //console.log(this.props.location.search);
+    //     if(this.props.location.search.length !== 0){
+    //         var id = this.props.location.search.slice(4);
+    //         console.log(id);
+    //         $.getJSON(`${window.hostAddress}/notepad?id=${id}`, (serverData)=>{
+    //             // log the JSON response from Express
+    //             //console.log(serverData);
+    //             this.setState({
+    //                 notePadData: serverData[0]
+    //             })
+    //         })
+    //     }
 
-    }
+    // }
 
 
     render(){
@@ -76,7 +76,7 @@ class NotePad extends Component{
 
         return(
              <div>
-                 <Grid className = "writemenucat text-center ch-forms">
+                 <Grid className = "notepad-wrapper">
                     <Row>
 
                         <Col md = {8} className = "col-md-offset-4 notepad-form">

@@ -24,7 +24,7 @@ class NavBarTest extends React.Component {
     componentDidMount(){
 
 
-    	$.getJSON(`http://localhost:5000/profiles`, (serverData)=>{
+    	$.getJSON(`${window.hostAddress}/profiles`, (serverData)=>{
             // log the JSON response from Express
             var profilesArray = []
             console.log(serverData.profileData)
@@ -42,7 +42,7 @@ class NavBarTest extends React.Component {
     }
 
     componentWillReceiveProps(){
-        $.getJSON(`http://localhost:5000/profiles`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/profiles`, (serverData)=>{
             // log the JSON response from Express
             var profilesArray = []
             console.log(serverData.profileData)

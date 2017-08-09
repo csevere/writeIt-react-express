@@ -25,7 +25,7 @@ componentDidMount(){
   var username = this.props.registerResponse.name;
   var book = this.props.match.params.book;
 
-  $.getJSON(`http://localhost:5000/bookpic?username=${username}&book=${book}`, (serverData)=>{
+  $.getJSON(`${window.hostAddress}/bookpic?username=${username}&book=${book}`, (serverData)=>{
       // log the JSON response from Express
       console.log(serverData);
       this.setState({
@@ -37,7 +37,7 @@ componentDidMount(){
 
     deleteImage(imageId){
         var book = this.props.match.params.book;
-        $.getJSON(`http://localhost:5000/bookpic?action=${imageId}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/bookpic?action=${imageId}`, (serverData)=>{
 
             //console.log(serverData);
             // this.setState({
@@ -61,7 +61,7 @@ componentDidMount(){
 
       var thePromise = $.ajax({
         method: "POST",
-        url: "http://localhost:5000/bookpic",
+        url: window.hostAddress+"/bookpic",
         processData: false,
         dataType: 'json',
         cache: false,
