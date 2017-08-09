@@ -78,10 +78,10 @@ componentDidMount(){
     this.state.picData.map((image, index)=>{
       bookPicArray.push(
         <div>
-          <img src={image.book_image.slice(18)}/>
-          <Button className = "btn" type="button" onClick={()=>{this.deleteImage(image.id)}}>
+          <Button className ="btn picture-button" type="button" onClick={()=>{this.deleteImage(image.id)}}>
                         Delete Picture
           </Button>
+          <img src={image.book_image.slice(18)}/>
         </div>
 
       )
@@ -96,10 +96,6 @@ componentDidMount(){
         <div className = "prof-pic">
             {bookPicArray}
         </div>
-        <div><br/> 
-
-        </div>
-        <p><br/><br/><br/><br/><br/><br/></p>
         <form onSubmit={this.handlePictureSubmit} encType="multipart/form-data">
             <div class="md-col-4 md-col-offset-2">
                 <input name='username' type='hidden' value={username} />
