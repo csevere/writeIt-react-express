@@ -143,10 +143,9 @@ router.post('/notepad', (req, res)=>{
     }
 });
 
-TBD
-
-[Chad Mckee]: <https://github.com/chadm9>
-[Porscha Johnson]:<https://github.com/Porscha07>
+	
+[Chad Mckee]:<https://github.com/chadm9>
+[Porscha Johnson]: <https://github.com/Porscha07>
 [Chris Boeckel]: <https://github.com/cboe07>
-[Carla Severe]: <https://github.com/csevere>
+[Carla Severe]:<https://github.com/csevere>
 [here]:<>
