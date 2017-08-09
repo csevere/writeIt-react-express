@@ -19,7 +19,7 @@ class tContempForum extends Component{
 
     componentDidMount() {
 
-        //  $.getJSON(`http://localhost:5000/book?username=${this.props.registerResponse.name}`, (serverData)=>{
+        //  $.getJSON(`${window.hostAddress}/book?username=${this.props.registerResponse.name}`, (serverData)=>{
         //     // log the JSON response from Express
         //     //console.log(serverData.bookData)
         //     this.setState({
@@ -27,7 +27,7 @@ class tContempForum extends Component{
         //     })
         // });
 
-        $.getJSON(`http://localhost:5000/contemp`, (contempdata)=>{
+        $.getJSON(`${window.hostAddress}/contemp`, (contempdata)=>{
             // log the JSON response from Express
             //console.log(serverData.bookData)
             this.setState({

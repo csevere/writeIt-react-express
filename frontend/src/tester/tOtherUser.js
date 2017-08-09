@@ -61,7 +61,7 @@ class tOtherUser extends Component{
     }
 
     componentDidMount(){
-        $.getJSON(`http://localhost:5000/user?username=${this.props.match.params.profile}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/user?username=${this.props.match.params.profile}`, (serverData)=>{
             // log the JSON response from Express
             //console.log(serverData.userData)
             this.setState({
@@ -69,7 +69,7 @@ class tOtherUser extends Component{
             })
         })
 
-        $.getJSON(`http://localhost:5000/book?username=${this.props.match.params.profile}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/book?username=${this.props.match.params.profile}`, (serverData)=>{
             // log the JSON response from Express
             //console.log(serverData.bookData)
             this.setState({
@@ -81,7 +81,7 @@ class tOtherUser extends Component{
 
         setInterval(this.loadPosts, 30000);
 
-        $.getJSON(`http://localhost:5000/profilepic?username=${this.props.match.params.profile}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/profilepic?username=${this.props.match.params.profile}`, (serverData)=>{
             // log the JSON response from Express
             console.log(serverData)
             if(serverData.picData !== undefined){
@@ -99,7 +99,7 @@ class tOtherUser extends Component{
     }
 
     loadPosts(){
-        $.getJSON(`http://localhost:5000/post?username=${this.props.match.params.profile}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/post?username=${this.props.match.params.profile}`, (serverData)=>{
         // log the JSON response from Express
         //console.log(serverData.bookData)
         this.setState({

@@ -62,7 +62,7 @@ class UserProfile extends Component{
     }
 
     componentDidMount(){
-        $.getJSON(`http://localhost:5000/user?email=${this.props.registerResponse.email}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/user?email=${this.props.registerResponse.email}`, (serverData)=>{
             // log the JSON response from Express
             //console.log(serverData.userData)
             this.setState({
@@ -70,7 +70,7 @@ class UserProfile extends Component{
             })
         })
 
-        $.getJSON(`http://localhost:5000/book?username=${this.props.registerResponse.name}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/book?username=${this.props.registerResponse.name}`, (serverData)=>{
             // log the JSON response from Express
             //console.log(serverData.bookData)
             this.setState({
@@ -84,7 +84,7 @@ class UserProfile extends Component{
 
         setInterval(this.loadPosts, 30000);
 
-        $.getJSON(`http://localhost:5000/profilepic?username=${this.props.registerResponse.name}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/profilepic?username=${this.props.registerResponse.name}`, (serverData)=>{
             // log the JSON response from Express
             console.log(serverData)
             if(serverData.picData !== undefined){
@@ -96,7 +96,7 @@ class UserProfile extends Component{
         });
 
 
-        $.getJSON(`http://localhost:5000/follow?username=${this.props.registerResponse.name}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/follow?username=${this.props.registerResponse.name}`, (serverData)=>{
             // log the JSON response from Express
             console.log('follow');
             console.log(serverData);
@@ -110,7 +110,7 @@ class UserProfile extends Component{
     }
 
     loadPosts(){
-        $.getJSON(`http://localhost:5000/post?username=${this.props.registerResponse.name}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/post?username=${this.props.registerResponse.name}`, (serverData)=>{
         // log the JSON response from Express
         //console.log(serverData.bookData)
         this.setState({

@@ -130,7 +130,7 @@ class Synopsis extends Component{
         if(this.props.location.search.length !== 0){
             var id = this.props.location.search.slice(4);
             console.log(id);
-            $.getJSON(`http://localhost:5000/synopsis?id=${id}`, (serverData)=>{
+            $.getJSON(`${window.hostAddress}/synopsis?id=${id}`, (serverData)=>{
                 // log the JSON response from Express
                 //console.log(serverData);
                 this.setState({

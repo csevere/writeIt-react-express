@@ -27,7 +27,7 @@ class tChapterBoard extends Component{
         var username = this.props.registerResponse.name;
         var book = this.props.match.params.book;
 
-        $.getJSON(`http://localhost:5000/chapters?username=${username}&book=${book}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/chapters?username=${username}&book=${book}`, (serverData)=>{
 
             //console.log(serverData);
             this.setState({
@@ -42,7 +42,7 @@ class tChapterBoard extends Component{
 	deleteChapter(chapterId){
         var book = this.props.match.params.book;
         var username = this.props.registerResponse.name;
-        $.getJSON(`http://localhost:5000/chapters?action=${chapterId}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/chapters?action=${chapterId}`, (serverData)=>{
 
             //console.log(serverData);
             // this.setState({
@@ -50,7 +50,7 @@ class tChapterBoard extends Component{
             // })
 
         });
-        $.getJSON(`http://localhost:5000/chapters?username=${username}&book=${book}`, (serverData)=>{
+        $.getJSON(`${window.hostAddress}/chapters?username=${username}&book=${book}`, (serverData)=>{
 
             //console.log(serverData);
             this.setState({
