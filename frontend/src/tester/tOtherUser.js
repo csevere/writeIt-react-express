@@ -144,12 +144,6 @@ class tOtherUser extends Component{
                        {book.title}
                    </div>
                    <img className="book-image" src="/images/profile-bg.jpg"/>
-
-                   <div className="row">
-
-
-                   </div>
-
                </div>
 
            )
