@@ -1960,115 +1960,114 @@ h2 {
 }
 /* line 23, ../../compass/sass/_notepad.scss */
 .writemenucat .control-label {
-  margin-left: -29em;
   font-size: 22px;
 }
 
-/* line 31, ../../compass/sass/_notepad.scss */
+/* line 30, ../../compass/sass/_notepad.scss */
 .fourth-row-left {
   float: left;
   margin-top: -13em;
 }
-/* line 34, ../../compass/sass/_notepad.scss */
+/* line 33, ../../compass/sass/_notepad.scss */
 .fourth-row-left img {
   width: 50%;
   position: relative;
   top: 2em;
 }
-/* line 40, ../../compass/sass/_notepad.scss */
+/* line 39, ../../compass/sass/_notepad.scss */
 .fourth-row-left h5 {
   font-size: 18px;
   font-weight: bold;
 }
-/* line 46, ../../compass/sass/_notepad.scss */
+/* line 45, ../../compass/sass/_notepad.scss */
 .fourth-row-left a {
   text-decoration: none;
   font-size: 15px;
   font-weight: bolder;
   color: #000000;
 }
-/* line 54, ../../compass/sass/_notepad.scss */
+/* line 53, ../../compass/sass/_notepad.scss */
 .fourth-row-left a:hover {
   color: #0f820f;
   cursor: pointer;
   text-decoration: underline;
 }
 
-/* line 62, ../../compass/sass/_notepad.scss */
+/* line 61, ../../compass/sass/_notepad.scss */
 .fourth-row-leftb img {
   width: 50%;
   position: relative;
   top: 2em;
 }
-/* line 68, ../../compass/sass/_notepad.scss */
+/* line 67, ../../compass/sass/_notepad.scss */
 .fourth-row-leftb h5 {
   font-size: 18px;
   font-weight: bold;
 }
-/* line 73, ../../compass/sass/_notepad.scss */
+/* line 72, ../../compass/sass/_notepad.scss */
 .fourth-row-leftb a {
   text-decoration: none;
   font-size: 15px;
   font-weight: bolder;
   color: #000000;
 }
-/* line 81, ../../compass/sass/_notepad.scss */
+/* line 80, ../../compass/sass/_notepad.scss */
 .fourth-row-leftb a:hover {
   color: #0f820f;
   cursor: pointer;
   text-decoration: underline;
 }
 
-/* line 90, ../../compass/sass/_notepad.scss */
+/* line 89, ../../compass/sass/_notepad.scss */
 .fourth-row-right {
   float: right;
   margin-top: -10em;
 }
-/* line 93, ../../compass/sass/_notepad.scss */
+/* line 92, ../../compass/sass/_notepad.scss */
 .fourth-row-right img {
   width: 35%;
 }
-/* line 98, ../../compass/sass/_notepad.scss */
+/* line 97, ../../compass/sass/_notepad.scss */
 .fourth-row-right h5 {
   font-size: 18px;
   font-weight: bold;
 }
-/* line 103, ../../compass/sass/_notepad.scss */
+/* line 102, ../../compass/sass/_notepad.scss */
 .fourth-row-right a {
   text-decoration: none;
   font-size: 15px;
   font-weight: bolder;
   color: #000000;
 }
-/* line 111, ../../compass/sass/_notepad.scss */
+/* line 110, ../../compass/sass/_notepad.scss */
 .fourth-row-right a:hover {
   color: #0f820f;
   cursor: pointer;
   text-decoration: underline;
 }
 
-/* line 123, ../../compass/sass/_notepad.scss */
+/* line 122, ../../compass/sass/_notepad.scss */
 .ch-forms .form-control {
   width: 80% !important;
   margin-left: 5em;
   padding: 4px;
 }
 @media screen and (min-width: 1732px) {
-  /* line 121, ../../compass/sass/_notepad.scss */
+  /* line 120, ../../compass/sass/_notepad.scss */
   .ch-forms {
     margin-left: 38em;
   }
 }
-/* line 134, ../../compass/sass/_notepad.scss */
+/* line 133, ../../compass/sass/_notepad.scss */
 .ch-forms .text-area {
   line-height: 50px;
 }
-/* line 138, ../../compass/sass/_notepad.scss */
+/* line 137, ../../compass/sass/_notepad.scss */
 .ch-forms .slick-prev, .ch-forms .slick-next {
   position: absolute;
   top: 37% !important;
 }
-/* line 144, ../../compass/sass/_notepad.scss */
+/* line 143, ../../compass/sass/_notepad.scss */
 .ch-forms .slick-dots {
   display: block;
   position: absolute;
@@ -2081,13 +2080,13 @@ h2 {
   text-align: center;
   left: -52em;
 }
-/* line 155, ../../compass/sass/_notepad.scss */
+/* line 154, ../../compass/sass/_notepad.scss */
 .ch-forms .slick-dots li {
   position: relative;
   left: 51.5em;
   top: -8em;
 }
-/* line 163, ../../compass/sass/_notepad.scss */
+/* line 162, ../../compass/sass/_notepad.scss */
 .ch-forms .ch-forms-2 {
   display: block;
   width: 45em;
@@ -2098,12 +2097,12 @@ h2 {
   /* Padding for demo purposes */
   padding: 4em 0em 0em 0em;
 }
-/* line 185, ../../compass/sass/_notepad.scss */
+/* line 184, ../../compass/sass/_notepad.scss */
 .ch-forms .ch-forms-2 .btn {
   margin: 14em 0em 0em 28em !important;
 }
 
-/* line 193, ../../compass/sass/_notepad.scss */
+/* line 192, ../../compass/sass/_notepad.scss */
 .notepad-wrapper {
   position: absolute;
   background-color: white;
@@ -2113,19 +2112,19 @@ h2 {
   z-index: -1;
   min-width: 65%;
 }
-/* line 203, ../../compass/sass/_notepad.scss */
+/* line 202, ../../compass/sass/_notepad.scss */
 .notepad-wrapper h1 {
   text-align: center;
   margin-top: 4em;
   font-weight: bold;
 }
-/* line 209, ../../compass/sass/_notepad.scss */
+/* line 208, ../../compass/sass/_notepad.scss */
 .notepad-wrapper textarea {
   width: 100%;
   height: 100%;
 }
 
-/* line 217, ../../compass/sass/_notepad.scss */
+/* line 216, ../../compass/sass/_notepad.scss */
 .notepad-form {
   margin-top: 11em;
   background-color: grey;
@@ -2135,7 +2134,7 @@ h2 {
   height: 32em;
   margin-left: 17em;
 }
-/* line 227, ../../compass/sass/_notepad.scss */
+/* line 226, ../../compass/sass/_notepad.scss */
 .notepad-form .btn-default {
   position: relative;
   top: 3em;
@@ -2144,30 +2143,30 @@ h2 {
   width: 6em;
   font-size: 20px;
 }
-/* line 236, ../../compass/sass/_notepad.scss */
+/* line 235, ../../compass/sass/_notepad.scss */
 .notepad-form #message {
   height: 12em;
 }
 
-/* line 242, ../../compass/sass/_notepad.scss */
+/* line 241, ../../compass/sass/_notepad.scss */
 .np-row-left {
   float: left;
   margin-top: 41em;
 }
-/* line 246, ../../compass/sass/_notepad.scss */
+/* line 245, ../../compass/sass/_notepad.scss */
 .np-row-left img {
   margin-top: -18em;
   position: relative;
   left: -22em;
   height: 13em;
 }
-/* line 253, ../../compass/sass/_notepad.scss */
+/* line 252, ../../compass/sass/_notepad.scss */
 .np-row-left a {
   margin-top: 3em;
   position: relative;
   left: 2em;
 }
-/* line 258, ../../compass/sass/_notepad.scss */
+/* line 257, ../../compass/sass/_notepad.scss */
 .np-row-left .btn-default {
   position: relative;
   top: -12em;
@@ -2177,19 +2176,19 @@ h2 {
   font-size: 0.5em;
 }
 
-/* line 268, ../../compass/sass/_notepad.scss */
+/* line 267, ../../compass/sass/_notepad.scss */
 .np-row-right {
   float: right;
   margin-top: 41em;
 }
-/* line 272, ../../compass/sass/_notepad.scss */
+/* line 271, ../../compass/sass/_notepad.scss */
 .np-row-right img {
   margin-top: -104em;
   position: relative;
   left: 57em;
   height: 5em;
 }
-/* line 278, ../../compass/sass/_notepad.scss */
+/* line 277, ../../compass/sass/_notepad.scss */
 .np-row-right .btn-default {
   position: relative;
   top: 1em;
@@ -2199,7 +2198,7 @@ h2 {
   font-size: 0.5em;
 }
 
-/* line 288, ../../compass/sass/_notepad.scss */
+/* line 287, ../../compass/sass/_notepad.scss */
 #title {
   margin-top: -1em;
   margin-right: 18em;
@@ -2207,26 +2206,26 @@ h2 {
   border: 2px solid black;
 }
 
-/* line 295, ../../compass/sass/_notepad.scss */
+/* line 294, ../../compass/sass/_notepad.scss */
 #notes {
   border: 2px solid black;
   margin-top: -1em;
   height: 14em;
 }
 
-/* line 301, ../../compass/sass/_notepad.scss */
+/* line 300, ../../compass/sass/_notepad.scss */
 .control-label {
   margin-bottom: 3em;
 }
 
-/* line 305, ../../compass/sass/_notepad.scss */
+/* line 304, ../../compass/sass/_notepad.scss */
 #writeMenu {
   position: relative;
   margin-top: 3em;
   left: -9em;
 }
 
-/* line 311, ../../compass/sass/_notepad.scss */
+/* line 310, ../../compass/sass/_notepad.scss */
 #viewNotePad {
   margin-top: -44em;
   position: relative;
@@ -3252,7 +3251,7 @@ h2 {
   position: relative;
   background-color: #CAEFF0;
   width: 100%;
-  height: 62vh;
+  height: 88vh;
   z-index: 0;
   line-height: 0px;
   box-shadow: -1px -4px 9px 0px rgba(0, 0, 0, 0.2);
