@@ -94,7 +94,7 @@ class writeMenu extends Component{
 		this.state.thesaurus.map((synonym, index)=>{
 			synonymArray.push(
 
-				<div>{synonym}</div>
+				<div className="synonym">{synonym}</div>
 				)
 
 		});
@@ -102,7 +102,7 @@ class writeMenu extends Component{
 		this.state.definition.map((definition, index)=>{
 			definitionArray.push(
 
-				<div>{definition.partOfSpeech}: {definition.text}</div>
+				<div className="definition">{definition.partOfSpeech}: {definition.text}</div>
 				)
 
 		});
