@@ -5,10 +5,10 @@
 WriteIT is a productivity tool for writers, offering a variety of ways to organize, structure, and plan manuscripts. It also incorporates a social networking feature that allows writers to add friends, share their work, and receive or give feedback.
 
 ## Team Members
-- [Chad Mckee]
-- [Porscha Johnson]
-- [Chris Boeckel]
-- [Carla Severe]
+-[Chad Mckee]:<https://github.com/chadm9>
+-[Porscha Johnson]: <https://github.com/Porscha07>
+-[Chris Boeckel]: <https://github.com/cboe07>
+-[Carla Severe]:<https://github.com/csevere>
 
 ## Languages and Technologies
 
@@ -142,10 +142,3 @@ router.post('/notepad', (req, res)=>{
         })
     }
 });
-
-	
-[Chad Mckee]:<https://github.com/chadm9>
-[Porscha Johnson]: <https://github.com/Porscha07>
-[Chris Boeckel]: <https://github.com/cboe07>
-[Carla Severe]:<https://github.com/csevere>
-[here]:<>
