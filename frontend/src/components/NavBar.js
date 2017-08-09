@@ -23,7 +23,7 @@ class NavBar extends Component{
 				<ul>
 					<li className="home-nav2">Welcome, <Link to='/user'>{this.props.registerInfo.name}</Link></li>
 					<li><Link className = "home-nav" to="/">Home</Link></li>
-				   	<li className = "logout"><a href="http://localhost:3000/">Logout</a></li>
+				   	<li className = "logout"><a href="http://writeit.chrisboeckel.com/">Logout</a></li>
 		      	</ul>
 			]		
 		}

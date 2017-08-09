@@ -213,7 +213,7 @@ class UserProfile extends Component{
                         
                             <Col sm = {5} className = "items-right">
 
-                                <form method="post" action="http://127.0.0.1:5000/profilepic" encType="multipart/form-data">
+                                <form method="post" action="http://chrisboeckel.com:3008/profilepic" encType="multipart/form-data">
                                     <div className="pic-sub text-center">
                                         <input name='username' type='hidden' value={this.state.userData.username} />
                                         <FileInput name = "fileUploaded"
