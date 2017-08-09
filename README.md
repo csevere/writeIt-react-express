@@ -12,7 +12,7 @@ WriteIT is a productivity tool for writers, offering a variety of ways to organi
 
 ## Languages and Technologies
 
-JavaScript | JSX | React | Redux | Node.js| Express | MySQL | HTML | CSS | Sass | A.W.S | jQuery | React-twitter-widgets |
+JavaScript | JSX | React | Redux | Node.js| Express | MySQL | HTML | CSS | Sass | A.W.S | jQuery | React-twitter-widgets | Wordnik API
 
 
 ## Strategy

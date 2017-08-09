@@ -1366,94 +1366,97 @@ h2 {
 /* line 39, ../../compass/sass/_writemenucat.scss */
 .fourth-row-left h5 {
   font-size: 18px;
+  font-weight: bold;
 }
-/* line 43, ../../compass/sass/_writemenucat.scss */
+/* line 45, ../../compass/sass/_writemenucat.scss */
 .fourth-row-left a {
   text-decoration: none;
   font-size: 15px;
   font-weight: bolder;
   color: #000000;
 }
-/* line 51, ../../compass/sass/_writemenucat.scss */
+/* line 53, ../../compass/sass/_writemenucat.scss */
 .fourth-row-left a:hover {
   color: #0f820f;
   cursor: pointer;
   text-decoration: underline;
 }
 
-/* line 59, ../../compass/sass/_writemenucat.scss */
+/* line 61, ../../compass/sass/_writemenucat.scss */
 .fourth-row-leftb img {
   width: 50%;
   position: relative;
   top: 2em;
 }
-/* line 65, ../../compass/sass/_writemenucat.scss */
+/* line 67, ../../compass/sass/_writemenucat.scss */
 .fourth-row-leftb h5 {
   font-size: 18px;
+  font-weight: bold;
 }
-/* line 69, ../../compass/sass/_writemenucat.scss */
+/* line 72, ../../compass/sass/_writemenucat.scss */
 .fourth-row-leftb a {
   text-decoration: none;
   font-size: 15px;
   font-weight: bolder;
   color: #000000;
 }
-/* line 77, ../../compass/sass/_writemenucat.scss */
+/* line 80, ../../compass/sass/_writemenucat.scss */
 .fourth-row-leftb a:hover {
   color: #0f820f;
   cursor: pointer;
   text-decoration: underline;
 }
 
-/* line 86, ../../compass/sass/_writemenucat.scss */
+/* line 89, ../../compass/sass/_writemenucat.scss */
 .fourth-row-right {
   float: right;
   margin-top: -10em;
 }
-/* line 89, ../../compass/sass/_writemenucat.scss */
+/* line 92, ../../compass/sass/_writemenucat.scss */
 .fourth-row-right img {
   width: 35%;
 }
-/* line 94, ../../compass/sass/_writemenucat.scss */
+/* line 97, ../../compass/sass/_writemenucat.scss */
 .fourth-row-right h5 {
   font-size: 18px;
+  font-weight: bold;
 }
-/* line 98, ../../compass/sass/_writemenucat.scss */
+/* line 102, ../../compass/sass/_writemenucat.scss */
 .fourth-row-right a {
   text-decoration: none;
   font-size: 15px;
   font-weight: bolder;
   color: #000000;
 }
-/* line 106, ../../compass/sass/_writemenucat.scss */
+/* line 110, ../../compass/sass/_writemenucat.scss */
 .fourth-row-right a:hover {
   color: #0f820f;
   cursor: pointer;
   text-decoration: underline;
 }
 
-/* line 118, ../../compass/sass/_writemenucat.scss */
+/* line 122, ../../compass/sass/_writemenucat.scss */
 .ch-forms .form-control {
   width: 80% !important;
   margin-left: 5em;
   padding: 4px;
 }
 @media screen and (min-width: 1732px) {
-  /* line 116, ../../compass/sass/_writemenucat.scss */
+  /* line 120, ../../compass/sass/_writemenucat.scss */
   .ch-forms {
     margin-left: 38em;
   }
 }
-/* line 129, ../../compass/sass/_writemenucat.scss */
+/* line 133, ../../compass/sass/_writemenucat.scss */
 .ch-forms .text-area {
   line-height: 50px;
 }
-/* line 133, ../../compass/sass/_writemenucat.scss */
+/* line 137, ../../compass/sass/_writemenucat.scss */
 .ch-forms .slick-prev, .ch-forms .slick-next {
   position: absolute;
   top: 37% !important;
 }
-/* line 139, ../../compass/sass/_writemenucat.scss */
+/* line 143, ../../compass/sass/_writemenucat.scss */
 .ch-forms .slick-dots {
   display: block;
   position: absolute;
@@ -1466,13 +1469,13 @@ h2 {
   text-align: center;
   left: -52em;
 }
-/* line 150, ../../compass/sass/_writemenucat.scss */
+/* line 154, ../../compass/sass/_writemenucat.scss */
 .ch-forms .slick-dots li {
   position: relative;
   left: 51.5em;
   top: -8em;
 }
-/* line 158, ../../compass/sass/_writemenucat.scss */
+/* line 162, ../../compass/sass/_writemenucat.scss */
 .ch-forms .ch-forms-2 {
   display: block;
   width: 45em;
@@ -1483,7 +1486,7 @@ h2 {
   /* Padding for demo purposes */
   padding: 4em 0em 0em 0em;
 }
-/* line 180, ../../compass/sass/_writemenucat.scss */
+/* line 184, ../../compass/sass/_writemenucat.scss */
 .ch-forms .ch-forms-2 .btn {
   margin: 14em 0em 0em 28em !important;
 }
@@ -1935,7 +1938,172 @@ h2 {
   }
 }
 
-/* line 15, ../../compass/sass/_notepad.scss */
+/* line 3, ../../compass/sass/_notepad.scss */
+.writemenucat {
+  position: absolute;
+  background-image: url("https://static.pexels.com/photos/301717/pexels-photo-301717.jpeg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #000000;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: 1;
+  min-width: 102%;
+  min-height: 100%;
+  width: 100vw;
+  overflow: scroll;
+}
+/* line 23, ../../compass/sass/_notepad.scss */
+.writemenucat .control-label {
+  margin-left: -29em;
+  font-size: 22px;
+}
+
+/* line 31, ../../compass/sass/_notepad.scss */
+.fourth-row-left {
+  float: left;
+  margin-top: -13em;
+}
+/* line 34, ../../compass/sass/_notepad.scss */
+.fourth-row-left img {
+  width: 50%;
+  position: relative;
+  top: 2em;
+}
+/* line 40, ../../compass/sass/_notepad.scss */
+.fourth-row-left h5 {
+  font-size: 18px;
+  font-weight: bold;
+}
+/* line 46, ../../compass/sass/_notepad.scss */
+.fourth-row-left a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bolder;
+  color: #000000;
+}
+/* line 54, ../../compass/sass/_notepad.scss */
+.fourth-row-left a:hover {
+  color: #0f820f;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* line 62, ../../compass/sass/_notepad.scss */
+.fourth-row-leftb img {
+  width: 50%;
+  position: relative;
+  top: 2em;
+}
+/* line 68, ../../compass/sass/_notepad.scss */
+.fourth-row-leftb h5 {
+  font-size: 18px;
+  font-weight: bold;
+}
+/* line 73, ../../compass/sass/_notepad.scss */
+.fourth-row-leftb a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bolder;
+  color: #000000;
+}
+/* line 81, ../../compass/sass/_notepad.scss */
+.fourth-row-leftb a:hover {
+  color: #0f820f;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* line 90, ../../compass/sass/_notepad.scss */
+.fourth-row-right {
+  float: right;
+  margin-top: -10em;
+}
+/* line 93, ../../compass/sass/_notepad.scss */
+.fourth-row-right img {
+  width: 35%;
+}
+/* line 98, ../../compass/sass/_notepad.scss */
+.fourth-row-right h5 {
+  font-size: 18px;
+  font-weight: bold;
+}
+/* line 103, ../../compass/sass/_notepad.scss */
+.fourth-row-right a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bolder;
+  color: #000000;
+}
+/* line 111, ../../compass/sass/_notepad.scss */
+.fourth-row-right a:hover {
+  color: #0f820f;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* line 123, ../../compass/sass/_notepad.scss */
+.ch-forms .form-control {
+  width: 80% !important;
+  margin-left: 5em;
+  padding: 4px;
+}
+@media screen and (min-width: 1732px) {
+  /* line 121, ../../compass/sass/_notepad.scss */
+  .ch-forms {
+    margin-left: 38em;
+  }
+}
+/* line 134, ../../compass/sass/_notepad.scss */
+.ch-forms .text-area {
+  line-height: 50px;
+}
+/* line 138, ../../compass/sass/_notepad.scss */
+.ch-forms .slick-prev, .ch-forms .slick-next {
+  position: absolute;
+  top: 37% !important;
+}
+/* line 144, ../../compass/sass/_notepad.scss */
+.ch-forms .slick-dots {
+  display: block;
+  position: absolute;
+  bottom: -28px;
+  display: block;
+  width: 100%;
+  padding: 20px;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  left: -52em;
+}
+/* line 155, ../../compass/sass/_notepad.scss */
+.ch-forms .slick-dots li {
+  position: relative;
+  left: 51.5em;
+  top: -8em;
+}
+/* line 163, ../../compass/sass/_notepad.scss */
+.ch-forms .ch-forms-2 {
+  display: block;
+  width: 45em;
+  height: 41em;
+  margin-top: 7em;
+  background: azure;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px #eee, 0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee, 0 20px 1px -9px rgba(0, 0, 0, 0.15);
+  /* Padding for demo purposes */
+  padding: 4em 0em 0em 0em;
+}
+/* line 185, ../../compass/sass/_notepad.scss */
+.ch-forms .ch-forms-2 .btn {
+  margin: 14em 0em 0em 28em !important;
+}
+
+/* line 193, ../../compass/sass/_notepad.scss */
 .notepad-wrapper {
   position: absolute;
   background-color: white;
@@ -1945,19 +2113,19 @@ h2 {
   z-index: -1;
   min-width: 65%;
 }
-/* line 25, ../../compass/sass/_notepad.scss */
+/* line 203, ../../compass/sass/_notepad.scss */
 .notepad-wrapper h1 {
   text-align: center;
   margin-top: 4em;
   font-weight: bold;
 }
-/* line 31, ../../compass/sass/_notepad.scss */
+/* line 209, ../../compass/sass/_notepad.scss */
 .notepad-wrapper textarea {
   width: 100%;
   height: 100%;
 }
 
-/* line 39, ../../compass/sass/_notepad.scss */
+/* line 217, ../../compass/sass/_notepad.scss */
 .notepad-form {
   margin-top: 11em;
   background-color: grey;
@@ -1967,39 +2135,39 @@ h2 {
   height: 32em;
   margin-left: 17em;
 }
-/* line 49, ../../compass/sass/_notepad.scss */
+/* line 227, ../../compass/sass/_notepad.scss */
 .notepad-form .btn-default {
   position: relative;
-  top: -12em;
-  left: 90em;
+  top: 3em;
+  left: 0em;
   margin: auto;
-  width: 13em;
-  font-size: 0.5em;
+  width: 6em;
+  font-size: 20px;
 }
-/* line 58, ../../compass/sass/_notepad.scss */
+/* line 236, ../../compass/sass/_notepad.scss */
 .notepad-form #message {
   height: 12em;
 }
 
-/* line 64, ../../compass/sass/_notepad.scss */
+/* line 242, ../../compass/sass/_notepad.scss */
 .np-row-left {
   float: left;
   margin-top: 41em;
 }
-/* line 68, ../../compass/sass/_notepad.scss */
+/* line 246, ../../compass/sass/_notepad.scss */
 .np-row-left img {
   margin-top: -18em;
   position: relative;
   left: -22em;
   height: 13em;
 }
-/* line 75, ../../compass/sass/_notepad.scss */
+/* line 253, ../../compass/sass/_notepad.scss */
 .np-row-left a {
   margin-top: 3em;
   position: relative;
   left: 2em;
 }
-/* line 80, ../../compass/sass/_notepad.scss */
+/* line 258, ../../compass/sass/_notepad.scss */
 .np-row-left .btn-default {
   position: relative;
   top: -12em;
@@ -2009,56 +2177,56 @@ h2 {
   font-size: 0.5em;
 }
 
-/* line 90, ../../compass/sass/_notepad.scss */
+/* line 268, ../../compass/sass/_notepad.scss */
 .np-row-right {
   float: right;
   margin-top: 41em;
 }
-/* line 94, ../../compass/sass/_notepad.scss */
+/* line 272, ../../compass/sass/_notepad.scss */
 .np-row-right img {
   margin-top: -104em;
   position: relative;
   left: 57em;
   height: 5em;
 }
-/* line 100, ../../compass/sass/_notepad.scss */
+/* line 278, ../../compass/sass/_notepad.scss */
 .np-row-right .btn-default {
   position: relative;
-  top: -12em;
+  top: 1em;
   left: 90em;
   margin: auto;
   width: 13em;
   font-size: 0.5em;
 }
 
-/* line 110, ../../compass/sass/_notepad.scss */
+/* line 288, ../../compass/sass/_notepad.scss */
 #title {
-  margin-top: -3em;
+  margin-top: -1em;
   margin-right: 18em;
   width: 100%;
   border: 2px solid black;
 }
 
-/* line 117, ../../compass/sass/_notepad.scss */
+/* line 295, ../../compass/sass/_notepad.scss */
 #notes {
   border: 2px solid black;
-  margin-top: -2em;
+  margin-top: -1em;
   height: 14em;
 }
 
-/* line 123, ../../compass/sass/_notepad.scss */
+/* line 301, ../../compass/sass/_notepad.scss */
 .control-label {
   margin-bottom: 3em;
 }
 
-/* line 127, ../../compass/sass/_notepad.scss */
+/* line 305, ../../compass/sass/_notepad.scss */
 #writeMenu {
   position: relative;
   margin-top: 3em;
   left: -9em;
 }
 
-/* line 133, ../../compass/sass/_notepad.scss */
+/* line 311, ../../compass/sass/_notepad.scss */
 #viewNotePad {
   margin-top: -44em;
   position: relative;

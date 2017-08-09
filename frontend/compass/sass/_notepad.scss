@@ -1,16 +1,194 @@
 @import 'variables';
 
-// .npButton{
-// 	margin-top: 48em;
-//     margin-left: 43em;
-//     text-align:center;
-// } 
+.writemenucat{
+
+    position: absolute; 
+    background-image: url('https://static.pexels.com/photos/301717/pexels-photo-301717.jpeg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: $black; 
+    top: 0;
+    left:0;
+    margin: 0; 
+    z-index: 1; 
+    min-width: 102%;
+    min-height: 100%;
+    width: 100vw; 
+    overflow: scroll; 
+
+    .control-label{ 
+        margin-left: -29em;
+        font-size: 22px;
+    }
+     
+}
+
+
+.fourth-row-left{
+    float: left;
+    margin-top: -13em; 
+    img{
+        width: 50%;
+        position: relative;
+        top: 2em;
+    } 
+
+    h5{
+        font-size: 18px;
+        font-weight:bold;
+        
+    }
+
+    a{
+        text-decoration: none; 
+        font-size: 15px;
+        font-weight: bolder; 
+        color: $black; 
+
+    }
+
+    a:hover{
+        color: $soft-green; 
+        cursor: pointer; 
+        text-decoration: underline;
+    }
+}
+
+.fourth-row-leftb{
+    img{
+        width: 50%;
+        position: relative;
+        top: 2em;
+    } 
+
+    h5{
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    a{
+        text-decoration: none; 
+        font-size: 15px;
+        font-weight: bolder; 
+        color: $black; 
+
+    }
+
+    a:hover{
+        color: $soft-green; 
+        cursor: pointer; 
+        text-decoration: underline;
+    }
+}
 
 
 
-// .nptextBox{
-// 	margin-top:-40em; 
-// }
+.fourth-row-right{
+    float: right;
+    margin-top: -10em; 
+    img{
+        width: 35%; 
+
+    } 
+
+    h5{
+        font-size: 18px;
+        font-weight:bold;
+    }
+
+    a{
+        text-decoration: none; 
+        font-size: 15px;
+        font-weight: bolder; 
+        color: $black; 
+
+    }
+
+    a:hover{
+        color: $soft-green; 
+        cursor: pointer; 
+        text-decoration: underline;
+    }
+}
+
+
+
+
+.ch-forms{
+
+    .form-control {
+        width: 80% !important;
+        margin-left: 5em;
+        padding: 4px; 
+
+    }
+
+    @media screen and(min-width:$break-xlarge){
+        margin-left: 38em;          
+    }
+
+    .text-area{
+        line-height: 50px;
+    }
+
+    .slick-prev, .slick-next {
+        position: absolute;
+        top: 37% !important; 
+
+    }
+
+    .slick-dots {
+    display: block; 
+    position: absolute;
+    bottom: -28px;
+    display: block;
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    left: -52em;
+        li {
+            position: relative;
+            left: 51.5em;
+            top: -8em;
+        }
+    }
+
+
+    .ch-forms-2{
+        display: block; 
+        width: 45em;
+        height: 41em;
+        margin-top: 7em;
+        background: azure;
+
+        box-shadow:
+        /* The top layer shadow */
+        0 1px 1px rgba(0,0,0,0.15),
+        /* The second layer */
+        0 10px 0 -5px #eee,
+        /* The second layer shadow */
+        0 10px 1px -4px rgba(0,0,0,0.15),
+         /* The third layer */
+        0 20px 0 -10px #eee,
+        /* The third layer shadow */
+        0 20px 1px -9px rgba(0,0,0,0.15);
+        /* Padding for demo purposes */
+        padding: 4em 0em 0em 0em;
+     
+
+        .btn{
+            margin: 14em 0em 0em 28em !important; 
+        
+        }
+    }
+        
+}
 
 .notepad-wrapper { // notepad text box
     position: absolute;
@@ -48,11 +226,11 @@
 
 	.btn-default{
 		position: relative;
-    	top: -12em;
-    	left: 90em;
-    	margin: auto;
-    	width: 13em;
-    	font-size: 0.5em;
+        top: 3em;
+        left: 0em;
+        margin: auto;
+        width: 6em;
+        font-size: 20px;
 	}
 
 	#message{
@@ -99,7 +277,7 @@
 	}
 	.btn-default{
 		position: relative;
-    	top: -12em;
+    	top: 1em;
     	left: 90em;
     	margin: auto;
     	width: 13em;
@@ -108,16 +286,16 @@
 
 }
 #title {
-    margin-top: -3em;
+    margin-top: -1em;
     margin-right: 18em;
-    width:100%;
+    width: 100%;
     border: 2px solid black;
  }
 
  #notes{
- 	border:2px solid black;
- 	margin-top:-2em;
- 	height:14em;
+ 	border: 2px solid black;
+    margin-top: -1em;
+    height: 14em;
  }
 
  .control-label{
@@ -135,5 +313,6 @@
     position: relative;
     margin-left: 11em;
  }
+
 
  // Media Queries

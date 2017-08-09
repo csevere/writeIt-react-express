@@ -76,7 +76,7 @@ class NotePad extends Component{
 
         return(
              <div>
-                 <Grid className = "notepad-wrapper">
+                 <Grid className = "writemenucat text-center ch-forms">
                     <Row>
 
                         <Col md = {8} className = "col-md-offset-4 notepad-form">
