@@ -139,19 +139,18 @@ class tOtherUser extends Component{
         this.state.bookData.map((book, index)=>{
            var link = '/write/' +  book.title;
            bookArray.push(
-               <Col key={index} md = {3}>
-                   <div className = "createbook">
+               <div className = "row works col-sm-6 text-center">
+                   <div className="row">
+                       {book.title}
+                   </div>
+                   <img className="book-image" src="/images/profile-bg.jpg"/>
 
-                       <div className = "book">{book.title}</div>
+                   <div className="row">
 
-                       <div>
-                           <form>
-                               
-                           </form>
-                       </div>
+
                    </div>
 
-               </Col>
+               </div>
 
            )
         });
@@ -282,7 +281,6 @@ class tOtherUser extends Component{
                             <div className="col-sm-4 subsection">
 
                                 <h4>Books by {username}</h4>
-                                <Link to="/newbook"><button className="btn-primary btn edit-button">Create a New Book</button></Link>
 
                                 <div className="row">
 
