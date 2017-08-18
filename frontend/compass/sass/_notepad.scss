@@ -1,4 +1,4 @@
-@import 'variables';
+@import 'variables'; 
 
 .writemenucat{
 
@@ -20,14 +20,10 @@
     width: 100vw; 
     overflow: scroll; 
 
-    .control-label{ 
-        font-size: 22px;
+    .control-label{
+        margin-bottom: 1em;     
     }
-     
-}
-
-
-.fourth-row-left{
+    .fourth-row-left{
     float: left;
     margin-top: -13em; 
     img{
@@ -113,205 +109,31 @@
         text-decoration: underline;
     }
 }
-
-
-
-
-.ch-forms{
-
-    .form-control {
-        width: 80% !important;
-        margin-left: 5em;
-        padding: 4px; 
-
-    }
-
-    @media screen and(min-width:$break-xlarge){
-        margin-left: 38em;          
-    }
-
-    .text-area{
-        line-height: 50px;
-    }
-
-    .slick-prev, .slick-next {
-        position: absolute;
-        top: 37% !important; 
-
-    }
-
-    .slick-dots {
-    display: block; 
-    position: absolute;
-    bottom: -28px;
-    display: block;
-    width: 100%;
-    padding: 20px;
-    margin: 0;
-    list-style: none;
-    text-align: center;
-    left: -52em;
-        li {
-            position: relative;
-            left: 51.5em;
-            top: -8em;
-        }
-    }
-
-
-    .ch-forms-2{
-        display: block; 
-        width: 45em;
-        height: 41em;
-        margin-top: 7em;
-        background: azure;
-
-        box-shadow:
-        /* The top layer shadow */
-        0 1px 1px rgba(0,0,0,0.15),
-        /* The second layer */
-        0 10px 0 -5px #eee,
-        /* The second layer shadow */
-        0 10px 1px -4px rgba(0,0,0,0.15),
-         /* The third layer */
-        0 20px 0 -10px #eee,
-        /* The third layer shadow */
-        0 20px 1px -9px rgba(0,0,0,0.15);
-        /* Padding for demo purposes */
-        padding: 4em 0em 0em 0em;
      
-
-        .btn{
-            margin: 14em 0em 0em 28em !important; 
-        
-        }
-    }
-        
 }
-
-.notepad-wrapper { // notepad text box
-    position: absolute;
-    background-color: white;
-    margin-top: 22em;
-    left: 0;
-    margin: 0;
-    z-index: -1;
-    min-width: 65%;
-
-
-    h1{
-		text-align:center;
-		margin-top:4em;
-		font-weight:bold;
-	}
-
-	textarea{
-		width:100%;
-		height:100%;
-		
-	}
-}
-
 
 .notepad-form{
+    margin-top:11em;
+    margin-left:14em;
 
-	margin-top: 11em;
-    background-color: grey;
-    border: 1px solid grey;
-    box-shadow: 2px 2px 11px 1px rgba(0, 0, 0, 0.2);
-    padding: 15px;
-    height: 32em;
-    margin-left: 17em;
+    #notesLabel{
+        margin-right:29em;
+        font-size:22px;
+    }
 
-	.btn-default{
-		position: relative;
-        top: 3em;
-        left: 0em;
-        margin: auto;
-        width: 6em;
-        font-size: 20px;
-	}
-
-	#message{
-		height:12em; 
-	}
+    #titleLabel{
+        margin-right:29em;
+        font-size:22px;
+    }
+    #notepad-btn{
+        top:0em;
+        left:0em;
+        margin:auto;
+        position:relative;
+    }
 }
 
-
-.np-row-left{
-	float: left;
-	margin-top:41em;
-
-	img{
-		margin-top: -18em;
-	    position: relative;
-	    left: -22em;
-	    height: 13em;
-	}
-
-	a{
-		margin-top:3em;
-		position:relative;
-		left:2em;
-	}
-	.btn-default{
-		position: relative;
-    	top: -12em;
-    	left: 90em;
-    	margin: auto;
-    	width: 13em;
-    	font-size: 0.5em;
-	}
-
-}
-.np-row-right{
-	float: right;
-	margin-top:41em;
-
-	img{
-	    margin-top: -104em;
-    	position: relative;
-    	left: 57em;
-    	height: 5em;
-	}
-	.btn-default{
-		position: relative;
-    	top: 1em;
-    	left: 90em;
-    	margin: auto;
-    	width: 13em;
-    	font-size: 0.5em;
-	}
-
-}
-#title {
-    margin-top: -1em;
-    margin-right: 18em;
-    width: 100%;
-    border: 2px solid black;
- }
-
- #notes{
- 	border: 2px solid black;
-    margin-top: -1em;
-    height: 14em;
- }
-
- .control-label{
- 	margin-bottom:3em;
- }
-
- #writeMenu{
-    position: relative;
-    margin-top: 3em;
-    left: -9em;
- }
-
- #viewNotePad{
- 	margin-top: -44em;
-    position: relative;
-    margin-left: 11em;
- }
+        
 
 
  // Media Queries

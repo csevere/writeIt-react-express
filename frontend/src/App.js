@@ -6,7 +6,6 @@ import Loading from './components/Loading';
 
 import Home from './components/Home'; 
 import NavBar from './components/NavBar';
-
 import Footer from './components/Footer'; 
 
 import UserProfile from './components/UserProfile';

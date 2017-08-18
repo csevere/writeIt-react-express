@@ -46,22 +46,22 @@ class NotePad extends Component{
     }
 
 
-    // componentDidMount(){
+    componentDidMount(){
 
-    //     //console.log(this.props.location.search);
-    //     if(this.props.location.search.length !== 0){
-    //         var id = this.props.location.search.slice(4);
-    //         console.log(id);
-    //         $.getJSON(`${window.hostAddress}/notepad?id=${id}`, (serverData)=>{
-    //             // log the JSON response from Express
-    //             //console.log(serverData);
-    //             this.setState({
-    //                 notePadData: serverData[0]
-    //             })
-    //         })
-    //     }
+        //console.log(this.props.location.search);
+        if(this.props.location.search.length !== 0){
+            var id = this.props.location.search.slice(4);
+            console.log(id);
+            $.getJSON(`${window.hostAddress}/notepad?id=${id}`, (serverData)=>{
+                // log the JSON response from Express
+                //console.log(serverData);
+                this.setState({
+                    notePadData: serverData[0]
+                })
+            })
+        }
 
-    // }
+    }
 
 
     render(){
@@ -76,7 +76,7 @@ class NotePad extends Component{
 
         return(
              <div>
-                 <Grid className = "notepad-wrapper">
+                 <Grid className = "writemenucat text-center ch-forms">
                     <Row>
 
                         <Col md = {8} className = "col-md-offset-4 notepad-form">
@@ -84,17 +84,17 @@ class NotePad extends Component{
                             <Form>
 
                                 <FormGroup controlId="formControlsTextarea">
-                                    <ControlLabel>Title:</ControlLabel>
+                                    <ControlLabel id="titleLabel">Title:</ControlLabel>
                                     <FormControl id="title" componentClass="textarea" />
                                 </FormGroup>
 
 
                                 <FormGroup controlId="formControlsTextarea">
-                                    <ControlLabel>Notes:</ControlLabel>
+                                    <ControlLabel id="notesLabel">Notes:</ControlLabel>
                                     <FormControl id="notes" componentClass="textarea" />
                                 </FormGroup>
 
-                                <Link to = "/"><Button className = "btn-default btn" bsStyle="primary" bsSize="large"
+                                <Link to = "/"><Button id = "notepad-btn" bsStyle="primary" bsSize="small"
                                 type="submit">Submit</Button></Link> 
 
                             </Form> 
@@ -102,33 +102,27 @@ class NotePad extends Component{
                         
                     </Row>
 
-
                 </Grid>
-                 <Row>
-                        <Grid className = "np-row-left">
-                            <Col md = {6}>
-                                <Link to = {writeMenu} className = "return-writemenu">
-                                    <img src = "/images/writemenu-icon.png"/>
-                                    <div id="writeMenu"><Link to = {writeMenu}><Button className = "btn-default btn" bsStyle="warning" bsSize="large"
-                                    type="submit">Return to Write Menu</Button></Link></div>
-                                </Link>
-                            </Col>
-                        </Grid>
+                     <Row>
+                            <Grid className = "fourth-row-left">
+                                <Col md = {3}>
+                                    <Link to = {writeMenu} className = "return-writemenu">
+                                        <img src = "/images/writemenu-icon.png"/>
+                                        <div>Return to Write Menu</div>
+                                    </Link>
+                                </Col>
+                            </Grid>
 
-                        <Grid className = "np-row-right">
-                            <Col md = {6}>
-                                <Link to = {notePadBoard} className = "chboard">
-                                    <img src = "/images/viewboard-icon.png"/>
-                                    <div id="viewNotePad"><Link to = "/notepad"><Button className = "btn-default btn" bsStyle="danger" bsSize="large"
-                                    type="submit">View Notebook</Button></Link></div>
-                                </Link>
-                            </Col>
-                        </Grid>
+                            <Grid className = "fourth-row-right">
+                                <Col md = {3} className = "col-md-offset-8">
+                                        <img src = "/images/viewboard-icon.png"/>
+                                        <div>View Notebook</div>
+                                </Col>
+                            </Grid>
                     </Row>
-                </div>
-        )
+            </div>
+        )}
     }
-}
 
 
 function mapStateToProps(state){
