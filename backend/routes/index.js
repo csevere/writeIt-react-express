@@ -655,7 +655,6 @@ router.get('/contemp', (req,res)=>{
 router.post('/register', (req, res)=>{
 	console.log(req.body)
 	console.log(req.body.email)
-
 	const name = req.body.name;
 	const email = req.body.email;
 	const username = req.body.username;
