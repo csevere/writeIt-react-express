@@ -27,7 +27,7 @@ class tContempForum extends Component{
         //     })
         // });
 
-        $.getJSON(`${window.hostAddress}/contemp`, (contempdata)=>{
+        $.getJSON(`http://localhost:3008/contemp`, (contempdata)=>{
             // log the JSON response from Express
             //console.log(serverData.bookData)
             this.setState({
@@ -111,7 +111,7 @@ class tContempForum extends Component{
 
 
                                            <tr>
-                                            <td>FORUM TOPIC X</td>
+                                            <td>FORUM TOPIC XY</td>
                                             <td><Link to = "/user">UsernameX</Link></td>
                                             <td>number of replies</td>
                                           </tr>
